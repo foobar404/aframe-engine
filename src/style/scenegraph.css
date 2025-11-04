@@ -1,0 +1,176 @@
+#toolbar {
+  background-color: var(--bg);
+}
+
+#toolbar .toolbarActions {
+  padding: 0 0 5px;
+  display: flex;
+  align-items: baseline;
+}
+
+#toolbar .toolbarActions a.disabled {
+  color: var(--bg-lighter);
+  cursor: default;
+}
+
+#toolbar .toolbarActions .helpButtonContainer {
+  flex-grow: 1;
+  padding-right: 10px;
+  text-align: right;
+}
+
+#scenegraph {
+  background: var(--bg);
+  border-top: 1px solid var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding-top: 32px;
+  width: 230px;
+}
+
+#scenegraph .entity {
+  background: var(--bg);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+  width: 100%;
+  white-space: nowrap;
+}
+
+#scenegraph .entity:hover {
+  background: var(--bg-light);
+}
+
+#scenegraph .entity.active {
+  background-color: var(--primary-dark);
+  color: var(--text);
+}
+
+#scenegraph .entity.active .component:hover {
+  color: #1888c1;
+}
+
+#scenegraph .entity.active .entityActions {
+  display: inline;
+}
+
+#scenegraph .entity.novisible.active span,
+#scenegraph .entity.novisible.active svg,
+#scenegraph .entity.novisible.active .collapsespace,
+#scenegraph .entity.novisible.active .id {
+  color: var(--text-dark);
+}
+
+#scenegraph .entity.novisible:not(.active) span,
+#scenegraph .entity.novisible:not(.active) svg,
+#scenegraph .entity.novisible:not(.active) .collapsespace,
+#scenegraph .entity.novisible:not(.active) .id {
+  color: var(--bg);
+}
+
+#scenegraph .component:hover {
+  color: var(--primary);
+}
+
+#scenegraph .entityIcons {
+  margin-left: 2px;
+}
+
+#scenegraph .entityActions {
+  display: none;
+  margin: 0 14px;
+}
+
+#scenegraph .entityActions .button {
+  color: var(--text);
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+#scenegraph svg {
+  color: var(--text-dark);
+}
+
+#scenegraph .toolbarActions svg:hover,
+#scenegraph .entityActions svg:hover {
+  color: var(--primary);
+}
+
+#scenegraph .active svg {
+  color: var(--text);
+}
+
+#scenegraph .id {
+  color: var(--text-dark);
+}
+
+#scenegraph .option.active .id {
+  color: var(--text);
+}
+
+#scenegraph .collapsespace {
+  color: var(--text);
+  display: inline-block;
+  text-align: center;
+  width: 14px;
+}
+
+#scenegraph .fa-eye {
+  color: var(--text-dark);
+}
+
+#scenegraph .icons a.button {
+  color: var(--text);
+}
+
+#scenegraph .search {
+  padding: 5px;
+  font-size: 16px;
+  position: relative;
+}
+
+#scenegraph .search input {
+  color: var(--text);
+  background: var(--bg-dark);
+  border-radius: 5px;
+  height: 22px;
+  text-indent: 10px;
+  width: 216px;
+}
+
+#scenegraph .search > svg,
+#scenegraph .search a.button {
+  position: absolute;
+  right: 14px;
+  top: 10px;
+}
+
+#scenegraph .outliner {
+  background: var(--bg);
+  color: var(--text);
+  cursor: default;
+  flex: 1 1 auto;
+  font-size: 13px;
+  height: calc(100% - 98px);
+  line-height: normal;
+  outline: none;
+  overflow-y: auto;
+  padding: 0;
+  width: 230px;
+}
+
+.scenegraph-bottom {
+  background-color: var(--bg-light);
+  border-top: 1px solid var(--bg-dark);
+  bottom: 10px;
+  height: 40px;
+  left: 0;
+  z-index: 100;
+}
+
+.scenegraph-bottom a {
+  float: right;
+  margin: 10px;
+}

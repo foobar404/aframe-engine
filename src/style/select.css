@@ -1,0 +1,82 @@
+.select__control {
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  min-height: 26px;
+  font-family: var(--font-monospace);
+  font-size: 13px;
+}
+
+.select__indicator {
+  height: 26px;
+}
+
+.select__indicator-separator {
+  display: none;
+}
+
+.select__input {
+  min-height: auto !important;
+}
+
+.select__control,
+.select__menu {
+  background: var(--bg-dark);
+}
+
+.select__option {
+  padding: 5px 10px;
+}
+
+.select__placeholder,
+.select__menu {
+  color: var(--text);
+}
+
+.select__single-value {
+  color: var(--primary);
+}
+
+.select__control--is-focused {
+  box-shadow: none !important;
+}
+
+.select__option {
+  cursor: pointer;
+}
+
+.select__label {
+  font-size: 11px;
+}
+
+.select__option--is-focused {
+  background: var(--primary-dark);
+}
+
+.select__value-container {
+  height: 26px;
+  position: static;
+}
+
+.select__value-container.select__value-container--is-multi {
+  height: auto;
+  padding: 6px;
+}
+
+.select__dropdown-indicator {
+  padding: 3px 8px;
+}
+
+.select__multi-value {
+  background: var(--bg);
+  color: var(--primary);
+}
+
+.select__multi-value__label {
+  color: var(--primary);
+}
+
+.select__multi-value__remove:hover {
+  color: var(--text);
+  background: var(--bg);
+}

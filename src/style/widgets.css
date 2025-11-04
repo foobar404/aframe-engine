@@ -1,0 +1,34 @@
+.Select-control {
+  background-color: var(--bg-dark) !important;
+  border: none;
+  border-radius: 0;
+  color: var(--primary);
+  font-family: var(--font-monospace);
+}
+
+.Select-menu-outer {
+  border: none;
+}
+
+.Select-menu-outer .is-focused {
+  background-color: var(--primary) !important;
+  color: var(--text);
+}
+
+.Select-option {
+  background-color: var(--bg-dark) !important;
+}
+
+.select-widget {
+  display: inline-block;
+  width: 157px;
+}
+
+.Select-placeholder,
+.Select--single > .Select-control .Select-value {
+  color: var(--primary) !important;
+}
+
+.Select-value-label {
+  color: var(--primary) !important;
+}

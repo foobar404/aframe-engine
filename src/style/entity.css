@@ -1,0 +1,25 @@
+.entityPrint {
+  font-family: var(--font-normal);
+  line-height: 1.15em;
+}
+
+.entityName {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  top: 3px;
+  white-space: nowrap;
+}
+
+[data-entity-name-type="id"] {
+  color: var(--error);
+}
+
+[data-entity-name-type="class"] {
+  color: var(--success);
+}
+
+[data-entity-name-type="mixin"] {
+  color: var(--warning);
+}

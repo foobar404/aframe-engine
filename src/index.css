@@ -1,4 +1,294 @@
 @import "tailwindcss";
+@import './style/entity.css';
+@import './style/help.css';
+@import './style/widgets.css';
+@import './style/scenegraph.css';
+@import './style/components.css';
+@import './style/select.css';
+@import './style/textureModal.css';
+@import './style/viewport.css';
+@import './style/index.css';
 
+:root {
+    --font-normal: system-ui, BlinkMacSystemFont, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    --font-monospace: system-ui, BlinkMacSystemFont, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
 
+    --primary: #1faaf2;
+    --primary-hover: #6fc5f5;
+    --primary-dark: #155373;
+    --primary-light: #87d0f7;
 
+    --secondary: #6366f1;
+    --secondary-hover: #818cf8;
+    --secondary-dark: #4338ca;
+    --secondary-light: #a5b4fc;
+
+    --accent: #f59e0b;
+    --accent-hover: #fbbf24;
+    --accent-dark: #d97706;
+    --accent-light: #fcd34d;
+
+    --bg: #242424;
+    --bg-dark: #1d1d1d;
+    --bg-light: #333;
+    --bg-lighter: #393939;
+
+    --text: #c3c3c3;
+    --text-dark: #888;
+    --text-light: #fff;
+
+    --success: #10b981;
+    --success-dark: #059669;
+    --success-light: #6ee7b7;
+
+    --warning: #f59e0b;
+    --warning-dark: #d97706;
+    --warning-light: #fcd34d;
+
+    --error: #ef4444;
+    --error-dark: #dc2626;
+    --error-light: #fca5a5;
+
+    --info: #3b82f6;
+    --info-dark: #2563eb;
+    --info-light: #93c5fd;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+    --primary: #0ea5e9;
+    --primary-hover: #0284c7;
+    --primary-dark: #0369a1;
+    --primary-light: #38bdf8;
+
+    --secondary: #7c3aed;
+    --secondary-hover: #8b5cf6;
+    --secondary-dark: #6d28d9;
+    --secondary-light: #a78bfa;
+
+    --accent: #ea580c;
+    --accent-hover: #dc2626;
+    --accent-dark: #c2410c;
+    --accent-light: #fb923c;
+
+    --bg: #f8fafc;
+    --bg-dark: #e2e8f0;
+    --bg-light: #cbd5e1;
+    --bg-lighter: #94a3b8;
+
+    --text: #334155;
+    --text-dark: #64748b;
+    --text-light: #0f172a;
+
+    --success: #059669;
+    --success-dark: #047857;
+    --success-light: #10b981;
+
+    --warning: #d97706;
+    --warning-dark: #b45309;
+    --warning-light: #f59e0b;
+
+    --error: #dc2626;
+    --error-dark: #b91c1c;
+    --error-light: #ef4444;
+
+    --info: #2563eb;
+    --info-dark: #1d4ed8;
+    --info-light: #3b82f6;
+}
+
+/* High Contrast Theme */
+[data-theme="high-contrast"] {
+    --primary: #00ffff;
+    --primary-hover: #87d0f7;
+    --primary-dark: #0080ff;
+    --primary-light: #ffffff;
+
+    --secondary: #ff00ff;
+    --secondary-hover: #ff80ff;
+    --secondary-dark: #800080;
+    --secondary-light: #ffb3ff;
+
+    --accent: #ffff00;
+    --accent-hover: #ffff80;
+    --accent-dark: #808000;
+    --accent-light: #ffffb3;
+
+    --bg: #000000;
+    --bg-dark: #000000;
+    --bg-light: #333333;
+    --bg-lighter: #666666;
+
+    --text: #ffffff;
+    --text-dark: #cccccc;
+    --text-light: #ffffff;
+
+    --success: #00ff00;
+    --success-dark: #008000;
+    --success-light: #80ff80;
+
+    --warning: #ffff00;
+    --warning-dark: #808000;
+    --warning-light: #ffff80;
+
+    --error: #ff0000;
+    --error-dark: #800000;
+    --error-light: #ff8080;
+
+    --info: #0080ff;
+    --info-dark: #004080;
+    --info-light: #80c0ff;
+}
+
+/* Blue Theme */
+[data-theme="blue"] {
+    --primary: #1e40af;
+    --primary-hover: #1d4ed8;
+    --primary-dark: #1e3a8a;
+    --primary-light: #3b82f6;
+
+    --secondary: #7c2d12;
+    --secondary-hover: #9a3412;
+    --secondary-dark: #5b1f0d;
+    --secondary-light: #ea580c;
+
+    --accent: #7c3aed;
+    --accent-hover: #8b5cf6;
+    --accent-dark: #6d28d9;
+    --accent-light: #a78bfa;
+
+    --bg: #0f172a;
+    --bg-dark: #020617;
+    --bg-light: #1e293b;
+    --bg-lighter: #334155;
+
+    --text: #cbd5e1;
+    --text-dark: #94a3b8;
+    --text-light: #f1f5f9;
+
+    --success: #059669;
+    --success-dark: #047857;
+    --success-light: #10b981;
+
+    --warning: #d97706;
+    --warning-dark: #b45309;
+    --warning-light: #f59e0b;
+
+    --error: #dc2626;
+    --error-dark: #b91c1c;
+    --error-light: #ef4444;
+
+    --info: #0891b2;
+    --info-dark: #0e7490;
+    --info-light: #22d3ee;
+}
+
+/* Purple Theme */
+[data-theme="purple"] {
+    --primary: #7c3aed;
+    --primary-hover: #8b5cf6;
+    --primary-dark: #6d28d9;
+    --primary-light: #a78bfa;
+
+    --secondary: #dc2626;
+    --secondary-hover: #ef4444;
+    --secondary-dark: #b91c1c;
+    --secondary-light: #fca5a5;
+
+    --accent: #f59e0b;
+    --accent-hover: #fbbf24;
+    --accent-dark: #d97706;
+    --accent-light: #fcd34d;
+
+    --bg: #1a103d;
+    --bg-dark: #0f0a1f;
+    --bg-light: #2d1b69;
+    --bg-lighter: #4c1d95;
+
+    --text: #d8b4fe;
+    --text-dark: #a855f7;
+    --text-light: #faf5ff;
+
+    --success: #10b981;
+    --success-dark: #059669;
+    --success-light: #6ee7b7;
+
+    --warning: #f59e0b;
+    --warning-dark: #d97706;
+    --warning-light: #fcd34d;
+
+    --error: #ef4444;
+    --error-dark: #dc2626;
+    --error-light: #fca5a5;
+
+    --info: #3b82f6;
+    --info-dark: #2563eb;
+    --info-light: #93c5fd;
+}
+
+/* Green Theme */
+[data-theme="green"] {
+    --primary: #059669;
+    --primary-hover: #10b981;
+    --primary-dark: #047857;
+    --primary-light: #6ee7b7;
+
+    --secondary: #7c2d12;
+    --secondary-hover: #9a3412;
+    --secondary-dark: #5b1f0d;
+    --secondary-light: #ea580c;
+
+    --accent: #7c3aed;
+    --accent-hover: #8b5cf6;
+    --accent-dark: #6d28d9;
+    --accent-light: #a78bfa;
+
+    --bg: #0f172a;
+    --bg-dark: #020617;
+    --bg-light: #1e293b;
+    --bg-lighter: #334155;
+
+    --text: #cbd5e1;
+    --text-dark: #94a3b8;
+    --text-light: #f1f5f9;
+
+    --success: #10b981;
+    --success-dark: #059669;
+    --success-light: #6ee7b7;
+
+    --warning: #f59e0b;
+    --warning-dark: #d97706;
+    --warning-light: #fcd34d;
+
+    --error: #dc2626;
+    --error-dark: #b91c1c;
+    --error-light: #ef4444;
+
+    --info: #0891b2;
+    --info-dark: #0e7490;
+    --info-light: #22d3ee;
+}
+
+/* Theme Switcher Styles */
+.theme-switcher {
+  margin: 10px;
+}
+
+.theme-select {
+  background: var(--bg-dark);
+  border: 1px solid var(--bg-light);
+  border-radius: 4px;
+  color: var(--text);
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.theme-select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.theme-select option {
+  background: var(--bg);
+  color: var(--text);
+}

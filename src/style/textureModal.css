@@ -1,0 +1,249 @@
+.modal {
+  animation: animateopacity 0.2s ease-out;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999999999;
+}
+
+.modal h3 {
+  font-size: 18px;
+  font-weight: 100;
+  margin: 0.6em 0;
+}
+
+#textureModal .modal-content {
+  height: calc(100% - 50px);
+  width: calc(100% - 50px);
+}
+
+.modal-content {
+  animation: animatetop 0.2s ease-out;
+  animation-duration: 0.2s;
+  animation-name: animatetop;
+  background-color: var(--bg-dark);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+  margin: auto;
+  overflow: hidden;
+  padding: 0;
+}
+
+.close {
+  color: var(--text);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #08f;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.modal-header {
+  color: var(--text);
+  padding: 2px 16px;
+}
+
+.modal-body {
+  overflow: auto;
+  padding: 16px;
+}
+
+.modal-footer {
+  color: var(--text);
+  padding: 2px 16px;
+}
+
+/* Gallery */
+.gallery {
+  background: var(--bg-dark);
+  display: flex;
+  flex-wrap: wrap;
+  margin: 15px auto 0;
+  max-height: calc(100vh - 370px);
+  overflow: auto;
+  padding: 15px 3px 3px;
+}
+
+.newimage .gallery {
+  padding: 16px;
+}
+
+.gallery li {
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  margin: 8px;
+  overflow: hidden;
+  width: 155px;
+}
+
+.gallery li.selected,
+.gallery li:hover {
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.gallery li .detail {
+  background-color: var(--bg-light);
+  margin: 0;
+  min-height: 60px;
+  padding: 3px 10px;
+}
+
+.preview {
+  padding: 10px;
+  width: 150px;
+}
+
+.preview input {
+  display: block;
+  margin: 8px 0;
+  width: 144px;
+}
+
+.preview button {
+  width: 155px;
+}
+
+.preview .detail .title {
+  color: var(--text);
+  display: inline-block;
+  max-width: 155px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gallery li.selected .detail,
+.gallery li:hover .detail {
+  background-color: var(--bg-lighter);
+}
+
+.gallery li .detail span {
+  color: var(--text-dark);
+  display: block;
+  margin-top: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 140px;
+}
+
+.gallery li.selected .detail span,
+.gallery li:hover .detail span {
+  color: var(--text);
+}
+
+.gallery li .detail span.title {
+  color: var(--text) !important;
+}
+
+.modal button {
+  appearance: none;
+  border-radius: 0;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 0 10px 0 0;
+  padding: 5px 10px;
+}
+
+.modal button:focus {
+  outline: none;
+}
+
+.modal button {
+  background-color: var(--primary);
+  border: none;
+  color: var(--text);
+}
+
+.modal button:hover,
+.modal button.hover {
+  background-color: var(--primary-hover);
+  text-shadow: -1px 1px var(--primary-dark);
+}
+
+.modal button:active,
+.modal button.active {
+  background-color: var(--primary-dark);
+  text-shadow: -1px 1px var(--bg-dark);
+}
+
+.modal button:disabled {
+  background-color: var(--bg);
+  cursor: none;
+}
+
+.newimage {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  display: flex;
+  font-size: 13px;
+  justify-content: space-between;
+  margin-top: 10px;
+  overflow: auto;
+  padding: 10px;
+}
+
+.newimage input {
+  color: var(--primary);
+  padding: 3px 5px;
+}
+
+.texture canvas + input {
+  margin-left: 5px;
+}
+
+.texture svg {
+  padding-right: 5px;
+}
+
+.uploader-normal-button .hidden {
+  display: none;
+}
+
+.assets.search {
+  position: relative;
+  margin-top: 10px;
+  width: 200px;
+}
+
+.assets.search svg {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.new_asset_options {
+  margin: 10px;
+}
+
+.new_asset_options > ul {
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.new_asset_options > ul > li {
+  padding: 10px 0;
+}
+
+.new_asset_options .imageUrl {
+  margin-left: 5px;
+  width: 350px;
+}
+
+.texture canvas {
+  border: 1px solid var(--bg-light);
+  cursor: pointer;
+}

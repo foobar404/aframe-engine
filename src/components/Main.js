@@ -10,6 +10,7 @@ import SceneGraph from './scenegraph/SceneGraph';
 import CameraToolbar from './viewport/CameraToolbar';
 import TransformToolbar from './viewport/TransformToolbar';
 import ViewportHUD from './viewport/ViewportHUD';
+import ThemeSwitcher from './ThemeSwitcher';
 
 THREE.ImageUtils.crossOrigin = '';
 
@@ -173,7 +174,7 @@ export default function Main() {
 
   const scene = state.sceneEl;
   const toggleButtonText = state.inspectorEnabled
-    ? 'aaaa to Scene'
+    ? 'Back to Scene'
     : 'Inspect Scene';
 
   return (
@@ -181,6 +182,7 @@ export default function Main() {
       <a className="toggle-edit" onClick={toggleEdit}>
         {toggleButtonText}
       </a>
+
 
       {renderSceneGraphToggle()}
       {renderComponentsToggle()}
@@ -196,6 +198,7 @@ export default function Main() {
         />
 
         <div id="viewportBar">
+          <ThemeSwitcher />
           <CameraToolbar />
           <ViewportHUD />
           <TransformToolbar />

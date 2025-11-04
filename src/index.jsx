@@ -11,7 +11,6 @@ import { Config } from './lib/config';
 import * as history from './lib/history';
 
 import Main from './components/Main';
-import './style/index.styl';
 import './index.css';
 
 class Inspector {
