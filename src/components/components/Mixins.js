@@ -1,34 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
 import Events from '../../lib/Events';
 
-export default class Mixin extends React.Component {
-  static propTypes = {
-    entity: PropTypes.object.isRequired
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = { mixins: this.getMixinValue() };
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (this.props.entity === prevProps.entity) {
-      return;
-    }
-    this.setState({ mixins: this.getMixinValue() });
-  }
-
-  getMixinValue() {
-    return (this.props.entity.getAttribute('mixin') || '')
+function Mixin({ entity }) {
+  const getMixinValue = () => {
+    return (entity.getAttribute('mixin') || '')
       .split(/\s+/g)
       .filter((v) => !!v)
       .map((v) => ({ label: v, value: v }));
-  }
+  };
 
-  getMixinOptions = () => {
-    const mixinIds = this.props.entity.mixinEls.map(function (mixin) {
+  const [mixins, setMixins] = useState(getMixinValue());
+
+  useEffect(() => {
+    setMixins(getMixinValue());
+  }, [entity]);
+
+  const getMixinOptions = useCallback(() => {
+    const mixinIds = entity.mixinEls.map(function (mixin) {
       return mixin.id;
     });
 
@@ -41,12 +31,10 @@ export default class Mixin extends React.Component {
       .map(function (mixin) {
         return { value: mixin.id, label: mixin.id };
       });
-  };
+  }, [entity]);
 
-  updateMixins = (value) => {
-    const entity = this.props.entity;
-
-    this.setState({ mixins: value });
+  const updateMixins = useCallback((value) => {
+    setMixins(value);
     const mixinStr = value.map((v) => v.value).join(' ');
     entity.setAttribute('mixin', mixinStr);
 
@@ -56,29 +44,33 @@ export default class Mixin extends React.Component {
       property: '',
       value: mixinStr
     });
-  };
+  }, [entity]);
 
-  render() {
-    return (
-      <div className="mixinOptions">
-        <div className="propertyRow">
-          <span className="text">mixins</span>
-          <span className="mixinValue">
-            <Select
-              id="mixinSelect"
-              classNamePrefix="select"
-              options={this.getMixinOptions()}
-              isMulti
-              isClearable={false}
-              isSearchable
-              placeholder="Add mixin..."
-              noOptionsMessage={() => 'No mixins found'}
-              onChange={this.updateMixins.bind(this)}
-              value={this.state.mixins}
-            />
-          </span>
-        </div>
+  return (
+    <div className="mixinOptions">
+      <div className="propertyRow">
+        <span className="text">mixins</span>
+        <span className="mixinValue">
+          <Select
+            id="mixinSelect"
+            classNamePrefix="select"
+            options={getMixinOptions()}
+            isMulti
+            isClearable={false}
+            isSearchable
+            placeholder="Add mixin..."
+            noOptionsMessage={() => 'No mixins found'}
+            onChange={updateMixins}
+            value={mixins}
+          />
+        </span>
       </div>
-    );
-  }
+    </div>
+  );
 }
+
+Mixin.propTypes = {
+  entity: PropTypes.object.isRequired
+};
+
+export default Mixin;

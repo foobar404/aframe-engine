@@ -1,3 +1,4 @@
+import * as THREE from 'three';
 import Events from './Events';
 
 export function initRaycaster(inspector) {

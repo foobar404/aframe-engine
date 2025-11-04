@@ -32,22 +32,22 @@ function asIcon(icon) {
   };
 }
 
-export class AwesomeIcon extends React.Component {
-  static propTypes = {
-    icon: PropTypes.object.isRequired
-  };
-
-  render() {
-    const { width, height, icon } = asIcon(this.props.icon.icon);
-    return (
-      <svg
-        role="img"
-        className={`svg-inline--fa fa-${this.props.icon.iconName}`}
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox={`0 0 ${width} ${height}`}
-      >
-        {icon}
-      </svg>
-    );
-  }
+function AwesomeIcon({ icon }) {
+  const { width, height, icon: iconElement } = asIcon(icon.icon);
+  return (
+    <svg
+      role="img"
+      className={`svg-inline--fa fa-${icon.iconName}`}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox={`0 0 ${width} ${height}`}
+    >
+      {iconElement}
+    </svg>
+  );
 }
+
+AwesomeIcon.propTypes = {
+  icon: PropTypes.object.isRequired
+};
+
+export { AwesomeIcon };

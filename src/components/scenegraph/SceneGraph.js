@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars, react/no-danger */
-import React from 'react';
+import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { AwesomeIcon } from '../AwesomeIcon';
@@ -9,88 +9,104 @@ import Entity from './Entity';
 import Toolbar from './Toolbar';
 import Events from '../../lib/Events';
 
-export default class SceneGraph extends React.Component {
-  static propTypes = {
-    scene: PropTypes.object,
-    selectedEntity: PropTypes.object,
-    visible: PropTypes.bool
-  };
+function SceneGraph({ scene, selectedEntity, visible }) {
+  const [entities, setEntities] = useState([]);
+  const [filter, setFilter] = useState('');
+  const [filteredEntities, setFilteredEntities] = useState([]);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [updateTrigger, setUpdateTrigger] = useState(0);
+  const expandedElementsRef = useRef(new WeakMap([[scene, true]]));
 
-  static defaultProps = {
-    selectedEntity: ''
-  };
+  const includeInSceneGraph = useCallback((element) => {
+    return !(
+      element.dataset.isInspector ||
+      !element.isEntity ||
+      element.isInspector ||
+      'aframeInspector' in element.dataset
+    );
+  }, []);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      entities: [],
-      expandedElements: new WeakMap([[props.scene, true]]),
-      filter: '',
-      filteredEntities: [],
-      selectedIndex: -1
+  const isExpanded = useCallback((x) => expandedElementsRef.current.get(x) === true, []);
+
+  const toggleExpandedCollapsed = useCallback((x) => {
+    const current = expandedElementsRef.current.get(x) === true;
+    expandedElementsRef.current.set(x, !current);
+    setUpdateTrigger(prev => prev + 1);
+  }, []);
+
+  const expandToRoot = useCallback((x) => {
+    let curr = x.parentNode;
+    while (curr !== undefined && curr.isEntity) {
+      expandedElementsRef.current.set(curr, true);
+      curr = curr.parentNode;
+    }
+    setUpdateTrigger(prev => prev + 1);
+  }, []);
+
+  const rebuildEntityOptionsCallback = useCallback(() => {
+    const ents = [{ depth: 0, entity: scene }];
+    const treeIterate = (element, depth) => {
+      if (!element) {
+        return;
+      }
+      depth += 1;
+      for (let i = 0; i < element.children.length; i++) {
+        let entity = element.children[i];
+        if (!includeInSceneGraph(entity)) {
+          continue;
+        }
+        ents.push({
+          entity: entity,
+          depth: depth,
+          id: 'sgnode' + ents.length
+        });
+        treeIterate(entity, depth);
+      }
     };
+    treeIterate(scene, 0);
+    setEntities(ents);
+    setFilteredEntities(getFilteredEntities(filter, ents));
+  }, [scene, filter, includeInSceneGraph]);
 
-    this.rebuildEntityOptions = debounce(
-      this.rebuildEntityOptions.bind(this),
-      0
-    );
+  const rebuildEntityOptions = useMemo(() => debounce(rebuildEntityOptionsCallback, 0), [rebuildEntityOptionsCallback]);
 
-    this.updateFilteredEntities = debounce(
-      this.updateFilteredEntities.bind(this),
-      100
-    );
-  }
+  const updateFilteredEntitiesCallback = useCallback((filt) => {
+    setFilteredEntities(getFilteredEntities(filt, entities));
+  }, [entities]);
 
-  onEntityUpdate = (detail) => {
-    if (detail.component === 'mixin' || detail.component === 'visible') {
-      this.rebuildEntityOptions();
+  const updateFilteredEntities = useMemo(() => debounce(updateFilteredEntitiesCallback, 100), [updateFilteredEntitiesCallback]);
+
+  const getFilteredEntities = useCallback((filt, ents) => {
+    ents = ents || entities;
+    if (!filt) {
+      return ents;
     }
-  };
+    return ents.filter((entityOption) => {
+      return filterEntity(entityOption.entity, filt);
+    });
+  }, [entities]);
 
-  onChildAttachedDetached = (event) => {
-    if (this.includeInSceneGraph(event.detail.el)) {
-      this.rebuildEntityOptions();
+  const isVisibleInSceneGraph = useCallback((x) => {
+    let curr = x.parentNode;
+    if (!curr) {
+      return false;
     }
-  };
-
-  componentDidMount() {
-    this.rebuildEntityOptions();
-    Events.on('entityidchange', this.rebuildEntityOptions);
-    Events.on('entityupdate', this.onEntityUpdate);
-    document.addEventListener('child-attached', this.onChildAttachedDetached);
-    document.addEventListener('child-detached', this.onChildAttachedDetached);
-  }
-
-  componentWillUnmount() {
-    Events.off('entityidchange', this.rebuildEntityOptions);
-    Events.off('entityupdate', this.onEntityUpdate);
-    document.removeEventListener(
-      'child-attached',
-      this.onChildAttachedDetached
-    );
-    document.removeEventListener(
-      'child-detached',
-      this.onChildAttachedDetached
-    );
-  }
-
-  /**
-   * Selected entity updated from somewhere else in the app.
-   */
-  componentDidUpdate(prevProps) {
-    if (prevProps.selectedEntity !== this.props.selectedEntity) {
-      this.selectEntity(this.props.selectedEntity);
+    while (curr?.isEntity) {
+      if (!isExpanded(curr)) {
+        return false;
+      }
+      curr = curr.parentNode;
     }
-  }
+    return true;
+  }, [isExpanded]);
 
-  selectEntity = (entity) => {
+  const selectEntity = useCallback((entity) => {
     let found = false;
-    for (let i = 0; i < this.state.filteredEntities.length; i++) {
-      const entityOption = this.state.filteredEntities[i];
+    for (let i = 0; i < filteredEntities.length; i++) {
+      const entityOption = filteredEntities[i];
       if (entityOption.entity === entity) {
-        this.setState({ selectedIndex: i });
+        setSelectedIndex(i);
         setTimeout(() => {
-          // wait 100ms to allow React to update the UI and create the node we're interested in
           const node = document.getElementById('sgnode' + i);
           const scrollableContainer = document.querySelector(
             '#scenegraph .outliner'
@@ -105,74 +121,77 @@ export default class SceneGraph extends React.Component {
             node.scrollIntoView({ behavior: 'smooth' });
           }
         }, 100);
-        // Make sure selected value is visible in scenegraph
-        this.expandToRoot(entity);
+        expandToRoot(entity);
         Events.emit('entityselect', entity);
         found = true;
         break;
       }
     }
-
     if (!found) {
-      this.setState({ selectedIndex: -1 });
+      setSelectedIndex(-1);
     }
-  };
+  }, [filteredEntities, expandToRoot]);
 
-  includeInSceneGraph = (element) => {
-    return !(
-      element.dataset.isInspector ||
-      !element.isEntity ||
-      element.isInspector ||
-      'aframeInspector' in element.dataset
-    );
-  };
-
-  rebuildEntityOptions = () => {
-    const entities = [{ depth: 0, entity: this.props.scene }];
-
-    const treeIterate = (element, depth) => {
-      if (!element) {
-        return;
-      }
-      depth += 1;
-
-      for (let i = 0; i < element.children.length; i++) {
-        let entity = element.children[i];
-
-        if (!this.includeInSceneGraph(entity)) {
-          continue;
-        }
-
-        entities.push({
-          entity: entity,
-          depth: depth,
-          id: 'sgnode' + entities.length
-        });
-
-        treeIterate(entity, depth);
-      }
-    };
-    treeIterate(this.props.scene, 0);
-
-    this.setState({
-      entities: entities,
-      filteredEntities: this.getFilteredEntities(this.state.filter, entities)
-    });
-  };
-
-  selectIndex = (index) => {
-    if (index >= 0 && index < this.state.entities.length) {
-      this.selectEntity(this.state.entities[index].entity);
+  const selectIndex = useCallback((index) => {
+    if (index >= 0 && index < entities.length) {
+      selectEntity(entities[index].entity);
     }
-  };
+  }, [entities, selectEntity]);
 
-  onFilterKeyUp = (event) => {
+  const previousExpandedIndexTo = useCallback((i) => {
+    for (let prevIter = i - 1; prevIter >= 0; prevIter--) {
+      const prevEl = entities[prevIter].entity;
+      if (isVisibleInSceneGraph(prevEl)) {
+        return prevIter;
+      }
+    }
+    return -1;
+  }, [entities, isVisibleInSceneGraph]);
+
+  const nextExpandedIndexTo = useCallback((i) => {
+    for (
+      let nextIter = i + 1;
+      nextIter < entities.length;
+      nextIter++
+    ) {
+      const nextEl = entities[nextIter].entity;
+      if (isVisibleInSceneGraph(nextEl)) {
+        return nextIter;
+      }
+    }
+    return -1;
+  }, [entities, isVisibleInSceneGraph]);
+
+  const onEntityUpdate = useCallback((detail) => {
+    if (detail.component === 'mixin' || detail.component === 'visible') {
+      rebuildEntityOptions();
+    }
+  }, [rebuildEntityOptions]);
+
+  const onChildAttachedDetached = useCallback((event) => {
+    if (includeInSceneGraph(event.detail.el)) {
+      rebuildEntityOptions();
+    }
+  }, [includeInSceneGraph, rebuildEntityOptions]);
+
+  const onChangeFilter = useCallback((evt) => {
+    const filt = evt.target.value;
+    setFilter(filt);
+    updateFilteredEntities(filt);
+  }, [updateFilteredEntities]);
+
+  const clearFilter = useCallback(() => {
+    setFilter('');
+    updateFilteredEntities('');
+  }, [updateFilteredEntities]);
+
+  const onFilterKeyUp = useCallback((event) => {
     if (event.keyCode === 27) {
-      this.clearFilter();
+      clearFilter();
     }
-  };
+  }, [clearFilter]);
 
-  onKeyDown = (event) => {
+  const onKeyDown = useCallback((event) => {
     switch (event.keyCode) {
       case 37: // left
       case 38: // up
@@ -182,123 +201,55 @@ export default class SceneGraph extends React.Component {
         event.stopPropagation();
         break;
     }
-  };
+  }, []);
 
-  onKeyUp = (event) => {
-    if (this.props.selectedEntity === null) {
+  const onKeyUp = useCallback((event) => {
+    if (selectedEntity === null) {
       return;
     }
-
     switch (event.keyCode) {
       case 37: // left
-        if (this.isExpanded(this.props.selectedEntity)) {
-          this.toggleExpandedCollapsed(this.props.selectedEntity);
+        if (isExpanded(selectedEntity)) {
+          toggleExpandedCollapsed(selectedEntity);
         }
         break;
       case 38: // up
-        this.selectIndex(
-          this.previousExpandedIndexTo(this.state.selectedIndex)
-        );
+        selectIndex(previousExpandedIndexTo(selectedIndex));
         break;
       case 39: // right
-        if (!this.isExpanded(this.props.selectedEntity)) {
-          this.toggleExpandedCollapsed(this.props.selectedEntity);
+        if (!isExpanded(selectedEntity)) {
+          toggleExpandedCollapsed(selectedEntity);
         }
         break;
       case 40: // down
-        this.selectIndex(this.nextExpandedIndexTo(this.state.selectedIndex));
+        selectIndex(nextExpandedIndexTo(selectedIndex));
         break;
     }
-  };
+  }, [selectedEntity, isExpanded, toggleExpandedCollapsed, selectIndex, previousExpandedIndexTo, selectedIndex, nextExpandedIndexTo]);
 
-  getFilteredEntities(filter, entities) {
-    entities = entities || this.state.entities;
-    if (!filter) {
-      return entities;
-    }
-    return entities.filter((entityOption) => {
-      return filterEntity(entityOption.entity, filter || this.state.filter);
-    });
-  }
+  useEffect(() => {
+    rebuildEntityOptions();
+    Events.on('entityidchange', rebuildEntityOptions);
+    Events.on('entityupdate', onEntityUpdate);
+    document.addEventListener('child-attached', onChildAttachedDetached);
+    document.addEventListener('child-detached', onChildAttachedDetached);
+    return () => {
+      Events.off('entityidchange', rebuildEntityOptions);
+      Events.off('entityupdate', onEntityUpdate);
+      document.removeEventListener('child-attached', onChildAttachedDetached);
+      document.removeEventListener('child-detached', onChildAttachedDetached);
+    };
+  }, [rebuildEntityOptions, onEntityUpdate, onChildAttachedDetached]);
 
-  isVisibleInSceneGraph = (x) => {
-    let curr = x.parentNode;
-    if (!curr) {
-      return false;
-    }
-    while (curr?.isEntity) {
-      if (!this.isExpanded(curr)) {
-        return false;
-      }
-      curr = curr.parentNode;
-    }
-    return true;
-  };
+  useEffect(() => {
+    selectEntity(selectedEntity);
+  }, [selectedEntity, selectEntity]);
 
-  isExpanded = (x) => this.state.expandedElements.get(x) === true;
-
-  toggleExpandedCollapsed = (x) => {
-    this.setState({
-      expandedElements: this.state.expandedElements.set(x, !this.isExpanded(x))
-    });
-  };
-
-  expandToRoot = (x) => {
-    // Expand element all the way to the scene element
-    let curr = x.parentNode;
-    while (curr !== undefined && curr.isEntity) {
-      this.state.expandedElements.set(curr, true);
-      curr = curr.parentNode;
-    }
-    this.setState({ expandedElements: this.state.expandedElements });
-  };
-
-  previousExpandedIndexTo = (i) => {
-    for (let prevIter = i - 1; prevIter >= 0; prevIter--) {
-      const prevEl = this.state.entities[prevIter].entity;
-      if (this.isVisibleInSceneGraph(prevEl)) {
-        return prevIter;
-      }
-    }
-    return -1;
-  };
-
-  nextExpandedIndexTo = (i) => {
-    for (
-      let nextIter = i + 1;
-      nextIter < this.state.entities.length;
-      nextIter++
-    ) {
-      const nextEl = this.state.entities[nextIter].entity;
-      if (this.isVisibleInSceneGraph(nextEl)) {
-        return nextIter;
-      }
-    }
-    return -1;
-  };
-
-  onChangeFilter = (evt) => {
-    const filter = evt.target.value;
-    this.setState({ filter: filter });
-    this.updateFilteredEntities(filter);
-  };
-
-  updateFilteredEntities(filter) {
-    this.setState({
-      filteredEntities: this.getFilteredEntities(filter)
-    });
-  }
-
-  clearFilter = () => {
-    this.setState({ filter: '' });
-    this.updateFilteredEntities('');
-  };
-
-  renderEntities = () => {
-    return this.state.filteredEntities.map((entityOption, idx) => {
+  const renderEntities = () => {
+    return filteredEntities.map((entityOption, idx) => {
       if (
-        !this.isVisibleInSceneGraph(entityOption.entity) &&
-        !this.state.filter
+        !isVisibleInSceneGraph(entityOption.entity) &&
+        !filter
       ) {
         return null;
       }
@@ -306,56 +257,65 @@ export default class SceneGraph extends React.Component {
         <Entity
           {...entityOption}
           key={idx}
-          isFiltering={!!this.state.filter}
-          isExpanded={this.isExpanded(entityOption.entity)}
-          isSelected={this.props.selectedEntity === entityOption.entity}
-          selectEntity={this.selectEntity}
-          toggleExpandedCollapsed={this.toggleExpandedCollapsed}
+          isFiltering={!!filter}
+          isExpanded={isExpanded(entityOption.entity)}
+          isSelected={selectedEntity === entityOption.entity}
+          selectEntity={selectEntity}
+          toggleExpandedCollapsed={toggleExpandedCollapsed}
         />
       );
     });
   };
 
-  render() {
-    // To hide the SceneGraph we have to hide its parent too (#left-sidebar).
-    if (!this.props.visible) {
-      return null;
-    }
+  if (!visible) {
+    return null;
+  }
 
-    const clearFilter = this.state.filter ? (
-      <a onClick={this.clearFilter} className="button">
-        <AwesomeIcon icon={faTimes} />
-      </a>
-    ) : null;
+  const clearFilterButton = filter ? (
+    <a onClick={clearFilter} className="button">
+      <AwesomeIcon icon={faTimes} />
+    </a>
+  ) : null;
 
-    return (
-      <div id="scenegraph" className="scenegraph">
-        <div className="scenegraph-toolbar">
-          <Toolbar />
-          <div className="search">
-            <input
-              id="filter"
-              placeholder="Search..."
-              onChange={this.onChangeFilter}
-              onKeyUp={this.onFilterKeyUp}
-              value={this.state.filter}
-            />
-            {clearFilter}
-            {!this.state.filter && <AwesomeIcon icon={faSearch} />}
-          </div>
-        </div>
-        <div
-          className="outliner"
-          tabIndex="0"
-          onKeyDown={this.onKeyDown}
-          onKeyUp={this.onKeyUp}
-        >
-          {this.renderEntities()}
+  return (
+    <div id="scenegraph" className="scenegraph">
+      <div className="scenegraph-toolbar">
+        <Toolbar />
+        <div className="search">
+          <input
+            id="filter"
+            placeholder="Search..."
+            onChange={onChangeFilter}
+            onKeyUp={onFilterKeyUp}
+            value={filter}
+          />
+          {clearFilterButton}
+          {!filter && <AwesomeIcon icon={faSearch} />}
         </div>
       </div>
-    );
-  }
+      <div
+        className="outliner"
+        tabIndex="0"
+        onKeyDown={onKeyDown}
+        onKeyUp={onKeyUp}
+      >
+        {renderEntities()}
+      </div>
+    </div>
+  );
 }
+
+SceneGraph.propTypes = {
+  scene: PropTypes.object,
+  selectedEntity: PropTypes.object,
+  visible: PropTypes.bool
+};
+
+SceneGraph.defaultProps = {
+  selectedEntity: ''
+};
+
+export default SceneGraph;
 
 function filterEntity(entity, filter) {
   if (!filter) {

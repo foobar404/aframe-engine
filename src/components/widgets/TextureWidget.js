@@ -62,39 +62,15 @@ function insertOrGetImageAsset(src) {
   return id;
 }
 
-export default class TextureWidget extends React.Component {
-  static propTypes = {
-    id: PropTypes.string,
-    name: PropTypes.string.isRequired,
-    onChange: PropTypes.func,
-    value: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
-  };
+export default function TextureWidget({ id, name, onChange, value = '' }) {
+  const [currentValue, setCurrentValue] = React.useState(value || '');
+  const [valueType, setValueType] = React.useState(null);
+  const [url, setUrl] = React.useState(null);
+  const canvasRef = React.useRef();
 
-  static defaultProps = {
-    value: ''
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = { value: this.props.value || '' };
-    this.canvas = React.createRef();
-  }
-
-  componentDidMount() {
-    this.setValue(this.props.value || '');
-  }
-
-  componentDidUpdate(prevProps) {
-    // This will be triggered typically when the element is changed directly with
-    // element.setAttribute.
-    if (!Object.is(this.props.value, prevProps.value)) {
-      this.setValue(this.props.value);
-    }
-  }
-
-  setValue(value) {
-    var canvas = this.canvas.current;
-    var context = canvas.getContext('2d');
+  const setValue = React.useCallback((newValue) => {
+    const canvas = canvasRef.current;
+    const context = canvas.getContext('2d');
 
     function paintPreviewWithImage(image) {
       var filename = image.src.replace(/^.*[\\/]/, '');
@@ -130,29 +106,29 @@ export default class TextureWidget extends React.Component {
       return null;
     }
 
-    var url;
-    var isAssetHash = value[0] === '#';
-    var isAssetImg = value instanceof HTMLImageElement;
-    var isAssetVideo = value instanceof HTMLVideoElement;
-    var isAssetCanvas = value instanceof HTMLCanvasElement;
+    var textureUrl;
+    var isAssetHash = newValue[0] === '#';
+    var isAssetImg = newValue instanceof HTMLImageElement;
+    var isAssetVideo = newValue instanceof HTMLVideoElement;
+    var isAssetCanvas = newValue instanceof HTMLCanvasElement;
     var isAssetElement = isAssetImg || isAssetVideo || isAssetCanvas;
 
     if (isAssetCanvas) {
-      url = null;
+      textureUrl = null;
     } else if (isAssetImg || isAssetVideo) {
-      url = value.src;
+      textureUrl = newValue.src;
     } else if (isAssetHash) {
-      url = getUrlFromId(value);
+      textureUrl = getUrlFromId(newValue);
     } else {
-      url = AFRAME.utils.srcLoader.parseUrl(value);
+      textureUrl = AFRAME.utils.srcLoader.parseUrl(newValue);
     }
 
-    var texture = getTextureFromSrc(value);
-    var valueType = null;
-    valueType = isAssetElement || isAssetHash ? 'asset' : 'url';
+    var texture = getTextureFromSrc(newValue);
+    var currentValueType = null;
+    currentValueType = isAssetElement || isAssetHash ? 'asset' : 'url';
     if (!isAssetVideo && texture) {
       texture.then(paintPreview);
-    } else if (!isAssetVideo && url) {
+    } else if (!isAssetVideo && textureUrl) {
       // The image still didn't load
       var image = new Image();
       image.addEventListener(
@@ -162,86 +138,94 @@ export default class TextureWidget extends React.Component {
         },
         false
       );
-      image.src = url;
+      image.src = textureUrl;
     } else {
       context.clearRect(0, 0, canvas.width, canvas.height);
     }
 
-    this.setState({
-      value: isAssetElement ? '#' + value.id : value,
-      valueType: valueType,
-      url: url
-    });
-  }
+    setCurrentValue(isAssetElement ? '#' + newValue.id : newValue);
+    setValueType(currentValueType);
+    setUrl(textureUrl);
+  }, []);
 
-  notifyChanged = (value) => {
-    if (this.props.onChange) {
-      this.props.onChange(this.props.name, value);
+  React.useEffect(() => {
+    setValue(value || '');
+  }, [value, setValue]);
+
+  React.useEffect(() => {
+    // This will be triggered typically when the element is changed directly with
+    // element.setAttribute.
+    if (!Object.is(value, currentValue)) {
+      setValue(value);
     }
-    this.setState({ value: value });
-  };
+  }, [value, currentValue, setValue]);
 
-  onChange = (e) => {
-    var value = e.target.value;
-    this.setState({ value: value });
-    this.notifyChanged(value);
-  };
+  const notifyChanged = React.useCallback((newValue) => {
+    if (onChange) {
+      onChange(name, newValue);
+    }
+    setCurrentValue(newValue);
+  }, [onChange, name]);
 
-  removeMap = () => {
-    this.setValue('');
-    this.notifyChanged('');
-  };
+  const handleChange = React.useCallback((e) => {
+    const newValue = e.target.value;
+    setCurrentValue(newValue);
+    notifyChanged(newValue);
+  }, [notifyChanged]);
 
-  openDialog = () => {
-    Events.emit('opentexturesmodal', this.state.value, (image) => {
+  const removeMap = React.useCallback(() => {
+    setValue('');
+    notifyChanged('');
+  }, [setValue, notifyChanged]);
+
+  const openDialog = React.useCallback(() => {
+    Events.emit('opentexturesmodal', currentValue, (image) => {
       if (!image) {
         return;
       }
-      var value = image.value;
+      var newValue = image.value;
       if (image.type !== 'asset') {
         var assetId = insertOrGetImageAsset(image.src);
-        value = '#' + assetId;
+        newValue = '#' + assetId;
       }
 
-      if (this.props.onChange) {
-        this.props.onChange(this.props.name, value);
+      if (onChange) {
+        onChange(name, newValue);
       }
 
-      this.setValue(value);
+      setValue(newValue);
     });
-  };
+  }, [currentValue, onChange, name, setValue]);
 
-  render() {
-    let hint = '';
-    if (this.state.value) {
-      if (this.state.valueType === 'asset') {
-        hint = 'Asset ID: ' + this.state.value;
-        if (this.state.url !== null) {
-          hint += '\nURL: ' + this.state.url;
-        }
-      } else {
-        hint = 'URL: ' + this.state.value;
+  let hint = '';
+  if (currentValue) {
+    if (valueType === 'asset') {
+      hint = 'Asset ID: ' + currentValue;
+      if (url !== null) {
+        hint += '\nURL: ' + url;
       }
+    } else {
+      hint = 'URL: ' + currentValue;
     }
-
-    return (
-      <span className="texture">
-        <input
-          id={this.props.id}
-          className="map_value string"
-          type="text"
-          title={hint}
-          value={this.state.value}
-          onChange={this.onChange}
-        />
-        <canvas
-          ref={this.canvas}
-          width="32"
-          height="16"
-          title={hint}
-          onClick={this.openDialog}
-        />
-      </span>
-    );
   }
+
+  return (
+    <span className="texture">
+      <input
+        id={id}
+        className="map_value string"
+        type="text"
+        title={hint}
+        value={currentValue}
+        onChange={handleChange}
+      />
+      <canvas
+        ref={canvasRef}
+        width="32"
+        height="16"
+        title={hint}
+        onClick={openDialog}
+      />
+    </span>
+  );
 }

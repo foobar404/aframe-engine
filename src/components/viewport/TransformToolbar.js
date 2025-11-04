@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   faArrowsAlt,
   faRotateRight,
@@ -17,94 +17,82 @@ var TransformButtons = [
   }
 ];
 
-export default class TransformToolbar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedTransform: 'translate',
-      localSpace: false
-    };
-  }
+function TransformToolbar() {
+  const [selectedTransform, setSelectedTransform] = useState('translate');
+  const [localSpace, setLocalSpace] = useState(false);
 
-  onTransformModeChange = (mode) => {
-    this.setState({ selectedTransform: mode });
-  };
+  const onTransformModeChange = useCallback((mode) => {
+    setSelectedTransform(mode);
+  }, []);
 
-  onTransformSpaceChange = () => {
-    Events.emit(
-      'transformspacechanged',
-      this.state.localSpace ? 'world' : 'local'
-    );
-    this.setState({ localSpace: !this.state.localSpace });
-  };
+  const onTransformSpaceChange = useCallback(() => {
+    const newLocal = !localSpace;
+    setLocalSpace(newLocal);
+    Events.emit('transformspacechanged', newLocal ? 'local' : 'world');
+  }, [localSpace]);
 
-  componentDidMount() {
-    Events.on('transformmodechange', this.onTransformModeChange);
-    Events.on('transformspacechange', this.onTransformSpaceChange);
-  }
-
-  componentWillUnmount() {
-    Events.off('transformmodechange', this.onTransformModeChange);
-    Events.off('transformspacechange', this.onTransformSpaceChange);
-  }
-
-  changeTransformMode = (mode) => {
-    this.setState({ selectedTransform: mode });
+  const changeTransformMode = useCallback((mode) => {
+    setSelectedTransform(mode);
     Events.emit('transformmodechange', mode);
-  };
+  }, []);
 
-  onLocalChange = (e) => {
+  const onLocalChange = useCallback((e) => {
     const local = e.target.checked;
-    this.setState({ localSpace: local });
+    setLocalSpace(local);
     Events.emit('transformspacechanged', local ? 'local' : 'world');
+  }, []);
+
+  useEffect(() => {
+    Events.on('transformmodechange', onTransformModeChange);
+    Events.on('transformspacechange', onTransformSpaceChange);
+    return () => {
+      Events.off('transformmodechange', onTransformModeChange);
+      Events.off('transformspacechange', onTransformSpaceChange);
+    };
+  }, [onTransformModeChange, onTransformSpaceChange]);
+
+  const renderTransformButtons = () => {
+    return TransformButtons.map((option, i) => {
+      const selected = option.value === selectedTransform;
+      const classes = clsx({
+        button: true,
+        active: selected
+      });
+
+      return (
+        <a
+          title={option.value}
+          key={i}
+          onClick={() => changeTransformMode(option.value)}
+          className={classes}
+        >
+          {option.icon}
+        </a>
+      );
+    });
   };
 
-  renderTransformButtons = () => {
-    return TransformButtons.map(
-      function (option, i) {
-        var selected = option.value === this.state.selectedTransform;
-        var classes = clsx({
-          button: true,
-          active: selected
-        });
-
-        return (
-          <a
-            title={option.value}
-            key={i}
-            onClick={this.changeTransformMode.bind(this, option.value)}
-            className={classes}
-          >
-            {option.icon}
-          </a>
-        );
-      }.bind(this)
-    );
-  };
-
-  render() {
-    return (
-      <div id="transformToolbar" className="toolbarButtons">
-        {this.renderTransformButtons()}
-        <span className="local-transform">
-          <input
-            id="local"
-            type="checkbox"
-            title="Toggle between local and world space transforms"
-            checked={
-              this.state.localSpace || this.state.selectedTransform === 'scale'
-            }
-            disabled={this.state.selectedTransform === 'scale'}
-            onChange={this.onLocalChange}
-          />
-          <label
-            htmlFor="local"
-            title="Toggle between local and world space transforms"
-          >
-            local
-          </label>
-        </span>
-      </div>
-    );
-  }
+  return (
+    <div id="transformToolbar" className="toolbarButtons">
+      {renderTransformButtons()}
+      <span className="local-transform">
+        <input
+          id="local"
+          type="checkbox"
+          title="Toggle between local and world space transforms"
+          checked={localSpace || selectedTransform === 'scale'}
+          disabled={selectedTransform === 'scale'}
+          onChange={onLocalChange}
+        />
+        <label
+          htmlFor="local"
+          title="Toggle between local and world space transforms"
+        >
+          local
+        </label>
+      </span>
+    </div>
+  );
 }
+
+export default TransformToolbar;

@@ -1,40 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import EntityRepresentation from '../EntityRepresentation';
 import Events from '../../lib/Events';
 
-export default class ViewportHUD extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hoveredEntity: null
+function ViewportHUD() {
+  const [hoveredEntity, setHoveredEntity] = useState(null);
+
+  const onRaycasterMouseEnter = useCallback((el) => {
+    setHoveredEntity(el);
+  }, []);
+
+  const onRaycasterMouseLeave = useCallback(() => {
+    setHoveredEntity(null);
+  }, []);
+
+  useEffect(() => {
+    Events.on('raycastermouseenter', onRaycasterMouseEnter);
+    Events.on('raycastermouseleave', onRaycasterMouseLeave);
+    return () => {
+      Events.off('raycastermouseenter', onRaycasterMouseEnter);
+      Events.off('raycastermouseleave', onRaycasterMouseLeave);
     };
-  }
+  }, [onRaycasterMouseEnter, onRaycasterMouseLeave]);
 
-  onRaycasterMouseEnter = (el) => {
-    this.setState({ hoveredEntity: el });
-  };
-
-  onRaycasterMouseLeave = (el) => {
-    this.setState({ hoveredEntity: el });
-  };
-
-  componentDidMount() {
-    Events.on('raycastermouseenter', this.onRaycasterMouseEnter);
-    Events.on('raycastermouseleave', this.onRaycasterMouseLeave);
-  }
-
-  componentWillUnmount() {
-    Events.off('raycastermouseenter', this.onRaycasterMouseEnter);
-    Events.off('raycastermouseleave', this.onRaycasterMouseLeave);
-  }
-
-  render() {
-    return (
-      <div id="viewportHud">
-        <p>
-          <EntityRepresentation entity={this.state.hoveredEntity} />
-        </p>
-      </div>
-    );
-  }
+  return (
+    <div id="viewportHud">
+      <p>
+        <EntityRepresentation entity={hoveredEntity} />
+      </p>
+    </div>
+  );
 }
+
+export default ViewportHUD;

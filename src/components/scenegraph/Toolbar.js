@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  faPlus,
-  faPause,
-  faPlay,
-  faFloppyDisk,
-  faQuestion
-} from '@fortawesome/free-solid-svg-icons';
-import { AwesomeIcon } from '../AwesomeIcon';
+  FaPlus,
+  FaPause,
+  FaPlay,
+  FaSave,
+  FaQuestion,
+  FaDownload
+} from 'react-icons/fa';
 import Events from '../../lib/Events';
 import { saveBlob } from '../../lib/utils';
-import GLTFIcon from '../../../assets/gltf.svg';
 
 function filterHelpers(scene, visible) {
   scene.traverse((o) => {
@@ -42,16 +41,10 @@ function slugify(text) {
 /**
  * Tools and actions.
  */
-export default class Toolbar extends React.Component {
-  constructor(props) {
-    super(props);
+export default function Toolbar() {
+  const [isPlaying, setIsPlaying] = useState(false);
 
-    this.state = {
-      isPlaying: false
-    };
-  }
-
-  exportSceneToGLTF() {
+  const exportSceneToGLTF = () => {
     const sceneName = getSceneName(AFRAME.scenes[0]);
     const scene = AFRAME.scenes[0].object3D;
     filterHelpers(scene, false);
@@ -67,16 +60,16 @@ export default class Toolbar extends React.Component {
       },
       { binary: true }
     );
-  }
+  };
 
-  addEntity() {
+  const addEntity = () => {
     Events.emit('entitycreate', { element: 'a-entity', components: {} });
-  }
+  };
 
   /**
    * Try to write changes with aframe-inspector-watcher.
    */
-  writeChanges = () => {
+  const writeChanges = () => {
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'http://localhost:51234/save');
     xhr.onerror = () => {
@@ -88,69 +81,65 @@ export default class Toolbar extends React.Component {
     xhr.send(JSON.stringify(AFRAME.INSPECTOR.history.updates));
   };
 
-  toggleScenePlaying = () => {
-    if (this.state.isPlaying) {
+  const toggleScenePlaying = () => {
+    if (isPlaying) {
       AFRAME.scenes[0].pause();
-      this.setState({ isPlaying: false });
+      setIsPlaying(false);
       AFRAME.scenes[0].isPlaying = true;
       document.getElementById('aframeInspectorMouseCursor').play();
       return;
     }
     AFRAME.scenes[0].isPlaying = false;
     AFRAME.scenes[0].play();
-    this.setState({ isPlaying: true });
+    setIsPlaying(true);
   };
 
-  openHelpModal = () => {
+  const openHelpModal = () => {
     Events.emit('openhelpmodal');
   };
 
-  render() {
-    const watcherTitle = 'Write changes with aframe-watcher.';
-
-    return (
-      <div id="toolbar">
-        <div className="toolbarActions">
-          <a
-            className="button"
-            title="Add a new entity"
-            onClick={this.addEntity}
-          >
-            <AwesomeIcon icon={faPlus} />
+  return (
+    <div id="toolbar">
+      <div className="toolbarActions">
+        <a
+          className="button"
+          title="Add a new entity"
+          onClick={addEntity}
+        >
+          <FaPlus />
+        </a>
+        <a
+          id="playPauseScene"
+          className="button"
+          title={isPlaying ? 'Pause scene' : 'Resume scene'}
+          onClick={toggleScenePlaying}
+        >
+          {isPlaying ? (
+            <FaPause />
+          ) : (
+            <FaPlay />
+          )}
+        </a>
+        <a
+          className="gltfIcon"
+          title="Export to GLTF"
+          onClick={exportSceneToGLTF}
+        >
+          <FaDownload />
+        </a>
+        <a
+          className="button"
+          title="Write changes with aframe-watcher."
+          onClick={writeChanges}
+        >
+          <FaSave />
+        </a>
+        <div className="helpButtonContainer">
+          <a className="button" title="Help" onClick={openHelpModal}>
+            <FaQuestion />
           </a>
-          <a
-            id="playPauseScene"
-            className="button"
-            title={this.state.isPlaying ? 'Pause scene' : 'Resume scene'}
-            onClick={this.toggleScenePlaying}
-          >
-            {this.state.isPlaying ? (
-              <AwesomeIcon icon={faPause} />
-            ) : (
-              <AwesomeIcon icon={faPlay} />
-            )}
-          </a>
-          <a
-            className="gltfIcon"
-            title="Export to GLTF"
-            onClick={this.exportSceneToGLTF}
-          >
-            <img src={GLTFIcon} />
-          </a>
-          <a
-            className="button"
-            title={watcherTitle}
-            onClick={this.writeChanges}
-          >
-            <AwesomeIcon icon={faFloppyDisk} />
-          </a>
-          <div className="helpButtonContainer">
-            <a className="button" title="Help" onClick={this.openHelpModal}>
-              <AwesomeIcon icon={faQuestion} />
-            </a>
-          </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }

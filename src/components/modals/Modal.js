@@ -1,107 +1,103 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-export default class Modal extends React.Component {
-  static propTypes = {
-    id: PropTypes.string,
-    children: PropTypes.oneOfType([PropTypes.array, PropTypes.element])
-      .isRequired,
-    isOpen: PropTypes.bool,
-    extraCloseKeyCode: PropTypes.number,
-    closeOnClickOutside: PropTypes.bool,
-    onClose: PropTypes.func,
-    title: PropTypes.string
-  };
+function Modal({
+  id,
+  children,
+  isOpen: initialIsOpen,
+  extraCloseKeyCode,
+  closeOnClickOutside,
+  onClose,
+  title
+}) {
+  const [isOpen, setIsOpen] = useState(initialIsOpen);
+  const self = useRef();
 
-  static defaultProps = {
-    closeOnClickOutside: true
-  };
+  const close = useCallback(() => {
+    setIsOpen(false);
+    if (onClose) {
+      onClose();
+    }
+  }, [onClose]);
 
-  constructor(props) {
-    super(props);
-    this.state = { isOpen: this.props.isOpen };
-    this.self = React.createRef();
-  }
-
-  componentDidMount() {
-    document.addEventListener('keyup', this.handleGlobalKeydown);
-    document.addEventListener('mousedown', this.handleGlobalMousedown);
-  }
-
-  handleGlobalKeydown = (event) => {
+  const handleGlobalKeydown = useCallback((event) => {
     if (
-      this.state.isOpen &&
+      isOpen &&
       (event.keyCode === 27 ||
-        (this.props.extraCloseKeyCode &&
-          event.keyCode === this.props.extraCloseKeyCode))
+        (extraCloseKeyCode && event.keyCode === extraCloseKeyCode))
     ) {
-      this.close();
-
-      // Prevent closing the inspector
+      close();
       event.stopPropagation();
     }
-  };
+  }, [isOpen, extraCloseKeyCode, close]);
 
-  shouldClickDismiss = (event) => {
+  const shouldClickDismiss = useCallback((event) => {
     var target = event.target;
-    // This piece of code isolates targets which are fake clicked by things
-    // like file-drop handlers
     if (target.tagName === 'INPUT' && target.type === 'file') {
       return false;
     }
-    if (target === this.self.current || this.self.current.contains(target)) {
+    if (target === self.current || self.current.contains(target)) {
       return false;
     }
     return true;
-  };
+  }, []);
 
-  handleGlobalMousedown = (event) => {
+  const handleGlobalMousedown = useCallback((event) => {
     if (
-      this.props.closeOnClickOutside &&
-      this.state.isOpen &&
-      this.shouldClickDismiss(event)
+      closeOnClickOutside &&
+      isOpen &&
+      shouldClickDismiss(event)
     ) {
-      if (typeof this.props.onClose === 'function') {
-        this.props.onClose();
+      if (typeof onClose === 'function') {
+        onClose();
       }
     }
-  };
+  }, [closeOnClickOutside, isOpen, shouldClickDismiss, onClose]);
 
-  componentWillUnmount() {
-    document.removeEventListener('keyup', this.handleGlobalKeydown);
-    document.removeEventListener('mousedown', this.handleGlobalMousedown);
-  }
+  useEffect(() => {
+    document.addEventListener('keyup', handleGlobalKeydown);
+    document.addEventListener('mousedown', handleGlobalMousedown);
+    return () => {
+      document.removeEventListener('keyup', handleGlobalKeydown);
+      document.removeEventListener('mousedown', handleGlobalMousedown);
+    };
+  }, [handleGlobalKeydown, handleGlobalMousedown]);
 
-  static getDerivedStateFromProps(props, state) {
-    if (state.isOpen !== props.isOpen) {
-      return { isOpen: props.isOpen };
-    }
-    return null;
-  }
+  useEffect(() => {
+    setIsOpen(initialIsOpen);
+  }, [initialIsOpen]);
 
-  close = () => {
-    this.setState({ isOpen: false });
-    if (this.props.onClose) {
-      this.props.onClose();
-    }
-  };
-
-  render() {
-    return (
-      <div
-        id={this.props.id}
-        className={this.state.isOpen ? 'modal' : 'modal hide'}
-      >
-        <div className="modal-content" ref={this.self}>
-          <div className="modal-header">
-            <span className="close" onClick={this.close}>
-              ×
-            </span>
-            <h3>{this.props.title}</h3>
-          </div>
-          <div className="modal-body">{this.props.children}</div>
+  return (
+    <div
+      id={id}
+      className={isOpen ? 'modal' : 'modal hide'}
+    >
+      <div className="modal-content" ref={self}>
+        <div className="modal-header">
+          <span className="close" onClick={close}>
+            ×
+          </span>
+          <h3>{title}</h3>
         </div>
+        <div className="modal-body">{children}</div>
       </div>
-    );
-  }
+    </div>
+  );
 }
+
+Modal.propTypes = {
+  id: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.element])
+    .isRequired,
+  isOpen: PropTypes.bool,
+  extraCloseKeyCode: PropTypes.number,
+  closeOnClickOutside: PropTypes.bool,
+  onClose: PropTypes.func,
+  title: PropTypes.string
+};
+
+Modal.defaultProps = {
+  closeOnClickOutside: true
+};
+
+export default Modal;

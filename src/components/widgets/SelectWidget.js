@@ -1,83 +1,72 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
 
-export default class SelectWidget extends React.Component {
-  static propTypes = {
-    id: PropTypes.string,
-    isMulti: PropTypes.bool,
-    name: PropTypes.string.isRequired,
-    onChange: PropTypes.func,
-    options: PropTypes.array.isRequired,
-    value: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.string,
-      PropTypes.array
-    ]).isRequired
-  };
-
-  static defaultProps = {
-    isMulti: false
-  };
-
-  constructor(props) {
-    super(props);
-    if (this.props.isMulti) {
-      const value = this.props.value;
-      this.state = {
-        value: value.map((choice) => ({ value: choice, label: choice }))
-      };
+function SelectWidget({ id, isMulti = false, name, onChange, options, value }) {
+  const [currentValue, setCurrentValue] = useState(() => {
+    if (isMulti) {
+      return value.map((choice) => ({ value: choice, label: choice }));
     } else {
-      const value = this.props.value;
-      this.state = { value: { value: value, label: value } };
+      return { value: value, label: value };
     }
-  }
+  });
 
-  onChange = (value) => {
-    this.setState({ value: value }, () => {
-      if (this.props.onChange) {
-        this.props.onChange(
-          this.props.name,
-          this.props.isMulti ? value.map((option) => option.value) : value.value
-        );
+  useEffect(() => {
+    if (value !== (isMulti ? currentValue.map(v => v.value) : currentValue.value)) {
+      if (isMulti) {
+        setCurrentValue(value.map((choice) => ({ value: choice, label: choice })));
+      } else {
+        setCurrentValue({ value: value, label: value });
       }
-    });
+    }
+  }, [value, isMulti, currentValue]);
+
+  const handleChange = (newValue) => {
+    setCurrentValue(newValue);
+    if (onChange) {
+      onChange(
+        name,
+        isMulti ? newValue.map((option) => option.value) : newValue.value
+      );
+    }
   };
 
-  componentDidUpdate(prevProps) {
-    const props = this.props;
-    if (props.value !== prevProps.value) {
-      if (this.props.isMulti) {
-        this.setState({
-          value: props.value.map((choice) => ({ value: choice, label: choice }))
-        });
-      } else {
-        this.setState({
-          value: { value: props.value, label: props.value }
-        });
-      }
-    }
-  }
+  const selectOptions = options.map((optionValue) => {
+    return { value: optionValue, label: optionValue };
+  });
 
-  render() {
-    const options = this.props.options.map((value) => {
-      return { value: value, label: value };
-    });
-
-    return (
-      <Select
-        id={this.props.id}
-        className="select-widget"
-        classNamePrefix="select"
-        options={options}
-        isMulti={this.props.isMulti}
-        isClearable={false}
-        isSearchable
-        placeholder=""
-        value={this.state.value}
-        noOptionsMessage={() => 'No value found'}
-        onChange={this.onChange}
-      />
-    );
-  }
+  return (
+    <Select
+      id={id}
+      className="select-widget"
+      classNamePrefix="select"
+      options={selectOptions}
+      isMulti={isMulti}
+      isClearable={false}
+      isSearchable
+      placeholder=""
+      value={currentValue}
+      noOptionsMessage={() => 'No value found'}
+      onChange={handleChange}
+    />
+  );
 }
+
+SelectWidget.propTypes = {
+  id: PropTypes.string,
+  isMulti: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
+  options: PropTypes.array.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+    PropTypes.array
+  ]).isRequired
+};
+
+SelectWidget.defaultProps = {
+  isMulti: false
+};
+
+export default SelectWidget;

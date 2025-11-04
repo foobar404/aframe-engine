@@ -1,53 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import NumberWidget from './NumberWidget';
 import { areVectorsEqual } from '../../lib/utils';
 
-export default class Vec4Widget extends React.Component {
-  static propTypes = {
-    onChange: PropTypes.func,
-    value: PropTypes.object.isRequired
-  };
+function Vec4Widget({ onChange, value }) {
+  const [state, setState] = useState({
+    x: value.x,
+    y: value.y,
+    z: value.z,
+    w: value.w
+  });
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      x: props.value.x,
-      y: props.value.y,
-      z: props.value.z,
-      w: props.value.w
-    };
-  }
-
-  onChange = (name, value) => {
-    this.setState({ [name]: parseFloat(value.toFixed(5)) }, () => {
-      if (this.props.onChange) {
-        this.props.onChange(name, this.state);
+  const handleChange = useCallback((name, val) => {
+    const newValue = parseFloat(val.toFixed(5));
+    setState(prevState => {
+      const newState = { ...prevState, [name]: newValue };
+      if (onChange) {
+        onChange(name, newState);
       }
+      return newState;
     });
-  };
+  }, [onChange]);
 
-  componentDidUpdate() {
-    const props = this.props;
-    if (!areVectorsEqual(props.value, this.state)) {
-      this.setState({
-        x: props.value.x,
-        y: props.value.y,
-        z: props.value.z,
-        w: props.value.w
+  useEffect(() => {
+    if (!areVectorsEqual(value, state)) {
+      setState({
+        x: value.x,
+        y: value.y,
+        z: value.z,
+        w: value.w
       });
     }
-  }
+  }, [value, state]);
 
-  render() {
-    return (
-      <div className="vec4">
-        <NumberWidget name="x" value={this.state.x} onChange={this.onChange} />
-        <NumberWidget name="y" value={this.state.y} onChange={this.onChange} />
-        <NumberWidget name="z" value={this.state.z} onChange={this.onChange} />
-        <NumberWidget name="w" value={this.state.w} onChange={this.onChange} />
-      </div>
-    );
-  }
+  return (
+    <div className="vec4">
+      <NumberWidget name="x" value={state.x} onChange={handleChange} />
+      <NumberWidget name="y" value={state.y} onChange={handleChange} />
+      <NumberWidget name="z" value={state.z} onChange={handleChange} />
+      <NumberWidget name="w" value={state.w} onChange={handleChange} />
+    </div>
+  );
 }
+
+Vec4Widget.propTypes = {
+  onChange: PropTypes.func,
+  value: PropTypes.object.isRequired
+};
+
+export default Vec4Widget;

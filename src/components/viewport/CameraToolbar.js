@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Select from 'react-select';
 import Events from '../../lib/Events';
 
@@ -51,51 +51,42 @@ function getOption(value) {
   return options.filter((opt) => opt.value === value)[0];
 }
 
-export default class CameraToolbar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedCamera: 'perspective'
-    };
-    this.justChangedCamera = false;
-  }
+function CameraToolbar() {
+  const [selectedCamera, setSelectedCamera] = useState('perspective');
+  const justChangedCamera = useRef(false);
 
-  onCameraToggle = (data) => {
-    if (this.justChangedCamera) {
-      // Prevent recursion.
-      this.justChangedCamera = false;
+  const onCameraToggle = useCallback((data) => {
+    if (justChangedCamera.current) {
+      justChangedCamera.current = false;
       return;
     }
-    this.setState({ selectedCamera: data.value });
-  };
+    setSelectedCamera(data.value);
+  }, []);
 
-  componentDidMount() {
-    Events.on('cameratoggle', this.onCameraToggle);
-  }
-
-  componentWillUnmount() {
-    Events.off('cameratoggle', this.onCameraToggle);
-  }
-
-  onChange(option) {
-    this.justChangedCamera = true;
-    this.setState({ selectedCamera: option.value });
+  const onChange = useCallback((option) => {
+    justChangedCamera.current = true;
+    setSelectedCamera(option.value);
     Events.emit(option.event, option.payload);
-  }
+  }, []);
 
-  render() {
-    return (
-      <div id="cameraToolbar">
-        <Select
-          id="cameraSelect"
-          classNamePrefix="select"
-          options={options}
-          isClearable={false}
-          isSearchable={false}
-          value={getOption(this.state.selectedCamera)}
-          onChange={this.onChange.bind(this)}
-        />
-      </div>
-    );
-  }
+  useEffect(() => {
+    Events.on('cameratoggle', onCameraToggle);
+    return () => Events.off('cameratoggle', onCameraToggle);
+  }, [onCameraToggle]);
+
+  return (
+    <div id="cameraToolbar">
+      <Select
+        id="cameraSelect"
+        classNamePrefix="select"
+        options={options}
+        isClearable={false}
+        isSearchable={false}
+        value={getOption(selectedCamera)}
+        onChange={onChange}
+      />
+    </div>
+  );
 }
+
+export default CameraToolbar;

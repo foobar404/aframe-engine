@@ -1,89 +1,78 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import * as THREE from 'three';
 
-export default class ColorWidget extends React.Component {
-  static propTypes = {
-    id: PropTypes.string,
-    name: PropTypes.string.isRequired,
-    onChange: PropTypes.func,
-    value: PropTypes.string
-  };
+function ColorWidget({ id, name, onChange, value = '#ffffff' }) {
+  const color = new THREE.Color();
+  const [currentValue, setCurrentValue] = useState(value);
+  const [pickerValue, setPickerValue] = useState(() => '#' + color.set(value).getHexString());
 
-  static defaultProps = {
-    value: '#ffffff'
-  };
+  const setValue = (newValue) => {
+    const newPickerValue = '#' + color.set(newValue).getHexString();
 
-  constructor(props) {
-    super(props);
+    setCurrentValue(newValue);
+    setPickerValue(newPickerValue);
 
-    var value = this.props.value;
-    this.color = new THREE.Color();
-
-    this.state = {
-      value: value,
-      pickerValue: this.getHexString(value)
-    };
-  }
-
-  setValue(value) {
-    var pickerValue = this.getHexString(value);
-
-    this.setState({
-      value: value,
-      pickerValue: pickerValue
-    });
-
-    if (this.props.onChange) {
-      this.props.onChange(this.props.name, value);
+    if (onChange) {
+      onChange(name, newValue);
     }
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.value !== prevProps.value) {
-      this.setState({
-        value: this.props.value,
-        pickerValue: this.getHexString(this.props.value)
-      });
-    }
-  }
-
-  getHexString(value) {
-    return '#' + this.color.set(value).getHexString();
-  }
-
-  onChange = (e) => {
-    this.setValue(e.target.value);
   };
 
-  onKeyUp = (e) => {
+  useEffect(() => {
+    if (value !== currentValue) {
+      setCurrentValue(value);
+      setPickerValue('#' + color.set(value).getHexString());
+    }
+  }, [value, currentValue, color]);
+
+  const getHexString = (val) => {
+    return '#' + color.set(val).getHexString();
+  };
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  const handleKeyUp = (e) => {
     e.stopPropagation();
     // if (e.keyCode === 13)
-    this.setValue(e.target.value);
+    setValue(e.target.value);
   };
 
-  onChangeText = (e) => {
-    this.setState({ value: e.target.value });
+  const handleChangeText = (e) => {
+    setCurrentValue(e.target.value);
   };
 
-  render() {
-    return (
-      <span className="color-widget">
-        <input
-          type="color"
-          className="color"
-          value={this.state.pickerValue}
-          title={this.state.value}
-          onChange={this.onChange}
-        />
-        <input
-          id={this.props.id}
-          type="text"
-          className="color_value"
-          value={this.state.value}
-          onKeyUp={this.onKeyUp}
-          onChange={this.onChangeText}
-        />
-      </span>
-    );
-  }
+  return (
+    <span className="color-widget">
+      <input
+        type="color"
+        className="color"
+        value={pickerValue}
+        title={currentValue}
+        onChange={handleChange}
+      />
+      <input
+        id={id}
+        type="text"
+        className="color_value"
+        value={currentValue}
+        onKeyUp={handleKeyUp}
+        onChange={handleChangeText}
+      />
+    </span>
+  );
 }
+
+ColorWidget.propTypes = {
+  id: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
+  value: PropTypes.string
+};
+
+ColorWidget.defaultProps = {
+  value: '#ffffff'
+};
+
+export default ColorWidget;

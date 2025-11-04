@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import * as THREE from 'three';
 import TransformControls from './TransformControls.js';
 import EditorControls from './EditorControls.js';
 
@@ -42,7 +43,7 @@ export function Viewport(inspector) {
   }
 
   const camera = inspector.camera;
-  const transformControls = new THREE.TransformControls(
+  const transformControls = new TransformControls(
     camera,
     inspector.container
   );
@@ -107,7 +108,7 @@ export function Viewport(inspector) {
   });
 
   // Controls need to be added *after* main logic.
-  const controls = new THREE.EditorControls(camera, inspector.container);
+  const controls = new EditorControls(camera, inspector.container);
   controls.center.set(0, 1.6, 0);
   controls.rotationSpeed = 0.0035;
   controls.zoomSpeed = 0.05;

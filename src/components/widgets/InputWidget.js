@@ -1,42 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-export default class InputWidget extends React.Component {
-  static propTypes = {
-    id: PropTypes.string,
-    name: PropTypes.string.isRequired,
-    onChange: PropTypes.func,
-    value: PropTypes.any
-  };
+function InputWidget({ id, name, onChange, value }) {
+  const [currentValue, setCurrentValue] = useState(value || '');
 
-  constructor(props) {
-    super(props);
-    this.state = { value: this.props.value || '' };
-  }
+  useEffect(() => {
+    if (value !== currentValue) {
+      setCurrentValue(value || '');
+    }
+  }, [value, currentValue]);
 
-  onChange = (e) => {
-    var value = e.target.value;
-    this.setState({ value: value });
-    if (this.props.onChange) {
-      this.props.onChange(this.props.name, value);
+  const handleChange = (e) => {
+    const newValue = e.target.value;
+    setCurrentValue(newValue);
+    if (onChange) {
+      onChange(name, newValue);
     }
   };
 
-  componentDidUpdate(prevProps) {
-    if (this.props.value !== prevProps.value) {
-      this.setState({ value: this.props.value || '' });
-    }
-  }
-
-  render() {
-    return (
-      <input
-        id={this.props.id}
-        type="text"
-        className="string"
-        value={this.state.value}
-        onChange={this.onChange}
-      />
-    );
-  }
+  return (
+    <input
+      id={id}
+      type="text"
+      className="string"
+      value={currentValue}
+      onChange={handleChange}
+    />
+  );
 }
+
+InputWidget.propTypes = {
+  id: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
+  value: PropTypes.any
+};
+
+export default InputWidget;

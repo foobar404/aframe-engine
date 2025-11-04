@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import AddComponent from './AddComponent';
 import Component from './Component';
@@ -6,36 +6,30 @@ import CommonComponents from './CommonComponents';
 import DEFAULT_COMPONENTS from './DefaultComponents';
 import Events from '../../lib/Events';
 
-export default class ComponentsContainer extends React.Component {
-  static propTypes = {
-    entity: PropTypes.object
-  };
+function ComponentsContainer({ entity }) {
+  const [updateKey, setUpdateKey] = useState(0);
 
-  onEntityUpdate = (detail) => {
-    if (detail.entity !== this.props.entity) {
+  const onEntityUpdate = useCallback((detail) => {
+    if (detail.entity !== entity) {
       return;
     }
     if (detail.component === 'mixin') {
-      this.forceUpdate();
+      setUpdateKey(prev => prev + 1);
     }
-  };
+  }, [entity]);
 
-  componentDidMount() {
-    Events.on('entityupdate', this.onEntityUpdate);
-  }
+  useEffect(() => {
+    Events.on('entityupdate', onEntityUpdate);
+    return () => Events.off('entityupdate', onEntityUpdate);
+  }, [onEntityUpdate]);
 
-  componentWillUnmount() {
-    Events.off('entityupdate', this.onEntityUpdate);
-  }
-
-  render() {
-    const entity = this.props.entity;
+  const renderedComponents = useMemo(() => {
     const components = entity ? entity.components : {};
     const definedComponents = Object.keys(components).filter(function (key) {
       return DEFAULT_COMPONENTS.indexOf(key) === -1;
     });
 
-    const renderedComponents = definedComponents.sort().map(function (key) {
+    return definedComponents.sort().map(function (key) {
       return (
         <Component
           isCollapsed={definedComponents.length > 2}
@@ -46,13 +40,19 @@ export default class ComponentsContainer extends React.Component {
         />
       );
     });
+  }, [entity, updateKey]);
 
-    return (
-      <div className="components">
-        <CommonComponents entity={entity} />
-        <AddComponent entity={entity} />
-        {renderedComponents}
-      </div>
-    );
-  }
+  return (
+    <div className="components">
+      <CommonComponents entity={entity} />
+      <AddComponent entity={entity} />
+      {renderedComponents}
+    </div>
+  );
 }
+
+ComponentsContainer.propTypes = {
+  entity: PropTypes.object
+};
+
+export default ComponentsContainer;

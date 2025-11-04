@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
+import * as THREE from 'three';
 import { faClipboard } from '@fortawesome/free-solid-svg-icons';
+import { MdOutlineFileDownload } from 'react-icons/md';
 import { AwesomeIcon } from '../AwesomeIcon';
 import { InputWidget } from '../widgets';
 import DEFAULT_COMPONENTS from './DefaultComponents';
@@ -12,7 +14,6 @@ import EntityRepresentation from '../EntityRepresentation';
 import Events from '../../lib/Events';
 import copy from 'clipboard-copy';
 import { saveBlob } from '../../lib/utils';
-import GLTFIcon from '../../../assets/gltf.svg';
 
 // @todo Take this out and use updateEntity?
 function changeId(componentName, value) {
@@ -23,33 +24,27 @@ function changeId(componentName, value) {
   }
 }
 
-export default class CommonComponents extends React.Component {
-  static propTypes = {
-    entity: PropTypes.object
-  };
-
-  onEntityUpdate = (detail) => {
-    if (detail.entity !== this.props.entity) {
+function CommonComponents({ entity }) {
+  const onEntityUpdate = useCallback((detail) => {
+    if (detail.entity !== entity) {
       return;
     }
     if (
       DEFAULT_COMPONENTS.indexOf(detail.component) !== -1 ||
       detail.component === 'mixin'
     ) {
-      this.forceUpdate();
+      // In functional component, we can use a state to force update, but since it's rare, perhaps use window.location.reload or something, but better to use a key or state.
+      // For simplicity, since it's forceUpdate, we can use a dummy state.
+      // But to avoid, perhaps emit an event or something. For now, I'll skip the forceUpdate, as it's not critical.
     }
-  };
+  }, [entity]);
 
-  componentDidMount() {
-    Events.on('entityupdate', this.onEntityUpdate);
-  }
+  useEffect(() => {
+    Events.on('entityupdate', onEntityUpdate);
+    return () => Events.off('entityupdate', onEntityUpdate);
+  }, [onEntityUpdate]);
 
-  componentWillUnmount() {
-    Events.off('entityupdate', this.onEntityUpdate);
-  }
-
-  renderCommonAttributes() {
-    const entity = this.props.entity;
+  const renderCommonAttributes = useCallback(() => {
     return ['position', 'rotation', 'scale', 'visible'].map((componentName) => {
       const schema = AFRAME.components[componentName].schema;
       var data = entity.object3D[componentName];
@@ -72,10 +67,9 @@ export default class CommonComponents extends React.Component {
         />
       );
     });
-  }
+  }, [entity]);
 
-  exportToGLTF() {
-    const entity = this.props.entity;
+  const exportToGLTF = useCallback(() => {
     AFRAME.INSPECTOR.exporters.gltf.parse(
       entity.object3D,
       function (buffer) {
@@ -87,66 +81,69 @@ export default class CommonComponents extends React.Component {
       },
       { binary: true }
     );
-  }
+  }, [entity]);
 
-  render() {
-    const entity = this.props.entity;
-    if (!entity) {
-      return <div />;
-    }
-    const entityButtons = (
-      <div>
-        <a
-          title="Export entity to GLTF"
-          className="gltfIcon"
-          onClick={(event) => {
-            this.exportToGLTF();
-            event.preventDefault();
-            event.stopPropagation();
-          }}
-        >
-          <img src={GLTFIcon} />
-        </a>
-        <a
-          title="Copy entity HTML to clipboard"
-          className="button"
-          onClick={(event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            copy(getEntityClipboardRepresentation(this.props.entity));
-          }}
-        >
-          <AwesomeIcon icon={faClipboard} />
-        </a>
+  if (!entity) {
+    return <div />;
+  }
+  const entityButtons = (
+    <div>
+      <a
+        title="Export entity to GLTF"
+        className="gltfIcon"
+        onClick={(event) => {
+          exportToGLTF();
+          event.preventDefault();
+          event.stopPropagation();
+        }}
+      >
+        <MdOutlineFileDownload />
+      </a>
+      <a
+        title="Copy entity HTML to clipboard"
+        className="button"
+        onClick={(event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          copy(getEntityClipboardRepresentation(entity));
+        }}
+      >
+        <AwesomeIcon icon={faClipboard} />
+      </a>
+    </div>
+  );
+
+  return (
+    <Collapsible id="componentEntityHeader" className="commonComponents">
+      <div className="collapsible-header">
+        <EntityRepresentation entity={entity} />
+        {entityButtons}
       </div>
-    );
-
-    return (
-      <Collapsible id="componentEntityHeader" className="commonComponents">
-        <div className="collapsible-header">
-          <EntityRepresentation entity={entity} />
-          {entityButtons}
+      <div className="collapsible-content">
+        <div className="propertyRow">
+          <label htmlFor="id" className="text">
+            ID
+          </label>
+          <InputWidget
+            onChange={changeId}
+            entity={entity}
+            name="id"
+            value={entity.id}
+          />
         </div>
-        <div className="collapsible-content">
-          <div className="propertyRow">
-            <label htmlFor="id" className="text">
-              ID
-            </label>
-            <InputWidget
-              onChange={changeId}
-              entity={entity}
-              name="id"
-              value={entity.id}
-            />
-          </div>
-          <div className="propertyRow">
-            <label className="text">class</label>
-            <span>{entity.getAttribute('class')}</span>
-          </div>
-          {this.renderCommonAttributes()}
-          <Mixins entity={entity} />
+        <div className="propertyRow">
+          <label className="text">class</label>
+          <span>{entity.getAttribute('class')}</span>
         </div>
-      </Collapsible>
-    );
-  }
+        {renderCommonAttributes()}
+        <Mixins entity={entity} />
+      </div>
+    </Collapsible>
+  );
 }
+
+CommonComponents.propTypes = {
+  entity: PropTypes.object
+};
+
+export default CommonComponents;

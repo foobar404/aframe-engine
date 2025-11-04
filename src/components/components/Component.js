@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { faClipboard, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { AwesomeIcon } from '../AwesomeIcon';
@@ -14,71 +14,55 @@ const isSingleProperty = AFRAME.schema.isSingleProperty;
 /**
  * Single component.
  */
-export default class Component extends React.Component {
-  static propTypes = {
-    component: PropTypes.any,
-    entity: PropTypes.object,
-    isCollapsed: PropTypes.bool,
-    name: PropTypes.string
-  };
+function Component({ component, entity, isCollapsed, name }) {
+  const [currentEntity, setCurrentEntity] = useState(entity);
+  const [currentName, setCurrentName] = useState(name);
+  const [updateKey, setUpdateKey] = useState(0);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      entity: this.props.entity,
-      name: this.props.name
-    };
-  }
-
-  onEntityUpdate = (detail) => {
-    if (detail.entity !== this.props.entity) {
+  const onEntityUpdate = useCallback((detail) => {
+    if (detail.entity !== entity) {
       return;
     }
-    if (detail.component === this.props.name) {
-      this.forceUpdate();
+    if (detail.component === name) {
+      setUpdateKey(prev => prev + 1);
     }
-  };
+  }, [entity, name]);
 
-  componentDidMount() {
-    Events.on('entityupdate', this.onEntityUpdate);
-  }
+  useEffect(() => {
+    Events.on('entityupdate', onEntityUpdate);
+    return () => Events.off('entityupdate', onEntityUpdate);
+  }, [onEntityUpdate]);
 
-  componentWillUnmount() {
-    Events.off('entityupdate', this.onEntityUpdate);
-  }
+  useEffect(() => {
+    setCurrentEntity(entity);
+  }, [entity]);
 
-  static getDerivedStateFromProps(props, state) {
-    if (state.entity !== props.entity) {
-      return { entity: props.entity };
-    }
-    if (state.name !== props.name) {
-      return { name: props.name };
-    }
-    return null;
-  }
+  useEffect(() => {
+    setCurrentName(name);
+  }, [name]);
 
-  removeComponent = (event) => {
-    var componentName = this.props.name;
+  const removeComponent = useCallback((event) => {
+    var componentName = name;
     event.stopPropagation();
     if (
       confirm('Do you really want to remove component `' + componentName + '`?')
     ) {
-      this.props.entity.removeAttribute(componentName);
+      entity.removeAttribute(componentName);
       Events.emit('componentremove', {
-        entity: this.props.entity,
+        entity: entity,
         component: componentName
       });
     }
-  };
+  }, [name, entity]);
 
   /**
    * Render propert(ies) of the component.
    */
-  renderPropertyRows = () => {
-    const componentData = this.props.component;
+  const renderPropertyRows = useCallback(() => {
+    const componentData = component;
 
     if (isSingleProperty(componentData.schema)) {
-      const componentName = this.props.name;
+      const componentName = name;
       const schema = AFRAME.components[componentName.split('__')[0]].schema;
       return (
         <PropertyRow
@@ -88,7 +72,7 @@ export default class Component extends React.Component {
           data={componentData.data}
           componentname={componentName}
           isSingle={true}
-          entity={this.props.entity}
+          entity={entity}
         />
       );
     }
@@ -102,50 +86,55 @@ export default class Component extends React.Component {
           name={propertyName}
           schema={componentData.schema[propertyName]}
           data={componentData.data[propertyName]}
-          componentname={this.props.name}
+          componentname={name}
           isSingle={false}
-          entity={this.props.entity}
+          entity={entity}
         />
       ));
-  };
+  }, [component, name, entity]);
 
-  render() {
-    const componentName = this.props.name;
-
-    return (
-      <Collapsible collapsed={this.props.isCollapsed}>
-        <div className="componentHeader collapsible-header">
-          <span className="componentTitle" title={componentName}>
-            <span>{componentName}</span>
-          </span>
-          <div className="componentHeaderActions">
-            <a
-              title="Copy to clipboard"
-              className="button"
-              onClick={(event) => {
-                event.preventDefault();
-                event.stopPropagation();
-                copy(
-                  getComponentClipboardRepresentation(
-                    this.state.entity,
-                    componentName.toLowerCase()
-                  )
-                );
-              }}
-            >
-              <AwesomeIcon icon={faClipboard} />
-            </a>
-            <a
-              title="Remove component"
-              className="button"
-              onClick={this.removeComponent}
-            >
-              <AwesomeIcon icon={faTrashAlt} />
-            </a>
-          </div>
+  return (
+    <Collapsible collapsed={isCollapsed} key={updateKey}>
+      <div className="componentHeader collapsible-header">
+        <span className="componentTitle" title={name}>
+          <span>{name}</span>
+        </span>
+        <div className="componentHeaderActions">
+          <a
+            title="Copy to clipboard"
+            className="button"
+            onClick={(event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              copy(
+                getComponentClipboardRepresentation(
+                  currentEntity,
+                  name.toLowerCase()
+                )
+              );
+            }}
+          >
+            <AwesomeIcon icon={faClipboard} />
+          </a>
+          <a
+            title="Remove component"
+            className="button"
+            onClick={removeComponent}
+          >
+            <AwesomeIcon icon={faTrashAlt} />
+          </a>
         </div>
-        <div className="collapsible-content">{this.renderPropertyRows()}</div>
-      </Collapsible>
-    );
-  }
+      </div>
+      <div className="collapsible-content">{renderPropertyRows()}</div>
+    </Collapsible>
+  );
 }
+
+Component.propTypes = {
+  component: PropTypes.any,
+  entity: PropTypes.object,
+  isCollapsed: PropTypes.bool,
+  name: PropTypes.string
+};
+
+export default Component;

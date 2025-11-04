@@ -3,6 +3,10 @@
  * @author arodic / https://github.com/arodic
  */
 
+import * as THREE from "three";
+
+let TransformControlsExport;
+
 (function() {
   'use strict';
 
@@ -65,7 +69,7 @@
     transparent: false
   });
 
-  THREE.TransformGizmo = class TransformGizmo extends THREE.Object3D {
+  class TransformGizmo extends THREE.Object3D {
     init() {
       this.handles = new THREE.Object3D();
       this.pickers = new THREE.Object3D();
@@ -177,7 +181,7 @@
     }
   };
 
-  THREE.TransformGizmoTranslate = class TransformGizmoTranslate extends THREE.TransformGizmo {
+  class TransformGizmoTranslate extends TransformGizmo {
     constructor() {
       super();
 
@@ -400,7 +404,7 @@
     }
   };
 
-  THREE.TransformGizmoRotate = class TransformGizmoRotate extends THREE.TransformGizmo {
+  class TransformGizmoRotate extends TransformGizmo {
     constructor() {
       super();
 
@@ -599,7 +603,7 @@
     }
   };
 
-  THREE.TransformGizmoScale = class TransformGizmoScale extends THREE.TransformGizmo {
+  class TransformGizmoScale extends TransformGizmo {
     constructor() {
       super();
 
@@ -752,7 +756,7 @@
     }
   };
 
-  THREE.TransformControls = class TransformControls extends THREE.Object3D {
+  class TransformControls extends THREE.Object3D {
     constructor(_camera, domElement) {
       // TODO: Make non-uniform scale and rotate play nice in hierarchies
       // TODO: ADD RXYZ contol
@@ -775,9 +779,9 @@
       var _mode = 'translate';
       var _dragging = false;
       var _gizmo = {
-        translate: new THREE.TransformGizmoTranslate(),
-        rotate: new THREE.TransformGizmoRotate(),
-        scale: new THREE.TransformGizmoScale()
+        translate: new TransformGizmoTranslate(),
+        rotate: new TransformGizmoRotate(),
+        scale: new TransformGizmoScale()
       };
 
       for (var type in _gizmo) {
@@ -1362,4 +1366,20 @@
       }
     }
   };
+
+  // Attach to THREE for backward compatibility (if extensible)
+  try {
+    THREE.TransformControls = TransformControls;
+    THREE.TransformGizmo = TransformGizmo;
+    THREE.TransformGizmoTranslate = TransformGizmoTranslate;
+    THREE.TransformGizmoRotate = TransformGizmoRotate;
+    THREE.TransformGizmoScale = TransformGizmoScale;
+  } catch (e) {
+    // THREE is not extensible in some environments
+  }
+  
+  // Store for export
+  TransformControlsExport = TransformControls;
 })();
+
+export default TransformControlsExport;

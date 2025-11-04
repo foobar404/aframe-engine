@@ -1,57 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-export default class Collapsible extends React.Component {
-  static propTypes = {
-    className: PropTypes.string,
-    collapsed: PropTypes.bool,
-    children: PropTypes.oneOfType([PropTypes.array, PropTypes.element])
-      .isRequired,
-    id: PropTypes.string
-  };
+function Collapsible({ className, collapsed = false, children, id }) {
+  const [isCollapsed, setIsCollapsed] = useState(collapsed);
 
-  static defaultProps = {
-    collapsed: false
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      collapsed: this.props.collapsed
-    };
-  }
-
-  toggleVisibility = (event) => {
+  const toggleVisibility = (event) => {
     // Don't collapse if we click on actions like clipboard
     if (event.target.nodeName === 'A') return;
-    this.setState({ collapsed: !this.state.collapsed });
+    setIsCollapsed(!isCollapsed);
   };
 
-  render() {
-    const rootClassNames = {
-      collapsible: true,
-      component: true,
-      collapsed: this.state.collapsed
-    };
-    if (this.props.className) {
-      rootClassNames[this.props.className] = true;
-    }
-    const rootClasses = clsx(rootClassNames);
-
-    const contentClasses = clsx({
-      content: true,
-      hide: this.state.collapsed
-    });
-
-    return (
-      <div id={this.props.id} className={rootClasses}>
-        <div className="static" onClick={this.toggleVisibility}>
-          <div className="collapse-button" />
-          {this.props.children[0]}
-        </div>
-        <div className={contentClasses}>{this.props.children[1]}</div>
-      </div>
-    );
+  const rootClassNames = {
+    collapsible: true,
+    component: true,
+    collapsed: isCollapsed
+  };
+  if (className) {
+    rootClassNames[className] = true;
   }
+  const rootClasses = clsx(rootClassNames);
+
+  const contentClasses = clsx({
+    content: true,
+    hide: isCollapsed
+  });
+
+  return (
+    <div id={id} className={rootClasses}>
+      <div className="static" onClick={toggleVisibility}>
+        <div className="collapse-button" />
+        {children[0]}
+      </div>
+      <div className={contentClasses}>{children[1]}</div>
+    </div>
+  );
 }
+
+Collapsible.propTypes = {
+  className: PropTypes.string,
+  collapsed: PropTypes.bool,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.element])
+    .isRequired,
+  id: PropTypes.string
+};
+
+Collapsible.defaultProps = {
+  collapsed: false
+};
+
+export default Collapsible;

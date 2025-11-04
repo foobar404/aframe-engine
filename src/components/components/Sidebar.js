@@ -1,49 +1,48 @@
-import React from 'react';
+import React, { useEffect, useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import ComponentsContainer from './ComponentsContainer';
 import Events from '../../lib/Events';
 
-export default class Sidebar extends React.Component {
-  static propTypes = {
-    entity: PropTypes.object,
-    visible: PropTypes.bool
-  };
+function Sidebar({ entity, visible }) {
+  const [updateKey, setUpdateKey] = useState(0);
 
-  onComponentRemove = (detail) => {
-    if (detail.entity !== this.props.entity) {
+  const onComponentRemove = useCallback((detail) => {
+    if (detail.entity !== entity) {
       return;
     }
-    this.forceUpdate();
-  };
+    setUpdateKey(prev => prev + 1);
+  }, [entity]);
 
-  onComponentAdd = (detail) => {
-    if (detail.entity !== this.props.entity) {
+  const onComponentAdd = useCallback((detail) => {
+    if (detail.entity !== entity) {
       return;
     }
-    this.forceUpdate();
-  };
+    setUpdateKey(prev => prev + 1);
+  }, [entity]);
 
-  componentDidMount() {
-    Events.on('componentremove', this.onComponentRemove);
-    Events.on('componentadd', this.onComponentAdd);
-  }
+  useEffect(() => {
+    Events.on('componentremove', onComponentRemove);
+    Events.on('componentadd', onComponentAdd);
+    return () => {
+      Events.off('componentremove', onComponentRemove);
+      Events.off('componentadd', onComponentAdd);
+    };
+  }, [onComponentRemove, onComponentAdd]);
 
-  componentWillUnmount() {
-    Events.off('componentremove', this.onComponentRemove);
-    Events.off('componentadd', this.onComponentAdd);
-  }
-
-  render() {
-    const entity = this.props.entity;
-    const visible = this.props.visible;
-    if (entity && visible) {
-      return (
-        <div id="sidebar">
-          <ComponentsContainer entity={entity} />
-        </div>
-      );
-    } else {
-      return <div />;
-    }
+  if (entity && visible) {
+    return (
+      <div id="sidebar">
+        <ComponentsContainer entity={entity} />
+      </div>
+    );
+  } else {
+    return <div />;
   }
 }
+
+Sidebar.propTypes = {
+  entity: PropTypes.object,
+  visible: PropTypes.bool
+};
+
+export default Sidebar;

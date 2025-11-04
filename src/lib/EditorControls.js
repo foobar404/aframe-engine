@@ -5,7 +5,9 @@
  * @author WestLangley / http://github.com/WestLangley
  */
 
-THREE.EditorControls = function (_object, domElement) {
+import * as THREE from 'three';
+
+const EditorControls = function (_object, domElement) {
   domElement = domElement !== undefined ? domElement : document;
 
   // API
@@ -332,5 +334,14 @@ THREE.EditorControls = function (_object, domElement) {
   domElement.addEventListener('touchmove', touchMove, false);
 };
 
-THREE.EditorControls.prototype = Object.create(THREE.EventDispatcher.prototype);
-THREE.EditorControls.prototype.constructor = THREE.EditorControls;
+EditorControls.prototype = Object.create(THREE.EventDispatcher.prototype);
+EditorControls.prototype.constructor = EditorControls;
+
+// Attach to THREE for backward compatibility (if extensible)
+try {
+  THREE.EditorControls = EditorControls;
+} catch (e) {
+  // THREE is not extensible in some environments
+}
+
+export default EditorControls;

@@ -1,49 +1,51 @@
+import React from 'react';
 import { createRoot } from 'react-dom/client';
+import { GLTFExporter } from 'three/addons/exporters/GLTFExporter';
 import Events from './lib/Events';
 import { Viewport } from './lib/viewport';
 import { AssetsLoader } from './lib/assetsLoader';
 import { Shortcuts } from './lib/shortcuts';
-
-import Main from './components/Main';
 import { initCameras } from './lib/cameras';
 import { createEntity } from './lib/entity';
 import { Config } from './lib/config';
-import { GLTFExporter } from 'three/addons/exporters/GLTFExporter';
+import * as history from './lib/history';
 
+import Main from './components/Main';
 import './style/index.styl';
+import './index.css';
 
-function Inspector(configOverrides) {
-  this.assetsLoader = new AssetsLoader();
-  this.config = new Config(configOverrides);
-  this.exporters = { gltf: new GLTFExporter() };
-  this.history = require('./lib/history');
-  this.isFirstOpen = true;
-  this.modules = {};
-  this.opened = false;
+class Inspector {
+  constructor(configOverrides) {
+    this.assetsLoader = new AssetsLoader();
+    this.config = new Config(configOverrides);
+    this.exporters = { gltf: new GLTFExporter() };
+    this.history = history;
+    this.isFirstOpen = true;
+    this.modules = {};
+    this.opened = false;
 
-  // Wait for stuff.
-  const doInit = () => {
-    if (!AFRAME.scenes.length) {
-      setTimeout(() => {
-        doInit();
-      }, 100);
-      return;
-    }
+    // Wait for stuff.
+    const doInit = () => {
+      if (!AFRAME.scenes.length) {
+        setTimeout(() => {
+          doInit();
+        }, 100);
+        return;
+      }
 
-    this.sceneEl = AFRAME.scenes[0];
-    if (this.sceneEl.hasLoaded) {
-      this.init();
-      return;
-    }
-    this.sceneEl.addEventListener('loaded', this.init.bind(this), {
-      once: true
-    });
-  };
-  doInit();
-}
+      this.sceneEl = AFRAME.scenes[0];
+      if (this.sceneEl.hasLoaded) {
+        this.init();
+        return;
+      }
+      this.sceneEl.addEventListener('loaded', this.init.bind(this), {
+        once: true
+      });
+    };
+    doInit();
+  }
 
-Inspector.prototype = {
-  init: function () {
+  init() {
     // Wait for camera.
     if (!this.sceneEl.camera) {
       this.sceneEl.addEventListener(
@@ -59,9 +61,9 @@ Inspector.prototype = {
     this.container = document.querySelector('.a-canvas');
     initCameras(this);
     this.initUI();
-  },
+  }
 
-  initUI: function () {
+  initUI() {
     Shortcuts.init(this);
     this.initEvents();
 
@@ -90,15 +92,15 @@ Inspector.prototype = {
 
     this.scene.add(this.sceneHelpers);
     this.open();
-  },
+  }
 
-  removeObject: function (object) {
+  removeObject(object) {
     // Remove just the helper as the object will be deleted by A-Frame
     this.removeHelpers(object);
     Events.emit('objectremove', object);
-  },
+  }
 
-  addHelper: function (object) {
+  addHelper(object) {
     let helper;
 
     if (object instanceof THREE.Camera) {
@@ -125,9 +127,9 @@ Inspector.prototype = {
     if (helper.update) {
       helper.update();
     }
-  },
+  }
 
-  removeHelpers: function (object) {
+  removeHelpers(object) {
     object.traverse((node) => {
       const helper = this.helpers[node.uuid];
       if (helper) {
@@ -137,9 +139,9 @@ Inspector.prototype = {
         Events.emit('helperremove', this.helpers[node.uuid]);
       }
     });
-  },
+  }
 
-  selectEntity: function (entity, emit) {
+  selectEntity(entity, emit) {
     this.selectedEntity = entity;
     if (entity) {
       this.select(entity.object3D);
@@ -167,9 +169,9 @@ Inspector.prototype = {
         }
       });
     }
-  },
+  }
 
-  initEvents: function () {
+  initEvents() {
     // Remove inspector component to properly unregister keydown listener when the inspector is loaded via a script tag,
     // otherwise the listener will be registered twice and we can't toggle the inspector from viewer mode with the shortcut.
     this.sceneEl.removeAttribute('inspector');
@@ -203,9 +205,9 @@ Inspector.prototype = {
       const entity = event.detail.el;
       AFRAME.INSPECTOR.removeObject(entity.object3D);
     });
-  },
+  }
 
-  selectById: function (id) {
+  selectById(id) {
     if (id === this.camera.id) {
       this.select(this.camera);
       return;
@@ -214,38 +216,38 @@ Inspector.prototype = {
     if (object) {
       this.select(object);
     }
-  },
+  }
 
   /**
    * Change to select object.
    */
-  select: function (object3D) {
+  select(object3D) {
     if (this.selected === object3D) {
       return;
     }
     this.selected = object3D;
     Events.emit('objectselect', object3D);
-  },
+  }
 
-  deselect: function () {
+  deselect() {
     this.select(null);
-  },
+  }
 
   /**
    * Toggle the editor
    */
-  toggle: function () {
+  toggle() {
     if (this.opened) {
       this.close();
     } else {
       this.open();
     }
-  },
+  }
 
   /**
    * Open the editor UI
    */
-  open: function (focusEl) {
+  open(focusEl) {
     this.opened = true;
     Events.emit('inspectortoggle', true);
 
@@ -281,12 +283,12 @@ Inspector.prototype = {
       Events.emit('objectfocus', focusEl.object3D);
     }
     this.isFirstOpen = false;
-  },
+  }
 
   /**
    * Closes the editor and gives the control back to the scene
    */
-  close: function () {
+  close() {
     this.opened = false;
     Events.emit('inspectortoggle', false);
 
@@ -304,6 +306,6 @@ Inspector.prototype = {
     this.sceneEl.resize();
     Shortcuts.disable();
   }
-};
+}
 
 AFRAME.INSPECTOR = new Inspector(window.AFRAME_INSPECTOR_CONFIG);
