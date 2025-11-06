@@ -557,7 +557,9 @@ export function createEntity(definition, cb) {
     { once: true }
   );
 
-  AFRAME.scenes[0].appendChild(entity);
+  // Append to parent if specified, otherwise to scene root
+  const parent = definition.parent || AFRAME.scenes[0];
+  parent.appendChild(entity);
 
   return entity;
 }

@@ -17,82 +17,77 @@
   display: flex;
   align-items: center;
   gap: 6px;
-}
 
-.toolbarButtons * {
-  margin-left: 0 !important;
-  vertical-align: middle;
-}
+  * {
+    margin-left: 0 !important;
+    vertical-align: middle;
+  }
 
-.toolbarButtons a.button svg {
-  padding: 8px;
-}
+  .button {
+    padding: 4px;
+    border-radius:50%;
 
-.toolbarButtons a.button:not(.active) svg:hover {
-  background-color: var(--bg-lighter);
-}
 
-.toolbarButtons .active svg {
-  background-color: var(--primary);
-  color: var(--text);
-}
+    &:hover {
+      background-color: var(--bg-lighter);
+    }
+  }
 
-.toolbarButtons .active:hover svg {
-  color: var(--text) !important;
+  .active {
+    border: 2px solid var(--primary);
+  }
 }
 
 .local-transform {
   padding-left: 10px;
   padding-right: 20px;
-}
 
-.local-transform label {
-  color: var(--text-dark);
-  padding-left: 5px;
-}
+  label {
+    color: var(--text-dark);
+    padding-left: 5px;
+  }
 
-.local-transform a.button {
-  padding-top: 0;
+  a.button {
+    padding-top: 0;
+  }
 }
 
 #cameraSelect {
   cursor: pointer;
   width: 120px;
-}
 
-#cameraSelect .select__dropdown-indicator {
-  padding-left: 3px;
-  padding-right: 3px;
+  .select__dropdown-indicator {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
 }
 
 #cameraToolbar {
   margin-left: 5px;
   align-items: center;
   display: flex;
-}
 
-#cameraToolbar a {
-  margin-right: 10px;
-}
+  a {
+    margin-right: 10px;
+  }
 
-#cameraToolbar .select__control {
-  background: none;
-}
+  .select__control {
+    background: none;
+  }
 
-#cameraToolbar .select__single-value {
-  color: var(--text);
-}
+  .select__single-value {
+    color: var(--text);
 
-#cameraToolbar .select__single-value:hover {
-  color: var(--primary);
+    &:hover {
+      color: var(--primary);
+    }
+  }
 }
 
 #viewportHud {
   display: none;
-}
 
-@media (min-width: 1024px) {
-  #viewportHud {
+  @media (min-width: 1024px) {
     display: block;
   }
 }

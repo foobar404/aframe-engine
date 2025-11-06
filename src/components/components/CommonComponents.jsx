@@ -1,16 +1,15 @@
 import React, { useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import * as THREE from 'three';
-import { faClipboard } from '@fortawesome/free-solid-svg-icons';
+import { FaClipboard } from 'react-icons/fa';
 import { MdOutlineFileDownload } from 'react-icons/md';
-import { AwesomeIcon } from '../AwesomeIcon';
 import { InputWidget } from '../widgets';
 import DEFAULT_COMPONENTS from './DefaultComponents';
 import PropertyRow from './PropertyRow';
 import Collapsible from '../Collapsible';
 import Mixins from './Mixins';
 import { getEntityClipboardRepresentation } from '../../lib/entity';
-import EntityRepresentation from '../EntityRepresentation';
+import EntityRepresentation from '../scenegraph/EntityRepresentation';
 import Events from '../../lib/Events';
 import copy from 'clipboard-copy';
 import { saveBlob } from '../../lib/utils';
@@ -86,38 +85,24 @@ function CommonComponents({ entity }) {
   if (!entity) {
     return <div />;
   }
-  const entityButtons = (
-    <div>
-      <a
-        title="Export entity to GLTF"
-        className="gltfIcon"
-        onClick={(event) => {
-          exportToGLTF();
-          event.preventDefault();
-          event.stopPropagation();
-        }}
-      >
-        <MdOutlineFileDownload />
-      </a>
-      <a
-        title="Copy entity HTML to clipboard"
-        className="button"
-        onClick={(event) => {
-          event.preventDefault();
-          event.stopPropagation();
-          copy(getEntityClipboardRepresentation(entity));
-        }}
-      >
-        <AwesomeIcon icon={faClipboard} />
-      </a>
-    </div>
-  );
+
+  console.dir(entity.localName);
+  
 
   return (
     <Collapsible id="componentEntityHeader" className="commonComponents">
-      <div className="collapsible-header">
-        <EntityRepresentation entity={entity} />
-        {entityButtons}
+      <div className="collapsible-header componentHeader">
+        <span className="componentTitle">{entity.id || entity.localName}</span>
+
+        <a title="Copy entity HTML to clipboard"
+          className="button"
+          onClick={(event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            copy(getEntityClipboardRepresentation(entity));
+          }}>
+          <FaClipboard />
+        </a>
       </div>
       <div className="collapsible-content">
         <div className="propertyRow">

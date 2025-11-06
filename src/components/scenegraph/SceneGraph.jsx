@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars, react/no-danger */
 import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { AwesomeIcon } from '../AwesomeIcon';
+import { FaSearch, FaTimes } from 'react-icons/fa';
 import debounce from 'lodash.debounce';
 
 import Entity from './Entity';
@@ -245,61 +244,55 @@ function SceneGraph({ scene, selectedEntity, visible }) {
     selectEntity(selectedEntity);
   }, [selectedEntity, selectEntity]);
 
-  const renderEntities = () => {
-    return filteredEntities.map((entityOption, idx) => {
-      if (
-        !isVisibleInSceneGraph(entityOption.entity) &&
-        !filter
-      ) {
-        return null;
-      }
-      return (
-        <Entity
-          {...entityOption}
-          key={idx}
-          isFiltering={!!filter}
-          isExpanded={isExpanded(entityOption.entity)}
-          isSelected={selectedEntity === entityOption.entity}
-          selectEntity={selectEntity}
-          toggleExpandedCollapsed={toggleExpandedCollapsed}
-        />
-      );
-    });
-  };
-
-  if (!visible) {
-    return null;
-  }
-
-  const clearFilterButton = filter ? (
-    <a onClick={clearFilter} className="button">
-      <AwesomeIcon icon={faTimes} />
-    </a>
-  ) : null;
-
   return (
-    <div id="scenegraph" className="scenegraph">
+    <div id="scenegraph" className="scenegraph" >
+      <button
+        onClick={() => AFRAME.INSPECTOR.close()}
+        className="exit">
+        <FaTimes className="w-4 h-4 m-auto" />
+      </button>
+
       <div className="scenegraph-toolbar">
-        <Toolbar />
+        <Toolbar selectedEntity={selectedEntity} />
         <div className="search">
           <input
             id="filter"
+            className="min-h-10"
             placeholder="Search..."
             onChange={onChangeFilter}
             onKeyUp={onFilterKeyUp}
             value={filter}
           />
-          {clearFilterButton}
-          {!filter && <AwesomeIcon icon={faSearch} />}
+
+          {filter && (
+            <a onClick={clearFilter} className="button">
+              <FaTimes />
+            </a>
+          )}
+
+          {!filter && <FaSearch className="top-4!" />}
         </div>
       </div>
-      <div
-        className="outliner"
+      <div className="outliner"
         tabIndex="0"
         onKeyDown={onKeyDown}
-        onKeyUp={onKeyUp}
-      >
-        {renderEntities()}
+        onKeyUp={onKeyUp}>
+
+        {filteredEntities.map((entityOption, idx) => {
+          if (!isVisibleInSceneGraph(entityOption.entity) && !filter) return null;
+
+          return (
+            <Entity
+              {...entityOption}
+              key={idx}
+              isFiltering={!!filter}
+              isExpanded={isExpanded(entityOption.entity)}
+              isSelected={selectedEntity === entityOption.entity}
+              selectEntity={selectEntity}
+              toggleExpandedCollapsed={toggleExpandedCollapsed}
+            />
+          );
+        })}
       </div>
     </div>
   );

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import * as THREE from 'three';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { AwesomeIcon } from './AwesomeIcon';
+import { FaPlus, FaTimes } from 'react-icons/fa';
 import Events from '../lib/Events';
 import ComponentsSidebar from './components/Sidebar';
 import ModalTextures from './modals/ModalTextures';
@@ -12,14 +10,11 @@ import TransformToolbar from './viewport/TransformToolbar';
 import ViewportHUD from './viewport/ViewportHUD';
 import ThemeSwitcher from './ThemeSwitcher';
 
-THREE.ImageUtils.crossOrigin = '';
-
 export default function Main() {
   const [state, setState] = useState({
     entity: null,
     inspectorEnabled: true,
     isHelpOpen: false,
-    isModalSponsorOpen: false,
     isModalTexturesOpen: false,
     sceneEl: AFRAME.scenes[0],
     visible: {
@@ -120,10 +115,6 @@ export default function Main() {
     }
   };
 
-  const onCloseModalSponsor = () => {
-    setState(prev => ({ ...prev, isModalSponsorOpen: false }));
-  };
-
   const toggleEdit = () => {
     if (state.inspectorEnabled) {
       AFRAME.INSPECTOR.close();
@@ -132,67 +123,48 @@ export default function Main() {
     }
   };
 
-  const renderComponentsToggle = () => {
-    if (
-      !state.inspectorEnabled ||
-      !state.entity ||
-      state.visible.attributes
-    ) {
-      return null;
-    }
-    return (
-      <div className="toggle-sidebar right">
-        <a
-          onClick={() => {
-            Events.emit('togglesidebar', { which: 'attributes' });
-          }}
-          title="Show components"
-        >
-          <AwesomeIcon icon={faPlus} />
-        </a>
-      </div>
-    );
-  };
-
-  const renderSceneGraphToggle = () => {
-    if (!state.inspectorEnabled || state.visible.scenegraph) {
-      return null;
-    }
-    return (
-      <div className="toggle-sidebar left">
-        <a
-          onClick={() => {
-            Events.emit('togglesidebar', { which: 'scenegraph' });
-          }}
-          title="Show scenegraph"
-        >
-          <AwesomeIcon icon={faPlus} />
-        </a>
-      </div>
-    );
-  };
-
-  const scene = state.sceneEl;
-  const toggleButtonText = state.inspectorEnabled
-    ? 'Back to Scene'
-    : 'Inspect Scene';
-
   return (
-    <div>
-      <a className="toggle-edit" onClick={toggleEdit}>
-        {toggleButtonText}
-      </a>
+    <div className="">
+      {!state.inspectorEnabled && (
+        <a className="toggle-edit rounded-md bg-white text-black/50 p-1 border-3 border-black/50 font-bold" onClick={toggleEdit}>
+          Show Editor
+        </a>
+      )}
 
+      {!state.inspectorEnabled || state.visible.scenegraph ? null : (
+        <div className="toggle-sidebar left">
+          <a
+            onClick={() => {
+              Events.emit('togglesidebar', { which: 'scenegraph' });
+            }}
+            title="Show scenegraph"
+          >
+            <FaPlus />
+          </a>
+        </div>
+      )}
 
-      {renderSceneGraphToggle()}
-      {renderComponentsToggle()}
+      {state.inspectorEnabled &&
+        state.entity &&
+        !state.visible.attributes && (
+        <div className="toggle-sidebar right">
+          <a
+            onClick={() => {
+              Events.emit('togglesidebar', { which: 'attributes' });
+            }}
+            title="Show components"
+          >
+            <FaPlus />
+          </a>
+        </div>
+      )}
 
       <div
         id="inspectorContainer"
         className={state.inspectorEnabled ? '' : 'hidden'}
       >
         <SceneGraph
-          scene={scene}
+          scene={state.sceneEl}
           selectedEntity={state.entity}
           visible={state.visible.scenegraph}
         />

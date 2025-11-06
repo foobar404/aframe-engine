@@ -10,7 +10,7 @@ import { createEntity } from './lib/entity';
 import { Config } from './lib/config';
 import * as history from './lib/history';
 
-import Main from './components/Main';
+import Main from './components/Main.jsx';
 import './index.css';
 
 class Inspector {

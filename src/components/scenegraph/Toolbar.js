@@ -5,7 +5,8 @@ import {
   FaPlay,
   FaSave,
   FaQuestion,
-  FaDownload
+  FaDownload,
+  FaClock
 } from 'react-icons/fa';
 import Events from '../../lib/Events';
 import { saveBlob } from '../../lib/utils';
@@ -41,8 +42,109 @@ function slugify(text) {
 /**
  * Tools and actions.
  */
-export default function Toolbar() {
+export default function Toolbar({ selectedEntity }) {
+  const {
+    isPlaying,
+    primitivesList,
+    isDropdownOpen,
+    autosaveEnabled,
+    addEntityWithPrimitive,
+    toggleDropdown,
+    exportSceneToGLTF,
+    writeChanges,
+    toggleScenePlaying,
+    openHelpModal,
+    toggleAutosave
+  } = useToolbar(selectedEntity);
+
+  return (
+    <div id="toolbar">
+      <div className="toolbar-container">
+        <div className="relative">
+          <button
+            title="Add a new primitive"
+            className="add-button"
+            onClick={toggleDropdown}>
+            <FaPlus />
+          </button>
+          {isDropdownOpen && (
+            <div className="dropdown">
+              <button
+                onClick={() => addEntityWithPrimitive('a-entity')}>
+                a-entity
+              </button>
+              {primitivesList.map((prim) => (
+                <button
+                  key={prim}
+                  onClick={() => addEntityWithPrimitive(`${prim}`)}>
+                  {prim}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+        <a title={isPlaying ? 'Pause scene' : 'Resume scene'}
+          className="toolbar-button"
+          onClick={toggleScenePlaying}>
+          {isPlaying ? <FaPause /> : <FaPlay />}
+        </a>
+        <a title="Export to GLTF"
+          className="toolbar-button"
+          onClick={exportSceneToGLTF}>
+          <FaDownload />
+        </a>
+        <a title="Write changes with aframe-watcher."
+          className="toolbar-button"
+          onClick={writeChanges}>
+          <FaSave />
+        </a>
+        <a title={autosaveEnabled ? 'Disable autosave' : 'Enable autosave (saves every 10s)'}
+          className={`toolbar-button ${autosaveEnabled ? 'active' : ''}`}
+          onClick={toggleAutosave}>
+          <FaClock className={autosaveEnabled ? "text-[var(--primary)]" : ""} />
+        </a>
+        <a title="Help"
+          className="toolbar-button"
+          onClick={openHelpModal}>
+          <FaQuestion />
+        </a>
+      </div>
+    </div>
+  );
+}
+
+function useToolbar(selectedEntity) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [primitivesList, setPrimitivesList] = useState([]);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [autosaveEnabled, setAutosaveEnabled] = useState(false);
+  const autosaveIntervalRef = React.useRef(null);
+
+  React.useEffect(() => {
+    if (window.AFRAME && AFRAME.primitives) {
+      setPrimitivesList(Object.keys(AFRAME.primitives.primitives));
+    }
+  }, []);
+
+  // Autosave effect
+  React.useEffect(() => {
+    if (autosaveEnabled) {
+      autosaveIntervalRef.current = setInterval(() => {
+        writeChanges();
+      }, 10000); // Auto-save every 10 seconds
+    } else {
+      if (autosaveIntervalRef.current) {
+        clearInterval(autosaveIntervalRef.current);
+        autosaveIntervalRef.current = null;
+      }
+    }
+
+    return () => {
+      if (autosaveIntervalRef.current) {
+        clearInterval(autosaveIntervalRef.current);
+      }
+    };
+  }, [autosaveEnabled]);
 
   const exportSceneToGLTF = () => {
     const sceneName = getSceneName(AFRAME.scenes[0]);
@@ -62,6 +164,19 @@ export default function Toolbar() {
     );
   };
 
+  const addEntityWithPrimitive = (primitiveName) => {
+    Events.emit('entitycreate', {
+      element: primitiveName,
+      components: {},
+      parent: selectedEntity || AFRAME.scenes[0]
+    });
+    setIsDropdownOpen(false);
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   const addEntity = () => {
     Events.emit('entitycreate', { element: 'a-entity', components: {} });
   };
@@ -70,15 +185,18 @@ export default function Toolbar() {
    * Try to write changes with aframe-inspector-watcher.
    */
   const writeChanges = () => {
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://localhost:51234/save');
-    xhr.onerror = () => {
+    fetch('http://localhost:51234/save', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(AFRAME.INSPECTOR.history.updates)
+    }).catch(() => {
       alert(
         'aframe-watcher not running. This feature requires a companion service running locally. npm install aframe-watcher to save changes back to file. Read more at https://github.com/supermedium/aframe-watcher'
       );
-    };
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send(JSON.stringify(AFRAME.INSPECTOR.history.updates));
+      if (autosaveEnabled) setAutosaveEnabled(false);
+    })
   };
 
   const toggleScenePlaying = () => {
@@ -98,48 +216,22 @@ export default function Toolbar() {
     Events.emit('openhelpmodal');
   };
 
-  return (
-    <div id="toolbar">
-      <div className="toolbarActions">
-        <a
-          className="button"
-          title="Add a new entity"
-          onClick={addEntity}
-        >
-          <FaPlus />
-        </a>
-        <a
-          id="playPauseScene"
-          className="button"
-          title={isPlaying ? 'Pause scene' : 'Resume scene'}
-          onClick={toggleScenePlaying}
-        >
-          {isPlaying ? (
-            <FaPause />
-          ) : (
-            <FaPlay />
-          )}
-        </a>
-        <a
-          className="gltfIcon"
-          title="Export to GLTF"
-          onClick={exportSceneToGLTF}
-        >
-          <FaDownload />
-        </a>
-        <a
-          className="button"
-          title="Write changes with aframe-watcher."
-          onClick={writeChanges}
-        >
-          <FaSave />
-        </a>
-        <div className="helpButtonContainer">
-          <a className="button" title="Help" onClick={openHelpModal}>
-            <FaQuestion />
-          </a>
-        </div>
-      </div>
-    </div>
-  );
+  const toggleAutosave = () => {
+    setAutosaveEnabled(!autosaveEnabled);
+  };
+
+  return {
+    isPlaying,
+    primitivesList,
+    isDropdownOpen,
+    autosaveEnabled,
+    addEntityWithPrimitive,
+    toggleDropdown,
+    exportSceneToGLTF,
+    writeChanges,
+    toggleScenePlaying,
+    openHelpModal,
+    toggleAutosave
+  };
 }
+

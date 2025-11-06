@@ -1,21 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import {
-  faArrowsAlt,
-  faRotateRight,
-  faUpRightAndDownLeftFromCenter
-} from '@fortawesome/free-solid-svg-icons';
-import { AwesomeIcon } from '../AwesomeIcon';
-import clsx from 'clsx';
+import { FaArrowsAlt, FaRedo, FaExpand } from 'react-icons/fa';
 import Events from '../../lib/Events';
-
-var TransformButtons = [
-  { value: 'translate', icon: <AwesomeIcon icon={faArrowsAlt} /> },
-  { value: 'rotate', icon: <AwesomeIcon icon={faRotateRight} /> },
-  {
-    value: 'scale',
-    icon: <AwesomeIcon icon={faUpRightAndDownLeftFromCenter} />
-  }
-];
 
 function TransformToolbar() {
   const [selectedTransform, setSelectedTransform] = useState('translate');
@@ -51,30 +36,21 @@ function TransformToolbar() {
     };
   }, [onTransformModeChange, onTransformSpaceChange]);
 
-  const renderTransformButtons = () => {
-    return TransformButtons.map((option, i) => {
-      const selected = option.value === selectedTransform;
-      const classes = clsx({
-        button: true,
-        active: selected
-      });
-
-      return (
-        <a
-          title={option.value}
-          key={i}
-          onClick={() => changeTransformMode(option.value)}
-          className={classes}
-        >
-          {option.icon}
-        </a>
-      );
-    });
-  };
-
   return (
     <div id="transformToolbar" className="toolbarButtons">
-      {renderTransformButtons()}
+      <a onClick={() => changeTransformMode("translate")}
+        className={`button ${selectedTransform === 'translate' ? 'active' : ''}`}>
+        <FaArrowsAlt />
+      </a>
+      <a onClick={() => changeTransformMode("rotate")}
+        className={`button ${selectedTransform === 'rotate' ? 'active' : ''}`}>
+        <FaRedo />
+      </a>
+      <a onClick={() => changeTransformMode("scale")}
+        className={`button ${selectedTransform === 'scale' ? 'active' : ''}`}>
+        <FaExpand />
+      </a>
+
       <span className="local-transform">
         <input
           id="local"

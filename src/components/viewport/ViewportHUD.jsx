@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import EntityRepresentation from '../EntityRepresentation';
+import EntityRepresentation from '../scenegraph/EntityRepresentation';
 import Events from '../../lib/Events';
 
 function ViewportHUD() {

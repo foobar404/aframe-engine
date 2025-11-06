@@ -1,7 +1,6 @@
 import React, {useState, useRef, useEffect, useCallback} from 'react';
 import PropTypes from 'prop-types';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { AwesomeIcon } from '../AwesomeIcon';
+import { FaSearch } from 'react-icons/fa';
 import Events from '../../lib/Events';
 import Modal from './Modal';
 import { insertNewAsset } from '../../lib/assetsUtils';
@@ -165,11 +164,21 @@ function ModalTextures({ isOpen: initialIsOpen, onClose, selectedTexture }) {
       true,
       function () {
         generateFromAssets();
+        // Select the newly added texture
+        selectTexture({
+          id: preview.name,
+          src: preview.src,
+          width: preview.width,
+          height: preview.height,
+          name: preview.name,
+          type: 'asset',
+          value: '#' + preview.name
+        });
         setAddNewDialogOpened(false);
         clear();
       }
     );
-  }, [preview, generateFromAssets, clear]);
+  }, [preview, generateFromAssets, selectTexture, clear]);
 
   const onNameKeyUp = useCallback((event) => {
     if (event.keyCode === 13 && isValidAsset()) {
@@ -255,8 +264,6 @@ function ModalTextures({ isOpen: initialIsOpen, onClose, selectedTexture }) {
   let validUrl = isValidId(preview.name);
   let validAsset = isValidAsset();
 
-  let addNewAssetButton = addNewDialogOpened ? 'BACK' : 'LOAD TEXTURE';
-
   return (
     <Modal
       id="textureModal"
@@ -265,8 +272,7 @@ function ModalTextures({ isOpen: initialIsOpen, onClose, selectedTexture }) {
       onClose={onCloseModal}
       closeOnClickOutside={false}
     >
-      <button onClick={toggleNewDialog}>{addNewAssetButton}</button>
-      <div className={addNewDialogOpened ? '' : 'hide'}>
+      <div>
         <div className="newimage">
           <div className="new_asset_options">
             <span>Load a new texture from one of these sources:</span>
@@ -289,7 +295,7 @@ function ModalTextures({ isOpen: initialIsOpen, onClose, selectedTexture }) {
                     value={filterText}
                     onChange={onChangeFilter}
                   />
-                  <AwesomeIcon icon={faSearch} />
+                  <FaSearch />
                 </div>
                 <ul ref={registryGallery} className="gallery">
                   {renderRegistryImages()}

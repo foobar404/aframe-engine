@@ -1,176 +1,194 @@
-#toolbar {
-  background-color: var(--bg);
-}
-
-#toolbar .toolbarActions {
-  padding: 0 0 5px;
-  display: flex;
-  align-items: baseline;
-}
-
-#toolbar .toolbarActions a.disabled {
-  color: var(--bg-lighter);
-  cursor: default;
-}
-
-#toolbar .toolbarActions .helpButtonContainer {
-  flex-grow: 1;
-  padding-right: 10px;
-  text-align: right;
-}
-
 #scenegraph {
   background: var(--bg);
   border-top: 1px solid var(--bg-dark);
   display: flex;
   flex-direction: column;
   overflow: auto;
-  padding-top: 32px;
-  width: 230px;
-}
+  width: 300px;
 
-#scenegraph .entity {
-  background: var(--bg);
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  padding: 3px;
-  width: 100%;
-  white-space: nowrap;
-}
+  .entity {
+    background: var(--bg);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 8px;
+    width: 100%;
+    min-height: 24px;
+    position: relative;
+    font-weight: bolder;
 
-#scenegraph .entity:hover {
-  background: var(--bg-light);
-}
+    &:hover {
+      background: var(--bg-light);
+    }
 
-#scenegraph .entity.active {
-  background-color: var(--primary-dark);
-  color: var(--text);
-}
+    &.active {
+      background-color: var(--bg-dark);
+      color: var(--primary);
+    }
 
-#scenegraph .entity.active .component:hover {
-  color: #1888c1;
-}
+    &.novisible {
+      opacity: 0.6;
+    }
+  }
 
-#scenegraph .entity.active .entityActions {
-  display: inline;
-}
+  .tree-indent {
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex: 1;
+  }
 
-#scenegraph .entity.novisible.active span,
-#scenegraph .entity.novisible.active svg,
-#scenegraph .entity.novisible.active .collapsespace,
-#scenegraph .entity.novisible.active .id {
-  color: var(--text-dark);
-}
+  .tree-line {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: var(--bg-dark);
+    opacity: 0.3;
+  }
 
-#scenegraph .entity.novisible:not(.active) span,
-#scenegraph .entity.novisible:not(.active) svg,
-#scenegraph .entity.novisible:not(.active) .collapsespace,
-#scenegraph .entity.novisible:not(.active) .id {
-  color: var(--bg);
-}
+  .expand-btn {
+    background: none;
+    border: none;
+    color: var(--text-dark);
+    cursor: pointer;
+    padding: 2px 4px;
+    margin-right: 4px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
 
-#scenegraph .component:hover {
-  color: var(--primary);
-}
+    &:hover {
+      background: var(--bg-light);
+      color: var(--text);
+    }
 
-#scenegraph .entityIcons {
-  margin-left: 2px;
-}
+    &:focus {
+      outline: 1px solid var(--primary);
+    }
+  }
 
-#scenegraph .entityActions {
-  display: none;
-  margin: 0 14px;
-}
+  .entity-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 2px 0;
+  }
 
-#scenegraph .entityActions .button {
-  color: var(--text);
-  font-size: 12px;
-  margin-left: 6px;
-}
+  .entity-actions {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+  }
 
-#scenegraph svg {
-  color: var(--text-dark);
-}
+  .action-btn {
+    background: none;
+    border: none;
+    color: var(--text-dark);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    transition: all 0.15s ease;
 
-#scenegraph .toolbarActions svg:hover,
-#scenegraph .entityActions svg:hover {
-  color: var(--primary);
-}
+    &:hover {
+      background: var(--bg-light);
+      color: var(--text);
+    }
 
-#scenegraph .active svg {
-  color: var(--text);
-}
+    &:focus {
+      outline: 1px solid var(--primary);
+    }
 
-#scenegraph .id {
-  color: var(--text-dark);
-}
+    &.clone-btn:hover {
+      color: #10b981;
+    }
 
-#scenegraph .option.active .id {
-  color: var(--text);
-}
+    &.delete-btn:hover {
+      color: #ef4444;
+    }
 
-#scenegraph .collapsespace {
-  color: var(--text);
-  display: inline-block;
-  text-align: center;
-  width: 14px;
-}
+    &.visibility-btn:hover {
+      color: #3b82f6;
+    }
+  }
 
-#scenegraph .fa-eye {
-  color: var(--text-dark);
-}
+  .component:hover {
+    color: var(--primary);
+  }
 
-#scenegraph .icons a.button {
-  color: var(--text);
-}
+  .entityIcons {
+    margin-left: 2px;
+  }
 
-#scenegraph .search {
-  padding: 5px;
-  font-size: 16px;
-  position: relative;
-}
+  .id {
+    color: var(--text-dark);
+  }
 
-#scenegraph .search input {
-  color: var(--text);
-  background: var(--bg-dark);
-  border-radius: 5px;
-  height: 22px;
-  text-indent: 10px;
-  width: 216px;
-}
+  .option.active .id {
+    color: var(--text);
+  }
 
-#scenegraph .search > svg,
-#scenegraph .search a.button {
-  position: absolute;
-  right: 14px;
-  top: 10px;
-}
+  .search {
+    padding: 5px;
+    font-size: 16px;
+    position: relative;
 
-#scenegraph .outliner {
-  background: var(--bg);
-  color: var(--text);
-  cursor: default;
-  flex: 1 1 auto;
-  font-size: 13px;
-  height: calc(100% - 98px);
-  line-height: normal;
-  outline: none;
-  overflow-y: auto;
-  padding: 0;
-  width: 230px;
-}
+    input {
+      color: var(--text);
+      background: var(--bg-dark);
+      border-radius: 5px;
+      height: 22px;
+      text-indent: 10px;
+      width: 216px;
+    }
 
-.scenegraph-bottom {
-  background-color: var(--bg-light);
-  border-top: 1px solid var(--bg-dark);
-  bottom: 10px;
-  height: 40px;
-  left: 0;
-  z-index: 100;
-}
+    >svg,
+    a.button {
+      position: absolute;
+      right: 14px;
+      top: 10px;
+    }
+  }
 
-.scenegraph-bottom a {
-  float: right;
-  margin: 10px;
+  .outliner {
+    background: var(--bg);
+    color: var(--text);
+    cursor: default;
+    flex: 1 1 auto;
+    font-size: 13px;
+    height: calc(100% - 98px);
+    line-height: normal;
+    outline: none;
+    overflow-y: auto;
+    padding: 0;
+    width: 100%;
+  }
+
+  .exit {
+    width: 30px;
+    height: 30px;
+    margin: 0.5rem;
+    margin-bottom: 1.5rem;
+    background-color: var(--bg-dark);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s ease-in-out;
+    z-index: 10;
+
+    &:hover {
+      background-color: #dc2626;
+    }
+  }
 }

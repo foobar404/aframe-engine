@@ -9,12 +9,48 @@
   top: 0;
   width: 100%;
   z-index: 9999999999;
-}
 
-.modal h3 {
-  font-size: 18px;
-  font-weight: 100;
-  margin: 0.6em 0;
+  h3 {
+    font-size: 18px;
+    font-weight: 100;
+    margin: 0.6em 0;
+  }
+
+  button {
+    appearance: none;
+    border-radius: 0;
+    box-shadow: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1.8;
+    margin: 0 10px 0 0;
+    padding: 5px 10px;
+    background-color: var(--primary);
+    border: none;
+    color: var(--text);
+
+    &:hover,
+    &.hover {
+      background-color: var(--primary-hover);
+      text-shadow: -1px 1px var(--primary-dark);
+    }
+
+    &:active,
+    &.active {
+      background-color: var(--primary-dark);
+      text-shadow: -1px 1px var(--bg-dark);
+    }
+
+    &:disabled {
+      background-color: var(--bg);
+      cursor: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
 #textureModal .modal-content {
@@ -38,13 +74,13 @@
   float: right;
   font-size: 28px;
   font-weight: bold;
-}
 
-.close:hover,
-.close:focus {
-  color: #08f;
-  cursor: pointer;
-  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: #08f;
+    cursor: pointer;
+    text-decoration: none;
+  }
 }
 
 .modal-header {
@@ -71,118 +107,51 @@
   max-height: calc(100vh - 370px);
   overflow: auto;
   padding: 15px 3px 3px;
-}
 
-.newimage .gallery {
-  padding: 16px;
-}
+  li {
+    border-radius: 2px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    margin: 8px;
+    overflow: hidden;
+    width: 155px;
 
-.gallery li {
-  border-radius: 2px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
-  cursor: pointer;
-  margin: 8px;
-  overflow: hidden;
-  width: 155px;
-}
+    &.selected,
+    &:hover {
+      box-shadow: 0 0 0 2px var(--primary);
+    }
 
-.gallery li.selected,
-.gallery li:hover {
-  box-shadow: 0 0 0 2px var(--primary);
-}
+    .detail {
+      background-color: var(--bg-light);
+      margin: 0;
+      min-height: 60px;
+      padding: 3px 10px;
 
-.gallery li .detail {
-  background-color: var(--bg-light);
-  margin: 0;
-  min-height: 60px;
-  padding: 3px 10px;
-}
+      span {
+        color: var(--text-dark);
+        display: block;
+        margin-top: 4px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 140px;
+      }
 
-.preview {
-  padding: 10px;
-  width: 150px;
-}
+      &.selected span,
+      &:hover span {
+        color: var(--text);
+      }
 
-.preview input {
-  display: block;
-  margin: 8px 0;
-  width: 144px;
-}
+      span.title {
+        color: var(--text) !important;
+      }
+    }
 
-.preview button {
-  width: 155px;
-}
-
-.preview .detail .title {
-  color: var(--text);
-  display: inline-block;
-  max-width: 155px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.gallery li.selected .detail,
-.gallery li:hover .detail {
-  background-color: var(--bg-lighter);
-}
-
-.gallery li .detail span {
-  color: var(--text-dark);
-  display: block;
-  margin-top: 4px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 140px;
-}
-
-.gallery li.selected .detail span,
-.gallery li:hover .detail span {
-  color: var(--text);
-}
-
-.gallery li .detail span.title {
-  color: var(--text) !important;
-}
-
-.modal button {
-  appearance: none;
-  border-radius: 0;
-  box-shadow: none;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 12px;
-  line-height: 1.8;
-  margin: 0 10px 0 0;
-  padding: 5px 10px;
-}
-
-.modal button:focus {
-  outline: none;
-}
-
-.modal button {
-  background-color: var(--primary);
-  border: none;
-  color: var(--text);
-}
-
-.modal button:hover,
-.modal button.hover {
-  background-color: var(--primary-hover);
-  text-shadow: -1px 1px var(--primary-dark);
-}
-
-.modal button:active,
-.modal button.active {
-  background-color: var(--primary-dark);
-  text-shadow: -1px 1px var(--bg-dark);
-}
-
-.modal button:disabled {
-  background-color: var(--bg);
-  cursor: none;
+    &.selected .detail,
+    &:hover .detail {
+      background-color: var(--bg-lighter);
+    }
+  }
 }
 
 .newimage {
@@ -194,19 +163,54 @@
   margin-top: 10px;
   overflow: auto;
   padding: 10px;
+
+  .gallery {
+    padding: 16px;
+  }
+
+  input {
+    color: var(--primary);
+    padding: 3px 5px;
+  }
 }
 
-.newimage input {
-  color: var(--primary);
-  padding: 3px 5px;
+.preview {
+  padding: 10px;
+  width: 150px;
+
+  input {
+    display: block;
+    margin: 8px 0;
+    width: 144px;
+  }
+
+  button {
+    width: 155px;
+  }
+
+  .detail .title {
+    color: var(--text);
+    display: inline-block;
+    max-width: 155px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
-.texture canvas + input {
-  margin-left: 5px;
-}
+.texture {
+  canvas {
+    border: 1px solid var(--bg-light);
+    cursor: pointer;
+  }
 
-.texture svg {
-  padding-right: 5px;
+  canvas + input {
+    margin-left: 5px;
+  }
+
+  svg {
+    padding-right: 5px;
+  }
 }
 
 .uploader-normal-button .hidden {
@@ -217,33 +221,28 @@
   position: relative;
   margin-top: 10px;
   width: 200px;
-}
 
-.assets.search svg {
-  position: absolute;
-  right: 0;
-  top: 5px;
+  svg {
+    position: absolute;
+    right: 0;
+    top: 5px;
+  }
 }
 
 .new_asset_options {
   margin: 10px;
-}
 
-.new_asset_options > ul {
-  margin-left: 10px;
-  padding: 5px;
-}
+  > ul {
+    margin-left: 10px;
+    padding: 5px;
 
-.new_asset_options > ul > li {
-  padding: 10px 0;
-}
+    > li {
+      padding: 10px 0;
+    }
+  }
 
-.new_asset_options .imageUrl {
-  margin-left: 5px;
-  width: 350px;
-}
-
-.texture canvas {
-  border: 1px solid var(--bg-light);
-  cursor: pointer;
+  .imageUrl {
+    margin-left: 5px;
+    width: 350px;
+  }
 }

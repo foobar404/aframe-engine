@@ -4,47 +4,82 @@
   height: 100%;
   overflow: auto;
   position: fixed;
-  width: 331px;
+  width: 300px;
+
+  * {
+    vertical-align: middle;
+  }
 }
 
 .collapsible-header {
   align-items: center;
   display: flex;
   justify-content: space-between;
-}
 
-.collapsible-header .entityPrint {
-  color: var(--text);
+  .entityPrint {
+    color: var(--text);
+  }
 }
 
 .collapsible-content {
   padding: 5px 0;
 }
 
-.componentTitle span {
-  max-width: 200px;
+.componentTitle {
   overflow: hidden;
   text-overflow: ellipsis;
-  text-transform: uppercase;
-  white-space: nowrap;
+  text-transform: capitalize;
   color: var(--text);
-  font-weight: 600;
-  vertical-align: bottom !important;
+  font-weight: 700;
 }
 
-.collapsible .static {
-  background: var(--bg-light);
-  border-bottom: 2px solid var(--bg);
-  box-sizing: content-box;
-  cursor: pointer;
-  height: 16px;
-  padding: 8px 10px 12px 10px;
-  vertical-align: bottom;
-  font-size: 13px;
-}
+.collapsible {
+  .static {
+    background: var(--bg-light);
+    border-bottom: 2px solid var(--bg);
+    box-sizing: content-box;
+    cursor: pointer;
+    height: 16px;
+    padding: 8px 10px 12px 10px;
+    vertical-align: bottom;
+    font-size: 13px;
+    margin: 0;
 
-.collapsible .static:hover {
-  background: var(--bg-light);
+    &:hover {
+      background: var(--bg-light);
+    }
+
+    .collapse-button {
+      border: 6px solid transparent;
+      float: left;
+      height: 0;
+      margin-right: 10px;
+      margin-left: 2px;
+      width: 0;
+    }
+  }
+
+  .menu {
+    text-align: right;
+  }
+
+  .menuafter {
+    color: var(--text-dark);
+    content: '\2807';
+    font-size: 12px;
+    padding: 5px;
+    text-align: right;
+  }
+
+  &.collapsed .static .collapse-button {
+    border-left-color: var(--text);
+    margin-top: 4px;
+  }
+
+  &:not(.collapsed) .static .collapse-button {
+    border-top-color: var(--text);
+    margin-top: 7px;
+  }
 }
 
 /*
@@ -58,141 +93,107 @@
       background-color $grayhover
 */
 
-.collapsible .menu {
-  text-align: right;
-}
-
-.collapsible .menuafter {
-  color: var(--text-dark);
-  content: '\2807';
-  font-size: 12px;
-  padding: 5px;
-  text-align: right;
-}
-
-.collapsible .static {
-  margin: 0;
-}
-
-.collapsible .static .collapse-button {
-  border: 6px solid transparent;
-  float: left;
-  height: 0;
-  margin-right: 10px;
-  margin-left: 2px;
-  width: 0;
-}
-
-.collapsible.collapsed .static .collapse-button {
-  border-left-color: var(--text);
-  margin-top: 4px;
-}
-
-.collapsible:not(.collapsed) .static .collapse-button {
-  border-top-color: var(--text);
-  margin-top: 7px;
-}
-
 .propertyRow {
   align-items: center;
   display: flex;
   font-size: 13px;
   min-height: 30px;
   padding: 2px 15px;
-}
 
-.propertyRow .text {
-  cursor: default;
-  display: inline-block;
-  overflow: hidden;
-  padding-right: 10px;
-  text-overflow: ellipsis;
-  vertical-align: middle;
-  width: 118px;
-}
+  .text {
+    cursor: default;
+    display: inline-block;
+    overflow: hidden;
+    padding-right: 10px;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    width: 118px;
+  }
 
-.propertyRow input.number {
-  width: 40px;
-}
+  input.number {
+    width: 40px;
+  }
 
-.propertyRow .vec2 input.number,
-.propertyRow .vec3 input.number {
-  width: 40px;
-}
+  .vec2 input.number,
+  .vec3 input.number {
+    width: 40px;
+  }
 
-.propertyRow .vec4 input.number {
-  width: 34px;
-}
+  .vec4 input.number {
+    width: 34px;
+  }
 
-.propertyRow .vec2,
-.propertyRow .vec3,
-.propertyRow .vec4 {
-  display: inline;
-}
+  .vec2,
+  .vec3,
+  .vec4 {
+    display: inline;
+  }
 
-.propertyRow .map_value {
-  margin: 0 0 0 5px;
-  width: 68px;
-}
+  .map_value {
+    margin: 0 0 0 5px;
+    width: 68px;
+  }
 
-.propertyRow .Select-control {
-  font-size: 11px;
-  height: 24px;
-}
+  .Select-control {
+    font-size: 11px;
+    height: 24px;
+  }
 
-.propertyRow .Select-placeholder,
-.propertyRow .Select--single > .Select-control .Select-value {
-  line-height: 19px;
-}
+  .Select-placeholder,
+  .Select--single > .Select-control .Select-value {
+    line-height: 19px;
+  }
 
-.propertyRow .Select-input {
-  height: 22px;
-}
+  .Select-input {
+    height: 22px;
+  }
 
-.propertyRow input[type=text],
-.propertyRow input[type=number],
-.propertyRow input.string,
-.propertyRow input.number {
-  background: var(--bg-dark);
-  color: var(--primary);
-  min-height: 26px;
-  padding-bottom: 1px;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 1px;
-}
+  input[type=text],
+  input[type=number],
+  input.string,
+  input.number {
+    background: var(--bg-dark);
+    color: var(--primary);
+    min-height: 26px;
+    padding-bottom: 1px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1px;
 
-.propertyRow input[type=text]:last-child,
-.propertyRow input[type=number]:last-child,
-.propertyRow input.string:last-child,
-.propertyRow input.number:last-child {
-  padding-right: 0;
-}
+    &:last-child {
+      padding-right: 0;
+    }
 
-.propertyRow input.string {
-  padding-left: 8px;
-  box-sizing: border-box;
-  width: 165px;
-}
+    &:focus {
+      box-shadow: none;
+    }
+  }
 
-.propertyRow input[type=text]:focus,
-.propertyRow input.string:focus {
-  box-shadow: none;
-}
+  input.string {
+    padding-left: 8px;
+    box-sizing: border-box;
+    width: 165px;
+  }
 
-.propertyRow .color_value {
-  margin: 0 0 0 5px;
-  width: 68px;
-  letter-spacing: 1px;
-}
+  .color_value {
+    margin: 0 0 0 5px;
+    width: 68px;
+    letter-spacing: 1px;
+  }
 
-.propertyRowDefined .text {
-  color: var(--text);
-  font-weight: 500;
-}
+  .texture {
+    display: flex;
 
-.components * {
-  vertical-align: middle;
+    input {
+      margin-left: 0;
+      width: 120px;
+    }
+  }
+
+  &Defined .text {
+    color: var(--text);
+    font-weight: 500;
+  }
 }
 
 span.subcomponent {
@@ -209,26 +210,26 @@ span.subcomponent {
   justify-content: center;
   padding: 20px 10px;
   background: var(--bg-dark);
-}
 
-#addComponentContainer #addComponent {
-  text-align: left;
-  width: 200px;
-}
+  #addComponent {
+    text-align: left;
+    width: 200px;
 
-#addComponentContainer #addComponent .select__control {
-  background: var(--bg-dark);
-  height: 35px;
-  color: var(--primary);
-}
+    .select__control {
+      background: var(--bg-dark);
+      height: 35px;
+      color: var(--primary);
+    }
+  }
 
-#addComponentContainer #addComponentHeader {
-  font-size: 15px;
-  margin: 5px 0 10px 0;
-}
+  #addComponentHeader {
+    font-size: 15px;
+    margin: 5px 0 10px 0;
+  }
 
-#addComponentContainer input[type=text]:focus {
-  box-shadow: none;
+  input[type=text]:focus {
+    box-shadow: none;
+  }
 }
 
 .Select-menu-outer .is-focused span {
@@ -240,46 +241,39 @@ span.subcomponent {
   display: flex;
 }
 
-#componentEntityHeader .collapsible-header {
-  bottom: 4px;
-  position: relative;
-}
+#componentEntityHeader {
+  .collapsible-header {
+    bottom: 4px;
+    position: relative;
+  }
 
-#componentEntityHeader .collapse-button {
-  display: none;
-}
+  .collapse-button {
+    display: none;
+  }
 
-#componentEntityHeader .static {
-  height: 13px;
-}
+  .static {
+    height: 13px;
+  }
 
-#componentEntityHeader .entityPrint {
-  font-size: 15px;
-  padding-left: 5px;
-}
+  .entityPrint {
+    font-size: 15px;
+    padding-left: 5px;
+  }
 
-#componentEntityHeader .entityName {
-  max-width: 160px;
-  top: 0;
-}
+  .entityName {
+    max-width: 160px;
+    top: 0;
+  }
 
-#componentEntityHeader .entityIcons {
-  color: var(--text);
+  .entityIcons {
+    color: var(--text);
+  }
+
+  .gltfIcon img {
+    top: 0;
+  }
 }
 
 #mixinSelect {
   width: 160px;
-}
-
-.propertyRow .texture {
-  display: flex;
-}
-
-.propertyRow .texture input {
-  margin-left: 0;
-  width: 120px;
-}
-
-#componentEntityHeader .gltfIcon img {
-  top: 0;
 }

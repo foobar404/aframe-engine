@@ -25,6 +25,21 @@ export function insertNewAsset(
         onLoadedCallback();
       }
     };
-    document.getElementsByTagName('a-assets')[0].appendChild(element);
+    
+    // Find or create a-assets element
+    var assetsElement = document.getElementsByTagName('a-assets')[0];
+    if (!assetsElement) {
+      // If no a-assets element exists, create one and append to scene
+      assetsElement = document.createElement('a-assets');
+      var sceneElement = document.getElementsByTagName('a-scene')[0];
+      if (sceneElement) {
+        sceneElement.appendChild(assetsElement);
+      } else {
+        console.error('No a-scene element found to append a-assets to');
+        return;
+      }
+    }
+    
+    assetsElement.appendChild(element);
   }
 }

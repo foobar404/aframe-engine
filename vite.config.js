@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import { terser } from 'rollup-plugin-terser'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -15,6 +16,9 @@ export default defineConfig({
         }),
         tailwindcss()
     ],
+    resolve: {
+        extensions: ['.js', '.jsx', '.json']
+    },
     css: {
         preprocessorOptions: {
             styl: {
@@ -27,13 +31,22 @@ export default defineConfig({
         open: true,
     },
     build: {
+        minify: false,
         rollupOptions: {
             input: './src/index.jsx',
-            output: {
-                entryFileNames: 'aframe-engine.js',
-                format: 'iife', // forces full bundle for browser
-                globals: {},
-            },
+            output: [
+                {
+                    entryFileNames: 'aframe-engine.js',
+                    format: 'iife', // forces full bundle for browser
+                    globals: {},
+                },
+                {
+                    entryFileNames: 'aframe-engine.min.js',
+                    format: 'iife', // forces full bundle for browser
+                    globals: {},
+                    plugins: [terser()]
+                }
+            ],
             external: []       // ensure nothing is excluded
         }
     }
