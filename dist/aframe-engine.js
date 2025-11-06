@@ -1,7 +1,7 @@
 (function() {
   "use strict";
   var __vite_style__ = document.createElement("style");
-  __vite_style__.textContent = '/*! tailwindcss v4.1.16 | MIT License | https://tailwindcss.com */\n@layer properties {\n  @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {\n    *, :before, :after, ::backdrop {\n      --tw-rotate-x: initial;\n      --tw-rotate-y: initial;\n      --tw-rotate-z: initial;\n      --tw-skew-x: initial;\n      --tw-skew-y: initial;\n      --tw-shadow: 0 0 #0000;\n      --tw-shadow-color: initial;\n      --tw-shadow-alpha: 100%;\n      --tw-inset-shadow: 0 0 #0000;\n      --tw-inset-shadow-color: initial;\n      --tw-inset-shadow-alpha: 100%;\n      --tw-ring-color: initial;\n      --tw-ring-shadow: 0 0 #0000;\n      --tw-inset-ring-color: initial;\n      --tw-inset-ring-shadow: 0 0 #0000;\n      --tw-ring-inset: initial;\n      --tw-ring-offset-width: 0px;\n      --tw-ring-offset-color: #fff;\n      --tw-ring-offset-shadow: 0 0 #0000;\n      --tw-blur: initial;\n      --tw-brightness: initial;\n      --tw-contrast: initial;\n      --tw-grayscale: initial;\n      --tw-hue-rotate: initial;\n      --tw-invert: initial;\n      --tw-opacity: initial;\n      --tw-saturate: initial;\n      --tw-sepia: initial;\n      --tw-drop-shadow: initial;\n      --tw-drop-shadow-color: initial;\n      --tw-drop-shadow-alpha: 100%;\n      --tw-drop-shadow-size: initial;\n      --tw-ease: initial;\n    }\n  }\n}\n\n@layer theme {\n  :root, :host {\n    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";\n    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;\n    --ease-in-out: cubic-bezier(.4, 0, .2, 1);\n    --default-transition-duration: .15s;\n    --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);\n    --default-font-family: var(--font-sans);\n    --default-mono-font-family: var(--font-mono);\n  }\n}\n\n@layer base {\n  *, :after, :before, ::backdrop {\n    box-sizing: border-box;\n    border: 0 solid;\n    margin: 0;\n    padding: 0;\n  }\n\n  ::file-selector-button {\n    box-sizing: border-box;\n    border: 0 solid;\n    margin: 0;\n    padding: 0;\n  }\n\n  html, :host {\n    -webkit-text-size-adjust: 100%;\n    tab-size: 4;\n    line-height: 1.5;\n    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");\n    font-feature-settings: var(--default-font-feature-settings, normal);\n    font-variation-settings: var(--default-font-variation-settings, normal);\n    -webkit-tap-highlight-color: transparent;\n  }\n\n  hr {\n    height: 0;\n    color: inherit;\n    border-top-width: 1px;\n  }\n\n  abbr:where([title]) {\n    -webkit-text-decoration: underline dotted;\n    text-decoration: underline dotted;\n  }\n\n  h1, h2, h3, h4, h5, h6 {\n    font-size: inherit;\n    font-weight: inherit;\n  }\n\n  a {\n    color: inherit;\n    -webkit-text-decoration: inherit;\n    -webkit-text-decoration: inherit;\n    -webkit-text-decoration: inherit;\n    text-decoration: inherit;\n  }\n\n  b, strong {\n    font-weight: bolder;\n  }\n\n  code, kbd, samp, pre {\n    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);\n    font-feature-settings: var(--default-mono-font-feature-settings, normal);\n    font-variation-settings: var(--default-mono-font-variation-settings, normal);\n    font-size: 1em;\n  }\n\n  small {\n    font-size: 80%;\n  }\n\n  sub, sup {\n    vertical-align: baseline;\n    font-size: 75%;\n    line-height: 0;\n    position: relative;\n  }\n\n  sub {\n    bottom: -.25em;\n  }\n\n  sup {\n    top: -.5em;\n  }\n\n  table {\n    text-indent: 0;\n    border-color: inherit;\n    border-collapse: collapse;\n  }\n\n  :-moz-focusring {\n    outline: auto;\n  }\n\n  progress {\n    vertical-align: baseline;\n  }\n\n  summary {\n    display: list-item;\n  }\n\n  ol, ul, menu {\n    list-style: none;\n  }\n\n  img, svg, video, canvas, audio, iframe, embed, object {\n    vertical-align: middle;\n    display: block;\n  }\n\n  img, video {\n    max-width: 100%;\n    height: auto;\n  }\n\n  button, input, select, optgroup, textarea {\n    font: inherit;\n    font-feature-settings: inherit;\n    font-variation-settings: inherit;\n    letter-spacing: inherit;\n    color: inherit;\n    opacity: 1;\n    background-color: #0000;\n    border-radius: 0;\n  }\n\n  ::file-selector-button {\n    font: inherit;\n    font-feature-settings: inherit;\n    font-variation-settings: inherit;\n    letter-spacing: inherit;\n    color: inherit;\n    opacity: 1;\n    background-color: #0000;\n    border-radius: 0;\n  }\n\n  :where(select:is([multiple], [size])) optgroup {\n    font-weight: bolder;\n  }\n\n  :where(select:is([multiple], [size])) optgroup option {\n    padding-inline-start: 20px;\n  }\n\n  ::file-selector-button {\n    margin-inline-end: 4px;\n  }\n\n  ::placeholder {\n    opacity: 1;\n  }\n\n  @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {\n    ::placeholder {\n      color: currentColor;\n    }\n\n    @supports (color: color-mix(in lab, red, red)) {\n      ::placeholder {\n        color: color-mix(in oklab, currentcolor 50%, transparent);\n      }\n    }\n  }\n\n  textarea {\n    resize: vertical;\n  }\n\n  ::-webkit-search-decoration {\n    -webkit-appearance: none;\n  }\n\n  ::-webkit-date-and-time-value {\n    min-height: 1lh;\n    text-align: inherit;\n  }\n\n  ::-webkit-datetime-edit {\n    display: inline-flex;\n  }\n\n  ::-webkit-datetime-edit-fields-wrapper {\n    padding: 0;\n  }\n\n  ::-webkit-datetime-edit {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-year-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-month-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-day-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-hour-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-minute-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-second-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-millisecond-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-meridiem-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-calendar-picker-indicator {\n    line-height: 1;\n  }\n\n  :-moz-ui-invalid {\n    box-shadow: none;\n  }\n\n  button, input:where([type="button"], [type="reset"], [type="submit"]) {\n    appearance: button;\n  }\n\n  ::file-selector-button {\n    appearance: button;\n  }\n\n  ::-webkit-inner-spin-button {\n    height: auto;\n  }\n\n  ::-webkit-outer-spin-button {\n    height: auto;\n  }\n\n  [hidden]:where(:not([hidden="until-found"])) {\n    display: none !important;\n  }\n}\n\n@layer components;\n\n@layer utilities {\n  .collapse {\n    visibility: collapse;\n  }\n\n  .visible {\n    visibility: visible;\n  }\n\n  .absolute {\n    position: absolute;\n  }\n\n  .fixed {\n    position: fixed;\n  }\n\n  .relative {\n    position: relative;\n  }\n\n  .static {\n    position: static;\n  }\n\n  .container {\n    width: 100%;\n  }\n\n  @media (min-width: 40rem) {\n    .container {\n      max-width: 40rem;\n    }\n  }\n\n  @media (min-width: 48rem) {\n    .container {\n      max-width: 48rem;\n    }\n  }\n\n  @media (min-width: 64rem) {\n    .container {\n      max-width: 64rem;\n    }\n  }\n\n  @media (min-width: 80rem) {\n    .container {\n      max-width: 80rem;\n    }\n  }\n\n  @media (min-width: 96rem) {\n    .container {\n      max-width: 96rem;\n    }\n  }\n\n  .block {\n    display: block;\n  }\n\n  .contents {\n    display: contents;\n  }\n\n  .flex {\n    display: flex;\n  }\n\n  .grid {\n    display: grid;\n  }\n\n  .hidden {\n    display: none;\n  }\n\n  .inline {\n    display: inline;\n  }\n\n  .inline-block {\n    display: inline-block;\n  }\n\n  .inline-grid {\n    display: inline-grid;\n  }\n\n  .table {\n    display: table;\n  }\n\n  .shrink {\n    flex-shrink: 1;\n  }\n\n  .grow {\n    flex-grow: 1;\n  }\n\n  .transform {\n    transform: var(--tw-rotate-x, ) var(--tw-rotate-y, ) var(--tw-rotate-z, ) var(--tw-skew-x, ) var(--tw-skew-y, );\n  }\n\n  .resize {\n    resize: both;\n  }\n\n  .uppercase {\n    text-transform: uppercase;\n  }\n\n  .shadow {\n    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, #0000001a), 0 1px 2px -1px var(--tw-shadow-color, #0000001a);\n    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);\n  }\n\n  .blur {\n    --tw-blur: blur(8px);\n    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );\n  }\n\n  .\\!filter {\n    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, ) !important;\n  }\n\n  .filter {\n    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );\n  }\n\n  .transition {\n    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;\n    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));\n    transition-duration: var(--tw-duration, var(--default-transition-duration));\n  }\n\n  .transition\\! {\n    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events !important;\n    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function)) !important;\n    transition-duration: var(--tw-duration, var(--default-transition-duration)) !important;\n  }\n\n  .ease-in-out {\n    --tw-ease: var(--ease-in-out);\n    transition-timing-function: var(--ease-in-out);\n  }\n}\n\n.entityPrint {\n  font-family: var(--font-normal);\n  line-height: 1.15em;\n}\n\n.entityName {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  display: inline-block;\n  position: relative;\n  top: 3px;\n  overflow: hidden;\n}\n\n[data-entity-name-type="id"] {\n  color: var(--error);\n}\n\n[data-entity-name-type="class"] {\n  color: var(--success);\n}\n\n[data-entity-name-type="mixin"] {\n  color: var(--warning);\n}\n\n.help-lists {\n  justify-content: space-around;\n  display: flex;\n}\n\n.help-list {\n  width: 350px;\n  margin: 0;\n  padding: 0 0 10px;\n  list-style: none;\n}\n\n.help-list li {\n  margin-right: 2.5em;\n}\n\n.help-key-unit {\n  margin-right: 2em;\n  padding: 5px 0;\n  line-height: 1.8;\n}\n\n.help-key {\n  min-width: 60px;\n  margin-right: 4px;\n  position: relative;\n  bottom: 2px;\n}\n\n.help-key span {\n  background-color: var(--bg-light);\n  border: 1px solid var(--bg-lighter);\n  box-shadow: 0 0 5px var(--bg-dark);\n  color: var(--text-dark);\n  text-align: center;\n  background-repeat: repeat-x;\n  border-radius: 3px;\n  padding: 0 8px;\n  font-size: 12px;\n  display: inline-block;\n}\n\n.help-key-def {\n  color: var(--text-dark);\n  margin-left: 1em;\n  display: inline-block;\n}\n\n.Select-control {\n  color: var(--primary);\n  font-family: var(--font-monospace);\n  border: none;\n  border-radius: 0;\n  background-color: var(--bg-dark) !important;\n}\n\n.Select-menu-outer {\n  border: none;\n}\n\n.Select-menu-outer .is-focused {\n  color: var(--text);\n  background-color: var(--primary) !important;\n}\n\n.Select-option {\n  background-color: var(--bg-dark) !important;\n}\n\n.select-widget {\n  width: 157px;\n  display: inline-block;\n}\n\n.Select-placeholder, .Select--single > .Select-control .Select-value, .Select-value-label {\n  color: var(--primary) !important;\n}\n\n#toolbar {\n  background-color: var(--bg);\n}\n\n#toolbar .toolbarActions {\n  align-items: baseline;\n  padding: 0 0 5px;\n  display: flex;\n}\n\n#toolbar .toolbarActions a.disabled {\n  color: var(--bg-lighter);\n  cursor: default;\n}\n\n#toolbar .toolbarActions .helpButtonContainer {\n  text-align: right;\n  flex-grow: 1;\n  padding-right: 10px;\n}\n\n#scenegraph {\n  background: var(--bg);\n  border-top: 1px solid var(--bg-dark);\n  flex-direction: column;\n  width: 230px;\n  padding-top: 32px;\n  display: flex;\n  overflow: auto;\n}\n\n#scenegraph .entity {\n  background: var(--bg);\n  cursor: pointer;\n  white-space: nowrap;\n  justify-content: space-between;\n  width: 100%;\n  padding: 3px;\n  display: flex;\n}\n\n#scenegraph .entity:hover {\n  background: var(--bg-light);\n}\n\n#scenegraph .entity.active {\n  background-color: var(--primary-dark);\n  color: var(--text);\n}\n\n#scenegraph .entity.active .component:hover {\n  color: #1888c1;\n}\n\n#scenegraph .entity.active .entityActions {\n  display: inline;\n}\n\n#scenegraph .entity.novisible.active span, #scenegraph .entity.novisible.active svg, #scenegraph .entity.novisible.active .collapsespace, #scenegraph .entity.novisible.active .id {\n  color: var(--text-dark);\n}\n\n#scenegraph .entity.novisible:not(.active) span, #scenegraph .entity.novisible:not(.active) svg, #scenegraph .entity.novisible:not(.active) .collapsespace, #scenegraph .entity.novisible:not(.active) .id {\n  color: var(--bg);\n}\n\n#scenegraph .component:hover {\n  color: var(--primary);\n}\n\n#scenegraph .entityIcons {\n  margin-left: 2px;\n}\n\n#scenegraph .entityActions {\n  margin: 0 14px;\n  display: none;\n}\n\n#scenegraph .entityActions .button {\n  color: var(--text);\n  margin-left: 6px;\n  font-size: 12px;\n}\n\n#scenegraph svg {\n  color: var(--text-dark);\n}\n\n#scenegraph .toolbarActions svg:hover, #scenegraph .entityActions svg:hover {\n  color: var(--primary);\n}\n\n#scenegraph .active svg {\n  color: var(--text);\n}\n\n#scenegraph .id {\n  color: var(--text-dark);\n}\n\n#scenegraph .option.active .id {\n  color: var(--text);\n}\n\n#scenegraph .collapsespace {\n  color: var(--text);\n  text-align: center;\n  width: 14px;\n  display: inline-block;\n}\n\n#scenegraph .fa-eye {\n  color: var(--text-dark);\n}\n\n#scenegraph .icons a.button {\n  color: var(--text);\n}\n\n#scenegraph .search {\n  padding: 5px;\n  font-size: 16px;\n  position: relative;\n}\n\n#scenegraph .search input {\n  color: var(--text);\n  background: var(--bg-dark);\n  text-indent: 10px;\n  border-radius: 5px;\n  width: 216px;\n  height: 22px;\n}\n\n#scenegraph .search > svg, #scenegraph .search a.button {\n  position: absolute;\n  top: 10px;\n  right: 14px;\n}\n\n#scenegraph .outliner {\n  background: var(--bg);\n  color: var(--text);\n  cursor: default;\n  outline: none;\n  flex: auto;\n  width: 230px;\n  height: calc(100% - 98px);\n  padding: 0;\n  font-size: 13px;\n  line-height: normal;\n  overflow-y: auto;\n}\n\n.scenegraph-bottom {\n  background-color: var(--bg-light);\n  border-top: 1px solid var(--bg-dark);\n  z-index: 100;\n  height: 40px;\n  bottom: 10px;\n  left: 0;\n}\n\n.scenegraph-bottom a {\n  float: right;\n  margin: 10px;\n}\n\n.components {\n  background-color: var(--bg);\n  color: var(--text);\n  width: 331px;\n  height: 100%;\n  position: fixed;\n  overflow: auto;\n}\n\n.collapsible-header {\n  justify-content: space-between;\n  align-items: center;\n  display: flex;\n}\n\n.collapsible-header .entityPrint {\n  color: var(--text);\n}\n\n.collapsible-content {\n  padding: 5px 0;\n}\n\n.componentTitle span {\n  text-overflow: ellipsis;\n  text-transform: uppercase;\n  white-space: nowrap;\n  max-width: 200px;\n  color: var(--text);\n  font-weight: 600;\n  overflow: hidden;\n  vertical-align: bottom !important;\n}\n\n.collapsible .static {\n  background: var(--bg-light);\n  border-bottom: 2px solid var(--bg);\n  box-sizing: content-box;\n  cursor: pointer;\n  vertical-align: bottom;\n  height: 16px;\n  padding: 8px 10px 12px;\n  font-size: 13px;\n}\n\n.collapsible .static:hover {\n  background: var(--bg-light);\n}\n\n.collapsible .menu {\n  text-align: right;\n}\n\n.collapsible .menuafter {\n  color: var(--text-dark);\n  content: "⠇";\n  text-align: right;\n  padding: 5px;\n  font-size: 12px;\n}\n\n.collapsible .static {\n  margin: 0;\n}\n\n.collapsible .static .collapse-button {\n  float: left;\n  border: 6px solid #0000;\n  width: 0;\n  height: 0;\n  margin-left: 2px;\n  margin-right: 10px;\n}\n\n.collapsible.collapsed .static .collapse-button {\n  border-left-color: var(--text);\n  margin-top: 4px;\n}\n\n.collapsible:not(.collapsed) .static .collapse-button {\n  border-top-color: var(--text);\n  margin-top: 7px;\n}\n\n.propertyRow {\n  align-items: center;\n  min-height: 30px;\n  padding: 2px 15px;\n  font-size: 13px;\n  display: flex;\n}\n\n.propertyRow .text {\n  cursor: default;\n  text-overflow: ellipsis;\n  vertical-align: middle;\n  width: 118px;\n  padding-right: 10px;\n  display: inline-block;\n  overflow: hidden;\n}\n\n.propertyRow input.number, .propertyRow .vec2 input.number, .propertyRow .vec3 input.number {\n  width: 40px;\n}\n\n.propertyRow .vec4 input.number {\n  width: 34px;\n}\n\n.propertyRow .vec2, .propertyRow .vec3, .propertyRow .vec4 {\n  display: inline;\n}\n\n.propertyRow .map_value {\n  width: 68px;\n  margin: 0 0 0 5px;\n}\n\n.propertyRow .Select-control {\n  height: 24px;\n  font-size: 11px;\n}\n\n.propertyRow .Select-placeholder, .propertyRow .Select--single > .Select-control .Select-value {\n  line-height: 19px;\n}\n\n.propertyRow .Select-input {\n  height: 22px;\n}\n\n.propertyRow input[type="text"], .propertyRow input[type="number"], .propertyRow input.string, .propertyRow input.number {\n  background: var(--bg-dark);\n  color: var(--primary);\n  min-height: 26px;\n  padding: 1px 5px;\n}\n\n.propertyRow input[type="text"]:last-child, .propertyRow input[type="number"]:last-child, .propertyRow input.string:last-child, .propertyRow input.number:last-child {\n  padding-right: 0;\n}\n\n.propertyRow input.string {\n  box-sizing: border-box;\n  width: 165px;\n  padding-left: 8px;\n}\n\n.propertyRow input[type="text"]:focus, .propertyRow input.string:focus {\n  box-shadow: none;\n}\n\n.propertyRow .color_value {\n  letter-spacing: 1px;\n  width: 68px;\n  margin: 0 0 0 5px;\n}\n\n.propertyRowDefined .text {\n  color: var(--text);\n  font-weight: 500;\n}\n\n.components * {\n  vertical-align: middle;\n}\n\nspan.subcomponent {\n  color: var(--text-dark);\n  margin-left: 10px;\n  float: none !important;\n  vertical-align: top !important;\n}\n\n#addComponentContainer {\n  background: var(--bg-dark);\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 20px 10px;\n  display: flex;\n}\n\n#addComponentContainer #addComponent {\n  text-align: left;\n  width: 200px;\n}\n\n#addComponentContainer #addComponent .select__control {\n  background: var(--bg-dark);\n  height: 35px;\n  color: var(--primary);\n}\n\n#addComponentContainer #addComponentHeader {\n  margin: 5px 0 10px;\n  font-size: 15px;\n}\n\n#addComponentContainer input[type="text"]:focus {\n  box-shadow: none;\n}\n\n.Select-menu-outer .is-focused span {\n  color: var(--text);\n}\n\n.component-title {\n  align-items: center;\n  display: flex;\n}\n\n#componentEntityHeader .collapsible-header {\n  position: relative;\n  bottom: 4px;\n}\n\n#componentEntityHeader .collapse-button {\n  display: none;\n}\n\n#componentEntityHeader .static {\n  height: 13px;\n}\n\n#componentEntityHeader .entityPrint {\n  padding-left: 5px;\n  font-size: 15px;\n}\n\n#componentEntityHeader .entityName {\n  max-width: 160px;\n  top: 0;\n}\n\n#componentEntityHeader .entityIcons {\n  color: var(--text);\n}\n\n#mixinSelect {\n  width: 160px;\n}\n\n.propertyRow .texture {\n  display: flex;\n}\n\n.propertyRow .texture input {\n  width: 120px;\n  margin-left: 0;\n}\n\n#componentEntityHeader .gltfIcon img {\n  top: 0;\n}\n\n.select__control {\n  cursor: pointer;\n  min-height: 26px;\n  font-family: var(--font-monospace);\n  border: 0;\n  border-radius: 0;\n  font-size: 13px;\n}\n\n.select__indicator {\n  height: 26px;\n}\n\n.select__indicator-separator {\n  display: none;\n}\n\n.select__input {\n  min-height: auto !important;\n}\n\n.select__control, .select__menu {\n  background: var(--bg-dark);\n}\n\n.select__option {\n  padding: 5px 10px;\n}\n\n.select__placeholder, .select__menu {\n  color: var(--text);\n}\n\n.select__single-value {\n  color: var(--primary);\n}\n\n.select__control--is-focused {\n  box-shadow: none !important;\n}\n\n.select__option {\n  cursor: pointer;\n}\n\n.select__label {\n  font-size: 11px;\n}\n\n.select__option--is-focused {\n  background: var(--primary-dark);\n}\n\n.select__value-container {\n  height: 26px;\n  position: static;\n}\n\n.select__value-container.select__value-container--is-multi {\n  height: auto;\n  padding: 6px;\n}\n\n.select__dropdown-indicator {\n  padding: 3px 8px;\n}\n\n.select__multi-value {\n  background: var(--bg);\n  color: var(--primary);\n}\n\n.select__multi-value__label {\n  color: var(--primary);\n}\n\n.select__multi-value__remove:hover {\n  color: var(--text);\n  background: var(--bg);\n}\n\n.modal {\n  z-index: 2147483647;\n  background-color: #0009;\n  width: 100%;\n  height: 100%;\n  animation: .2s ease-out animateopacity;\n  display: flex;\n  position: fixed;\n  top: 0;\n  left: 0;\n  overflow: auto;\n}\n\n.modal h3 {\n  margin: .6em 0;\n  font-size: 18px;\n  font-weight: 100;\n}\n\n#textureModal .modal-content {\n  width: calc(100% - 50px);\n  height: calc(100% - 50px);\n}\n\n.modal-content {\n  background-color: var(--bg-dark);\n  margin: auto;\n  padding: 0;\n  animation: .2s ease-out animatetop;\n  overflow: hidden;\n  box-shadow: 0 4px 8px #00000080, 0 6px 20px #00000080;\n}\n\n.close {\n  color: var(--text);\n  float: right;\n  font-size: 28px;\n  font-weight: bold;\n}\n\n.close:hover, .close:focus {\n  color: #08f;\n  cursor: pointer;\n  text-decoration: none;\n}\n\n.modal-header {\n  color: var(--text);\n  padding: 2px 16px;\n}\n\n.modal-body {\n  padding: 16px;\n  overflow: auto;\n}\n\n.modal-footer {\n  color: var(--text);\n  padding: 2px 16px;\n}\n\n.gallery {\n  background: var(--bg-dark);\n  flex-wrap: wrap;\n  max-height: calc(100vh - 370px);\n  margin: 15px auto 0;\n  padding: 15px 3px 3px;\n  display: flex;\n  overflow: auto;\n}\n\n.newimage .gallery {\n  padding: 16px;\n}\n\n.gallery li {\n  cursor: pointer;\n  border-radius: 2px;\n  width: 155px;\n  margin: 8px;\n  overflow: hidden;\n  box-shadow: 0 0 6px #0009;\n}\n\n.gallery li.selected, .gallery li:hover {\n  box-shadow: 0 0 0 2px var(--primary);\n}\n\n.gallery li .detail {\n  background-color: var(--bg-light);\n  min-height: 60px;\n  margin: 0;\n  padding: 3px 10px;\n}\n\n.preview {\n  width: 150px;\n  padding: 10px;\n}\n\n.preview input {\n  width: 144px;\n  margin: 8px 0;\n  display: block;\n}\n\n.preview button {\n  width: 155px;\n}\n\n.preview .detail .title {\n  color: var(--text);\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  max-width: 155px;\n  display: inline-block;\n  overflow: hidden;\n}\n\n.gallery li.selected .detail, .gallery li:hover .detail {\n  background-color: var(--bg-lighter);\n}\n\n.gallery li .detail span {\n  color: var(--text-dark);\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  width: 140px;\n  margin-top: 4px;\n  display: block;\n  overflow: hidden;\n}\n\n.gallery li.selected .detail span, .gallery li:hover .detail span {\n  color: var(--text);\n}\n\n.gallery li .detail span.title {\n  color: var(--text) !important;\n}\n\n.modal button {\n  appearance: none;\n  box-shadow: none;\n  cursor: pointer;\n  border-radius: 0;\n  margin: 0 10px 0 0;\n  padding: 5px 10px;\n  font-size: 12px;\n  line-height: 1.8;\n  display: inline-block;\n}\n\n.modal button:focus {\n  outline: none;\n}\n\n.modal button {\n  background-color: var(--primary);\n  color: var(--text);\n  border: none;\n}\n\n.modal button:hover, .modal button.hover {\n  background-color: var(--primary-hover);\n  text-shadow: -1px 1px var(--primary-dark);\n}\n\n.modal button:active, .modal button.active {\n  background-color: var(--primary-dark);\n  text-shadow: -1px 1px var(--bg-dark);\n}\n\n.modal button:disabled {\n  background-color: var(--bg);\n  cursor: none;\n}\n\n.newimage {\n  background-color: var(--bg-light);\n  color: var(--text-dark);\n  justify-content: space-between;\n  margin-top: 10px;\n  padding: 10px;\n  font-size: 13px;\n  display: flex;\n  overflow: auto;\n}\n\n.newimage input {\n  color: var(--primary);\n  padding: 3px 5px;\n}\n\n.texture canvas + input {\n  margin-left: 5px;\n}\n\n.texture svg {\n  padding-right: 5px;\n}\n\n.uploader-normal-button .hidden {\n  display: none;\n}\n\n.assets.search {\n  width: 200px;\n  margin-top: 10px;\n  position: relative;\n}\n\n.assets.search svg {\n  position: absolute;\n  top: 5px;\n  right: 0;\n}\n\n.new_asset_options {\n  margin: 10px;\n}\n\n.new_asset_options > ul {\n  margin-left: 10px;\n  padding: 5px;\n}\n\n.new_asset_options > ul > li {\n  padding: 10px 0;\n}\n\n.new_asset_options .imageUrl {\n  width: 350px;\n  margin-left: 5px;\n}\n\n.texture canvas {\n  border: 1px solid var(--bg-light);\n  cursor: pointer;\n}\n\n#viewportBar {\n  background-color: var(--bg);\n  color: var(--text);\n  flex-grow: 2;\n  justify-content: space-between;\n  align-items: center;\n  height: 32px;\n  margin: 0 auto;\n  font-size: 15px;\n  display: flex;\n  top: 0;\n  left: 0;\n  right: 0;\n}\n\n.toolbarButtons {\n  align-items: center;\n  gap: 6px;\n  display: flex;\n}\n\n.toolbarButtons * {\n  vertical-align: middle;\n  margin-left: 0 !important;\n}\n\n.toolbarButtons a.button svg {\n  padding: 8px;\n}\n\n.toolbarButtons a.button:not(.active) svg:hover {\n  background-color: var(--bg-lighter);\n}\n\n.toolbarButtons .active svg {\n  background-color: var(--primary);\n  color: var(--text);\n}\n\n.toolbarButtons .active:hover svg {\n  color: var(--text) !important;\n}\n\n.local-transform {\n  padding-left: 10px;\n  padding-right: 20px;\n}\n\n.local-transform label {\n  color: var(--text-dark);\n  padding-left: 5px;\n}\n\n.local-transform a.button {\n  padding-top: 0;\n}\n\n#cameraSelect {\n  cursor: pointer;\n  width: 120px;\n}\n\n#cameraSelect .select__dropdown-indicator {\n  padding-left: 3px;\n  padding-right: 3px;\n}\n\n#cameraToolbar {\n  align-items: center;\n  margin-left: 5px;\n  display: flex;\n}\n\n#cameraToolbar a {\n  margin-right: 10px;\n}\n\n#cameraToolbar .select__control {\n  background: none;\n}\n\n#cameraToolbar .select__single-value {\n  color: var(--text);\n}\n\n#cameraToolbar .select__single-value:hover {\n  color: var(--primary);\n}\n\n#viewportHud {\n  display: none;\n}\n\n@media (min-width: 1024px) {\n  #viewportHud {\n    display: block;\n  }\n}\n\nbody.aframe-inspector-opened, .toggle-edit, .sponsor-btn, .wf-roboto-n4-active body.aframe-inspector-opened, .wf-roboto-n4-active .toggle-edit, .wf-roboto-n4-active .sponsor-btn {\n  font-family: var(--font-normal);\n}\n\nbody.aframe-inspector-opened {\n  background: var(--bg-dark);\n  color: var(--text);\n  margin: 0;\n  font-size: 12px;\n  overflow: hidden;\n}\n\n#aframeInspector .Select, #aframeInspector code, #aframeInspector pre, #aframeInspector input, #aframeInspector textarea, #aframeInspector select {\n  font-family: var(--font-monospace);\n  font-size: 13px;\n}\n\n#aframeInspector .wf-robotomono-n4-active .Select, #aframeInspector .wf-robotomono-n4-active code, #aframeInspector .wf-robotomono-n4-active pre, #aframeInspector .wf-robotomono-n4-active input, #aframeInspector .wf-robotomono-n4-active textarea, #aframeInspector .wf-robotomono-n4-active select {\n  font-family: Roboto Mono, Consolas, Andale Mono, Monaco, Courier New, monospace;\n}\n\n#aframeInspector hr {\n  border: 0;\n  border-top: 1px solid #ccc;\n}\n\n#aframeInspector a {\n  cursor: pointer;\n}\n\n#aframeInspector button {\n  position: relative;\n}\n\n#aframeInspector code {\n  font-family: Consolas, Andale Mono, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;\n}\n\n#aframeInspector textarea {\n  tab-size: 4;\n  white-space: pre;\n  word-wrap: normal;\n}\n\n#aframeInspector textarea.success {\n  border-color: #8b8 !important;\n}\n\n#aframeInspector textarea.fail {\n  background-color: #ff00000d;\n  border-color: red !important;\n}\n\n#aframeInspector textarea, #aframeInspector input {\n  outline: none;\n}\n\n#aframeInspector .gltfIcon img {\n  box-sizing: content-box;\n  vertical-align: baseline;\n  width: 20px;\n  height: 20px;\n  padding: 0 5px;\n  display: inline;\n  position: relative;\n  top: 4px;\n  left: 5px;\n}\n\n#aframeInspector #scenegraph, #aframeInspector #rightPanel {\n  z-index: 9998;\n}\n\n#aframeInspector #sidebar, #aframeInspector #scenegraph .panel {\n  cursor: default;\n  -webkit-user-select: none;\n  user-select: none;\n}\n\n#aframeInspector .toggle-edit {\n  background-color: var(--error);\n  box-sizing: content-box;\n  color: var(--text);\n  text-align: center;\n  z-index: 999999999;\n  width: 100px;\n  margin: 0;\n  padding: 6px 10px;\n  font-size: 13px;\n  line-height: 16px;\n  text-decoration: none;\n  position: fixed;\n  top: 3px;\n  left: 3px;\n}\n\n#aframeInspector .toggle-edit:hover {\n  background-color: #e42b5a;\n}\n\n#aframeInspector .try-editor-btn {\n  background-color: var(--error);\n  box-sizing: content-box;\n  color: var(--text);\n  text-align: center;\n  justify-content: center;\n  gap: 5px;\n  width: 200px;\n  margin: 0;\n  padding: 6px 10px;\n  font-size: 16px;\n  line-height: 24px;\n  text-decoration: none;\n  display: flex;\n}\n\n#aframeInspector .try-editor-btn:hover {\n  color: var(--text);\n  background-color: #e42b5a;\n}\n\n#aframeInspector .sponsor-btn {\n  background-color: var(--text);\n  box-sizing: content-box;\n  color: var(--bg-dark);\n  text-align: center;\n  z-index: 999999999;\n  justify-content: center;\n  gap: 5px;\n  width: 80px;\n  margin: 0;\n  padding: 6px 10px;\n  font-size: 13px;\n  line-height: 16px;\n  text-decoration: none;\n  display: flex;\n  position: fixed;\n  top: 3px;\n  left: 127px;\n}\n\n#aframeInspector .sponsor-btn svg {\n  fill: currentColor;\n  color: #db61a2;\n}\n\n#aframeInspector .sponsor-btn:hover {\n  color: var(--text);\n  background-color: #e42b5a;\n}\n\n#aframeInspector input {\n  color: var(--text);\n  background-color: #0000;\n  border: 1px solid #555;\n}\n\n#aframeInspector input, #aframeInspector .texture canvas {\n  transition: background-color .1s ease-in-out, border-color .1s ease-in-out, color .1s ease-in-out;\n}\n\n#aframeInspector input[type="text"], #aframeInspector input[type="number"], #aframeInspector input.string, #aframeInspector input.number {\n  outline: none;\n  min-height: 14px;\n}\n\n#aframeInspector input[type="checkbox"] {\n  appearance: auto;\n  cursor: pointer;\n  width: 18px;\n  height: 18px;\n  margin: 0;\n}\n\n#aframeInspector input[type="checkbox"]:focus {\n  box-shadow: none;\n}\n\n#aframeInspector input.number {\n  cursor: col-resize;\n  border: 0;\n  padding: 2px;\n  font-size: 13px;\n  color: #2cb7ff !important;\n  background-color: #0000 !important;\n}\n\n#aframeInspector input.stringfocus, #aframeInspector input.numberfocus {\n  color: var(--text);\n  cursor: auto;\n  border: 1px solid #20b1fb;\n}\n\n#aframeInspector input.error {\n  border: 1px solid #a00;\n}\n\n#aframeInspector #sidebar {\n  background: var(--bg);\n  width: 331px;\n}\n\n#aframeInspector #sidebar * {\n  vertical-align: middle;\n}\n\n#aframeInspector input, #aframeInspector textarea, #aframeInspector select {\n  background: var(--bg-dark);\n  color: #888;\n  border: 1px solid #0000;\n}\n\n#aframeInspector select {\n  background: var(--bg-light);\n}\n\n#aframeInspector input[type="color"] {\n  background-color: var(--bg-light);\n  border: 1px solid var(--bg-dark);\n  cursor: pointer;\n  cursor: pointer;\n  width: 50px;\n  height: 25px;\n  padding: 0;\n}\n\n#aframeInspector input[type="color"]::-webkit-color-swatch {\n  border: 0;\n}\n\n#aframeInspector input[type="color"]::-webkit-color-swatch-wrapper {\n  padding: 0;\n}\n\n#aframeInspector input[type="color"]::-moz-color-swatch {\n  border: 0;\n}\n\n#aframeInspector input[type="color"]::-moz-focus-inner {\n  border: 0;\n  padding: 0;\n}\n\n#aframeInspector .hidden {\n  visibility: hidden;\n}\n\n#aframeInspector a.button {\n  color: var(--text-dark);\n  margin-left: 10px;\n  font-size: 16px;\n  text-decoration: none;\n}\n\n#aframeInspector a.button:hover {\n  color: var(--primary);\n}\n\n@keyframes animateopacity {\n  from {\n    opacity: 0;\n  }\n\n  to {\n    opacity: 1;\n  }\n}\n\n#aframeInspector .hide {\n  display: none;\n}\n\n#aframeInspector .a-canvas.state-dragging {\n  cursor: grabbing;\n}\n\n#aframeInspector #rightPanel {\n  justify-content: flex-end;\n  align-items: stretch;\n  display: flex;\n}\n\n#aframeInspector #inspectorContainer {\n  pointer-events: none;\n  z-index: 999999;\n  justify-content: space-between;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  position: fixed;\n  top: 0;\n  left: 0;\n}\n\n#aframeInspector #scenegraph, #aframeInspector #viewportBar, #aframeInspector #rightPanel {\n  pointer-events: all;\n}\n\n.aframe-inspector-opened a-scene .a-canvas {\n  z-index: 9998;\n  background-color: #191919;\n}\n\n#aframeInspector .toggle-sidebar {\n  z-index: 9998;\n  align-items: center;\n  height: 100%;\n  display: flex;\n  position: absolute;\n}\n\n#aframeInspector .toggle-sidebar a {\n  background-color: var(--bg);\n  color: var(--text-dark);\n  z-index: 9998;\n  padding: 5px;\n}\n\n#aframeInspector .toggle-sidebar a.hover {\n  background-color: var(--primary);\n  color: var(--text);\n}\n\n#aframeInspector .toggle-sidebar.left {\n  top: 0;\n  left: 0;\n}\n\n#aframeInspector .toggle-sidebar.right {\n  top: 0;\n  right: 0;\n}\n\nsvg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {\n  box-sizing: content-box;\n  overflow: visible;\n}\n\n.svg-inline--fa {\n  vertical-align: -.125em;\n  height: 1em;\n  display: inline-block;\n  overflow: visible;\n}\n\n:root {\n  --font-normal: system-ui, BlinkMacSystemFont, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;\n  --font-monospace: system-ui, BlinkMacSystemFont, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;\n  --primary: #1faaf2;\n  --primary-hover: #6fc5f5;\n  --primary-dark: #155373;\n  --primary-light: #87d0f7;\n  --secondary: #6366f1;\n  --secondary-hover: #818cf8;\n  --secondary-dark: #4338ca;\n  --secondary-light: #a5b4fc;\n  --accent: #f59e0b;\n  --accent-hover: #fbbf24;\n  --accent-dark: #d97706;\n  --accent-light: #fcd34d;\n  --bg: #242424;\n  --bg-dark: #1d1d1d;\n  --bg-light: #333;\n  --bg-lighter: #393939;\n  --text: #c3c3c3;\n  --text-dark: #888;\n  --text-light: #fff;\n  --success: #10b981;\n  --success-dark: #059669;\n  --success-light: #6ee7b7;\n  --warning: #f59e0b;\n  --warning-dark: #d97706;\n  --warning-light: #fcd34d;\n  --error: #ef4444;\n  --error-dark: #dc2626;\n  --error-light: #fca5a5;\n  --info: #3b82f6;\n  --info-dark: #2563eb;\n  --info-light: #93c5fd;\n}\n\n[data-theme="light"] {\n  --primary: #0ea5e9;\n  --primary-hover: #0284c7;\n  --primary-dark: #0369a1;\n  --primary-light: #38bdf8;\n  --secondary: #7c3aed;\n  --secondary-hover: #8b5cf6;\n  --secondary-dark: #6d28d9;\n  --secondary-light: #a78bfa;\n  --accent: #ea580c;\n  --accent-hover: #dc2626;\n  --accent-dark: #c2410c;\n  --accent-light: #fb923c;\n  --bg: #f8fafc;\n  --bg-dark: #e2e8f0;\n  --bg-light: #cbd5e1;\n  --bg-lighter: #94a3b8;\n  --text: #334155;\n  --text-dark: #64748b;\n  --text-light: #0f172a;\n  --success: #059669;\n  --success-dark: #047857;\n  --success-light: #10b981;\n  --warning: #d97706;\n  --warning-dark: #b45309;\n  --warning-light: #f59e0b;\n  --error: #dc2626;\n  --error-dark: #b91c1c;\n  --error-light: #ef4444;\n  --info: #2563eb;\n  --info-dark: #1d4ed8;\n  --info-light: #3b82f6;\n}\n\n[data-theme="high-contrast"] {\n  --primary: #0ff;\n  --primary-hover: #87d0f7;\n  --primary-dark: #0080ff;\n  --primary-light: #fff;\n  --secondary: #f0f;\n  --secondary-hover: #ff80ff;\n  --secondary-dark: purple;\n  --secondary-light: #ffb3ff;\n  --accent: #ff0;\n  --accent-hover: #ffff80;\n  --accent-dark: olive;\n  --accent-light: #ffffb3;\n  --bg: #000;\n  --bg-dark: #000;\n  --bg-light: #333;\n  --bg-lighter: #666;\n  --text: #fff;\n  --text-dark: #ccc;\n  --text-light: #fff;\n  --success: #0f0;\n  --success-dark: green;\n  --success-light: #80ff80;\n  --warning: #ff0;\n  --warning-dark: olive;\n  --warning-light: #ffff80;\n  --error: red;\n  --error-dark: maroon;\n  --error-light: #ff8080;\n  --info: #0080ff;\n  --info-dark: #004080;\n  --info-light: #80c0ff;\n}\n\n[data-theme="blue"] {\n  --primary: #1e40af;\n  --primary-hover: #1d4ed8;\n  --primary-dark: #1e3a8a;\n  --primary-light: #3b82f6;\n  --secondary: #7c2d12;\n  --secondary-hover: #9a3412;\n  --secondary-dark: #5b1f0d;\n  --secondary-light: #ea580c;\n  --accent: #7c3aed;\n  --accent-hover: #8b5cf6;\n  --accent-dark: #6d28d9;\n  --accent-light: #a78bfa;\n  --bg: #0f172a;\n  --bg-dark: #020617;\n  --bg-light: #1e293b;\n  --bg-lighter: #334155;\n  --text: #cbd5e1;\n  --text-dark: #94a3b8;\n  --text-light: #f1f5f9;\n  --success: #059669;\n  --success-dark: #047857;\n  --success-light: #10b981;\n  --warning: #d97706;\n  --warning-dark: #b45309;\n  --warning-light: #f59e0b;\n  --error: #dc2626;\n  --error-dark: #b91c1c;\n  --error-light: #ef4444;\n  --info: #0891b2;\n  --info-dark: #0e7490;\n  --info-light: #22d3ee;\n}\n\n[data-theme="purple"] {\n  --primary: #7c3aed;\n  --primary-hover: #8b5cf6;\n  --primary-dark: #6d28d9;\n  --primary-light: #a78bfa;\n  --secondary: #dc2626;\n  --secondary-hover: #ef4444;\n  --secondary-dark: #b91c1c;\n  --secondary-light: #fca5a5;\n  --accent: #f59e0b;\n  --accent-hover: #fbbf24;\n  --accent-dark: #d97706;\n  --accent-light: #fcd34d;\n  --bg: #1a103d;\n  --bg-dark: #0f0a1f;\n  --bg-light: #2d1b69;\n  --bg-lighter: #4c1d95;\n  --text: #d8b4fe;\n  --text-dark: #a855f7;\n  --text-light: #faf5ff;\n  --success: #10b981;\n  --success-dark: #059669;\n  --success-light: #6ee7b7;\n  --warning: #f59e0b;\n  --warning-dark: #d97706;\n  --warning-light: #fcd34d;\n  --error: #ef4444;\n  --error-dark: #dc2626;\n  --error-light: #fca5a5;\n  --info: #3b82f6;\n  --info-dark: #2563eb;\n  --info-light: #93c5fd;\n}\n\n[data-theme="green"] {\n  --primary: #059669;\n  --primary-hover: #10b981;\n  --primary-dark: #047857;\n  --primary-light: #6ee7b7;\n  --secondary: #7c2d12;\n  --secondary-hover: #9a3412;\n  --secondary-dark: #5b1f0d;\n  --secondary-light: #ea580c;\n  --accent: #7c3aed;\n  --accent-hover: #8b5cf6;\n  --accent-dark: #6d28d9;\n  --accent-light: #a78bfa;\n  --bg: #0f172a;\n  --bg-dark: #020617;\n  --bg-light: #1e293b;\n  --bg-lighter: #334155;\n  --text: #cbd5e1;\n  --text-dark: #94a3b8;\n  --text-light: #f1f5f9;\n  --success: #10b981;\n  --success-dark: #059669;\n  --success-light: #6ee7b7;\n  --warning: #f59e0b;\n  --warning-dark: #d97706;\n  --warning-light: #fcd34d;\n  --error: #dc2626;\n  --error-dark: #b91c1c;\n  --error-light: #ef4444;\n  --info: #0891b2;\n  --info-dark: #0e7490;\n  --info-light: #22d3ee;\n}\n\n.theme-switcher {\n  margin: 10px;\n}\n\n.theme-select {\n  background: var(--bg-dark);\n  border: 1px solid var(--bg-light);\n  color: var(--text);\n  border-radius: 4px;\n  padding: 5px 10px;\n  font-size: 12px;\n}\n\n.theme-select:focus {\n  border-color: var(--primary);\n  outline: none;\n}\n\n.theme-select option {\n  background: var(--bg);\n  color: var(--text);\n}\n\n@property --tw-rotate-x {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-rotate-y {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-rotate-z {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-skew-x {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-skew-y {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-shadow {\n  syntax: "*";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n\n@property --tw-shadow-color {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-shadow-alpha {\n  syntax: "<percentage>";\n  inherits: false;\n  initial-value: 100%;\n}\n\n@property --tw-inset-shadow {\n  syntax: "*";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n\n@property --tw-inset-shadow-color {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-inset-shadow-alpha {\n  syntax: "<percentage>";\n  inherits: false;\n  initial-value: 100%;\n}\n\n@property --tw-ring-color {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-ring-shadow {\n  syntax: "*";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n\n@property --tw-inset-ring-color {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-inset-ring-shadow {\n  syntax: "*";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n\n@property --tw-ring-inset {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-ring-offset-width {\n  syntax: "<length>";\n  inherits: false;\n  initial-value: 0;\n}\n\n@property --tw-ring-offset-color {\n  syntax: "*";\n  inherits: false;\n  initial-value: #fff;\n}\n\n@property --tw-ring-offset-shadow {\n  syntax: "*";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n\n@property --tw-blur {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-brightness {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-contrast {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-grayscale {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-hue-rotate {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-invert {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-opacity {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-saturate {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-sepia {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-drop-shadow {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-drop-shadow-color {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-drop-shadow-alpha {\n  syntax: "<percentage>";\n  inherits: false;\n  initial-value: 100%;\n}\n\n@property --tw-drop-shadow-size {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-ease {\n  syntax: "*";\n  inherits: false\n}\n/*$vite$:1*/';
+  __vite_style__.textContent = '/*! tailwindcss v4.1.16 | MIT License | https://tailwindcss.com */\n@layer properties {\n  @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {\n    *, :before, :after, ::backdrop {\n      --tw-rotate-x: initial;\n      --tw-rotate-y: initial;\n      --tw-rotate-z: initial;\n      --tw-skew-x: initial;\n      --tw-skew-y: initial;\n      --tw-border-style: solid;\n      --tw-font-weight: initial;\n      --tw-shadow: 0 0 #0000;\n      --tw-shadow-color: initial;\n      --tw-shadow-alpha: 100%;\n      --tw-inset-shadow: 0 0 #0000;\n      --tw-inset-shadow-color: initial;\n      --tw-inset-shadow-alpha: 100%;\n      --tw-ring-color: initial;\n      --tw-ring-shadow: 0 0 #0000;\n      --tw-inset-ring-color: initial;\n      --tw-inset-ring-shadow: 0 0 #0000;\n      --tw-ring-inset: initial;\n      --tw-ring-offset-width: 0px;\n      --tw-ring-offset-color: #fff;\n      --tw-ring-offset-shadow: 0 0 #0000;\n      --tw-outline-style: solid;\n      --tw-blur: initial;\n      --tw-brightness: initial;\n      --tw-contrast: initial;\n      --tw-grayscale: initial;\n      --tw-hue-rotate: initial;\n      --tw-invert: initial;\n      --tw-opacity: initial;\n      --tw-saturate: initial;\n      --tw-sepia: initial;\n      --tw-drop-shadow: initial;\n      --tw-drop-shadow-color: initial;\n      --tw-drop-shadow-alpha: 100%;\n      --tw-drop-shadow-size: initial;\n      --tw-ease: initial;\n    }\n  }\n}\n\n@layer theme {\n  :root, :host {\n    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";\n    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;\n    --color-black: #000;\n    --color-white: #fff;\n    --spacing: .25rem;\n    --font-weight-bold: 700;\n    --radius-md: .375rem;\n    --ease-out: cubic-bezier(0, 0, .2, 1);\n    --ease-in-out: cubic-bezier(.4, 0, .2, 1);\n    --default-transition-duration: .15s;\n    --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);\n    --default-font-family: var(--font-sans);\n    --default-mono-font-family: var(--font-mono);\n  }\n}\n\n@layer base {\n  *, :after, :before, ::backdrop {\n    box-sizing: border-box;\n    border: 0 solid;\n    margin: 0;\n    padding: 0;\n  }\n\n  ::file-selector-button {\n    box-sizing: border-box;\n    border: 0 solid;\n    margin: 0;\n    padding: 0;\n  }\n\n  html, :host {\n    -webkit-text-size-adjust: 100%;\n    tab-size: 4;\n    line-height: 1.5;\n    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");\n    font-feature-settings: var(--default-font-feature-settings, normal);\n    font-variation-settings: var(--default-font-variation-settings, normal);\n    -webkit-tap-highlight-color: transparent;\n  }\n\n  hr {\n    height: 0;\n    color: inherit;\n    border-top-width: 1px;\n  }\n\n  abbr:where([title]) {\n    -webkit-text-decoration: underline dotted;\n    text-decoration: underline dotted;\n  }\n\n  h1, h2, h3, h4, h5, h6 {\n    font-size: inherit;\n    font-weight: inherit;\n  }\n\n  a {\n    color: inherit;\n    -webkit-text-decoration: inherit;\n    -webkit-text-decoration: inherit;\n    -webkit-text-decoration: inherit;\n    text-decoration: inherit;\n  }\n\n  b, strong {\n    font-weight: bolder;\n  }\n\n  code, kbd, samp, pre {\n    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);\n    font-feature-settings: var(--default-mono-font-feature-settings, normal);\n    font-variation-settings: var(--default-mono-font-variation-settings, normal);\n    font-size: 1em;\n  }\n\n  small {\n    font-size: 80%;\n  }\n\n  sub, sup {\n    vertical-align: baseline;\n    font-size: 75%;\n    line-height: 0;\n    position: relative;\n  }\n\n  sub {\n    bottom: -.25em;\n  }\n\n  sup {\n    top: -.5em;\n  }\n\n  table {\n    text-indent: 0;\n    border-color: inherit;\n    border-collapse: collapse;\n  }\n\n  :-moz-focusring {\n    outline: auto;\n  }\n\n  progress {\n    vertical-align: baseline;\n  }\n\n  summary {\n    display: list-item;\n  }\n\n  ol, ul, menu {\n    list-style: none;\n  }\n\n  img, svg, video, canvas, audio, iframe, embed, object {\n    vertical-align: middle;\n    display: block;\n  }\n\n  img, video {\n    max-width: 100%;\n    height: auto;\n  }\n\n  button, input, select, optgroup, textarea {\n    font: inherit;\n    font-feature-settings: inherit;\n    font-variation-settings: inherit;\n    letter-spacing: inherit;\n    color: inherit;\n    opacity: 1;\n    background-color: #0000;\n    border-radius: 0;\n  }\n\n  ::file-selector-button {\n    font: inherit;\n    font-feature-settings: inherit;\n    font-variation-settings: inherit;\n    letter-spacing: inherit;\n    color: inherit;\n    opacity: 1;\n    background-color: #0000;\n    border-radius: 0;\n  }\n\n  :where(select:is([multiple], [size])) optgroup {\n    font-weight: bolder;\n  }\n\n  :where(select:is([multiple], [size])) optgroup option {\n    padding-inline-start: 20px;\n  }\n\n  ::file-selector-button {\n    margin-inline-end: 4px;\n  }\n\n  ::placeholder {\n    opacity: 1;\n  }\n\n  @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {\n    ::placeholder {\n      color: currentColor;\n    }\n\n    @supports (color: color-mix(in lab, red, red)) {\n      ::placeholder {\n        color: color-mix(in oklab, currentcolor 50%, transparent);\n      }\n    }\n  }\n\n  textarea {\n    resize: vertical;\n  }\n\n  ::-webkit-search-decoration {\n    -webkit-appearance: none;\n  }\n\n  ::-webkit-date-and-time-value {\n    min-height: 1lh;\n    text-align: inherit;\n  }\n\n  ::-webkit-datetime-edit {\n    display: inline-flex;\n  }\n\n  ::-webkit-datetime-edit-fields-wrapper {\n    padding: 0;\n  }\n\n  ::-webkit-datetime-edit {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-year-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-month-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-day-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-hour-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-minute-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-second-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-millisecond-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-meridiem-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-calendar-picker-indicator {\n    line-height: 1;\n  }\n\n  :-moz-ui-invalid {\n    box-shadow: none;\n  }\n\n  button, input:where([type="button"], [type="reset"], [type="submit"]) {\n    appearance: button;\n  }\n\n  ::file-selector-button {\n    appearance: button;\n  }\n\n  ::-webkit-inner-spin-button {\n    height: auto;\n  }\n\n  ::-webkit-outer-spin-button {\n    height: auto;\n  }\n\n  [hidden]:where(:not([hidden="until-found"])) {\n    display: none !important;\n  }\n}\n\n@layer components;\n\n@layer utilities {\n  .collapse {\n    visibility: collapse;\n  }\n\n  .visible {\n    visibility: visible;\n  }\n\n  .absolute {\n    position: absolute;\n  }\n\n  .fixed {\n    position: fixed;\n  }\n\n  .relative {\n    position: relative;\n  }\n\n  .static {\n    position: static;\n  }\n\n  .sticky {\n    position: sticky;\n  }\n\n  .top-4 {\n    top: calc(var(--spacing) * 4);\n  }\n\n  .top-4\\! {\n    top: calc(var(--spacing) * 4) !important;\n  }\n\n  .isolate {\n    isolation: isolate;\n  }\n\n  .container {\n    width: 100%;\n  }\n\n  @media (min-width: 40rem) {\n    .container {\n      max-width: 40rem;\n    }\n  }\n\n  @media (min-width: 48rem) {\n    .container {\n      max-width: 48rem;\n    }\n  }\n\n  @media (min-width: 64rem) {\n    .container {\n      max-width: 64rem;\n    }\n  }\n\n  @media (min-width: 80rem) {\n    .container {\n      max-width: 80rem;\n    }\n  }\n\n  @media (min-width: 96rem) {\n    .container {\n      max-width: 96rem;\n    }\n  }\n\n  .m-auto {\n    margin: auto;\n  }\n\n  .block {\n    display: block;\n  }\n\n  .contents {\n    display: contents;\n  }\n\n  .flex {\n    display: flex;\n  }\n\n  .grid {\n    display: grid;\n  }\n\n  .hidden {\n    display: none;\n  }\n\n  .inline {\n    display: inline;\n  }\n\n  .inline-block {\n    display: inline-block;\n  }\n\n  .inline-grid {\n    display: inline-grid;\n  }\n\n  .table {\n    display: table;\n  }\n\n  .h-4 {\n    height: calc(var(--spacing) * 4);\n  }\n\n  .min-h-10 {\n    min-height: calc(var(--spacing) * 10);\n  }\n\n  .w-4 {\n    width: calc(var(--spacing) * 4);\n  }\n\n  .flex-shrink, .shrink {\n    flex-shrink: 1;\n  }\n\n  .flex-grow, .grow {\n    flex-grow: 1;\n  }\n\n  .border-collapse {\n    border-collapse: collapse;\n  }\n\n  .transform {\n    transform: var(--tw-rotate-x, ) var(--tw-rotate-y, ) var(--tw-rotate-z, ) var(--tw-skew-x, ) var(--tw-skew-y, );\n  }\n\n  .resize {\n    resize: both;\n  }\n\n  .flex-wrap {\n    flex-wrap: wrap;\n  }\n\n  .rounded-md {\n    border-radius: var(--radius-md);\n  }\n\n  .border {\n    border-style: var(--tw-border-style);\n    border-width: 1px;\n  }\n\n  .border-3 {\n    border-style: var(--tw-border-style);\n    border-width: 3px;\n  }\n\n  .border-black {\n    border-color: var(--color-black);\n  }\n\n  .border-black\\/50 {\n    border-color: #00000080;\n  }\n\n  @supports (color: color-mix(in lab, red, red)) {\n    .border-black\\/50 {\n      border-color: color-mix(in oklab, var(--color-black) 50%, transparent);\n    }\n  }\n\n  .bg-white {\n    background-color: var(--color-white);\n  }\n\n  .p-1 {\n    padding: calc(var(--spacing) * 1);\n  }\n\n  .font-bold {\n    --tw-font-weight: var(--font-weight-bold);\n    font-weight: var(--font-weight-bold);\n  }\n\n  .text-\\[var\\(--primary\\)\\] {\n    color: var(--primary);\n  }\n\n  .text-black {\n    color: var(--color-black);\n  }\n\n  .text-black\\/50 {\n    color: #00000080;\n  }\n\n  @supports (color: color-mix(in lab, red, red)) {\n    .text-black\\/50 {\n      color: color-mix(in oklab, var(--color-black) 50%, transparent);\n    }\n  }\n\n  .uppercase {\n    text-transform: uppercase;\n  }\n\n  .underline {\n    text-decoration-line: underline;\n  }\n\n  .shadow {\n    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, #0000001a), 0 1px 2px -1px var(--tw-shadow-color, #0000001a);\n    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);\n  }\n\n  .outline {\n    outline-style: var(--tw-outline-style);\n    outline-width: 1px;\n  }\n\n  .blur {\n    --tw-blur: blur(8px);\n    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );\n  }\n\n  .\\!filter {\n    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, ) !important;\n  }\n\n  .filter {\n    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );\n  }\n\n  .transition {\n    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;\n    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));\n    transition-duration: var(--tw-duration, var(--default-transition-duration));\n  }\n\n  .ease-in-out {\n    --tw-ease: var(--ease-in-out);\n    transition-timing-function: var(--ease-in-out);\n  }\n\n  .ease-out {\n    --tw-ease: var(--ease-out);\n    transition-timing-function: var(--ease-out);\n  }\n}\n\n.entityPrint {\n  font-family: var(--font-normal);\n  line-height: 1.15em;\n}\n\n.entityName {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  display: inline-block;\n  position: relative;\n  top: 3px;\n  overflow: hidden;\n}\n\n[data-entity-name-type="id"] {\n  color: var(--error);\n}\n\n[data-entity-name-type="class"] {\n  color: var(--success);\n}\n\n[data-entity-name-type="mixin"] {\n  color: var(--warning);\n}\n\n.help-lists {\n  justify-content: space-around;\n  display: flex;\n}\n\n.help-list {\n  width: 350px;\n  margin: 0;\n  padding: 0 0 10px;\n  list-style: none;\n}\n\n.help-list li {\n  margin-right: 2.5em;\n}\n\n.help-key-unit {\n  margin-right: 2em;\n  padding: 5px 0;\n  line-height: 1.8;\n}\n\n.help-key {\n  min-width: 60px;\n  margin-right: 4px;\n  position: relative;\n  bottom: 2px;\n}\n\n.help-key span {\n  background-color: var(--bg-light);\n  border: 1px solid var(--bg-lighter);\n  box-shadow: 0 0 5px var(--bg-dark);\n  color: var(--text-dark);\n  text-align: center;\n  background-repeat: repeat-x;\n  border-radius: 3px;\n  padding: 0 8px;\n  font-size: 12px;\n  display: inline-block;\n}\n\n.help-key-def {\n  color: var(--text-dark);\n  margin-left: 1em;\n  display: inline-block;\n}\n\n.Select-control {\n  color: var(--primary);\n  font-family: var(--font-monospace);\n  border: none;\n  border-radius: 0;\n  background-color: var(--bg-dark) !important;\n}\n\n.Select-menu-outer {\n  border: none;\n}\n\n.Select-menu-outer .is-focused {\n  color: var(--text);\n  background-color: var(--primary) !important;\n}\n\n.Select-option {\n  background-color: var(--bg-dark) !important;\n}\n\n.select-widget {\n  width: 157px;\n  display: inline-block;\n}\n\n.Select-placeholder, .Select--single > .Select-control .Select-value, .Select-value-label {\n  color: var(--primary) !important;\n}\n\n#scenegraph {\n  background: var(--bg);\n  border-top: 1px solid var(--bg-dark);\n  flex-direction: column;\n  width: 300px;\n  display: flex;\n  overflow: auto;\n}\n\n#scenegraph .entity {\n  background: var(--bg);\n  cursor: pointer;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  min-height: 24px;\n  padding: 2px 8px;\n  font-weight: bolder;\n  display: flex;\n  position: relative;\n}\n\n#scenegraph .entity:hover {\n  background: var(--bg-light);\n}\n\n#scenegraph .entity.active {\n  background-color: var(--bg-dark);\n  color: var(--primary);\n}\n\n#scenegraph .entity.novisible {\n  opacity: .6;\n}\n\n#scenegraph .tree-indent {\n  flex: 1;\n  align-items: center;\n  display: flex;\n  position: relative;\n}\n\n#scenegraph .tree-line {\n  background: var(--bg-dark);\n  opacity: .3;\n  width: 1px;\n  height: 100%;\n  position: absolute;\n}\n\n#scenegraph .expand-btn {\n  color: var(--text-dark);\n  cursor: pointer;\n  background: none;\n  border: none;\n  border-radius: 2px;\n  justify-content: center;\n  align-items: center;\n  width: 16px;\n  height: 16px;\n  margin-right: 4px;\n  padding: 2px 4px;\n  font-size: 10px;\n  display: flex;\n}\n\n#scenegraph .expand-btn:hover {\n  background: var(--bg-light);\n  color: var(--text);\n}\n\n#scenegraph .expand-btn:focus {\n  outline: 1px solid var(--primary);\n}\n\n#scenegraph .entity-content {\n  flex: 1;\n  align-items: center;\n  padding: 2px 0;\n  display: flex;\n}\n\n#scenegraph .entity-actions {\n  align-items: center;\n  gap: 2px;\n  display: flex;\n}\n\n#scenegraph .action-btn {\n  color: var(--text-dark);\n  cursor: pointer;\n  background: none;\n  border: none;\n  border-radius: 3px;\n  justify-content: center;\n  align-items: center;\n  width: 20px;\n  height: 20px;\n  padding: 4px;\n  font-size: 12px;\n  transition: all .15s;\n  display: flex;\n}\n\n#scenegraph .action-btn:hover {\n  background: var(--bg-light);\n  color: var(--text);\n}\n\n#scenegraph .action-btn:focus {\n  outline: 1px solid var(--primary);\n}\n\n#scenegraph .action-btn.clone-btn:hover {\n  color: #10b981;\n}\n\n#scenegraph .action-btn.delete-btn:hover {\n  color: #ef4444;\n}\n\n#scenegraph .action-btn.visibility-btn:hover {\n  color: #3b82f6;\n}\n\n#scenegraph .component:hover {\n  color: var(--primary);\n}\n\n#scenegraph .entityIcons {\n  margin-left: 2px;\n}\n\n#scenegraph .id {\n  color: var(--text-dark);\n}\n\n#scenegraph .option.active .id {\n  color: var(--text);\n}\n\n#scenegraph .search {\n  padding: 5px;\n  font-size: 16px;\n  position: relative;\n}\n\n#scenegraph .search input {\n  color: var(--text);\n  background: var(--bg-dark);\n  text-indent: 10px;\n  border-radius: 5px;\n  width: 216px;\n  height: 22px;\n}\n\n#scenegraph .search > svg, #scenegraph .search a.button {\n  position: absolute;\n  top: 10px;\n  right: 14px;\n}\n\n#scenegraph .outliner {\n  background: var(--bg);\n  color: var(--text);\n  cursor: default;\n  outline: none;\n  flex: auto;\n  width: 100%;\n  height: calc(100% - 98px);\n  padding: 0;\n  font-size: 13px;\n  line-height: normal;\n  overflow-y: auto;\n}\n\n#scenegraph .exit {\n  background-color: var(--bg-dark);\n  color: #fff;\n  z-index: 10;\n  border-radius: .375rem;\n  width: 30px;\n  height: 30px;\n  margin: .5rem .5rem 1.5rem;\n  padding: .5rem;\n  transition: background-color .2s ease-in-out;\n  box-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -2px #0000000d;\n}\n\n#scenegraph .exit:hover {\n  background-color: #dc2626;\n}\n\n.components {\n  background-color: var(--bg);\n  color: var(--text);\n  width: 300px;\n  height: 100%;\n  position: fixed;\n  overflow: auto;\n}\n\n.components * {\n  vertical-align: middle;\n}\n\n.collapsible-header {\n  justify-content: space-between;\n  align-items: center;\n  display: flex;\n}\n\n.collapsible-header .entityPrint {\n  color: var(--text);\n}\n\n.collapsible-content {\n  padding: 5px 0;\n}\n\n.componentTitle {\n  text-overflow: ellipsis;\n  text-transform: capitalize;\n  color: var(--text);\n  font-weight: 700;\n  overflow: hidden;\n}\n\n.collapsible .static {\n  background: var(--bg-light);\n  border-bottom: 2px solid var(--bg);\n  box-sizing: content-box;\n  cursor: pointer;\n  vertical-align: bottom;\n  height: 16px;\n  margin: 0;\n  padding: 8px 10px 12px;\n  font-size: 13px;\n}\n\n.collapsible .static:hover {\n  background: var(--bg-light);\n}\n\n.collapsible .static .collapse-button {\n  float: left;\n  border: 6px solid #0000;\n  width: 0;\n  height: 0;\n  margin-left: 2px;\n  margin-right: 10px;\n}\n\n.collapsible .menu {\n  text-align: right;\n}\n\n.collapsible .menuafter {\n  color: var(--text-dark);\n  content: "⠇";\n  text-align: right;\n  padding: 5px;\n  font-size: 12px;\n}\n\n.collapsible.collapsed .static .collapse-button {\n  border-left-color: var(--text);\n  margin-top: 4px;\n}\n\n.collapsible:not(.collapsed) .static .collapse-button {\n  border-top-color: var(--text);\n  margin-top: 7px;\n}\n\n.propertyRow {\n  align-items: center;\n  min-height: 30px;\n  padding: 2px 15px;\n  font-size: 13px;\n  display: flex;\n}\n\n.propertyRow .text {\n  cursor: default;\n  text-overflow: ellipsis;\n  vertical-align: middle;\n  width: 118px;\n  padding-right: 10px;\n  display: inline-block;\n  overflow: hidden;\n}\n\n.propertyRow input.number, .propertyRow .vec2 input.number, .propertyRow .vec3 input.number {\n  width: 40px;\n}\n\n.propertyRow .vec4 input.number {\n  width: 34px;\n}\n\n.propertyRow .vec2, .propertyRow .vec3, .propertyRow .vec4 {\n  display: inline;\n}\n\n.propertyRow .map_value {\n  width: 68px;\n  margin: 0 0 0 5px;\n}\n\n.propertyRow .Select-control {\n  height: 24px;\n  font-size: 11px;\n}\n\n.propertyRow .Select-placeholder, .propertyRow .Select--single > .Select-control .Select-value {\n  line-height: 19px;\n}\n\n.propertyRow .Select-input {\n  height: 22px;\n}\n\n.propertyRow input[type="text"], .propertyRow input[type="number"], .propertyRow input.string, .propertyRow input.number {\n  background: var(--bg-dark);\n  color: var(--primary);\n  min-height: 26px;\n  padding: 1px 5px;\n}\n\n:is(.propertyRow input[type="text"], .propertyRow input[type="number"], .propertyRow input.string, .propertyRow input.number):last-child {\n  padding-right: 0;\n}\n\n:is(.propertyRow input[type="text"], .propertyRow input[type="number"], .propertyRow input.string, .propertyRow input.number):focus {\n  box-shadow: none;\n}\n\n.propertyRow input.string {\n  box-sizing: border-box;\n  width: 165px;\n  padding-left: 8px;\n}\n\n.propertyRow .color_value {\n  letter-spacing: 1px;\n  width: 68px;\n  margin: 0 0 0 5px;\n}\n\n.propertyRow .texture {\n  display: flex;\n}\n\n.propertyRow .texture input {\n  width: 120px;\n  margin-left: 0;\n}\n\nDefined.propertyRow .text {\n  color: var(--text);\n  font-weight: 500;\n}\n\nspan.subcomponent {\n  color: var(--text-dark);\n  margin-left: 10px;\n  float: none !important;\n  vertical-align: top !important;\n}\n\n#addComponentContainer {\n  background: var(--bg-dark);\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 20px 10px;\n  display: flex;\n}\n\n#addComponentContainer #addComponent {\n  text-align: left;\n  width: 200px;\n}\n\n#addComponentContainer #addComponent .select__control {\n  background: var(--bg-dark);\n  height: 35px;\n  color: var(--primary);\n}\n\n#addComponentContainer #addComponentHeader {\n  margin: 5px 0 10px;\n  font-size: 15px;\n}\n\n#addComponentContainer input[type="text"]:focus {\n  box-shadow: none;\n}\n\n.Select-menu-outer .is-focused span {\n  color: var(--text);\n}\n\n.component-title {\n  align-items: center;\n  display: flex;\n}\n\n#componentEntityHeader .collapsible-header {\n  position: relative;\n  bottom: 4px;\n}\n\n#componentEntityHeader .collapse-button {\n  display: none;\n}\n\n#componentEntityHeader .static {\n  height: 13px;\n}\n\n#componentEntityHeader .entityPrint {\n  padding-left: 5px;\n  font-size: 15px;\n}\n\n#componentEntityHeader .entityName {\n  max-width: 160px;\n  top: 0;\n}\n\n#componentEntityHeader .entityIcons {\n  color: var(--text);\n}\n\n#componentEntityHeader .gltfIcon img {\n  top: 0;\n}\n\n#mixinSelect {\n  width: 160px;\n}\n\n.select__control {\n  cursor: pointer;\n  min-height: 26px;\n  font-family: var(--font-monospace);\n  border: 0;\n  border-radius: 0;\n  font-size: 13px;\n}\n\n.select__indicator {\n  height: 26px;\n}\n\n.select__indicator-separator {\n  display: none;\n}\n\n.select__input {\n  min-height: auto !important;\n}\n\n.select__control, .select__menu {\n  background: var(--bg-dark);\n}\n\n.select__option {\n  padding: 5px 10px;\n}\n\n.select__placeholder, .select__menu {\n  color: var(--text);\n}\n\n.select__single-value {\n  color: var(--primary);\n}\n\n.select__control--is-focused {\n  box-shadow: none !important;\n}\n\n.select__option {\n  cursor: pointer;\n}\n\n.select__label {\n  font-size: 11px;\n}\n\n.select__option--is-focused {\n  background: var(--primary-dark);\n}\n\n.select__value-container {\n  height: 26px;\n  position: static;\n}\n\n.select__value-container.select__value-container--is-multi {\n  height: auto;\n  padding: 6px;\n}\n\n.select__dropdown-indicator {\n  padding: 3px 8px;\n}\n\n.select__multi-value {\n  background: var(--bg);\n  color: var(--primary);\n}\n\n.select__multi-value__label {\n  color: var(--primary);\n}\n\n.select__multi-value__remove:hover {\n  color: var(--text);\n  background: var(--bg);\n}\n\n.modal {\n  z-index: 2147483647;\n  background-color: #0009;\n  width: 100%;\n  height: 100%;\n  animation: .2s ease-out animateopacity;\n  display: flex;\n  position: fixed;\n  top: 0;\n  left: 0;\n  overflow: auto;\n}\n\n.modal h3 {\n  margin: .6em 0;\n  font-size: 18px;\n  font-weight: 100;\n}\n\n.modal button {\n  appearance: none;\n  box-shadow: none;\n  cursor: pointer;\n  background-color: var(--primary);\n  color: var(--text);\n  border: none;\n  border-radius: 0;\n  margin: 0 10px 0 0;\n  padding: 5px 10px;\n  font-size: 12px;\n  line-height: 1.8;\n  display: inline-block;\n}\n\n.modal button:hover, .modal button.hover {\n  background-color: var(--primary-hover);\n  text-shadow: -1px 1px var(--primary-dark);\n}\n\n.modal button:active, .modal button.active {\n  background-color: var(--primary-dark);\n  text-shadow: -1px 1px var(--bg-dark);\n}\n\n.modal button:disabled {\n  background-color: var(--bg);\n  cursor: none;\n}\n\n.modal button:focus {\n  outline: none;\n}\n\n#textureModal .modal-content {\n  width: calc(100% - 50px);\n  height: calc(100% - 50px);\n}\n\n.modal-content {\n  background-color: var(--bg-dark);\n  margin: auto;\n  padding: 0;\n  animation: .2s ease-out animatetop;\n  overflow: hidden;\n  box-shadow: 0 4px 8px #00000080, 0 6px 20px #00000080;\n}\n\n.close {\n  color: var(--text);\n  float: right;\n  font-size: 28px;\n  font-weight: bold;\n}\n\n.close:hover, .close:focus {\n  color: #08f;\n  cursor: pointer;\n  text-decoration: none;\n}\n\n.modal-header {\n  color: var(--text);\n  padding: 2px 16px;\n}\n\n.modal-body {\n  padding: 16px;\n  overflow: auto;\n}\n\n.modal-footer {\n  color: var(--text);\n  padding: 2px 16px;\n}\n\n.gallery {\n  background: var(--bg-dark);\n  flex-wrap: wrap;\n  max-height: calc(100vh - 370px);\n  margin: 15px auto 0;\n  padding: 15px 3px 3px;\n  display: flex;\n  overflow: auto;\n}\n\n.gallery li {\n  cursor: pointer;\n  border-radius: 2px;\n  width: 155px;\n  margin: 8px;\n  overflow: hidden;\n  box-shadow: 0 0 6px #0009;\n}\n\n.gallery li.selected, .gallery li:hover {\n  box-shadow: 0 0 0 2px var(--primary);\n}\n\n.gallery li .detail {\n  background-color: var(--bg-light);\n  min-height: 60px;\n  margin: 0;\n  padding: 3px 10px;\n}\n\n.gallery li .detail span {\n  color: var(--text-dark);\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  width: 140px;\n  margin-top: 4px;\n  display: block;\n  overflow: hidden;\n}\n\n.gallery li .detail.selected span, .gallery li .detail:hover span {\n  color: var(--text);\n}\n\n.gallery li .detail span.title {\n  color: var(--text) !important;\n}\n\n.gallery li.selected .detail, .gallery li:hover .detail {\n  background-color: var(--bg-lighter);\n}\n\n.newimage {\n  background-color: var(--bg-light);\n  color: var(--text-dark);\n  justify-content: space-between;\n  margin-top: 10px;\n  padding: 10px;\n  font-size: 13px;\n  display: flex;\n  overflow: auto;\n}\n\n.newimage .gallery {\n  padding: 16px;\n}\n\n.newimage input {\n  color: var(--primary);\n  padding: 3px 5px;\n}\n\n.preview {\n  width: 150px;\n  padding: 10px;\n}\n\n.preview input {\n  width: 144px;\n  margin: 8px 0;\n  display: block;\n}\n\n.preview button {\n  width: 155px;\n}\n\n.preview .detail .title {\n  color: var(--text);\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  max-width: 155px;\n  display: inline-block;\n  overflow: hidden;\n}\n\n.texture canvas {\n  border: 1px solid var(--bg-light);\n  cursor: pointer;\n}\n\n.texture canvas + input {\n  margin-left: 5px;\n}\n\n.texture svg {\n  padding-right: 5px;\n}\n\n.uploader-normal-button .hidden {\n  display: none;\n}\n\n.assets.search {\n  width: 200px;\n  margin-top: 10px;\n  position: relative;\n}\n\n.assets.search svg {\n  position: absolute;\n  top: 5px;\n  right: 0;\n}\n\n.new_asset_options {\n  margin: 10px;\n}\n\n.new_asset_options > ul {\n  margin-left: 10px;\n  padding: 5px;\n}\n\n.new_asset_options > ul > li {\n  padding: 10px 0;\n}\n\n.new_asset_options .imageUrl {\n  width: 350px;\n  margin-left: 5px;\n}\n\n#toolbar {\n  background-color: var(--bg);\n}\n\n#toolbar .toolbar-container {\n  justify-content: space-between;\n  margin-left: .75rem;\n  margin-right: .75rem;\n  display: flex;\n  position: relative;\n}\n\n#toolbar .add-button {\n  font-size: 1.125rem;\n  line-height: 1.75rem;\n}\n\n#toolbar .dropdown {\n  background-color: var(--bg-dark);\n  z-index: 10;\n  border: 1px solid #d1d5db;\n  border-radius: .25rem;\n  max-height: 12.5rem;\n  position: absolute;\n  top: 100%;\n  left: 0;\n  overflow: auto;\n  box-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -2px #0000000d;\n}\n\n#toolbar .dropdown button {\n  text-align: left;\n  width: 100%;\n  color: var(--text);\n  background-color: #0000;\n  border: none;\n  padding: .5rem 1rem;\n  display: block;\n}\n\n#toolbar .dropdown button:hover {\n  background-color: #f3f4f6;\n}\n\n#toolbar .toolbar-button {\n  font-size: 1.125rem;\n  line-height: 1.75rem;\n}\n\n#viewportBar {\n  background-color: var(--bg);\n  color: var(--text);\n  flex-grow: 2;\n  justify-content: space-between;\n  align-items: center;\n  height: 32px;\n  margin: 0 auto;\n  font-size: 15px;\n  display: flex;\n  top: 0;\n  left: 0;\n  right: 0;\n}\n\n.toolbarButtons {\n  align-items: center;\n  gap: 6px;\n  display: flex;\n}\n\n.toolbarButtons * {\n  vertical-align: middle;\n  margin-left: 0 !important;\n}\n\n.toolbarButtons .button {\n  border-radius: 50%;\n  padding: 4px;\n}\n\n.toolbarButtons .button:hover {\n  background-color: var(--bg-lighter);\n}\n\n.toolbarButtons .active {\n  border: 2px solid var(--primary);\n}\n\n.local-transform {\n  padding-left: 10px;\n  padding-right: 20px;\n}\n\n.local-transform label {\n  color: var(--text-dark);\n  padding-left: 5px;\n}\n\n.local-transform a.button {\n  padding-top: 0;\n}\n\n#cameraSelect {\n  cursor: pointer;\n  width: 120px;\n}\n\n#cameraSelect .select__dropdown-indicator {\n  padding-left: 3px;\n  padding-right: 3px;\n}\n\n#cameraToolbar {\n  align-items: center;\n  margin-left: 5px;\n  display: flex;\n}\n\n#cameraToolbar a {\n  margin-right: 10px;\n}\n\n#cameraToolbar .select__control {\n  background: none;\n}\n\n#cameraToolbar .select__single-value {\n  color: var(--text);\n}\n\n#cameraToolbar .select__single-value:hover {\n  color: var(--primary);\n}\n\n#viewportHud {\n  display: none;\n}\n\n@media (min-width: 1024px) {\n  #viewportHud {\n    display: block;\n  }\n}\n\nbody.aframe-inspector-opened, .sponsor-btn, .wf-roboto-n4-active body.aframe-inspector-opened, .wf-roboto-n4-active, .wf-roboto-n4-active .sponsor-btn {\n  font-family: var(--font-normal);\n}\n\nbody.aframe-inspector-opened {\n  background: var(--bg-dark);\n  color: var(--text);\n  margin: 0;\n  font-size: 12px;\n  overflow: hidden;\n}\n\n#aframeInspector .Select, #aframeInspector code, #aframeInspector pre, #aframeInspector input, #aframeInspector textarea, #aframeInspector select {\n  font-family: var(--font-monospace);\n  font-size: 13px;\n}\n\n#aframeInspector .wf-robotomono-n4-active .Select, #aframeInspector .wf-robotomono-n4-active code, #aframeInspector .wf-robotomono-n4-active pre, #aframeInspector .wf-robotomono-n4-active input, #aframeInspector .wf-robotomono-n4-active textarea, #aframeInspector .wf-robotomono-n4-active select {\n  font-family: Roboto Mono, Consolas, Andale Mono, Monaco, Courier New, monospace;\n}\n\n#aframeInspector hr {\n  border: 0;\n  border-top: 1px solid #ccc;\n}\n\n#aframeInspector a {\n  cursor: pointer;\n}\n\n#aframeInspector button {\n  position: relative;\n}\n\n#aframeInspector code {\n  font-family: Consolas, Andale Mono, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;\n}\n\n#aframeInspector textarea {\n  tab-size: 4;\n  white-space: pre;\n  word-wrap: normal;\n}\n\n#aframeInspector textarea.success {\n  border-color: #8b8 !important;\n}\n\n#aframeInspector textarea.fail {\n  background-color: #ff00000d;\n  border-color: red !important;\n}\n\n#aframeInspector textarea, #aframeInspector input {\n  outline: none;\n}\n\n#aframeInspector .gltfIcon img {\n  box-sizing: content-box;\n  vertical-align: baseline;\n  width: 20px;\n  height: 20px;\n  padding: 0 5px;\n  display: inline;\n  position: relative;\n  top: 4px;\n  left: 5px;\n}\n\n#aframeInspector #scenegraph, #aframeInspector #rightPanel {\n  z-index: 9998;\n}\n\n#aframeInspector #sidebar, #aframeInspector #scenegraph .panel {\n  cursor: default;\n  -webkit-user-select: none;\n  user-select: none;\n}\n\n#aframeInspector .toggle-edit {\n  z-index: 999999999;\n  position: fixed;\n  bottom: 20px;\n  right: 50%;\n  transform: translate(50%);\n}\n\n#aframeInspector .try-editor-btn {\n  background-color: var(--error);\n  box-sizing: content-box;\n  color: var(--text);\n  text-align: center;\n  justify-content: center;\n  gap: 5px;\n  width: 200px;\n  margin: 0;\n  padding: 6px 10px;\n  font-size: 16px;\n  line-height: 24px;\n  text-decoration: none;\n  display: flex;\n}\n\n#aframeInspector .try-editor-btn:hover {\n  color: var(--text);\n  background-color: #e42b5a;\n}\n\n#aframeInspector .sponsor-btn {\n  background-color: var(--text);\n  box-sizing: content-box;\n  color: var(--bg-dark);\n  text-align: center;\n  z-index: 999999999;\n  justify-content: center;\n  gap: 5px;\n  width: 80px;\n  margin: 0;\n  padding: 6px 10px;\n  font-size: 13px;\n  line-height: 16px;\n  text-decoration: none;\n  display: flex;\n  position: fixed;\n  top: 3px;\n  left: 127px;\n}\n\n#aframeInspector .sponsor-btn svg {\n  fill: currentColor;\n  color: #db61a2;\n}\n\n#aframeInspector .sponsor-btn:hover {\n  color: var(--text);\n  background-color: #e42b5a;\n}\n\n#aframeInspector input {\n  color: var(--text);\n  background-color: #0000;\n  border: 1px solid #555;\n}\n\n#aframeInspector input[type="text"], #aframeInspector input[type="number"], #aframeInspector input.string, #aframeInspector input.number {\n  outline: none;\n  min-height: 14px;\n}\n\n#aframeInspector input[type="checkbox"] {\n  appearance: auto;\n  cursor: pointer;\n  width: 18px;\n  height: 18px;\n  margin: 0;\n}\n\n#aframeInspector input[type="checkbox"]:focus {\n  box-shadow: none;\n}\n\n#aframeInspector input.number {\n  cursor: col-resize;\n  border: 0;\n  padding: 2px;\n  font-size: 13px;\n  color: #2cb7ff !important;\n  background-color: #0000 !important;\n}\n\n#aframeInspector input.stringfocus, #aframeInspector input.numberfocus {\n  color: var(--text);\n  cursor: auto;\n  border: 1px solid #20b1fb;\n}\n\n#aframeInspector input.error {\n  border: 1px solid #a00;\n}\n\n#aframeInspector input, #aframeInspector .texture canvas {\n  transition: background-color .1s ease-in-out, border-color .1s ease-in-out, color .1s ease-in-out;\n}\n\n#aframeInspector #sidebar {\n  background: var(--bg);\n  width: 300px;\n}\n\n#aframeInspector #sidebar * {\n  vertical-align: middle;\n}\n\n#aframeInspector input, #aframeInspector textarea, #aframeInspector select {\n  background: var(--bg-dark);\n  color: #888;\n  border: 1px solid #0000;\n}\n\n#aframeInspector select {\n  background: var(--bg-light);\n}\n\n#aframeInspector input[type="color"] {\n  background-color: var(--bg-light);\n  border: 1px solid var(--bg-dark);\n  cursor: pointer;\n  width: 50px;\n  height: 25px;\n  padding: 0;\n}\n\n#aframeInspector input[type="color"]::-webkit-color-swatch {\n  border: 0;\n}\n\n#aframeInspector input[type="color"]::-webkit-color-swatch-wrapper {\n  padding: 0;\n}\n\n#aframeInspector input[type="color"]::-moz-color-swatch {\n  border: 0;\n}\n\n#aframeInspector input[type="color"]::-moz-focus-inner {\n  border: 0;\n  padding: 0;\n}\n\n#aframeInspector .hidden {\n  visibility: hidden;\n}\n\n#aframeInspector a.button {\n  color: var(--text-dark);\n  margin-left: 10px;\n  font-size: 16px;\n  text-decoration: none;\n}\n\n#aframeInspector a.button:hover {\n  color: var(--primary);\n}\n\n#aframeInspector .hide {\n  display: none;\n}\n\n#aframeInspector .a-canvas.state-dragging {\n  cursor: grabbing;\n}\n\n#aframeInspector #rightPanel {\n  justify-content: flex-end;\n  align-items: stretch;\n  display: flex;\n}\n\n#aframeInspector #inspectorContainer {\n  pointer-events: none;\n  z-index: 999999;\n  justify-content: space-between;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  position: fixed;\n  top: 0;\n  left: 0;\n}\n\n#aframeInspector #scenegraph, #aframeInspector #viewportBar, #aframeInspector #rightPanel {\n  pointer-events: all;\n}\n\n#aframeInspector .toggle-sidebar {\n  z-index: 9998;\n  align-items: center;\n  height: 100%;\n  display: flex;\n  position: absolute;\n}\n\n#aframeInspector .toggle-sidebar a {\n  background-color: var(--bg);\n  color: var(--text-dark);\n  z-index: 9998;\n  padding: 5px;\n}\n\n#aframeInspector .toggle-sidebar a.hover {\n  background-color: var(--primary);\n  color: var(--text);\n}\n\n#aframeInspector .toggle-sidebar.left {\n  top: 0;\n  left: 0;\n}\n\n#aframeInspector .toggle-sidebar.right {\n  top: 0;\n  right: 0;\n}\n\n.aframe-inspector-opened a-scene .a-canvas {\n  z-index: 9998;\n  background-color: #191919;\n}\n\n@keyframes animateopacity {\n  from {\n    opacity: 0;\n  }\n\n  to {\n    opacity: 1;\n  }\n}\n\nsvg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {\n  box-sizing: content-box;\n  overflow: visible;\n}\n\n.svg-inline--fa {\n  vertical-align: -.125em;\n  height: 1em;\n  display: inline-block;\n  overflow: visible;\n}\n\n:root {\n  --font-normal: system-ui, BlinkMacSystemFont, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;\n  --font-monospace: system-ui, BlinkMacSystemFont, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;\n  --primary: #1faaf2;\n  --primary-hover: #6fc5f5;\n  --primary-dark: #155373;\n  --primary-light: #87d0f7;\n  --secondary: #6366f1;\n  --secondary-hover: #818cf8;\n  --secondary-dark: #4338ca;\n  --secondary-light: #a5b4fc;\n  --accent: #f59e0b;\n  --accent-hover: #fbbf24;\n  --accent-dark: #d97706;\n  --accent-light: #fcd34d;\n  --bg: #242424;\n  --bg-dark: #1d1d1d;\n  --bg-light: #333;\n  --bg-lighter: #393939;\n  --text: #c3c3c3;\n  --text-dark: #888;\n  --text-light: #fff;\n  --success: #10b981;\n  --success-dark: #059669;\n  --success-light: #6ee7b7;\n  --warning: #f59e0b;\n  --warning-dark: #d97706;\n  --warning-light: #fcd34d;\n  --error: #ef4444;\n  --error-dark: #dc2626;\n  --error-light: #fca5a5;\n  --info: #3b82f6;\n  --info-dark: #2563eb;\n  --info-light: #93c5fd;\n}\n\n[data-theme="light"] {\n  --primary: #0ea5e9;\n  --primary-hover: #0284c7;\n  --primary-dark: #0369a1;\n  --primary-light: #38bdf8;\n  --secondary: #7c3aed;\n  --secondary-hover: #8b5cf6;\n  --secondary-dark: #6d28d9;\n  --secondary-light: #a78bfa;\n  --accent: #ea580c;\n  --accent-hover: #dc2626;\n  --accent-dark: #c2410c;\n  --accent-light: #fb923c;\n  --bg: #f8fafc;\n  --bg-dark: #e2e8f0;\n  --bg-light: #cbd5e1;\n  --bg-lighter: #94a3b8;\n  --text: #334155;\n  --text-dark: #64748b;\n  --text-light: #0f172a;\n  --success: #059669;\n  --success-dark: #047857;\n  --success-light: #10b981;\n  --warning: #d97706;\n  --warning-dark: #b45309;\n  --warning-light: #f59e0b;\n  --error: #dc2626;\n  --error-dark: #b91c1c;\n  --error-light: #ef4444;\n  --info: #2563eb;\n  --info-dark: #1d4ed8;\n  --info-light: #3b82f6;\n}\n\n[data-theme="high-contrast"] {\n  --primary: #0ff;\n  --primary-hover: #87d0f7;\n  --primary-dark: #0080ff;\n  --primary-light: #fff;\n  --secondary: #f0f;\n  --secondary-hover: #ff80ff;\n  --secondary-dark: purple;\n  --secondary-light: #ffb3ff;\n  --accent: #ff0;\n  --accent-hover: #ffff80;\n  --accent-dark: olive;\n  --accent-light: #ffffb3;\n  --bg: #000;\n  --bg-dark: #000;\n  --bg-light: #333;\n  --bg-lighter: #666;\n  --text: #fff;\n  --text-dark: #ccc;\n  --text-light: #fff;\n  --success: #0f0;\n  --success-dark: green;\n  --success-light: #80ff80;\n  --warning: #ff0;\n  --warning-dark: olive;\n  --warning-light: #ffff80;\n  --error: red;\n  --error-dark: maroon;\n  --error-light: #ff8080;\n  --info: #0080ff;\n  --info-dark: #004080;\n  --info-light: #80c0ff;\n}\n\n[data-theme="blue"] {\n  --primary: #1e40af;\n  --primary-hover: #1d4ed8;\n  --primary-dark: #1e3a8a;\n  --primary-light: #3b82f6;\n  --secondary: #7c2d12;\n  --secondary-hover: #9a3412;\n  --secondary-dark: #5b1f0d;\n  --secondary-light: #ea580c;\n  --accent: #7c3aed;\n  --accent-hover: #8b5cf6;\n  --accent-dark: #6d28d9;\n  --accent-light: #a78bfa;\n  --bg: #0f172a;\n  --bg-dark: #020617;\n  --bg-light: #1e293b;\n  --bg-lighter: #334155;\n  --text: #cbd5e1;\n  --text-dark: #94a3b8;\n  --text-light: #f1f5f9;\n  --success: #059669;\n  --success-dark: #047857;\n  --success-light: #10b981;\n  --warning: #d97706;\n  --warning-dark: #b45309;\n  --warning-light: #f59e0b;\n  --error: #dc2626;\n  --error-dark: #b91c1c;\n  --error-light: #ef4444;\n  --info: #0891b2;\n  --info-dark: #0e7490;\n  --info-light: #22d3ee;\n}\n\n[data-theme="purple"] {\n  --primary: #7c3aed;\n  --primary-hover: #8b5cf6;\n  --primary-dark: #6d28d9;\n  --primary-light: #a78bfa;\n  --secondary: #dc2626;\n  --secondary-hover: #ef4444;\n  --secondary-dark: #b91c1c;\n  --secondary-light: #fca5a5;\n  --accent: #f59e0b;\n  --accent-hover: #fbbf24;\n  --accent-dark: #d97706;\n  --accent-light: #fcd34d;\n  --bg: #1a103d;\n  --bg-dark: #0f0a1f;\n  --bg-light: #2d1b69;\n  --bg-lighter: #4c1d95;\n  --text: #d8b4fe;\n  --text-dark: #a855f7;\n  --text-light: #faf5ff;\n  --success: #10b981;\n  --success-dark: #059669;\n  --success-light: #6ee7b7;\n  --warning: #f59e0b;\n  --warning-dark: #d97706;\n  --warning-light: #fcd34d;\n  --error: #ef4444;\n  --error-dark: #dc2626;\n  --error-light: #fca5a5;\n  --info: #3b82f6;\n  --info-dark: #2563eb;\n  --info-light: #93c5fd;\n}\n\n[data-theme="green"] {\n  --primary: #059669;\n  --primary-hover: #10b981;\n  --primary-dark: #047857;\n  --primary-light: #6ee7b7;\n  --secondary: #7c2d12;\n  --secondary-hover: #9a3412;\n  --secondary-dark: #5b1f0d;\n  --secondary-light: #ea580c;\n  --accent: #7c3aed;\n  --accent-hover: #8b5cf6;\n  --accent-dark: #6d28d9;\n  --accent-light: #a78bfa;\n  --bg: #0f172a;\n  --bg-dark: #020617;\n  --bg-light: #1e293b;\n  --bg-lighter: #334155;\n  --text: #cbd5e1;\n  --text-dark: #94a3b8;\n  --text-light: #f1f5f9;\n  --success: #10b981;\n  --success-dark: #059669;\n  --success-light: #6ee7b7;\n  --warning: #f59e0b;\n  --warning-dark: #d97706;\n  --warning-light: #fcd34d;\n  --error: #dc2626;\n  --error-dark: #b91c1c;\n  --error-light: #ef4444;\n  --info: #0891b2;\n  --info-dark: #0e7490;\n  --info-light: #22d3ee;\n}\n\n.theme-switcher {\n  margin: 10px;\n}\n\n.theme-select {\n  background: var(--bg-dark);\n  border: 1px solid var(--bg-light);\n  color: var(--text);\n  border-radius: 4px;\n  padding: 5px 10px;\n  font-size: 12px;\n}\n\n.theme-select:focus {\n  border-color: var(--primary);\n  outline: none;\n}\n\n.theme-select option {\n  background: var(--bg);\n  color: var(--text);\n}\n\n@property --tw-rotate-x {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-rotate-y {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-rotate-z {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-skew-x {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-skew-y {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-border-style {\n  syntax: "*";\n  inherits: false;\n  initial-value: solid;\n}\n\n@property --tw-font-weight {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-shadow {\n  syntax: "*";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n\n@property --tw-shadow-color {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-shadow-alpha {\n  syntax: "<percentage>";\n  inherits: false;\n  initial-value: 100%;\n}\n\n@property --tw-inset-shadow {\n  syntax: "*";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n\n@property --tw-inset-shadow-color {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-inset-shadow-alpha {\n  syntax: "<percentage>";\n  inherits: false;\n  initial-value: 100%;\n}\n\n@property --tw-ring-color {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-ring-shadow {\n  syntax: "*";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n\n@property --tw-inset-ring-color {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-inset-ring-shadow {\n  syntax: "*";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n\n@property --tw-ring-inset {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-ring-offset-width {\n  syntax: "<length>";\n  inherits: false;\n  initial-value: 0;\n}\n\n@property --tw-ring-offset-color {\n  syntax: "*";\n  inherits: false;\n  initial-value: #fff;\n}\n\n@property --tw-ring-offset-shadow {\n  syntax: "*";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n\n@property --tw-outline-style {\n  syntax: "*";\n  inherits: false;\n  initial-value: solid;\n}\n\n@property --tw-blur {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-brightness {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-contrast {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-grayscale {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-hue-rotate {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-invert {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-opacity {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-saturate {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-sepia {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-drop-shadow {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-drop-shadow-color {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-drop-shadow-alpha {\n  syntax: "<percentage>";\n  inherits: false;\n  initial-value: 100%;\n}\n\n@property --tw-drop-shadow-size {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-ease {\n  syntax: "*";\n  inherits: false\n}\n/*$vite$:1*/';
   document.head.appendChild(__vite_style__);
   function _mergeNamespaces(n2, m2) {
     for (var i2 = 0; i2 < m2.length; i2++) {
@@ -30513,7 +30513,8 @@ void main() {
     }, {
       once: true
     });
-    AFRAME.scenes[0].appendChild(entity);
+    const parent = definition.parent || AFRAME.scenes[0];
+    parent.appendChild(entity);
     return entity;
   }
   const os = getOS();
@@ -30690,95 +30691,259 @@ void main() {
     __proto__: null,
     updates
   }, Symbol.toStringTag, { value: "Module" }));
-  var faTrashCan = {
-    prefix: "fas",
-    iconName: "trash-can",
-    icon: [448, 512, [61460, "trash-alt"], "f2ed", "M135.2 17.7C140.6 6.8 151.7 0 163.8 0H284.2c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32h96l7.2-14.3zM32 128H416V448c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z"]
+  var DefaultContext = {
+    color: void 0,
+    size: void 0,
+    className: void 0,
+    style: void 0,
+    attr: void 0
   };
-  var faTrashAlt = faTrashCan;
-  var faCaretRight = {
-    prefix: "fas",
-    iconName: "caret-right",
-    icon: [256, 512, [], "f0da", "M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"]
-  };
-  var faLightbulb = {
-    prefix: "fas",
-    iconName: "lightbulb",
-    icon: [384, 512, [128161], "f0eb", "M272 384c9.6-31.9 29.5-59.1 49.2-86.2l0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4l0 0c19.8 27.1 39.7 54.4 49.2 86.2H272zM192 512c44.2 0 80-35.8 80-80V416H112v16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"]
-  };
-  var faEyeSlash = {
-    prefix: "fas",
-    iconName: "eye-slash",
-    icon: [640, 512, [], "f070", "M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c8.4-19.3 10.6-41.4 4.8-63.3c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zM373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5L373 389.9z"]
-  };
-  var faClipboard = {
-    prefix: "fas",
-    iconName: "clipboard",
-    icon: [384, 512, [128203], "f328", "M192 0c-41.8 0-77.4 26.7-90.5 64H64C28.7 64 0 92.7 0 128V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H282.5C269.4 26.7 233.8 0 192 0zm0 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64zM112 192H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16z"]
-  };
-  var faUpDownLeftRight = {
-    prefix: "fas",
-    iconName: "up-down-left-right",
-    icon: [512, 512, ["arrows-alt"], "f0b2", "M278.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-64 64c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8h32v96H128V192c0-12.9-7.8-24.6-19.8-29.6s-25.7-2.2-34.9 6.9l-64 64c-12.5 12.5-12.5 32.8 0 45.3l64 64c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V288h96v96H192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l64 64c12.5 12.5 32.8 12.5 45.3 0l64-64c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8H288V288h96v32c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l64-64c12.5-12.5 12.5-32.8 0-45.3l-64-64c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6v32H288V128h32c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-64-64z"]
-  };
-  var faArrowsAlt = faUpDownLeftRight;
-  var faCube = {
-    prefix: "fas",
-    iconName: "cube",
-    icon: [512, 512, [], "f1b2", "M234.5 5.7c13.9-5 29.1-5 43.1 0l192 68.6C495 83.4 512 107.5 512 134.6V377.4c0 27-17 51.2-42.5 60.3l-192 68.6c-13.9 5-29.1 5-43.1 0l-192-68.6C17 428.6 0 404.5 0 377.4V134.6c0-27 17-51.2 42.5-60.3l192-68.6zM256 66L82.3 128 256 190l173.7-62L256 66zm32 368.6l160-57.1v-188L288 246.6v188z"]
-  };
-  var faEye = {
-    prefix: "fas",
-    iconName: "eye",
-    icon: [576, 512, [128065], "f06e", "M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"]
-  };
-  var faCamera = {
-    prefix: "fas",
-    iconName: "camera",
-    icon: [512, 512, [62258, "camera-alt"], "f030", "M149.1 64.8L138.7 96H64C28.7 96 0 124.7 0 160V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H373.3L362.9 64.8C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"]
-  };
-  var faCaretDown = {
-    prefix: "fas",
-    iconName: "caret-down",
-    icon: [320, 512, [], "f0d7", "M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"]
-  };
-  var faRotateRight = {
-    prefix: "fas",
-    iconName: "rotate-right",
-    icon: [512, 512, ["redo-alt", "rotate-forward"], "f2f9", "M463.5 224H472c13.3 0 24-10.7 24-24V72c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H463.5z"]
-  };
-  var faFont = {
-    prefix: "fas",
-    iconName: "font",
-    icon: [448, 512, [], "f031", "M254 52.8C249.3 40.3 237.3 32 224 32s-25.3 8.3-30 20.8L57.8 416H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32h-1.8l18-48H303.8l18 48H320c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H390.2L254 52.8zM279.8 304H168.2L224 155.1 279.8 304z"]
-  };
-  var faMagnifyingGlass = {
-    prefix: "fas",
-    iconName: "magnifying-glass",
-    icon: [512, 512, [128269, "search"], "f002", "M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"]
-  };
-  var faSearch = faMagnifyingGlass;
-  var faPlus = {
-    prefix: "fas",
-    iconName: "plus",
-    icon: [448, 512, [10133, 61543, "add"], "2b", "M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"]
-  };
-  var faXmark = {
-    prefix: "fas",
-    iconName: "xmark",
-    icon: [384, 512, [128473, 10005, 10006, 10060, 215, "close", "multiply", "remove", "times"], "f00d", "M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"]
-  };
-  var faTimes = faXmark;
-  var faUpRightAndDownLeftFromCenter = {
-    prefix: "fas",
-    iconName: "up-right-and-down-left-from-center",
-    icon: [512, 512, ["expand-alt"], "f424", "M344 0H488c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-39-39-87 87c-9.4 9.4-24.6 9.4-33.9 0l-32-32c-9.4-9.4-9.4-24.6 0-33.9l87-87L327 41c-6.9-6.9-8.9-17.2-5.2-26.2S334.3 0 344 0zM168 512H24c-13.3 0-24-10.7-24-24V344c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2l39 39 87-87c9.4-9.4 24.6-9.4 33.9 0l32 32c9.4 9.4 9.4 24.6 0 33.9l-87 87 39 39c6.9 6.9 8.9 17.2 5.2 26.2s-12.5 14.8-22.2 14.8z"]
-  };
-  var faClone = {
-    prefix: "fas",
-    iconName: "clone",
-    icon: [512, 512, [], "f24d", "M288 448H64V224h64V160H64c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H288c35.3 0 64-28.7 64-64V384H288v64zm-64-96H448c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H224c-35.3 0-64 28.7-64 64V288c0 35.3 28.7 64 64 64z"]
-  };
+  var IconContext = React.createContext && /* @__PURE__ */ React.createContext(DefaultContext);
+  var _excluded$7 = ["attr", "size", "title"];
+  function _objectWithoutProperties$1(source, excluded) {
+    if (source == null) return {};
+    var target = _objectWithoutPropertiesLoose$1(source, excluded);
+    var key, i2;
+    if (Object.getOwnPropertySymbols) {
+      var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+      for (i2 = 0; i2 < sourceSymbolKeys.length; i2++) {
+        key = sourceSymbolKeys[i2];
+        if (excluded.indexOf(key) >= 0) continue;
+        if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+        target[key] = source[key];
+      }
+    }
+    return target;
+  }
+  function _objectWithoutPropertiesLoose$1(source, excluded) {
+    if (source == null) return {};
+    var target = {};
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
+      }
+    }
+    return target;
+  }
+  function _extends$3() {
+    _extends$3 = Object.assign ? Object.assign.bind() : function(target) {
+      for (var i2 = 1; i2 < arguments.length; i2++) {
+        var source = arguments[i2];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends$3.apply(this, arguments);
+  }
+  function ownKeys$1(e, r2) {
+    var t = Object.keys(e);
+    if (Object.getOwnPropertySymbols) {
+      var o2 = Object.getOwnPropertySymbols(e);
+      r2 && (o2 = o2.filter(function(r3) {
+        return Object.getOwnPropertyDescriptor(e, r3).enumerable;
+      })), t.push.apply(t, o2);
+    }
+    return t;
+  }
+  function _objectSpread(e) {
+    for (var r2 = 1; r2 < arguments.length; r2++) {
+      var t = null != arguments[r2] ? arguments[r2] : {};
+      r2 % 2 ? ownKeys$1(Object(t), true).forEach(function(r3) {
+        _defineProperty$1(e, r3, t[r3]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$1(Object(t)).forEach(function(r3) {
+        Object.defineProperty(e, r3, Object.getOwnPropertyDescriptor(t, r3));
+      });
+    }
+    return e;
+  }
+  function _defineProperty$1(obj, key, value) {
+    key = _toPropertyKey(key);
+    if (key in obj) {
+      Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
+    } else {
+      obj[key] = value;
+    }
+    return obj;
+  }
+  function _toPropertyKey(t) {
+    var i2 = _toPrimitive(t, "string");
+    return "symbol" == typeof i2 ? i2 : i2 + "";
+  }
+  function _toPrimitive(t, r2) {
+    if ("object" != typeof t || !t) return t;
+    var e = t[Symbol.toPrimitive];
+    if (void 0 !== e) {
+      var i2 = e.call(t, r2);
+      if ("object" != typeof i2) return i2;
+      throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return ("string" === r2 ? String : Number)(t);
+  }
+  function Tree2Element(tree) {
+    return tree && tree.map((node2, i2) => /* @__PURE__ */ React.createElement(node2.tag, _objectSpread({
+      key: i2
+    }, node2.attr), Tree2Element(node2.child)));
+  }
+  function GenIcon(data) {
+    return (props) => /* @__PURE__ */ React.createElement(IconBase, _extends$3({
+      attr: _objectSpread({}, data.attr)
+    }, props), Tree2Element(data.child));
+  }
+  function IconBase(props) {
+    var elem = (conf) => {
+      var {
+        attr,
+        size,
+        title
+      } = props, svgProps = _objectWithoutProperties$1(props, _excluded$7);
+      var computedSize = size || conf.size || "1em";
+      var className;
+      if (conf.className) className = conf.className;
+      if (props.className) className = (className ? className + " " : "") + props.className;
+      return /* @__PURE__ */ React.createElement("svg", _extends$3({
+        stroke: "currentColor",
+        fill: "currentColor",
+        strokeWidth: "0"
+      }, conf.attr, attr, svgProps, {
+        className,
+        style: _objectSpread(_objectSpread({
+          color: props.color || conf.color
+        }, conf.style), props.style),
+        height: computedSize,
+        width: computedSize,
+        xmlns: "http://www.w3.org/2000/svg"
+      }), title && /* @__PURE__ */ React.createElement("title", null, title), props.children);
+    };
+    return IconContext !== void 0 ? /* @__PURE__ */ React.createElement(IconContext.Consumer, null, (conf) => elem(conf)) : elem(DefaultContext);
+  }
+  function FaArrowsAlt(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M352.201 425.775l-79.196 79.196c-9.373 9.373-24.568 9.373-33.941 0l-79.196-79.196c-15.119-15.119-4.411-40.971 16.971-40.97h51.162L228 284H127.196v51.162c0 21.382-25.851 32.09-40.971 16.971L7.029 272.937c-9.373-9.373-9.373-24.569 0-33.941L86.225 159.8c15.119-15.119 40.971-4.411 40.971 16.971V228H228V127.196h-51.23c-21.382 0-32.09-25.851-16.971-40.971l79.196-79.196c9.373-9.373 24.568-9.373 33.941 0l79.196 79.196c15.119 15.119 4.411 40.971-16.971 40.971h-51.162V228h100.804v-51.162c0-21.382 25.851-32.09 40.97-16.971l79.196 79.196c9.373 9.373 9.373 24.569 0 33.941L425.773 352.2c-15.119 15.119-40.971 4.411-40.97-16.971V284H284v100.804h51.23c21.382 0 32.09 25.851 16.971 40.971z" }, "child": [] }] })(props);
+  }
+  function FaBox(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M509.5 184.6L458.9 32.8C452.4 13.2 434.1 0 413.4 0H272v192h238.7c-.4-2.5-.4-5-1.2-7.4zM240 0H98.6c-20.7 0-39 13.2-45.5 32.8L2.5 184.6c-.8 2.4-.8 4.9-1.2 7.4H240V0zM0 224v240c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V224H0z" }, "child": [] }] })(props);
+  }
+  function FaCamera(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M512 144v288c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48h88l12.3-32.9c7-18.7 24.9-31.1 44.9-31.1h125.5c20 0 37.9 12.4 44.9 31.1L376 96h88c26.5 0 48 21.5 48 48zM376 288c0-66.2-53.8-120-120-120s-120 53.8-120 120 53.8 120 120 120 120-53.8 120-120zm-32 0c0 48.5-39.5 88-88 88s-88-39.5-88-88 39.5-88 88-88 88 39.5 88 88z" }, "child": [] }] })(props);
+  }
+  function FaCaretDown(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 320 512" }, "child": [{ "tag": "path", "attr": { "d": "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z" }, "child": [] }] })(props);
+  }
+  function FaCaretRight(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 192 512" }, "child": [{ "tag": "path", "attr": { "d": "M0 384.662V127.338c0-17.818 21.543-26.741 34.142-14.142l128.662 128.662c7.81 7.81 7.81 20.474 0 28.284L34.142 398.804C21.543 411.404 0 402.48 0 384.662z" }, "child": [] }] })(props);
+  }
+  function FaCaretUp(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 320 512" }, "child": [{ "tag": "path", "attr": { "d": "M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z" }, "child": [] }] })(props);
+  }
+  function FaCircle(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z" }, "child": [] }] })(props);
+  }
+  function FaClipboard(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 384 512" }, "child": [{ "tag": "path", "attr": { "d": "M384 112v352c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112c0-26.51 21.49-48 48-48h80c0-35.29 28.71-64 64-64s64 28.71 64 64h80c26.51 0 48 21.49 48 48zM192 40c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24m96 114v-20a6 6 0 0 0-6-6H102a6 6 0 0 0-6 6v20a6 6 0 0 0 6 6h180a6 6 0 0 0 6-6z" }, "child": [] }] })(props);
+  }
+  function FaClock(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z" }, "child": [] }] })(props);
+  }
+  function FaClone(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M464 0c26.51 0 48 21.49 48 48v288c0 26.51-21.49 48-48 48H176c-26.51 0-48-21.49-48-48V48c0-26.51 21.49-48 48-48h288M176 416c-44.112 0-80-35.888-80-80V128H48c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48h288c26.51 0 48-21.49 48-48v-48H176z" }, "child": [] }] })(props);
+  }
+  function FaCopy(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z" }, "child": [] }] })(props);
+  }
+  function FaCube(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M239.1 6.3l-208 78c-18.7 7-31.1 25-31.1 45v225.1c0 18.2 10.3 34.8 26.5 42.9l208 104c13.5 6.8 29.4 6.8 42.9 0l208-104c16.3-8.1 26.5-24.8 26.5-42.9V129.3c0-20-12.4-37.9-31.1-44.9l-208-78C262 2.2 250 2.2 239.1 6.3zM256 68.4l192 72v1.1l-192 78-192-78v-1.1l192-72zm32 356V275.5l160-65v133.9l-160 80z" }, "child": [] }] })(props);
+  }
+  function FaDotCircle(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm80 248c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80z" }, "child": [] }] })(props);
+  }
+  function FaDownload(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z" }, "child": [] }] })(props);
+  }
+  function FaExpand(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M0 180V56c0-13.3 10.7-24 24-24h124c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H64v84c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12zM288 44v40c0 6.6 5.4 12 12 12h84v84c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12V56c0-13.3-10.7-24-24-24H300c-6.6 0-12 5.4-12 12zm148 276h-40c-6.6 0-12 5.4-12 12v84h-84c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h124c13.3 0 24-10.7 24-24V332c0-6.6-5.4-12-12-12zM160 468v-40c0-6.6-5.4-12-12-12H64v-84c0-6.6-5.4-12-12-12H12c-6.6 0-12 5.4-12 12v124c0 13.3 10.7 24 24 24h124c6.6 0 12-5.4 12-12z" }, "child": [] }] })(props);
+  }
+  function FaEyeSlash(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 640 512" }, "child": [{ "tag": "path", "attr": { "d": "M320 400c-75.85 0-137.25-58.71-142.9-133.11L72.2 185.82c-13.79 17.3-26.48 35.59-36.72 55.59a32.35 32.35 0 0 0 0 29.19C89.71 376.41 197.07 448 320 448c26.91 0 52.87-4 77.89-10.46L346 397.39a144.13 144.13 0 0 1-26 2.61zm313.82 58.1l-110.55-85.44a331.25 331.25 0 0 0 81.25-102.07 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64a308.15 308.15 0 0 0-147.32 37.7L45.46 3.37A16 16 0 0 0 23 6.18L3.37 31.45A16 16 0 0 0 6.18 53.9l588.36 454.73a16 16 0 0 0 22.46-2.81l19.64-25.27a16 16 0 0 0-2.82-22.45zm-183.72-142l-39.3-30.38A94.75 94.75 0 0 0 416 256a94.76 94.76 0 0 0-121.31-92.21A47.65 47.65 0 0 1 304 192a46.64 46.64 0 0 1-1.54 10l-73.61-56.89A142.31 142.31 0 0 1 320 112a143.92 143.92 0 0 1 144 144c0 21.63-5.29 41.79-13.9 60.11z" }, "child": [] }] })(props);
+  }
+  function FaEye(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 576 512" }, "child": [{ "tag": "path", "attr": { "d": "M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z" }, "child": [] }] })(props);
+  }
+  function FaFileVideo(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 384 512" }, "child": [{ "tag": "path", "attr": { "d": "M384 121.941V128H256V0h6.059c6.365 0 12.47 2.529 16.971 7.029l97.941 97.941A24.005 24.005 0 0 1 384 121.941zM224 136V0H24C10.745 0 0 10.745 0 24v464c0 13.255 10.745 24 24 24h336c13.255 0 24-10.745 24-24V160H248c-13.2 0-24-10.8-24-24zm96 144.016v111.963c0 21.445-25.943 31.998-40.971 16.971L224 353.941V392c0 13.255-10.745 24-24 24H88c-13.255 0-24-10.745-24-24V280c0-13.255 10.745-24 24-24h112c13.255 0 24 10.745 24 24v38.059l55.029-55.013c15.011-15.01 40.971-4.491 40.971 16.97z" }, "child": [] }] })(props);
+  }
+  function FaFont(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M432 416h-23.41L277.88 53.69A32 32 0 0 0 247.58 32h-47.16a32 32 0 0 0-30.3 21.69L39.41 416H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h128a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16h-19.58l23.3-64h152.56l23.3 64H304a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h128a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM176.85 272L224 142.51 271.15 272z" }, "child": [] }] })(props);
+  }
+  function FaGlobe(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 496 512" }, "child": [{ "tag": "path", "attr": { "d": "M336.5 160C322 70.7 287.8 8 248 8s-74 62.7-88.5 152h177zM152 256c0 22.2 1.2 43.5 3.3 64h185.3c2.1-20.5 3.3-41.8 3.3-64s-1.2-43.5-3.3-64H155.3c-2.1 20.5-3.3 41.8-3.3 64zm324.7-96c-28.6-67.9-86.5-120.4-158-141.6 24.4 33.8 41.2 84.7 50 141.6h108zM177.2 18.4C105.8 39.6 47.8 92.1 19.3 160h108c8.7-56.9 25.5-107.8 49.9-141.6zM487.4 192H372.7c2.1 21 3.3 42.5 3.3 64s-1.2 43-3.3 64h114.6c5.5-20.5 8.6-41.8 8.6-64s-3.1-43.5-8.5-64zM120 256c0-21.5 1.2-43 3.3-64H8.6C3.2 212.5 0 233.8 0 256s3.2 43.5 8.6 64h114.6c-2-21-3.2-42.5-3.2-64zm39.5 96c14.5 89.3 48.7 152 88.5 152s74-62.7 88.5-152h-177zm159.3 141.6c71.4-21.2 129.4-73.7 158-141.6h-108c-8.8 56.9-25.6 107.8-50 141.6zM19.3 352c28.6 67.9 86.5 120.4 158 141.6-24.4-33.8-41.2-84.7-50-141.6h-108z" }, "child": [] }] })(props);
+  }
+  function FaImage(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M464 448H48c-26.51 0-48-21.49-48-48V112c0-26.51 21.49-48 48-48h416c26.51 0 48 21.49 48 48v288c0 26.51-21.49 48-48 48zM112 120c-30.928 0-56 25.072-56 56s25.072 56 56 56 56-25.072 56-56-25.072-56-56-56zM64 384h384V272l-87.515-87.515c-4.686-4.686-12.284-4.686-16.971 0L208 320l-55.515-55.515c-4.686-4.686-12.284-4.686-16.971 0L64 336v48z" }, "child": [] }] })(props);
+  }
+  function FaLayerGroup(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M12.41 148.02l232.94 105.67c6.8 3.09 14.49 3.09 21.29 0l232.94-105.67c16.55-7.51 16.55-32.52 0-40.03L266.65 2.31a25.607 25.607 0 0 0-21.29 0L12.41 107.98c-16.55 7.51-16.55 32.53 0 40.04zm487.18 88.28l-58.09-26.33-161.64 73.27c-7.56 3.43-15.59 5.17-23.86 5.17s-16.29-1.74-23.86-5.17L70.51 209.97l-58.1 26.33c-16.55 7.5-16.55 32.5 0 40l232.94 105.59c6.8 3.08 14.49 3.08 21.29 0L499.59 276.3c16.55-7.5 16.55-32.5 0-40zm0 127.8l-57.87-26.23-161.86 73.37c-7.56 3.43-15.59 5.17-23.86 5.17s-16.29-1.74-23.86-5.17L70.29 337.87 12.41 364.1c-16.55 7.5-16.55 32.5 0 40l232.94 105.59c6.8 3.08 14.49 3.08 21.29 0L499.59 404.1c16.55-7.5 16.55-32.5 0-40z" }, "child": [] }] })(props);
+  }
+  function FaLightbulb(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 352 512" }, "child": [{ "tag": "path", "attr": { "d": "M96.06 454.35c.01 6.29 1.87 12.45 5.36 17.69l17.09 25.69a31.99 31.99 0 0 0 26.64 14.28h61.71a31.99 31.99 0 0 0 26.64-14.28l17.09-25.69a31.989 31.989 0 0 0 5.36-17.69l.04-38.35H96.01l.05 38.35zM0 176c0 44.37 16.45 84.85 43.56 115.78 16.52 18.85 42.36 58.23 52.21 91.45.04.26.07.52.11.78h160.24c.04-.26.07-.51.11-.78 9.85-33.22 35.69-72.6 52.21-91.45C335.55 260.85 352 220.37 352 176 352 78.61 272.91-.3 175.45 0 73.44.31 0 82.97 0 176zm176-80c-44.11 0-80 35.89-80 80 0 8.84-7.16 16-16 16s-16-7.16-16-16c0-61.76 50.24-112 112-112 8.84 0 16 7.16 16 16s-7.16 16-16 16z" }, "child": [] }] })(props);
+  }
+  function FaLink(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z" }, "child": [] }] })(props);
+  }
+  function FaMinus(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" }, "child": [] }] })(props);
+  }
+  function FaObjectGroup(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M480 128V96h20c6.627 0 12-5.373 12-12V44c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v20H64V44c0-6.627-5.373-12-12-12H12C5.373 32 0 37.373 0 44v40c0 6.627 5.373 12 12 12h20v320H12c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h40c6.627 0 12-5.373 12-12v-20h384v20c0 6.627 5.373 12 12 12h40c6.627 0 12-5.373 12-12v-40c0-6.627-5.373-12-12-12h-20V128zM96 276V140c0-6.627 5.373-12 12-12h168c6.627 0 12 5.373 12 12v136c0 6.627-5.373 12-12 12H108c-6.627 0-12-5.373-12-12zm320 96c0 6.627-5.373 12-12 12H236c-6.627 0-12-5.373-12-12v-52h72c13.255 0 24-10.745 24-24v-72h84c6.627 0 12 5.373 12 12v136z" }, "child": [] }] })(props);
+  }
+  function FaPause(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z" }, "child": [] }] })(props);
+  }
+  function FaPlayCircle(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z" }, "child": [] }] })(props);
+  }
+  function FaPlay(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" }, "child": [] }] })(props);
+  }
+  function FaPlus(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" }, "child": [] }] })(props);
+  }
+  function FaQuestion(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 384 512" }, "child": [{ "tag": "path", "attr": { "d": "M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z" }, "child": [] }] })(props);
+  }
+  function FaRedo(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M500.33 0h-47.41a12 12 0 0 0-12 12.57l4 82.76A247.42 247.42 0 0 0 256 8C119.34 8 7.9 119.53 8 256.19 8.1 393.07 119.1 504 256 504a247.1 247.1 0 0 0 166.18-63.91 12 12 0 0 0 .48-17.43l-34-34a12 12 0 0 0-16.38-.55A176 176 0 1 1 402.1 157.8l-101.53-4.87a12 12 0 0 0-12.57 12v47.41a12 12 0 0 0 12 12h200.33a12 12 0 0 0 12-12V12a12 12 0 0 0-12-12z" }, "child": [] }] })(props);
+  }
+  function FaRing(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M256 64C110.06 64 0 125.91 0 208v98.13C0 384.48 114.62 448 256 448s256-63.52 256-141.87V208c0-82.09-110.06-144-256-144zm0 64c106.04 0 192 35.82 192 80 0 9.26-3.97 18.12-10.91 26.39C392.15 208.21 328.23 192 256 192s-136.15 16.21-181.09 42.39C67.97 226.12 64 217.26 64 208c0-44.18 85.96-80 192-80zM120.43 264.64C155.04 249.93 201.64 240 256 240s100.96 9.93 135.57 24.64C356.84 279.07 308.93 288 256 288s-100.84-8.93-135.57-23.36z" }, "child": [] }] })(props);
+  }
+  function FaSave(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM224 416c-35.346 0-64-28.654-64-64 0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64zm96-304.52V212c0 6.627-5.373 12-12 12H76c-6.627 0-12-5.373-12-12V108c0-6.627 5.373-12 12-12h228.52c3.183 0 6.235 1.264 8.485 3.515l3.48 3.48A11.996 11.996 0 0 1 320 111.48z" }, "child": [] }] })(props);
+  }
+  function FaSearch(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" }, "child": [] }] })(props);
+  }
+  function FaSquare(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48z" }, "child": [] }] })(props);
+  }
+  function FaTimes(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 352 512" }, "child": [{ "tag": "path", "attr": { "d": "M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" }, "child": [] }] })(props);
+  }
+  function FaTrash(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z" }, "child": [] }] })(props);
+  }
+  function FaUser(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z" }, "child": [] }] })(props);
+  }
+  function FaVideo(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 576 512" }, "child": [{ "tag": "path", "attr": { "d": "M336.2 64H47.8C21.4 64 0 85.4 0 111.8v288.4C0 426.6 21.4 448 47.8 448h288.4c26.4 0 47.8-21.4 47.8-47.8V111.8c0-26.4-21.4-47.8-47.8-47.8zm189.4 37.7L416 177.3v157.4l109.6 75.5c21.2 14.6 50.4-.3 50.4-25.8V127.5c0-25.4-29.1-40.4-50.4-25.8z" }, "child": [] }] })(props);
+  }
+  function FaVolumeUp(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 576 512" }, "child": [{ "tag": "path", "attr": { "d": "M215.03 71.05L126.06 160H24c-13.26 0-24 10.74-24 24v144c0 13.25 10.74 24 24 24h102.06l88.97 88.95c15.03 15.03 40.97 4.47 40.97-16.97V88.02c0-21.46-25.96-31.98-40.97-16.97zm233.32-51.08c-11.17-7.33-26.18-4.24-33.51 6.95-7.34 11.17-4.22 26.18 6.95 33.51 66.27 43.49 105.82 116.6 105.82 195.58 0 78.98-39.55 152.09-105.82 195.58-11.17 7.32-14.29 22.34-6.95 33.5 7.04 10.71 21.93 14.56 33.51 6.95C528.27 439.58 576 351.33 576 256S528.27 72.43 448.35 19.97zM480 256c0-63.53-32.06-121.94-85.77-156.24-11.19-7.14-26.03-3.82-33.12 7.46s-3.78 26.21 7.41 33.36C408.27 165.97 432 209.11 432 256s-23.73 90.03-63.48 115.42c-11.19 7.14-14.5 22.07-7.41 33.36 6.51 10.36 21.12 15.14 33.12 7.46C447.94 377.94 480 319.54 480 256zm-141.77-76.87c-11.58-6.33-26.19-2.16-32.61 9.45-6.39 11.61-2.16 26.2 9.45 32.61C327.98 228.28 336 241.63 336 256c0 14.38-8.02 27.72-20.92 34.81-11.61 6.41-15.84 21-9.45 32.61 6.43 11.66 21.05 15.8 32.61 9.45 28.23-15.55 45.77-45 45.77-76.88s-17.54-61.32-45.78-76.86z" }, "child": [] }] })(props);
+  }
   var propTypes = { exports: {} };
   var ReactPropTypesSecret_1;
   var hasRequiredReactPropTypesSecret;
@@ -30854,47 +31019,6 @@ void main() {
   }
   var propTypesExports = /* @__PURE__ */ requirePropTypes();
   const PropTypes = /* @__PURE__ */ getDefaultExportFromCjs(propTypesExports);
-  function asIcon(icon) {
-    const width = icon[0];
-    const height = icon[1];
-    const vectorData = icon[4];
-    let element;
-    if (Array.isArray(vectorData)) {
-      element = /* @__PURE__ */ React.createElement("g", null, vectorData.map((pathData, index2) => /* @__PURE__ */ React.createElement("path", {
-        key: index2,
-        fill: "currentColor",
-        d: pathData
-      })));
-    } else {
-      element = /* @__PURE__ */ React.createElement("path", {
-        fill: "currentColor",
-        d: vectorData
-      });
-    }
-    return {
-      width,
-      height,
-      icon: element
-    };
-  }
-  function AwesomeIcon({
-    icon
-  }) {
-    const {
-      width,
-      height,
-      icon: iconElement
-    } = asIcon(icon.icon);
-    return /* @__PURE__ */ React.createElement("svg", {
-      role: "img",
-      className: `svg-inline--fa fa-${icon.iconName}`,
-      xmlns: "http://www.w3.org/2000/svg",
-      viewBox: `0 0 ${width} ${height}`
-    }, iconElement);
-  }
-  AwesomeIcon.propTypes = {
-    icon: PropTypes.object.isRequired
-  };
   function _typeof(o2) {
     "@babel/helpers - typeof";
     return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o3) {
@@ -30917,7 +31041,7 @@ void main() {
     var i2 = toPrimitive(t, "string");
     return "symbol" == _typeof(i2) ? i2 : i2 + "";
   }
-  function _defineProperty$1(e, r2, t) {
+  function _defineProperty(e, r2, t) {
     return (r2 = toPropertyKey(r2)) in e ? Object.defineProperty(e, r2, {
       value: t,
       enumerable: true,
@@ -30925,7 +31049,7 @@ void main() {
       writable: true
     }) : e[r2] = t, e;
   }
-  function ownKeys$1(e, r2) {
+  function ownKeys(e, r2) {
     var t = Object.keys(e);
     if (Object.getOwnPropertySymbols) {
       var o2 = Object.getOwnPropertySymbols(e);
@@ -30938,9 +31062,9 @@ void main() {
   function _objectSpread2(e) {
     for (var r2 = 1; r2 < arguments.length; r2++) {
       var t = null != arguments[r2] ? arguments[r2] : {};
-      r2 % 2 ? ownKeys$1(Object(t), true).forEach(function(r3) {
-        _defineProperty$1(e, r3, t[r3]);
-      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$1(Object(t)).forEach(function(r3) {
+      r2 % 2 ? ownKeys(Object(t), true).forEach(function(r3) {
+        _defineProperty(e, r3, t[r3]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function(r3) {
         Object.defineProperty(e, r3, Object.getOwnPropertyDescriptor(t, r3));
       });
     }
@@ -30988,7 +31112,7 @@ void main() {
   function _slicedToArray(r2, e) {
     return _arrayWithHoles(r2) || _iterableToArrayLimit(r2, e) || _unsupportedIterableToArray(r2, e) || _nonIterableRest();
   }
-  function _objectWithoutPropertiesLoose$1(r2, e) {
+  function _objectWithoutPropertiesLoose(r2, e) {
     if (null == r2) return {};
     var t = {};
     for (var n2 in r2) if ({}.hasOwnProperty.call(r2, n2)) {
@@ -30997,9 +31121,9 @@ void main() {
     }
     return t;
   }
-  function _objectWithoutProperties$1(e, t) {
+  function _objectWithoutProperties(e, t) {
     if (null == e) return {};
-    var o2, r2, i2 = _objectWithoutPropertiesLoose$1(e, t);
+    var o2, r2, i2 = _objectWithoutPropertiesLoose(e, t);
     if (Object.getOwnPropertySymbols) {
       var s2 = Object.getOwnPropertySymbols(e);
       for (r2 = 0; r2 < s2.length; r2++) o2 = s2[r2], t.includes(o2) || {}.propertyIsEnumerable.call(e, o2) && (i2[o2] = e[o2]);
@@ -31008,7 +31132,7 @@ void main() {
   }
   var _excluded$6 = ["defaultInputValue", "defaultMenuIsOpen", "defaultValue", "inputValue", "menuIsOpen", "onChange", "onInputChange", "onMenuClose", "onMenuOpen", "value"];
   function useStateManager(_ref3) {
-    var _ref$defaultInputValu = _ref3.defaultInputValue, defaultInputValue = _ref$defaultInputValu === void 0 ? "" : _ref$defaultInputValu, _ref$defaultMenuIsOpe = _ref3.defaultMenuIsOpen, defaultMenuIsOpen = _ref$defaultMenuIsOpe === void 0 ? false : _ref$defaultMenuIsOpe, _ref$defaultValue = _ref3.defaultValue, defaultValue = _ref$defaultValue === void 0 ? null : _ref$defaultValue, propsInputValue = _ref3.inputValue, propsMenuIsOpen = _ref3.menuIsOpen, propsOnChange = _ref3.onChange, propsOnInputChange = _ref3.onInputChange, propsOnMenuClose = _ref3.onMenuClose, propsOnMenuOpen = _ref3.onMenuOpen, propsValue = _ref3.value, restSelectProps = _objectWithoutProperties$1(_ref3, _excluded$6);
+    var _ref$defaultInputValu = _ref3.defaultInputValue, defaultInputValue = _ref$defaultInputValu === void 0 ? "" : _ref$defaultInputValu, _ref$defaultMenuIsOpe = _ref3.defaultMenuIsOpen, defaultMenuIsOpen = _ref$defaultMenuIsOpe === void 0 ? false : _ref$defaultMenuIsOpe, _ref$defaultValue = _ref3.defaultValue, defaultValue = _ref$defaultValue === void 0 ? null : _ref$defaultValue, propsInputValue = _ref3.inputValue, propsMenuIsOpen = _ref3.menuIsOpen, propsOnChange = _ref3.onChange, propsOnInputChange = _ref3.onInputChange, propsOnMenuClose = _ref3.onMenuClose, propsOnMenuOpen = _ref3.onMenuOpen, propsValue = _ref3.value, restSelectProps = _objectWithoutProperties(_ref3, _excluded$6);
     var _useState = reactExports.useState(propsInputValue !== void 0 ? propsInputValue : defaultInputValue), _useState2 = _slicedToArray(_useState, 2), stateInputValue = _useState2[0], setStateInputValue = _useState2[1];
     var _useState3 = reactExports.useState(propsMenuIsOpen !== void 0 ? propsMenuIsOpen : defaultMenuIsOpen), _useState4 = _slicedToArray(_useState3, 2), stateMenuIsOpen = _useState4[0], setStateMenuIsOpen = _useState4[1];
     var _useState5 = reactExports.useState(propsValue !== void 0 ? propsValue : defaultValue), _useState6 = _slicedToArray(_useState5, 2), stateValue = _useState6[0], setStateValue = _useState6[1];
@@ -31050,14 +31174,14 @@ void main() {
       value
     });
   }
-  function _extends$3() {
-    return _extends$3 = Object.assign ? Object.assign.bind() : function(n2) {
+  function _extends$2() {
+    return _extends$2 = Object.assign ? Object.assign.bind() : function(n2) {
       for (var e = 1; e < arguments.length; e++) {
         var t = arguments[e];
         for (var r2 in t) ({}).hasOwnProperty.call(t, r2) && (n2[r2] = t[r2]);
       }
       return n2;
-    }, _extends$3.apply(null, arguments);
+    }, _extends$2.apply(null, arguments);
   }
   function _classCallCheck(a2, n2) {
     if (!(a2 instanceof n2)) throw new TypeError("Cannot call a class as a function");
@@ -32656,7 +32780,7 @@ void main() {
     props.selectProps;
     props.setValue;
     props.theme;
-    var innerProps = _objectWithoutProperties$1(props, _excluded$4);
+    var innerProps = _objectWithoutProperties(props, _excluded$4);
     return _objectSpread2({}, innerProps);
   };
   var getStyleProps = function getStyleProps2(props, name, classNamesState) {
@@ -32928,7 +33052,7 @@ void main() {
     var placement = _ref22.placement, _ref2$theme = _ref22.theme, borderRadius2 = _ref2$theme.borderRadius, spacing2 = _ref2$theme.spacing, colors2 = _ref2$theme.colors;
     return _objectSpread2((_objectSpread2$1 = {
       label: "menu"
-    }, _defineProperty$1(_objectSpread2$1, alignToControl(placement), "100%"), _defineProperty$1(_objectSpread2$1, "position", "absolute"), _defineProperty$1(_objectSpread2$1, "width", "100%"), _defineProperty$1(_objectSpread2$1, "zIndex", 1), _objectSpread2$1), unstyled ? {} : {
+    }, _defineProperty(_objectSpread2$1, alignToControl(placement), "100%"), _defineProperty(_objectSpread2$1, "position", "absolute"), _defineProperty(_objectSpread2$1, "width", "100%"), _defineProperty(_objectSpread2$1, "zIndex", 1), _objectSpread2$1), unstyled ? {} : {
       backgroundColor: colors2.neutral0,
       borderRadius: borderRadius2,
       boxShadow: "0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 11px hsla(0, 0%, 0%, 0.1)",
@@ -32972,7 +33096,7 @@ void main() {
   };
   var Menu = function Menu2(props) {
     var children = props.children, innerRef = props.innerRef, innerProps = props.innerProps;
-    return jsx("div", _extends$3({}, getStyleProps(props, "menu", {
+    return jsx("div", _extends$2({}, getStyleProps(props, "menu", {
       menu: true
     }), {
       ref: innerRef
@@ -32994,7 +33118,7 @@ void main() {
   };
   var MenuList = function MenuList2(props) {
     var children = props.children, innerProps = props.innerProps, innerRef = props.innerRef, isMulti = props.isMulti;
-    return jsx("div", _extends$3({}, getStyleProps(props, "menuList", {
+    return jsx("div", _extends$2({}, getStyleProps(props, "menuList", {
       "menu-list": true,
       "menu-list--is-multi": isMulti
     }), {
@@ -33013,8 +33137,8 @@ void main() {
   var noOptionsMessageCSS = noticeCSS;
   var loadingMessageCSS = noticeCSS;
   var NoOptionsMessage = function NoOptionsMessage2(_ref6) {
-    var _ref6$children = _ref6.children, children = _ref6$children === void 0 ? "No options" : _ref6$children, innerProps = _ref6.innerProps, restProps = _objectWithoutProperties$1(_ref6, _excluded$3);
-    return jsx("div", _extends$3({}, getStyleProps(_objectSpread2(_objectSpread2({}, restProps), {}, {
+    var _ref6$children = _ref6.children, children = _ref6$children === void 0 ? "No options" : _ref6$children, innerProps = _ref6.innerProps, restProps = _objectWithoutProperties(_ref6, _excluded$3);
+    return jsx("div", _extends$2({}, getStyleProps(_objectSpread2(_objectSpread2({}, restProps), {}, {
       children,
       innerProps
     }), "noOptionsMessage", {
@@ -33023,8 +33147,8 @@ void main() {
     }), innerProps), children);
   };
   var LoadingMessage = function LoadingMessage2(_ref7) {
-    var _ref7$children = _ref7.children, children = _ref7$children === void 0 ? "Loading..." : _ref7$children, innerProps = _ref7.innerProps, restProps = _objectWithoutProperties$1(_ref7, _excluded2$1);
-    return jsx("div", _extends$3({}, getStyleProps(_objectSpread2(_objectSpread2({}, restProps), {}, {
+    var _ref7$children = _ref7.children, children = _ref7$children === void 0 ? "Loading..." : _ref7$children, innerProps = _ref7.innerProps, restProps = _objectWithoutProperties(_ref7, _excluded2$1);
+    return jsx("div", _extends$2({}, getStyleProps(_objectSpread2(_objectSpread2({}, restProps), {}, {
       children,
       innerProps
     }), "loadingMessage", {
@@ -33087,7 +33211,7 @@ void main() {
       runAutoUpdate();
     }, [runAutoUpdate]);
     if (!appendTo && menuPosition !== "fixed" || !computedPosition) return null;
-    var menuWrapper = jsx("div", _extends$3({
+    var menuWrapper = jsx("div", _extends$2({
       ref: setMenuPortalElement
     }, getStyleProps(_objectSpread2(_objectSpread2({}, props), {}, {
       offset: computedPosition.offset,
@@ -33112,7 +33236,7 @@ void main() {
   };
   var SelectContainer = function SelectContainer2(props) {
     var children = props.children, innerProps = props.innerProps, isDisabled = props.isDisabled, isRtl = props.isRtl;
-    return jsx("div", _extends$3({}, getStyleProps(props, "container", {
+    return jsx("div", _extends$2({}, getStyleProps(props, "container", {
       "--is-disabled": isDisabled,
       "--is-rtl": isRtl
     }), innerProps), children);
@@ -33133,7 +33257,7 @@ void main() {
   };
   var ValueContainer = function ValueContainer2(props) {
     var children = props.children, innerProps = props.innerProps, isMulti = props.isMulti, hasValue = props.hasValue;
-    return jsx("div", _extends$3({}, getStyleProps(props, "valueContainer", {
+    return jsx("div", _extends$2({}, getStyleProps(props, "valueContainer", {
       "value-container": true,
       "value-container--is-multi": isMulti,
       "value-container--has-value": hasValue
@@ -33149,7 +33273,7 @@ void main() {
   };
   var IndicatorsContainer = function IndicatorsContainer2(props) {
     var children = props.children, innerProps = props.innerProps;
-    return jsx("div", _extends$3({}, getStyleProps(props, "indicatorsContainer", {
+    return jsx("div", _extends$2({}, getStyleProps(props, "indicatorsContainer", {
       indicators: true
     }), innerProps), children);
   };
@@ -33160,8 +33284,8 @@ void main() {
     styles: "display:inline-block;fill:currentColor;line-height:1;stroke:currentColor;stroke-width:0"
   };
   var Svg = function Svg2(_ref3) {
-    var size = _ref3.size, props = _objectWithoutProperties$1(_ref3, _excluded$2);
-    return jsx("svg", _extends$3({
+    var size = _ref3.size, props = _objectWithoutProperties(_ref3, _excluded$2);
+    return jsx("svg", _extends$2({
       height: size,
       width: size,
       viewBox: "0 0 20 20",
@@ -33171,14 +33295,14 @@ void main() {
     }, props));
   };
   var CrossIcon = function CrossIcon2(props) {
-    return jsx(Svg, _extends$3({
+    return jsx(Svg, _extends$2({
       size: 20
     }, props), jsx("path", {
       d: "M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z"
     }));
   };
   var DownChevron = function DownChevron2(props) {
-    return jsx(Svg, _extends$3({
+    return jsx(Svg, _extends$2({
       size: 20
     }, props), jsx("path", {
       d: "M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
@@ -33201,7 +33325,7 @@ void main() {
   var dropdownIndicatorCSS = baseCSS;
   var DropdownIndicator = function DropdownIndicator2(props) {
     var children = props.children, innerProps = props.innerProps;
-    return jsx("div", _extends$3({}, getStyleProps(props, "dropdownIndicator", {
+    return jsx("div", _extends$2({}, getStyleProps(props, "dropdownIndicator", {
       indicator: true,
       "dropdown-indicator": true
     }), innerProps), children || jsx(DownChevron, null));
@@ -33209,7 +33333,7 @@ void main() {
   var clearIndicatorCSS = baseCSS;
   var ClearIndicator = function ClearIndicator2(props) {
     var children = props.children, innerProps = props.innerProps;
-    return jsx("div", _extends$3({}, getStyleProps(props, "clearIndicator", {
+    return jsx("div", _extends$2({}, getStyleProps(props, "clearIndicator", {
       indicator: true,
       "clear-indicator": true
     }), innerProps), children || jsx(CrossIcon, null));
@@ -33228,7 +33352,7 @@ void main() {
   };
   var IndicatorSeparator = function IndicatorSeparator2(props) {
     var innerProps = props.innerProps;
-    return jsx("span", _extends$3({}, innerProps, getStyleProps(props, "indicatorSeparator", {
+    return jsx("span", _extends$2({}, innerProps, getStyleProps(props, "indicatorSeparator", {
       "indicator-separator": true
     })));
   };
@@ -33266,8 +33390,8 @@ void main() {
     });
   };
   var LoadingIndicator = function LoadingIndicator2(_ref7) {
-    var innerProps = _ref7.innerProps, isRtl = _ref7.isRtl, _ref7$size = _ref7.size, size = _ref7$size === void 0 ? 4 : _ref7$size, restProps = _objectWithoutProperties$1(_ref7, _excluded2);
-    return jsx("div", _extends$3({}, getStyleProps(_objectSpread2(_objectSpread2({}, restProps), {}, {
+    var innerProps = _ref7.innerProps, isRtl = _ref7.isRtl, _ref7$size = _ref7.size, size = _ref7$size === void 0 ? 4 : _ref7$size, restProps = _objectWithoutProperties(_ref7, _excluded2);
+    return jsx("div", _extends$2({}, getStyleProps(_objectSpread2(_objectSpread2({}, restProps), {}, {
       innerProps,
       isRtl,
       size
@@ -33312,7 +33436,7 @@ void main() {
   };
   var Control = function Control2(props) {
     var children = props.children, isDisabled = props.isDisabled, isFocused = props.isFocused, innerRef = props.innerRef, innerProps = props.innerProps, menuIsOpen = props.menuIsOpen;
-    return jsx("div", _extends$3({
+    return jsx("div", _extends$2({
       ref: innerRef
     }, getStyleProps(props, "control", {
       control: true,
@@ -33324,7 +33448,7 @@ void main() {
     }), children);
   };
   var Control$1 = Control;
-  var _excluded$1$1 = ["data"];
+  var _excluded$1 = ["data"];
   var groupCSS = function groupCSS2(_ref3, unstyled) {
     var spacing2 = _ref3.theme.spacing;
     return unstyled ? {} : {
@@ -33334,9 +33458,9 @@ void main() {
   };
   var Group = function Group2(props) {
     var children = props.children, cx = props.cx, getStyles = props.getStyles, getClassNames = props.getClassNames, Heading = props.Heading, headingProps = props.headingProps, innerProps = props.innerProps, label = props.label, theme = props.theme, selectProps = props.selectProps;
-    return jsx("div", _extends$3({}, getStyleProps(props, "group", {
+    return jsx("div", _extends$2({}, getStyleProps(props, "group", {
       group: true
-    }), innerProps), jsx(Heading, _extends$3({}, headingProps, {
+    }), innerProps), jsx(Heading, _extends$2({}, headingProps, {
       selectProps,
       theme,
       getStyles,
@@ -33363,8 +33487,8 @@ void main() {
   var GroupHeading = function GroupHeading2(props) {
     var _cleanCommonProps = cleanCommonProps(props);
     _cleanCommonProps.data;
-    var innerProps = _objectWithoutProperties$1(_cleanCommonProps, _excluded$1$1);
-    return jsx("div", _extends$3({}, getStyleProps(props, "groupHeading", {
+    var innerProps = _objectWithoutProperties(_cleanCommonProps, _excluded$1);
+    return jsx("div", _extends$2({}, getStyleProps(props, "groupHeading", {
       "group-heading": true
     }), innerProps));
   };
@@ -33415,12 +33539,12 @@ void main() {
   };
   var Input = function Input2(props) {
     var cx = props.cx, value = props.value;
-    var _cleanCommonProps = cleanCommonProps(props), innerRef = _cleanCommonProps.innerRef, isDisabled = _cleanCommonProps.isDisabled, isHidden = _cleanCommonProps.isHidden, inputClassName = _cleanCommonProps.inputClassName, innerProps = _objectWithoutProperties$1(_cleanCommonProps, _excluded$5);
-    return jsx("div", _extends$3({}, getStyleProps(props, "input", {
+    var _cleanCommonProps = cleanCommonProps(props), innerRef = _cleanCommonProps.innerRef, isDisabled = _cleanCommonProps.isDisabled, isHidden = _cleanCommonProps.isHidden, inputClassName = _cleanCommonProps.inputClassName, innerProps = _objectWithoutProperties(_cleanCommonProps, _excluded$5);
+    return jsx("div", _extends$2({}, getStyleProps(props, "input", {
       "input-container": true
     }), {
       "data-value": value || ""
-    }), jsx("input", _extends$3({
+    }), jsx("input", _extends$2({
       className: cx({
         input: true
       }, inputClassName),
@@ -33480,7 +33604,7 @@ void main() {
   var MultiValueLabel = MultiValueGeneric;
   function MultiValueRemove(_ref5) {
     var children = _ref5.children, innerProps = _ref5.innerProps;
-    return jsx("div", _extends$3({
+    return jsx("div", _extends$2({
       role: "button"
     }, innerProps), children || jsx(CrossIcon, {
       size: 14
@@ -33535,7 +33659,7 @@ void main() {
   };
   var Option = function Option2(props) {
     var children = props.children, isDisabled = props.isDisabled, isFocused = props.isFocused, isSelected = props.isSelected, innerRef = props.innerRef, innerProps = props.innerProps;
-    return jsx("div", _extends$3({}, getStyleProps(props, "option", {
+    return jsx("div", _extends$2({}, getStyleProps(props, "option", {
       option: true,
       "option--is-disabled": isDisabled,
       "option--is-focused": isFocused,
@@ -33559,7 +33683,7 @@ void main() {
   };
   var Placeholder = function Placeholder2(props) {
     var children = props.children, innerProps = props.innerProps;
-    return jsx("div", _extends$3({}, getStyleProps(props, "placeholder", {
+    return jsx("div", _extends$2({}, getStyleProps(props, "placeholder", {
       placeholder: true
     }), innerProps), children);
   };
@@ -33581,7 +33705,7 @@ void main() {
   };
   var SingleValue = function SingleValue2(props) {
     var children = props.children, isDisabled = props.isDisabled, innerProps = props.innerProps;
-    return jsx("div", _extends$3({}, getStyleProps(props, "singleValue", {
+    return jsx("div", _extends$2({}, getStyleProps(props, "singleValue", {
       "single-value": true,
       "single-value--is-disabled": isDisabled
     }), innerProps), children);
@@ -33671,7 +33795,7 @@ void main() {
     styles: "label:a11yText;z-index:9999;border:0;clip:rect(1px, 1px, 1px, 1px);height:1px;width:1px;position:absolute;overflow:hidden;padding:0;white-space:nowrap"
   };
   var A11yText = function A11yText2(props) {
-    return jsx("span", _extends$3({
+    return jsx("span", _extends$2({
       css: _ref
     }, props));
   };
@@ -34123,11 +34247,11 @@ void main() {
       return matchFrom === "start" ? candidate.substr(0, input.length) === input : candidate.indexOf(input) > -1;
     };
   };
-  var _excluded$1 = ["innerRef"];
+  var _excluded = ["innerRef"];
   function DummyInput(_ref3) {
-    var innerRef = _ref3.innerRef, props = _objectWithoutProperties$1(_ref3, _excluded$1);
+    var innerRef = _ref3.innerRef, props = _objectWithoutProperties(_ref3, _excluded);
     var filteredProps = removeProps(props, "onExited", "in", "enter", "exit", "appear");
-    return jsx("input", _extends$3({
+    return jsx("input", _extends$2({
       ref: innerRef
     }, filteredProps, {
       css: /* @__PURE__ */ css({
@@ -35506,7 +35630,7 @@ void main() {
             "aria-describedby": this.getElementId("placeholder")
           });
           if (!isSearchable) {
-            return /* @__PURE__ */ reactExports.createElement(DummyInput, _extends$3({
+            return /* @__PURE__ */ reactExports.createElement(DummyInput, _extends$2({
               id,
               innerRef: this.getInputRef,
               onBlur: this.onInputBlur,
@@ -35519,7 +35643,7 @@ void main() {
               value: ""
             }, ariaAttributes));
           }
-          return /* @__PURE__ */ reactExports.createElement(Input2, _extends$3({}, commonProps, {
+          return /* @__PURE__ */ reactExports.createElement(Input2, _extends$2({}, commonProps, {
             autoCapitalize: "none",
             autoComplete: "off",
             autoCorrect: "off",
@@ -35547,7 +35671,7 @@ void main() {
         var _this$props9 = this.props, controlShouldRenderValue = _this$props9.controlShouldRenderValue, isDisabled = _this$props9.isDisabled, isMulti = _this$props9.isMulti, inputValue = _this$props9.inputValue, placeholder = _this$props9.placeholder;
         var _this$state5 = this.state, selectValue = _this$state5.selectValue, focusedValue = _this$state5.focusedValue, isFocused = _this$state5.isFocused;
         if (!this.hasValue() || !controlShouldRenderValue) {
-          return inputValue ? null : /* @__PURE__ */ reactExports.createElement(Placeholder2, _extends$3({}, commonProps, {
+          return inputValue ? null : /* @__PURE__ */ reactExports.createElement(Placeholder2, _extends$2({}, commonProps, {
             key: "placeholder",
             isDisabled,
             isFocused,
@@ -35560,7 +35684,7 @@ void main() {
           return selectValue.map(function(opt, index2) {
             var isOptionFocused = opt === focusedValue;
             var key = "".concat(_this3.getOptionLabel(opt), "-").concat(_this3.getOptionValue(opt));
-            return /* @__PURE__ */ reactExports.createElement(MultiValue2, _extends$3({}, commonProps, {
+            return /* @__PURE__ */ reactExports.createElement(MultiValue2, _extends$2({}, commonProps, {
               components: {
                 Container: MultiValueContainer2,
                 Label: MultiValueLabel2,
@@ -35589,7 +35713,7 @@ void main() {
           return null;
         }
         var singleValue = selectValue[0];
-        return /* @__PURE__ */ reactExports.createElement(SingleValue2, _extends$3({}, commonProps, {
+        return /* @__PURE__ */ reactExports.createElement(SingleValue2, _extends$2({}, commonProps, {
           data: singleValue,
           isDisabled
         }), this.formatOptionLabel(singleValue, "value"));
@@ -35609,7 +35733,7 @@ void main() {
           onTouchEnd: this.onClearIndicatorTouchEnd,
           "aria-hidden": "true"
         };
-        return /* @__PURE__ */ reactExports.createElement(ClearIndicator2, _extends$3({}, commonProps, {
+        return /* @__PURE__ */ reactExports.createElement(ClearIndicator2, _extends$2({}, commonProps, {
           innerProps,
           isFocused
         }));
@@ -35625,7 +35749,7 @@ void main() {
         var innerProps = {
           "aria-hidden": "true"
         };
-        return /* @__PURE__ */ reactExports.createElement(LoadingIndicator2, _extends$3({}, commonProps, {
+        return /* @__PURE__ */ reactExports.createElement(LoadingIndicator2, _extends$2({}, commonProps, {
           innerProps,
           isDisabled,
           isFocused
@@ -35639,7 +35763,7 @@ void main() {
         var commonProps = this.commonProps;
         var isDisabled = this.props.isDisabled;
         var isFocused = this.state.isFocused;
-        return /* @__PURE__ */ reactExports.createElement(IndicatorSeparator2, _extends$3({}, commonProps, {
+        return /* @__PURE__ */ reactExports.createElement(IndicatorSeparator2, _extends$2({}, commonProps, {
           isDisabled,
           isFocused
         }));
@@ -35657,7 +35781,7 @@ void main() {
           onTouchEnd: this.onDropdownIndicatorTouchEnd,
           "aria-hidden": "true"
         };
-        return /* @__PURE__ */ reactExports.createElement(DropdownIndicator2, _extends$3({}, commonProps, {
+        return /* @__PURE__ */ reactExports.createElement(DropdownIndicator2, _extends$2({}, commonProps, {
           innerProps,
           isDisabled,
           isFocused
@@ -35692,7 +35816,7 @@ void main() {
             "aria-selected": _this4.isAppleDevice ? void 0 : isSelected
             // is not supported on Apple devices
           };
-          return /* @__PURE__ */ reactExports.createElement(Option2, _extends$3({}, commonProps, {
+          return /* @__PURE__ */ reactExports.createElement(Option2, _extends$2({}, commonProps, {
             innerProps,
             data,
             isDisabled,
@@ -35712,7 +35836,7 @@ void main() {
               var _data = item.data, options2 = item.options, groupIndex = item.index;
               var groupId = "".concat(_this4.getElementId("group"), "-").concat(groupIndex);
               var headingId = "".concat(groupId, "-heading");
-              return /* @__PURE__ */ reactExports.createElement(Group2, _extends$3({}, commonProps, {
+              return /* @__PURE__ */ reactExports.createElement(Group2, _extends$2({}, commonProps, {
                 key: groupId,
                 data: _data,
                 options: options2,
@@ -35749,9 +35873,9 @@ void main() {
           menuPosition,
           menuShouldScrollIntoView
         };
-        var menuElement = /* @__PURE__ */ reactExports.createElement(MenuPlacer, _extends$3({}, commonProps, menuPlacementProps), function(_ref4) {
+        var menuElement = /* @__PURE__ */ reactExports.createElement(MenuPlacer, _extends$2({}, commonProps, menuPlacementProps), function(_ref4) {
           var ref = _ref4.ref, _ref4$placerProps = _ref4.placerProps, placement = _ref4$placerProps.placement, maxHeight = _ref4$placerProps.maxHeight;
-          return /* @__PURE__ */ reactExports.createElement(Menu2, _extends$3({}, commonProps, menuPlacementProps, {
+          return /* @__PURE__ */ reactExports.createElement(Menu2, _extends$2({}, commonProps, menuPlacementProps, {
             innerRef: ref,
             innerProps: {
               onMouseDown: _this4.onMenuMouseDown,
@@ -35765,7 +35889,7 @@ void main() {
             onBottomArrive: onMenuScrollToBottom,
             lockEnabled: menuShouldBlockScroll
           }, function(scrollTargetRef) {
-            return /* @__PURE__ */ reactExports.createElement(MenuList2, _extends$3({}, commonProps, {
+            return /* @__PURE__ */ reactExports.createElement(MenuList2, _extends$2({}, commonProps, {
               innerRef: function innerRef(instance) {
                 _this4.getMenuListRef(instance);
                 scrollTargetRef(instance);
@@ -35781,7 +35905,7 @@ void main() {
             }), menuUI);
           }));
         });
-        return menuPortalTarget || menuPosition === "fixed" ? /* @__PURE__ */ reactExports.createElement(MenuPortal2, _extends$3({}, commonProps, {
+        return menuPortalTarget || menuPosition === "fixed" ? /* @__PURE__ */ reactExports.createElement(MenuPortal2, _extends$2({}, commonProps, {
           appendTo: menuPortalTarget,
           controlElement: this.controlRef,
           menuPlacement,
@@ -35841,7 +35965,7 @@ void main() {
         var commonProps = this.commonProps;
         var _this$state6 = this.state, ariaSelection = _this$state6.ariaSelection, focusedOption = _this$state6.focusedOption, focusedValue = _this$state6.focusedValue, isFocused = _this$state6.isFocused, selectValue = _this$state6.selectValue;
         var focusableOptions = this.getFocusableOptions();
-        return /* @__PURE__ */ reactExports.createElement(LiveRegion$1, _extends$3({}, commonProps, {
+        return /* @__PURE__ */ reactExports.createElement(LiveRegion$1, _extends$2({}, commonProps, {
           id: this.getElementId("live-region"),
           ariaSelection,
           focusedOption,
@@ -35859,7 +35983,7 @@ void main() {
         var _this$props14 = this.props, className = _this$props14.className, id = _this$props14.id, isDisabled = _this$props14.isDisabled, menuIsOpen = _this$props14.menuIsOpen;
         var isFocused = this.state.isFocused;
         var commonProps = this.commonProps = this.getCommonProps();
-        return /* @__PURE__ */ reactExports.createElement(SelectContainer2, _extends$3({}, commonProps, {
+        return /* @__PURE__ */ reactExports.createElement(SelectContainer2, _extends$2({}, commonProps, {
           className,
           innerProps: {
             id,
@@ -35867,7 +35991,7 @@ void main() {
           },
           isDisabled,
           isFocused
-        }), this.renderLiveRegion(), /* @__PURE__ */ reactExports.createElement(Control2, _extends$3({}, commonProps, {
+        }), this.renderLiveRegion(), /* @__PURE__ */ reactExports.createElement(Control2, _extends$2({}, commonProps, {
           innerRef: this.getControlRef,
           innerProps: {
             onMouseDown: this.onControlMouseDown,
@@ -35876,9 +36000,9 @@ void main() {
           isDisabled,
           isFocused,
           menuIsOpen
-        }), /* @__PURE__ */ reactExports.createElement(ValueContainer2, _extends$3({}, commonProps, {
+        }), /* @__PURE__ */ reactExports.createElement(ValueContainer2, _extends$2({}, commonProps, {
           isDisabled
-        }), this.renderPlaceholderOrValue(), this.renderInput()), /* @__PURE__ */ reactExports.createElement(IndicatorsContainer2, _extends$3({}, commonProps, {
+        }), this.renderPlaceholderOrValue(), this.renderInput()), /* @__PURE__ */ reactExports.createElement(IndicatorsContainer2, _extends$2({}, commonProps, {
           isDisabled
         }), this.renderClearIndicator(), this.renderLoadingIndicator(), this.renderIndicatorSeparator(), this.renderDropdownIndicator())), this.renderMenu(), this.renderFormField());
       }
@@ -35933,7 +36057,7 @@ void main() {
   Select.defaultProps = defaultProps;
   var StateManagedSelect = /* @__PURE__ */ reactExports.forwardRef(function(props, ref) {
     var baseSelectProps = useStateManager(props);
-    return /* @__PURE__ */ reactExports.createElement(Select, _extends$3({
+    return /* @__PURE__ */ reactExports.createElement(Select, _extends$2({
       ref
     }, baseSelectProps));
   });
@@ -36675,14 +36799,14 @@ void main() {
     onChange: PropTypes.func,
     value: PropTypes.object.isRequired
   };
-  function _extends$2() {
-    return _extends$2 = Object.assign ? Object.assign.bind() : function(n2) {
+  function _extends$1() {
+    return _extends$1 = Object.assign ? Object.assign.bind() : function(n2) {
       for (var e = 1; e < arguments.length; e++) {
         var t = arguments[e];
         for (var r2 in t) ({}).hasOwnProperty.call(t, r2) && (n2[r2] = t[r2]);
       }
       return n2;
-    }, _extends$2.apply(null, arguments);
+    }, _extends$1.apply(null, arguments);
   }
   function PropertyRow({
     componentname,
@@ -36718,7 +36842,7 @@ void main() {
         max: schema.hasOwnProperty("max") ? schema.max : Infinity
       };
       if (schema.oneOf && schema.oneOf.length > 0) {
-        return /* @__PURE__ */ React.createElement(SelectWidget, _extends$2({}, widgetProps, {
+        return /* @__PURE__ */ React.createElement(SelectWidget, _extends$1({}, widgetProps, {
           options: schema.oneOf,
           isMulti: schema.type === "array"
         }));
@@ -36728,10 +36852,10 @@ void main() {
       }
       switch (type) {
         case "number": {
-          return /* @__PURE__ */ React.createElement(NumberWidget, _extends$2({}, widgetProps, numberWidgetProps));
+          return /* @__PURE__ */ React.createElement(NumberWidget, _extends$1({}, widgetProps, numberWidgetProps));
         }
         case "int": {
-          return /* @__PURE__ */ React.createElement(NumberWidget, _extends$2({}, widgetProps, numberWidgetProps, {
+          return /* @__PURE__ */ React.createElement(NumberWidget, _extends$1({}, widgetProps, numberWidgetProps, {
             precision: 0
           }));
         }
@@ -36896,8 +37020,6 @@ void main() {
     isCollapsed,
     name
   }) {
-    const [currentEntity, setCurrentEntity] = reactExports.useState(entity);
-    const [currentName, setCurrentName] = reactExports.useState(name);
     const [updateKey, setUpdateKey] = reactExports.useState(0);
     const onEntityUpdate = reactExports.useCallback((detail) => {
       if (detail.entity !== entity) {
@@ -36911,12 +37033,6 @@ void main() {
       Events.on("entityupdate", onEntityUpdate);
       return () => Events.off("entityupdate", onEntityUpdate);
     }, [onEntityUpdate]);
-    reactExports.useEffect(() => {
-      setCurrentEntity(entity);
-    }, [entity]);
-    reactExports.useEffect(() => {
-      setCurrentName(name);
-    }, [name]);
     const removeComponent = reactExports.useCallback((event) => {
       var componentName = name;
       event.stopPropagation();
@@ -36928,31 +37044,6 @@ void main() {
         });
       }
     }, [name, entity]);
-    const renderPropertyRows = reactExports.useCallback(() => {
-      const componentData = component;
-      if (isSingleProperty(componentData.schema)) {
-        const componentName = name;
-        const schema = AFRAME.components[componentName.split("__")[0]].schema;
-        return /* @__PURE__ */ React.createElement(PropertyRow, {
-          key: componentName,
-          name: componentName,
-          schema,
-          data: componentData.data,
-          componentname: componentName,
-          isSingle: true,
-          entity
-        });
-      }
-      return Object.keys(componentData.schema).sort().filter((propertyName) => shouldShowProperty(propertyName, componentData)).map((propertyName) => /* @__PURE__ */ React.createElement(PropertyRow, {
-        key: propertyName,
-        name: propertyName,
-        schema: componentData.schema[propertyName],
-        data: componentData.data[propertyName],
-        componentname: name,
-        isSingle: false,
-        entity
-      }));
-    }, [component, name, entity]);
     return /* @__PURE__ */ React.createElement(Collapsible, {
       collapsed: isCollapsed,
       key: updateKey
@@ -36961,27 +37052,39 @@ void main() {
     }, /* @__PURE__ */ React.createElement("span", {
       className: "componentTitle",
       title: name
-    }, /* @__PURE__ */ React.createElement("span", null, name)), /* @__PURE__ */ React.createElement("div", {
-      className: "componentHeaderActions"
+    }, name), /* @__PURE__ */ React.createElement("div", {
+      className: "flex"
     }, /* @__PURE__ */ React.createElement("a", {
       title: "Copy to clipboard",
       className: "button",
       onClick: (event) => {
         event.preventDefault();
         event.stopPropagation();
-        copy(getComponentClipboardRepresentation(currentEntity, name.toLowerCase()));
+        copy(getComponentClipboardRepresentation(entity, name.toLowerCase()));
       }
-    }, /* @__PURE__ */ React.createElement(AwesomeIcon, {
-      icon: faClipboard
-    })), /* @__PURE__ */ React.createElement("a", {
+    }, /* @__PURE__ */ React.createElement(FaClipboard, null)), /* @__PURE__ */ React.createElement("a", {
       title: "Remove component",
       className: "button",
       onClick: removeComponent
-    }, /* @__PURE__ */ React.createElement(AwesomeIcon, {
-      icon: faTrashAlt
-    })))), /* @__PURE__ */ React.createElement("div", {
+    }, /* @__PURE__ */ React.createElement(FaTrash, null)))), /* @__PURE__ */ React.createElement("div", {
       className: "collapsible-content"
-    }, renderPropertyRows()));
+    }, isSingleProperty(component.schema) ? /* @__PURE__ */ React.createElement(PropertyRow, {
+      key: name,
+      name,
+      schema: AFRAME.components[name.split("__")[0]].schema,
+      data: component.data,
+      componentname: name,
+      isSingle: true,
+      entity
+    }) : Object.keys(component.schema).sort().filter((propertyName) => shouldShowProperty(propertyName, component)).map((propertyName) => /* @__PURE__ */ React.createElement(PropertyRow, {
+      key: propertyName,
+      name: propertyName,
+      schema: component.schema[propertyName],
+      data: component.data[propertyName],
+      componentname: name,
+      isSingle: false,
+      entity
+    }))));
   }
   Component.propTypes = {
     component: PropTypes.any,
@@ -36989,139 +37092,6 @@ void main() {
     isCollapsed: PropTypes.bool,
     name: PropTypes.string
   };
-  var DefaultContext = {
-    color: void 0,
-    size: void 0,
-    className: void 0,
-    style: void 0,
-    attr: void 0
-  };
-  var IconContext = React.createContext && /* @__PURE__ */ React.createContext(DefaultContext);
-  var _excluded = ["attr", "size", "title"];
-  function _objectWithoutProperties(source, excluded) {
-    if (source == null) return {};
-    var target = _objectWithoutPropertiesLoose(source, excluded);
-    var key, i2;
-    if (Object.getOwnPropertySymbols) {
-      var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-      for (i2 = 0; i2 < sourceSymbolKeys.length; i2++) {
-        key = sourceSymbolKeys[i2];
-        if (excluded.indexOf(key) >= 0) continue;
-        if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-        target[key] = source[key];
-      }
-    }
-    return target;
-  }
-  function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {};
-    var target = {};
-    for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
-      }
-    }
-    return target;
-  }
-  function _extends$1() {
-    _extends$1 = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i2 = 1; i2 < arguments.length; i2++) {
-        var source = arguments[i2];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends$1.apply(this, arguments);
-  }
-  function ownKeys(e, r2) {
-    var t = Object.keys(e);
-    if (Object.getOwnPropertySymbols) {
-      var o2 = Object.getOwnPropertySymbols(e);
-      r2 && (o2 = o2.filter(function(r3) {
-        return Object.getOwnPropertyDescriptor(e, r3).enumerable;
-      })), t.push.apply(t, o2);
-    }
-    return t;
-  }
-  function _objectSpread(e) {
-    for (var r2 = 1; r2 < arguments.length; r2++) {
-      var t = null != arguments[r2] ? arguments[r2] : {};
-      r2 % 2 ? ownKeys(Object(t), true).forEach(function(r3) {
-        _defineProperty(e, r3, t[r3]);
-      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function(r3) {
-        Object.defineProperty(e, r3, Object.getOwnPropertyDescriptor(t, r3));
-      });
-    }
-    return e;
-  }
-  function _defineProperty(obj, key, value) {
-    key = _toPropertyKey(key);
-    if (key in obj) {
-      Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
-    } else {
-      obj[key] = value;
-    }
-    return obj;
-  }
-  function _toPropertyKey(t) {
-    var i2 = _toPrimitive(t, "string");
-    return "symbol" == typeof i2 ? i2 : i2 + "";
-  }
-  function _toPrimitive(t, r2) {
-    if ("object" != typeof t || !t) return t;
-    var e = t[Symbol.toPrimitive];
-    if (void 0 !== e) {
-      var i2 = e.call(t, r2);
-      if ("object" != typeof i2) return i2;
-      throw new TypeError("@@toPrimitive must return a primitive value.");
-    }
-    return ("string" === r2 ? String : Number)(t);
-  }
-  function Tree2Element(tree) {
-    return tree && tree.map((node2, i2) => /* @__PURE__ */ React.createElement(node2.tag, _objectSpread({
-      key: i2
-    }, node2.attr), Tree2Element(node2.child)));
-  }
-  function GenIcon(data) {
-    return (props) => /* @__PURE__ */ React.createElement(IconBase, _extends$1({
-      attr: _objectSpread({}, data.attr)
-    }, props), Tree2Element(data.child));
-  }
-  function IconBase(props) {
-    var elem = (conf) => {
-      var {
-        attr,
-        size,
-        title
-      } = props, svgProps = _objectWithoutProperties(props, _excluded);
-      var computedSize = size || conf.size || "1em";
-      var className;
-      if (conf.className) className = conf.className;
-      if (props.className) className = (className ? className + " " : "") + props.className;
-      return /* @__PURE__ */ React.createElement("svg", _extends$1({
-        stroke: "currentColor",
-        fill: "currentColor",
-        strokeWidth: "0"
-      }, conf.attr, attr, svgProps, {
-        className,
-        style: _objectSpread(_objectSpread({
-          color: props.color || conf.color
-        }, conf.style), props.style),
-        height: computedSize,
-        width: computedSize,
-        xmlns: "http://www.w3.org/2000/svg"
-      }), title && /* @__PURE__ */ React.createElement("title", null, title), props.children);
-    };
-    return IconContext !== void 0 ? /* @__PURE__ */ React.createElement(IconContext.Consumer, null, (conf) => elem(conf)) : elem(DefaultContext);
-  }
-  function MdOutlineFileDownload(props) {
-    return GenIcon({ "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "fill": "none", "d": "M0 0h24v24H0z" }, "child": [] }, { "tag": "path", "attr": { "d": "M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zm-1-4-1.41-1.41L13 12.17V4h-2v8.17L8.41 9.59 7 11l5 5 5-5z" }, "child": [] }] })(props);
-  }
   const DEFAULT_COMPONENTS = ["visible", "position", "scale", "rotation"];
   function Mixin({
     entity
@@ -37184,28 +37154,6 @@ void main() {
   Mixin.propTypes = {
     entity: PropTypes.object.isRequired
   };
-  const ICONS = {
-    camera: /* @__PURE__ */ React.createElement("i", {
-      title: "camera"
-    }, /* @__PURE__ */ React.createElement(AwesomeIcon, {
-      icon: faCamera
-    })),
-    mesh: /* @__PURE__ */ React.createElement("i", {
-      title: "mesh"
-    }, /* @__PURE__ */ React.createElement(AwesomeIcon, {
-      icon: faCube
-    })),
-    light: /* @__PURE__ */ React.createElement("i", {
-      title: "light"
-    }, /* @__PURE__ */ React.createElement(AwesomeIcon, {
-      icon: faLightbulb
-    })),
-    text: /* @__PURE__ */ React.createElement("i", {
-      title: "text"
-    }, /* @__PURE__ */ React.createElement(AwesomeIcon, {
-      icon: faFont
-    }))
-  };
   function EntityRepresentation({
     entity,
     onDoubleClick
@@ -37213,37 +37161,208 @@ void main() {
     if (!entity) {
       return null;
     }
-    const icons = [];
-    for (let objType in ICONS) {
-      if (!entity.getObject3D(objType)) {
-        continue;
+    const iconMap = {
+      camera: {
+        icon: FaCamera,
+        color: "#ff6b6b"
+      },
+      mesh: {
+        icon: FaCube,
+        color: "#4ecdc4"
+      },
+      light: {
+        icon: FaLightbulb,
+        color: "#ffd93d"
+      },
+      text: {
+        icon: FaFont,
+        color: "#6c5ce7"
+      },
+      group: {
+        icon: FaObjectGroup,
+        color: "#a29bfe"
+      },
+      sprite: {
+        icon: FaCircle,
+        color: "#fd79a8"
+      },
+      points: {
+        icon: FaCircle,
+        color: "#00b894"
+      },
+      line: {
+        icon: FaMinus,
+        color: "#e17055"
+      },
+      lineloop: {
+        icon: FaMinus,
+        color: "#e17055"
+      },
+      linesegments: {
+        icon: FaMinus,
+        color: "#e17055"
+      },
+      lod: {
+        icon: FaLayerGroup,
+        color: "#fdcb6e"
+      },
+      instancedmesh: {
+        icon: FaCopy,
+        color: "#00cec9"
+      },
+      skinnedmesh: {
+        icon: FaUser,
+        color: "#ff7675"
+      },
+      default: {
+        icon: FaBox,
+        color: "#95a5a6"
+      },
+      scene: {
+        icon: FaGlobe,
+        color: "#9b59b6"
+      },
+      // A-Frame primitives
+      "a-box": {
+        icon: FaCube,
+        color: "#4ecdc4"
+      },
+      "a-camera": {
+        icon: FaCamera,
+        color: "#ff6b6b"
+      },
+      "a-circle": {
+        icon: FaDotCircle,
+        color: "#fd79a8"
+      },
+      "a-cone": {
+        icon: FaCaretUp,
+        color: "#e17055"
+      },
+      "a-cursor": {
+        icon: FaDotCircle,
+        color: "#00b894"
+      },
+      "a-curvedimage": {
+        icon: FaImage,
+        color: "#6c5ce7"
+      },
+      "a-cylinder": {
+        icon: FaSquare,
+        color: "#a29bfe"
+      },
+      "a-dodecahedron": {
+        icon: FaCube,
+        color: "#fdcb6e"
+      },
+      "a-gltf-model": {
+        icon: FaCube,
+        color: "#00cec9"
+      },
+      "a-icosahedron": {
+        icon: FaCube,
+        color: "#ff7675"
+      },
+      "a-image": {
+        icon: FaImage,
+        color: "#6c5ce7"
+      },
+      "a-light": {
+        icon: FaLightbulb,
+        color: "#ffd93d"
+      },
+      "a-link": {
+        icon: FaLink,
+        color: "#9b59b6"
+      },
+      "a-obj-model": {
+        icon: FaCube,
+        color: "#95a5a6"
+      },
+      "a-octahedron": {
+        icon: FaCube,
+        color: "#4ecdc4"
+      },
+      "a-plane": {
+        icon: FaSquare,
+        color: "#a29bfe"
+      },
+      "a-ring": {
+        icon: FaRing,
+        color: "#fd79a8"
+      },
+      "a-sky": {
+        icon: FaGlobe,
+        color: "#9b59b6"
+      },
+      "a-sound": {
+        icon: FaVolumeUp,
+        color: "#e17055"
+      },
+      "a-sphere": {
+        icon: FaCircle,
+        color: "#00b894"
+      },
+      "a-tetrahedron": {
+        icon: FaCube,
+        color: "#fdcb6e"
+      },
+      "a-text": {
+        icon: FaFont,
+        color: "#6c5ce7"
+      },
+      "a-torus": {
+        icon: FaRing,
+        color: "#fd79a8"
+      },
+      "a-torus-knot": {
+        icon: FaRing,
+        color: "#e17055"
+      },
+      "a-triangle": {
+        icon: FaPlayCircle,
+        color: "#00cec9"
+      },
+      "a-video": {
+        icon: FaVideo,
+        color: "#ff7675"
+      },
+      "a-videosphere": {
+        icon: FaFileVideo,
+        color: "#95a5a6"
       }
-      icons.push(/* @__PURE__ */ React.createElement("span", {
-        key: objType
-      }, " ", ICONS[objType]));
+    };
+    let matchedIcon = null;
+    const primitiveMatch = Object.entries(iconMap).find(([type]) => type.startsWith("a-") && entity.tagName && entity.tagName.toLowerCase() === type);
+    if (primitiveMatch) {
+      matchedIcon = primitiveMatch[1];
+    } else {
+      const objectMatch = Object.entries(iconMap).find(([type]) => {
+        if (type === "scene") {
+          return entity.tagName && entity.tagName.toLowerCase() === "a-scene";
+        }
+        if (type === "default") {
+          return entity.tagName && entity.tagName.toLowerCase() === "a-entity" && !entity.getObject3D("mesh") && !entity.getObject3D("camera") && !entity.getObject3D("light") && !entity.getObject3D("text");
+        }
+        return entity.getObject3D(type);
+      });
+      if (objectMatch) {
+        matchedIcon = objectMatch[1];
+      }
     }
-    let entityName = entity.id;
-    let type = "id";
-    if (!entity.isScene && !entityName && entity.getAttribute("class")) {
-      entityName = entity.getAttribute("class").split(" ")[0];
-      type = "class";
-    } else if (!entity.isScene && !entityName && entity.getAttribute("mixin")) {
-      entityName = entity.getAttribute("mixin").split(" ")[0];
-      type = "mixin";
-    }
+    const icons = matchedIcon ? [/* @__PURE__ */ React.createElement(matchedIcon.icon, {
+      key: "entity-icon",
+      style: {
+        color: matchedIcon.color,
+        marginRight: "4px"
+      }
+    })] : [];
     return /* @__PURE__ */ React.createElement("span", {
-      className: "entityPrint",
+      className: "entityPrint flex",
       onDoubleClick
-    }, /* @__PURE__ */ React.createElement("span", {
-      className: "entityTagName"
-    }, "<" + entity.tagName.toLowerCase()), entityName && /* @__PURE__ */ React.createElement("span", {
-      className: "entityName",
-      "data-entity-name-type": type
-    }, " ", entityName), icons.length > 0 && /* @__PURE__ */ React.createElement("span", {
-      className: "entityIcons"
-    }, icons), /* @__PURE__ */ React.createElement("span", {
-      className: "entityCloseTag"
-    }, ">"));
+    }, icons.length > 0 && /* @__PURE__ */ React.createElement("span", {
+      className: "entityIcons flex"
+    }, icons), /* @__PURE__ */ React.createElement("span", null, entity.id || entity.localName));
   }
   function changeId(componentName, value) {
     var entity = AFRAME.INSPECTOR.selectedEntity;
@@ -37287,7 +37406,7 @@ void main() {
         });
       });
     }, [entity]);
-    const exportToGLTF = reactExports.useCallback(() => {
+    reactExports.useCallback(() => {
       AFRAME.INSPECTOR.exporters.gltf.parse(entity.object3D, function(buffer) {
         const blob = new Blob([buffer], {
           type: "application/octet-stream"
@@ -37302,15 +37421,15 @@ void main() {
     if (!entity) {
       return /* @__PURE__ */ React.createElement("div", null);
     }
-    const entityButtons = /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("a", {
-      title: "Export entity to GLTF",
-      className: "gltfIcon",
-      onClick: (event) => {
-        exportToGLTF();
-        event.preventDefault();
-        event.stopPropagation();
-      }
-    }, /* @__PURE__ */ React.createElement(MdOutlineFileDownload, null)), /* @__PURE__ */ React.createElement("a", {
+    console.dir(entity.localName);
+    return /* @__PURE__ */ React.createElement(Collapsible, {
+      id: "componentEntityHeader",
+      className: "commonComponents"
+    }, /* @__PURE__ */ React.createElement("div", {
+      className: "collapsible-header componentHeader"
+    }, /* @__PURE__ */ React.createElement("span", {
+      className: "componentTitle"
+    }, entity.id || entity.localName), /* @__PURE__ */ React.createElement("a", {
       title: "Copy entity HTML to clipboard",
       className: "button",
       onClick: (event) => {
@@ -37318,17 +37437,7 @@ void main() {
         event.stopPropagation();
         copy(getEntityClipboardRepresentation(entity));
       }
-    }, /* @__PURE__ */ React.createElement(AwesomeIcon, {
-      icon: faClipboard
-    })));
-    return /* @__PURE__ */ React.createElement(Collapsible, {
-      id: "componentEntityHeader",
-      className: "commonComponents"
-    }, /* @__PURE__ */ React.createElement("div", {
-      className: "collapsible-header"
-    }, /* @__PURE__ */ React.createElement(EntityRepresentation, {
-      entity
-    }), entityButtons), /* @__PURE__ */ React.createElement("div", {
+    }, /* @__PURE__ */ React.createElement(FaClipboard, null))), /* @__PURE__ */ React.createElement("div", {
       className: "collapsible-content"
     }, /* @__PURE__ */ React.createElement("div", {
       className: "propertyRow"
@@ -37354,41 +37463,25 @@ void main() {
   function ComponentsContainer({
     entity
   }) {
-    const [updateKey, setUpdateKey] = reactExports.useState(0);
-    const onEntityUpdate = reactExports.useCallback((detail) => {
-      if (detail.entity !== entity) {
-        return;
-      }
-      if (detail.component === "mixin") {
-        setUpdateKey((prev2) => prev2 + 1);
-      }
-    }, [entity]);
-    reactExports.useEffect(() => {
-      Events.on("entityupdate", onEntityUpdate);
-      return () => Events.off("entityupdate", onEntityUpdate);
-    }, [onEntityUpdate]);
-    const renderedComponents = reactExports.useMemo(() => {
-      const components2 = entity ? entity.components : {};
-      const definedComponents = Object.keys(components2).filter(function(key) {
-        return DEFAULT_COMPONENTS.indexOf(key) === -1;
-      });
-      return definedComponents.sort().map(function(key) {
-        return /* @__PURE__ */ React.createElement(Component, {
-          isCollapsed: definedComponents.length > 2,
-          component: components2[key],
-          entity,
-          key,
-          name: key
-        });
-      });
-    }, [entity, updateKey]);
     return /* @__PURE__ */ React.createElement("div", {
       className: "components"
     }, /* @__PURE__ */ React.createElement(CommonComponents, {
       entity
     }), /* @__PURE__ */ React.createElement(AddComponent, {
       entity
-    }), renderedComponents);
+    }), entity && Object.keys(entity.components).filter(function(key) {
+      return DEFAULT_COMPONENTS.indexOf(key) === -1;
+    }).sort().map(function(key) {
+      return /* @__PURE__ */ React.createElement(Component, {
+        isCollapsed: Object.keys(entity.components).filter(function(k) {
+          return DEFAULT_COMPONENTS.indexOf(k) === -1;
+        }).length > 2,
+        component: entity.components[key],
+        entity,
+        key,
+        name: key
+      });
+    }));
   }
   ComponentsContainer.propTypes = {
     entity: PropTypes.object
@@ -37530,7 +37623,18 @@ void main() {
           onLoadedCallback();
         }
       };
-      document.getElementsByTagName("a-assets")[0].appendChild(element);
+      var assetsElement = document.getElementsByTagName("a-assets")[0];
+      if (!assetsElement) {
+        assetsElement = document.createElement("a-assets");
+        var sceneElement = document.getElementsByTagName("a-scene")[0];
+        if (sceneElement) {
+          sceneElement.appendChild(assetsElement);
+        } else {
+          console.error("No a-scene element found to append a-assets to");
+          return;
+        }
+      }
+      assetsElement.appendChild(element);
     }
   }
   function getFilename(url, converted = false) {
@@ -37666,10 +37770,19 @@ void main() {
     const addNewAsset = reactExports.useCallback(() => {
       insertNewAsset("img", preview.name, preview.src, true, function() {
         generateFromAssets();
+        selectTexture({
+          id: preview.name,
+          src: preview.src,
+          width: preview.width,
+          height: preview.height,
+          name: preview.name,
+          type: "asset",
+          value: "#" + preview.name
+        });
         setAddNewDialogOpened(false);
         clear();
       });
-    }, [preview, generateFromAssets, clear]);
+    }, [preview, generateFromAssets, selectTexture, clear]);
     const onNameKeyUp = reactExports.useCallback((event) => {
       if (event.keyCode === 13 && isValidAsset()) {
         addNewAsset();
@@ -37681,7 +37794,7 @@ void main() {
         name: event.target.value
       }));
     }, []);
-    const toggleNewDialog = reactExports.useCallback(() => {
+    reactExports.useCallback(() => {
       setAddNewDialogOpened((prev2) => !prev2);
     }, []);
     const onUrlChange = reactExports.useCallback((e) => {
@@ -37739,18 +37852,13 @@ void main() {
     }, [isOpen]);
     let validUrl = isValidId(preview.name);
     let validAsset = isValidAsset();
-    let addNewAssetButton = addNewDialogOpened ? "BACK" : "LOAD TEXTURE";
     return /* @__PURE__ */ React.createElement(Modal, {
       id: "textureModal",
       title: "Textures",
       isOpen,
       onClose: onCloseModal,
       closeOnClickOutside: false
-    }, /* @__PURE__ */ React.createElement("button", {
-      onClick: toggleNewDialog
-    }, addNewAssetButton), /* @__PURE__ */ React.createElement("div", {
-      className: addNewDialogOpened ? "" : "hide"
-    }, /* @__PURE__ */ React.createElement("div", {
+    }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
       className: "newimage"
     }, /* @__PURE__ */ React.createElement("div", {
       className: "new_asset_options"
@@ -37766,9 +37874,7 @@ void main() {
       placeholder: "Filter...",
       value: filterText,
       onChange: onChangeFilter
-    }), /* @__PURE__ */ React.createElement(AwesomeIcon, {
-      icon: faSearch
-    })), /* @__PURE__ */ React.createElement("ul", {
+    }), /* @__PURE__ */ React.createElement(FaSearch, null)), /* @__PURE__ */ React.createElement("ul", {
       ref: registryGallery,
       className: "gallery"
     }, renderRegistryImages())))), /* @__PURE__ */ React.createElement("div", {
@@ -38080,78 +38186,72 @@ void main() {
     selectEntity,
     toggleExpandedCollapsed
   }) {
-    const onClick = reactExports.useCallback(() => selectEntity(entity), [selectEntity, entity]);
+    const onClick = reactExports.useCallback(() => {
+      selectEntity(entity);
+      if (entity.children) toggleExpandedCollapsed(entity);
+    }, [selectEntity, entity]);
     const onDoubleClick = reactExports.useCallback(() => {
       Events.emit("objectfocus", entity.object3D);
     }, [entity]);
     const toggleVisibility = reactExports.useCallback(() => {
-      const visible2 = entity.object3D.visible;
-      entity.setAttribute("visible", !visible2);
+      const visible = entity.object3D.visible;
+      entity.setAttribute("visible", !visible);
     }, [entity]);
     const tagName = entity.tagName.toLowerCase();
-    const cloneButton = tagName === "a-scene" ? null : /* @__PURE__ */ React.createElement("a", {
+    const className = clsx({
+      active: isSelected,
+      entity: true,
+      novisible: !entity.object3D.visible,
+      option: true
+    });
+    const indentStyle = {
+      paddingLeft: `${depth * 20 + 8}px`
+    };
+    const hasChildren = entity.children && entity.children.length > 0;
+    return /* @__PURE__ */ React.createElement("div", {
+      className,
+      onClick,
+      id
+    }, /* @__PURE__ */ React.createElement("div", {
+      className: "tree-indent",
+      style: indentStyle
+    }, Array.from({
+      length: depth
+    }, (_, i2) => /* @__PURE__ */ React.createElement("div", {
+      key: i2,
+      className: "tree-line",
+      style: {
+        left: `${i2 * 20}px`
+      }
+    })), hasChildren && /* @__PURE__ */ React.createElement("button", {
+      className: "expand-btn",
+      onClick: (e) => {
+        e.stopPropagation();
+        toggleExpandedCollapsed(entity);
+      }
+    }, isExpanded ? /* @__PURE__ */ React.createElement(FaCaretDown, null) : /* @__PURE__ */ React.createElement(FaCaretRight, null)), /* @__PURE__ */ React.createElement("div", {
+      className: "entity-content"
+    }, /* @__PURE__ */ React.createElement(EntityRepresentation, {
+      entity,
+      onDoubleClick
+    }))), /* @__PURE__ */ React.createElement("div", {
+      className: "entity-actions"
+    }, tagName !== "a-scene" && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("button", {
       onClick: () => cloneEntity(entity),
       title: "Clone entity",
-      className: "button"
-    }, /* @__PURE__ */ React.createElement(AwesomeIcon, {
-      icon: faClone
-    }));
-    const removeButton = tagName === "a-scene" ? null : /* @__PURE__ */ React.createElement("a", {
+      className: "action-btn clone-btn"
+    }, /* @__PURE__ */ React.createElement(FaClone, null)), /* @__PURE__ */ React.createElement("button", {
       onClick: (event) => {
         event.stopPropagation();
         removeEntity(entity);
       },
       title: "Remove entity",
-      className: "button"
-    }, /* @__PURE__ */ React.createElement(AwesomeIcon, {
-      icon: faTrashAlt
-    }));
-    const pad = "&nbsp;&nbsp;&nbsp;&nbsp;".repeat(depth);
-    let collapse;
-    if (entity.children.length > 0 && !isFiltering) {
-      collapse = /* @__PURE__ */ React.createElement("span", {
-        onClick: () => toggleExpandedCollapsed(entity),
-        className: "collapsespace"
-      }, isExpanded ? /* @__PURE__ */ React.createElement(AwesomeIcon, {
-        icon: faCaretDown
-      }) : /* @__PURE__ */ React.createElement(AwesomeIcon, {
-        icon: faCaretRight
-      }));
-    } else {
-      collapse = /* @__PURE__ */ React.createElement("span", {
-        className: "collapsespace"
-      });
-    }
-    const visible = entity.object3D.visible;
-    const visibilityButton = /* @__PURE__ */ React.createElement("i", {
+      className: "action-btn delete-btn"
+    }, /* @__PURE__ */ React.createElement(FaTrash, null))), /* @__PURE__ */ React.createElement("button", {
+      className: "action-btn visibility-btn",
       title: "Toggle entity visibility",
       onClick: toggleVisibility
-    }, visible ? /* @__PURE__ */ React.createElement(AwesomeIcon, {
-      icon: faEye
-    }) : /* @__PURE__ */ React.createElement(AwesomeIcon, {
-      icon: faEyeSlash
-    }));
-    const className = clsx({
-      active: isSelected,
-      entity: true,
-      novisible: !visible,
-      option: true
-    });
-    return /* @__PURE__ */ React.createElement("div", {
-      className,
-      onClick,
-      id
-    }, /* @__PURE__ */ React.createElement("span", null, visibilityButton, /* @__PURE__ */ React.createElement("span", {
-      className: "entityChildPadding",
-      dangerouslySetInnerHTML: {
-        __html: pad
-      }
-    }), collapse, /* @__PURE__ */ React.createElement(EntityRepresentation, {
-      entity,
-      onDoubleClick
-    })), /* @__PURE__ */ React.createElement("span", {
-      className: "entityActions"
-    }, cloneButton, removeButton));
+    }, entity.object3D.visible ? /* @__PURE__ */ React.createElement(FaEye, null) : /* @__PURE__ */ React.createElement(FaEyeSlash, null))));
   }
   Entity.propTypes = {
     id: PropTypes.string,
@@ -38163,24 +38263,6 @@ void main() {
     selectEntity: PropTypes.func,
     toggleExpandedCollapsed: PropTypes.func
   };
-  function FaDownload(props) {
-    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z" }, "child": [] }] })(props);
-  }
-  function FaPause(props) {
-    return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z" }, "child": [] }] })(props);
-  }
-  function FaPlay(props) {
-    return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" }, "child": [] }] })(props);
-  }
-  function FaPlus(props) {
-    return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" }, "child": [] }] })(props);
-  }
-  function FaQuestion(props) {
-    return GenIcon({ "attr": { "viewBox": "0 0 384 512" }, "child": [{ "tag": "path", "attr": { "d": "M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z" }, "child": [] }] })(props);
-  }
-  function FaSave(props) {
-    return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM224 416c-35.346 0-64-28.654-64-64 0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64zm96-304.52V212c0 6.627-5.373 12-12 12H76c-6.627 0-12-5.373-12-12V108c0-6.627 5.373-12 12-12h228.52c3.183 0 6.235 1.264 8.485 3.515l3.48 3.48A11.996 11.996 0 0 1 320 111.48z" }, "child": [] }] })(props);
-  }
   function filterHelpers(scene, visible) {
     scene.traverse((o2) => {
       if (o2.userData.source === "INSPECTOR") {
@@ -38194,8 +38276,91 @@ void main() {
   function slugify(text) {
     return text.toString().toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]+/g, "-").replace(/--+/g, "-").replace(/^-+/, "").replace(/-+$/, "");
   }
-  function Toolbar() {
+  function Toolbar({
+    selectedEntity
+  }) {
+    const {
+      isPlaying,
+      primitivesList,
+      isDropdownOpen,
+      autosaveEnabled,
+      addEntityWithPrimitive,
+      toggleDropdown,
+      exportSceneToGLTF,
+      writeChanges,
+      toggleScenePlaying,
+      openHelpModal,
+      toggleAutosave
+    } = useToolbar(selectedEntity);
+    return /* @__PURE__ */ React.createElement("div", {
+      id: "toolbar"
+    }, /* @__PURE__ */ React.createElement("div", {
+      className: "toolbar-container"
+    }, /* @__PURE__ */ React.createElement("div", {
+      className: "relative"
+    }, /* @__PURE__ */ React.createElement("button", {
+      title: "Add a new primitive",
+      className: "add-button",
+      onClick: toggleDropdown
+    }, /* @__PURE__ */ React.createElement(FaPlus, null)), isDropdownOpen && /* @__PURE__ */ React.createElement("div", {
+      className: "dropdown"
+    }, /* @__PURE__ */ React.createElement("button", {
+      onClick: () => addEntityWithPrimitive("a-entity")
+    }, "a-entity"), primitivesList.map((prim) => /* @__PURE__ */ React.createElement("button", {
+      key: prim,
+      onClick: () => addEntityWithPrimitive(`${prim}`)
+    }, prim)))), /* @__PURE__ */ React.createElement("a", {
+      title: isPlaying ? "Pause scene" : "Resume scene",
+      className: "toolbar-button",
+      onClick: toggleScenePlaying
+    }, isPlaying ? /* @__PURE__ */ React.createElement(FaPause, null) : /* @__PURE__ */ React.createElement(FaPlay, null)), /* @__PURE__ */ React.createElement("a", {
+      title: "Export to GLTF",
+      className: "toolbar-button",
+      onClick: exportSceneToGLTF
+    }, /* @__PURE__ */ React.createElement(FaDownload, null)), /* @__PURE__ */ React.createElement("a", {
+      title: "Write changes with aframe-watcher.",
+      className: "toolbar-button",
+      onClick: writeChanges
+    }, /* @__PURE__ */ React.createElement(FaSave, null)), /* @__PURE__ */ React.createElement("a", {
+      title: autosaveEnabled ? "Disable autosave" : "Enable autosave (saves every 10s)",
+      className: `toolbar-button ${autosaveEnabled ? "active" : ""}`,
+      onClick: toggleAutosave
+    }, /* @__PURE__ */ React.createElement(FaClock, {
+      className: autosaveEnabled ? "text-[var(--primary)]" : ""
+    })), /* @__PURE__ */ React.createElement("a", {
+      title: "Help",
+      className: "toolbar-button",
+      onClick: openHelpModal
+    }, /* @__PURE__ */ React.createElement(FaQuestion, null))));
+  }
+  function useToolbar(selectedEntity) {
     const [isPlaying, setIsPlaying] = reactExports.useState(false);
+    const [primitivesList, setPrimitivesList] = reactExports.useState([]);
+    const [isDropdownOpen, setIsDropdownOpen] = reactExports.useState(false);
+    const [autosaveEnabled, setAutosaveEnabled] = reactExports.useState(false);
+    const autosaveIntervalRef = React.useRef(null);
+    React.useEffect(() => {
+      if (window.AFRAME && AFRAME.primitives) {
+        setPrimitivesList(Object.keys(AFRAME.primitives.primitives));
+      }
+    }, []);
+    React.useEffect(() => {
+      if (autosaveEnabled) {
+        autosaveIntervalRef.current = setInterval(() => {
+          writeChanges();
+        }, 1e4);
+      } else {
+        if (autosaveIntervalRef.current) {
+          clearInterval(autosaveIntervalRef.current);
+          autosaveIntervalRef.current = null;
+        }
+      }
+      return () => {
+        if (autosaveIntervalRef.current) {
+          clearInterval(autosaveIntervalRef.current);
+        }
+      };
+    }, [autosaveEnabled]);
     const exportSceneToGLTF = () => {
       const sceneName = getSceneName(AFRAME.scenes[0]);
       const scene = AFRAME.scenes[0].object3D;
@@ -38212,20 +38377,28 @@ void main() {
         binary: true
       });
     };
-    const addEntity = () => {
+    const addEntityWithPrimitive = (primitiveName) => {
       Events.emit("entitycreate", {
-        element: "a-entity",
-        components: {}
+        element: primitiveName,
+        components: {},
+        parent: selectedEntity || AFRAME.scenes[0]
       });
+      setIsDropdownOpen(false);
+    };
+    const toggleDropdown = () => {
+      setIsDropdownOpen(!isDropdownOpen);
     };
     const writeChanges = () => {
-      const xhr = new XMLHttpRequest();
-      xhr.open("POST", "http://localhost:51234/save");
-      xhr.onerror = () => {
+      fetch("http://localhost:51234/save", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(AFRAME.INSPECTOR.history.updates)
+      }).catch(() => {
         alert("aframe-watcher not running. This feature requires a companion service running locally. npm install aframe-watcher to save changes back to file. Read more at https://github.com/supermedium/aframe-watcher");
-      };
-      xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.send(JSON.stringify(AFRAME.INSPECTOR.history.updates));
+        if (autosaveEnabled) setAutosaveEnabled(false);
+      });
     };
     const toggleScenePlaying = () => {
       if (isPlaying) {
@@ -38242,34 +38415,22 @@ void main() {
     const openHelpModal = () => {
       Events.emit("openhelpmodal");
     };
-    return /* @__PURE__ */ React.createElement("div", {
-      id: "toolbar"
-    }, /* @__PURE__ */ React.createElement("div", {
-      className: "toolbarActions"
-    }, /* @__PURE__ */ React.createElement("a", {
-      className: "button",
-      title: "Add a new entity",
-      onClick: addEntity
-    }, /* @__PURE__ */ React.createElement(FaPlus, null)), /* @__PURE__ */ React.createElement("a", {
-      id: "playPauseScene",
-      className: "button",
-      title: isPlaying ? "Pause scene" : "Resume scene",
-      onClick: toggleScenePlaying
-    }, isPlaying ? /* @__PURE__ */ React.createElement(FaPause, null) : /* @__PURE__ */ React.createElement(FaPlay, null)), /* @__PURE__ */ React.createElement("a", {
-      className: "gltfIcon",
-      title: "Export to GLTF",
-      onClick: exportSceneToGLTF
-    }, /* @__PURE__ */ React.createElement(FaDownload, null)), /* @__PURE__ */ React.createElement("a", {
-      className: "button",
-      title: "Write changes with aframe-watcher.",
-      onClick: writeChanges
-    }, /* @__PURE__ */ React.createElement(FaSave, null)), /* @__PURE__ */ React.createElement("div", {
-      className: "helpButtonContainer"
-    }, /* @__PURE__ */ React.createElement("a", {
-      className: "button",
-      title: "Help",
-      onClick: openHelpModal
-    }, /* @__PURE__ */ React.createElement(FaQuestion, null)))));
+    const toggleAutosave = () => {
+      setAutosaveEnabled(!autosaveEnabled);
+    };
+    return {
+      isPlaying,
+      primitivesList,
+      isDropdownOpen,
+      autosaveEnabled,
+      addEntityWithPrimitive,
+      toggleDropdown,
+      exportSceneToGLTF,
+      writeChanges,
+      toggleScenePlaying,
+      openHelpModal,
+      toggleAutosave
+    };
   }
   function _extends() {
     return _extends = Object.assign ? Object.assign.bind() : function(n2) {
@@ -38491,51 +38652,48 @@ void main() {
     reactExports.useEffect(() => {
       selectEntity(selectedEntity);
     }, [selectedEntity, selectEntity]);
-    const renderEntities = () => {
-      return filteredEntities.map((entityOption, idx) => {
-        if (!isVisibleInSceneGraph(entityOption.entity) && !filter) {
-          return null;
-        }
-        return /* @__PURE__ */ React.createElement(Entity, _extends({}, entityOption, {
-          key: idx,
-          isFiltering: !!filter,
-          isExpanded: isExpanded(entityOption.entity),
-          isSelected: selectedEntity === entityOption.entity,
-          selectEntity,
-          toggleExpandedCollapsed
-        }));
-      });
-    };
-    if (!visible) {
-      return null;
-    }
-    const clearFilterButton = filter ? /* @__PURE__ */ React.createElement("a", {
-      onClick: clearFilter,
-      className: "button"
-    }, /* @__PURE__ */ React.createElement(AwesomeIcon, {
-      icon: faTimes
-    })) : null;
     return /* @__PURE__ */ React.createElement("div", {
       id: "scenegraph",
       className: "scenegraph"
-    }, /* @__PURE__ */ React.createElement("div", {
+    }, /* @__PURE__ */ React.createElement("button", {
+      onClick: () => AFRAME.INSPECTOR.close(),
+      className: "exit"
+    }, /* @__PURE__ */ React.createElement(FaTimes, {
+      className: "w-4 h-4 m-auto"
+    })), /* @__PURE__ */ React.createElement("div", {
       className: "scenegraph-toolbar"
-    }, /* @__PURE__ */ React.createElement(Toolbar, null), /* @__PURE__ */ React.createElement("div", {
+    }, /* @__PURE__ */ React.createElement(Toolbar, {
+      selectedEntity
+    }), /* @__PURE__ */ React.createElement("div", {
       className: "search"
     }, /* @__PURE__ */ React.createElement("input", {
       id: "filter",
+      className: "min-h-10",
       placeholder: "Search...",
       onChange: onChangeFilter,
       onKeyUp: onFilterKeyUp,
       value: filter
-    }), clearFilterButton, !filter && /* @__PURE__ */ React.createElement(AwesomeIcon, {
-      icon: faSearch
+    }), filter && /* @__PURE__ */ React.createElement("a", {
+      onClick: clearFilter,
+      className: "button"
+    }, /* @__PURE__ */ React.createElement(FaTimes, null)), !filter && /* @__PURE__ */ React.createElement(FaSearch, {
+      className: "top-4!"
     }))), /* @__PURE__ */ React.createElement("div", {
       className: "outliner",
       tabIndex: "0",
       onKeyDown,
       onKeyUp
-    }, renderEntities()));
+    }, filteredEntities.map((entityOption, idx) => {
+      if (!isVisibleInSceneGraph(entityOption.entity) && !filter) return null;
+      return /* @__PURE__ */ React.createElement(Entity, _extends({}, entityOption, {
+        key: idx,
+        isFiltering: !!filter,
+        isExpanded: isExpanded(entityOption.entity),
+        isSelected: selectedEntity === entityOption.entity,
+        selectEntity,
+        toggleExpandedCollapsed
+      }));
+    })));
   }
   SceneGraph.propTypes = {
     scene: PropTypes.object,
@@ -38624,22 +38782,6 @@ void main() {
       onChange
     }));
   }
-  var TransformButtons = [{
-    value: "translate",
-    icon: /* @__PURE__ */ React.createElement(AwesomeIcon, {
-      icon: faArrowsAlt
-    })
-  }, {
-    value: "rotate",
-    icon: /* @__PURE__ */ React.createElement(AwesomeIcon, {
-      icon: faRotateRight
-    })
-  }, {
-    value: "scale",
-    icon: /* @__PURE__ */ React.createElement(AwesomeIcon, {
-      icon: faUpRightAndDownLeftFromCenter
-    })
-  }];
   function TransformToolbar() {
     const [selectedTransform, setSelectedTransform] = reactExports.useState("translate");
     const [localSpace, setLocalSpace] = reactExports.useState(false);
@@ -38668,25 +38810,19 @@ void main() {
         Events.off("transformspacechange", onTransformSpaceChange);
       };
     }, [onTransformModeChange, onTransformSpaceChange]);
-    const renderTransformButtons = () => {
-      return TransformButtons.map((option, i2) => {
-        const selected = option.value === selectedTransform;
-        const classes = clsx({
-          button: true,
-          active: selected
-        });
-        return /* @__PURE__ */ React.createElement("a", {
-          title: option.value,
-          key: i2,
-          onClick: () => changeTransformMode(option.value),
-          className: classes
-        }, option.icon);
-      });
-    };
     return /* @__PURE__ */ React.createElement("div", {
       id: "transformToolbar",
       className: "toolbarButtons"
-    }, renderTransformButtons(), /* @__PURE__ */ React.createElement("span", {
+    }, /* @__PURE__ */ React.createElement("a", {
+      onClick: () => changeTransformMode("translate"),
+      className: `button ${selectedTransform === "translate" ? "active" : ""}`
+    }, /* @__PURE__ */ React.createElement(FaArrowsAlt, null)), /* @__PURE__ */ React.createElement("a", {
+      onClick: () => changeTransformMode("rotate"),
+      className: `button ${selectedTransform === "rotate" ? "active" : ""}`
+    }, /* @__PURE__ */ React.createElement(FaRedo, null)), /* @__PURE__ */ React.createElement("a", {
+      onClick: () => changeTransformMode("scale"),
+      className: `button ${selectedTransform === "scale" ? "active" : ""}`
+    }, /* @__PURE__ */ React.createElement(FaExpand, null)), /* @__PURE__ */ React.createElement("span", {
       className: "local-transform"
     }, /* @__PURE__ */ React.createElement("input", {
       id: "local",
@@ -38770,13 +38906,11 @@ void main() {
       value: theme.id
     }, theme.name))));
   };
-  ImageUtils.crossOrigin = "";
   function Main() {
     const [state, setState] = reactExports.useState({
       entity: null,
       inspectorEnabled: true,
       isHelpOpen: false,
-      isModalSponsorOpen: false,
       isModalTexturesOpen: false,
       sceneEl: AFRAME.scenes[0],
       visible: {
@@ -38887,50 +39021,34 @@ void main() {
         AFRAME.INSPECTOR.open();
       }
     };
-    const renderComponentsToggle = () => {
-      if (!state.inspectorEnabled || !state.entity || state.visible.attributes) {
-        return null;
-      }
-      return /* @__PURE__ */ React.createElement("div", {
-        className: "toggle-sidebar right"
-      }, /* @__PURE__ */ React.createElement("a", {
-        onClick: () => {
-          Events.emit("togglesidebar", {
-            which: "attributes"
-          });
-        },
-        title: "Show components"
-      }, /* @__PURE__ */ React.createElement(AwesomeIcon, {
-        icon: faPlus
-      })));
-    };
-    const renderSceneGraphToggle = () => {
-      if (!state.inspectorEnabled || state.visible.scenegraph) {
-        return null;
-      }
-      return /* @__PURE__ */ React.createElement("div", {
-        className: "toggle-sidebar left"
-      }, /* @__PURE__ */ React.createElement("a", {
-        onClick: () => {
-          Events.emit("togglesidebar", {
-            which: "scenegraph"
-          });
-        },
-        title: "Show scenegraph"
-      }, /* @__PURE__ */ React.createElement(AwesomeIcon, {
-        icon: faPlus
-      })));
-    };
-    const scene = state.sceneEl;
-    const toggleButtonText = state.inspectorEnabled ? "Back to Scene" : "Inspect Scene";
-    return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("a", {
-      className: "toggle-edit",
+    return /* @__PURE__ */ React.createElement("div", {
+      className: ""
+    }, !state.inspectorEnabled && /* @__PURE__ */ React.createElement("a", {
+      className: "toggle-edit rounded-md bg-white text-black/50 p-1 border-3 border-black/50 font-bold",
       onClick: toggleEdit
-    }, toggleButtonText), renderSceneGraphToggle(), renderComponentsToggle(), /* @__PURE__ */ React.createElement("div", {
+    }, "Show Editor"), !state.inspectorEnabled || state.visible.scenegraph ? null : /* @__PURE__ */ React.createElement("div", {
+      className: "toggle-sidebar left"
+    }, /* @__PURE__ */ React.createElement("a", {
+      onClick: () => {
+        Events.emit("togglesidebar", {
+          which: "scenegraph"
+        });
+      },
+      title: "Show scenegraph"
+    }, /* @__PURE__ */ React.createElement(FaPlus, null))), state.inspectorEnabled && state.entity && !state.visible.attributes && /* @__PURE__ */ React.createElement("div", {
+      className: "toggle-sidebar right"
+    }, /* @__PURE__ */ React.createElement("a", {
+      onClick: () => {
+        Events.emit("togglesidebar", {
+          which: "attributes"
+        });
+      },
+      title: "Show components"
+    }, /* @__PURE__ */ React.createElement(FaPlus, null))), /* @__PURE__ */ React.createElement("div", {
       id: "inspectorContainer",
       className: state.inspectorEnabled ? "" : "hidden"
     }, /* @__PURE__ */ React.createElement(SceneGraph, {
-      scene,
+      scene: state.sceneEl,
       selectedEntity: state.entity,
       visible: state.visible.scenegraph
     }), /* @__PURE__ */ React.createElement("div", {
