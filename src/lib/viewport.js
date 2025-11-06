@@ -128,12 +128,20 @@ export function Viewport(inspector) {
     mouseCursor.disable();
     transformControls.dispose();
     controls.enabled = false;
+    cancelAnimationFrame(animationId);
   }
 
   function enableControls() {
     mouseCursor.enable();
     transformControls.activate();
     controls.enabled = true;
+    animationId = requestAnimationFrame(animate);
+  }
+
+  let animationId;
+  function animate() {
+    controls.update();
+    animationId = requestAnimationFrame(animate);
   }
   enableControls();
 

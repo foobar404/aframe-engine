@@ -1,19 +1,17 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import Events from '../../lib/Events';
-import Select from 'react-select';
 
 function AddComponent({ entity }) {
-  const [value, setValue] = useState(null);
-
   /**
    * Add blank component.
    * If component is instanced, generate an ID.
    */
-  const addComponent = useCallback((selectedValue) => {
-    setValue(null);
+  const addComponent = useCallback((e) => {
+    const componentName = e.target.value;
+    if (!componentName) return;
 
-    let componentName = selectedValue.value;
+    let finalComponentName = componentName;
 
     if (AFRAME.components[componentName].multiple) {
       let id = prompt(
@@ -24,13 +22,10 @@ function AddComponent({ entity }) {
           .trim()
           .toLowerCase()
           .replace(/[^a-z0-9-]/g, '');
-        // With the transform, id could be empty string, so we need to check again.
       }
       if (id) {
-        componentName = `${componentName}__${id}`;
+        finalComponentName = `${componentName}__${id}`;
       } else {
-        // If components already exist, be sure to suffix with an id,
-        // if it's first one, use the component name without id.
         const numberOfComponents = Object.keys(
           entity.components
         ).filter(function (name) {
@@ -40,13 +35,14 @@ function AddComponent({ entity }) {
         }).length;
         if (numberOfComponents > 0) {
           id = numberOfComponents + 1;
-          componentName = `${componentName}__${id}`;
+          finalComponentName = `${componentName}__${id}`;
         }
       }
     }
 
-    entity.setAttribute(componentName, '');
-    Events.emit('componentadd', { entity: entity, component: componentName });
+    entity.setAttribute(finalComponentName, '');
+    Events.emit('componentadd', { entity: entity, component: finalComponentName });
+    e.target.value = ''; // Reset select
   }, [entity]);
 
   /**
@@ -68,12 +64,7 @@ function AddComponent({ entity }) {
           usedComponents.indexOf(componentName) === -1
         );
       })
-      .map(function (val) {
-        return { value: val, label: val };
-      })
-      .toSorted(function (a, b) {
-        return a.label === b.label ? 0 : a.label < b.label ? -1 : 1;
-      });
+      .sort();
   }, [entity]);
 
   if (!entity) {
@@ -84,19 +75,18 @@ function AddComponent({ entity }) {
 
   return (
     <div id="addComponentContainer">
-      <p id="addComponentHeader">COMPONENTS</p>
-      <Select
+      <select
         id="addComponent"
-        className="addComponent"
-        classNamePrefix="select"
-        options={options}
-        isClearable={false}
-        isSearchable
-        placeholder="Add component..."
-        noOptionsMessage={() => 'No components found'}
+        className="w-full"
         onChange={addComponent}
-        value={value}
-      />
+        style={{ flex: 1, padding: '4px', fontSize: '12px' }}>
+        <option value="">Add component...</option>
+        {options.map((componentName) => (
+          <option key={componentName} value={componentName}>
+            {componentName}
+          </option>
+        ))}
+      </select>
     </div>
   );
 }

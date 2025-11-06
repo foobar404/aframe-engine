@@ -28,6 +28,7 @@
 .componentTitle {
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
   text-transform: capitalize;
   color: var(--text);
   font-weight: 700;
@@ -206,10 +207,9 @@ span.subcomponent {
 #addComponentContainer {
   align-items: center;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  padding: 20px 10px;
-  background: var(--bg-dark);
+  padding: 20px 10px 5px 10px;
+  /* background: var(--bg); */
 
   #addComponent {
     text-align: left;

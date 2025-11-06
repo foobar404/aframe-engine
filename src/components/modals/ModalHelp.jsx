@@ -4,10 +4,9 @@ import Modal from './Modal';
 
 let shortcuts = [
   [
-    { key: ['w'], description: 'Translate' },
-    { key: ['e'], description: 'Rotate' },
-    { key: ['r'], description: 'Scale' },
-    { key: ['d'], description: 'Duplicate selected entity' },
+    { key: ['1'], description: 'Translate' },
+    { key: ['2'], description: 'Rotate' },
+    { key: ['3'], description: 'Scale' },
     { key: ['f'], description: 'Focus on selected entity' },
     { key: ['g'], description: 'Toggle grid visibility' },
     { key: ['n'], description: 'Add new entity' },
@@ -15,15 +14,14 @@ let shortcuts = [
     { key: ['delete | backspace'], description: 'Delete selected entity' }
   ],
   [
-    { key: ['0'], description: 'Toggle panels' },
-    { key: ['1'], description: 'Perspective view' },
-    { key: ['2'], description: 'Left view' },
-    { key: ['3'], description: 'Right view' },
-    { key: ['4'], description: 'Top view' },
-    { key: ['5'], description: 'Bottom view' },
-    { key: ['6'], description: 'Back view' },
-    { key: ['7'], description: 'Front view' },
-
+    { key: ['shift', 'tab'], description: 'Toggle panels' },
+    { key: ['4'], description: 'Perspective view' },
+    { key: ['5'], description: 'Left view' },
+    { key: ['6'], description: 'Right view' },
+    { key: ['7'], description: 'Top view' },
+    { key: ['8'], description: 'Bottom view' },
+    { key: ['9'], description: 'Back view' },
+    { key: ['0'], description: 'Front view' },
     { key: ['ctrl | cmd', 'c'], description: 'Copy selected entity' },
     { key: ['ctrl | cmd', 'v'], description: 'Paste entity' },
     { key: ['h'], description: 'Show this help' },

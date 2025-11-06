@@ -120,6 +120,10 @@
     &.visibility-btn:hover {
       color: #3b82f6;
     }
+
+    &.collapse-all-btn:hover {
+      color: #f59e0b;
+    }
   }
 
   .component:hover {

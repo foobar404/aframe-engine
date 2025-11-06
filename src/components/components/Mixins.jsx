@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import Select from 'react-select';
 import Events from '../../lib/Events';
 
 function Mixin({ entity }) {
   const getMixinValue = () => {
     return (entity.getAttribute('mixin') || '')
       .split(/\s+/g)
-      .filter((v) => !!v)
-      .map((v) => ({ label: v, value: v }));
+      .filter((v) => !!v);
   };
 
   const [mixins, setMixins] = useState(getMixinValue());
@@ -29,13 +27,13 @@ function Mixin({ entity }) {
       })
       .sort()
       .map(function (mixin) {
-        return { value: mixin.id, label: mixin.id };
+        return mixin.id;
       });
   }, [entity]);
 
-  const updateMixins = useCallback((value) => {
-    setMixins(value);
-    const mixinStr = value.map((v) => v.value).join(' ');
+  const updateMixins = useCallback((selectedValues) => {
+    setMixins(selectedValues);
+    const mixinStr = selectedValues.join(' ');
     entity.setAttribute('mixin', mixinStr);
 
     Events.emit('entityupdate', {
@@ -46,24 +44,24 @@ function Mixin({ entity }) {
     });
   }, [entity]);
 
+  const handleChange = (e) => {
+    const selectedValues = Array.from(e.target.selectedOptions, option => option.value);
+    updateMixins(selectedValues);
+  };
+
   return (
     <div className="mixinOptions">
       <div className="propertyRow">
         <span className="text">mixins</span>
-        <span className="mixinValue">
-          <Select
-            id="mixinSelect"
-            classNamePrefix="select"
-            options={getMixinOptions()}
-            isMulti
-            isClearable={false}
-            isSearchable
-            placeholder="Add mixin..."
-            noOptionsMessage={() => 'No mixins found'}
-            onChange={updateMixins}
-            value={mixins}
-          />
-        </span>
+        <select onChange={handleChange} className="w-full">
+          {getMixinOptions().map((mixinId) => (
+            <option key={mixinId}
+              value={mixinId}
+              selected={mixins.includes(mixinId)}>
+              {mixinId}
+            </option>
+          ))}
+        </select>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { FaArrowsAlt, FaRedo, FaExpand } from 'react-icons/fa';
+import { TbGizmo } from "react-icons/tb";
 import Events from '../../lib/Events';
 
 function TransformToolbar() {
@@ -38,6 +39,10 @@ function TransformToolbar() {
 
   return (
     <div id="transformToolbar" className="toolbarButtons">
+      <a onClick={() => changeTransformMode("all")}
+        className={`button ${selectedTransform === 'all' ? 'active' : ''}`}>
+        <TbGizmo />
+      </a>
       <a onClick={() => changeTransformMode("translate")}
         className={`button ${selectedTransform === 'translate' ? 'active' : ''}`}>
         <FaArrowsAlt />
@@ -57,7 +62,7 @@ function TransformToolbar() {
           type="checkbox"
           title="Toggle between local and world space transforms"
           checked={localSpace || selectedTransform === 'scale'}
-          disabled={selectedTransform === 'scale'}
+          disabled={selectedTransform === 'scale' || selectedTransform === 'all'}
           onChange={onLocalChange}
         />
         <label

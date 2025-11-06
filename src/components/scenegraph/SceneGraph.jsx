@@ -3,6 +3,7 @@ import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import PropTypes from 'prop-types';
 import { FaSearch, FaTimes } from 'react-icons/fa';
 import debounce from 'lodash.debounce';
+import AssetPanel from './AssetPanel';
 
 import Entity from './Entity';
 import Toolbar from './Toolbar';
@@ -33,11 +34,16 @@ function SceneGraph({ scene, selectedEntity, visible }) {
     setUpdateTrigger(prev => prev + 1);
   }, []);
 
-  const expandToRoot = useCallback((x) => {
-    let curr = x.parentNode;
-    while (curr !== undefined && curr.isEntity) {
-      expandedElementsRef.current.set(curr, true);
-      curr = curr.parentNode;
+  const collapseAll = useCallback(() => {
+    expandedElementsRef.current = new WeakMap([[scene, true]]);
+    setUpdateTrigger(prev => prev + 1);
+  }, [scene]);
+
+  const expandToRoot = useCallback((entity) => {
+    let current = entity.parentNode;
+    while (current && current.isEntity) {
+      expandedElementsRef.current.set(current, true);
+      current = current.parentNode;
     }
     setUpdateTrigger(prev => prev + 1);
   }, []);
@@ -244,6 +250,8 @@ function SceneGraph({ scene, selectedEntity, visible }) {
     selectEntity(selectedEntity);
   }, [selectedEntity, selectEntity]);
 
+  if (!visible) return null;
+
   return (
     <div id="scenegraph" className="scenegraph" >
       <button
@@ -257,12 +265,11 @@ function SceneGraph({ scene, selectedEntity, visible }) {
         <div className="search">
           <input
             id="filter"
-            className="min-h-10"
+            className="min-h-10 min-w-full"
             placeholder="Search..."
             onChange={onChangeFilter}
             onKeyUp={onFilterKeyUp}
-            value={filter}
-          />
+            value={filter} />
 
           {filter && (
             <a onClick={clearFilter} className="button">
@@ -290,10 +297,13 @@ function SceneGraph({ scene, selectedEntity, visible }) {
               isSelected={selectedEntity === entityOption.entity}
               selectEntity={selectEntity}
               toggleExpandedCollapsed={toggleExpandedCollapsed}
+              collapseAll={entityOption.depth === 0 ? collapseAll : undefined}
             />
           );
         })}
       </div>
+
+      <AssetPanel scene={scene} />
     </div>
   );
 }

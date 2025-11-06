@@ -4,6 +4,7 @@ body.aframe-inspector-opened,
 }
 
 .wf-roboto-n4-active {
+
   & body.aframe-inspector-opened,
   &,
   & .sponsor-btn {
@@ -20,6 +21,7 @@ body.aframe-inspector-opened {
 }
 
 #aframeInspector {
+
   .Select,
   code,
   pre,
@@ -31,6 +33,7 @@ body.aframe-inspector-opened {
   }
 
   .wf-robotomono-n4-active {
+
     & .Select,
     & code,
     & pre,
@@ -76,18 +79,6 @@ body.aframe-inspector-opened {
   textarea,
   input {
     outline: none;
-  }
-
-  .gltfIcon img {
-    box-sizing: content-box;
-    display: inline;
-    height: 20px;
-    left: 5px;
-    padding: 0 5px;
-    position: relative;
-    top: 4px;
-    vertical-align: baseline;
-    width: 20px;
   }
 
   #scenegraph,
@@ -225,11 +216,6 @@ body.aframe-inspector-opened {
   select {
     background: var(--bg-dark);
     border: 1px solid transparent;
-    color: #888;
-  }
-
-  select {
-    background: var(--bg-light);
   }
 
   input[type=color] {
@@ -263,6 +249,10 @@ body.aframe-inspector-opened {
     visibility: hidden;
   }
 
+  .hide {
+    display: none;
+  }
+
   a.button {
     color: var(--text-dark);
     font-size: 16px;
@@ -272,10 +262,6 @@ body.aframe-inspector-opened {
     &:hover {
       color: var(--primary);
     }
-  }
-
-  .hide {
-    display: none;
   }
 
   .a-canvas.state-dragging {
@@ -337,15 +323,11 @@ body.aframe-inspector-opened {
   }
 }
 
-.aframe-inspector-opened a-scene .a-canvas {
-  background-color: #191919;
-  z-index: 9998;
-}
-
 @keyframes animateopacity {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }

@@ -86,9 +86,6 @@ function CommonComponents({ entity }) {
     return <div />;
   }
 
-  console.dir(entity.localName);
-  
-
   return (
     <Collapsible id="componentEntityHeader" className="commonComponents">
       <div className="collapsible-header componentHeader">

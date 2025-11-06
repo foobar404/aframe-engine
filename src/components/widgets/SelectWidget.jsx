@@ -1,54 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Select from 'react-select';
 
 function SelectWidget({ id, isMulti = false, name, onChange, options, value }) {
-  const [currentValue, setCurrentValue] = useState(() => {
-    if (isMulti) {
-      return value.map((choice) => ({ value: choice, label: choice }));
-    } else {
-      return { value: value, label: value };
-    }
-  });
-
-  useEffect(() => {
-    if (value !== (isMulti ? currentValue.map(v => v.value) : currentValue.value)) {
-      if (isMulti) {
-        setCurrentValue(value.map((choice) => ({ value: choice, label: choice })));
-      } else {
-        setCurrentValue({ value: value, label: value });
-      }
-    }
-  }, [value, isMulti, currentValue]);
-
-  const handleChange = (newValue) => {
-    setCurrentValue(newValue);
+  const handleChange = (e) => {
     if (onChange) {
-      onChange(
-        name,
-        isMulti ? newValue.map((option) => option.value) : newValue.value
-      );
+      if (isMulti) {
+        const selectedValues = Array.from(e.target.selectedOptions, option => option.value);
+        onChange(name, selectedValues);
+      } else {
+        onChange(name, e.target.value);
+      }
     }
   };
 
-  const selectOptions = options.map((optionValue) => {
-    return { value: optionValue, label: optionValue };
-  });
-
   return (
-    <Select
+    <select
       id={id}
+      name={name}
       className="select-widget"
-      classNamePrefix="select"
-      options={selectOptions}
-      isMulti={isMulti}
-      isClearable={false}
-      isSearchable
-      placeholder=""
-      value={currentValue}
-      noOptionsMessage={() => 'No value found'}
+      multiple={isMulti}
+      value={isMulti ? undefined : value}
       onChange={handleChange}
-    />
+    >
+      {options.map((optionValue) => (
+        <option
+          key={optionValue}
+          value={optionValue}
+          selected={isMulti ? value.includes(optionValue) : undefined}
+        >
+          {optionValue}
+        </option>
+      ))}
+    </select>
   );
 }
 

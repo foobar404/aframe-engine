@@ -15,7 +15,7 @@ function ComponentsContainer({ entity }) {
           .filter(function (key) {
             return DEFAULT_COMPONENTS.indexOf(key) === -1;
           })
-          .sort()
+          .reverse()
           .map(function (key) {
             return (
               <Component

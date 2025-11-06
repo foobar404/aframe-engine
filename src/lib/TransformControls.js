@@ -778,6 +778,7 @@ let TransformControlsExport;
 
       var _mode = 'translate';
       var _dragging = false;
+      var _currentMode = 'translate';
       var _gizmo = {
         translate: new TransformGizmoTranslate(),
         rotate: new TransformGizmoRotate(),
@@ -894,10 +895,15 @@ let TransformControlsExport;
 
       this.setMode = function(mode) {
         _mode = mode || _mode;
+        _currentMode = _mode;
 
         if (_mode === 'scale') scope.space = 'local';
 
-        for (var type in _gizmo) _gizmo[type].visible = type === _mode;
+        if (_mode === 'all') {
+          for (var type in _gizmo) _gizmo[type].visible = true;
+        } else {
+          for (var type in _gizmo) _gizmo[type].visible = type === _mode;
+        }
 
         this.update();
         scope.dispatchEvent(changeEvent);
@@ -953,13 +959,27 @@ let TransformControlsExport;
           eye.copy(camPosition).normalize();
         }
 
-        if (scope.space === 'local') {
-          _gizmo[_mode].update(worldRotation, eye);
-        } else if (scope.space === 'world') {
-          _gizmo[_mode].update(new THREE.Euler(), eye);
+        if (_mode === 'all') {
+          for (var type in _gizmo) {
+            if (type === 'rotate') {
+              _gizmo[type].update(worldRotation, eye);
+            } else {
+              _gizmo[type].update(new THREE.Euler(), eye);
+            }
+          }
+        } else {
+          if (scope.space === 'local') {
+            _gizmo[_mode].update(worldRotation, eye);
+          } else if (scope.space === 'world') {
+            _gizmo[_mode].update(new THREE.Euler(), eye);
+          }
         }
 
-        _gizmo[_mode].highlight(scope.axis);
+        if (_mode === 'all') {
+          for (var type in _gizmo) _gizmo[type].highlight(scope.axis);
+        } else {
+          _gizmo[_mode].highlight(scope.axis);
+        }
       };
 
       function onPointerHover(event) {
@@ -972,7 +992,16 @@ let TransformControlsExport;
 
         var pointer = event.changedTouches ? event.changedTouches[0] : event;
 
-        var intersect = intersectObjects(pointer, _gizmo[_mode].pickers.children);
+        var intersect;
+        if (_mode === 'all') {
+          var allPickers = [];
+          for (var type in _gizmo) {
+            allPickers = allPickers.concat(_gizmo[type].pickers.children);
+          }
+          intersect = intersectObjects(pointer, allPickers);
+        } else {
+          intersect = intersectObjects(pointer, _gizmo[_mode].pickers.children);
+        }
 
         var axis = null;
 
@@ -1000,16 +1029,42 @@ let TransformControlsExport;
         var pointer = event.changedTouches ? event.changedTouches[0] : event;
 
         if (pointer.button === 0 || pointer.button === undefined) {
-          var intersect = intersectObjects(
-            pointer,
-            _gizmo[_mode].pickers.children
-          );
+          var intersect;
+          if (_mode === 'all') {
+            var allPickers = [];
+            for (var type in _gizmo) {
+              allPickers = allPickers.concat(_gizmo[type].pickers.children);
+            }
+            intersect = intersectObjects(pointer, allPickers);
+          } else {
+            intersect = intersectObjects(pointer, _gizmo[_mode].pickers.children);
+          }
 
           if (intersect) {
             event.preventDefault();
             event.stopPropagation();
 
             scope.axis = intersect.object.name;
+
+            if (_mode === 'all') {
+              // determine _currentMode
+              if (scope.axis === 'E' || scope.axis === 'XYZE') {
+                _currentMode = 'rotate';
+              } else {
+                // check which gizmo
+                var found = false;
+                for (var type in _gizmo) {
+                  if (_gizmo[type].pickers.children.includes(intersect.object)) {
+                    _currentMode = type;
+                    found = true;
+                    break;
+                  }
+                }
+                if (!found) _currentMode = 'translate';
+              }
+            } else {
+              _currentMode = _mode;
+            }
 
             scope.dispatchEvent(mouseDownEvent);
 
@@ -1020,10 +1075,10 @@ let TransformControlsExport;
               .sub(worldPosition)
               .normalize();
 
-            _gizmo[_mode].setActivePlane(scope.axis, eye);
+            _gizmo[_currentMode].setActivePlane(scope.axis, eye);
 
             var planeIntersect = intersectObjects(pointer, [
-              _gizmo[_mode].activePlane
+              _gizmo[_currentMode].activePlane
             ]);
 
             if (planeIntersect) {
@@ -1060,7 +1115,7 @@ let TransformControlsExport;
         var pointer = event.changedTouches ? event.changedTouches[0] : event;
 
         var planeIntersect = intersectObjects(pointer, [
-          _gizmo[_mode].activePlane
+          _gizmo[_currentMode].activePlane
         ]);
 
         if (planeIntersect === false) return;
@@ -1070,7 +1125,7 @@ let TransformControlsExport;
 
         point.copy(planeIntersect.point);
 
-        if (_mode === 'translate') {
+        if (_currentMode === 'translate') {
           point.sub(offset);
           point.multiply(parentScale);
 
@@ -1122,7 +1177,7 @@ let TransformControlsExport;
               scope.object.position.applyMatrix4(worldRotationMatrix);
             }
           }
-        } else if (_mode === 'scale') {
+        } else if (_currentMode === 'scale') {
           point.sub(offset);
           point.multiply(parentScale);
 
@@ -1144,7 +1199,7 @@ let TransformControlsExport;
                 scope.object.scale.z = oldScale.z * (1 + point.z / oldScale.z);
             }
           }
-        } else if (_mode === 'rotate') {
+        } else if (_currentMode === 'rotate') {
           point.sub(worldPosition);
           point.multiply(parentScale);
           tempVector.copy(offset).sub(worldPosition);
@@ -1298,7 +1353,7 @@ let TransformControlsExport;
         }
 
         // Trim decimals.
-        if (_mode === 'translate') {
+        if (_currentMode === 'translate') {
           scope.object.position.x = parseFloat(
             scope.object.position.x.toFixed(5)
           );
@@ -1308,7 +1363,7 @@ let TransformControlsExport;
           scope.object.position.z = parseFloat(
             scope.object.position.z.toFixed(5)
           );
-        } else if (_mode === 'rotate') {
+        } else if (_currentMode === 'rotate') {
           scope.object.rotation.x = parseFloat(
             scope.object.rotation.x.toFixed(5)
           );
@@ -1326,7 +1381,7 @@ let TransformControlsExport;
 
         scope.update();
         scope.dispatchEvent(changeEvent);
-        objectChangeEvent.mode = _mode;
+        objectChangeEvent.mode = _currentMode;
         scope.dispatchEvent(objectChangeEvent);
       }
 
@@ -1336,7 +1391,7 @@ let TransformControlsExport;
         if (event.button !== undefined && event.button !== 0) return;
 
         if (_dragging && scope.axis !== null) {
-          mouseUpEvent.mode = _mode;
+          mouseUpEvent.mode = _currentMode;
           scope.dispatchEvent(mouseUpEvent);
         }
 

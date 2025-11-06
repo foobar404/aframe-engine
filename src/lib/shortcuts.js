@@ -40,18 +40,18 @@ export const Shortcuts = {
       }
     }
 
-    // w: translate
-    if (keyCode === 87) {
+    // 1: translate
+    if (keyCode === 49) {
       Events.emit('transformmodechange', 'translate');
     }
 
-    // e: rotate
-    if (keyCode === 69) {
+    // 2: rotate
+    if (keyCode === 50) {
       Events.emit('transformmodechange', 'rotate');
     }
 
-    // r: scale
-    if (keyCode === 82) {
+    // 3: scale
+    if (keyCode === 51) {
       Events.emit('transformmodechange', 'scale');
     }
 
@@ -75,11 +75,6 @@ export const Shortcuts = {
       removeSelectedEntity();
     }
 
-    // d: clone selected entity
-    if (keyCode === 68) {
-      cloneSelectedEntity();
-    }
-
     // f: Focus on selected entity.
     if (keyCode === 70) {
       const selectedEntity = AFRAME.INSPECTOR.selectedEntity;
@@ -88,19 +83,19 @@ export const Shortcuts = {
       }
     }
 
-    if (keyCode === 49) {
+    if (keyCode === 52) {
       Events.emit('cameraperspectivetoggle');
-    } else if (keyCode === 50) {
-      Events.emit('cameraorthographictoggle', 'left');
-    } else if (keyCode === 51) {
-      Events.emit('cameraorthographictoggle', 'right');
-    } else if (keyCode === 52) {
-      Events.emit('cameraorthographictoggle', 'top');
     } else if (keyCode === 53) {
-      Events.emit('cameraorthographictoggle', 'bottom');
+      Events.emit('cameraorthographictoggle', 'left');
     } else if (keyCode === 54) {
-      Events.emit('cameraorthographictoggle', 'back');
+      Events.emit('cameraorthographictoggle', 'right');
     } else if (keyCode === 55) {
+      Events.emit('cameraorthographictoggle', 'top');
+    } else if (keyCode === 56) {
+      Events.emit('cameraorthographictoggle', 'bottom');
+    } else if (keyCode === 57) {
+      Events.emit('cameraorthographictoggle', 'back');
+    } else if (keyCode === 48) {
       Events.emit('cameraorthographictoggle', 'front');
     }
 
@@ -148,8 +143,8 @@ export const Shortcuts = {
       }
     }
 
-    // 0: toggle sidebars visibility
-    if (event.keyCode === 48) {
+    // shift+tab: toggle sidebars visibility
+    if (event.shiftKey && event.keyCode === 9) {
       Events.emit('togglesidebar', { which: 'all' });
       event.preventDefault();
       event.stopPropagation();

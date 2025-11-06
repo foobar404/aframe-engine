@@ -42,7 +42,7 @@ function Component({ component, entity, isCollapsed, name }) {
   }, [name, entity]);
 
   return (
-    <Collapsible collapsed={isCollapsed} key={updateKey}>
+    <Collapsible collapsed={isCollapsed}>
       <div className="componentHeader collapsible-header">
         <span className="componentTitle" title={name}>
           {name}

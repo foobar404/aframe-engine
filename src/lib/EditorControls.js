@@ -37,8 +37,51 @@ const EditorControls = function (_object, domElement) {
   var spherical = new THREE.Spherical();
   var sphere = new THREE.Sphere();
 
-  this.isOrthographic = false;
-  this.rotationEnabled = true;
+  var keys = {};
+
+  function onKeyDown(event) {
+    keys[event.code] = true;
+  }
+
+  function onKeyUp(event) {
+    keys[event.code] = false;
+  }
+
+  this.update = function() {
+    const speed = 0.1;
+    var moved = false;
+
+    if (keys['KeyW']) {
+      object.position.add(object.getWorldDirection(new THREE.Vector3()).multiplyScalar(speed));
+      moved = true;
+    }
+    if (keys['KeyS']) {
+      object.position.add(object.getWorldDirection(new THREE.Vector3()).multiplyScalar(-speed));
+      moved = true;
+    }
+    if (keys['KeyA']) {
+      const right = new THREE.Vector3().crossVectors(object.up, object.getWorldDirection(new THREE.Vector3()));
+      object.position.add(right.multiplyScalar(speed));
+      moved = true;
+    }
+    if (keys['KeyD']) {
+      const right = new THREE.Vector3().crossVectors(object.up, object.getWorldDirection(new THREE.Vector3()));
+      object.position.add(right.multiplyScalar(-speed));
+      moved = true;
+    }
+    if (keys['KeyQ']) {
+      object.position.add(object.up.clone().multiplyScalar(-speed));
+      moved = true;
+    }
+    if (keys['KeyE']) {
+      object.position.add(object.up.clone().multiplyScalar(speed));
+      moved = true;
+    }
+
+    if (moved) {
+      scope.dispatchEvent(changeEvent);
+    }
+  };
   this.setCamera = function (_object) {
     object = _object;
     if (object.type === 'OrthographicCamera') {
@@ -239,11 +282,17 @@ const EditorControls = function (_object, domElement) {
 
     domElement.removeEventListener('touchstart', touchStart, false);
     domElement.removeEventListener('touchmove', touchMove, false);
+
+    document.removeEventListener('keydown', onKeyDown, false);
+    document.removeEventListener('keyup', onKeyUp, false);
   };
 
   domElement.addEventListener('contextmenu', contextmenu, false);
   domElement.addEventListener('mousedown', onMouseDown, false);
   domElement.addEventListener('wheel', onMouseWheel, false);
+
+  document.addEventListener('keydown', onKeyDown, false);
+  document.addEventListener('keyup', onKeyUp, false);
 
   // touch
 

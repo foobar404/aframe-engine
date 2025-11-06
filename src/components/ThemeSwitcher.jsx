@@ -7,7 +7,14 @@ const ThemeSwitcher = () => {
     { id: 'high-contrast', name: 'High Contrast', color: '#000000' },
     { id: 'blue', name: 'Blue', color: '#0f172a' },
     { id: 'purple', name: 'Purple', color: '#1a103d' },
-    { id: 'green', name: 'Green', color: '#0f172a' }
+    { id: 'green', name: 'Green', color: '#0f172a' },
+    { id: 'cyberpunk', name: 'Cyberpunk', color: '#0a0a0a' },
+    { id: 'warm', name: 'Warm', color: '#2d1810' },
+    { id: 'ocean', name: 'Ocean', color: '#0c4a6e' },
+    { id: 'nordic', name: 'Nordic', color: '#2e3440' },
+    { id: 'candy', name: 'Candy', color: '#fff8dc' },
+    { id: 'gruvbox', name: 'Gruvbox', color: '#282828' },
+    { id: 'neon-dreams', name: 'Neon Dreams', color: '#000000' }
   ];
 
   const [currentTheme, setCurrentTheme] = useState('default');

@@ -1,7 +1,7 @@
 /* eslint-disable react/no-danger */
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { FaCaretDown, FaCaretRight, FaClone, FaEye, FaEyeSlash, FaTrash } from 'react-icons/fa';
+import { FaCaretDown, FaCaretRight, FaClone, FaEye, FaEyeSlash, FaMinus, FaTrash } from 'react-icons/fa';
 import clsx from 'clsx';
 import { removeEntity, cloneEntity } from '../../lib/entity';
 import EntityRepresentation from './EntityRepresentation';
@@ -15,11 +15,12 @@ function Entity({
   isFiltering,
   isSelected,
   selectEntity,
-  toggleExpandedCollapsed
+  toggleExpandedCollapsed,
+  collapseAll
 }) {
   const onClick = useCallback(() => {
     selectEntity(entity);
-    if(entity.children) toggleExpandedCollapsed(entity);
+    if (entity.children) toggleExpandedCollapsed(entity);
   }, [selectEntity, entity]);
 
   const onDoubleClick = useCallback(() => {
@@ -53,10 +54,10 @@ function Entity({
         {Array.from({ length: depth }, (_, i) => (
           <div key={i} className="tree-line" style={{ left: `${i * 20}px` }} />
         ))}
-        
+
         {/* Expand/collapse icon */}
         {hasChildren && (
-          <button 
+          <button
             className="expand-btn"
             onClick={(e) => {
               e.stopPropagation();
@@ -66,7 +67,7 @@ function Entity({
             {isExpanded ? <FaCaretDown /> : <FaCaretRight />}
           </button>
         )}
-        
+
         {/* Entity content */}
         <div className="entity-content">
           <EntityRepresentation entity={entity} onDoubleClick={onDoubleClick} />
@@ -77,30 +78,38 @@ function Entity({
       <div className="entity-actions">
         {tagName !== 'a-scene' && (
           <>
-            <button 
-              onClick={() => cloneEntity(entity)} 
-              title="Clone entity" 
-              className="action-btn clone-btn"
-            >
+            <button
+              onClick={() => cloneEntity(entity)}
+              title="Clone entity"
+              className="action-btn clone-btn">
               <FaClone />
             </button>
-            <button 
+            <button
               onClick={(event) => {
                 event.stopPropagation();
                 removeEntity(entity);
               }}
               title="Remove entity"
-              className="action-btn delete-btn"
-            >
+              className="action-btn delete-btn">
               <FaTrash />
             </button>
           </>
         )}
-        <button 
-          className="action-btn visibility-btn" 
-          title="Toggle entity visibility" 
-          onClick={toggleVisibility}
-        >
+        {depth === 0 && (
+          <button
+            className="action-btn collapse-all-btn"
+            title="Collapse all"
+            onClick={(e) => {
+              e.stopPropagation();
+              collapseAll();
+            }}>
+            <FaMinus />
+          </button>
+        )}
+        <button
+          className="action-btn visibility-btn"
+          title="Toggle entity visibility"
+          onClick={toggleVisibility}>
           {entity.object3D.visible ? <FaEye /> : <FaEyeSlash />}
         </button>
       </div>
@@ -116,7 +125,8 @@ Entity.propTypes = {
   isFiltering: PropTypes.bool,
   isSelected: PropTypes.bool,
   selectEntity: PropTypes.func,
-  toggleExpandedCollapsed: PropTypes.func
+  toggleExpandedCollapsed: PropTypes.func,
+  collapseAll: PropTypes.func
 };
 
 export default Entity;

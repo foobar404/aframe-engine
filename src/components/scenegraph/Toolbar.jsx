@@ -185,16 +185,18 @@ function useToolbar(selectedEntity) {
    * Try to write changes with aframe-inspector-watcher.
    */
   const writeChanges = () => {
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://localhost:51234/save');
-    xhr.onerror = () => {
+    fetch('http://localhost:51234/save', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(AFRAME.INSPECTOR.history.updates)
+    }).catch(() => {
       alert(
         'aframe-watcher not running. This feature requires a companion service running locally. npm install aframe-watcher to save changes back to file. Read more at https://github.com/supermedium/aframe-watcher'
       );
       if (autosaveEnabled) setAutosaveEnabled(false);
-    };
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send(JSON.stringify(AFRAME.INSPECTOR.history.updates));
+    })
   };
 
   const toggleScenePlaying = () => {
