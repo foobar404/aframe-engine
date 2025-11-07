@@ -19,13 +19,18 @@ function BooleanWidget({ id, name, onChange, value = false }) {
   };
 
   return (
-    <input
-      id={id}
-      type="checkbox"
-      checked={currentValue}
-      value={currentValue}
-      onChange={handleChange}
-    />
+    <div className="boolean-widget">
+      <input
+        id={id}
+        type="checkbox"
+        checked={currentValue}
+        value={currentValue}
+        onChange={handleChange}
+      />
+      <label htmlFor={id}>
+        <span className="boolean-text">{currentValue ? 'ON' : 'OFF'}</span>
+      </label>
+    </div>
   );
 }
 

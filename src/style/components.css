@@ -2,7 +2,8 @@
   background-color: var(--bg);
   color: var(--text);
   height: 100%;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   position: fixed;
   width: 300px;
 
@@ -37,26 +38,29 @@
 .collapsible {
   .static {
     background: var(--bg-light);
-    border-bottom: 2px solid var(--bg);
+    border-bottom: 1px solid var(--bg);
     box-sizing: content-box;
     cursor: pointer;
-    height: 16px;
-    padding: 8px 10px 12px 10px;
+    height: 20px;
+    padding: 10px 12px;
     vertical-align: bottom;
-    font-size: 13px;
+    font-size: 12px;
     margin: 0;
+    transition: all 0.15s ease;
+    font-weight: 600;
 
     &:hover {
-      background: var(--bg-light);
+      background: var(--bg-lighter);
     }
 
     .collapse-button {
-      border: 6px solid transparent;
+      border: 5px solid transparent;
       float: left;
       height: 0;
       margin-right: 10px;
       margin-left: 2px;
       width: 0;
+      transition: transform 0.2s ease;
     }
   }
 
@@ -67,18 +71,24 @@
   .menuafter {
     color: var(--text-dark);
     content: '\2807';
-    font-size: 12px;
+    font-size: 14px;
     padding: 5px;
     text-align: right;
+    opacity: 0.6;
+    transition: opacity 0.15s ease;
+    
+    &:hover {
+      opacity: 1;
+    }
   }
 
   &.collapsed .static .collapse-button {
-    border-left-color: var(--text);
-    margin-top: 4px;
+    border-left-color: var(--text-dark);
+    margin-top: 5px;
   }
 
   &:not(.collapsed) .static .collapse-button {
-    border-top-color: var(--text);
+    border-top-color: var(--text-dark);
     margin-top: 7px;
   }
 }
@@ -97,56 +107,60 @@
 .propertyRow {
   align-items: center;
   display: flex;
-  font-size: 13px;
-  min-height: 30px;
-  padding: 2px 15px;
+  font-size: 12px;
+  min-height: 36px;
+  padding: 6px 12px;
+  gap: 12px;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+  }
 
   .text {
     cursor: default;
     display: inline-block;
     overflow: hidden;
-    padding-right: 10px;
     text-overflow: ellipsis;
     vertical-align: middle;
-    width: 118px;
+    width: 90px;
+    min-width: 90px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-dark);
+    text-transform: capitalize;
+    letter-spacing: 0.2px;
   }
 
   input.number {
-    width: 40px;
-  }
-
-  .vec2 input.number,
-  .vec3 input.number {
-    width: 40px;
-  }
-
-  .vec4 input.number {
-    width: 34px;
+    width: 100%;
   }
 
   .vec2,
   .vec3,
   .vec4 {
-    display: inline;
+    flex: 1;
+    display: flex;
   }
 
   .map_value {
-    margin: 0 0 0 5px;
-    width: 68px;
+    margin: 0;
+    flex: 1;
   }
 
   .Select-control {
-    font-size: 11px;
-    height: 24px;
+    font-size: 12px;
+    height: 32px;
+    min-height: 32px;
   }
 
   .Select-placeholder,
   .Select--single > .Select-control .Select-value {
-    line-height: 19px;
+    line-height: 30px;
   }
 
   .Select-input {
-    height: 22px;
+    height: 30px;
   }
 
   input[type=text],
@@ -154,46 +168,62 @@
   input.string,
   input.number {
     background: var(--bg-dark);
-    color: var(--primary);
-    min-height: 26px;
-    padding-bottom: 1px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 1px;
+    color: var(--text);
+    min-height: 32px;
+    padding: 6px 10px;
 
     &:last-child {
-      padding-right: 0;
+      padding-right: 10px;
     }
 
     &:focus {
-      box-shadow: none;
+      box-shadow: 0 0 0 2px rgba(31, 170, 242, 0.15);
     }
   }
 
   input.string {
-    padding-left: 8px;
+    padding-left: 10px;
     box-sizing: border-box;
-    width: 165px;
+    flex: 1;
   }
 
   .color_value {
-    margin: 0 0 0 5px;
-    width: 68px;
-    letter-spacing: 1px;
+    margin: 0;
+    flex: 1;
+    letter-spacing: 0.5px;
+  }
+
+  .color-widget {
+    flex: 1;
   }
 
   .texture {
     display: flex;
+    flex: 1;
+    gap: 8px;
 
     input {
       margin-left: 0;
-      width: 120px;
+      flex: 1;
     }
   }
 
   &Defined .text {
     color: var(--text);
-    font-weight: 500;
+    font-weight: 600;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
   }
 }
 

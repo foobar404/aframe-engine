@@ -5,10 +5,9 @@ import ComponentsSidebar from './components/Sidebar';
 import ModalTextures from './modals/ModalTextures';
 import ModalHelp from './modals/ModalHelp';
 import SceneGraph from './scenegraph/SceneGraph';
-import CameraToolbar from './viewport/CameraToolbar';
 import TransformToolbar from './viewport/TransformToolbar';
-import ViewportHUD from './viewport/ViewportHUD';
-import ThemeSwitcher from './ThemeSwitcher';
+import XRMode from './viewport/XRMode';
+import { ViewportOverlay } from './viewport/ViewportOverlay';
 
 export default function Main() {
   const [state, setState] = useState({
@@ -115,16 +114,59 @@ export default function Main() {
     }
   };
 
-  const toggleEdit = () => {
-    if (state.inspectorEnabled) {
-      AFRAME.INSPECTOR.close();
-    } else {
-      AFRAME.INSPECTOR.open();
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'copy';
+  };
+
+  const handleDragEnter = (e) => {
+    e.preventDefault();
+    document.body.classList.add('dragging-asset');
+  };
+
+  const handleDragLeave = (e) => {
+    e.preventDefault();
+    // Only remove the class if we're actually leaving the drop zone
+    if (!e.currentTarget.contains(e.relatedTarget)) {
+      document.body.classList.remove('dragging-asset');
+    }
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    document.body.classList.remove('dragging-asset');
+    
+    try {
+      const assetData = JSON.parse(e.dataTransfer.getData('application/json'));
+      
+      if (assetData.type === 'asset' && state.entity) {
+        // Apply the asset to the selected entity's material component
+        if (state.entity.hasAttribute('material')) {
+          state.entity.setAttribute('material', 'src', assetData.value);
+        } else {
+          state.entity.setAttribute('material', { src: assetData.value });
+        }
+        
+        // Emit event to update the UI
+        Events.emit('componentchanged', {
+          entity: state.entity,
+          component: 'material',
+          property: 'src',
+          value: assetData.value
+        });
+      }
+    } catch (error) {
+      console.warn('Failed to parse dropped asset data:', error);
     }
   };
 
   return (
-    <div className="">
+    <div 
+      onDragOver={handleDragOver} 
+      onDragEnter={handleDragEnter}
+      onDragLeave={handleDragLeave}
+      onDrop={handleDrop}
+    >
       {!state.inspectorEnabled && (
         <a className="toggle-edit rounded-md bg-white text-black/50 p-1 border-3 border-black/50 font-bold" onClick={toggleEdit}>
           Show Editor
@@ -147,32 +189,26 @@ export default function Main() {
       {state.inspectorEnabled &&
         state.entity &&
         !state.visible.attributes && (
-        <div className="toggle-sidebar right">
-          <a
-            onClick={() => {
+          <div className="toggle-sidebar right">
+            <a onClick={() => {
               Events.emit('togglesidebar', { which: 'attributes' });
             }}
-            title="Show components"
-          >
-            <FaPlus />
-          </a>
-        </div>
-      )}
+              title="Show components" >
+              <FaPlus />
+            </a>
+          </div>
+        )}
 
-      <div
-        id="inspectorContainer"
-        className={state.inspectorEnabled ? '' : 'hidden'}
-      >
+      <div id="inspectorContainer"
+        className={state.inspectorEnabled ? '' : 'hidden'}>
+
         <SceneGraph
           scene={state.sceneEl}
           selectedEntity={state.entity}
-          visible={state.visible.scenegraph}
-        />
+          visible={state.visible.scenegraph} />
 
         <div id="viewportBar">
-          <ThemeSwitcher />
-          <CameraToolbar />
-          <ViewportHUD />
+          <XRMode />
           <TransformToolbar />
         </div>
 
@@ -183,6 +219,8 @@ export default function Main() {
           />
         </div>
       </div>
+
+      {state.inspectorEnabled && <ViewportOverlay />}
 
       <ModalHelp
         isOpen={state.isHelpOpen}

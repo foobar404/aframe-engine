@@ -31,9 +31,15 @@ function Vec3Widget({ onChange, value }) {
 
   return (
     <div className="vec3">
-      <NumberWidget name="x" value={currentValue.x} onChange={handleChange} />
-      <NumberWidget name="y" value={currentValue.y} onChange={handleChange} />
-      <NumberWidget name="z" value={currentValue.z} onChange={handleChange} />
+      <div className="vec-input-wrapper">
+        <NumberWidget name="x" value={currentValue.x} onChange={handleChange} />
+      </div>
+      <div className="vec-input-wrapper">
+        <NumberWidget name="y" value={currentValue.y} onChange={handleChange} />
+      </div>
+      <div className="vec-input-wrapper">
+        <NumberWidget name="z" value={currentValue.z} onChange={handleChange} />
+      </div>
     </div>
   );
 }

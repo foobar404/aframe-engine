@@ -36,10 +36,18 @@ function Vec4Widget({ onChange, value }) {
 
   return (
     <div className="vec4">
-      <NumberWidget name="x" value={state.x} onChange={handleChange} />
-      <NumberWidget name="y" value={state.y} onChange={handleChange} />
-      <NumberWidget name="z" value={state.z} onChange={handleChange} />
-      <NumberWidget name="w" value={state.w} onChange={handleChange} />
+      <div className="vec-input-wrapper">
+        <NumberWidget name="x" value={state.x} onChange={handleChange} />
+      </div>
+      <div className="vec-input-wrapper">
+        <NumberWidget name="y" value={state.y} onChange={handleChange} />
+      </div>
+      <div className="vec-input-wrapper">
+        <NumberWidget name="z" value={state.z} onChange={handleChange} />
+      </div>
+      <div className="vec-input-wrapper">
+        <NumberWidget name="w" value={state.w} onChange={handleChange} />
+      </div>
     </div>
   );
 }

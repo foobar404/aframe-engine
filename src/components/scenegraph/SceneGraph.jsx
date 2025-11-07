@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { FaSearch, FaTimes } from 'react-icons/fa';
 import debounce from 'lodash.debounce';
 import AssetPanel from './AssetPanel';
+import { ThemeSwitcher } from "../ThemeSwitcher";
 
 import Entity from './Entity';
 import Toolbar from './Toolbar';
@@ -253,12 +254,16 @@ function SceneGraph({ scene, selectedEntity, visible }) {
   if (!visible) return null;
 
   return (
-    <div id="scenegraph" className="scenegraph" >
-      <button
-        onClick={() => AFRAME.INSPECTOR.close()}
-        className="exit">
-        <FaTimes className="w-4 h-4 m-auto" />
-      </button>
+    <div id="scenegraph" className="scenegraph relative" >
+      <div className="flex justify-between px-2 items-center mb-8">
+        <button
+          onClick={() => AFRAME.INSPECTOR.close()}
+          className="exit">
+          <FaTimes className="w-4 h-4 m-auto" />
+        </button>
+
+        <ThemeSwitcher />
+      </div>
 
       <div className="scenegraph-toolbar">
         <Toolbar selectedEntity={selectedEntity} />

@@ -1,34 +1,423 @@
-.Select-control {
-  background-color: var(--bg-dark) !important;
-  border: none;
-  border-radius: 0;
-  color: var(--primary);
-  font-family: var(--font-monospace);
+/* Modern Widget Container Styles */
+.widget-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
 }
 
-.Select-menu-outer {
-  border: none;
+/* Number Widget - Webflow/Figma Style */
+input.number {
+  background: var(--bg-dark);
+  border: 1px solid var(--bg-lighter);
+  border-radius: 6px;
+  color: var(--text);
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  cursor: col-resize;
+  text-align: center;
+  min-width: 60px;
+  font-family: var(--font-monospace);
+  position: relative;
+  
+  &:hover {
+    border-color: var(--primary);
+    background: var(--bg-light);
+    box-shadow: 0 0 0 1px rgba(31, 170, 242, 0.1);
+  }
+  
+  &:focus {
+    cursor: text;
+    border-color: var(--primary);
+    background: var(--bg);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(31, 170, 242, 0.2);
+  }
 
-  .is-focused {
-    background-color: var(--primary) !important;
-    color: var(--text);
+  &:active {
+    cursor: col-resize;
   }
 }
 
-.Select-option {
-  background-color: var(--bg-dark) !important;
+/* Vec3/Vec2/Vec4 Widget Styles */
+.vec3, .vec2, .vec4 {
+  display: flex;
+  gap: 4px;
+  width: 100%;
+  
+  .vec-input-wrapper {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    pointer-events: auto;
+    
+    &:hover::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 6px;
+      right: 6px;
+      height: 2px;
+      border-radius: 1px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    &:nth-child(1):hover::after {
+      background: #ff6b6b;
+    }
+
+    &:nth-child(2):hover::after {
+      background: #51cf66;
+    }
+
+    &:nth-child(3):hover::after {
+      background: #339af0;
+    }
+
+    &:nth-child(4):hover::after {
+      background: #cc5de8;
+    }
+  }
+  
+  /* Axis labels with colored indicators */
+  .vec-input-wrapper:nth-child(1)::before {
+    content: 'X';
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    font-weight: 700;
+    color: #ff6b6b;
+    z-index: 1;
+    pointer-events: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .vec-input-wrapper:nth-child(2)::before {
+    content: 'Y';
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    font-weight: 700;
+    color: #51cf66;
+    z-index: 1;
+    pointer-events: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .vec-input-wrapper:nth-child(3)::before {
+    content: 'Z';
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    font-weight: 700;
+    color: #339af0;
+    z-index: 1;
+    pointer-events: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .vec-input-wrapper:nth-child(4)::before {
+    content: 'W';
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    font-weight: 700;
+    color: #cc5de8;
+    z-index: 1;
+    pointer-events: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  input.number {
+    padding-left: 32px;
+    width: 100%;
+    cursor: col-resize;
+    pointer-events: auto;
+    position: relative;
+    z-index: 2;
+    user-select: none;
+    
+    &:hover {
+      cursor: col-resize;
+    }
+  }
 }
 
-.select-widget {
+/* Color Widget - Modern Style */
+.color-widget {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  background: var(--bg-dark);
+  border: 1px solid var(--bg-lighter);
+  border-radius: 6px;
+  padding: 3px;
+  transition: all 0.15s ease;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  
+  &:hover {
+    border-color: var(--primary);
+    background: var(--bg-light);
+    box-shadow: 0 0 0 1px rgba(31, 170, 242, 0.1);
+  }
+  
+  &:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(31, 170, 242, 0.2);
+    background: var(--bg);
+  }
+  
+  input.color {
+    width: 28px;
+    height: 24px;
+    min-width: 28px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0;
+    overflow: hidden;
+    transition: transform 0.15s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+    
+    &:active {
+      transform: scale(0.98);
+    }
+    
+    &::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+    
+    &::-webkit-color-swatch {
+      border: none;
+      border-radius: 4px;
+    }
+
+    &::-moz-color-swatch {
+      border: none;
+      border-radius: 4px;
+    }
+  }
+  
+  input.color_value {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 4px;
+    outline: none;
+    font-family: var(--font-monospace);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    min-width: 0;
+    
+    &::selection {
+      background: var(--primary);
+      color: white;
+    }
+  }
+}
+
+/* Boolean Widget - Flat Button Style */
+.boolean-widget {
+  position: relative;
   display: inline-block;
-  width: 157px;
+  width: 60px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--bg-dark);
+  border: 1px solid var(--bg-lighter);
+  transition: all 0.15s ease;
+  cursor: pointer;
+  overflow: hidden;
 }
 
-.Select-placeholder,
-.Select--single > .Select-control .Select-value {
-  color: var(--primary) !important;
+.boolean-widget:hover {
+  border-color: var(--primary);
+  background: var(--bg-light);
 }
 
-.Select-value-label {
-  color: var(--primary) !important;
+.boolean-widget input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.boolean-widget label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.boolean-widget .boolean-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.15s ease;
+}
+
+.boolean-widget input[type="checkbox"]:checked + label .boolean-text {
+  color: var(--text-light);
+}
+
+.boolean-widget input[type="checkbox"]:not(:checked) + label .boolean-text {
+  color: var(--text-dark);
+}
+
+.boolean-widget input[type="checkbox"]:checked + label {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--text-light);
+}
+
+.boolean-widget input[type="checkbox"]:not(:checked) + label {
+  background: var(--bg-dark);
+  border-color: var(--bg-lighter);
+  color: var(--text);
+}
+
+.boolean-widget:focus-within {
+  box-shadow: 0 0 0 3px rgba(31, 170, 242, 0.2);
+}
+
+/* String/Input Widget */
+input.string {
+  background: var(--bg-dark);
+  border: 1px solid var(--bg-lighter);
+  border-radius: 6px;
+  color: var(--text);
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  width: 100%;
+  font-family: var(--font-monospace);
+  
+  &::placeholder {
+    color: var(--text-dark);
+    opacity: 0.5;
+  }
+  
+  &:hover {
+    border-color: var(--primary);
+    background: var(--bg-light);
+    box-shadow: 0 0 0 1px rgba(31, 170, 242, 0.1);
+  }
+  
+  &:focus {
+    border-color: var(--primary);
+    background: var(--bg);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(31, 170, 242, 0.2);
+  }
+}
+
+/* Select Widget - Flat Pill Selector */
+.select-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  min-height: 32px;
+  align-items: flex-start;
+  max-height: 160px;
+  overflow-y: auto;
+  padding: 2px;
+}
+
+.select-widget:not(.grouped) {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  max-height: none;
+}
+
+.select-widget.grouped {
+  gap: 4px;
+}
+
+.select-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  width: 100%;
+  align-items: center;
+}
+
+.select-widget::-webkit-scrollbar {
+  width: 4px;
+}
+
+.select-widget::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+  border-radius: 2px;
+}
+
+.select-widget::-webkit-scrollbar-thumb {
+  background: var(--bg-lighter);
+  border-radius: 2px;
+}
+
+.select-widget::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+.select-option {
+  background: var(--bg-dark);
+  border: 1px solid var(--bg-lighter);
+  border-radius: 6px;
+  color: var(--text);
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: var(--font-monospace);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.select-option:hover {
+  border-color: var(--primary);
+  background: var(--bg-light);
+}
+
+.select-option.selected {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.select-option:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(31, 170, 242, 0.2);
 }

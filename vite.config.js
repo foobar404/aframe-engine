@@ -2,6 +2,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { terser } from 'rollup-plugin-terser'
+import mkcert from 'vite-plugin-mkcert';
+
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -14,7 +16,8 @@ export default defineConfig({
                 presets: ['@babel/preset-react']
             }
         }),
-        tailwindcss()
+        tailwindcss(),
+        mkcert()
     ],
     resolve: {
         extensions: ['.js', '.jsx', '.json']
@@ -29,6 +32,8 @@ export default defineConfig({
     server: {
         port: 8080,
         open: true,
+        host: true,
+        https: true
     },
     build: {
         minify: false,

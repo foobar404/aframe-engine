@@ -29,8 +29,12 @@ function Vec2Widget({ onChange, value }) {
 
   return (
     <div className="vec2">
-      <NumberWidget name="x" value={currentValue.x} onChange={handleChange} />
-      <NumberWidget name="y" value={currentValue.y} onChange={handleChange} />
+      <div className="vec-input-wrapper">
+        <NumberWidget name="x" value={currentValue.x} onChange={handleChange} />
+      </div>
+      <div className="vec-input-wrapper">
+        <NumberWidget name="y" value={currentValue.y} onChange={handleChange} />
+      </div>
     </div>
   );
 }

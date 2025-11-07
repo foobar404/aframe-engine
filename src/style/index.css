@@ -268,10 +268,18 @@ body.aframe-inspector-opened {
     cursor: grabbing;
   }
 
+  body.dragging-asset {
+    .a-canvas {
+      outline: 2px dashed var(--primary);
+      outline-offset: -2px;
+    }
+  }
+
   #rightPanel {
     align-items: stretch;
     display: flex;
     justify-content: flex-end;
+    overflow: hidden;
   }
 
   #inspectorContainer {

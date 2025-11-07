@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const ThemeSwitcher = () => {
+export const ThemeSwitcher = () => {
   const themes = [
     { id: 'default', name: 'Dark', color: '#242424' },
     { id: 'light', name: 'Light', color: '#f8fafc' },
@@ -48,5 +48,3 @@ const ThemeSwitcher = () => {
     </div>
   );
 };
-
-export default ThemeSwitcher;
