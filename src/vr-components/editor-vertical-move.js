@@ -1,4 +1,4 @@
-window.AFRAME.registerComponent('vertical-move', {
+window.AFRAME.registerComponent('editor-vertical-move', {
     schema: {
         enabled: { type: 'boolean', default: true },
         speed:   { type: 'number',  default: 4 },

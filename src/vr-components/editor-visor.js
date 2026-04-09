@@ -9,7 +9,7 @@ const DEPTH_NEAR_COL = new THREE.Color('#ff4444');
 const DEPTH_FAR_COL  = new THREE.Color('#4488ff');
 const DEPTH_MAX      = 30; // metres
 
-window.AFRAME.registerComponent('visor', {
+window.AFRAME.registerComponent('editor-visor', {
   schema: {
     offset: { type: 'vec3',   default: { x: 0, y: 0.15, z: -0.18 } },
     size:   { type: 'number', default: 0.22 }

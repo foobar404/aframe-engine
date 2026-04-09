@@ -1,4 +1,4 @@
-window.AFRAME.registerComponent('time-widget', {
+window.AFRAME.registerComponent('editor-time-widget', {
   schema: {
     hand: { type: "string", default: "right" }
   },

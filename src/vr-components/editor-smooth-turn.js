@@ -1,4 +1,4 @@
-AFRAME.registerComponent('smooth-turn', {
+AFRAME.registerComponent('editor-smooth-turn', {
     schema: {
         speedDeg: { type: 'number', default: 120 },     // deg/sec at full deflection
         deadzone: { type: 'number', default: 0.15 },

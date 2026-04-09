@@ -1,4 +1,4 @@
-window.AFRAME.registerComponent('vr-controller', {
+window.AFRAME.registerComponent('editor-vr-controller', {
     schema: {
         size: { type: 'number', default: 0.01 },
         offset: { type: 'vec3', default: { x: 0, y: 0, z: -0.05 } }

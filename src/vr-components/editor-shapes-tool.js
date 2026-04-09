@@ -1,7 +1,7 @@
 import { Events } from '../lib/Events';
 import { generateEntityId } from '../lib/entity';
 
-window.AFRAME.registerComponent('shapes-tool', {
+window.AFRAME.registerComponent('editor-shapes-tool', {
   primitiveIndex: 0,
   availablePrimitives: [
     // geometry

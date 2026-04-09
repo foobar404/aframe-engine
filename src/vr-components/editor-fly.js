@@ -1,4 +1,4 @@
-window.AFRAME.registerComponent('fly', {
+window.AFRAME.registerComponent('editor-fly', {
     schema: {
         enabled: { type: 'boolean', default: true },
         flySpeed: { type: 'number', default: 2 },

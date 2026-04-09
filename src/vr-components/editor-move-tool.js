@@ -1,8 +1,8 @@
 import { Events } from '../lib/Events';
 import { cloneEntity } from '../lib/entity';
 
-if (!AFRAME.components['move-tool']) {
-AFRAME.registerComponent('move-tool', {
+if (!AFRAME.components['editor-move-tool']) {
+AFRAME.registerComponent('editor-move-tool', {
   schema: {
     enabled: { type: 'boolean', default: true },
     hand: { type: 'string', default: 'right', oneOf: ['left', 'right'] },
@@ -281,7 +281,7 @@ AFRAME.registerComponent('move-tool', {
       return false;
     }
 
-    if (el.closest('[move-tool]') || el.closest('a-assets')) {
+    if (el.closest('[editor-move-tool]') || el.closest('a-assets')) {
       return false;
     }
 

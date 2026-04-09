@@ -1,4 +1,4 @@
-AFRAME.registerComponent('haptics', {
+AFRAME.registerComponent('editor-haptics', {
   schema: {
     intensity: {default: 0.6}, 
     duration: {default: 30}

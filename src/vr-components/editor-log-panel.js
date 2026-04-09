@@ -74,8 +74,8 @@ function unpatchConsoleIfUnused() {
   state.patched = false;
 }
 
-if (!AFRAME.components['log-panel']) {
-  AFRAME.registerComponent('log-panel', {
+if (!AFRAME.components['editor-log-panel']) {
+  AFRAME.registerComponent('editor-log-panel', {
     schema: {
       enabled: { type: 'boolean', default: true },
       maxLines: { type: 'int', default: 12 },

@@ -1,14 +1,14 @@
 const TOOL_COLORS = {
-    'paint-tool':      '#e74c3c',
-    'shapes-tool':     '#3498db',
-    'move-tool':       '#2ecc71',
-    'gizmo':           '#9b59b6',
-    'component-tool':  '#f39c12',
+    'editor-paint-tool':      '#e74c3c',
+    'editor-shapes-tool':     '#3498db',
+    'editor-move-tool':       '#2ecc71',
+    'gizmo':                  '#9b59b6',
+    'editor-component-tool':  '#f39c12',
 };
 
 const DEFAULT_COLOR = '#95a5a6';
 
-window.AFRAME.registerComponent('vr-toolbelt', {
+window.AFRAME.registerComponent('editor-vr-toolbelt', {
     schema: {
         tools:  { type: 'string', default: 'paint-tool' },
         offset: { type: 'vec3',   default: { x: 0, y: 0.06, z: 0.04 } }
@@ -77,7 +77,7 @@ window.AFRAME.registerComponent('vr-toolbelt', {
         // Determine target: use provided controller, or fall back to all controllers in rig
         const targets = controllerEl
             ? [controllerEl]
-            : Array.from(this.el.sceneEl?.querySelectorAll('[vr-controller]') || []);
+            : Array.from(this.el.sceneEl?.querySelectorAll('[editor-vr-controller]') || []);
 
         targets.forEach(target => {
             this.toolList.forEach((tool, i) => {

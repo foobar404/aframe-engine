@@ -7,7 +7,7 @@ const PAGE_SIZE = 9;
 const SCENE_RAY_OBJECTS = '[geometry], [gltf-model], [data-raycastable], [text], a-text, .clickable, .control';
 const UI_RAY_OBJECTS = '[data-component-tool-button]';
 
-window.AFRAME.registerComponent('component-tool', {
+window.AFRAME.registerComponent('editor-component-tool', {
   schema: {
     enabled: { type: 'boolean', default: true },
     hand:    { type: 'string', default: 'right', oneOf: ['left', 'right'] }

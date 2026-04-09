@@ -1,6 +1,6 @@
 import { Events } from '../lib/Events';
 
-window.AFRAME.registerComponent('paint-tool', {
+window.AFRAME.registerComponent('editor-paint-tool', {
     schema: {
         enabled: { type: 'boolean', default: true },
         color: { type: 'string', default: '#FF0040' },
@@ -493,7 +493,7 @@ window.AFRAME.registerComponent('paint-tool', {
             const rig = document.getElementById('admin-camera-rig');
             if (rig && (el === rig || rig.contains(el))) continue;
             if (el.hasAttribute('data-vr-tool-ui') || el.closest('[controller-toolbelt]')) continue;
-            if (el.closest('[paint-tool]') || el.closest('a-assets')) continue;
+            if (el.closest('[editor-paint-tool]') || el.closest('a-assets')) continue;
             if (String(el.getAttribute('class') || '').includes('palette-sphere')) continue;
 
             const box = new this.T.Box3().setFromObject(el.object3D);

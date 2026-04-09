@@ -3,7 +3,7 @@
  * Press the right thumbstick to save all changes to aframe-watcher.
  * Uses the page's hostname so it works from a headset on the same LAN.
  */
-AFRAME.registerComponent('vr-save', {
+AFRAME.registerComponent('editor-vr-save', {
   init: function () {
     this._onSave = this._onSave.bind(this);
     this.el.addEventListener('thumbstickdown', this._onSave);

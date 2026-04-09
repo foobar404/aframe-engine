@@ -1,27 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { BsHeadsetVr } from "react-icons/bs";
 
-import "../../vr-components/haptics";
-import "../../vr-components/paint-tool";
-import "../../vr-components/move-tool";
-import "../../vr-components/shapes-tool";
-import "../../vr-components/vr-controller";
-import "../../vr-components/vr-toolbelt";
-import "../../vr-components/fly";
-import "../../vr-components/smooth-turn";
-import "../../vr-components/vertical-move";
-import "../../vr-components/vr-save";
-import "../../vr-components/ui-overlay";
-import "../../vr-components/component-tool";
-import "../../vr-components/csg-primitives"
-import "../../vr-components/environment.js"
-import "../../vr-components/gizmo.js"
-import "../../vr-components/highlight.js"
-import "../../vr-components/keyboard.js"
-import "../../vr-components/particles.js"
-import "../../vr-components/time-widget.js"
-import "../../vr-components/visor.js"
-import "../../vr-components/log-panel.js"
+import "../../vr-components/editor-haptics";
+import "../../vr-components/editor-paint-tool";
+import "../../vr-components/editor-move-tool";
+import "../../vr-components/editor-shapes-tool";
+import "../../vr-components/editor-vr-controller";
+import "../../vr-components/editor-vr-toolbelt";
+import "../../vr-components/editor-fly";
+import "../../vr-components/editor-smooth-turn";
+import "../../vr-components/editor-vertical-move";
+import "../../vr-components/editor-vr-save";
+import "../../vr-components/editor-component-tool";
+import "../../vr-components/editor-time-widget.js"
+import "../../vr-components/editor-visor.js"
+import "../../vr-components/editor-log-panel.js"
 
 
 export const XRMode = () => {
@@ -46,39 +39,39 @@ export const XRMode = () => {
         camera.id = "admin-camera";
         camera.setAttribute('look-controls', '');
         camera.setAttribute('active', '');
-        camera.setAttribute('visor', '');
-        camera.setAttribute('log-panel', '');
+        camera.setAttribute('editor-visor', '');
+        camera.setAttribute('editor-log-panel', '');
 
         const leftController = document.createElement('a-entity');
         leftController.id = "admin-left-controller";
         leftController.setAttribute('oculus-touch-controls', 'hand: left');
-        leftController.setAttribute('vr-controller', '');
-        leftController.setAttribute('move-tool', 'hand: left; enabled: false');
-        leftController.setAttribute('paint-tool', 'enabled: false');
-        leftController.setAttribute('shapes-tool', 'enabled: true');
-        leftController.setAttribute('component-tool', 'hand: left; enabled: false');
-        leftController.setAttribute('fly', '');
-        leftController.setAttribute('haptics', '');
+        leftController.setAttribute('editor-vr-controller', '');
+        leftController.setAttribute('editor-move-tool', 'hand: left; enabled: false');
+        leftController.setAttribute('editor-paint-tool', 'enabled: false');
+        leftController.setAttribute('editor-shapes-tool', 'enabled: true');
+        leftController.setAttribute('editor-component-tool', 'hand: left; enabled: false');
+        leftController.setAttribute('editor-fly', '');
+        leftController.setAttribute('editor-haptics', '');
         
         const rightController = document.createElement('a-entity');
         rightController.id = "admin-right-controller";
         rightController.setAttribute('oculus-touch-controls', 'hand: right');
-        rightController.setAttribute('vr-controller', '');
-        rightController.setAttribute('move-tool', 'hand: right; enabled: true');
-        rightController.setAttribute('paint-tool', 'enabled: false');
-        rightController.setAttribute('shapes-tool', 'enabled: false');
-        rightController.setAttribute('smooth-turn', '');
-        rightController.setAttribute('vertical-move', '');
-        rightController.setAttribute('haptics', '');
-        rightController.setAttribute('vr-save', '');
-        rightController.setAttribute('component-tool', 'hand: right; enabled: false');
+        rightController.setAttribute('editor-vr-controller', '');
+        rightController.setAttribute('editor-move-tool', 'hand: right; enabled: true');
+        rightController.setAttribute('editor-paint-tool', 'enabled: false');
+        rightController.setAttribute('editor-shapes-tool', 'enabled: false');
+        rightController.setAttribute('editor-smooth-turn', '');
+        rightController.setAttribute('editor-vertical-move', '');
+        rightController.setAttribute('editor-haptics', '');
+        rightController.setAttribute('editor-vr-save', '');
+        rightController.setAttribute('editor-component-tool', 'hand: right; enabled: false');
 
         const body = document.createElement('a-entity');
         body.id = 'admin-body';
         body.setAttribute('position', '0 .4 -0.3');
         body.setAttribute('rotation', '0 0 0');
         body.setAttribute('data-vr-tool-ui', 'true');
-        body.setAttribute('vr-toolbelt', 'tools: paint-tool,move-tool,shapes-tool,component-tool; offset: 0 0.28 0.08');
+        body.setAttribute('editor-vr-toolbelt', 'tools: editor-paint-tool,editor-move-tool,editor-shapes-tool,editor-component-tool; offset: 0 0.28 0.08');
 
         rig.appendChild(camera);
         rig.appendChild(leftController);
