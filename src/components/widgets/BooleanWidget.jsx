@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-function BooleanWidget({ id, name, onChange, value = false }) {
+export function BooleanWidget({ id, name, onChange, value = false }) {
   const [currentValue, setCurrentValue] = useState(value);
 
   useEffect(() => {
@@ -45,4 +45,3 @@ BooleanWidget.defaultProps = {
   value: false
 };
 
-export default BooleanWidget;

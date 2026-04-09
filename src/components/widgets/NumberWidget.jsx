@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
-function NumberWidget({
+export function NumberWidget({
   id,
   max = Infinity,
   min = -Infinity,
@@ -191,4 +191,3 @@ NumberWidget.defaultProps = {
   step: 1
 };
 
-export default NumberWidget;

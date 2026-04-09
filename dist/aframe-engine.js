@@ -1,7 +1,7 @@
 (function() {
   "use strict";
   var __vite_style__ = document.createElement("style");
-  __vite_style__.textContent = '/*! tailwindcss v4.1.16 | MIT License | https://tailwindcss.com */\n@layer properties {\n  @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {\n    *, :before, :after, ::backdrop {\n      --tw-rotate-x: initial;\n      --tw-rotate-y: initial;\n      --tw-rotate-z: initial;\n      --tw-skew-x: initial;\n      --tw-skew-y: initial;\n      --tw-border-style: solid;\n      --tw-font-weight: initial;\n      --tw-shadow: 0 0 #0000;\n      --tw-shadow-color: initial;\n      --tw-shadow-alpha: 100%;\n      --tw-inset-shadow: 0 0 #0000;\n      --tw-inset-shadow-color: initial;\n      --tw-inset-shadow-alpha: 100%;\n      --tw-ring-color: initial;\n      --tw-ring-shadow: 0 0 #0000;\n      --tw-inset-ring-color: initial;\n      --tw-inset-ring-shadow: 0 0 #0000;\n      --tw-ring-inset: initial;\n      --tw-ring-offset-width: 0px;\n      --tw-ring-offset-color: #fff;\n      --tw-ring-offset-shadow: 0 0 #0000;\n      --tw-outline-style: solid;\n      --tw-blur: initial;\n      --tw-brightness: initial;\n      --tw-contrast: initial;\n      --tw-grayscale: initial;\n      --tw-hue-rotate: initial;\n      --tw-invert: initial;\n      --tw-opacity: initial;\n      --tw-saturate: initial;\n      --tw-sepia: initial;\n      --tw-drop-shadow: initial;\n      --tw-drop-shadow-color: initial;\n      --tw-drop-shadow-alpha: 100%;\n      --tw-drop-shadow-size: initial;\n      --tw-backdrop-blur: initial;\n      --tw-backdrop-brightness: initial;\n      --tw-backdrop-contrast: initial;\n      --tw-backdrop-grayscale: initial;\n      --tw-backdrop-hue-rotate: initial;\n      --tw-backdrop-invert: initial;\n      --tw-backdrop-opacity: initial;\n      --tw-backdrop-saturate: initial;\n      --tw-backdrop-sepia: initial;\n      --tw-ease: initial;\n    }\n  }\n}\n\n@layer theme {\n  :root, :host {\n    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";\n    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;\n    --color-black: #000;\n    --color-white: #fff;\n    --spacing: .25rem;\n    --font-weight-bold: 700;\n    --radius-md: .375rem;\n    --ease-out: cubic-bezier(0, 0, .2, 1);\n    --ease-in-out: cubic-bezier(.4, 0, .2, 1);\n    --default-transition-duration: .15s;\n    --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);\n    --default-font-family: var(--font-sans);\n    --default-mono-font-family: var(--font-mono);\n  }\n}\n\n@layer base {\n  *, :after, :before, ::backdrop {\n    box-sizing: border-box;\n    border: 0 solid;\n    margin: 0;\n    padding: 0;\n  }\n\n  ::file-selector-button {\n    box-sizing: border-box;\n    border: 0 solid;\n    margin: 0;\n    padding: 0;\n  }\n\n  html, :host {\n    -webkit-text-size-adjust: 100%;\n    tab-size: 4;\n    line-height: 1.5;\n    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");\n    font-feature-settings: var(--default-font-feature-settings, normal);\n    font-variation-settings: var(--default-font-variation-settings, normal);\n    -webkit-tap-highlight-color: transparent;\n  }\n\n  hr {\n    height: 0;\n    color: inherit;\n    border-top-width: 1px;\n  }\n\n  abbr:where([title]) {\n    -webkit-text-decoration: underline dotted;\n    text-decoration: underline dotted;\n  }\n\n  h1, h2, h3, h4, h5, h6 {\n    font-size: inherit;\n    font-weight: inherit;\n  }\n\n  a {\n    color: inherit;\n    -webkit-text-decoration: inherit;\n    -webkit-text-decoration: inherit;\n    -webkit-text-decoration: inherit;\n    text-decoration: inherit;\n  }\n\n  b, strong {\n    font-weight: bolder;\n  }\n\n  code, kbd, samp, pre {\n    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);\n    font-feature-settings: var(--default-mono-font-feature-settings, normal);\n    font-variation-settings: var(--default-mono-font-variation-settings, normal);\n    font-size: 1em;\n  }\n\n  small {\n    font-size: 80%;\n  }\n\n  sub, sup {\n    vertical-align: baseline;\n    font-size: 75%;\n    line-height: 0;\n    position: relative;\n  }\n\n  sub {\n    bottom: -.25em;\n  }\n\n  sup {\n    top: -.5em;\n  }\n\n  table {\n    text-indent: 0;\n    border-color: inherit;\n    border-collapse: collapse;\n  }\n\n  :-moz-focusring {\n    outline: auto;\n  }\n\n  progress {\n    vertical-align: baseline;\n  }\n\n  summary {\n    display: list-item;\n  }\n\n  ol, ul, menu {\n    list-style: none;\n  }\n\n  img, svg, video, canvas, audio, iframe, embed, object {\n    vertical-align: middle;\n    display: block;\n  }\n\n  img, video {\n    max-width: 100%;\n    height: auto;\n  }\n\n  button, input, select, optgroup, textarea {\n    font: inherit;\n    font-feature-settings: inherit;\n    font-variation-settings: inherit;\n    letter-spacing: inherit;\n    color: inherit;\n    opacity: 1;\n    background-color: #0000;\n    border-radius: 0;\n  }\n\n  ::file-selector-button {\n    font: inherit;\n    font-feature-settings: inherit;\n    font-variation-settings: inherit;\n    letter-spacing: inherit;\n    color: inherit;\n    opacity: 1;\n    background-color: #0000;\n    border-radius: 0;\n  }\n\n  :where(select:is([multiple], [size])) optgroup {\n    font-weight: bolder;\n  }\n\n  :where(select:is([multiple], [size])) optgroup option {\n    padding-inline-start: 20px;\n  }\n\n  ::file-selector-button {\n    margin-inline-end: 4px;\n  }\n\n  ::placeholder {\n    opacity: 1;\n  }\n\n  @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {\n    ::placeholder {\n      color: currentColor;\n    }\n\n    @supports (color: color-mix(in lab, red, red)) {\n      ::placeholder {\n        color: color-mix(in oklab, currentcolor 50%, transparent);\n      }\n    }\n  }\n\n  textarea {\n    resize: vertical;\n  }\n\n  ::-webkit-search-decoration {\n    -webkit-appearance: none;\n  }\n\n  ::-webkit-date-and-time-value {\n    min-height: 1lh;\n    text-align: inherit;\n  }\n\n  ::-webkit-datetime-edit {\n    display: inline-flex;\n  }\n\n  ::-webkit-datetime-edit-fields-wrapper {\n    padding: 0;\n  }\n\n  ::-webkit-datetime-edit {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-year-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-month-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-day-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-hour-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-minute-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-second-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-millisecond-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-meridiem-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-calendar-picker-indicator {\n    line-height: 1;\n  }\n\n  :-moz-ui-invalid {\n    box-shadow: none;\n  }\n\n  button, input:where([type="button"], [type="reset"], [type="submit"]) {\n    appearance: button;\n  }\n\n  ::file-selector-button {\n    appearance: button;\n  }\n\n  ::-webkit-inner-spin-button {\n    height: auto;\n  }\n\n  ::-webkit-outer-spin-button {\n    height: auto;\n  }\n\n  [hidden]:where(:not([hidden="until-found"])) {\n    display: none !important;\n  }\n}\n\n@layer components;\n\n@layer utilities {\n  .collapse {\n    visibility: collapse;\n  }\n\n  .visible {\n    visibility: visible;\n  }\n\n  .visible\\! {\n    visibility: visible !important;\n  }\n\n  .absolute {\n    position: absolute;\n  }\n\n  .fixed {\n    position: fixed;\n  }\n\n  .relative {\n    position: relative;\n  }\n\n  .static {\n    position: static;\n  }\n\n  .sticky {\n    position: sticky;\n  }\n\n  .top-4 {\n    top: calc(var(--spacing) * 4);\n  }\n\n  .top-4\\! {\n    top: calc(var(--spacing) * 4) !important;\n  }\n\n  .isolate {\n    isolation: isolate;\n  }\n\n  .container {\n    width: 100%;\n  }\n\n  @media (min-width: 40rem) {\n    .container {\n      max-width: 40rem;\n    }\n  }\n\n  @media (min-width: 48rem) {\n    .container {\n      max-width: 48rem;\n    }\n  }\n\n  @media (min-width: 64rem) {\n    .container {\n      max-width: 64rem;\n    }\n  }\n\n  @media (min-width: 80rem) {\n    .container {\n      max-width: 80rem;\n    }\n  }\n\n  @media (min-width: 96rem) {\n    .container {\n      max-width: 96rem;\n    }\n  }\n\n  .m-auto {\n    margin: auto;\n  }\n\n  .mb-8 {\n    margin-bottom: calc(var(--spacing) * 8);\n  }\n\n  .block {\n    display: block;\n  }\n\n  .contents {\n    display: contents;\n  }\n\n  .flex {\n    display: flex;\n  }\n\n  .grid {\n    display: grid;\n  }\n\n  .hidden {\n    display: none;\n  }\n\n  .inline {\n    display: inline;\n  }\n\n  .inline-block {\n    display: inline-block;\n  }\n\n  .inline-grid {\n    display: inline-grid;\n  }\n\n  .table {\n    display: table;\n  }\n\n  .h-4 {\n    height: calc(var(--spacing) * 4);\n  }\n\n  .min-h-10 {\n    min-height: calc(var(--spacing) * 10);\n  }\n\n  .w-4 {\n    width: calc(var(--spacing) * 4);\n  }\n\n  .w-full {\n    width: 100%;\n  }\n\n  .min-w-full {\n    min-width: 100%;\n  }\n\n  .flex-shrink, .shrink {\n    flex-shrink: 1;\n  }\n\n  .flex-grow, .grow {\n    flex-grow: 1;\n  }\n\n  .border-collapse {\n    border-collapse: collapse;\n  }\n\n  .transform {\n    transform: var(--tw-rotate-x, ) var(--tw-rotate-y, ) var(--tw-rotate-z, ) var(--tw-skew-x, ) var(--tw-skew-y, );\n  }\n\n  .cursor-pointer {\n    cursor: pointer;\n  }\n\n  .resize {\n    resize: both;\n  }\n\n  .flex-wrap {\n    flex-wrap: wrap;\n  }\n\n  .items-center {\n    align-items: center;\n  }\n\n  .justify-between {\n    justify-content: space-between;\n  }\n\n  .justify-center {\n    justify-content: center;\n  }\n\n  .gap-2 {\n    gap: calc(var(--spacing) * 2);\n  }\n\n  .rounded-md {\n    border-radius: var(--radius-md);\n  }\n\n  .border {\n    border-style: var(--tw-border-style);\n    border-width: 1px;\n  }\n\n  .border-3 {\n    border-style: var(--tw-border-style);\n    border-width: 3px;\n  }\n\n  .border-black {\n    border-color: var(--color-black);\n  }\n\n  .border-black\\/50 {\n    border-color: #00000080;\n  }\n\n  @supports (color: color-mix(in lab, red, red)) {\n    .border-black\\/50 {\n      border-color: color-mix(in oklab, var(--color-black) 50%, transparent);\n    }\n  }\n\n  .bg-\\[var\\(--bg-dark\\)\\] {\n    background-color: var(--bg-dark);\n  }\n\n  .bg-white {\n    background-color: var(--color-white);\n  }\n\n  .p-1 {\n    padding: calc(var(--spacing) * 1);\n  }\n\n  .px-2 {\n    padding-inline: calc(var(--spacing) * 2);\n  }\n\n  .font-bold {\n    --tw-font-weight: var(--font-weight-bold);\n    font-weight: var(--font-weight-bold);\n  }\n\n  .text-\\[var\\(--primary\\)\\] {\n    color: var(--primary);\n  }\n\n  .text-black {\n    color: var(--color-black);\n  }\n\n  .text-black\\/50 {\n    color: #00000080;\n  }\n\n  @supports (color: color-mix(in lab, red, red)) {\n    .text-black\\/50 {\n      color: color-mix(in oklab, var(--color-black) 50%, transparent);\n    }\n  }\n\n  .uppercase {\n    text-transform: uppercase;\n  }\n\n  .underline {\n    text-decoration-line: underline;\n  }\n\n  .shadow {\n    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, #0000001a), 0 1px 2px -1px var(--tw-shadow-color, #0000001a);\n    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);\n  }\n\n  .ring {\n    --tw-ring-shadow: var(--tw-ring-inset, ) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);\n    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);\n  }\n\n  .outline {\n    outline-style: var(--tw-outline-style);\n    outline-width: 1px;\n  }\n\n  .blur {\n    --tw-blur: blur(8px);\n    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );\n  }\n\n  .\\!filter {\n    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, ) !important;\n  }\n\n  .filter {\n    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );\n  }\n\n  .backdrop-filter {\n    -webkit-backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );\n    backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );\n  }\n\n  .transition {\n    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;\n    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));\n    transition-duration: var(--tw-duration, var(--default-transition-duration));\n  }\n\n  .ease-in-out {\n    --tw-ease: var(--ease-in-out);\n    transition-timing-function: var(--ease-in-out);\n  }\n\n  .ease-out {\n    --tw-ease: var(--ease-out);\n    transition-timing-function: var(--ease-out);\n  }\n\n  @media (hover: hover) {\n    .hover\\:bg-\\[var\\(--secondary\\)\\]:hover {\n      background-color: var(--secondary);\n    }\n  }\n}\n\n.entityPrint {\n  font-family: var(--font-normal);\n  line-height: 1.15em;\n}\n\n.entityName {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  display: inline-block;\n  position: relative;\n  top: 3px;\n  overflow: hidden;\n}\n\n[data-entity-name-type="id"] {\n  color: var(--error);\n}\n\n[data-entity-name-type="class"] {\n  color: var(--success);\n}\n\n[data-entity-name-type="mixin"] {\n  color: var(--warning);\n}\n\n.help-lists {\n  justify-content: space-around;\n  display: flex;\n}\n\n.help-list {\n  width: 350px;\n  margin: 0;\n  padding: 0 0 10px;\n  list-style: none;\n}\n\n.help-list li {\n  margin-right: 2.5em;\n}\n\n.help-key-unit {\n  margin-right: 2em;\n  padding: 5px 0;\n  line-height: 1.8;\n}\n\n.help-key {\n  min-width: 60px;\n  margin-right: 4px;\n  position: relative;\n  bottom: 2px;\n}\n\n.help-key span {\n  background-color: var(--bg-light);\n  border: 1px solid var(--bg-lighter);\n  box-shadow: 0 0 5px var(--bg-dark);\n  color: var(--text-dark);\n  text-align: center;\n  background-repeat: repeat-x;\n  border-radius: 3px;\n  padding: 0 8px;\n  font-size: 12px;\n  display: inline-block;\n}\n\n.help-key-def {\n  color: var(--text-dark);\n  margin-left: 1em;\n  display: inline-block;\n}\n\n.widget-container {\n  align-items: center;\n  gap: 6px;\n  width: 100%;\n  display: flex;\n}\n\ninput.number {\n  background: var(--bg-dark);\n  border: 1px solid var(--bg-lighter);\n  color: var(--text);\n  cursor: col-resize;\n  text-align: center;\n  min-width: 60px;\n  font-size: 12px;\n  font-weight: 500;\n  font-family: var(--font-monospace);\n  border-radius: 6px;\n  padding: 6px 10px;\n  transition: all .15s;\n  position: relative;\n}\n\ninput.number:hover {\n  border-color: var(--primary);\n  background: var(--bg-light);\n  box-shadow: 0 0 0 1px #1faaf21a;\n}\n\ninput.number:focus {\n  cursor: text;\n  border-color: var(--primary);\n  background: var(--bg);\n  outline: none;\n  box-shadow: 0 0 0 3px #1faaf233;\n}\n\ninput.number:active {\n  cursor: col-resize;\n}\n\n.vec3, .vec2, .vec4 {\n  gap: 4px;\n  width: 100%;\n  display: flex;\n}\n\n:is(.vec3, .vec2, .vec4) .vec-input-wrapper {\n  pointer-events: auto;\n  flex: 1;\n  min-width: 0;\n  position: relative;\n}\n\n:is(.vec3, .vec2, .vec4) .vec-input-wrapper:hover:after {\n  content: "";\n  opacity: .5;\n  pointer-events: none;\n  border-radius: 1px;\n  height: 2px;\n  position: absolute;\n  bottom: -2px;\n  left: 6px;\n  right: 6px;\n}\n\n:is(.vec3, .vec2, .vec4) .vec-input-wrapper:first-child:hover:after {\n  background: #ff6b6b;\n}\n\n:is(.vec3, .vec2, .vec4) .vec-input-wrapper:nth-child(2):hover:after {\n  background: #51cf66;\n}\n\n:is(.vec3, .vec2, .vec4) .vec-input-wrapper:nth-child(3):hover:after {\n  background: #339af0;\n}\n\n:is(.vec3, .vec2, .vec4) .vec-input-wrapper:nth-child(4):hover:after {\n  background: #cc5de8;\n}\n\n:is(.vec3, .vec2, .vec4) .vec-input-wrapper:first-child:before {\n  content: "X";\n  color: #ff6b6b;\n  z-index: 1;\n  pointer-events: none;\n  text-shadow: 0 1px 2px #0000004d;\n  font-size: 10px;\n  font-weight: 700;\n  position: absolute;\n  top: 50%;\n  left: 4px;\n  transform: translateY(-50%);\n}\n\n:is(.vec3, .vec2, .vec4) .vec-input-wrapper:nth-child(2):before {\n  content: "Y";\n  color: #51cf66;\n  z-index: 1;\n  pointer-events: none;\n  text-shadow: 0 1px 2px #0000004d;\n  font-size: 10px;\n  font-weight: 700;\n  position: absolute;\n  top: 50%;\n  left: 4px;\n  transform: translateY(-50%);\n}\n\n:is(.vec3, .vec2, .vec4) .vec-input-wrapper:nth-child(3):before {\n  content: "Z";\n  color: #339af0;\n  z-index: 1;\n  pointer-events: none;\n  text-shadow: 0 1px 2px #0000004d;\n  font-size: 10px;\n  font-weight: 700;\n  position: absolute;\n  top: 50%;\n  left: 4px;\n  transform: translateY(-50%);\n}\n\n:is(.vec3, .vec2, .vec4) .vec-input-wrapper:nth-child(4):before {\n  content: "W";\n  color: #cc5de8;\n  z-index: 1;\n  pointer-events: none;\n  text-shadow: 0 1px 2px #0000004d;\n  font-size: 10px;\n  font-weight: 700;\n  position: absolute;\n  top: 50%;\n  left: 4px;\n  transform: translateY(-50%);\n}\n\n:is(.vec3, .vec2, .vec4) input.number {\n  cursor: col-resize;\n  pointer-events: auto;\n  z-index: 2;\n  -webkit-user-select: none;\n  user-select: none;\n  width: 100%;\n  padding-left: 32px;\n  position: relative;\n}\n\n:is(.vec3, .vec2, .vec4) input.number:hover {\n  cursor: col-resize;\n}\n\n.color-widget {\n  background: var(--bg-dark);\n  border: 1px solid var(--bg-lighter);\n  border-radius: 6px;\n  align-items: center;\n  gap: 6px;\n  width: 100%;\n  min-width: 0;\n  max-width: 100%;\n  padding: 3px;\n  transition: all .15s;\n  display: flex;\n  overflow: hidden;\n}\n\n.color-widget:hover {\n  border-color: var(--primary);\n  background: var(--bg-light);\n  box-shadow: 0 0 0 1px #1faaf21a;\n}\n\n.color-widget:focus-within {\n  border-color: var(--primary);\n  background: var(--bg);\n  box-shadow: 0 0 0 3px #1faaf233;\n}\n\n.color-widget input.color {\n  cursor: pointer;\n  border: none;\n  border-radius: 4px;\n  flex-shrink: 0;\n  width: 28px;\n  min-width: 28px;\n  height: 24px;\n  padding: 0;\n  transition: transform .15s;\n  overflow: hidden;\n  box-shadow: 0 2px 4px #0003, inset 0 0 0 1px #ffffff1a;\n}\n\n.color-widget input.color:hover {\n  transform: scale(1.05);\n}\n\n.color-widget input.color:active {\n  transform: scale(.98);\n}\n\n.color-widget input.color::-webkit-color-swatch-wrapper {\n  padding: 0;\n}\n\n.color-widget input.color::-webkit-color-swatch {\n  border: none;\n  border-radius: 4px;\n}\n\n.color-widget input.color::-moz-color-swatch {\n  border: none;\n  border-radius: 4px;\n}\n\n.color-widget input.color_value {\n  color: var(--text);\n  font-size: 11px;\n  font-weight: 600;\n  font-family: var(--font-monospace);\n  text-transform: uppercase;\n  letter-spacing: .3px;\n  background: none;\n  border: none;\n  outline: none;\n  flex: 1;\n  min-width: 0;\n  padding: 4px;\n}\n\n.color-widget input.color_value::selection {\n  background: var(--primary);\n  color: #fff;\n}\n\n.boolean-widget {\n  background: var(--bg-dark);\n  border: 1px solid var(--bg-lighter);\n  cursor: pointer;\n  border-radius: 6px;\n  width: 60px;\n  height: 28px;\n  transition: all .15s;\n  display: inline-block;\n  position: relative;\n  overflow: hidden;\n}\n\n.boolean-widget:hover {\n  border-color: var(--primary);\n  background: var(--bg-light);\n}\n\n.boolean-widget input[type="checkbox"] {\n  opacity: 0;\n  width: 0;\n  height: 0;\n  position: absolute;\n}\n\n.boolean-widget label {\n  cursor: pointer;\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  display: block;\n  position: relative;\n}\n\n.boolean-widget .boolean-text {\n  letter-spacing: .5px;\n  font-size: 10px;\n  font-weight: 600;\n  transition: all .15s;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n\n.boolean-widget input[type="checkbox"]:checked + label .boolean-text {\n  color: var(--text-light);\n}\n\n.boolean-widget input[type="checkbox"]:not(:checked) + label .boolean-text {\n  color: var(--text-dark);\n}\n\n.boolean-widget input[type="checkbox"]:checked + label {\n  background: var(--primary);\n  border-color: var(--primary);\n  color: var(--text-light);\n}\n\n.boolean-widget input[type="checkbox"]:not(:checked) + label {\n  background: var(--bg-dark);\n  border-color: var(--bg-lighter);\n  color: var(--text);\n}\n\n.boolean-widget:focus-within {\n  box-shadow: 0 0 0 3px #1faaf233;\n}\n\ninput.string {\n  background: var(--bg-dark);\n  border: 1px solid var(--bg-lighter);\n  color: var(--text);\n  width: 100%;\n  font-size: 12px;\n  font-weight: 500;\n  font-family: var(--font-monospace);\n  border-radius: 6px;\n  padding: 6px 10px;\n  transition: all .15s;\n}\n\ninput.string::placeholder {\n  color: var(--text-dark);\n  opacity: .5;\n}\n\ninput.string:hover {\n  border-color: var(--primary);\n  background: var(--bg-light);\n  box-shadow: 0 0 0 1px #1faaf21a;\n}\n\ninput.string:focus {\n  border-color: var(--primary);\n  background: var(--bg);\n  outline: none;\n  box-shadow: 0 0 0 3px #1faaf233;\n}\n\n.select-widget {\n  flex-direction: column;\n  align-items: flex-start;\n  gap: 6px;\n  width: 100%;\n  min-height: 32px;\n  max-height: 160px;\n  padding: 2px;\n  display: flex;\n  overflow-y: auto;\n}\n\n.select-widget:not(.grouped) {\n  flex-flow: wrap;\n  align-items: center;\n  max-height: none;\n}\n\n.select-widget.grouped {\n  gap: 4px;\n}\n\n.select-group {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 4px;\n  width: 100%;\n  display: flex;\n}\n\n.select-widget::-webkit-scrollbar {\n  width: 4px;\n}\n\n.select-widget::-webkit-scrollbar-track {\n  background: var(--bg-dark);\n  border-radius: 2px;\n}\n\n.select-widget::-webkit-scrollbar-thumb {\n  background: var(--bg-lighter);\n  border-radius: 2px;\n}\n\n.select-widget::-webkit-scrollbar-thumb:hover {\n  background: var(--primary);\n}\n\n.select-option {\n  background: var(--bg-dark);\n  border: 1px solid var(--bg-lighter);\n  color: var(--text);\n  font-size: 11px;\n  font-weight: 500;\n  font-family: var(--font-monospace);\n  cursor: pointer;\n  white-space: nowrap;\n  border-radius: 6px;\n  flex-shrink: 0;\n  padding: 4px 8px;\n  transition: all .15s;\n}\n\n.select-option:hover {\n  border-color: var(--primary);\n  background: var(--bg-light);\n}\n\n.select-option.selected {\n  background: var(--primary);\n  border-color: var(--primary);\n  color: var(--text-light);\n  font-weight: 600;\n}\n\n.select-option:focus {\n  outline: none;\n  box-shadow: 0 0 0 3px #1faaf233;\n}\n\n#scenegraph {\n  background: var(--bg);\n  border-top: 1px solid var(--bg-dark);\n  flex-direction: column;\n  width: 300px;\n  display: flex;\n  overflow: auto;\n}\n\n#scenegraph .entity {\n  background: var(--bg);\n  cursor: pointer;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  min-height: 24px;\n  padding: 2px 8px;\n  font-weight: bolder;\n  display: flex;\n  position: relative;\n}\n\n#scenegraph .entity:hover {\n  background: var(--bg-light);\n}\n\n#scenegraph .entity.active {\n  background-color: var(--bg-dark);\n  color: var(--primary);\n}\n\n#scenegraph .entity.novisible {\n  opacity: .6;\n}\n\n#scenegraph .tree-indent {\n  flex: 1;\n  align-items: center;\n  display: flex;\n  position: relative;\n}\n\n#scenegraph .tree-line {\n  opacity: 1;\n  background: none;\n  width: 1px;\n  height: 100%;\n  position: absolute;\n}\n\n#scenegraph .tree-line:before {\n  content: "";\n  background: var(--bg-lighter);\n  opacity: .6;\n  width: 3px;\n  height: 3px;\n  box-shadow: 0 0 1px var(--bg-dark);\n  border-radius: 50%;\n  position: absolute;\n  top: 0;\n  left: 50%;\n  transform: translateX(-50%);\n}\n\n#scenegraph .tree-line:after {\n  content: "";\n  background-image: radial-gradient(circle, var(--bg-lighter) 1px, transparent 1px);\n  opacity: .4;\n  background-size: 1px 4px;\n  width: 100%;\n  height: calc(100% - 8px);\n  position: absolute;\n  top: 5px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n\n#scenegraph .entity:hover .tree-line:before, #scenegraph .entity:hover .tree-line:after {\n  opacity: .8;\n  background-image: radial-gradient(circle, var(--primary) 1px, transparent 1px);\n}\n\n#scenegraph .entity:hover .tree-line:before {\n  background: var(--primary);\n  box-shadow: 0 0 2px var(--primary);\n}\n\n#scenegraph .entity.active .tree-line:before, #scenegraph .entity.active .tree-line:after {\n  opacity: 1;\n  background-image: radial-gradient(circle, var(--accent) 1px, transparent 1px);\n}\n\n#scenegraph .entity.active .tree-line:before {\n  background: var(--accent);\n  box-shadow: 0 0 4px var(--accent);\n}\n\n#scenegraph .expand-btn {\n  color: var(--text-dark);\n  cursor: pointer;\n  background: none;\n  border: none;\n  border-radius: 2px;\n  justify-content: center;\n  align-items: center;\n  width: 16px;\n  height: 16px;\n  margin-right: 4px;\n  padding: 2px 4px;\n  font-size: 10px;\n  display: flex;\n}\n\n#scenegraph .expand-btn:hover {\n  background: var(--bg-light);\n  color: var(--text);\n}\n\n#scenegraph .expand-btn:focus {\n  outline: 1px solid var(--primary);\n}\n\n#scenegraph .entity-content {\n  flex: 1;\n  align-items: center;\n  padding: 2px 0;\n  display: flex;\n}\n\n#scenegraph .entity-actions {\n  align-items: center;\n  gap: 2px;\n  display: flex;\n}\n\n#scenegraph .action-btn {\n  color: var(--text-dark);\n  cursor: pointer;\n  background: none;\n  border: none;\n  border-radius: 3px;\n  justify-content: center;\n  align-items: center;\n  width: 20px;\n  height: 20px;\n  padding: 4px;\n  font-size: 12px;\n  transition: all .15s;\n  display: flex;\n}\n\n#scenegraph .action-btn:hover {\n  background: var(--bg-light);\n  color: var(--text);\n}\n\n#scenegraph .action-btn:focus {\n  outline: 1px solid var(--primary);\n}\n\n#scenegraph .action-btn.clone-btn:hover {\n  color: #10b981;\n}\n\n#scenegraph .action-btn.delete-btn:hover {\n  color: #ef4444;\n}\n\n#scenegraph .action-btn.visibility-btn:hover {\n  color: #3b82f6;\n}\n\n#scenegraph .action-btn.collapse-all-btn:hover {\n  color: #f59e0b;\n}\n\n#scenegraph .component:hover {\n  color: var(--primary);\n}\n\n#scenegraph .entityIcons {\n  margin-left: 2px;\n}\n\n#scenegraph .id {\n  color: var(--text-dark);\n}\n\n#scenegraph .option.active .id {\n  color: var(--text);\n}\n\n#scenegraph .search {\n  padding: 5px;\n  font-size: 16px;\n  position: relative;\n}\n\n#scenegraph .search input {\n  color: var(--text);\n  background: var(--bg-dark);\n  text-indent: 10px;\n  border-radius: 5px;\n  width: 216px;\n  height: 22px;\n}\n\n#scenegraph .search > svg, #scenegraph .search a.button {\n  position: absolute;\n  top: 10px;\n  right: 14px;\n}\n\n#scenegraph .outliner {\n  background: var(--bg);\n  color: var(--text);\n  cursor: default;\n  outline: none;\n  flex: auto;\n  width: 100%;\n  height: calc(100% - 98px);\n  padding: 0;\n  font-size: 13px;\n  line-height: normal;\n  overflow-y: auto;\n}\n\n#scenegraph .exit {\n  background-color: var(--bg-dark);\n  color: #fff;\n  z-index: 10;\n  border-radius: .375rem;\n  width: 30px;\n  height: 30px;\n  padding: .5rem;\n  transition: background-color .2s ease-in-out;\n  box-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -2px #0000000d;\n}\n\n#scenegraph .exit:hover {\n  background-color: #dc2626;\n}\n\n#assetPanel {\n  background: var(--bg);\n  border-top: 1px solid var(--bg-dark);\n  max-height: 50vh;\n  padding: 10px;\n  overflow-y: auto;\n}\n\n#assetPanel .asset-section {\n  margin-bottom: 20px;\n}\n\n#assetPanel .asset-section:last-child {\n  margin-bottom: 0;\n}\n\n#assetPanel .asset-section-title {\n  color: var(--text);\n  text-transform: uppercase;\n  letter-spacing: .5px;\n  margin: 0 0 10px;\n  padding: 0;\n  font-size: 14px;\n  font-weight: 600;\n}\n\n#assetPanel .asset-grid {\n  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));\n  gap: 8px;\n  display: grid;\n}\n\n#assetPanel .asset-item {\n  background: var(--bg-dark);\n  cursor: grab;\n  border-radius: 4px;\n  transition: all .2s;\n  overflow: hidden;\n}\n\n#assetPanel .asset-item:hover {\n  background: var(--bg-light);\n  transform: translateY(-1px);\n  box-shadow: 0 2px 8px #00000026;\n}\n\n#assetPanel .asset-item:active {\n  cursor: grabbing;\n  transform: scale(.95);\n}\n\n#assetPanel .asset-thumbnail {\n  object-fit: cover;\n  background: var(--bg-lighter);\n  width: 100%;\n  height: 60px;\n  display: block;\n}\n\n#assetPanel .video-placeholder {\n  background: var(--bg-lighter);\n  justify-content: center;\n  align-items: center;\n  display: flex;\n  position: relative;\n}\n\n#assetPanel .video-overlay {\n  color: var(--text);\n  text-shadow: 1px 1px 2px #000000b3;\n  font-size: 20px;\n  font-weight: bold;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n\n#assetPanel .audio-placeholder {\n  background: var(--bg-lighter);\n  justify-content: center;\n  align-items: center;\n  display: flex;\n}\n\n#assetPanel .audio-icon {\n  color: var(--text);\n  font-size: 24px;\n  font-weight: bold;\n}\n\n#assetPanel .asset-info {\n  flex-direction: column;\n  gap: 2px;\n  padding: 6px;\n  display: flex;\n}\n\n#assetPanel .asset-name {\n  color: var(--text);\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  font-size: 11px;\n  font-weight: 500;\n  overflow: hidden;\n}\n\n#assetPanel .asset-details {\n  color: var(--text-dark);\n  font-size: 10px;\n}\n\n.components {\n  background-color: var(--bg);\n  color: var(--text);\n  width: 300px;\n  height: 100%;\n  position: fixed;\n  overflow: hidden auto;\n}\n\n.components * {\n  vertical-align: middle;\n}\n\n.collapsible-header {\n  justify-content: space-between;\n  align-items: center;\n  display: flex;\n}\n\n.collapsible-header .entityPrint {\n  color: var(--text);\n}\n\n.collapsible-content {\n  padding: 5px 0;\n}\n\n.componentTitle {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  text-transform: capitalize;\n  color: var(--text);\n  font-weight: 700;\n  overflow: hidden;\n}\n\n.collapsible .static {\n  background: var(--bg-light);\n  border-bottom: 1px solid var(--bg);\n  box-sizing: content-box;\n  cursor: pointer;\n  vertical-align: bottom;\n  height: 20px;\n  margin: 0;\n  padding: 10px 12px;\n  font-size: 12px;\n  font-weight: 600;\n  transition: all .15s;\n}\n\n.collapsible .static:hover {\n  background: var(--bg-lighter);\n}\n\n.collapsible .static .collapse-button {\n  float: left;\n  border: 5px solid #0000;\n  width: 0;\n  height: 0;\n  margin-left: 2px;\n  margin-right: 10px;\n  transition: transform .2s;\n}\n\n.collapsible .menu {\n  text-align: right;\n}\n\n.collapsible .menuafter {\n  color: var(--text-dark);\n  content: "⠇";\n  text-align: right;\n  opacity: .6;\n  padding: 5px;\n  font-size: 14px;\n  transition: opacity .15s;\n}\n\n.collapsible .menuafter:hover {\n  opacity: 1;\n}\n\n.collapsible.collapsed .static .collapse-button {\n  border-left-color: var(--text-dark);\n  margin-top: 5px;\n}\n\n.collapsible:not(.collapsed) .static .collapse-button {\n  border-top-color: var(--text-dark);\n  margin-top: 7px;\n}\n\n.propertyRow {\n  align-items: center;\n  gap: 12px;\n  min-height: 36px;\n  padding: 6px 12px;\n  font-size: 12px;\n  transition: background-color .15s;\n  display: flex;\n}\n\n.propertyRow:hover {\n  background-color: #ffffff05;\n}\n\n.propertyRow .text {\n  cursor: default;\n  text-overflow: ellipsis;\n  vertical-align: middle;\n  width: 90px;\n  min-width: 90px;\n  color: var(--text-dark);\n  text-transform: capitalize;\n  letter-spacing: .2px;\n  font-size: 11px;\n  font-weight: 500;\n  display: inline-block;\n  overflow: hidden;\n}\n\n.propertyRow input.number {\n  width: 100%;\n}\n\n.propertyRow .vec2, .propertyRow .vec3, .propertyRow .vec4 {\n  flex: 1;\n  display: flex;\n}\n\n.propertyRow .map_value {\n  flex: 1;\n  margin: 0;\n}\n\n.propertyRow .Select-control {\n  height: 32px;\n  min-height: 32px;\n  font-size: 12px;\n}\n\n.propertyRow .Select-placeholder, .propertyRow .Select--single > .Select-control .Select-value {\n  line-height: 30px;\n}\n\n.propertyRow .Select-input {\n  height: 30px;\n}\n\n.propertyRow input[type="text"], .propertyRow input[type="number"], .propertyRow input.string, .propertyRow input.number {\n  background: var(--bg-dark);\n  color: var(--text);\n  min-height: 32px;\n  padding: 6px 10px;\n}\n\n:is(.propertyRow input[type="text"], .propertyRow input[type="number"], .propertyRow input.string, .propertyRow input.number):last-child {\n  padding-right: 10px;\n}\n\n:is(.propertyRow input[type="text"], .propertyRow input[type="number"], .propertyRow input.string, .propertyRow input.number):focus {\n  box-shadow: 0 0 0 2px #1faaf226;\n}\n\n.propertyRow input.string {\n  box-sizing: border-box;\n  flex: 1;\n  padding-left: 10px;\n}\n\n.propertyRow .color_value {\n  letter-spacing: .5px;\n  flex: 1;\n  margin: 0;\n}\n\n.propertyRow .color-widget {\n  flex: 1;\n}\n\n.propertyRow .texture {\n  flex: 1;\n  gap: 8px;\n  display: flex;\n}\n\n.propertyRow .texture input {\n  flex: 1;\n  margin-left: 0;\n}\n\nDefined.propertyRow .text {\n  color: var(--text);\n  font-weight: 600;\n  position: relative;\n}\n\nDefined.propertyRow .text:before {\n  content: "";\n  background: var(--primary);\n  border-radius: 50%;\n  width: 3px;\n  height: 3px;\n  position: absolute;\n  top: 50%;\n  left: -8px;\n  transform: translateY(-50%);\n}\n\nspan.subcomponent {\n  color: var(--text-dark);\n  margin-left: 10px;\n  float: none !important;\n  vertical-align: top !important;\n}\n\n#addComponentContainer {\n  justify-content: center;\n  align-items: center;\n  padding: 20px 10px 5px;\n  display: flex;\n}\n\n#addComponentContainer #addComponent {\n  text-align: left;\n  width: 200px;\n}\n\n#addComponentContainer #addComponent .select__control {\n  background: var(--bg-dark);\n  height: 35px;\n  color: var(--primary);\n}\n\n#addComponentContainer #addComponentHeader {\n  margin: 5px 0 10px;\n  font-size: 15px;\n}\n\n#addComponentContainer input[type="text"]:focus {\n  box-shadow: none;\n}\n\n.Select-menu-outer .is-focused span {\n  color: var(--text);\n}\n\n.component-title {\n  align-items: center;\n  display: flex;\n}\n\n#componentEntityHeader .collapsible-header {\n  position: relative;\n  bottom: 4px;\n}\n\n#componentEntityHeader .collapse-button {\n  display: none;\n}\n\n#componentEntityHeader .static {\n  height: 13px;\n}\n\n#componentEntityHeader .entityPrint {\n  padding-left: 5px;\n  font-size: 15px;\n}\n\n#componentEntityHeader .entityName {\n  max-width: 160px;\n  top: 0;\n}\n\n#componentEntityHeader .entityIcons {\n  color: var(--text);\n}\n\n#componentEntityHeader .gltfIcon img {\n  top: 0;\n}\n\n#mixinSelect {\n  width: 160px;\n}\n\n.select__control {\n  cursor: pointer;\n  min-height: 26px;\n  font-family: var(--font-monospace);\n  border: 0;\n  border-radius: 0;\n  font-size: 13px;\n}\n\n.select__indicator {\n  height: 26px;\n}\n\n.select__indicator-separator {\n  display: none;\n}\n\n.select__input {\n  min-height: auto !important;\n}\n\n.select__control, .select__menu {\n  background: var(--bg-dark);\n}\n\n.select__option {\n  padding: 5px 10px;\n}\n\n.select__placeholder, .select__menu {\n  color: var(--text);\n}\n\n.select__single-value {\n  color: var(--primary);\n}\n\n.select__control--is-focused {\n  box-shadow: none !important;\n}\n\n.select__option {\n  cursor: pointer;\n}\n\n.select__label {\n  font-size: 11px;\n}\n\n.select__option--is-focused {\n  background: var(--primary-dark);\n}\n\n.select__value-container {\n  height: 26px;\n  position: static;\n}\n\n.select__value-container.select__value-container--is-multi {\n  height: auto;\n  padding: 6px;\n}\n\n.select__dropdown-indicator {\n  padding: 3px 8px;\n}\n\n.select__multi-value {\n  background: var(--bg);\n  color: var(--primary);\n}\n\n.select__multi-value__label {\n  color: var(--primary);\n}\n\n.select__multi-value__remove:hover {\n  color: var(--text);\n  background: var(--bg);\n}\n\n.modal {\n  z-index: 2147483647;\n  background-color: #0009;\n  width: 100%;\n  height: 100%;\n  animation: .2s ease-out animateopacity;\n  display: flex;\n  position: fixed;\n  top: 0;\n  left: 0;\n  overflow: auto;\n}\n\n.modal h3 {\n  margin: .6em 0;\n  font-size: 18px;\n  font-weight: 100;\n}\n\n.modal button {\n  appearance: none;\n  box-shadow: none;\n  cursor: pointer;\n  background-color: var(--primary);\n  color: var(--text);\n  border: none;\n  border-radius: 0;\n  margin: 0 10px 0 0;\n  padding: 5px 10px;\n  font-size: 12px;\n  line-height: 1.8;\n  display: inline-block;\n}\n\n.modal button:hover, .modal button.hover {\n  background-color: var(--primary-hover);\n  text-shadow: -1px 1px var(--primary-dark);\n}\n\n.modal button:active, .modal button.active {\n  background-color: var(--primary-dark);\n  text-shadow: -1px 1px var(--bg-dark);\n}\n\n.modal button:disabled {\n  background-color: var(--bg);\n  cursor: none;\n}\n\n.modal button:focus {\n  outline: none;\n}\n\n#textureModal .modal-content {\n  width: calc(100% - 50px);\n  height: calc(100% - 50px);\n}\n\n.modal-content {\n  background-color: var(--bg-dark);\n  margin: auto;\n  padding: 0;\n  animation: .2s ease-out animatetop;\n  overflow: hidden;\n  box-shadow: 0 4px 8px #00000080, 0 6px 20px #00000080;\n}\n\n.close {\n  color: var(--text);\n  float: right;\n  font-size: 28px;\n  font-weight: bold;\n}\n\n.close:hover, .close:focus {\n  color: #08f;\n  cursor: pointer;\n  text-decoration: none;\n}\n\n.modal-header {\n  color: var(--text);\n  padding: 2px 16px;\n}\n\n.modal-body {\n  padding: 16px;\n  overflow: auto;\n}\n\n.modal-footer {\n  color: var(--text);\n  padding: 2px 16px;\n}\n\n.gallery {\n  background: var(--bg-dark);\n  flex-wrap: wrap;\n  max-height: calc(100vh - 370px);\n  margin: 15px auto 0;\n  padding: 15px 3px 3px;\n  display: flex;\n  overflow: auto;\n}\n\n.gallery li {\n  cursor: pointer;\n  border-radius: 2px;\n  width: 155px;\n  margin: 8px;\n  overflow: hidden;\n  box-shadow: 0 0 6px #0009;\n}\n\n.gallery li.selected, .gallery li:hover {\n  box-shadow: 0 0 0 2px var(--primary);\n}\n\n.gallery li .detail {\n  background-color: var(--bg-light);\n  min-height: 60px;\n  margin: 0;\n  padding: 3px 10px;\n}\n\n.gallery li .detail span {\n  color: var(--text-dark);\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  width: 140px;\n  margin-top: 4px;\n  display: block;\n  overflow: hidden;\n}\n\n.gallery li .detail.selected span, .gallery li .detail:hover span {\n  color: var(--text);\n}\n\n.gallery li .detail span.title {\n  color: var(--text) !important;\n}\n\n.gallery li.selected .detail, .gallery li:hover .detail {\n  background-color: var(--bg-lighter);\n}\n\n.newimage {\n  background-color: var(--bg-light);\n  color: var(--text-dark);\n  justify-content: space-between;\n  margin-top: 10px;\n  padding: 10px;\n  font-size: 13px;\n  display: flex;\n  overflow: auto;\n}\n\n.newimage .gallery {\n  padding: 16px;\n}\n\n.newimage input {\n  color: var(--primary);\n  padding: 3px 5px;\n}\n\n.preview {\n  width: 150px;\n  padding: 10px;\n}\n\n.preview input {\n  width: 144px;\n  margin: 8px 0;\n  display: block;\n}\n\n.preview button {\n  width: 155px;\n}\n\n.preview .detail .title {\n  color: var(--text);\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  max-width: 155px;\n  display: inline-block;\n  overflow: hidden;\n}\n\n.texture canvas {\n  border: 1px solid var(--bg-light);\n  cursor: pointer;\n}\n\n.texture canvas + input {\n  margin-left: 5px;\n}\n\n.texture svg {\n  padding-right: 5px;\n}\n\n.uploader-normal-button .hidden {\n  display: none;\n}\n\n.assets.search {\n  width: 200px;\n  margin-top: 10px;\n  position: relative;\n}\n\n.assets.search svg {\n  position: absolute;\n  top: 5px;\n  right: 0;\n}\n\n.new_asset_options {\n  margin: 10px;\n}\n\n.new_asset_options > ul {\n  margin-left: 10px;\n  padding: 5px;\n}\n\n.new_asset_options > ul > li {\n  padding: 10px 0;\n}\n\n.new_asset_options .imageUrl {\n  width: 350px;\n  margin-left: 5px;\n}\n\n#toolbar {\n  background-color: var(--bg);\n}\n\n#toolbar .toolbar-container {\n  justify-content: space-between;\n  margin-left: .75rem;\n  margin-right: .75rem;\n  display: flex;\n  position: relative;\n}\n\n#toolbar .add-button {\n  font-size: 1.125rem;\n  line-height: 1.75rem;\n}\n\n#toolbar .dropdown {\n  background-color: var(--bg-dark);\n  z-index: 10;\n  border: 1px solid #d1d5db;\n  border-radius: .25rem;\n  max-height: 12.5rem;\n  position: absolute;\n  top: 100%;\n  left: 0;\n  overflow: auto;\n  box-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -2px #0000000d;\n}\n\n#toolbar .dropdown button {\n  text-align: left;\n  width: 100%;\n  color: var(--text);\n  background-color: #0000;\n  border: none;\n  padding: .5rem 1rem;\n  display: block;\n}\n\n#toolbar .dropdown button:hover {\n  background-color: #f3f4f6;\n}\n\n#toolbar .toolbar-button {\n  font-size: 1.125rem;\n  line-height: 1.75rem;\n}\n\n#viewportBar {\n  background-color: var(--bg);\n  color: var(--text);\n  flex-grow: 2;\n  justify-content: space-between;\n  align-items: center;\n  height: 32px;\n  margin: 0 auto;\n  font-size: 15px;\n  display: flex;\n  top: 0;\n  left: 0;\n  right: 0;\n}\n\n.toolbarButtons {\n  align-items: center;\n  gap: 6px;\n  display: flex;\n}\n\n.toolbarButtons * {\n  vertical-align: middle;\n  margin-left: 0 !important;\n}\n\n.toolbarButtons .button {\n  border-radius: 50%;\n  padding: 4px;\n}\n\n.toolbarButtons .button:hover {\n  background-color: var(--bg-lighter);\n}\n\n.toolbarButtons .active {\n  border: 2px solid var(--primary);\n}\n\n.local-transform {\n  padding-left: 10px;\n  padding-right: 20px;\n}\n\n.local-transform label {\n  color: var(--text-dark);\n  padding-left: 5px;\n}\n\n.local-transform a.button {\n  padding-top: 0;\n}\n\n#cameraSelect {\n  cursor: pointer;\n  width: 120px;\n}\n\n#cameraSelect .select__dropdown-indicator {\n  padding-left: 3px;\n  padding-right: 3px;\n}\n\n#cameraToolbar {\n  align-items: center;\n  margin-left: 5px;\n  display: flex;\n}\n\n#cameraToolbar a {\n  margin-right: 10px;\n}\n\n#cameraToolbar .select__control {\n  background: none;\n}\n\n#cameraToolbar .select__single-value {\n  color: var(--text);\n}\n\n#cameraToolbar .select__single-value:hover {\n  color: var(--primary);\n}\n\n#viewportHud {\n  color: #fff;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  text-align: center;\n  background: #000c;\n  border-radius: 6px;\n  min-width: 200px;\n  padding: 8px 16px;\n  font-size: 14px;\n}\n\n#viewportOverlay {\n  pointer-events: none;\n  z-index: 1000;\n  position: fixed;\n  inset: 32px 0 0;\n}\n\n.viewport-overlay .overlay-content {\n  justify-content: flex-end;\n  align-items: flex-start;\n  width: 100%;\n  height: 100%;\n  padding: 20px;\n  display: flex;\n  position: relative;\n}\n\n.overlay-info {\n  background: var(--bg);\n  color: #fff;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  pointer-events: auto;\n  border-radius: 4px;\n  padding: 8px 12px;\n  font-size: 12px;\n}\n\n.overlay-bottom {\n  background: var(--bg);\n  pointer-events: auto;\n  border-radius: 10px;\n  justify-content: center;\n  align-items: center;\n  padding: 10px;\n  display: flex;\n  position: absolute;\n  bottom: 20px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n\nbody.aframe-inspector-opened, .sponsor-btn, .wf-roboto-n4-active body.aframe-inspector-opened, .wf-roboto-n4-active, .wf-roboto-n4-active .sponsor-btn {\n  font-family: var(--font-normal);\n}\n\nbody.aframe-inspector-opened {\n  background: var(--bg-dark);\n  color: var(--text);\n  margin: 0;\n  font-size: 12px;\n  overflow: hidden;\n}\n\n#aframeInspector .Select, #aframeInspector code, #aframeInspector pre, #aframeInspector input, #aframeInspector textarea, #aframeInspector select {\n  font-family: var(--font-monospace);\n  font-size: 13px;\n}\n\n#aframeInspector .wf-robotomono-n4-active .Select, #aframeInspector .wf-robotomono-n4-active code, #aframeInspector .wf-robotomono-n4-active pre, #aframeInspector .wf-robotomono-n4-active input, #aframeInspector .wf-robotomono-n4-active textarea, #aframeInspector .wf-robotomono-n4-active select {\n  font-family: Roboto Mono, Consolas, Andale Mono, Monaco, Courier New, monospace;\n}\n\n#aframeInspector hr {\n  border: 0;\n  border-top: 1px solid #ccc;\n}\n\n#aframeInspector a {\n  cursor: pointer;\n}\n\n#aframeInspector button {\n  position: relative;\n}\n\n#aframeInspector code {\n  font-family: Consolas, Andale Mono, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;\n}\n\n#aframeInspector textarea {\n  tab-size: 4;\n  white-space: pre;\n  word-wrap: normal;\n}\n\n#aframeInspector textarea.success {\n  border-color: #8b8 !important;\n}\n\n#aframeInspector textarea.fail {\n  background-color: #ff00000d;\n  border-color: red !important;\n}\n\n#aframeInspector textarea, #aframeInspector input {\n  outline: none;\n}\n\n#aframeInspector #scenegraph, #aframeInspector #rightPanel {\n  z-index: 9998;\n}\n\n#aframeInspector #sidebar, #aframeInspector #scenegraph .panel {\n  cursor: default;\n  -webkit-user-select: none;\n  user-select: none;\n}\n\n#aframeInspector .toggle-edit {\n  z-index: 999999999;\n  position: fixed;\n  bottom: 20px;\n  right: 50%;\n  transform: translate(50%);\n}\n\n#aframeInspector .try-editor-btn {\n  background-color: var(--error);\n  box-sizing: content-box;\n  color: var(--text);\n  text-align: center;\n  justify-content: center;\n  gap: 5px;\n  width: 200px;\n  margin: 0;\n  padding: 6px 10px;\n  font-size: 16px;\n  line-height: 24px;\n  text-decoration: none;\n  display: flex;\n}\n\n#aframeInspector .try-editor-btn:hover {\n  color: var(--text);\n  background-color: #e42b5a;\n}\n\n#aframeInspector .sponsor-btn {\n  background-color: var(--text);\n  box-sizing: content-box;\n  color: var(--bg-dark);\n  text-align: center;\n  z-index: 999999999;\n  justify-content: center;\n  gap: 5px;\n  width: 80px;\n  margin: 0;\n  padding: 6px 10px;\n  font-size: 13px;\n  line-height: 16px;\n  text-decoration: none;\n  display: flex;\n  position: fixed;\n  top: 3px;\n  left: 127px;\n}\n\n#aframeInspector .sponsor-btn svg {\n  fill: currentColor;\n  color: #db61a2;\n}\n\n#aframeInspector .sponsor-btn:hover {\n  color: var(--text);\n  background-color: #e42b5a;\n}\n\n#aframeInspector input {\n  color: var(--text);\n  background-color: #0000;\n  border: 1px solid #555;\n}\n\n#aframeInspector input[type="text"], #aframeInspector input[type="number"], #aframeInspector input.string, #aframeInspector input.number {\n  outline: none;\n  min-height: 14px;\n}\n\n#aframeInspector input[type="checkbox"] {\n  appearance: auto;\n  cursor: pointer;\n  width: 18px;\n  height: 18px;\n  margin: 0;\n}\n\n#aframeInspector input[type="checkbox"]:focus {\n  box-shadow: none;\n}\n\n#aframeInspector input.number {\n  cursor: col-resize;\n  border: 0;\n  padding: 2px;\n  font-size: 13px;\n  color: #2cb7ff !important;\n  background-color: #0000 !important;\n}\n\n#aframeInspector input.stringfocus, #aframeInspector input.numberfocus {\n  color: var(--text);\n  cursor: auto;\n  border: 1px solid #20b1fb;\n}\n\n#aframeInspector input.error {\n  border: 1px solid #a00;\n}\n\n#aframeInspector input, #aframeInspector .texture canvas {\n  transition: background-color .1s ease-in-out, border-color .1s ease-in-out, color .1s ease-in-out;\n}\n\n#aframeInspector #sidebar {\n  background: var(--bg);\n  width: 300px;\n}\n\n#aframeInspector #sidebar * {\n  vertical-align: middle;\n}\n\n#aframeInspector input, #aframeInspector textarea, #aframeInspector select {\n  background: var(--bg-dark);\n  border: 1px solid #0000;\n}\n\n#aframeInspector input[type="color"] {\n  background-color: var(--bg-light);\n  border: 1px solid var(--bg-dark);\n  cursor: pointer;\n  width: 50px;\n  height: 25px;\n  padding: 0;\n}\n\n#aframeInspector input[type="color"]::-webkit-color-swatch {\n  border: 0;\n}\n\n#aframeInspector input[type="color"]::-webkit-color-swatch-wrapper {\n  padding: 0;\n}\n\n#aframeInspector input[type="color"]::-moz-color-swatch {\n  border: 0;\n}\n\n#aframeInspector input[type="color"]::-moz-focus-inner {\n  border: 0;\n  padding: 0;\n}\n\n#aframeInspector .hidden {\n  visibility: hidden;\n}\n\n#aframeInspector .hide {\n  display: none;\n}\n\n#aframeInspector a.button {\n  color: var(--text-dark);\n  margin-left: 10px;\n  font-size: 16px;\n  text-decoration: none;\n}\n\n#aframeInspector a.button:hover {\n  color: var(--primary);\n}\n\n#aframeInspector .a-canvas.state-dragging {\n  cursor: grabbing;\n}\n\n#aframeInspector body.dragging-asset .a-canvas {\n  outline: 2px dashed var(--primary);\n  outline-offset: -2px;\n}\n\n#aframeInspector #rightPanel {\n  justify-content: flex-end;\n  align-items: stretch;\n  display: flex;\n  overflow: hidden;\n}\n\n#aframeInspector #inspectorContainer {\n  pointer-events: none;\n  z-index: 999999;\n  justify-content: space-between;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  position: fixed;\n  top: 0;\n  left: 0;\n}\n\n#aframeInspector #scenegraph, #aframeInspector #viewportBar, #aframeInspector #rightPanel {\n  pointer-events: all;\n}\n\n#aframeInspector .toggle-sidebar {\n  z-index: 9998;\n  align-items: center;\n  height: 100%;\n  display: flex;\n  position: absolute;\n}\n\n#aframeInspector .toggle-sidebar a {\n  background-color: var(--bg);\n  color: var(--text-dark);\n  z-index: 9998;\n  padding: 5px;\n}\n\n#aframeInspector .toggle-sidebar a.hover {\n  background-color: var(--primary);\n  color: var(--text);\n}\n\n#aframeInspector .toggle-sidebar.left {\n  top: 0;\n  left: 0;\n}\n\n#aframeInspector .toggle-sidebar.right {\n  top: 0;\n  right: 0;\n}\n\n@keyframes animateopacity {\n  from {\n    opacity: 0;\n  }\n\n  to {\n    opacity: 1;\n  }\n}\n\nsvg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {\n  box-sizing: content-box;\n  overflow: visible;\n}\n\n.svg-inline--fa {\n  vertical-align: -.125em;\n  height: 1em;\n  display: inline-block;\n  overflow: visible;\n}\n\n:root {\n  --font-normal: system-ui, BlinkMacSystemFont, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;\n  --font-monospace: system-ui, BlinkMacSystemFont, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;\n  --primary: #1faaf2;\n  --primary-hover: #6fc5f5;\n  --primary-dark: #155373;\n  --primary-light: #87d0f7;\n  --secondary: #6366f1;\n  --secondary-hover: #818cf8;\n  --secondary-dark: #4338ca;\n  --secondary-light: #a5b4fc;\n  --accent: #f59e0b;\n  --accent-hover: #fbbf24;\n  --accent-dark: #d97706;\n  --accent-light: #fcd34d;\n  --bg: #242424;\n  --bg-dark: #1d1d1d;\n  --bg-light: #333;\n  --bg-lighter: #393939;\n  --text: #c3c3c3;\n  --text-dark: #888;\n  --text-light: #fff;\n  --success: #10b981;\n  --success-dark: #059669;\n  --success-light: #6ee7b7;\n  --warning: #f59e0b;\n  --warning-dark: #d97706;\n  --warning-light: #fcd34d;\n  --error: #ef4444;\n  --error-dark: #dc2626;\n  --error-light: #fca5a5;\n  --info: #3b82f6;\n  --info-dark: #2563eb;\n  --info-light: #93c5fd;\n}\n\n[data-theme="light"] {\n  --primary: #0ea5e9;\n  --primary-hover: #0284c7;\n  --primary-dark: #0369a1;\n  --primary-light: #38bdf8;\n  --secondary: #7c3aed;\n  --secondary-hover: #8b5cf6;\n  --secondary-dark: #6d28d9;\n  --secondary-light: #a78bfa;\n  --accent: #ea580c;\n  --accent-hover: #dc2626;\n  --accent-dark: #c2410c;\n  --accent-light: #fb923c;\n  --bg: #f8fafc;\n  --bg-dark: #e2e8f0;\n  --bg-light: #cbd5e1;\n  --bg-lighter: #94a3b8;\n  --text: #334155;\n  --text-dark: #64748b;\n  --text-light: #0f172a;\n  --success: #059669;\n  --success-dark: #047857;\n  --success-light: #10b981;\n  --warning: #d97706;\n  --warning-dark: #b45309;\n  --warning-light: #f59e0b;\n  --error: #dc2626;\n  --error-dark: #b91c1c;\n  --error-light: #ef4444;\n  --info: #2563eb;\n  --info-dark: #1d4ed8;\n  --info-light: #3b82f6;\n}\n\n[data-theme="high-contrast"] {\n  --primary: #0ff;\n  --primary-hover: #87d0f7;\n  --primary-dark: #0080ff;\n  --primary-light: #fff;\n  --secondary: #f0f;\n  --secondary-hover: #ff80ff;\n  --secondary-dark: purple;\n  --secondary-light: #ffb3ff;\n  --accent: #ff0;\n  --accent-hover: #ffff80;\n  --accent-dark: olive;\n  --accent-light: #ffffb3;\n  --bg: #000;\n  --bg-dark: #000;\n  --bg-light: #333;\n  --bg-lighter: #666;\n  --text: #fff;\n  --text-dark: #ccc;\n  --text-light: #fff;\n  --success: #0f0;\n  --success-dark: green;\n  --success-light: #80ff80;\n  --warning: #ff0;\n  --warning-dark: olive;\n  --warning-light: #ffff80;\n  --error: red;\n  --error-dark: maroon;\n  --error-light: #ff8080;\n  --info: #0080ff;\n  --info-dark: #004080;\n  --info-light: #80c0ff;\n}\n\n[data-theme="blue"] {\n  --primary: #1e40af;\n  --primary-hover: #1d4ed8;\n  --primary-dark: #1e3a8a;\n  --primary-light: #3b82f6;\n  --secondary: #7c2d12;\n  --secondary-hover: #9a3412;\n  --secondary-dark: #5b1f0d;\n  --secondary-light: #ea580c;\n  --accent: #7c3aed;\n  --accent-hover: #8b5cf6;\n  --accent-dark: #6d28d9;\n  --accent-light: #a78bfa;\n  --bg: #0f172a;\n  --bg-dark: #020617;\n  --bg-light: #1e293b;\n  --bg-lighter: #334155;\n  --text: #cbd5e1;\n  --text-dark: #94a3b8;\n  --text-light: #f1f5f9;\n  --success: #059669;\n  --success-dark: #047857;\n  --success-light: #10b981;\n  --warning: #d97706;\n  --warning-dark: #b45309;\n  --warning-light: #f59e0b;\n  --error: #dc2626;\n  --error-dark: #b91c1c;\n  --error-light: #ef4444;\n  --info: #0891b2;\n  --info-dark: #0e7490;\n  --info-light: #22d3ee;\n}\n\n[data-theme="purple"] {\n  --primary: #7c3aed;\n  --primary-hover: #8b5cf6;\n  --primary-dark: #6d28d9;\n  --primary-light: #a78bfa;\n  --secondary: #dc2626;\n  --secondary-hover: #ef4444;\n  --secondary-dark: #b91c1c;\n  --secondary-light: #fca5a5;\n  --accent: #f59e0b;\n  --accent-hover: #fbbf24;\n  --accent-dark: #d97706;\n  --accent-light: #fcd34d;\n  --bg: #1a103d;\n  --bg-dark: #0f0a1f;\n  --bg-light: #2d1b69;\n  --bg-lighter: #4c1d95;\n  --text: #d8b4fe;\n  --text-dark: #a855f7;\n  --text-light: #faf5ff;\n  --success: #10b981;\n  --success-dark: #059669;\n  --success-light: #6ee7b7;\n  --warning: #f59e0b;\n  --warning-dark: #d97706;\n  --warning-light: #fcd34d;\n  --error: #ef4444;\n  --error-dark: #dc2626;\n  --error-light: #fca5a5;\n  --info: #3b82f6;\n  --info-dark: #2563eb;\n  --info-light: #93c5fd;\n}\n\n[data-theme="green"] {\n  --primary: #059669;\n  --primary-hover: #10b981;\n  --primary-dark: #047857;\n  --primary-light: #6ee7b7;\n  --secondary: #7c2d12;\n  --secondary-hover: #9a3412;\n  --secondary-dark: #5b1f0d;\n  --secondary-light: #ea580c;\n  --accent: #7c3aed;\n  --accent-hover: #8b5cf6;\n  --accent-dark: #6d28d9;\n  --accent-light: #a78bfa;\n  --bg: #0f2a27;\n  --bg-dark: #0a1a1a;\n  --bg-light: #1a3a37;\n  --bg-lighter: #2a4a47;\n  --text: #cbd5e1;\n  --text-dark: #94a3b8;\n  --text-light: #f1f5f9;\n  --success: #10b981;\n  --success-dark: #059669;\n  --success-light: #6ee7b7;\n  --warning: #f59e0b;\n  --warning-dark: #d97706;\n  --warning-light: #fcd34d;\n  --error: #dc2626;\n  --error-dark: #b91c1c;\n  --error-light: #ef4444;\n  --info: #0891b2;\n  --info-dark: #0e7490;\n  --info-light: #22d3ee;\n}\n\n[data-theme="cyberpunk"] {\n  --primary: #00ff41;\n  --primary-hover: #3f6;\n  --primary-dark: #0c3;\n  --primary-light: #6f9;\n  --secondary: #ff0080;\n  --secondary-hover: #f39;\n  --secondary-dark: #c06;\n  --secondary-light: #ff66b3;\n  --accent: #ff0;\n  --accent-hover: #ff3;\n  --accent-dark: #cc0;\n  --accent-light: #ff6;\n  --bg: #0a0a0a;\n  --bg-dark: #000;\n  --bg-light: #1a1a1a;\n  --bg-lighter: #333;\n  --text: #00ff41;\n  --text-dark: #3f6;\n  --text-light: #fff;\n  --success: #00ff41;\n  --success-dark: #0c3;\n  --success-light: #6f9;\n  --warning: #ff0;\n  --warning-dark: #cc0;\n  --warning-light: #ff6;\n  --error: #ff0080;\n  --error-dark: #c06;\n  --error-light: #ff66b3;\n  --info: #0080ff;\n  --info-dark: #0040cc;\n  --info-light: #4da6ff;\n}\n\n[data-theme="warm"] {\n  --primary: #d97706;\n  --primary-hover: #f59e0b;\n  --primary-dark: #b45309;\n  --primary-light: #fbbf24;\n  --secondary: #dc2626;\n  --secondary-hover: #ef4444;\n  --secondary-dark: #b91c1c;\n  --secondary-light: #fca5a5;\n  --accent: #7c2d12;\n  --accent-hover: #9a3412;\n  --accent-dark: #5b1f0d;\n  --accent-light: #ea580c;\n  --bg: #2d1810;\n  --bg-dark: #1c0f08;\n  --bg-light: #451a0f;\n  --bg-lighter: #6b2a1a;\n  --text: #fed7aa;\n  --text-dark: #fdba74;\n  --text-light: #fef3c7;\n  --success: #16a34a;\n  --success-dark: #15803d;\n  --success-light: #4ade80;\n  --warning: #d97706;\n  --warning-dark: #b45309;\n  --warning-light: #f59e0b;\n  --error: #dc2626;\n  --error-dark: #b91c1c;\n  --error-light: #ef4444;\n  --info: #0891b2;\n  --info-dark: #0e7490;\n  --info-light: #22d3ee;\n}\n\n[data-theme="ocean"] {\n  --primary: #0891b2;\n  --primary-hover: #0e7490;\n  --primary-dark: #0e7490;\n  --primary-light: #22d3ee;\n  --secondary: #1e40af;\n  --secondary-hover: #1d4ed8;\n  --secondary-dark: #1e3a8a;\n  --secondary-light: #3b82f6;\n  --accent: #06b6d4;\n  --accent-hover: #0891b2;\n  --accent-dark: #0e7490;\n  --accent-light: #22d3ee;\n  --bg: #0c4a6e;\n  --bg-dark: #082f49;\n  --bg-light: #155e75;\n  --bg-lighter: #1e7490;\n  --text: #bae6fd;\n  --text-dark: #7dd3fc;\n  --text-light: #f0f9ff;\n  --success: #10b981;\n  --success-dark: #059669;\n  --success-light: #6ee7b7;\n  --warning: #f59e0b;\n  --warning-dark: #d97706;\n  --warning-light: #fcd34d;\n  --error: #ef4444;\n  --error-dark: #dc2626;\n  --error-light: #fca5a5;\n  --info: #0891b2;\n  --info-dark: #0e7490;\n  --info-light: #22d3ee;\n}\n\n[data-theme="nordic"] {\n  --primary: #5e81ac;\n  --primary-hover: #81a1c1;\n  --primary-dark: #4c566a;\n  --primary-light: #88c0d0;\n  --secondary: #bf616a;\n  --secondary-hover: #d08770;\n  --secondary-dark: #a9444e;\n  --secondary-light: #d98b8b;\n  --accent: #ebcb8b;\n  --accent-hover: #f0d084;\n  --accent-dark: #d4a574;\n  --accent-light: #f2e6c9;\n  --bg: #2e3440;\n  --bg-dark: #1e222a;\n  --bg-light: #434c5e;\n  --bg-lighter: #4c566a;\n  --text: #eceff4;\n  --text-dark: #d8dee9;\n  --text-light: #fff;\n  --success: #a3be8c;\n  --success-dark: #8fbcbb;\n  --success-light: #b8d0b0;\n  --warning: #ebcb8b;\n  --warning-dark: #d4a574;\n  --warning-light: #f0d084;\n  --error: #bf616a;\n  --error-dark: #a9444e;\n  --error-light: #d98b8b;\n  --info: #5e81ac;\n  --info-dark: #4c566a;\n  --info-light: #81a1c1;\n}\n\n[data-theme="candy"] {\n  --primary: #ff69b4;\n  --primary-hover: #ff1493;\n  --primary-dark: #dc143c;\n  --primary-light: #ffb6c1;\n  --secondary: #00ff7f;\n  --secondary-hover: #32cd32;\n  --secondary-dark: #228b22;\n  --secondary-light: #90ee90;\n  --accent: #ff0;\n  --accent-hover: gold;\n  --accent-dark: #daa520;\n  --accent-light: #fffacd;\n  --bg: #fff8dc;\n  --bg-dark: wheat;\n  --bg-light: #ffe4b5;\n  --bg-lighter: #ffebcd;\n  --text: #8b0000;\n  --text-dark: sienna;\n  --text-light: #2f1b14;\n  --success: #32cd32;\n  --success-dark: #228b22;\n  --success-light: #90ee90;\n  --warning: gold;\n  --warning-dark: #daa520;\n  --warning-light: #fffacd;\n  --error: #dc143c;\n  --error-dark: #b22222;\n  --error-light: #ff69b4;\n  --info: #00bfff;\n  --info-dark: #1e90ff;\n  --info-light: #87ceeb;\n}\n\n[data-theme="gruvbox"] {\n  --primary: #fb4934;\n  --primary-hover: #fe8019;\n  --primary-dark: #cc241d;\n  --primary-light: #fc6d5a;\n  --secondary: #b8bb26;\n  --secondary-hover: #fabd2f;\n  --secondary-dark: #98971a;\n  --secondary-light: #c4c92a;\n  --accent: #83a598;\n  --accent-hover: #8ec07c;\n  --accent-dark: #689d6a;\n  --accent-light: #9ccca0;\n  --bg: #282828;\n  --bg-dark: #1d2021;\n  --bg-light: #3c3836;\n  --bg-lighter: #504945;\n  --text: #ebdbb2;\n  --text-dark: #d5c4a1;\n  --text-light: #fbf1c7;\n  --success: #b8bb26;\n  --success-dark: #98971a;\n  --success-light: #c4c92a;\n  --warning: #fabd2f;\n  --warning-dark: #d79921;\n  --warning-light: #fcbc35;\n  --error: #fb4934;\n  --error-dark: #cc241d;\n  --error-light: #fc6d5a;\n  --info: #83a598;\n  --info-dark: #689d6a;\n  --info-light: #9ccca0;\n}\n\n[data-theme="neon-dreams"] {\n  --primary: #ff1493;\n  --primary-hover: #ff69b4;\n  --primary-dark: #dc143c;\n  --primary-light: #ffb6c1;\n  --secondary: #0ff;\n  --secondary-hover: #3ff;\n  --secondary-dark: #0cc;\n  --secondary-light: #6ff;\n  --accent: #ff4500;\n  --accent-hover: tomato;\n  --accent-dark: #dc143c;\n  --accent-light: coral;\n  --bg: #290070;\n  --bg-dark: #1a0040;\n  --bg-light: #3d0090;\n  --bg-lighter: #5200b0;\n  --text: #fff;\n  --text-dark: #ff1493;\n  --text-light: #0ff;\n  --success: #39ff14;\n  --success-dark: #32cd32;\n  --success-light: #7fff00;\n  --warning: #ff0;\n  --warning-dark: gold;\n  --warning-light: #ff9;\n  --error: #ff1493;\n  --error-dark: #dc143c;\n  --error-light: #ffb6c1;\n  --info: #0ff;\n  --info-dark: #0cc;\n  --info-light: #6ff;\n}\n\n.theme-switcher {\n  margin: 10px;\n}\n\n.theme-select {\n  background: var(--bg-dark);\n  border: 1px solid var(--bg-light);\n  color: var(--text);\n  border-radius: 4px;\n  padding: 5px 10px;\n  font-size: 12px;\n}\n\n.theme-select:focus {\n  border-color: var(--primary);\n  outline: none;\n}\n\n.theme-select option {\n  background: var(--bg);\n  color: var(--text);\n}\n\n::-webkit-scrollbar {\n  width: 12px;\n  height: 12px;\n}\n\n::-webkit-scrollbar-track {\n  background: var(--bg-dark);\n  border-radius: 6px;\n}\n\n::-webkit-scrollbar-thumb {\n  background: var(--bg-lighter);\n  border: 2px solid var(--bg-dark);\n  border-radius: 6px;\n  transition: all .2s;\n}\n\n::-webkit-scrollbar-thumb:hover {\n  background: var(--primary);\n  border-color: var(--bg-dark);\n}\n\n::-webkit-scrollbar-thumb:active {\n  background: var(--primary-dark);\n}\n\n::-webkit-scrollbar-corner {\n  background: var(--bg-dark);\n}\n\n* {\n  scrollbar-width: thin;\n  scrollbar-color: var(--bg-lighter) var(--bg-dark);\n}\n\n@property --tw-rotate-x {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-rotate-y {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-rotate-z {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-skew-x {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-skew-y {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-border-style {\n  syntax: "*";\n  inherits: false;\n  initial-value: solid;\n}\n\n@property --tw-font-weight {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-shadow {\n  syntax: "*";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n\n@property --tw-shadow-color {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-shadow-alpha {\n  syntax: "<percentage>";\n  inherits: false;\n  initial-value: 100%;\n}\n\n@property --tw-inset-shadow {\n  syntax: "*";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n\n@property --tw-inset-shadow-color {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-inset-shadow-alpha {\n  syntax: "<percentage>";\n  inherits: false;\n  initial-value: 100%;\n}\n\n@property --tw-ring-color {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-ring-shadow {\n  syntax: "*";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n\n@property --tw-inset-ring-color {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-inset-ring-shadow {\n  syntax: "*";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n\n@property --tw-ring-inset {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-ring-offset-width {\n  syntax: "<length>";\n  inherits: false;\n  initial-value: 0;\n}\n\n@property --tw-ring-offset-color {\n  syntax: "*";\n  inherits: false;\n  initial-value: #fff;\n}\n\n@property --tw-ring-offset-shadow {\n  syntax: "*";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n\n@property --tw-outline-style {\n  syntax: "*";\n  inherits: false;\n  initial-value: solid;\n}\n\n@property --tw-blur {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-brightness {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-contrast {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-grayscale {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-hue-rotate {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-invert {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-opacity {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-saturate {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-sepia {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-drop-shadow {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-drop-shadow-color {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-drop-shadow-alpha {\n  syntax: "<percentage>";\n  inherits: false;\n  initial-value: 100%;\n}\n\n@property --tw-drop-shadow-size {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-backdrop-blur {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-backdrop-brightness {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-backdrop-contrast {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-backdrop-grayscale {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-backdrop-hue-rotate {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-backdrop-invert {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-backdrop-opacity {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-backdrop-saturate {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-backdrop-sepia {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-ease {\n  syntax: "*";\n  inherits: false\n}\n/*$vite$:1*/';
+  __vite_style__.textContent = '/*! tailwindcss v4.1.16 | MIT License | https://tailwindcss.com */\n@layer properties {\n  @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {\n    *, :before, :after, ::backdrop {\n      --tw-rotate-x: initial;\n      --tw-rotate-y: initial;\n      --tw-rotate-z: initial;\n      --tw-skew-x: initial;\n      --tw-skew-y: initial;\n      --tw-border-style: solid;\n      --tw-font-weight: initial;\n      --tw-shadow: 0 0 #0000;\n      --tw-shadow-color: initial;\n      --tw-shadow-alpha: 100%;\n      --tw-inset-shadow: 0 0 #0000;\n      --tw-inset-shadow-color: initial;\n      --tw-inset-shadow-alpha: 100%;\n      --tw-ring-color: initial;\n      --tw-ring-shadow: 0 0 #0000;\n      --tw-inset-ring-color: initial;\n      --tw-inset-ring-shadow: 0 0 #0000;\n      --tw-ring-inset: initial;\n      --tw-ring-offset-width: 0px;\n      --tw-ring-offset-color: #fff;\n      --tw-ring-offset-shadow: 0 0 #0000;\n      --tw-outline-style: solid;\n      --tw-blur: initial;\n      --tw-brightness: initial;\n      --tw-contrast: initial;\n      --tw-grayscale: initial;\n      --tw-hue-rotate: initial;\n      --tw-invert: initial;\n      --tw-opacity: initial;\n      --tw-saturate: initial;\n      --tw-sepia: initial;\n      --tw-drop-shadow: initial;\n      --tw-drop-shadow-color: initial;\n      --tw-drop-shadow-alpha: 100%;\n      --tw-drop-shadow-size: initial;\n      --tw-backdrop-blur: initial;\n      --tw-backdrop-brightness: initial;\n      --tw-backdrop-contrast: initial;\n      --tw-backdrop-grayscale: initial;\n      --tw-backdrop-hue-rotate: initial;\n      --tw-backdrop-invert: initial;\n      --tw-backdrop-opacity: initial;\n      --tw-backdrop-saturate: initial;\n      --tw-backdrop-sepia: initial;\n      --tw-ease: initial;\n    }\n  }\n}\n\n@layer theme {\n  :root, :host {\n    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";\n    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;\n    --color-black: #000;\n    --color-white: #fff;\n    --spacing: .25rem;\n    --font-weight-bold: 700;\n    --radius-md: .375rem;\n    --ease-out: cubic-bezier(0, 0, .2, 1);\n    --ease-in-out: cubic-bezier(.4, 0, .2, 1);\n    --default-transition-duration: .15s;\n    --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);\n    --default-font-family: var(--font-sans);\n    --default-mono-font-family: var(--font-mono);\n  }\n}\n\n@layer base {\n  *, :after, :before, ::backdrop {\n    box-sizing: border-box;\n    border: 0 solid;\n    margin: 0;\n    padding: 0;\n  }\n\n  ::file-selector-button {\n    box-sizing: border-box;\n    border: 0 solid;\n    margin: 0;\n    padding: 0;\n  }\n\n  html, :host {\n    -webkit-text-size-adjust: 100%;\n    tab-size: 4;\n    line-height: 1.5;\n    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");\n    font-feature-settings: var(--default-font-feature-settings, normal);\n    font-variation-settings: var(--default-font-variation-settings, normal);\n    -webkit-tap-highlight-color: transparent;\n  }\n\n  hr {\n    height: 0;\n    color: inherit;\n    border-top-width: 1px;\n  }\n\n  abbr:where([title]) {\n    -webkit-text-decoration: underline dotted;\n    text-decoration: underline dotted;\n  }\n\n  h1, h2, h3, h4, h5, h6 {\n    font-size: inherit;\n    font-weight: inherit;\n  }\n\n  a {\n    color: inherit;\n    -webkit-text-decoration: inherit;\n    -webkit-text-decoration: inherit;\n    -webkit-text-decoration: inherit;\n    text-decoration: inherit;\n  }\n\n  b, strong {\n    font-weight: bolder;\n  }\n\n  code, kbd, samp, pre {\n    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);\n    font-feature-settings: var(--default-mono-font-feature-settings, normal);\n    font-variation-settings: var(--default-mono-font-variation-settings, normal);\n    font-size: 1em;\n  }\n\n  small {\n    font-size: 80%;\n  }\n\n  sub, sup {\n    vertical-align: baseline;\n    font-size: 75%;\n    line-height: 0;\n    position: relative;\n  }\n\n  sub {\n    bottom: -.25em;\n  }\n\n  sup {\n    top: -.5em;\n  }\n\n  table {\n    text-indent: 0;\n    border-color: inherit;\n    border-collapse: collapse;\n  }\n\n  :-moz-focusring {\n    outline: auto;\n  }\n\n  progress {\n    vertical-align: baseline;\n  }\n\n  summary {\n    display: list-item;\n  }\n\n  ol, ul, menu {\n    list-style: none;\n  }\n\n  img, svg, video, canvas, audio, iframe, embed, object {\n    vertical-align: middle;\n    display: block;\n  }\n\n  img, video {\n    max-width: 100%;\n    height: auto;\n  }\n\n  button, input, select, optgroup, textarea {\n    font: inherit;\n    font-feature-settings: inherit;\n    font-variation-settings: inherit;\n    letter-spacing: inherit;\n    color: inherit;\n    opacity: 1;\n    background-color: #0000;\n    border-radius: 0;\n  }\n\n  ::file-selector-button {\n    font: inherit;\n    font-feature-settings: inherit;\n    font-variation-settings: inherit;\n    letter-spacing: inherit;\n    color: inherit;\n    opacity: 1;\n    background-color: #0000;\n    border-radius: 0;\n  }\n\n  :where(select:is([multiple], [size])) optgroup {\n    font-weight: bolder;\n  }\n\n  :where(select:is([multiple], [size])) optgroup option {\n    padding-inline-start: 20px;\n  }\n\n  ::file-selector-button {\n    margin-inline-end: 4px;\n  }\n\n  ::placeholder {\n    opacity: 1;\n  }\n\n  @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {\n    ::placeholder {\n      color: currentColor;\n    }\n\n    @supports (color: color-mix(in lab, red, red)) {\n      ::placeholder {\n        color: color-mix(in oklab, currentcolor 50%, transparent);\n      }\n    }\n  }\n\n  textarea {\n    resize: vertical;\n  }\n\n  ::-webkit-search-decoration {\n    -webkit-appearance: none;\n  }\n\n  ::-webkit-date-and-time-value {\n    min-height: 1lh;\n    text-align: inherit;\n  }\n\n  ::-webkit-datetime-edit {\n    display: inline-flex;\n  }\n\n  ::-webkit-datetime-edit-fields-wrapper {\n    padding: 0;\n  }\n\n  ::-webkit-datetime-edit {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-year-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-month-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-day-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-hour-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-minute-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-second-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-millisecond-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-datetime-edit-meridiem-field {\n    padding-block: 0;\n  }\n\n  ::-webkit-calendar-picker-indicator {\n    line-height: 1;\n  }\n\n  :-moz-ui-invalid {\n    box-shadow: none;\n  }\n\n  button, input:where([type="button"], [type="reset"], [type="submit"]) {\n    appearance: button;\n  }\n\n  ::file-selector-button {\n    appearance: button;\n  }\n\n  ::-webkit-inner-spin-button {\n    height: auto;\n  }\n\n  ::-webkit-outer-spin-button {\n    height: auto;\n  }\n\n  [hidden]:where(:not([hidden="until-found"])) {\n    display: none !important;\n  }\n}\n\n@layer components;\n\n@layer utilities {\n  .\\!visible {\n    visibility: visible !important;\n  }\n\n  .collapse {\n    visibility: collapse;\n  }\n\n  .invisible {\n    visibility: hidden;\n  }\n\n  .visible {\n    visibility: visible;\n  }\n\n  .visible\\! {\n    visibility: visible !important;\n  }\n\n  .absolute {\n    position: absolute;\n  }\n\n  .fixed {\n    position: fixed;\n  }\n\n  .relative {\n    position: relative;\n  }\n\n  .static {\n    position: static;\n  }\n\n  .sticky {\n    position: sticky;\n  }\n\n  .top-4 {\n    top: calc(var(--spacing) * 4);\n  }\n\n  .top-4\\! {\n    top: calc(var(--spacing) * 4) !important;\n  }\n\n  .isolate {\n    isolation: isolate;\n  }\n\n  .container {\n    width: 100%;\n  }\n\n  @media (min-width: 40rem) {\n    .container {\n      max-width: 40rem;\n    }\n  }\n\n  @media (min-width: 48rem) {\n    .container {\n      max-width: 48rem;\n    }\n  }\n\n  @media (min-width: 64rem) {\n    .container {\n      max-width: 64rem;\n    }\n  }\n\n  @media (min-width: 80rem) {\n    .container {\n      max-width: 80rem;\n    }\n  }\n\n  @media (min-width: 96rem) {\n    .container {\n      max-width: 96rem;\n    }\n  }\n\n  .m-auto {\n    margin: auto;\n  }\n\n  .mb-8 {\n    margin-bottom: calc(var(--spacing) * 8);\n  }\n\n  .block {\n    display: block;\n  }\n\n  .contents {\n    display: contents;\n  }\n\n  .flex {\n    display: flex;\n  }\n\n  .grid {\n    display: grid;\n  }\n\n  .grid\\! {\n    display: grid !important;\n  }\n\n  .hidden {\n    display: none;\n  }\n\n  .inline {\n    display: inline;\n  }\n\n  .inline-block {\n    display: inline-block;\n  }\n\n  .inline-grid {\n    display: inline-grid;\n  }\n\n  .table {\n    display: table;\n  }\n\n  .h-4 {\n    height: calc(var(--spacing) * 4);\n  }\n\n  .min-h-10 {\n    min-height: calc(var(--spacing) * 10);\n  }\n\n  .w-4 {\n    width: calc(var(--spacing) * 4);\n  }\n\n  .w-full {\n    width: 100%;\n  }\n\n  .min-w-full {\n    min-width: 100%;\n  }\n\n  .flex-shrink, .shrink {\n    flex-shrink: 1;\n  }\n\n  .flex-grow, .grow {\n    flex-grow: 1;\n  }\n\n  .border-collapse {\n    border-collapse: collapse;\n  }\n\n  .transform {\n    transform: var(--tw-rotate-x, ) var(--tw-rotate-y, ) var(--tw-rotate-z, ) var(--tw-skew-x, ) var(--tw-skew-y, );\n  }\n\n  .cursor-pointer {\n    cursor: pointer;\n  }\n\n  .resize {\n    resize: both;\n  }\n\n  .flex-wrap {\n    flex-wrap: wrap;\n  }\n\n  .items-center {\n    align-items: center;\n  }\n\n  .justify-between {\n    justify-content: space-between;\n  }\n\n  .justify-center {\n    justify-content: center;\n  }\n\n  .gap-2 {\n    gap: calc(var(--spacing) * 2);\n  }\n\n  .rounded-md {\n    border-radius: var(--radius-md);\n  }\n\n  .border {\n    border-style: var(--tw-border-style);\n    border-width: 1px;\n  }\n\n  .border-3 {\n    border-style: var(--tw-border-style);\n    border-width: 3px;\n  }\n\n  .border-black {\n    border-color: var(--color-black);\n  }\n\n  .border-black\\/50 {\n    border-color: #00000080;\n  }\n\n  @supports (color: color-mix(in lab, red, red)) {\n    .border-black\\/50 {\n      border-color: color-mix(in oklab, var(--color-black) 50%, transparent);\n    }\n  }\n\n  .bg-\\[var\\(--bg-dark\\)\\] {\n    background-color: var(--bg-dark);\n  }\n\n  .bg-white {\n    background-color: var(--color-white);\n  }\n\n  .p-1 {\n    padding: calc(var(--spacing) * 1);\n  }\n\n  .px-2 {\n    padding-inline: calc(var(--spacing) * 2);\n  }\n\n  .font-bold {\n    --tw-font-weight: var(--font-weight-bold);\n    font-weight: var(--font-weight-bold);\n  }\n\n  .text-black {\n    color: var(--color-black);\n  }\n\n  .text-black\\/50 {\n    color: #00000080;\n  }\n\n  @supports (color: color-mix(in lab, red, red)) {\n    .text-black\\/50 {\n      color: color-mix(in oklab, var(--color-black) 50%, transparent);\n    }\n  }\n\n  .uppercase {\n    text-transform: uppercase;\n  }\n\n  .underline {\n    text-decoration-line: underline;\n  }\n\n  .shadow {\n    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, #0000001a), 0 1px 2px -1px var(--tw-shadow-color, #0000001a);\n    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);\n  }\n\n  .ring {\n    --tw-ring-shadow: var(--tw-ring-inset, ) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);\n    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);\n  }\n\n  .outline {\n    outline-style: var(--tw-outline-style);\n    outline-width: 1px;\n  }\n\n  .blur {\n    --tw-blur: blur(8px);\n    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );\n  }\n\n  .\\!filter {\n    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, ) !important;\n  }\n\n  .filter {\n    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );\n  }\n\n  .backdrop-filter {\n    -webkit-backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );\n    backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );\n  }\n\n  .transition {\n    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;\n    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));\n    transition-duration: var(--tw-duration, var(--default-transition-duration));\n  }\n\n  .ease-in-out {\n    --tw-ease: var(--ease-in-out);\n    transition-timing-function: var(--ease-in-out);\n  }\n\n  .ease-out {\n    --tw-ease: var(--ease-out);\n    transition-timing-function: var(--ease-out);\n  }\n\n  @media (hover: hover) {\n    .hover\\:bg-\\[var\\(--secondary\\)\\]:hover {\n      background-color: var(--secondary);\n    }\n  }\n}\n\n.entityPrint {\n  font-family: var(--font-normal);\n  line-height: 1.15em;\n}\n\n.entityName {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  display: inline-block;\n  position: relative;\n  top: 3px;\n  overflow: hidden;\n}\n\n[data-entity-name-type="id"] {\n  color: var(--error);\n}\n\n[data-entity-name-type="class"] {\n  color: var(--success);\n}\n\n[data-entity-name-type="mixin"] {\n  color: var(--warning);\n}\n\n.help-lists {\n  justify-content: space-around;\n  display: flex;\n}\n\n.help-list {\n  width: 350px;\n  margin: 0;\n  padding: 0 0 10px;\n  list-style: none;\n}\n\n.help-list li {\n  margin-right: 2.5em;\n}\n\n.help-key-unit {\n  margin-right: 2em;\n  padding: 5px 0;\n  line-height: 1.8;\n}\n\n.help-key {\n  min-width: 60px;\n  margin-right: 4px;\n  position: relative;\n  bottom: 2px;\n}\n\n.help-key span {\n  background-color: var(--bg-light);\n  border: 1px solid var(--bg-lighter);\n  box-shadow: 0 0 5px var(--bg-dark);\n  color: var(--text-dark);\n  text-align: center;\n  background-repeat: repeat-x;\n  border-radius: 3px;\n  padding: 0 8px;\n  font-size: 12px;\n  display: inline-block;\n}\n\n.help-key-def {\n  color: var(--text-dark);\n  margin-left: 1em;\n  display: inline-block;\n}\n\ninput.number {\n  background: var(--bg-dark);\n  border: 1px solid var(--bg-lighter);\n  color: var(--text);\n  cursor: col-resize;\n  text-align: center;\n  min-width: 60px;\n  font-size: 12px;\n  font-weight: 500;\n  font-family: var(--font-monospace);\n  border-radius: 6px;\n  padding: 6px 10px;\n  transition: all .15s;\n  position: relative;\n}\n\ninput.number:hover {\n  border-color: var(--primary);\n  background: var(--bg-light);\n  box-shadow: 0 0 0 1px #1faaf21a;\n}\n\ninput.number:focus {\n  cursor: text;\n  border-color: var(--primary);\n  background: var(--bg);\n  outline: none;\n  box-shadow: 0 0 0 3px #1faaf233;\n}\n\ninput.number:active {\n  cursor: col-resize;\n}\n\n.vec3, .vec2, .vec4 {\n  gap: 4px;\n  width: 100%;\n  display: flex;\n}\n\n:is(.vec3, .vec2, .vec4) .vec-input-wrapper {\n  pointer-events: auto;\n  flex: 1;\n  min-width: 0;\n  position: relative;\n}\n\n:is(.vec3, .vec2, .vec4) .vec-input-wrapper:hover:after {\n  content: "";\n  opacity: .5;\n  pointer-events: none;\n  border-radius: 1px;\n  height: 2px;\n  position: absolute;\n  bottom: -2px;\n  left: 6px;\n  right: 6px;\n}\n\n:is(.vec3, .vec2, .vec4) .vec-input-wrapper:first-child:hover:after {\n  background: #ff6b6b;\n}\n\n:is(.vec3, .vec2, .vec4) .vec-input-wrapper:nth-child(2):hover:after {\n  background: #51cf66;\n}\n\n:is(.vec3, .vec2, .vec4) .vec-input-wrapper:nth-child(3):hover:after {\n  background: #339af0;\n}\n\n:is(.vec3, .vec2, .vec4) .vec-input-wrapper:nth-child(4):hover:after {\n  background: #cc5de8;\n}\n\n:is(.vec3, .vec2, .vec4) .vec-input-wrapper:first-child:before {\n  content: "X";\n  color: #ff6b6b;\n  z-index: 1;\n  pointer-events: none;\n  text-shadow: 0 1px 2px #0000004d;\n  font-size: 10px;\n  font-weight: 700;\n  position: absolute;\n  top: 50%;\n  left: 4px;\n  transform: translateY(-50%);\n}\n\n:is(.vec3, .vec2, .vec4) .vec-input-wrapper:nth-child(2):before {\n  content: "Y";\n  color: #51cf66;\n  z-index: 1;\n  pointer-events: none;\n  text-shadow: 0 1px 2px #0000004d;\n  font-size: 10px;\n  font-weight: 700;\n  position: absolute;\n  top: 50%;\n  left: 4px;\n  transform: translateY(-50%);\n}\n\n:is(.vec3, .vec2, .vec4) .vec-input-wrapper:nth-child(3):before {\n  content: "Z";\n  color: #339af0;\n  z-index: 1;\n  pointer-events: none;\n  text-shadow: 0 1px 2px #0000004d;\n  font-size: 10px;\n  font-weight: 700;\n  position: absolute;\n  top: 50%;\n  left: 4px;\n  transform: translateY(-50%);\n}\n\n:is(.vec3, .vec2, .vec4) .vec-input-wrapper:nth-child(4):before {\n  content: "W";\n  color: #cc5de8;\n  z-index: 1;\n  pointer-events: none;\n  text-shadow: 0 1px 2px #0000004d;\n  font-size: 10px;\n  font-weight: 700;\n  position: absolute;\n  top: 50%;\n  left: 4px;\n  transform: translateY(-50%);\n}\n\n:is(.vec3, .vec2, .vec4) input.number {\n  cursor: col-resize;\n  pointer-events: auto;\n  z-index: 2;\n  -webkit-user-select: none;\n  user-select: none;\n  width: 100%;\n  padding-left: 32px;\n  position: relative;\n}\n\n:is(.vec3, .vec2, .vec4) input.number:hover {\n  cursor: col-resize;\n}\n\n.color-widget {\n  background: var(--bg-dark);\n  border: 1px solid var(--bg-lighter);\n  border-radius: 6px;\n  align-items: center;\n  gap: 6px;\n  width: 100%;\n  min-width: 0;\n  max-width: 100%;\n  padding: 3px;\n  transition: all .15s;\n  display: flex;\n  overflow: hidden;\n}\n\n.color-widget:hover {\n  border-color: var(--primary);\n  background: var(--bg-light);\n  box-shadow: 0 0 0 1px #1faaf21a;\n}\n\n.color-widget:focus-within {\n  border-color: var(--primary);\n  background: var(--bg);\n  box-shadow: 0 0 0 3px #1faaf233;\n}\n\n.color-widget input.color {\n  cursor: pointer;\n  border: none;\n  border-radius: 4px;\n  flex-shrink: 0;\n  width: 28px;\n  min-width: 28px;\n  height: 24px;\n  padding: 0;\n  transition: transform .15s;\n  overflow: hidden;\n  box-shadow: 0 2px 4px #0003, inset 0 0 0 1px #ffffff1a;\n}\n\n.color-widget input.color:hover {\n  transform: scale(1.05);\n}\n\n.color-widget input.color:active {\n  transform: scale(.98);\n}\n\n.color-widget input.color::-webkit-color-swatch-wrapper {\n  padding: 0;\n}\n\n.color-widget input.color::-webkit-color-swatch {\n  border: none;\n  border-radius: 4px;\n}\n\n.color-widget input.color::-moz-color-swatch {\n  border: none;\n  border-radius: 4px;\n}\n\n.color-widget input.color_value {\n  color: var(--text);\n  font-size: 11px;\n  font-weight: 600;\n  font-family: var(--font-monospace);\n  text-transform: uppercase;\n  letter-spacing: .3px;\n  background: none;\n  border: none;\n  outline: none;\n  flex: 1;\n  min-width: 0;\n  padding: 4px;\n}\n\n.color-widget input.color_value::selection {\n  background: var(--primary);\n  color: #fff;\n}\n\n.boolean-widget {\n  background: var(--bg-dark);\n  border: 1px solid var(--bg-lighter);\n  cursor: pointer;\n  border-radius: 6px;\n  width: 60px;\n  height: 28px;\n  transition: all .15s;\n  display: inline-block;\n  position: relative;\n  overflow: hidden;\n}\n\n.boolean-widget:hover {\n  border-color: var(--primary);\n  background: var(--bg-light);\n}\n\n.boolean-widget input[type="checkbox"] {\n  opacity: 0;\n  width: 0;\n  height: 0;\n  position: absolute;\n}\n\n.boolean-widget label {\n  cursor: pointer;\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  display: block;\n  position: relative;\n}\n\n.boolean-widget .boolean-text {\n  letter-spacing: .5px;\n  font-size: 10px;\n  font-weight: 600;\n  transition: all .15s;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n\n.boolean-widget input[type="checkbox"]:checked + label .boolean-text {\n  color: var(--text-light);\n}\n\n.boolean-widget input[type="checkbox"]:not(:checked) + label .boolean-text {\n  color: var(--text-dark);\n}\n\n.boolean-widget input[type="checkbox"]:checked + label {\n  background: var(--primary);\n  border-color: var(--primary);\n  color: var(--text-light);\n}\n\n.boolean-widget input[type="checkbox"]:not(:checked) + label {\n  background: var(--bg-dark);\n  border-color: var(--bg-lighter);\n  color: var(--text);\n}\n\n.boolean-widget:focus-within {\n  box-shadow: 0 0 0 3px #1faaf233;\n}\n\ninput.string {\n  background: var(--bg-dark);\n  border: 1px solid var(--bg-lighter);\n  color: var(--text);\n  width: 100%;\n  font-size: 12px;\n  font-weight: 500;\n  font-family: var(--font-monospace);\n  border-radius: 6px;\n  padding: 6px 10px;\n  transition: all .15s;\n}\n\ninput.string::placeholder {\n  color: var(--text-dark);\n  opacity: .5;\n}\n\ninput.string:hover {\n  border-color: var(--primary);\n  background: var(--bg-light);\n  box-shadow: 0 0 0 1px #1faaf21a;\n}\n\ninput.string:focus {\n  border-color: var(--primary);\n  background: var(--bg);\n  outline: none;\n  box-shadow: 0 0 0 3px #1faaf233;\n}\n\n.select-widget {\n  flex-direction: column;\n  align-items: flex-start;\n  gap: 6px;\n  width: 100%;\n  min-height: 32px;\n  max-height: 160px;\n  padding: 2px;\n  display: flex;\n  overflow-y: auto;\n}\n\n.select-widget:not(.grouped) {\n  flex-flow: wrap;\n  align-items: center;\n  max-height: none;\n}\n\n.select-widget.grouped {\n  gap: 4px;\n}\n\n.select-group {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 4px;\n  width: 100%;\n  display: flex;\n}\n\n.select-widget::-webkit-scrollbar {\n  width: 4px;\n}\n\n.select-widget::-webkit-scrollbar-track {\n  background: var(--bg-dark);\n  border-radius: 2px;\n}\n\n.select-widget::-webkit-scrollbar-thumb {\n  background: var(--bg-lighter);\n  border-radius: 2px;\n}\n\n.select-widget::-webkit-scrollbar-thumb:hover {\n  background: var(--primary);\n}\n\n.select-option {\n  background: var(--bg-dark);\n  border: 1px solid var(--bg-lighter);\n  color: var(--text);\n  font-size: 11px;\n  font-weight: 500;\n  font-family: var(--font-monospace);\n  cursor: pointer;\n  white-space: nowrap;\n  border-radius: 6px;\n  flex-shrink: 0;\n  padding: 4px 8px;\n  transition: all .15s;\n}\n\n.select-option:hover {\n  border-color: var(--primary);\n  background: var(--bg-light);\n}\n\n.select-option.selected {\n  background: var(--primary);\n  border-color: var(--primary);\n  color: var(--text-light);\n  font-weight: 600;\n}\n\n.select-option:focus {\n  outline: none;\n  box-shadow: 0 0 0 3px #1faaf233;\n}\n\n#scenegraph {\n  background: var(--bg);\n  border-top: 1px solid var(--bg-dark);\n  flex-direction: column;\n  width: 300px;\n  min-width: 300px;\n  display: flex;\n  overflow: auto;\n}\n\n#scenegraph .entity {\n  background: var(--bg);\n  cursor: pointer;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  min-height: 24px;\n  padding: 2px 8px;\n  font-weight: bolder;\n  transition: background-color .15s, border-color .15s;\n  display: flex;\n  position: relative;\n}\n\n#scenegraph .entity:hover {\n  background: var(--bg-light);\n}\n\n#scenegraph .entity.active {\n  background-color: var(--bg-dark);\n  color: var(--primary);\n}\n\n#scenegraph .entity.novisible {\n  opacity: .6;\n}\n\n#scenegraph .entity.drag-over {\n  background: var(--bg-lighter);\n  border: 2px dashed var(--primary);\n  border-radius: 4px;\n}\n\n#scenegraph .entity[draggable="true"] {\n  cursor: grab;\n}\n\n#scenegraph .entity[draggable="true"]:active {\n  cursor: grabbing;\n  opacity: .5;\n}\n\n#scenegraph .tree-indent {\n  flex: 1;\n  align-items: center;\n  display: flex;\n  position: relative;\n}\n\n#scenegraph .tree-line {\n  opacity: 1;\n  background: none;\n  width: 1px;\n  height: 100%;\n  position: absolute;\n}\n\n#scenegraph .tree-line:before {\n  content: "";\n  background: var(--bg-lighter);\n  opacity: .6;\n  width: 3px;\n  height: 3px;\n  box-shadow: 0 0 1px var(--bg-dark);\n  border-radius: 50%;\n  position: absolute;\n  top: 0;\n  left: 50%;\n  transform: translateX(-50%);\n}\n\n#scenegraph .tree-line:after {\n  content: "";\n  background-image: radial-gradient(circle, var(--bg-lighter) 1px, transparent 1px);\n  opacity: .4;\n  background-size: 1px 4px;\n  width: 100%;\n  height: calc(100% - 8px);\n  position: absolute;\n  top: 5px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n\n#scenegraph .entity:hover .tree-line:before, #scenegraph .entity:hover .tree-line:after {\n  opacity: .8;\n  background-image: radial-gradient(circle, var(--primary) 1px, transparent 1px);\n}\n\n#scenegraph .entity:hover .tree-line:before {\n  background: var(--primary);\n  box-shadow: 0 0 2px var(--primary);\n}\n\n#scenegraph .entity.active .tree-line:before, #scenegraph .entity.active .tree-line:after {\n  opacity: 1;\n  background-image: radial-gradient(circle, var(--accent) 1px, transparent 1px);\n}\n\n#scenegraph .entity.active .tree-line:before {\n  background: var(--accent);\n  box-shadow: 0 0 4px var(--accent);\n}\n\n#scenegraph .expand-btn {\n  color: var(--text-dark);\n  cursor: pointer;\n  background: none;\n  border: none;\n  border-radius: 2px;\n  justify-content: center;\n  align-items: center;\n  width: 16px;\n  height: 16px;\n  margin-right: 4px;\n  padding: 2px 4px;\n  font-size: 10px;\n  display: flex;\n}\n\n#scenegraph .expand-btn:hover {\n  background: var(--bg-light);\n  color: var(--text);\n}\n\n#scenegraph .expand-btn:focus {\n  outline: 1px solid var(--primary);\n}\n\n#scenegraph .entity-content {\n  flex: 1;\n  align-items: center;\n  padding: 2px 0;\n  display: flex;\n}\n\n#scenegraph .entity-actions {\n  align-items: center;\n  gap: 2px;\n  display: flex;\n}\n\n#scenegraph .action-btn {\n  color: var(--text-dark);\n  cursor: pointer;\n  background: none;\n  border: none;\n  border-radius: 3px;\n  justify-content: center;\n  align-items: center;\n  width: 20px;\n  height: 20px;\n  padding: 4px;\n  font-size: 12px;\n  transition: all .15s;\n  display: flex;\n}\n\n#scenegraph .action-btn:hover {\n  background: var(--bg-light);\n  color: var(--text);\n}\n\n#scenegraph .action-btn:focus {\n  outline: 1px solid var(--primary);\n}\n\n#scenegraph .action-btn.clone-btn:hover {\n  color: #10b981;\n}\n\n#scenegraph .action-btn.delete-btn:hover {\n  color: #ef4444;\n}\n\n#scenegraph .action-btn.visibility-btn:hover {\n  color: #3b82f6;\n}\n\n#scenegraph .action-btn.collapse-all-btn:hover {\n  color: #f59e0b;\n}\n\n#scenegraph .component:hover {\n  color: var(--primary);\n}\n\n#scenegraph .entityIcons {\n  margin-left: 2px;\n}\n\n#scenegraph .id {\n  color: var(--text-dark);\n}\n\n#scenegraph .option.active .id {\n  color: var(--text);\n}\n\n#scenegraph .search {\n  padding: 5px;\n  font-size: 16px;\n  position: relative;\n}\n\n#scenegraph .search input {\n  color: var(--text);\n  background: var(--bg-dark);\n  text-indent: 10px;\n  border-radius: 5px;\n  width: 216px;\n  height: 22px;\n}\n\n#scenegraph .search > svg, #scenegraph .search a.button {\n  position: absolute;\n  top: 10px;\n  right: 14px;\n}\n\n#scenegraph .outliner {\n  background: var(--bg);\n  color: var(--text);\n  cursor: default;\n  outline: none;\n  flex: auto;\n  width: 100%;\n  height: calc(100% - 98px);\n  padding: 0;\n  font-size: 13px;\n  line-height: normal;\n  overflow-y: auto;\n}\n\n#scenegraph .exit {\n  background-color: var(--bg-dark);\n  color: #fff;\n  z-index: 10;\n  border-radius: .375rem;\n  width: 30px;\n  height: 30px;\n  padding: .5rem;\n  transition: background-color .2s ease-in-out;\n  box-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -2px #0000000d;\n}\n\n#scenegraph .exit:hover {\n  background-color: #dc2626;\n}\n\n#assetPanel {\n  background: var(--bg);\n  border-top: 1px solid var(--bg-dark);\n  min-height: 300px;\n  padding: 10px;\n  overflow: hidden auto;\n}\n\n#assetPanel .asset-tabs {\n  border-bottom: 1px solid var(--border);\n  gap: 4px;\n  margin-bottom: 12px;\n  padding-bottom: 4px;\n  display: flex;\n}\n\n#assetPanel .tab {\n  color: var(--text-muted);\n  cursor: pointer;\n  background: none;\n  border: none;\n  border-radius: 4px 4px 0 0;\n  align-items: center;\n  gap: 6px;\n  padding: 6px 12px;\n  font-size: 12px;\n  transition: all .2s;\n  display: inline-flex;\n}\n\n#assetPanel .tab:hover {\n  background: var(--bg-light);\n  color: var(--text);\n}\n\n#assetPanel .tab.active {\n  background: var(--bg-light);\n  color: var(--text);\n  font-weight: 600;\n}\n\n#assetPanel .search-box {\n  margin-bottom: 12px;\n}\n\n#assetPanel .search-input {\n  background: var(--bg-dark);\n  border: 1px solid var(--border);\n  width: 100%;\n  color: var(--text);\n  border-radius: 4px;\n  outline: none;\n  padding: 8px 12px;\n  font-size: 13px;\n  transition: all .2s;\n}\n\n#assetPanel .search-input::placeholder {\n  color: var(--text-muted);\n}\n\n#assetPanel .search-input:focus {\n  border-color: var(--color-primary);\n  background: var(--bg);\n}\n\n#assetPanel .asset-section {\n  margin-bottom: 20px;\n}\n\n#assetPanel .asset-section:last-child {\n  margin-bottom: 0;\n}\n\n#assetPanel .asset-section-title {\n  color: var(--text);\n  text-transform: uppercase;\n  letter-spacing: .5px;\n  margin: 0 0 10px;\n  padding: 0;\n  font-size: 14px;\n  font-weight: 600;\n}\n\n#assetPanel .asset-dropzone {\n  border: 1px dashed var(--border);\n  color: var(--text-muted);\n  text-align: center;\n  cursor: pointer;\n  background: var(--bg-dark);\n  border-radius: 6px;\n  margin-bottom: 10px;\n  padding: 10px;\n  font-size: 12px;\n}\n\n#assetPanel .asset-dropzone.compact {\n  justify-content: center;\n  align-items: center;\n  gap: 8px;\n  padding: 8px;\n  font-size: 11px;\n  display: flex;\n}\n\n#assetPanel .asset-dropzone.drag-over {\n  border-color: var(--color-primary);\n  color: var(--text);\n  background: var(--bg-light);\n}\n\n#assetPanel .asset-toolbar {\n  justify-content: space-between;\n  align-items: center;\n  gap: 8px;\n  margin-bottom: 8px;\n  display: flex;\n}\n\n#assetPanel .asset-action-btn {\n  background: var(--bg-dark);\n  border: 1px solid var(--border);\n  color: var(--text);\n  cursor: pointer;\n  border-radius: 4px;\n  align-items: center;\n  gap: 6px;\n  padding: 5px 8px;\n  font-size: 11px;\n  display: inline-flex;\n}\n\n#assetPanel .asset-filter-compact {\n  color: var(--text-muted);\n  align-items: center;\n  gap: 6px;\n  display: inline-flex;\n}\n\n#assetPanel .asset-filter-compact select {\n  background: var(--bg-dark);\n  border: 1px solid var(--border);\n  color: var(--text);\n  border-radius: 4px;\n  padding: 4px 6px;\n  font-size: 11px;\n}\n\n#assetPanel .asset-controls {\n  align-items: center;\n  gap: 8px;\n  margin-bottom: 8px;\n  display: flex;\n}\n\n#assetPanel .asset-controls input, #assetPanel .asset-controls select, #assetPanel .asset-controls button {\n  background: var(--bg-dark);\n  border: 1px solid var(--border);\n  color: var(--text);\n  border-radius: 4px;\n  padding: 6px 8px;\n  font-size: 12px;\n}\n\n#assetPanel .asset-controls input {\n  flex: 1;\n  min-width: 0;\n}\n\n#assetPanel .asset-controls label {\n  color: var(--text-muted);\n  font-size: 12px;\n}\n\n#assetPanel .asset-grid {\n  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));\n  gap: 8px;\n  display: grid;\n}\n\n#assetPanel .asset-grid.compact-5 {\n  grid-template-columns: repeat(5, minmax(0, 1fr));\n  gap: 6px;\n}\n\n#assetPanel .asset-item {\n  background: var(--bg-dark);\n  cursor: grab;\n  border-radius: 4px;\n  transition: all .2s;\n  overflow: hidden;\n}\n\n#assetPanel .asset-item:hover {\n  background: var(--bg-light);\n  transform: translateY(-1px);\n  box-shadow: 0 2px 8px #00000026;\n}\n\n#assetPanel .asset-item:active {\n  cursor: grabbing;\n  transform: scale(.95);\n}\n\n#assetPanel .asset-item.compact {\n  border: 1px solid #0000;\n  min-height: 72px;\n  padding: 6px 6px 22px;\n  position: relative;\n}\n\n#assetPanel .asset-item.compact.dummy {\n  opacity: .85;\n  border-color: var(--border);\n}\n\n#assetPanel .asset-icon {\n  color: var(--text);\n  justify-content: center;\n  align-items: center;\n  margin-bottom: 4px;\n  font-size: 14px;\n  display: flex;\n}\n\n#assetPanel .asset-actions {\n  padding: 0 6px 6px;\n}\n\n#assetPanel .asset-remove-icon {\n  color: #ffb9b9;\n  cursor: pointer;\n  background: #3b1f1f;\n  border: 1px solid #5d2a2a;\n  border-radius: 4px;\n  justify-content: center;\n  align-items: center;\n  width: 18px;\n  height: 18px;\n  padding: 0;\n  display: inline-flex;\n  position: absolute;\n  bottom: 4px;\n  right: 4px;\n}\n\n#assetPanel .asset-remove {\n  color: #ffb9b9;\n  cursor: pointer;\n  background: #3b1f1f;\n  border: 1px solid #5d2a2a;\n  border-radius: 4px;\n  width: 100%;\n  padding: 4px 6px;\n  font-size: 11px;\n}\n\n#assetPanel .asset-empty {\n  color: var(--text-muted);\n  text-align: center;\n  border: 1px dashed var(--border);\n  background: var(--bg-dark);\n  border-radius: 4px;\n  grid-column: 1 / -1;\n  padding: 8px;\n  font-size: 12px;\n}\n\n#assetPanel .asset-thumbnail {\n  object-fit: cover;\n  background: var(--bg-lighter);\n  width: 100%;\n  height: 60px;\n  display: block;\n}\n\n#assetPanel .video-placeholder {\n  background: var(--bg-lighter);\n  justify-content: center;\n  align-items: center;\n  display: flex;\n  position: relative;\n}\n\n#assetPanel .video-overlay {\n  color: var(--text);\n  text-shadow: 1px 1px 2px #000000b3;\n  font-size: 20px;\n  font-weight: bold;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n\n#assetPanel .audio-placeholder {\n  background: var(--bg-lighter);\n  justify-content: center;\n  align-items: center;\n  display: flex;\n}\n\n#assetPanel .audio-icon {\n  color: var(--text);\n  font-size: 24px;\n  font-weight: bold;\n}\n\n#assetPanel .asset-info {\n  flex-direction: column;\n  gap: 2px;\n  padding: 6px;\n  display: flex;\n}\n\n#assetPanel .asset-name {\n  color: var(--text);\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  font-size: 11px;\n  font-weight: 500;\n  overflow: hidden;\n}\n\n#assetPanel .asset-details {\n  color: var(--text-dark);\n  font-size: 10px;\n}\n\n#assetPanel .material-item {\n  border: 1px solid var(--border);\n  background: linear-gradient(#5a78b42e, #1216228c);\n  position: relative;\n}\n\n#assetPanel .material-color-band {\n  opacity: .9;\n  border-radius: 4px 4px 0 0;\n  width: 100%;\n  height: 5px;\n}\n\n#assetPanel .material-item .asset-info {\n  gap: 4px;\n}\n\n#assetPanel .material-sphere-canvas {\n  background: none;\n  width: 100%;\n  height: 60px;\n  display: block;\n}\n\n#assetPanel .material-tags {\n  flex-wrap: wrap;\n  gap: 3px;\n  display: flex;\n}\n\n#assetPanel .material-tag {\n  color: var(--text);\n  background: var(--bg-dark);\n  border: 1px solid var(--border);\n  text-transform: uppercase;\n  letter-spacing: .2px;\n  border-radius: 3px;\n  padding: 1px 4px;\n  font-size: 9px;\n}\n\n#assetPanel .material-preview {\n  border-radius: 4px;\n  width: 100%;\n  height: 60px;\n  position: relative;\n  overflow: hidden;\n}\n\n#assetPanel .material-shine {\n  pointer-events: none;\n  background: linear-gradient(135deg, #0000 0%, #ffffff80 50%, #0000 100%);\n  position: absolute;\n  inset: 0;\n}\n\n.components {\n  background-color: var(--bg);\n  color: var(--text);\n  width: 300px;\n  height: 100%;\n  position: fixed;\n  overflow: hidden auto;\n}\n\n.components * {\n  vertical-align: middle;\n}\n\n.collapsible-header {\n  justify-content: space-between;\n  align-items: center;\n  display: flex;\n}\n\n.collapsible-header .entityPrint {\n  color: var(--text);\n}\n\n.collapsible-content {\n  padding: 5px 0;\n}\n\n.componentTitle {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  text-transform: capitalize;\n  color: var(--text);\n  font-weight: 700;\n  overflow: hidden;\n}\n\n.collapsible .static {\n  background: var(--bg-light);\n  border-bottom: 1px solid var(--bg);\n  box-sizing: content-box;\n  cursor: pointer;\n  vertical-align: bottom;\n  height: 20px;\n  margin: 0;\n  padding: 10px 12px;\n  font-size: 12px;\n  font-weight: 600;\n  transition: all .15s;\n}\n\n.collapsible .static:hover {\n  background: var(--bg-lighter);\n}\n\n.collapsible .static .collapse-button {\n  float: left;\n  border: 5px solid #0000;\n  width: 0;\n  height: 0;\n  margin-left: 2px;\n  margin-right: 10px;\n  transition: transform .2s;\n}\n\n.collapsible .menu {\n  text-align: right;\n}\n\n.collapsible .menuafter {\n  color: var(--text-dark);\n  content: "⠇";\n  text-align: right;\n  opacity: .6;\n  padding: 5px;\n  font-size: 14px;\n  transition: opacity .15s;\n}\n\n.collapsible .menuafter:hover {\n  opacity: 1;\n}\n\n.collapsible.collapsed .static .collapse-button {\n  border-left-color: var(--text-dark);\n  margin-top: 5px;\n}\n\n.collapsible:not(.collapsed) .static .collapse-button {\n  border-top-color: var(--text-dark);\n  margin-top: 7px;\n}\n\n.propertyRow {\n  align-items: center;\n  gap: 12px;\n  min-height: 36px;\n  padding: 6px 12px;\n  font-size: 12px;\n  transition: background-color .15s;\n  display: flex;\n}\n\n.propertyRow:hover {\n  background-color: #ffffff05;\n}\n\n.propertyRow .text {\n  cursor: default;\n  text-overflow: ellipsis;\n  vertical-align: middle;\n  white-space: nowrap;\n  width: 90px;\n  min-width: 90px;\n  color: var(--text-dark);\n  text-transform: capitalize;\n  letter-spacing: .2px;\n  flex-shrink: 0;\n  font-size: 11px;\n  font-weight: 500;\n  display: inline-block;\n  overflow: hidden;\n}\n\n.propertyRow .text.copied {\n  color: var(--success);\n  background-color: #10b9811a;\n  border-radius: 3px;\n  padding: 2px 4px;\n  animation: 1s ease-out copyFeedback;\n}\n\n.propertyRow input.number {\n  width: 100%;\n}\n\n.propertyRow .vec2, .propertyRow .vec3, .propertyRow .vec4 {\n  flex: 1;\n  display: flex;\n}\n\n.propertyRow .map_value {\n  flex: 1;\n  margin: 0;\n}\n\n.propertyRow .Select-control {\n  height: 32px;\n  min-height: 32px;\n  font-size: 12px;\n}\n\n.propertyRow .Select-placeholder, .propertyRow .Select--single > .Select-control .Select-value {\n  line-height: 30px;\n}\n\n.propertyRow .Select-input {\n  height: 30px;\n}\n\n.propertyRow input[type="text"], .propertyRow input[type="number"], .propertyRow input.string, .propertyRow input.number {\n  background: var(--bg-dark);\n  color: var(--text);\n  min-height: 32px;\n  padding: 6px 10px;\n}\n\n:is(.propertyRow input[type="text"], .propertyRow input[type="number"], .propertyRow input.string, .propertyRow input.number):last-child {\n  padding-right: 10px;\n}\n\n:is(.propertyRow input[type="text"], .propertyRow input[type="number"], .propertyRow input.string, .propertyRow input.number):focus {\n  box-shadow: 0 0 0 2px #1faaf226;\n}\n\n.propertyRow input.string {\n  box-sizing: border-box;\n  flex: 1;\n  padding-left: 10px;\n}\n\n.propertyRow .color_value {\n  letter-spacing: .5px;\n  flex: 1;\n  margin: 0;\n}\n\n.propertyRow .color-widget {\n  flex: 1;\n}\n\n.propertyRow .widget-container {\n  flex: 1;\n  align-items: center;\n  gap: 6px;\n  min-width: 0;\n  display: flex;\n  position: relative;\n  overflow: hidden;\n}\n\n.propertyRow .widget-container > :not(.reset-btn) {\n  flex: 1;\n  min-width: 0;\n}\n\n.propertyRow .reset-btn {\n  color: var(--text-dark);\n  cursor: pointer;\n  opacity: .6;\n  background: none;\n  border: none;\n  border-radius: 3px;\n  flex-shrink: 0;\n  justify-content: center;\n  align-items: center;\n  width: 20px;\n  height: 20px;\n  padding: 4px;\n  font-size: 10px;\n  transition: all .2s;\n  display: flex;\n}\n\n.propertyRow .reset-btn:hover {\n  background: var(--bg-light);\n  color: var(--primary);\n  opacity: 1;\n}\n\n.propertyRow .reset-btn:active {\n  transform: scale(.9);\n}\n\n.propertyRow .texture {\n  flex: 1;\n  gap: 8px;\n  display: flex;\n}\n\n.propertyRow .texture input {\n  flex: 1;\n  margin-left: 0;\n}\n\nDefined.propertyRow .text {\n  color: var(--text);\n  font-weight: 600;\n  position: relative;\n}\n\nDefined.propertyRow .text:before {\n  content: "";\n  background: var(--primary);\n  border-radius: 50%;\n  width: 3px;\n  height: 3px;\n  position: absolute;\n  top: 50%;\n  left: -8px;\n  transform: translateY(-50%);\n}\n\nspan.subcomponent {\n  color: var(--text-dark);\n  margin-left: 10px;\n  float: none !important;\n  vertical-align: top !important;\n}\n\n#addComponentContainer {\n  justify-content: center;\n  align-items: center;\n  padding: 20px 10px 5px;\n  display: flex;\n}\n\n#addComponentContainer #addComponent {\n  text-align: left;\n  width: 200px;\n}\n\n#addComponentContainer #addComponent .select__control {\n  background: var(--bg-dark);\n  height: 35px;\n  color: var(--primary);\n}\n\n#addComponentContainer #addComponentHeader {\n  margin: 5px 0 10px;\n  font-size: 15px;\n}\n\n#addComponentContainer input[type="text"]:focus {\n  box-shadow: none;\n}\n\n.Select-menu-outer .is-focused span {\n  color: var(--text);\n}\n\n.component-title {\n  align-items: center;\n  display: flex;\n}\n\n#componentEntityHeader .collapsible-header {\n  position: relative;\n  bottom: 4px;\n}\n\n#componentEntityHeader .collapse-button {\n  display: none;\n}\n\n#componentEntityHeader .static {\n  height: 13px;\n}\n\n#componentEntityHeader .entityPrint {\n  padding-left: 5px;\n  font-size: 15px;\n}\n\n#componentEntityHeader .entityName {\n  max-width: 160px;\n  top: 0;\n}\n\n#componentEntityHeader .entityIcons {\n  color: var(--text);\n}\n\n#componentEntityHeader .gltfIcon img {\n  top: 0;\n}\n\n#mixinSelect {\n  width: 160px;\n}\n\n.copied {\n  color: #fff;\n  background-color: #4caf50;\n}\n\n.select__control {\n  cursor: pointer;\n  min-height: 26px;\n  font-family: var(--font-monospace);\n  border: 0;\n  border-radius: 0;\n  font-size: 13px;\n}\n\n.select__indicator {\n  height: 26px;\n}\n\n.select__indicator-separator {\n  display: none;\n}\n\n.select__input {\n  min-height: auto !important;\n}\n\n.select__control, .select__menu {\n  background: var(--bg-dark);\n}\n\n.select__option {\n  padding: 5px 10px;\n}\n\n.select__placeholder, .select__menu {\n  color: var(--text);\n}\n\n.select__single-value {\n  color: var(--primary);\n}\n\n.select__control--is-focused {\n  box-shadow: none !important;\n}\n\n.select__option {\n  cursor: pointer;\n}\n\n.select__label {\n  font-size: 11px;\n}\n\n.select__option--is-focused {\n  background: var(--primary-dark);\n}\n\n.select__value-container {\n  height: 26px;\n  position: static;\n}\n\n.select__value-container.select__value-container--is-multi {\n  height: auto;\n  padding: 6px;\n}\n\n.select__dropdown-indicator {\n  padding: 3px 8px;\n}\n\n.select__multi-value {\n  background: var(--bg);\n  color: var(--primary);\n}\n\n.select__multi-value__label {\n  color: var(--primary);\n}\n\n.select__multi-value__remove:hover {\n  color: var(--text);\n  background: var(--bg);\n}\n\n#toolbar {\n  background-color: var(--bg);\n}\n\n#toolbar .toolbar-container {\n  justify-content: space-between;\n  margin-left: .75rem;\n  margin-right: .75rem;\n  display: flex;\n  position: relative;\n}\n\n#toolbar .add-button {\n  font-size: 1.125rem;\n  line-height: 1.75rem;\n}\n\n#toolbar .dropdown {\n  background-color: var(--bg-dark);\n  z-index: 10;\n  border: 1px solid #d1d5db;\n  border-radius: .25rem;\n  max-height: 12.5rem;\n  position: absolute;\n  top: 100%;\n  left: 0;\n  overflow: auto;\n  box-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -2px #0000000d;\n}\n\n#toolbar .dropdown button {\n  text-align: left;\n  width: 100%;\n  color: var(--text);\n  background-color: #0000;\n  border: none;\n  padding: .5rem 1rem;\n  display: block;\n}\n\n#toolbar .dropdown button:hover {\n  background-color: #f3f4f6;\n}\n\n#toolbar .toolbar-button {\n  font-size: 1.125rem;\n  line-height: 1.75rem;\n}\n\n#viewportBar {\n  background-color: var(--bg);\n  color: var(--text);\n  flex-grow: 2;\n  justify-content: space-between;\n  align-items: center;\n  height: 32px;\n  margin: 0 auto;\n  font-size: 15px;\n  display: flex;\n  top: 0;\n  left: 0;\n  right: 0;\n}\n\n.toolbarButtons {\n  align-items: center;\n  gap: 6px;\n  display: flex;\n}\n\n.toolbarButtons * {\n  vertical-align: middle;\n  margin-left: 0 !important;\n}\n\n.toolbarButtons .button {\n  border-radius: 50%;\n  padding: 4px;\n}\n\n.toolbarButtons .button:hover {\n  background-color: var(--bg-lighter);\n}\n\n.toolbarButtons .active {\n  border: 2px solid var(--primary);\n}\n\n.local-transform {\n  padding-left: 10px;\n  padding-right: 20px;\n}\n\n.local-transform label {\n  color: var(--text-dark);\n  padding-left: 5px;\n}\n\n.local-transform a.button {\n  padding-top: 0;\n}\n\n#cameraSelect {\n  cursor: pointer;\n  width: 120px;\n}\n\n#cameraSelect .select__dropdown-indicator {\n  padding-left: 3px;\n  padding-right: 3px;\n}\n\n#cameraToolbar {\n  align-items: center;\n  margin-left: 5px;\n  display: flex;\n}\n\n#cameraToolbar a {\n  margin-right: 10px;\n}\n\n#cameraToolbar .select__control {\n  background: none;\n}\n\n#cameraToolbar .select__single-value {\n  color: var(--text);\n}\n\n#cameraToolbar .select__single-value:hover {\n  color: var(--primary);\n}\n\n#viewportHud {\n  color: #fff;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  text-align: center;\n  background: #000c;\n  border-radius: 6px;\n  min-width: 200px;\n  padding: 8px 16px;\n  font-size: 14px;\n}\n\n.viewport-overlay {\n  pointer-events: none;\n  justify-content: flex-end;\n  align-items: flex-start;\n  width: 100%;\n  height: calc(100vh - 32px);\n  padding: 20px;\n  display: flex;\n  position: absolute;\n  top: 32px;\n  left: 0;\n}\n\n.overlay-bottom {\n  background: var(--bg);\n  pointer-events: auto;\n  border-radius: 10px;\n  justify-content: center;\n  align-items: center;\n  padding: 10px;\n  display: flex;\n  position: absolute;\n  bottom: 20px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n\n.overlay-top {\n  pointer-events: auto;\n  align-items: flex-start;\n  gap: 8px;\n  display: flex;\n  position: absolute;\n  top: 20px;\n  right: 20px;\n}\n\n.wireframe-toggle {\n  background: var(--bg);\n  border: 1px solid var(--border);\n  color: var(--text);\n  cursor: pointer;\n  border-radius: 4px;\n  justify-content: center;\n  align-items: center;\n  padding: 8px;\n  transition: all .2s;\n  display: flex;\n}\n\n.wireframe-toggle:hover {\n  background-color: var(--bg-lighter);\n  border-color: var(--primary);\n}\n\n.wireframe-toggle.active {\n  background-color: var(--primary);\n  color: #fff;\n  border-color: var(--primary);\n}\n\n.wireframe-toggle svg {\n  width: 16px;\n  height: 16px;\n}\n\n.snap-toggle {\n  background: var(--bg);\n  border: 1px solid var(--border);\n  color: var(--text);\n  cursor: pointer;\n  border-radius: 4px;\n  justify-content: center;\n  align-items: center;\n  padding: 8px;\n  transition: all .2s;\n  display: flex;\n}\n\n.snap-toggle:hover {\n  background-color: var(--bg-lighter);\n  border-color: var(--primary);\n}\n\n.snap-toggle.active {\n  background-color: var(--primary);\n  color: #fff;\n  border-color: var(--primary);\n}\n\n.snap-toggle svg {\n  width: 14px;\n  height: 14px;\n}\n\n.snap-controls {\n  background: var(--bg);\n  border: 1px solid var(--border);\n  border-radius: 4px;\n  align-items: flex-end;\n  gap: 8px;\n  padding: 6px;\n  display: flex;\n}\n\n.snap-controls label {\n  color: var(--text-muted);\n  letter-spacing: .2px;\n  text-transform: uppercase;\n  flex-direction: column;\n  gap: 4px;\n  font-size: 10px;\n  display: flex;\n}\n\n.snap-controls input {\n  background: var(--bg-dark);\n  border: 1px solid var(--border);\n  width: 58px;\n  color: var(--text);\n  border-radius: 3px;\n  padding: 2px 4px;\n  font-size: 11px;\n}\n\nbody.aframe-inspector-opened, .sponsor-btn, .wf-roboto-n4-active body.aframe-inspector-opened, .wf-roboto-n4-active, .wf-roboto-n4-active .sponsor-btn {\n  font-family: var(--font-normal);\n}\n\nbody.aframe-inspector-opened {\n  background: var(--bg-dark);\n  color: var(--text);\n  margin: 0;\n  font-size: 12px;\n  overflow: hidden;\n}\n\n#aframeInspector .Select, #aframeInspector code, #aframeInspector pre, #aframeInspector input, #aframeInspector textarea, #aframeInspector select {\n  font-family: var(--font-monospace);\n  font-size: 13px;\n}\n\n#aframeInspector .wf-robotomono-n4-active .Select, #aframeInspector .wf-robotomono-n4-active code, #aframeInspector .wf-robotomono-n4-active pre, #aframeInspector .wf-robotomono-n4-active input, #aframeInspector .wf-robotomono-n4-active textarea, #aframeInspector .wf-robotomono-n4-active select {\n  font-family: Roboto Mono, Consolas, Andale Mono, Monaco, Courier New, monospace;\n}\n\n#aframeInspector hr {\n  border: 0;\n  border-top: 1px solid #ccc;\n}\n\n#aframeInspector a {\n  cursor: pointer;\n}\n\n#aframeInspector button {\n  position: relative;\n}\n\n#aframeInspector code {\n  font-family: Consolas, Andale Mono, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;\n}\n\n#aframeInspector textarea {\n  tab-size: 4;\n  white-space: pre;\n  word-wrap: normal;\n}\n\n#aframeInspector textarea.success {\n  border-color: #8b8 !important;\n}\n\n#aframeInspector textarea.fail {\n  background-color: #ff00000d;\n  border-color: red !important;\n}\n\n#aframeInspector textarea, #aframeInspector input {\n  outline: none;\n}\n\n#aframeInspector #scenegraph, #aframeInspector #rightPanel {\n  z-index: 9998;\n}\n\n#aframeInspector #sidebar, #aframeInspector #scenegraph .panel {\n  cursor: default;\n  -webkit-user-select: none;\n  user-select: none;\n}\n\n#aframeInspector .toggle-edit {\n  z-index: 999999999;\n  position: fixed;\n  bottom: 20px;\n  right: 50%;\n  transform: translate(50%);\n}\n\n#aframeInspector .try-editor-btn {\n  background-color: var(--error);\n  box-sizing: content-box;\n  color: var(--text);\n  text-align: center;\n  justify-content: center;\n  gap: 5px;\n  width: 200px;\n  margin: 0;\n  padding: 6px 10px;\n  font-size: 16px;\n  line-height: 24px;\n  text-decoration: none;\n  display: flex;\n}\n\n#aframeInspector .try-editor-btn:hover {\n  color: var(--text);\n  background-color: #e42b5a;\n}\n\n#aframeInspector .sponsor-btn {\n  background-color: var(--text);\n  box-sizing: content-box;\n  color: var(--bg-dark);\n  text-align: center;\n  z-index: 999999999;\n  justify-content: center;\n  gap: 5px;\n  width: 80px;\n  margin: 0;\n  padding: 6px 10px;\n  font-size: 13px;\n  line-height: 16px;\n  text-decoration: none;\n  display: flex;\n  position: fixed;\n  top: 3px;\n  left: 127px;\n}\n\n#aframeInspector .sponsor-btn svg {\n  fill: currentColor;\n  color: #db61a2;\n}\n\n#aframeInspector .sponsor-btn:hover {\n  color: var(--text);\n  background-color: #e42b5a;\n}\n\n#aframeInspector input {\n  color: var(--text);\n  background-color: #0000;\n  border: 1px solid #555;\n}\n\n#aframeInspector input[type="text"], #aframeInspector input[type="number"], #aframeInspector input.string, #aframeInspector input.number {\n  outline: none;\n  min-height: 14px;\n}\n\n#aframeInspector input[type="checkbox"] {\n  appearance: auto;\n  cursor: pointer;\n  width: 18px;\n  height: 18px;\n  margin: 0;\n}\n\n#aframeInspector input[type="checkbox"]:focus {\n  box-shadow: none;\n}\n\n#aframeInspector input.number {\n  cursor: col-resize;\n  border: 0;\n  padding: 2px;\n  font-size: 13px;\n  color: #2cb7ff !important;\n  background-color: #0000 !important;\n}\n\n#aframeInspector input.stringfocus, #aframeInspector input.numberfocus {\n  color: var(--text);\n  cursor: auto;\n  border: 1px solid #20b1fb;\n}\n\n#aframeInspector input.error {\n  border: 1px solid #a00;\n}\n\n#aframeInspector input, #aframeInspector .texture canvas {\n  transition: background-color .1s ease-in-out, border-color .1s ease-in-out, color .1s ease-in-out;\n}\n\n#aframeInspector #sidebar {\n  background: var(--bg);\n  width: 300px;\n  min-width: 300px;\n}\n\n#aframeInspector #sidebar * {\n  vertical-align: middle;\n}\n\n#aframeInspector input, #aframeInspector textarea, #aframeInspector select {\n  background: var(--bg-dark);\n  border: 1px solid #0000;\n}\n\n#aframeInspector input[type="color"] {\n  background-color: var(--bg-light);\n  border: 1px solid var(--bg-dark);\n  cursor: pointer;\n  width: 50px;\n  height: 25px;\n  padding: 0;\n}\n\n#aframeInspector input[type="color"]::-webkit-color-swatch {\n  border: 0;\n}\n\n#aframeInspector input[type="color"]::-webkit-color-swatch-wrapper {\n  padding: 0;\n}\n\n#aframeInspector input[type="color"]::-moz-color-swatch {\n  border: 0;\n}\n\n#aframeInspector input[type="color"]::-moz-focus-inner {\n  border: 0;\n  padding: 0;\n}\n\n#aframeInspector .hidden {\n  visibility: hidden;\n}\n\n#aframeInspector .hide {\n  display: none;\n}\n\n#aframeInspector a.button {\n  color: var(--text-dark);\n  margin-left: 10px;\n  font-size: 16px;\n  text-decoration: none;\n}\n\n#aframeInspector a.button:hover {\n  color: var(--primary);\n}\n\n#aframeInspector .a-canvas.state-dragging {\n  cursor: grabbing;\n}\n\n#aframeInspector body.dragging-asset .a-canvas {\n  outline: 2px dashed var(--primary);\n  outline-offset: -2px;\n}\n\n#aframeInspector #rightPanel {\n  justify-content: flex-end;\n  align-items: stretch;\n  display: flex;\n  overflow: hidden;\n}\n\n#aframeInspector #inspectorContainer {\n  pointer-events: none;\n  z-index: 999999;\n  justify-content: space-between;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  position: fixed;\n  top: 0;\n  left: 0;\n}\n\n#aframeInspector #scenegraph, #aframeInspector #viewportBar, #aframeInspector #rightPanel {\n  pointer-events: all;\n}\n\n#aframeInspector .toggle-sidebar {\n  z-index: 9998;\n  align-items: center;\n  height: 100%;\n  display: flex;\n  position: absolute;\n}\n\n#aframeInspector .toggle-sidebar a {\n  background-color: var(--bg);\n  color: var(--text-dark);\n  z-index: 9998;\n  padding: 5px;\n}\n\n#aframeInspector .toggle-sidebar a.hover {\n  background-color: var(--primary);\n  color: var(--text);\n}\n\n#aframeInspector .toggle-sidebar.left {\n  top: 0;\n  left: 0;\n}\n\n#aframeInspector .toggle-sidebar.right {\n  top: 0;\n  right: 0;\n}\n\n@keyframes animateopacity {\n  from {\n    opacity: 0;\n  }\n\n  to {\n    opacity: 1;\n  }\n}\n\nsvg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {\n  box-sizing: content-box;\n  overflow: visible;\n}\n\n.svg-inline--fa {\n  vertical-align: -.125em;\n  height: 1em;\n  display: inline-block;\n  overflow: visible;\n}\n\n:root {\n  --font-normal: system-ui, BlinkMacSystemFont, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;\n  --font-monospace: system-ui, BlinkMacSystemFont, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;\n  --primary: #1faaf2;\n  --primary-hover: #6fc5f5;\n  --primary-dark: #155373;\n  --primary-light: #87d0f7;\n  --secondary: #6366f1;\n  --secondary-hover: #818cf8;\n  --secondary-dark: #4338ca;\n  --secondary-light: #a5b4fc;\n  --accent: #f59e0b;\n  --accent-hover: #fbbf24;\n  --accent-dark: #d97706;\n  --accent-light: #fcd34d;\n  --bg: #242424;\n  --bg-dark: #1d1d1d;\n  --bg-light: #333;\n  --bg-lighter: #393939;\n  --text: #c3c3c3;\n  --text-dark: #888;\n  --text-light: #fff;\n  --success: #10b981;\n  --success-dark: #059669;\n  --success-light: #6ee7b7;\n  --warning: #f59e0b;\n  --warning-dark: #d97706;\n  --warning-light: #fcd34d;\n  --error: #ef4444;\n  --error-dark: #dc2626;\n  --error-light: #fca5a5;\n  --info: #3b82f6;\n  --info-dark: #2563eb;\n  --info-light: #93c5fd;\n}\n\n[data-theme="light"] {\n  --primary: #0ea5e9;\n  --primary-hover: #0284c7;\n  --primary-dark: #0369a1;\n  --primary-light: #38bdf8;\n  --secondary: #7c3aed;\n  --secondary-hover: #8b5cf6;\n  --secondary-dark: #6d28d9;\n  --secondary-light: #a78bfa;\n  --accent: #ea580c;\n  --accent-hover: #dc2626;\n  --accent-dark: #c2410c;\n  --accent-light: #fb923c;\n  --bg: #f8fafc;\n  --bg-dark: #e2e8f0;\n  --bg-light: #cbd5e1;\n  --bg-lighter: #94a3b8;\n  --text: #334155;\n  --text-dark: #64748b;\n  --text-light: #0f172a;\n  --success: #059669;\n  --success-dark: #047857;\n  --success-light: #10b981;\n  --warning: #d97706;\n  --warning-dark: #b45309;\n  --warning-light: #f59e0b;\n  --error: #dc2626;\n  --error-dark: #b91c1c;\n  --error-light: #ef4444;\n  --info: #2563eb;\n  --info-dark: #1d4ed8;\n  --info-light: #3b82f6;\n}\n\n[data-theme="high-contrast"] {\n  --primary: #0ff;\n  --primary-hover: #87d0f7;\n  --primary-dark: #0080ff;\n  --primary-light: #fff;\n  --secondary: #f0f;\n  --secondary-hover: #ff80ff;\n  --secondary-dark: purple;\n  --secondary-light: #ffb3ff;\n  --accent: #ff0;\n  --accent-hover: #ffff80;\n  --accent-dark: olive;\n  --accent-light: #ffffb3;\n  --bg: #000;\n  --bg-dark: #000;\n  --bg-light: #333;\n  --bg-lighter: #666;\n  --text: #fff;\n  --text-dark: #ccc;\n  --text-light: #fff;\n  --success: #0f0;\n  --success-dark: green;\n  --success-light: #80ff80;\n  --warning: #ff0;\n  --warning-dark: olive;\n  --warning-light: #ffff80;\n  --error: red;\n  --error-dark: maroon;\n  --error-light: #ff8080;\n  --info: #0080ff;\n  --info-dark: #004080;\n  --info-light: #80c0ff;\n}\n\n[data-theme="blue"] {\n  --primary: #1e40af;\n  --primary-hover: #1d4ed8;\n  --primary-dark: #1e3a8a;\n  --primary-light: #3b82f6;\n  --secondary: #7c2d12;\n  --secondary-hover: #9a3412;\n  --secondary-dark: #5b1f0d;\n  --secondary-light: #ea580c;\n  --accent: #7c3aed;\n  --accent-hover: #8b5cf6;\n  --accent-dark: #6d28d9;\n  --accent-light: #a78bfa;\n  --bg: #0f172a;\n  --bg-dark: #020617;\n  --bg-light: #1e293b;\n  --bg-lighter: #334155;\n  --text: #cbd5e1;\n  --text-dark: #94a3b8;\n  --text-light: #f1f5f9;\n  --success: #059669;\n  --success-dark: #047857;\n  --success-light: #10b981;\n  --warning: #d97706;\n  --warning-dark: #b45309;\n  --warning-light: #f59e0b;\n  --error: #dc2626;\n  --error-dark: #b91c1c;\n  --error-light: #ef4444;\n  --info: #0891b2;\n  --info-dark: #0e7490;\n  --info-light: #22d3ee;\n}\n\n[data-theme="purple"] {\n  --primary: #7c3aed;\n  --primary-hover: #8b5cf6;\n  --primary-dark: #6d28d9;\n  --primary-light: #a78bfa;\n  --secondary: #dc2626;\n  --secondary-hover: #ef4444;\n  --secondary-dark: #b91c1c;\n  --secondary-light: #fca5a5;\n  --accent: #f59e0b;\n  --accent-hover: #fbbf24;\n  --accent-dark: #d97706;\n  --accent-light: #fcd34d;\n  --bg: #1a103d;\n  --bg-dark: #0f0a1f;\n  --bg-light: #2d1b69;\n  --bg-lighter: #4c1d95;\n  --text: #d8b4fe;\n  --text-dark: #a855f7;\n  --text-light: #faf5ff;\n  --success: #10b981;\n  --success-dark: #059669;\n  --success-light: #6ee7b7;\n  --warning: #f59e0b;\n  --warning-dark: #d97706;\n  --warning-light: #fcd34d;\n  --error: #ef4444;\n  --error-dark: #dc2626;\n  --error-light: #fca5a5;\n  --info: #3b82f6;\n  --info-dark: #2563eb;\n  --info-light: #93c5fd;\n}\n\n[data-theme="green"] {\n  --primary: #059669;\n  --primary-hover: #10b981;\n  --primary-dark: #047857;\n  --primary-light: #6ee7b7;\n  --secondary: #7c2d12;\n  --secondary-hover: #9a3412;\n  --secondary-dark: #5b1f0d;\n  --secondary-light: #ea580c;\n  --accent: #7c3aed;\n  --accent-hover: #8b5cf6;\n  --accent-dark: #6d28d9;\n  --accent-light: #a78bfa;\n  --bg: #0f2a27;\n  --bg-dark: #0a1a1a;\n  --bg-light: #1a3a37;\n  --bg-lighter: #2a4a47;\n  --text: #cbd5e1;\n  --text-dark: #94a3b8;\n  --text-light: #f1f5f9;\n  --success: #10b981;\n  --success-dark: #059669;\n  --success-light: #6ee7b7;\n  --warning: #f59e0b;\n  --warning-dark: #d97706;\n  --warning-light: #fcd34d;\n  --error: #dc2626;\n  --error-dark: #b91c1c;\n  --error-light: #ef4444;\n  --info: #0891b2;\n  --info-dark: #0e7490;\n  --info-light: #22d3ee;\n}\n\n[data-theme="cyberpunk"] {\n  --primary: #00ff41;\n  --primary-hover: #3f6;\n  --primary-dark: #0c3;\n  --primary-light: #6f9;\n  --secondary: #ff0080;\n  --secondary-hover: #f39;\n  --secondary-dark: #c06;\n  --secondary-light: #ff66b3;\n  --accent: #ff0;\n  --accent-hover: #ff3;\n  --accent-dark: #cc0;\n  --accent-light: #ff6;\n  --bg: #0a0a0a;\n  --bg-dark: #000;\n  --bg-light: #1a1a1a;\n  --bg-lighter: #333;\n  --text: #00ff41;\n  --text-dark: #3f6;\n  --text-light: #fff;\n  --success: #00ff41;\n  --success-dark: #0c3;\n  --success-light: #6f9;\n  --warning: #ff0;\n  --warning-dark: #cc0;\n  --warning-light: #ff6;\n  --error: #ff0080;\n  --error-dark: #c06;\n  --error-light: #ff66b3;\n  --info: #0080ff;\n  --info-dark: #0040cc;\n  --info-light: #4da6ff;\n}\n\n[data-theme="warm"] {\n  --primary: #d97706;\n  --primary-hover: #f59e0b;\n  --primary-dark: #b45309;\n  --primary-light: #fbbf24;\n  --secondary: #dc2626;\n  --secondary-hover: #ef4444;\n  --secondary-dark: #b91c1c;\n  --secondary-light: #fca5a5;\n  --accent: #7c2d12;\n  --accent-hover: #9a3412;\n  --accent-dark: #5b1f0d;\n  --accent-light: #ea580c;\n  --bg: #2d1810;\n  --bg-dark: #1c0f08;\n  --bg-light: #451a0f;\n  --bg-lighter: #6b2a1a;\n  --text: #fed7aa;\n  --text-dark: #fdba74;\n  --text-light: #fef3c7;\n  --success: #16a34a;\n  --success-dark: #15803d;\n  --success-light: #4ade80;\n  --warning: #d97706;\n  --warning-dark: #b45309;\n  --warning-light: #f59e0b;\n  --error: #dc2626;\n  --error-dark: #b91c1c;\n  --error-light: #ef4444;\n  --info: #0891b2;\n  --info-dark: #0e7490;\n  --info-light: #22d3ee;\n}\n\n[data-theme="ocean"] {\n  --primary: #0891b2;\n  --primary-hover: #0e7490;\n  --primary-dark: #0e7490;\n  --primary-light: #22d3ee;\n  --secondary: #1e40af;\n  --secondary-hover: #1d4ed8;\n  --secondary-dark: #1e3a8a;\n  --secondary-light: #3b82f6;\n  --accent: #06b6d4;\n  --accent-hover: #0891b2;\n  --accent-dark: #0e7490;\n  --accent-light: #22d3ee;\n  --bg: #0c4a6e;\n  --bg-dark: #082f49;\n  --bg-light: #155e75;\n  --bg-lighter: #1e7490;\n  --text: #bae6fd;\n  --text-dark: #7dd3fc;\n  --text-light: #f0f9ff;\n  --success: #10b981;\n  --success-dark: #059669;\n  --success-light: #6ee7b7;\n  --warning: #f59e0b;\n  --warning-dark: #d97706;\n  --warning-light: #fcd34d;\n  --error: #ef4444;\n  --error-dark: #dc2626;\n  --error-light: #fca5a5;\n  --info: #0891b2;\n  --info-dark: #0e7490;\n  --info-light: #22d3ee;\n}\n\n[data-theme="nordic"] {\n  --primary: #5e81ac;\n  --primary-hover: #81a1c1;\n  --primary-dark: #4c566a;\n  --primary-light: #88c0d0;\n  --secondary: #bf616a;\n  --secondary-hover: #d08770;\n  --secondary-dark: #a9444e;\n  --secondary-light: #d98b8b;\n  --accent: #ebcb8b;\n  --accent-hover: #f0d084;\n  --accent-dark: #d4a574;\n  --accent-light: #f2e6c9;\n  --bg: #2e3440;\n  --bg-dark: #1e222a;\n  --bg-light: #434c5e;\n  --bg-lighter: #4c566a;\n  --text: #eceff4;\n  --text-dark: #d8dee9;\n  --text-light: #fff;\n  --success: #a3be8c;\n  --success-dark: #8fbcbb;\n  --success-light: #b8d0b0;\n  --warning: #ebcb8b;\n  --warning-dark: #d4a574;\n  --warning-light: #f0d084;\n  --error: #bf616a;\n  --error-dark: #a9444e;\n  --error-light: #d98b8b;\n  --info: #5e81ac;\n  --info-dark: #4c566a;\n  --info-light: #81a1c1;\n}\n\n[data-theme="candy"] {\n  --primary: #ff69b4;\n  --primary-hover: #ff1493;\n  --primary-dark: #dc143c;\n  --primary-light: #ffb6c1;\n  --secondary: #00ff7f;\n  --secondary-hover: #32cd32;\n  --secondary-dark: #228b22;\n  --secondary-light: #90ee90;\n  --accent: #ff0;\n  --accent-hover: gold;\n  --accent-dark: #daa520;\n  --accent-light: #fffacd;\n  --bg: #fff8dc;\n  --bg-dark: wheat;\n  --bg-light: #ffe4b5;\n  --bg-lighter: #ffebcd;\n  --text: #8b0000;\n  --text-dark: sienna;\n  --text-light: #2f1b14;\n  --success: #32cd32;\n  --success-dark: #228b22;\n  --success-light: #90ee90;\n  --warning: gold;\n  --warning-dark: #daa520;\n  --warning-light: #fffacd;\n  --error: #dc143c;\n  --error-dark: #b22222;\n  --error-light: #ff69b4;\n  --info: #00bfff;\n  --info-dark: #1e90ff;\n  --info-light: #87ceeb;\n}\n\n[data-theme="gruvbox"] {\n  --primary: #fb4934;\n  --primary-hover: #fe8019;\n  --primary-dark: #cc241d;\n  --primary-light: #fc6d5a;\n  --secondary: #b8bb26;\n  --secondary-hover: #fabd2f;\n  --secondary-dark: #98971a;\n  --secondary-light: #c4c92a;\n  --accent: #83a598;\n  --accent-hover: #8ec07c;\n  --accent-dark: #689d6a;\n  --accent-light: #9ccca0;\n  --bg: #282828;\n  --bg-dark: #1d2021;\n  --bg-light: #3c3836;\n  --bg-lighter: #504945;\n  --text: #ebdbb2;\n  --text-dark: #d5c4a1;\n  --text-light: #fbf1c7;\n  --success: #b8bb26;\n  --success-dark: #98971a;\n  --success-light: #c4c92a;\n  --warning: #fabd2f;\n  --warning-dark: #d79921;\n  --warning-light: #fcbc35;\n  --error: #fb4934;\n  --error-dark: #cc241d;\n  --error-light: #fc6d5a;\n  --info: #83a598;\n  --info-dark: #689d6a;\n  --info-light: #9ccca0;\n}\n\n[data-theme="neon-dreams"] {\n  --primary: #ff1493;\n  --primary-hover: #ff69b4;\n  --primary-dark: #dc143c;\n  --primary-light: #ffb6c1;\n  --secondary: #0ff;\n  --secondary-hover: #3ff;\n  --secondary-dark: #0cc;\n  --secondary-light: #6ff;\n  --accent: #ff4500;\n  --accent-hover: tomato;\n  --accent-dark: #dc143c;\n  --accent-light: coral;\n  --bg: #290070;\n  --bg-dark: #1a0040;\n  --bg-light: #3d0090;\n  --bg-lighter: #5200b0;\n  --text: #fff;\n  --text-dark: #ff1493;\n  --text-light: #0ff;\n  --success: #39ff14;\n  --success-dark: #32cd32;\n  --success-light: #7fff00;\n  --warning: #ff0;\n  --warning-dark: gold;\n  --warning-light: #ff9;\n  --error: #ff1493;\n  --error-dark: #dc143c;\n  --error-light: #ffb6c1;\n  --info: #0ff;\n  --info-dark: #0cc;\n  --info-light: #6ff;\n}\n\n.theme-switcher {\n  margin: 10px;\n}\n\n.theme-select {\n  background: var(--bg-dark);\n  border: 1px solid var(--bg-light);\n  color: var(--text);\n  border-radius: 4px;\n  padding: 5px 10px;\n  font-size: 12px;\n}\n\n.theme-select:focus {\n  border-color: var(--primary);\n  outline: none;\n}\n\n.theme-select option {\n  background: var(--bg);\n  color: var(--text);\n}\n\n::-webkit-scrollbar {\n  width: 12px;\n  height: 12px;\n}\n\n::-webkit-scrollbar-track {\n  background: var(--bg-dark);\n  border-radius: 6px;\n}\n\n::-webkit-scrollbar-thumb {\n  background: var(--bg-lighter);\n  border: 2px solid var(--bg-dark);\n  border-radius: 6px;\n  transition: all .2s;\n}\n\n::-webkit-scrollbar-thumb:hover {\n  background: var(--primary);\n  border-color: var(--bg-dark);\n}\n\n::-webkit-scrollbar-thumb:active {\n  background: var(--primary-dark);\n}\n\n::-webkit-scrollbar-corner {\n  background: var(--bg-dark);\n}\n\n* {\n  scrollbar-width: thin;\n  scrollbar-color: var(--bg-lighter) var(--bg-dark);\n}\n\n@property --tw-rotate-x {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-rotate-y {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-rotate-z {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-skew-x {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-skew-y {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-border-style {\n  syntax: "*";\n  inherits: false;\n  initial-value: solid;\n}\n\n@property --tw-font-weight {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-shadow {\n  syntax: "*";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n\n@property --tw-shadow-color {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-shadow-alpha {\n  syntax: "<percentage>";\n  inherits: false;\n  initial-value: 100%;\n}\n\n@property --tw-inset-shadow {\n  syntax: "*";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n\n@property --tw-inset-shadow-color {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-inset-shadow-alpha {\n  syntax: "<percentage>";\n  inherits: false;\n  initial-value: 100%;\n}\n\n@property --tw-ring-color {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-ring-shadow {\n  syntax: "*";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n\n@property --tw-inset-ring-color {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-inset-ring-shadow {\n  syntax: "*";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n\n@property --tw-ring-inset {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-ring-offset-width {\n  syntax: "<length>";\n  inherits: false;\n  initial-value: 0;\n}\n\n@property --tw-ring-offset-color {\n  syntax: "*";\n  inherits: false;\n  initial-value: #fff;\n}\n\n@property --tw-ring-offset-shadow {\n  syntax: "*";\n  inherits: false;\n  initial-value: 0 0 #0000;\n}\n\n@property --tw-outline-style {\n  syntax: "*";\n  inherits: false;\n  initial-value: solid;\n}\n\n@property --tw-blur {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-brightness {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-contrast {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-grayscale {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-hue-rotate {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-invert {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-opacity {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-saturate {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-sepia {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-drop-shadow {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-drop-shadow-color {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-drop-shadow-alpha {\n  syntax: "<percentage>";\n  inherits: false;\n  initial-value: 100%;\n}\n\n@property --tw-drop-shadow-size {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-backdrop-blur {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-backdrop-brightness {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-backdrop-contrast {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-backdrop-grayscale {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-backdrop-hue-rotate {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-backdrop-invert {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-backdrop-opacity {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-backdrop-saturate {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-backdrop-sepia {\n  syntax: "*";\n  inherits: false\n}\n\n@property --tw-ease {\n  syntax: "*";\n  inherits: false\n}\n/*$vite$:1*/';
   document.head.appendChild(__vite_style__);
   var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
   function getDefaultExportFromCjs(x) {
@@ -26286,39 +26286,6 @@ void main() {
       return new this.constructor().copy(this);
     }
   }
-  class GridHelper extends LineSegments {
-    constructor(size = 10, divisions = 10, color1 = 4473924, color2 = 8947848) {
-      color1 = new Color(color1);
-      color2 = new Color(color2);
-      const center = divisions / 2;
-      const step = size / divisions;
-      const halfSize = size / 2;
-      const vertices = [], colors = [];
-      for (let i = 0, j = 0, k = -halfSize; i <= divisions; i++, k += step) {
-        vertices.push(-halfSize, 0, k, halfSize, 0, k);
-        vertices.push(k, 0, -halfSize, k, 0, halfSize);
-        const color = i === center ? color1 : color2;
-        color.toArray(colors, j);
-        j += 3;
-        color.toArray(colors, j);
-        j += 3;
-        color.toArray(colors, j);
-        j += 3;
-        color.toArray(colors, j);
-        j += 3;
-      }
-      const geometry = new BufferGeometry();
-      geometry.setAttribute("position", new Float32BufferAttribute(vertices, 3));
-      geometry.setAttribute("color", new Float32BufferAttribute(colors, 3));
-      const material = new LineBasicMaterial({ vertexColors: true, toneMapped: false });
-      super(geometry, material);
-      this.type = "GridHelper";
-    }
-    dispose() {
-      this.geometry.dispose();
-      this.material.dispose();
-    }
-  }
   const _box = /* @__PURE__ */ new Box3();
   class BoxHelper extends LineSegments {
     constructor(object, color = 16776960) {
@@ -29051,7 +29018,7 @@ void main() {
         if (axis === "XYZ") this.activePlane = this.planes["XYZE"];
       }
     }
-    class TransformControls2 extends Object3D {
+    class TransformControls extends Object3D {
       constructor(_camera, domElement) {
         super();
         domElement = domElement !== void 0 ? domElement : document;
@@ -29059,6 +29026,7 @@ void main() {
         this.visible = false;
         this.translationSnap = null;
         this.rotationSnap = null;
+        this.scaleSnap = null;
         this.space = "world";
         this.size = 1;
         this.axis = null;
@@ -29181,6 +29149,9 @@ void main() {
         };
         this.setRotationSnap = function(rotationSnap) {
           scope.rotationSnap = rotationSnap;
+        };
+        this.setScaleSnap = function(scaleSnap) {
+          scope.scaleSnap = scaleSnap;
         };
         this.setSize = function(size) {
           scope.size = size;
@@ -29363,6 +29334,11 @@ void main() {
                 if (scope.axis === "Z") scope.object.scale.z = oldScale.z * (1 + point.z / oldScale.z);
               }
             }
+            if (scope.scaleSnap !== null) {
+              if (scope.axis.search("X") !== -1) scope.object.scale.x = Math.round(scope.object.scale.x / scope.scaleSnap) * scope.scaleSnap;
+              if (scope.axis.search("Y") !== -1) scope.object.scale.y = Math.round(scope.object.scale.y / scope.scaleSnap) * scope.scaleSnap;
+              if (scope.axis.search("Z") !== -1) scope.object.scale.z = Math.round(scope.object.scale.z / scope.scaleSnap) * scope.scaleSnap;
+            }
           } else if (_currentMode === "rotate") {
             point.sub(worldPosition);
             point.multiply(parentScale);
@@ -29474,17 +29450,16 @@ void main() {
       }
     }
     try {
-      undefined = TransformControls2;
+      undefined = TransformControls;
       undefined = TransformGizmo;
       undefined = TransformGizmoTranslate;
       undefined = TransformGizmoRotate;
       undefined = TransformGizmoScale;
     } catch (e) {
     }
-    TransformControlsExport = TransformControls2;
+    TransformControlsExport = TransformControls;
   })();
-  const TransformControls = TransformControlsExport;
-  const EditorControls = function(_object, domElement) {
+  function EditorControls(_object, domElement) {
     domElement = domElement !== void 0 ? domElement : document;
     this.enabled = true;
     this.center = new Vector3();
@@ -29511,41 +29486,50 @@ void main() {
     var sphere = new Sphere();
     var keys = {};
     function onKeyDown(event) {
+      if (event.target.tagName === "INPUT" || event.target.tagName === "TEXTAREA" || event.target.isContentEditable) {
+        return;
+      }
       keys[event.code] = true;
     }
     function onKeyUp(event) {
+      if (event.target.tagName === "INPUT" || event.target.tagName === "TEXTAREA" || event.target.isContentEditable) {
+        return;
+      }
       keys[event.code] = false;
     }
     this.update = function() {
       const speed = 0.1;
       var moved = false;
+      var positionDelta = new Vector3();
       if (keys["KeyW"]) {
-        object.position.add(object.getWorldDirection(new Vector3()).multiplyScalar(speed));
+        positionDelta.add(object.getWorldDirection(new Vector3()).multiplyScalar(speed));
         moved = true;
       }
       if (keys["KeyS"]) {
-        object.position.add(object.getWorldDirection(new Vector3()).multiplyScalar(-speed));
+        positionDelta.add(object.getWorldDirection(new Vector3()).multiplyScalar(-speed));
         moved = true;
       }
       if (keys["KeyA"]) {
         const right = new Vector3().crossVectors(object.up, object.getWorldDirection(new Vector3()));
-        object.position.add(right.multiplyScalar(speed));
+        positionDelta.add(right.multiplyScalar(speed));
         moved = true;
       }
       if (keys["KeyD"]) {
         const right = new Vector3().crossVectors(object.up, object.getWorldDirection(new Vector3()));
-        object.position.add(right.multiplyScalar(-speed));
+        positionDelta.add(right.multiplyScalar(-speed));
         moved = true;
       }
       if (keys["KeyQ"]) {
-        object.position.add(object.up.clone().multiplyScalar(-speed));
+        positionDelta.add(object.up.clone().multiplyScalar(-speed));
         moved = true;
       }
       if (keys["KeyE"]) {
-        object.position.add(object.up.clone().multiplyScalar(speed));
+        positionDelta.add(object.up.clone().multiplyScalar(speed));
         moved = true;
       }
       if (moved) {
+        object.position.add(positionDelta);
+        center.add(positionDelta);
         scope.dispatchEvent(changeEvent);
       }
     };
@@ -29755,7 +29739,7 @@ void main() {
     }
     domElement.addEventListener("touchstart", touchStart, false);
     domElement.addEventListener("touchmove", touchMove, false);
-  };
+  }
   EditorControls.prototype = Object.create(EventDispatcher.prototype);
   EditorControls.prototype.constructor = EditorControls;
   try {
@@ -29970,8 +29954,6 @@ void main() {
       }
     });
     const sceneHelpers = inspector.sceneHelpers;
-    const grid = new GridHelper(30, 60, 11184810, 2500134);
-    sceneHelpers.add(grid);
     const selectionBox = new BoxHelper();
     selectionBox.material.depthTest = false;
     selectionBox.material.transparent = true;
@@ -29986,8 +29968,44 @@ void main() {
       });
     }
     const camera = inspector.camera;
-    const transformControls = new TransformControls(camera, inspector.container);
+    const transformControls = new TransformControlsExport(camera, inspector.container);
     transformControls.size = 0.75;
+    const transformSnapshot = {
+      position: null,
+      rotation: null,
+      scale: null
+    };
+    function emitTransformUpdate(component, value) {
+      const object = transformControls.object;
+      if (!object || !object.el) {
+        return;
+      }
+      object.el.setAttribute(component, value);
+      Events.emit("entityupdate", {
+        component,
+        entity: object.el,
+        property: "",
+        value
+      });
+    }
+    function updateTransformSnapshotFromObject(object) {
+      const d = MathUtils.radToDeg;
+      const nextPosition = `${object.position.x} ${object.position.y} ${object.position.z}`;
+      const nextRotation = `${d(object.rotation.x)} ${d(object.rotation.y)} ${d(object.rotation.z)}`;
+      const nextScale = `${object.scale.x} ${object.scale.y} ${object.scale.z}`;
+      if (transformSnapshot.position !== nextPosition) {
+        emitTransformUpdate("position", nextPosition);
+        transformSnapshot.position = nextPosition;
+      }
+      if (transformSnapshot.rotation !== nextRotation) {
+        emitTransformUpdate("rotation", nextRotation);
+        transformSnapshot.rotation = nextRotation;
+      }
+      if (transformSnapshot.scale !== nextScale) {
+        emitTransformUpdate("scale", nextScale);
+        transformSnapshot.scale = nextScale;
+      }
+    }
     transformControls.addEventListener("objectChange", (evt) => {
       const object = transformControls.object;
       if (object === void 0) {
@@ -29995,26 +30013,7 @@ void main() {
       }
       selectionBox.setFromObject(object);
       updateHelpers(object);
-      let component;
-      let value;
-      if (evt.mode === "translate") {
-        component = "position";
-        value = `${object.position.x} ${object.position.y} ${object.position.z}`;
-      } else if (evt.mode === "rotate") {
-        component = "rotation";
-        const d = MathUtils.radToDeg;
-        value = `${d(object.rotation.x)} ${d(object.rotation.y)} ${d(object.rotation.z)}`;
-      } else if (evt.mode === "scale") {
-        component = "scale";
-        value = `${object.scale.x} ${object.scale.y} ${object.scale.z}`;
-      }
-      transformControls.object.el.setAttribute(component, value);
-      Events.emit("entityupdate", {
-        component,
-        entity: transformControls.object.el,
-        property: "",
-        value
-      });
+      updateTransformSnapshotFromObject(object);
     });
     transformControls.addEventListener("mouseDown", () => {
       controls.enabled = false;
@@ -30073,12 +30072,18 @@ void main() {
     Events.on("rotationsnapchanged", (dist) => {
       transformControls.setRotationSnap(dist);
     });
+    Events.on("scalesnapchanged", (dist) => {
+      transformControls.setScaleSnap(dist);
+    });
     Events.on("transformspacechanged", (space) => {
       transformControls.setSpace(space);
     });
     Events.on("objectselect", (object) => {
       selectionBox.visible = false;
       transformControls.detach();
+      transformSnapshot.position = null;
+      transformSnapshot.rotation = null;
+      transformSnapshot.scale = null;
       if (object && object.el) {
         if (object.el.getObject3D("mesh")) {
           selectionBox.setFromObject(object);
@@ -30093,6 +30098,7 @@ void main() {
           object.el.addEventListener("model-loaded", listener);
         }
         transformControls.attach(object);
+        updateTransformSnapshotFromObject(object);
       }
     });
     Events.on("objectfocus", (object) => {
@@ -30135,12 +30141,6 @@ void main() {
       if (cameraHelper) cameraHelper.update();
     }
     inspector.sceneEl.addEventListener("rendererresize", updateAspectRatio);
-    Events.on("gridvisibilitychanged", (showGrid) => {
-      grid.visible = showGrid;
-    });
-    Events.on("togglegrid", () => {
-      grid.visible = !grid.visible;
-    });
     Events.on("inspectortoggle", (active) => {
       if (active) {
         enableControls();
@@ -30239,17 +30239,6 @@ void main() {
     }
     return os2;
   }
-  function saveBlob(blob, filename) {
-    var link = document.createElement("a");
-    link.style.display = "none";
-    document.body.appendChild(link);
-    const url = URL.createObjectURL(blob);
-    link.href = url;
-    link.download = filename || "ascene.html";
-    link.click();
-    URL.revokeObjectURL(url);
-    link.remove();
-  }
   function areVectorsEqual(v1, v2) {
     return Object.is(v1.x, v2.x) && Object.is(v1.y, v2.y) && Object.is(v1.z, v2.z) && Object.is(v1.w, v2.w);
   }
@@ -30298,7 +30287,12 @@ void main() {
     if (entity) {
       if (force === true || confirm("Do you really want to remove entity `" + (entity.id || entity.tagName) + "`?")) {
         var closest = findClosestEntity(entity);
+        const oldParent = entity.parentElement;
         entity.parentNode.removeChild(entity);
+        Events.emit("entityremoved", {
+          entity,
+          oldParent
+        });
         AFRAME.INSPECTOR.selectEntity(closest);
       }
     }
@@ -30539,16 +30533,8 @@ void main() {
     if (!document.getElementById(baseId)) {
       return baseId;
     }
-    var i = 2;
-    var groups = baseId.match(/(\w+)-(\d+)/);
-    if (groups) {
-      baseId = groups[1];
-      i = groups[2];
-    }
-    while (document.getElementById(baseId + "-" + i)) {
-      i++;
-    }
-    return baseId + "-" + i;
+    const base = baseId.replace(/-[a-z0-9]{5}$/, "");
+    return generateEntityId(base);
   }
   function getComponentClipboardRepresentation(entity, componentName) {
     entity.flushToDOM();
@@ -30572,25 +30558,43 @@ void main() {
     const properties = stringifyComponentValue(schema, data);
     return `${componentName}="${properties}"`;
   }
+  function generateEntityId(tagName) {
+    const base = (tagName || "entity").replace(/^a-/, "") || "entity";
+    const hash = () => Math.random().toString(36).slice(2, 7);
+    let id = `${base}-${hash()}`;
+    while (document.getElementById(id)) {
+      id = `${base}-${hash()}`;
+    }
+    return id;
+  }
   function createEntity(definition, cb) {
     const entity = document.createElement(definition.element || "a-entity");
-    if (definition.id) {
-      entity.id = definition.id;
-    }
+    const tagName = (definition.element || "a-entity").toLowerCase();
+    entity.id = definition.id || generateEntityId(tagName);
     if (definition.class) {
       entity.setAttribute("class", definition.class);
     }
     for (let attr in definition.components) {
       entity.setAttribute(attr, definition.components[attr]);
     }
-    entity.addEventListener("loaded", () => {
+    const onLoaded = () => {
       Events.emit("entitycreated", entity);
       cb(entity);
-    }, {
-      once: true
-    });
+    };
     const parent = definition.parent || AFRAME.scenes[0];
     parent.appendChild(entity);
+    if (entity.hasLoaded) {
+      onLoaded();
+    } else {
+      entity.addEventListener("loaded", onLoaded, {
+        once: true
+      });
+      setTimeout(() => {
+        if (!entity.hasLoaded) {
+          onLoaded();
+        }
+      }, 500);
+    }
     return entity;
   }
   const os = getOS();
@@ -30602,6 +30606,13 @@ void main() {
     shortcuts: {
       default: {},
       modules: {}
+    },
+    // Camera bookmarking for f key
+    cameraBookmark: null,
+    isFocusedOnEntity: false,
+    clearCameraBookmark: function() {
+      this.cameraBookmark = null;
+      this.isFocusedOnEntity = false;
     },
     onKeyUp: function(event) {
       if (!shouldCaptureKeyEvent(event) || !AFRAME.INSPECTOR.opened) {
@@ -30643,7 +30654,32 @@ void main() {
       if (keyCode === 70) {
         const selectedEntity = AFRAME.INSPECTOR.selectedEntity;
         if (selectedEntity !== void 0 && selectedEntity !== null) {
-          Events.emit("objectfocus", selectedEntity.object3D);
+          const camera = AFRAME.INSPECTOR.camera;
+          const controls = AFRAME.INSPECTOR.controls;
+          if (this.isFocusedOnEntity && this.cameraBookmark) {
+            camera.position.copy(this.cameraBookmark.position);
+            if (controls) {
+              controls.center.copy(this.cameraBookmark.target);
+              camera.lookAt(controls.center);
+            }
+            camera.updateMatrixWorld();
+            camera.updateProjectionMatrix();
+            if (controls) {
+              controls.dispatchEvent({
+                type: "change"
+              });
+            }
+            this.isFocusedOnEntity = false;
+          } else {
+            if (controls) {
+              this.cameraBookmark = {
+                position: camera.position.clone(),
+                target: controls.center.clone()
+              };
+            }
+            Events.emit("objectfocus", selectedEntity.object3D);
+            this.isFocusedOnEntity = true;
+          }
         }
       }
       if (keyCode === 52) {
@@ -30671,6 +30707,10 @@ void main() {
     onKeyDown: function(event) {
       if (!shouldCaptureKeyEvent(event) || !AFRAME.INSPECTOR.opened) {
         return;
+      }
+      const cameraKeys = ["KeyW", "KeyA", "KeyS", "KeyD", "KeyQ", "KeyE"];
+      if (cameraKeys.includes(event.code)) {
+        this.clearCameraBookmark();
       }
       if (event.ctrlKey && os !== "macos" || event.metaKey && os === "macos") {
         if (AFRAME.INSPECTOR.selectedEntity && document.activeElement.tagName !== "INPUT") {
@@ -30732,6 +30772,9 @@ void main() {
       this.inspector = inspector;
       this.onKeyDown = this.onKeyDown.bind(this);
       this.onKeyUp = this.onKeyUp.bind(this);
+      Events.on("entityselect", (entity) => {
+        this.isFocusedOnEntity = false;
+      });
     }
   };
   function Config(overrides) {
@@ -30741,27 +30784,253 @@ void main() {
       ...overrides
     };
   }
+  function ensureEntityId(entity) {
+    if (entity && !entity.id) {
+      entity.id = generateEntityId(entity.tagName.toLowerCase());
+    }
+  }
   const updates = {};
+  const actions = [];
+  function getEntityIndex(entity) {
+    if (!entity || !entity.parentElement) {
+      return -1;
+    }
+    return Array.from(entity.parentElement.children).indexOf(entity);
+  }
+  function stringifyComponentData(name, component) {
+    if (!component) return null;
+    const baseName = name.split("__")[0];
+    const def = AFRAME.components[baseName];
+    if (!def) return null;
+    try {
+      const data = component.data;
+      if (data == null) return null;
+      if (def.isSingleProperty) {
+        const schema2 = def.schema;
+        return schema2.stringify ? schema2.stringify(data) : String(data);
+      }
+      const schema = def.schema;
+      const out = {};
+      Object.keys(data).forEach((prop) => {
+        if (prop.startsWith("_")) return;
+        const val = data[prop];
+        if (val == null) return;
+        const propDef = schema[prop];
+        if (propDef && typeof propDef.stringify === "function") {
+          out[prop] = propDef.stringify(val);
+        } else if (typeof val !== "object") {
+          out[prop] = String(val);
+        }
+      });
+      return AFRAME.utils.styleParser.stringify(out);
+    } catch (e) {
+      return null;
+    }
+  }
+  function serializeEntity(entity) {
+    if (!entity) {
+      return null;
+    }
+    if (entity.flushToDOM) {
+      entity.flushToDOM();
+    }
+    const components = {};
+    if (entity.components) {
+      Object.keys(entity.components).forEach((name) => {
+        const value = stringifyComponentData(name, entity.components[name]);
+        if (value !== null) {
+          components[name] = value;
+        }
+      });
+    }
+    return {
+      id: entity.id || null,
+      tagName: entity.tagName ? entity.tagName.toLowerCase() : null,
+      outerHTML: entity.outerHTML,
+      components,
+      parentId: entity.parentElement?.id || null,
+      parentTagName: entity.parentElement?.tagName ? entity.parentElement.tagName.toLowerCase() : null,
+      index: getEntityIndex(entity)
+    };
+  }
+  function recordEntityToUpdates(entity) {
+    if (!entity || !entity.components) {
+      return;
+    }
+    ensureEntityId(entity);
+    if (!entity.id) {
+      return;
+    }
+    if (entity.flushToDOM) {
+      entity.flushToDOM();
+    }
+    updates[entity.id] = updates[entity.id] || {};
+    Object.keys(entity.components).forEach((name) => {
+      const value = stringifyComponentData(name, entity.components[name]);
+      if (value !== null) {
+        updates[entity.id][name] = value;
+      }
+    });
+  }
+  function pushAction(type, payload) {
+    actions.push({
+      type,
+      payload,
+      timestamp: Date.now()
+    });
+  }
   Events.on("entityupdate", (payload) => {
     let value = payload.value;
     const entity = payload.entity;
+    ensureEntityId(entity);
+    if (!entity.id) {
+      return;
+    }
     updates[entity.id] = updates[entity.id] || {};
     const component = AFRAME.components[payload.component];
     if (component) {
       if (payload.property) {
-        updates[entity.id][payload.component] = updates[entity.id][payload.component] || {};
+        const currentComponentValue = updates[entity.id][payload.component];
+        if (typeof currentComponentValue === "string") {
+          try {
+            updates[entity.id][payload.component] = AFRAME.utils.styleParser.parse(currentComponentValue) || {};
+          } catch (e) {
+            updates[entity.id][payload.component] = {};
+          }
+        } else if (typeof currentComponentValue !== "object" || currentComponentValue === null) {
+          updates[entity.id][payload.component] = {};
+        }
         if (component.schema[payload.property]) {
           value = component.schema[payload.property].stringify(payload.value);
         }
         updates[entity.id][payload.component][payload.property] = value;
       } else {
-        value = component.schema.stringify(payload.value);
+        if (component.isSingleProperty) {
+          const schema = component.schema;
+          value = schema.stringify ? schema.stringify(value) : String(value);
+        } else {
+          const schema = component.schema;
+          const raw = typeof value === "object" && value !== null ? value : {};
+          const out = {};
+          Object.keys(raw).forEach((prop) => {
+            if (prop.startsWith("_") || raw[prop] == null) return;
+            const propDef = schema[prop];
+            if (propDef?.stringify) {
+              out[prop] = propDef.stringify(raw[prop]);
+            } else if (typeof raw[prop] !== "object") {
+              out[prop] = String(raw[prop]);
+            }
+          });
+          value = AFRAME.utils.styleParser.stringify(out);
+        }
         updates[entity.id][payload.component] = value;
       }
     }
   });
+  Events.on("entitycreated", (entity) => {
+    recordEntityToUpdates(entity);
+    const serialized = serializeEntity(entity);
+    pushAction("entitycreate", {
+      entity: serialized,
+      parentId: serialized ? serialized.parentId : null,
+      index: serialized ? serialized.index : null
+    });
+  });
+  Events.on("entityclone", (entity) => {
+    recordEntityToUpdates(entity);
+    const serialized = serializeEntity(entity);
+    pushAction("entitycreate", {
+      entity: serialized,
+      source: "clone",
+      parentId: serialized ? serialized.parentId : null,
+      index: serialized ? serialized.index : null
+    });
+  });
+  Events.on("entityremoved", ({
+    entity,
+    oldParent
+  }) => {
+    pushAction("entitydelete", {
+      entityId: entity?.id || null,
+      entityTagName: entity?.tagName ? entity.tagName.toLowerCase() : null,
+      oldParentId: oldParent?.id || null,
+      oldParentTagName: oldParent?.tagName ? oldParent.tagName.toLowerCase() : null
+    });
+  });
+  Events.on("entityreparent", ({
+    entity,
+    oldParent,
+    newParent
+  }) => {
+    if (entity) recordEntityToUpdates(entity);
+    pushAction("entityreparent", {
+      entityId: entity?.id || null,
+      entityTagName: entity?.tagName ? entity.tagName.toLowerCase() : null,
+      oldParentId: oldParent?.id || null,
+      oldParentTagName: oldParent?.tagName ? oldParent.tagName.toLowerCase() : null,
+      newParentId: newParent?.id || null,
+      newParentTagName: newParent?.tagName ? newParent.tagName.toLowerCase() : null,
+      index: getEntityIndex(entity)
+    });
+  });
+  Events.on("componentadd", ({
+    entity,
+    component
+  }) => {
+    if (!entity || !component) {
+      return;
+    }
+    ensureEntityId(entity);
+    const value = entity.components[component] ? stringifyComponentData(component, entity.components[component]) : "";
+    pushAction("componentadd", {
+      entityId: entity.id || null,
+      entityTagName: entity.tagName ? entity.tagName.toLowerCase() : null,
+      component,
+      value: value || ""
+    });
+  });
+  Events.on("componentremove", ({
+    entity,
+    component
+  }) => {
+    if (!entity || !component) {
+      return;
+    }
+    ensureEntityId(entity);
+    pushAction("componentremove", {
+      entityId: entity.id || null,
+      entityTagName: entity.tagName ? entity.tagName.toLowerCase() : null,
+      component
+    });
+  });
+  function getAssetFromDetail(detail = {}) {
+    const id = detail.id || null;
+    const el = id ? document.getElementById(id) : null;
+    const sourcePath = detail.sourcePath || el?.getAttribute?.("data-source-path") || null;
+    return {
+      id,
+      tagName: detail.tagName || detail.tag || (el?.tagName ? el.tagName.toLowerCase() : null),
+      src: sourcePath || detail.src || el?.getAttribute?.("src") || el?.src || null,
+      sourcePath
+    };
+  }
+  Events.on("assetadd", (detail) => {
+    const asset = getAssetFromDetail(detail);
+    if (!asset.id) {
+      return;
+    }
+    pushAction("assetset", asset);
+  });
+  Events.on("assetremove", (detail) => {
+    const asset = getAssetFromDetail(detail);
+    if (!asset.id) {
+      return;
+    }
+    pushAction("assetremove", asset);
+  });
   const history = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
+    actions,
     updates
   }, Symbol.toStringTag, { value: "Module" }));
   var DefaultContext = {
@@ -30918,9 +31187,6 @@ void main() {
   function FaClipboard(props) {
     return GenIcon({ "attr": { "viewBox": "0 0 384 512" }, "child": [{ "tag": "path", "attr": { "d": "M384 112v352c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112c0-26.51 21.49-48 48-48h80c0-35.29 28.71-64 64-64s64 28.71 64 64h80c26.51 0 48 21.49 48 48zM192 40c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24m96 114v-20a6 6 0 0 0-6-6H102a6 6 0 0 0-6 6v20a6 6 0 0 0 6 6h180a6 6 0 0 0 6-6z" }, "child": [] }] })(props);
   }
-  function FaClock(props) {
-    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z" }, "child": [] }] })(props);
-  }
   function FaClone(props) {
     return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M464 0c26.51 0 48 21.49 48 48v288c0 26.51-21.49 48-48 48H176c-26.51 0-48-21.49-48-48V48c0-26.51 21.49-48 48-48h288M176 416c-44.112 0-80-35.888-80-80V128H48c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48h288c26.51 0 48-21.49 48-48v-48H176z" }, "child": [] }] })(props);
   }
@@ -30930,14 +31196,14 @@ void main() {
   function FaCube(props) {
     return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M239.1 6.3l-208 78c-18.7 7-31.1 25-31.1 45v225.1c0 18.2 10.3 34.8 26.5 42.9l208 104c13.5 6.8 29.4 6.8 42.9 0l208-104c16.3-8.1 26.5-24.8 26.5-42.9V129.3c0-20-12.4-37.9-31.1-44.9l-208-78C262 2.2 250 2.2 239.1 6.3zM256 68.4l192 72v1.1l-192 78-192-78v-1.1l192-72zm32 356V275.5l160-65v133.9l-160 80z" }, "child": [] }] })(props);
   }
+  function FaDatabase(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M448 73.143v45.714C448 159.143 347.667 192 224 192S0 159.143 0 118.857V73.143C0 32.857 100.333 0 224 0s224 32.857 224 73.143zM448 176v102.857C448 319.143 347.667 352 224 352S0 319.143 0 278.857V176c48.125 33.143 136.208 48.572 224 48.572S399.874 209.143 448 176zm0 160v102.857C448 479.143 347.667 512 224 512S0 479.143 0 438.857V336c48.125 33.143 136.208 48.572 224 48.572S399.874 369.143 448 336z" }, "child": [] }] })(props);
+  }
   function FaDotCircle(props) {
     return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm80 248c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80z" }, "child": [] }] })(props);
   }
-  function FaDownload(props) {
-    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z" }, "child": [] }] })(props);
-  }
-  function FaExpand(props) {
-    return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M0 180V56c0-13.3 10.7-24 24-24h124c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H64v84c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12zM288 44v40c0 6.6 5.4 12 12 12h84v84c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12V56c0-13.3-10.7-24-24-24H300c-6.6 0-12 5.4-12 12zm148 276h-40c-6.6 0-12 5.4-12 12v84h-84c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h124c13.3 0 24-10.7 24-24V332c0-6.6-5.4-12-12-12zM160 468v-40c0-6.6-5.4-12-12-12H64v-84c0-6.6-5.4-12-12-12H12c-6.6 0-12 5.4-12 12v124c0 13.3 10.7 24 24 24h124c6.6 0 12-5.4 12-12z" }, "child": [] }] })(props);
+  function FaExpandArrowsAlt(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M448 344v112a23.94 23.94 0 0 1-24 24H312c-21.39 0-32.09-25.9-17-41l36.2-36.2L224 295.6 116.77 402.9 153 439c15.09 15.1 4.39 41-17 41H24a23.94 23.94 0 0 1-24-24V344c0-21.4 25.89-32.1 41-17l36.19 36.2L184.46 256 77.18 148.7 41 185c-15.1 15.1-41 4.4-41-17V56a23.94 23.94 0 0 1 24-24h112c21.39 0 32.09 25.9 17 41l-36.2 36.2L224 216.4l107.23-107.3L295 73c-15.09-15.1-4.39-41 17-41h112a23.94 23.94 0 0 1 24 24v112c0 21.4-25.89 32.1-41 17l-36.19-36.2L263.54 256l107.28 107.3L407 327.1c15.1-15.2 41-4.5 41 16.9z" }, "child": [] }] })(props);
   }
   function FaEyeSlash(props) {
     return GenIcon({ "attr": { "viewBox": "0 0 640 512" }, "child": [{ "tag": "path", "attr": { "d": "M320 400c-75.85 0-137.25-58.71-142.9-133.11L72.2 185.82c-13.79 17.3-26.48 35.59-36.72 55.59a32.35 32.35 0 0 0 0 29.19C89.71 376.41 197.07 448 320 448c26.91 0 52.87-4 77.89-10.46L346 397.39a144.13 144.13 0 0 1-26 2.61zm313.82 58.1l-110.55-85.44a331.25 331.25 0 0 0 81.25-102.07 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64a308.15 308.15 0 0 0-147.32 37.7L45.46 3.37A16 16 0 0 0 23 6.18L3.37 31.45A16 16 0 0 0 6.18 53.9l588.36 454.73a16 16 0 0 0 22.46-2.81l19.64-25.27a16 16 0 0 0-2.82-22.45zm-183.72-142l-39.3-30.38A94.75 94.75 0 0 0 416 256a94.76 94.76 0 0 0-121.31-92.21A47.65 47.65 0 0 1 304 192a46.64 46.64 0 0 1-1.54 10l-73.61-56.89A142.31 142.31 0 0 1 320 112a143.92 143.92 0 0 1 144 144c0 21.63-5.29 41.79-13.9 60.11z" }, "child": [] }] })(props);
@@ -30945,8 +31211,23 @@ void main() {
   function FaEye(props) {
     return GenIcon({ "attr": { "viewBox": "0 0 576 512" }, "child": [{ "tag": "path", "attr": { "d": "M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z" }, "child": [] }] })(props);
   }
+  function FaFileAudio(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 384 512" }, "child": [{ "tag": "path", "attr": { "d": "M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm-64 268c0 10.7-12.9 16-20.5 8.5L104 376H76c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h28l35.5-36.5c7.6-7.6 20.5-2.2 20.5 8.5v136zm33.2-47.6c9.1-9.3 9.1-24.1 0-33.4-22.1-22.8 12.2-56.2 34.4-33.5 27.2 27.9 27.2 72.4 0 100.4-21.8 22.3-56.9-10.4-34.4-33.5zm86-117.1c54.4 55.9 54.4 144.8 0 200.8-21.8 22.4-57-10.3-34.4-33.5 36.2-37.2 36.3-96.5 0-133.8-22.1-22.8 12.3-56.3 34.4-33.5zM384 121.9v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z" }, "child": [] }] })(props);
+  }
+  function FaFileImage(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 384 512" }, "child": [{ "tag": "path", "attr": { "d": "M384 121.941V128H256V0h6.059a24 24 0 0 1 16.97 7.029l97.941 97.941a24.002 24.002 0 0 1 7.03 16.971zM248 160c-13.2 0-24-10.8-24-24V0H24C10.745 0 0 10.745 0 24v464c0 13.255 10.745 24 24 24h336c13.255 0 24-10.745 24-24V160H248zm-135.455 16c26.51 0 48 21.49 48 48s-21.49 48-48 48-48-21.49-48-48 21.491-48 48-48zm208 240h-256l.485-48.485L104.545 328c4.686-4.686 11.799-4.201 16.485.485L160.545 368 264.06 264.485c4.686-4.686 12.284-4.686 16.971 0L320.545 304v112z" }, "child": [] }] })(props);
+  }
   function FaFileVideo(props) {
     return GenIcon({ "attr": { "viewBox": "0 0 384 512" }, "child": [{ "tag": "path", "attr": { "d": "M384 121.941V128H256V0h6.059c6.365 0 12.47 2.529 16.971 7.029l97.941 97.941A24.005 24.005 0 0 1 384 121.941zM224 136V0H24C10.745 0 0 10.745 0 24v464c0 13.255 10.745 24 24 24h336c13.255 0 24-10.745 24-24V160H248c-13.2 0-24-10.8-24-24zm96 144.016v111.963c0 21.445-25.943 31.998-40.971 16.971L224 353.941V392c0 13.255-10.745 24-24 24H88c-13.255 0-24-10.745-24-24V280c0-13.255 10.745-24 24-24h112c13.255 0 24 10.745 24 24v38.059l55.029-55.013c15.011-15.01 40.971-4.491 40.971 16.97z" }, "child": [] }] })(props);
+  }
+  function FaFile(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 384 512" }, "child": [{ "tag": "path", "attr": { "d": "M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm160-14.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z" }, "child": [] }] })(props);
+  }
+  function FaFilter(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z" }, "child": [] }] })(props);
+  }
+  function FaFolderOpen(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 576 512" }, "child": [{ "tag": "path", "attr": { "d": "M572.694 292.093L500.27 416.248A63.997 63.997 0 0 1 444.989 448H45.025c-18.523 0-30.064-20.093-20.731-36.093l72.424-124.155A64 64 0 0 1 152 256h399.964c18.523 0 30.064 20.093 20.73 36.093zM152 224h328v-48c0-26.51-21.49-48-48-48H272l-64-64H48C21.49 64 0 85.49 0 112v278.046l69.077-118.418C86.214 242.25 117.989 224 152 224z" }, "child": [] }] })(props);
   }
   function FaFont(props) {
     return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M432 416h-23.41L277.88 53.69A32 32 0 0 0 247.58 32h-47.16a32 32 0 0 0-30.3 21.69L39.41 416H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h128a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16h-19.58l23.3-64h152.56l23.3 64H304a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h128a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM176.85 272L224 142.51 271.15 272z" }, "child": [] }] })(props);
@@ -30966,26 +31247,23 @@ void main() {
   function FaLink(props) {
     return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z" }, "child": [] }] })(props);
   }
+  function FaMagnet(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M164.07 148.1H12a12 12 0 0 1-12-12v-80a36 36 0 0 1 36-36h104a36 36 0 0 1 36 36v80a11.89 11.89 0 0 1-11.93 12zm347.93-12V56a36 36 0 0 0-36-36H372a36 36 0 0 0-36 36v80a12 12 0 0 0 12 12h152a11.89 11.89 0 0 0 12-11.9zm-164 44a12 12 0 0 0-12 12v52c0 128.1-160 127.9-160 0v-52a12 12 0 0 0-12-12H12.1a12 12 0 0 0-12 12.1c.1 21.4.6 40.3 0 53.3 0 150.6 136.17 246.6 256.75 246.6s255-96 255-246.7c-.6-12.8-.2-33 0-53.2a12 12 0 0 0-12-12.1z" }, "child": [] }] })(props);
+  }
   function FaMinus(props) {
     return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" }, "child": [] }] })(props);
   }
   function FaObjectGroup(props) {
     return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M480 128V96h20c6.627 0 12-5.373 12-12V44c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v20H64V44c0-6.627-5.373-12-12-12H12C5.373 32 0 37.373 0 44v40c0 6.627 5.373 12 12 12h20v320H12c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h40c6.627 0 12-5.373 12-12v-20h384v20c0 6.627 5.373 12 12 12h40c6.627 0 12-5.373 12-12v-40c0-6.627-5.373-12-12-12h-20V128zM96 276V140c0-6.627 5.373-12 12-12h168c6.627 0 12 5.373 12 12v136c0 6.627-5.373 12-12 12H108c-6.627 0-12-5.373-12-12zm320 96c0 6.627-5.373 12-12 12H236c-6.627 0-12-5.373-12-12v-52h72c13.255 0 24-10.745 24-24v-72h84c6.627 0 12 5.373 12 12v136z" }, "child": [] }] })(props);
   }
-  function FaPause(props) {
-    return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z" }, "child": [] }] })(props);
+  function FaPalette(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M204.3 5C104.9 24.4 24.8 104.3 5.2 203.4c-37 187 131.7 326.4 258.8 306.7 41.2-6.4 61.4-54.6 42.5-91.7-23.1-45.4 9.9-98.4 60.9-98.4h79.7c35.8 0 64.8-29.6 64.9-65.3C511.5 97.1 368.1-26.9 204.3 5zM96 320c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm32-128c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128-64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z" }, "child": [] }] })(props);
   }
   function FaPlayCircle(props) {
     return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z" }, "child": [] }] })(props);
   }
-  function FaPlay(props) {
-    return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" }, "child": [] }] })(props);
-  }
   function FaPlus(props) {
     return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" }, "child": [] }] })(props);
-  }
-  function FaQuestion(props) {
-    return GenIcon({ "attr": { "viewBox": "0 0 384 512" }, "child": [{ "tag": "path", "attr": { "d": "M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z" }, "child": [] }] })(props);
   }
   function FaRedo(props) {
     return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M500.33 0h-47.41a12 12 0 0 0-12 12.57l4 82.76A247.42 247.42 0 0 0 256 8C119.34 8 7.9 119.53 8 256.19 8.1 393.07 119.1 504 256 504a247.1 247.1 0 0 0 166.18-63.91 12 12 0 0 0 .48-17.43l-34-34a12 12 0 0 0-16.38-.55A176 176 0 1 1 402.1 157.8l-101.53-4.87a12 12 0 0 0-12.57 12v47.41a12 12 0 0 0 12 12h200.33a12 12 0 0 0 12-12V12a12 12 0 0 0-12-12z" }, "child": [] }] })(props);
@@ -31007,6 +31285,9 @@ void main() {
   }
   function FaTrash(props) {
     return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z" }, "child": [] }] })(props);
+  }
+  function FaUndo(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M212.333 224.333H12c-6.627 0-12-5.373-12-12V12C0 5.373 5.373 0 12 0h48c6.627 0 12 5.373 12 12v78.112C117.773 39.279 184.26 7.47 258.175 8.007c136.906.994 246.448 111.623 246.157 248.532C504.041 393.258 393.12 504 256.333 504c-64.089 0-122.496-24.313-166.51-64.215-5.099-4.622-5.334-12.554-.467-17.42l33.967-33.967c4.474-4.474 11.662-4.717 16.401-.525C170.76 415.336 211.58 432 256.333 432c97.268 0 176-78.716 176-176 0-97.267-78.716-176-176-176-58.496 0-110.28 28.476-142.274 72.333h98.274c6.627 0 12 5.373 12 12v48c0 6.627-5.373 12-12 12z" }, "child": [] }] })(props);
   }
   function FaUser(props) {
     return GenIcon({ "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z" }, "child": [] }] })(props);
@@ -31275,14 +31556,42 @@ void main() {
     id,
     name,
     onChange,
-    value
+    value,
+    allowAssetSelection = false,
+    assetKinds = []
   }) {
     const [currentValue, setCurrentValue] = reactExports.useState(value || "");
+    const assetTargetId = reactExports.useRef(id ? `${id}-${Math.random().toString(36).slice(2, 10)}` : null);
+    const isAssetKindAllowed = (kind) => {
+      if (!assetKinds || assetKinds.length === 0) {
+        return true;
+      }
+      return assetKinds.includes(kind);
+    };
     reactExports.useEffect(() => {
       if (value !== currentValue) {
         setCurrentValue(value || "");
       }
     }, [value, currentValue]);
+    reactExports.useEffect(() => {
+      if (!allowAssetSelection || !assetTargetId.current) {
+        return;
+      }
+      const onAssetSelect = (detail) => {
+        if (!detail || detail.targetId !== assetTargetId.current) {
+          return;
+        }
+        const nextValue = detail.value || "";
+        setCurrentValue(nextValue);
+        if (onChange) {
+          onChange(name, nextValue);
+        }
+      };
+      Events.on("assetselect", onAssetSelect);
+      return () => {
+        Events.off("assetselect", onAssetSelect);
+      };
+    }, [allowAssetSelection, name, onChange]);
     const handleChange = (e) => {
       const newValue = e.target.value;
       setCurrentValue(newValue);
@@ -31290,19 +31599,61 @@ void main() {
         onChange(name, newValue);
       }
     };
+    const handleFocus = () => {
+      if (!allowAssetSelection || !assetTargetId.current) {
+        return;
+      }
+      Events.emit("assettarget", {
+        targetId: assetTargetId.current,
+        assetKinds
+      });
+    };
+    const handleDragOver = (e) => {
+      if (!allowAssetSelection) {
+        return;
+      }
+      e.preventDefault();
+      e.dataTransfer.dropEffect = "copy";
+    };
+    const handleDrop = (e) => {
+      if (!allowAssetSelection) {
+        return;
+      }
+      e.preventDefault();
+      try {
+        const assetData = JSON.parse(e.dataTransfer.getData("application/json"));
+        if (assetData?.type !== "asset") {
+          return;
+        }
+        if (!isAssetKindAllowed(assetData.assetType)) {
+          return;
+        }
+        const nextValue = assetData.value || "";
+        setCurrentValue(nextValue);
+        if (onChange) {
+          onChange(name, nextValue);
+        }
+      } catch (error) {
+      }
+    };
     return /* @__PURE__ */ React.createElement("input", {
       id,
       type: "text",
       className: "string",
       value: currentValue,
-      onChange: handleChange
+      onChange: handleChange,
+      onFocus: handleFocus,
+      onDragOver: handleDragOver,
+      onDrop: handleDrop
     });
   }
   InputWidget.propTypes = {
     id: PropTypes.string,
     name: PropTypes.string.isRequired,
     onChange: PropTypes.func,
-    value: PropTypes.any
+    value: PropTypes.any,
+    allowAssetSelection: PropTypes.bool,
+    assetKinds: PropTypes.arrayOf(PropTypes.string)
   };
   function NumberWidget({
     id,
@@ -31567,12 +31918,14 @@ void main() {
     id,
     name,
     onChange,
-    value = ""
+    value = "",
+    allowAssetSelection = true
   }) {
     const [currentValue, setCurrentValue] = React.useState(value || "");
     const [valueType, setValueType] = React.useState(null);
     const [url, setUrl] = React.useState(null);
     const canvasRef = React.useRef();
+    const assetTargetId = React.useRef(id ? `${id}-${Math.random().toString(36).slice(2, 10)}` : null);
     const setValue = React.useCallback((newValue) => {
       const canvas = canvasRef.current;
       const context = canvas.getContext("2d");
@@ -31645,30 +31998,89 @@ void main() {
       }
       setCurrentValue(newValue);
     }, [onChange, name]);
+    React.useEffect(() => {
+      if (!allowAssetSelection || !assetTargetId.current) {
+        return;
+      }
+      const onAssetSelect = (detail) => {
+        if (!detail || detail.targetId !== assetTargetId.current) {
+          return;
+        }
+        const nextValue = detail.value || "";
+        notifyChanged(nextValue);
+        setValue(nextValue);
+      };
+      Events.on("assetselect", onAssetSelect);
+      return () => {
+        Events.off("assetselect", onAssetSelect);
+      };
+    }, [allowAssetSelection, notifyChanged, setValue]);
     const handleChange = React.useCallback((e) => {
       const newValue = e.target.value;
       setCurrentValue(newValue);
       notifyChanged(newValue);
     }, [notifyChanged]);
+    const setAssetTarget = React.useCallback(() => {
+      if (!allowAssetSelection || !assetTargetId.current) {
+        return;
+      }
+      Events.emit("assettarget", {
+        targetId: assetTargetId.current,
+        assetKinds: ["image", "video"]
+      });
+    }, [allowAssetSelection]);
+    const handleDragOver = React.useCallback((e) => {
+      if (!allowAssetSelection) {
+        return;
+      }
+      e.preventDefault();
+      e.dataTransfer.dropEffect = "copy";
+    }, [allowAssetSelection]);
+    const handleDrop = React.useCallback((e) => {
+      if (!allowAssetSelection) {
+        return;
+      }
+      e.preventDefault();
+      try {
+        const assetData = JSON.parse(e.dataTransfer.getData("application/json"));
+        if (assetData?.type !== "asset") {
+          return;
+        }
+        if (assetData.assetType !== "image" && assetData.assetType !== "video") {
+          return;
+        }
+        const nextValue = assetData.value || "";
+        notifyChanged(nextValue);
+        setValue(nextValue);
+      } catch (error) {
+      }
+    }, [allowAssetSelection, notifyChanged, setValue]);
     React.useCallback(() => {
       setValue("");
       notifyChanged("");
     }, [setValue, notifyChanged]);
     const openDialog = React.useCallback(() => {
-      Events.emit("opentexturesmodal", currentValue, (image) => {
-        if (!image) {
-          return;
-        }
-        var newValue = image.value;
-        if (image.type !== "asset") {
-          var assetId = insertOrGetImageAsset(image.src);
-          newValue = "#" + assetId;
-        }
+      const input = prompt("Enter texture asset ID (e.g. #brick) or image URL", currentValue || "");
+      if (input === null) {
+        return;
+      }
+      const nextValue = input.trim();
+      if (!nextValue) {
         if (onChange) {
-          onChange(name, newValue);
+          onChange(name, "");
         }
-        setValue(newValue);
-      });
+        setValue("");
+        return;
+      }
+      let resolvedValue = nextValue;
+      if (!nextValue.startsWith("#")) {
+        const assetId = insertOrGetImageAsset(nextValue);
+        resolvedValue = "#" + assetId;
+      }
+      if (onChange) {
+        onChange(name, resolvedValue);
+      }
+      setValue(resolvedValue);
     }, [currentValue, onChange, name, setValue]);
     let hint = "";
     if (currentValue) {
@@ -31689,7 +32101,10 @@ void main() {
       type: "text",
       title: hint,
       value: currentValue,
-      onChange: handleChange
+      onChange: handleChange,
+      onFocus: setAssetTarget,
+      onDragOver: handleDragOver,
+      onDrop: handleDrop
     }), /* @__PURE__ */ React.createElement("canvas", {
       ref: canvasRef,
       width: "32",
@@ -31698,9 +32113,19 @@ void main() {
       onClick: openDialog
     }));
   }
+  TextureWidget.propTypes = {
+    id: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    onChange: PropTypes.func,
+    value: PropTypes.any,
+    allowAssetSelection: PropTypes.bool
+  };
   function Vec4Widget({
+    id,
+    name,
     onChange,
-    value
+    value = [0, 0, 0, 0],
+    precision = 2
   }) {
     const [state, setState] = reactExports.useState({
       x: value.x,
@@ -31708,15 +32133,15 @@ void main() {
       z: value.z,
       w: value.w
     });
-    const handleChange = reactExports.useCallback((name, val) => {
-      const newValue = parseFloat(val.toFixed(5));
+    const handleChange = reactExports.useCallback((name2, val) => {
+      const newValue = parseFloat(val.toFixed(2));
       setState((prevState) => {
         const newState = {
           ...prevState,
-          [name]: newValue
+          [name2]: newValue
         };
         if (onChange) {
-          onChange(name, newState);
+          onChange(name2, newState);
         }
         return newState;
       });
@@ -31730,7 +32155,7 @@ void main() {
           w: value.w
         });
       }
-    }, [value, state]);
+    }, [value]);
     return /* @__PURE__ */ React.createElement("div", {
       className: "vec4"
     }, /* @__PURE__ */ React.createElement("div", {
@@ -31738,25 +32163,29 @@ void main() {
     }, /* @__PURE__ */ React.createElement(NumberWidget, {
       name: "x",
       value: state.x,
-      onChange: handleChange
+      onChange: handleChange,
+      precision: 2
     })), /* @__PURE__ */ React.createElement("div", {
       className: "vec-input-wrapper"
     }, /* @__PURE__ */ React.createElement(NumberWidget, {
       name: "y",
       value: state.y,
-      onChange: handleChange
+      onChange: handleChange,
+      precision: 2
     })), /* @__PURE__ */ React.createElement("div", {
       className: "vec-input-wrapper"
     }, /* @__PURE__ */ React.createElement(NumberWidget, {
       name: "z",
       value: state.z,
-      onChange: handleChange
+      onChange: handleChange,
+      precision: 2
     })), /* @__PURE__ */ React.createElement("div", {
       className: "vec-input-wrapper"
     }, /* @__PURE__ */ React.createElement(NumberWidget, {
       name: "w",
       value: state.w,
-      onChange: handleChange
+      onChange: handleChange,
+      precision: 2
     })));
   }
   Vec4Widget.propTypes = {
@@ -31764,8 +32193,11 @@ void main() {
     value: PropTypes.object.isRequired
   };
   function Vec3Widget({
+    id,
+    name,
     onChange,
-    value
+    value = [0, 0, 0],
+    precision = 2
   }) {
     const [currentValue, setCurrentValue] = reactExports.useState({
       x: value.x,
@@ -31780,11 +32212,11 @@ void main() {
           z: value.z
         });
       }
-    }, [value, currentValue]);
-    const handleChange = (name, newValue) => {
+    }, [value]);
+    const handleChange = (axisName, newValue) => {
       const updatedValue = {
         ...currentValue,
-        [name]: parseFloat(newValue.toFixed(5))
+        [axisName]: parseFloat(newValue.toFixed(2))
       };
       setCurrentValue(updatedValue);
       if (onChange) {
@@ -31798,19 +32230,22 @@ void main() {
     }, /* @__PURE__ */ React.createElement(NumberWidget, {
       name: "x",
       value: currentValue.x,
-      onChange: handleChange
+      onChange: handleChange,
+      precision: 2
     })), /* @__PURE__ */ React.createElement("div", {
       className: "vec-input-wrapper"
     }, /* @__PURE__ */ React.createElement(NumberWidget, {
       name: "y",
       value: currentValue.y,
-      onChange: handleChange
+      onChange: handleChange,
+      precision: 2
     })), /* @__PURE__ */ React.createElement("div", {
       className: "vec-input-wrapper"
     }, /* @__PURE__ */ React.createElement(NumberWidget, {
       name: "z",
       value: currentValue.z,
-      onChange: handleChange
+      onChange: handleChange,
+      precision: 2
     })));
   }
   Vec3Widget.propTypes = {
@@ -31818,8 +32253,11 @@ void main() {
     value: PropTypes.object.isRequired
   };
   function Vec2Widget({
+    id,
+    name,
     onChange,
-    value
+    value = [0, 0],
+    precision = 2
   }) {
     const [currentValue, setCurrentValue] = reactExports.useState({
       x: value.x,
@@ -31832,11 +32270,11 @@ void main() {
           y: value.y
         });
       }
-    }, [value, currentValue]);
-    const handleChange = (name, newValue) => {
+    }, [value]);
+    const handleChange = (axisName, newValue) => {
       const updatedValue = {
         ...currentValue,
-        [name]: parseFloat(newValue.toFixed(5))
+        [axisName]: parseFloat(newValue.toFixed(2))
       };
       setCurrentValue(updatedValue);
       if (onChange) {
@@ -31850,180 +32288,20 @@ void main() {
     }, /* @__PURE__ */ React.createElement(NumberWidget, {
       name: "x",
       value: currentValue.x,
-      onChange: handleChange
+      onChange: handleChange,
+      precision: 2
     })), /* @__PURE__ */ React.createElement("div", {
       className: "vec-input-wrapper"
     }, /* @__PURE__ */ React.createElement(NumberWidget, {
       name: "y",
       value: currentValue.y,
-      onChange: handleChange
+      onChange: handleChange,
+      precision: 2
     })));
   }
   Vec2Widget.propTypes = {
     onChange: PropTypes.func,
     value: PropTypes.object.isRequired
-  };
-  function _extends$1() {
-    return _extends$1 = Object.assign ? Object.assign.bind() : function(n) {
-      for (var e = 1; e < arguments.length; e++) {
-        var t = arguments[e];
-        for (var r2 in t) ({}).hasOwnProperty.call(t, r2) && (n[r2] = t[r2]);
-      }
-      return n;
-    }, _extends$1.apply(null, arguments);
-  }
-  function PropertyRow({
-    componentname,
-    data,
-    entity,
-    isSingle,
-    name,
-    schema
-  }) {
-    const id = componentname + ":" + name;
-    const getWidget = reactExports.useCallback(() => {
-      let type = schema.type;
-      if (componentname === "material" && name === "envMap") {
-        type = "map";
-      }
-      if ((componentname === "animation" || componentname.startsWith("animation__")) && name === "loop") {
-        type = "boolean";
-      }
-      let value2 = type === "selector" ? entity.getDOMAttribute(componentname)?.[name] : data;
-      if (type === "string" && value2 && typeof value2 !== "string") {
-        value2 = schema.stringify(value2);
-      }
-      const widgetProps = {
-        name,
-        onChange: function(name2, value3) {
-          updateEntity(entity, componentname, !isSingle ? name2 : "", value3);
-        },
-        value: value2,
-        id
-      };
-      const numberWidgetProps = {
-        min: schema.hasOwnProperty("min") ? schema.min : -Infinity,
-        max: schema.hasOwnProperty("max") ? schema.max : Infinity
-      };
-      if (schema.oneOf && schema.oneOf.length > 0) {
-        return /* @__PURE__ */ React.createElement(SelectWidget, _extends$1({}, widgetProps, {
-          options: schema.oneOf,
-          isMulti: schema.type === "array"
-        }));
-      }
-      if (type === "map") {
-        return /* @__PURE__ */ React.createElement(TextureWidget, widgetProps);
-      }
-      switch (type) {
-        case "number": {
-          return /* @__PURE__ */ React.createElement(NumberWidget, _extends$1({}, widgetProps, numberWidgetProps));
-        }
-        case "int": {
-          return /* @__PURE__ */ React.createElement(NumberWidget, _extends$1({}, widgetProps, numberWidgetProps, {
-            precision: 0
-          }));
-        }
-        case "vec2": {
-          return /* @__PURE__ */ React.createElement(Vec2Widget, widgetProps);
-        }
-        case "vec3": {
-          return /* @__PURE__ */ React.createElement(Vec3Widget, widgetProps);
-        }
-        case "vec4": {
-          return /* @__PURE__ */ React.createElement(Vec4Widget, widgetProps);
-        }
-        case "color": {
-          return /* @__PURE__ */ React.createElement(ColorWidget, widgetProps);
-        }
-        case "boolean": {
-          return /* @__PURE__ */ React.createElement(BooleanWidget, widgetProps);
-        }
-        default: {
-          return /* @__PURE__ */ React.createElement(InputWidget, widgetProps);
-        }
-      }
-    }, [componentname, data, entity, id, isSingle, name, schema]);
-    const isPropertyDefined = reactExports.useCallback(() => {
-      let definedValue;
-      let defaultValue;
-      if (isSingle) {
-        definedValue = entity.getDOMAttribute(componentname);
-        if (definedValue === null) return false;
-        defaultValue = entity.components[componentname].schema.default;
-        return !equal(definedValue, defaultValue);
-      } else {
-        definedValue = (entity.getDOMAttribute(componentname) || {})[name];
-        if (definedValue === void 0) return false;
-        defaultValue = entity.components[componentname].schema[name].default;
-        return !equal(definedValue, defaultValue);
-      }
-    }, [componentname, entity, isSingle, name]);
-    const value = schema.type === "selector" ? entity.getDOMAttribute(componentname)?.[name] : JSON.stringify(data);
-    const title = name + "\n - type: " + schema.type + "\n - value: " + value;
-    const className = clsx({
-      propertyRow: true,
-      propertyRowDefined: isPropertyDefined()
-    });
-    return /* @__PURE__ */ React.createElement("div", {
-      className
-    }, /* @__PURE__ */ React.createElement("label", {
-      htmlFor: id,
-      className: "text",
-      title
-    }, name), getWidget());
-  }
-  PropertyRow.propTypes = {
-    componentname: PropTypes.string.isRequired,
-    data: PropTypes.oneOfType([PropTypes.array.isRequired, PropTypes.bool.isRequired, PropTypes.number.isRequired, PropTypes.object.isRequired, PropTypes.string.isRequired]),
-    entity: PropTypes.object.isRequired,
-    isSingle: PropTypes.bool.isRequired,
-    name: PropTypes.string.isRequired,
-    schema: PropTypes.object.isRequired
-  };
-  function Collapsible({
-    className,
-    collapsed = false,
-    children,
-    id
-  }) {
-    const [isCollapsed, setIsCollapsed] = reactExports.useState(collapsed);
-    const toggleVisibility = (event) => {
-      if (event.target.nodeName === "A") return;
-      setIsCollapsed(!isCollapsed);
-    };
-    const rootClassNames = {
-      collapsible: true,
-      component: true,
-      collapsed: isCollapsed
-    };
-    if (className) {
-      rootClassNames[className] = true;
-    }
-    const rootClasses = clsx(rootClassNames);
-    const contentClasses = clsx({
-      content: true,
-      hide: isCollapsed
-    });
-    return /* @__PURE__ */ React.createElement("div", {
-      id,
-      className: rootClasses
-    }, /* @__PURE__ */ React.createElement("div", {
-      className: "static",
-      onClick: toggleVisibility
-    }, /* @__PURE__ */ React.createElement("div", {
-      className: "collapse-button"
-    }), children[0]), /* @__PURE__ */ React.createElement("div", {
-      className: contentClasses
-    }, children[1]));
-  }
-  Collapsible.propTypes = {
-    className: PropTypes.string,
-    collapsed: PropTypes.bool,
-    children: PropTypes.oneOfType([PropTypes.array, PropTypes.element]).isRequired,
-    id: PropTypes.string
-  };
-  Collapsible.defaultProps = {
-    collapsed: false
   };
   /*! clipboard-copy. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
   var clipboardCopy_1;
@@ -32077,6 +32355,203 @@ void main() {
   }
   var clipboardCopyExports = requireClipboardCopy();
   const copy = /* @__PURE__ */ getDefaultExportFromCjs(clipboardCopyExports);
+  function _extends$1() {
+    return _extends$1 = Object.assign ? Object.assign.bind() : function(n) {
+      for (var e = 1; e < arguments.length; e++) {
+        var t = arguments[e];
+        for (var r2 in t) ({}).hasOwnProperty.call(t, r2) && (n[r2] = t[r2]);
+      }
+      return n;
+    }, _extends$1.apply(null, arguments);
+  }
+  function PropertyRow({
+    data,
+    entity,
+    isSingle,
+    name,
+    schema
+  }) {
+    const [componentName, propertyName] = isSingle ? [name, name] : name.includes(".") ? name.split(".") : [name, name];
+    const [isCopied, setIsCopied] = reactExports.useState(false);
+    const id = componentName + ":" + propertyName;
+    const getAssetKinds = (type) => {
+      const prop = propertyName.toLowerCase();
+      const comp = componentName.toLowerCase();
+      if (type === "map" || prop.includes("map")) {
+        return ["image", "video"];
+      }
+      if (prop === "src" || schema.type === "selector") {
+        if (comp === "sound" || comp === "audio" || prop.includes("audio")) {
+          return ["audio"];
+        }
+        if (comp.includes("video")) {
+          return ["video"];
+        }
+        if (comp === "material") {
+          return ["image", "video"];
+        }
+        if (comp.includes("gltf") || comp.includes("obj-model") || comp.includes("fbx") || comp.includes("collada")) {
+          return ["model"];
+        }
+        return ["image", "video", "audio", "model", "other"];
+      }
+      return [];
+    };
+    const getWidgetType = () => {
+      let type = schema.type;
+      if (componentName === "material" && propertyName === "envMap") type = "map";
+      if ((componentName === "animation" || componentName.startsWith("animation__")) && propertyName === "loop") type = "boolean";
+      return type;
+    };
+    const getWidgetValue = (type) => {
+      const value2 = type === "selector" ? entity.getDOMAttribute(componentName)?.[propertyName] : data;
+      return type === "string" && value2 && typeof value2 !== "string" ? schema.stringify(value2) : value2;
+    };
+    const createWidgetProps = (value2, type) => ({
+      name: propertyName,
+      onChange: (propName, value3) => updateEntity(entity, componentName, !isSingle ? propName : "", value3),
+      value: value2,
+      id,
+      assetKinds: getAssetKinds(type),
+      allowAssetSelection: type === "map" || schema.type === "selector" || propertyName === "src" || propertyName.toLowerCase().includes("map")
+    });
+    const getWidget = () => {
+      const type = getWidgetType();
+      const value2 = getWidgetValue(type);
+      const widgetProps = createWidgetProps(value2, type);
+      if (schema.oneOf?.length > 0) {
+        return /* @__PURE__ */ React.createElement(SelectWidget, _extends$1({}, widgetProps, {
+          options: schema.oneOf,
+          isMulti: schema.type === "array"
+        }));
+      }
+      if (type === "map") return /* @__PURE__ */ React.createElement(TextureWidget, widgetProps);
+      const numberProps = {
+        min: schema.min ?? -Infinity,
+        max: schema.max ?? Infinity
+      };
+      switch (type) {
+        case "number":
+          return /* @__PURE__ */ React.createElement(NumberWidget, _extends$1({}, widgetProps, numberProps));
+        case "int":
+          return /* @__PURE__ */ React.createElement(NumberWidget, _extends$1({}, widgetProps, numberProps, {
+            precision: 0
+          }));
+        case "vec2":
+          return /* @__PURE__ */ React.createElement(Vec2Widget, widgetProps);
+        case "vec3":
+          return /* @__PURE__ */ React.createElement(Vec3Widget, widgetProps);
+        case "vec4":
+          return /* @__PURE__ */ React.createElement(Vec4Widget, widgetProps);
+        case "color":
+          return /* @__PURE__ */ React.createElement(ColorWidget, widgetProps);
+        case "boolean":
+          return /* @__PURE__ */ React.createElement(BooleanWidget, widgetProps);
+        default:
+          return /* @__PURE__ */ React.createElement(InputWidget, widgetProps);
+      }
+    };
+    const isPropertyDefined = () => {
+      const definedValue = isSingle ? entity.getDOMAttribute(componentName) : (entity.getDOMAttribute(componentName) || {})[propertyName];
+      if (definedValue === null || definedValue === void 0) return false;
+      const defaultValue = isSingle ? entity.components[componentName].schema.default : entity.components[componentName].schema[propertyName].default;
+      return !equal(definedValue, defaultValue);
+    };
+    const resetToDefault = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const defaultValue = isSingle ? entity.components[componentName].schema.default : entity.components[componentName].schema[propertyName].default;
+      updateEntity(entity, componentName, !isSingle ? propertyName : "", defaultValue);
+    };
+    const copyPropertyToClipboard = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const value2 = schema.type === "selector" ? entity.getDOMAttribute(componentName)?.[propertyName] : data;
+      const formattedValue = schema.type === "string" && value2 && typeof value2 !== "string" ? schema.stringify(value2) : schema.stringify ? schema.stringify(value2) : JSON.stringify(value2);
+      const clipboardText = `${propertyName}="${formattedValue}"`;
+      copy(clipboardText);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 1e3);
+    };
+    const value = schema.type === "selector" ? entity.getDOMAttribute(componentName)?.[propertyName] : JSON.stringify(data);
+    const title = `${propertyName}
+ - type: ${schema.type}
+ - value: ${value}
+ - Click to copy to clipboard`;
+    return /* @__PURE__ */ React.createElement("div", {
+      className: clsx("propertyRow", {
+        propertyRowDefined: isPropertyDefined()
+      })
+    }, /* @__PURE__ */ React.createElement("label", {
+      htmlFor: id,
+      className: clsx("text", {
+        copied: isCopied
+      }),
+      title,
+      onClick: copyPropertyToClipboard,
+      style: {
+        cursor: "pointer"
+      }
+    }, propertyName), /* @__PURE__ */ React.createElement("div", {
+      className: "widget-container"
+    }, /* @__PURE__ */ React.createElement("button", {
+      className: "reset-btn",
+      onClick: resetToDefault,
+      title: "Reset to default value"
+    }, /* @__PURE__ */ React.createElement(FaUndo, null)), getWidget()));
+  }
+  PropertyRow.propTypes = {
+    data: PropTypes.any,
+    entity: PropTypes.object.isRequired,
+    isSingle: PropTypes.bool.isRequired,
+    name: PropTypes.string.isRequired,
+    schema: PropTypes.object.isRequired
+  };
+  function Collapsible({
+    className,
+    collapsed = false,
+    children,
+    id
+  }) {
+    const [isCollapsed, setIsCollapsed] = reactExports.useState(collapsed);
+    const toggleVisibility = (event) => {
+      if (event.target.nodeName === "A") return;
+      setIsCollapsed(!isCollapsed);
+    };
+    const rootClassNames = {
+      collapsible: true,
+      component: true,
+      collapsed: isCollapsed
+    };
+    if (className) {
+      rootClassNames[className] = true;
+    }
+    const rootClasses = clsx(rootClassNames);
+    const contentClasses = clsx({
+      content: true,
+      hide: isCollapsed
+    });
+    return /* @__PURE__ */ React.createElement("div", {
+      id,
+      className: rootClasses
+    }, /* @__PURE__ */ React.createElement("div", {
+      className: "static",
+      onClick: toggleVisibility
+    }, /* @__PURE__ */ React.createElement("div", {
+      className: "collapse-button"
+    }), children[0]), /* @__PURE__ */ React.createElement("div", {
+      className: contentClasses
+    }, children[1]));
+  }
+  Collapsible.propTypes = {
+    className: PropTypes.string,
+    collapsed: PropTypes.bool,
+    children: PropTypes.oneOfType([PropTypes.array, PropTypes.element]).isRequired,
+    id: PropTypes.string
+  };
+  Collapsible.defaultProps = {
+    collapsed: false
+  };
   const isSingleProperty = AFRAME.schema.isSingleProperty;
   function Component({
     component,
@@ -32085,18 +32560,13 @@ void main() {
     name
   }) {
     const [updateKey, setUpdateKey] = reactExports.useState(0);
-    const onEntityUpdate = reactExports.useCallback((detail) => {
-      if (detail.entity !== entity) {
-        return;
-      }
-      if (detail.component === name) {
-        setUpdateKey((prev) => prev + 1);
-      }
-    }, [entity, name]);
     reactExports.useEffect(() => {
-      Events.on("entityupdate", onEntityUpdate);
-      return () => Events.off("entityupdate", onEntityUpdate);
-    }, [onEntityUpdate]);
+      Events.on("entityupdate", () => {
+        setUpdateKey((prev) => prev + 1);
+      });
+    }, []);
+    const currentComponent = entity.components[name];
+    const componentData = currentComponent ? currentComponent.data : component.data;
     const removeComponent = reactExports.useCallback((event) => {
       var componentName = name;
       event.stopPropagation();
@@ -32131,20 +32601,18 @@ void main() {
       onClick: removeComponent
     }, /* @__PURE__ */ React.createElement(FaTrash, null)))), /* @__PURE__ */ React.createElement("div", {
       className: "collapsible-content"
-    }, isSingleProperty(component.schema) ? /* @__PURE__ */ React.createElement(PropertyRow, {
+    }, isSingleProperty(currentComponent.schema) ? /* @__PURE__ */ React.createElement(PropertyRow, {
       key: name,
       name,
       schema: AFRAME.components[name.split("__")[0]].schema,
-      data: component.data,
-      componentname: name,
+      data: componentData,
       isSingle: true,
       entity
-    }) : Object.keys(component.schema).sort().filter((propertyName) => shouldShowProperty(propertyName, component)).map((propertyName) => /* @__PURE__ */ React.createElement(PropertyRow, {
+    }) : Object.keys(currentComponent.schema).sort().filter((propertyName) => shouldShowProperty(propertyName, currentComponent)).map((propertyName) => /* @__PURE__ */ React.createElement(PropertyRow, {
       key: propertyName,
-      name: propertyName,
-      schema: component.schema[propertyName],
-      data: component.data[propertyName],
-      componentname: name,
+      name: `${name}.${propertyName}`,
+      schema: currentComponent.schema[propertyName],
+      data: componentData[propertyName],
       isSingle: false,
       entity
     }))));
@@ -32155,7 +32623,6 @@ void main() {
     isCollapsed: PropTypes.bool,
     name: PropTypes.string
   };
-  const DEFAULT_COMPONENTS = ["visible", "position", "scale", "rotation"];
   function Mixin({
     entity
   }) {
@@ -32209,216 +32676,6 @@ void main() {
   Mixin.propTypes = {
     entity: PropTypes.object.isRequired
   };
-  function EntityRepresentation({
-    entity,
-    onDoubleClick
-  }) {
-    if (!entity) {
-      return null;
-    }
-    const iconMap = {
-      camera: {
-        icon: FaCamera,
-        color: "#ff6b6b"
-      },
-      mesh: {
-        icon: FaCube,
-        color: "#4ecdc4"
-      },
-      light: {
-        icon: FaLightbulb,
-        color: "#ffd93d"
-      },
-      text: {
-        icon: FaFont,
-        color: "#6c5ce7"
-      },
-      group: {
-        icon: FaObjectGroup,
-        color: "#a29bfe"
-      },
-      sprite: {
-        icon: FaCircle,
-        color: "#fd79a8"
-      },
-      points: {
-        icon: FaCircle,
-        color: "#00b894"
-      },
-      line: {
-        icon: FaMinus,
-        color: "#e17055"
-      },
-      lineloop: {
-        icon: FaMinus,
-        color: "#e17055"
-      },
-      linesegments: {
-        icon: FaMinus,
-        color: "#e17055"
-      },
-      lod: {
-        icon: FaLayerGroup,
-        color: "#fdcb6e"
-      },
-      instancedmesh: {
-        icon: FaCopy,
-        color: "#00cec9"
-      },
-      skinnedmesh: {
-        icon: FaUser,
-        color: "#ff7675"
-      },
-      default: {
-        icon: FaBox,
-        color: "#95a5a6"
-      },
-      scene: {
-        icon: FaGlobe,
-        color: "#9b59b6"
-      },
-      // A-Frame primitives
-      "a-box": {
-        icon: FaCube,
-        color: "#4ecdc4"
-      },
-      "a-camera": {
-        icon: FaCamera,
-        color: "#ff6b6b"
-      },
-      "a-circle": {
-        icon: FaDotCircle,
-        color: "#fd79a8"
-      },
-      "a-cone": {
-        icon: FaCaretUp,
-        color: "#e17055"
-      },
-      "a-cursor": {
-        icon: FaDotCircle,
-        color: "#00b894"
-      },
-      "a-curvedimage": {
-        icon: FaImage,
-        color: "#6c5ce7"
-      },
-      "a-cylinder": {
-        icon: FaSquare,
-        color: "#a29bfe"
-      },
-      "a-dodecahedron": {
-        icon: FaCube,
-        color: "#fdcb6e"
-      },
-      "a-gltf-model": {
-        icon: FaCube,
-        color: "#00cec9"
-      },
-      "a-icosahedron": {
-        icon: FaCube,
-        color: "#ff7675"
-      },
-      "a-image": {
-        icon: FaImage,
-        color: "#6c5ce7"
-      },
-      "a-light": {
-        icon: FaLightbulb,
-        color: "#ffd93d"
-      },
-      "a-link": {
-        icon: FaLink,
-        color: "#9b59b6"
-      },
-      "a-obj-model": {
-        icon: FaCube,
-        color: "#95a5a6"
-      },
-      "a-octahedron": {
-        icon: FaCube,
-        color: "#4ecdc4"
-      },
-      "a-plane": {
-        icon: FaSquare,
-        color: "#a29bfe"
-      },
-      "a-ring": {
-        icon: FaRing,
-        color: "#fd79a8"
-      },
-      "a-sky": {
-        icon: FaGlobe,
-        color: "#9b59b6"
-      },
-      "a-sound": {
-        icon: FaVolumeUp,
-        color: "#e17055"
-      },
-      "a-sphere": {
-        icon: FaCircle,
-        color: "#00b894"
-      },
-      "a-tetrahedron": {
-        icon: FaCube,
-        color: "#fdcb6e"
-      },
-      "a-text": {
-        icon: FaFont,
-        color: "#6c5ce7"
-      },
-      "a-torus": {
-        icon: FaRing,
-        color: "#fd79a8"
-      },
-      "a-torus-knot": {
-        icon: FaRing,
-        color: "#e17055"
-      },
-      "a-triangle": {
-        icon: FaPlayCircle,
-        color: "#00cec9"
-      },
-      "a-video": {
-        icon: FaVideo,
-        color: "#ff7675"
-      },
-      "a-videosphere": {
-        icon: FaFileVideo,
-        color: "#95a5a6"
-      }
-    };
-    let matchedIcon = null;
-    const primitiveMatch = Object.entries(iconMap).find(([type]) => type.startsWith("a-") && entity.tagName && entity.tagName.toLowerCase() === type);
-    if (primitiveMatch) {
-      matchedIcon = primitiveMatch[1];
-    } else {
-      const objectMatch = Object.entries(iconMap).find(([type]) => {
-        if (type === "scene") {
-          return entity.tagName && entity.tagName.toLowerCase() === "a-scene";
-        }
-        if (type === "default") {
-          return entity.tagName && entity.tagName.toLowerCase() === "a-entity" && !entity.getObject3D("mesh") && !entity.getObject3D("camera") && !entity.getObject3D("light") && !entity.getObject3D("text");
-        }
-        return entity.getObject3D(type);
-      });
-      if (objectMatch) {
-        matchedIcon = objectMatch[1];
-      }
-    }
-    const icons = matchedIcon ? [/* @__PURE__ */ React.createElement(matchedIcon.icon, {
-      key: "entity-icon",
-      style: {
-        color: matchedIcon.color,
-        marginRight: "4px"
-      }
-    })] : [];
-    return /* @__PURE__ */ React.createElement("span", {
-      className: "entityPrint flex",
-      onDoubleClick
-    }, icons.length > 0 && /* @__PURE__ */ React.createElement("span", {
-      className: "entityIcons flex"
-    }, icons), /* @__PURE__ */ React.createElement("span", null, entity.id || entity.localName));
-  }
   function changeId(componentName, value) {
     var entity = AFRAME.INSPECTOR.selectedEntity;
     if (entity.id !== value) {
@@ -32429,53 +32686,12 @@ void main() {
   function CommonComponents({
     entity
   }) {
-    const onEntityUpdate = reactExports.useCallback((detail) => {
-      if (detail.entity !== entity) {
-        return;
-      }
-      if (DEFAULT_COMPONENTS.indexOf(detail.component) !== -1 || detail.component === "mixin") ;
-    }, [entity]);
+    const [updateKey, setUpdateKey] = reactExports.useState(0);
     reactExports.useEffect(() => {
-      Events.on("entityupdate", onEntityUpdate);
-      return () => Events.off("entityupdate", onEntityUpdate);
-    }, [onEntityUpdate]);
-    const renderCommonAttributes = reactExports.useCallback(() => {
-      return ["position", "rotation", "scale", "visible"].map((componentName) => {
-        const schema = AFRAME.components[componentName].schema;
-        var data = entity.object3D[componentName];
-        if (componentName === "rotation") {
-          data = {
-            x: MathUtils.radToDeg(entity.object3D.rotation.x),
-            y: MathUtils.radToDeg(entity.object3D.rotation.y),
-            z: MathUtils.radToDeg(entity.object3D.rotation.z)
-          };
-        }
-        return /* @__PURE__ */ React.createElement(PropertyRow, {
-          key: componentName,
-          name: componentName,
-          schema,
-          data,
-          isSingle: true,
-          componentname: componentName,
-          entity
-        });
+      Events.on("entityupdate", () => {
+        setUpdateKey((prev) => prev + 1);
       });
-    }, [entity]);
-    reactExports.useCallback(() => {
-      AFRAME.INSPECTOR.exporters.gltf.parse(entity.object3D, function(buffer) {
-        const blob = new Blob([buffer], {
-          type: "application/octet-stream"
-        });
-        saveBlob(blob, (entity.id || "entity") + ".glb");
-      }, function(error) {
-        console.error(error);
-      }, {
-        binary: true
-      });
-    }, [entity]);
-    if (!entity) {
-      return /* @__PURE__ */ React.createElement("div", null);
-    }
+    }, []);
     return /* @__PURE__ */ React.createElement(Collapsible, {
       id: "componentEntityHeader",
       className: "commonComponents"
@@ -32507,19 +32723,130 @@ void main() {
       className: "propertyRow"
     }, /* @__PURE__ */ React.createElement("label", {
       className: "text"
-    }, "class"), /* @__PURE__ */ React.createElement("span", null, entity.getAttribute("class"))), renderCommonAttributes(), /* @__PURE__ */ React.createElement(Mixin, {
+    }, "class"), /* @__PURE__ */ React.createElement("span", null, entity.getAttribute("class"))), ["position", "rotation", "scale", "visible"].map((name) => {
+      const schema = AFRAME.components[name].schema;
+      var data = entity.object3D[name];
+      if (name === "rotation") {
+        data = {
+          x: MathUtils.radToDeg(entity.object3D.rotation.x),
+          y: MathUtils.radToDeg(entity.object3D.rotation.y),
+          z: MathUtils.radToDeg(entity.object3D.rotation.z)
+        };
+      }
+      return /* @__PURE__ */ React.createElement(PropertyRow, {
+        key: `${name}-${updateKey}`,
+        name,
+        schema,
+        data,
+        isSingle: true,
+        entity
+      });
+    }), /* @__PURE__ */ React.createElement(Mixin, {
       entity
     })));
   }
   CommonComponents.propTypes = {
     entity: PropTypes.object
   };
+  function PrimitiveComponents({
+    entity
+  }) {
+    const [, setUpdateKey] = reactExports.useState(0);
+    reactExports.useEffect(() => {
+      const handler = (detail) => {
+        if (detail && detail.entity && detail.entity !== entity) {
+          return;
+        }
+        setUpdateKey((prev) => prev + 1);
+      };
+      Events.on("entityupdate", handler);
+      Events.on("componentadd", handler);
+      Events.on("componentremove", handler);
+      return () => {
+        Events.off("entityupdate", handler);
+        Events.off("componentadd", handler);
+        Events.off("componentremove", handler);
+      };
+    }, [entity]);
+    if (!entity) return null;
+    const tagName = entity.tagName.toLowerCase();
+    const primitive = AFRAME.primitives?.primitives?.[tagName];
+    const primitiveMappings = primitive?.mappings || primitive?.mapping;
+    if (!primitiveMappings) return null;
+    const seen = /* @__PURE__ */ new Set();
+    const rows = Object.keys(primitiveMappings).reduce((acc, primitiveProp) => {
+      const mappedPath = primitiveMappings[primitiveProp];
+      if (!mappedPath || seen.has(mappedPath)) return acc;
+      seen.add(mappedPath);
+      const [componentName, ...propertyPath] = mappedPath.split(".");
+      if (!componentName || propertyPath.length === 0) return acc;
+      const propertyName = propertyPath.join(".");
+      const component = entity.components?.[componentName];
+      if (!component || !component.schema || !component.schema[propertyName]) return acc;
+      acc.push({
+        key: `${primitiveProp}:${mappedPath}`,
+        name: `${componentName}.${propertyName}`,
+        schema: component.schema[propertyName],
+        data: component.data ? component.data[propertyName] : void 0
+      });
+      return acc;
+    }, []);
+    if (rows.length === 0) return null;
+    return /* @__PURE__ */ React.createElement(Collapsible, null, /* @__PURE__ */ React.createElement("div", {
+      className: "componentHeader collapsible-header"
+    }, /* @__PURE__ */ React.createElement("span", {
+      className: "componentTitle"
+    }, "Primitive")), /* @__PURE__ */ React.createElement("div", {
+      className: "collapsible-content"
+    }, rows.map(({
+      key,
+      name,
+      schema,
+      data
+    }) => /* @__PURE__ */ React.createElement(PropertyRow, {
+      key,
+      name,
+      schema,
+      data,
+      isSingle: false,
+      entity
+    }))));
+  }
+  PrimitiveComponents.propTypes = {
+    entity: PropTypes.object
+  };
+  const DEFAULT_COMPONENTS = ["visible", "position", "scale", "rotation"];
   function ComponentsContainer({
     entity
   }) {
+    const [updateKey, setUpdateKey] = reactExports.useState(0);
+    const onEntityUpdate = reactExports.useCallback((detail) => {
+      if (detail.entity !== entity) {
+        return;
+      }
+      setUpdateKey((prev) => prev + 1);
+    }, [entity]);
+    const onComponentChange = reactExports.useCallback((detail) => {
+      if (detail.entity !== entity) {
+        return;
+      }
+      setUpdateKey((prev) => prev + 1);
+    }, [entity]);
+    reactExports.useEffect(() => {
+      Events.on("entityupdate", onEntityUpdate);
+      Events.on("componentadd", onComponentChange);
+      Events.on("componentremove", onComponentChange);
+      return () => {
+        Events.off("entityupdate", onEntityUpdate);
+        Events.off("componentadd", onComponentChange);
+        Events.off("componentremove", onComponentChange);
+      };
+    }, [onEntityUpdate, onComponentChange]);
     return /* @__PURE__ */ React.createElement("div", {
       className: "components"
     }, /* @__PURE__ */ React.createElement(CommonComponents, {
+      entity
+    }), /* @__PURE__ */ React.createElement(PrimitiveComponents, {
       entity
     }), /* @__PURE__ */ React.createElement(AddComponent, {
       entity
@@ -32656,334 +32983,6 @@ void main() {
   };
   Modal.defaultProps = {
     closeOnClickOutside: true
-  };
-  function insertNewAsset(type, id, src, anonymousCrossOrigin, onLoadedCallback) {
-    var element = null;
-    switch (type) {
-      case "img":
-        {
-          element = document.createElement("img");
-          element.id = id;
-          element.src = src;
-          {
-            element.crossOrigin = "anonymous";
-          }
-        }
-        break;
-    }
-    if (element) {
-      element.onload = function() {
-        if (onLoadedCallback) {
-          onLoadedCallback();
-        }
-      };
-      var assetsElement = document.getElementsByTagName("a-assets")[0];
-      if (!assetsElement) {
-        assetsElement = document.createElement("a-assets");
-        var sceneElement = document.getElementsByTagName("a-scene")[0];
-        if (sceneElement) {
-          sceneElement.appendChild(assetsElement);
-        } else {
-          console.error("No a-scene element found to append a-assets to");
-          return;
-        }
-      }
-      assetsElement.appendChild(element);
-    }
-  }
-  function getFilename(url, converted = false) {
-    var filename = url.split("/").pop();
-    if (converted) {
-      filename = getValidId(filename);
-    }
-    return filename;
-  }
-  function isValidId(id) {
-    var re = /^[A-Za-z]+[\w-]*$/;
-    return re.test(id);
-  }
-  function getValidId(name) {
-    return name.split(".").shift().replace(/\s/, "-").replace(/^\d+\s*/, "").replace(/[\W]/, "").toLowerCase();
-  }
-  function ModalTextures({
-    isOpen: initialIsOpen,
-    onClose,
-    selectedTexture
-  }) {
-    const [filterText, setFilterText] = reactExports.useState("");
-    const [isOpen, setIsOpen] = reactExports.useState(initialIsOpen);
-    const [assetsImages, setAssetsImages] = reactExports.useState([]);
-    const [registryImages, setRegistryImages] = reactExports.useState([]);
-    const [addNewDialogOpened, setAddNewDialogOpened] = reactExports.useState(false);
-    const [newUrl, setNewUrl] = reactExports.useState("");
-    const [preview, setPreview] = reactExports.useState({
-      width: 0,
-      height: 0,
-      src: "",
-      id: "",
-      name: "",
-      filename: "",
-      type: "",
-      value: "",
-      loaded: false
-    });
-    const imageName = reactExports.useRef();
-    const previewRef = reactExports.useRef();
-    const registryGallery = reactExports.useRef();
-    const generateFromRegistry = reactExports.useCallback(() => {
-      AFRAME.INSPECTOR.assetsLoader.images.forEach((imageData) => {
-        var image = new Image();
-        image.addEventListener("load", () => {
-          setRegistryImages((prev) => [...prev, {
-            id: imageData.id,
-            src: imageData.fullPath,
-            width: imageData.width,
-            height: imageData.height,
-            name: imageData.id,
-            type: "registry",
-            tags: imageData.tags,
-            value: "url(" + imageData.fullPath + ")"
-          }]);
-        });
-        image.src = imageData.fullThumbPath;
-      });
-    }, []);
-    const generateFromAssets = reactExports.useCallback(() => {
-      setAssetsImages([]);
-      Array.prototype.slice.call(document.querySelectorAll("a-assets img")).forEach((asset) => {
-        var image = new Image();
-        image.addEventListener("load", () => {
-          setAssetsImages((prev) => [...prev, {
-            id: asset.id,
-            src: image.src,
-            width: image.width,
-            height: image.height,
-            name: asset.id,
-            type: "asset",
-            value: "#" + asset.id
-          }]);
-        });
-        image.src = asset.src;
-      });
-    }, []);
-    const onAssetsImagesLoad = reactExports.useCallback(() => {
-      generateFromRegistry();
-    }, [generateFromRegistry]);
-    const onCloseModal = reactExports.useCallback((value) => {
-      if (onClose) {
-        onClose(value);
-      }
-    }, [onClose]);
-    const selectTexture = reactExports.useCallback((value) => {
-      if (onClose) {
-        onClose(value);
-      }
-    }, [onClose]);
-    const onNewUrl = reactExports.useCallback((event) => {
-      if (event.keyCode !== 13) {
-        return;
-      }
-      function onImageLoaded() {
-        var src = previewRef.current.src;
-        setPreview({
-          width: previewRef.current.naturalWidth,
-          height: previewRef.current.naturalHeight,
-          src,
-          id: "",
-          name: getFilename(src, true),
-          filename: getFilename(src),
-          type: "new",
-          loaded: true,
-          value: "url(" + src + ")"
-        });
-        previewRef.current.removeEventListener("load", onImageLoaded);
-      }
-      previewRef.current.addEventListener("load", onImageLoaded);
-      previewRef.current.src = event.target.value;
-      imageName.current.focus();
-    }, []);
-    const isValidAsset = reactExports.useCallback(() => {
-      let validUrl2 = isValidId(preview.name);
-      let validAsset2 = preview.loaded && validUrl2;
-      return validAsset2;
-    }, [preview]);
-    const clear = reactExports.useCallback(() => {
-      setPreview({
-        width: 0,
-        height: 0,
-        src: "",
-        id: "",
-        filename: "",
-        name: "",
-        type: "",
-        loaded: false,
-        value: ""
-      });
-      setNewUrl("");
-    }, []);
-    const addNewAsset = reactExports.useCallback(() => {
-      insertNewAsset("img", preview.name, preview.src, true, function() {
-        generateFromAssets();
-        selectTexture({
-          id: preview.name,
-          src: preview.src,
-          width: preview.width,
-          height: preview.height,
-          name: preview.name,
-          type: "asset",
-          value: "#" + preview.name
-        });
-        setAddNewDialogOpened(false);
-        clear();
-      });
-    }, [preview, generateFromAssets, selectTexture, clear]);
-    const onNameKeyUp = reactExports.useCallback((event) => {
-      if (event.keyCode === 13 && isValidAsset()) {
-        addNewAsset();
-      }
-    }, [isValidAsset, addNewAsset]);
-    const onNameChanged = reactExports.useCallback((event) => {
-      setPreview((prev) => ({
-        ...prev,
-        name: event.target.value
-      }));
-    }, []);
-    reactExports.useCallback(() => {
-      setAddNewDialogOpened((prev) => !prev);
-    }, []);
-    const onUrlChange = reactExports.useCallback((e) => {
-      setNewUrl(e.target.value);
-    }, []);
-    const onChangeFilter = reactExports.useCallback((e) => {
-      setFilterText(e.target.value);
-    }, []);
-    const renderRegistryImages = reactExports.useCallback(() => {
-      let selectSample = function(image) {
-        setPreview({
-          width: image.width,
-          height: image.height,
-          src: image.src,
-          id: "",
-          name: getFilename(image.name, true),
-          filename: getFilename(image.src),
-          type: "registry",
-          loaded: true,
-          value: "url(" + image.src + ")"
-        });
-        imageName.current.focus();
-      };
-      var filterTextUpper = filterText.toUpperCase();
-      return registryImages.filter((image) => {
-        return image.id.toUpperCase().indexOf(filterTextUpper) > -1 || image.name.toUpperCase().indexOf(filterTextUpper) > -1 || image.tags.indexOf(filterTextUpper) > -1;
-      }).map(function(image) {
-        let imageClick = () => selectSample(image);
-        return /* @__PURE__ */ React.createElement("li", {
-          key: image.src,
-          onClick: imageClick
-        }, /* @__PURE__ */ React.createElement("img", {
-          width: "155px",
-          height: "155px",
-          src: image.src
-        }), /* @__PURE__ */ React.createElement("div", {
-          className: "detail"
-        }, /* @__PURE__ */ React.createElement("span", {
-          className: "title"
-        }, image.name), /* @__PURE__ */ React.createElement("span", null, getFilename(image.src)), /* @__PURE__ */ React.createElement("span", null, image.width, " x ", image.height)));
-      });
-    }, [filterText, registryImages]);
-    reactExports.useEffect(() => {
-      setIsOpen(initialIsOpen);
-    }, [initialIsOpen]);
-    reactExports.useEffect(() => {
-      Events.on("assetsimagesload", onAssetsImagesLoad);
-      generateFromAssets();
-      return () => Events.off("assetsimagesload", onAssetsImagesLoad);
-    }, [onAssetsImagesLoad, generateFromAssets]);
-    reactExports.useEffect(() => {
-      if (isOpen && !AFRAME.INSPECTOR.assetsLoader.hasLoaded) {
-        AFRAME.INSPECTOR.assetsLoader.load();
-      }
-    }, [isOpen]);
-    let validUrl = isValidId(preview.name);
-    let validAsset = isValidAsset();
-    return /* @__PURE__ */ React.createElement(Modal, {
-      id: "textureModal",
-      title: "Textures",
-      isOpen,
-      onClose: onCloseModal,
-      closeOnClickOutside: false
-    }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
-      className: "newimage"
-    }, /* @__PURE__ */ React.createElement("div", {
-      className: "new_asset_options"
-    }, /* @__PURE__ */ React.createElement("span", null, "Load a new texture from one of these sources:"), /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("span", null, "From URL (and press Enter):"), " ", /* @__PURE__ */ React.createElement("input", {
-      type: "text",
-      className: "imageUrl",
-      value: newUrl,
-      onChange: onUrlChange,
-      onKeyUp: onNewUrl
-    })), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("span", null, "From assets registry: "), /* @__PURE__ */ React.createElement("div", {
-      className: "assets search"
-    }, /* @__PURE__ */ React.createElement("input", {
-      placeholder: "Filter...",
-      value: filterText,
-      onChange: onChangeFilter
-    }), /* @__PURE__ */ React.createElement(FaSearch, null)), /* @__PURE__ */ React.createElement("ul", {
-      ref: registryGallery,
-      className: "gallery"
-    }, renderRegistryImages())))), /* @__PURE__ */ React.createElement("div", {
-      className: "preview"
-    }, "Name:", " ", /* @__PURE__ */ React.createElement("input", {
-      ref: imageName,
-      className: preview.name.length > 0 && !validUrl ? "error" : "",
-      type: "text",
-      value: preview.name,
-      onChange: onNameChanged,
-      onKeyUp: onNameKeyUp
-    }), /* @__PURE__ */ React.createElement("img", {
-      ref: previewRef,
-      width: "155px",
-      height: "155px",
-      src: preview.src,
-      style: {
-        visibility: preview.src ? "visible" : "hidden"
-      }
-    }), preview.loaded ? /* @__PURE__ */ React.createElement("div", {
-      className: "detail"
-    }, /* @__PURE__ */ React.createElement("span", {
-      className: "title",
-      title: preview.filename
-    }, preview.filename), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("span", null, preview.width, " x ", preview.height)) : /* @__PURE__ */ React.createElement("span", null), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("button", {
-      disabled: !validAsset,
-      onClick: addNewAsset
-    }, "LOAD THIS TEXTURE")))), /* @__PURE__ */ React.createElement("div", {
-      className: addNewDialogOpened ? "hide" : ""
-    }, /* @__PURE__ */ React.createElement("ul", {
-      className: "gallery"
-    }, assetsImages.sort(function(a, b) {
-      return a.id > b.id;
-    }).map(function(image) {
-      let textureClick = () => selectTexture(image);
-      var selectedClass = selectedTexture === "#" + image.id ? "selected" : "";
-      return /* @__PURE__ */ React.createElement("li", {
-        key: image.id,
-        onClick: textureClick,
-        className: selectedClass
-      }, /* @__PURE__ */ React.createElement("img", {
-        width: "155px",
-        height: "155px",
-        src: image.src
-      }), /* @__PURE__ */ React.createElement("div", {
-        className: "detail"
-      }, /* @__PURE__ */ React.createElement("span", {
-        className: "title"
-      }, image.name), /* @__PURE__ */ React.createElement("span", null, getFilename(image.src)), /* @__PURE__ */ React.createElement("span", null, image.width, " x ", image.height)));
-    }))));
-  }
-  ModalTextures.propTypes = {
-    isOpen: PropTypes.bool,
-    onClose: PropTypes.func,
-    selectedTexture: PropTypes.string
   };
   let shortcuts = [[{
     key: ["1"],
@@ -33227,213 +33226,680 @@ void main() {
   }
   var lodash_debounceExports = requireLodash_debounce();
   const debounce = /* @__PURE__ */ getDefaultExportFromCjs(lodash_debounceExports);
+  const MATERIAL_PRESETS = [{
+    id: "studio-matte",
+    name: "Studio Matte",
+    description: "Neutral non-metal base.",
+    shader: "standard",
+    color: "#d9dde5",
+    metalness: 0,
+    roughness: 0.95
+  }, {
+    id: "glossy-plastic",
+    name: "Glossy Plastic",
+    description: "Saturated polished plastic.",
+    shader: "standard",
+    color: "#ff4d4d",
+    metalness: 0,
+    roughness: 0.18
+  }, {
+    id: "brushed-aluminum",
+    name: "Brushed Aluminum",
+    description: "Soft industrial metal.",
+    shader: "standard",
+    color: "#b7c0c8",
+    metalness: 0.9,
+    roughness: 0.45
+  }, {
+    id: "polished-chrome",
+    name: "Polished Chrome",
+    description: "Mirror-like specular metal.",
+    shader: "standard",
+    color: "#f2f4f8",
+    metalness: 1,
+    roughness: 0.06
+  }, {
+    id: "warm-gold",
+    name: "Warm Gold",
+    description: "Jewelry-style reflective gold.",
+    shader: "standard",
+    color: "#d6b44b",
+    metalness: 1,
+    roughness: 0.22
+  }, {
+    id: "aged-copper",
+    name: "Aged Copper",
+    description: "Duller aged copper tone.",
+    shader: "standard",
+    color: "#a56a43",
+    metalness: 1,
+    roughness: 0.55
+  }, {
+    id: "ceramic-white",
+    name: "Ceramic White",
+    description: "Smooth painted ceramic.",
+    shader: "standard",
+    color: "#f7f7f5",
+    metalness: 0,
+    roughness: 0.28
+  }, {
+    id: "black-rubber",
+    name: "Black Rubber",
+    description: "Very rough low-spec surface.",
+    shader: "standard",
+    color: "#202124",
+    metalness: 0,
+    roughness: 0.98
+  }, {
+    id: "clear-glass",
+    name: "Clear Glass",
+    description: "Transparent glossy glass.",
+    shader: "standard",
+    color: "#dff8ff",
+    metalness: 0,
+    roughness: 0.02,
+    opacity: 0.2,
+    transparent: true
+  }, {
+    id: "frosted-glass",
+    name: "Frosted Glass",
+    description: "Soft translucent diffusion.",
+    shader: "standard",
+    color: "#d5eef2",
+    metalness: 0,
+    roughness: 0.75,
+    opacity: 0.48,
+    transparent: true
+  }, {
+    id: "neon-cyan",
+    name: "Neon Cyan",
+    description: "Emissive signage look.",
+    shader: "standard",
+    color: "#0f2f36",
+    emissive: "#28ffd9",
+    emissiveIntensity: 1.6,
+    metalness: 0,
+    roughness: 0.32
+  }, {
+    id: "hot-lava",
+    name: "Hot Lava",
+    description: "Warm emissive accent.",
+    shader: "standard",
+    color: "#2e1208",
+    emissive: "#ff5a1f",
+    emissiveIntensity: 1.2,
+    metalness: 0.05,
+    roughness: 0.7
+  }, {
+    id: "flat-poster",
+    name: "Flat Poster",
+    description: "Unlit flat-color shader.",
+    shader: "flat",
+    color: "#5a7dff"
+  }, {
+    id: "flat-shadow",
+    name: "Flat Shadow",
+    description: "Unlit dark matte style.",
+    shader: "flat",
+    color: "#1f2430"
+  }, {
+    id: "wire-blueprint",
+    name: "Wire Blueprint",
+    description: "Flat wireframe visualization.",
+    shader: "flat",
+    color: "#53d2ff",
+    wireframe: true
+  }, {
+    id: "hologram",
+    name: "Hologram",
+    description: "Transparent flat sci-fi look.",
+    shader: "flat",
+    color: "#74f0ff",
+    opacity: 0.35,
+    transparent: true,
+    side: "double"
+  }];
+  const MATERIAL_PROP_KEYS = ["shader", "color", "metalness", "roughness", "emissive", "emissiveIntensity", "opacity", "transparent", "side", "wireframe", "fog"];
+  function getMaterialProps(material) {
+    const props = {};
+    MATERIAL_PROP_KEYS.forEach((key) => {
+      if (material[key] !== void 0) {
+        props[key] = material[key];
+      }
+    });
+    return props;
+  }
+  function materialTags(material) {
+    const tags = [`shader:${material.shader || "standard"}`];
+    if (material.metalness !== void 0) tags.push(`m:${material.metalness}`);
+    if (material.roughness !== void 0) tags.push(`r:${material.roughness}`);
+    if (material.emissive && material.emissive !== "#000" && material.emissive !== "#000000") tags.push("emissive");
+    if (material.transparent || material.opacity !== void 0 && material.opacity < 1) tags.push(`alpha:${material.opacity ?? 1}`);
+    if (material.wireframe) tags.push("wire");
+    return tags;
+  }
+  function sanitizeId(raw) {
+    return (raw || "asset").replace(/\.[^/.]+$/, "").replace(/[^a-zA-Z0-9-_]/g, "-").replace(/^-+|-+$/g, "") || "asset";
+  }
+  function inferAssetTag(fileName, mimeType) {
+    const name = (fileName || "").toLowerCase();
+    const mime = (mimeType || "").toLowerCase();
+    if (mime.startsWith("image/") || /\.(png|jpg|jpeg|gif|webp|svg|ktx2|basis)$/.test(name)) return "img";
+    if (mime.startsWith("video/") || /\.(mp4|webm|ogg|mov)$/.test(name)) return "video";
+    if (mime.startsWith("audio/") || /\.(mp3|wav|ogg|aac|flac)$/.test(name)) return "audio";
+    return "a-asset-item";
+  }
+  function inferAssetKind(tag, src) {
+    const t = (tag || "").toLowerCase();
+    const s = (src || "").toLowerCase();
+    if (t === "img") return "image";
+    if (t === "video") return "video";
+    if (t === "audio") return "audio";
+    if (t === "a-asset-item") {
+      if (/\.(png|jpg|jpeg|gif|webp|svg)$/.test(s)) return "image";
+      if (/\.(mp4|webm|ogg|mov)$/.test(s)) return "video";
+      if (/\.(mp3|wav|ogg|aac|flac)$/.test(s)) return "audio";
+      return "model";
+    }
+    return "other";
+  }
+  function toAssetRecord(el) {
+    const src = el.getAttribute("src") || el.src || "";
+    const sourcePath = el.getAttribute("data-source-path") || "";
+    const tag = el.tagName.toLowerCase();
+    return {
+      id: el.id || "",
+      src,
+      sourcePath,
+      tag,
+      kind: inferAssetKind(tag, src),
+      value: el.id ? `#${el.id}` : src,
+      el,
+      isDummy: false
+    };
+  }
+  function getKindIcon(kind) {
+    if (kind === "image") return /* @__PURE__ */ React.createElement(FaFileImage, null);
+    if (kind === "video") return /* @__PURE__ */ React.createElement(FaFileVideo, null);
+    if (kind === "audio") return /* @__PURE__ */ React.createElement(FaFileAudio, null);
+    if (kind === "model") return /* @__PURE__ */ React.createElement(FaCube, null);
+    return /* @__PURE__ */ React.createElement(FaFile, null);
+  }
+  function MaterialSphere({
+    material,
+    isActive
+  }) {
+    const canvasRef = reactExports.useRef(null);
+    reactExports.useEffect(() => {
+      if (!canvasRef.current || !isActive) return;
+      const canvas = canvasRef.current;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+      const width = 80;
+      const height = 60;
+      const radius = 22;
+      const cx = width / 2;
+      const cy = height / 2;
+      canvas.width = width;
+      canvas.height = height;
+      const bg = ctx.createLinearGradient(0, 0, 0, height);
+      bg.addColorStop(0, "#1f2738");
+      bg.addColorStop(1, "#0f1422");
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, width, height);
+      const alpha = material.opacity ?? 1;
+      const transparent = material.transparent || alpha < 1;
+      if (transparent) {
+        const size = 6;
+        for (let y = 0; y < height; y += size) {
+          for (let x = 0; x < width; x += size) {
+            const odd = (x / size + y / size) % 2 === 0;
+            ctx.fillStyle = odd ? "#2f3647" : "#1a2234";
+            ctx.fillRect(x, y, size, size);
+          }
+        }
+      }
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      if (material.shader === "flat") {
+        ctx.fillStyle = material.color || "#ffffff";
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+        ctx.fill();
+      } else {
+        const roughness = material.roughness ?? 1;
+        const shine = Math.max(0.15, 1 - roughness);
+        const grad = ctx.createRadialGradient(cx - radius * 0.35, cy - radius * 0.45, radius * 0.12, cx, cy, radius);
+        grad.addColorStop(0, "#ffffff");
+        grad.addColorStop(0.22 * shine, material.color || "#ffffff");
+        grad.addColorStop(1, "#0b0f1c");
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+        ctx.fill();
+        const metalness = material.metalness ?? 0;
+        if (metalness > 0.2) {
+          ctx.globalAlpha = Math.min(0.55, metalness * 0.45);
+          ctx.fillStyle = "#ffffff";
+          ctx.beginPath();
+          ctx.ellipse(cx - 8, cy - 11, 8, 4, -0.5, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.globalAlpha = alpha;
+        }
+      }
+      if (material.wireframe) {
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.8)";
+        ctx.lineWidth = 1;
+        for (let i = -2; i <= 2; i++) {
+          ctx.beginPath();
+          ctx.arc(cx, cy, radius - Math.abs(i) * 3, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+        for (let i = -2; i <= 2; i++) {
+          ctx.beginPath();
+          ctx.moveTo(cx - radius, cy + i * 4);
+          ctx.lineTo(cx + radius, cy + i * 4);
+          ctx.stroke();
+        }
+      }
+      if (material.emissive && material.emissive !== "#000" && material.emissive !== "#000000") {
+        ctx.shadowColor = material.emissive;
+        ctx.shadowBlur = 12;
+        ctx.strokeStyle = material.emissive;
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius - 1, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+      }
+      ctx.restore();
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.25)";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+      ctx.stroke();
+    }, [material, isActive]);
+    return /* @__PURE__ */ React.createElement("canvas", {
+      ref: canvasRef,
+      className: "material-sphere-canvas"
+    });
+  }
   function AssetPanel({
     scene
   }) {
-    const [assetsImages, setAssetsImages] = reactExports.useState([]);
-    const [registryImages, setRegistryImages] = reactExports.useState([]);
-    const generateFromRegistry = reactExports.useCallback(() => {
-      if (!AFRAME.INSPECTOR?.assetsLoader?.images) return;
-      AFRAME.INSPECTOR.assetsLoader.images.forEach((imageData) => {
-        var image = new Image();
-        image.addEventListener("load", () => {
-          setRegistryImages((prev) => [...prev, {
-            id: imageData.id,
-            src: imageData.fullPath,
-            thumbSrc: imageData.fullThumbPath,
-            width: imageData.width,
-            height: imageData.height,
-            name: imageData.id,
-            type: "registry",
-            tags: imageData.tags || [],
-            value: "url(" + imageData.fullPath + ")"
-          }]);
-        });
-        image.src = imageData.fullThumbPath;
-      });
-    }, []);
-    const generateFromAssets = reactExports.useCallback(() => {
-      setAssetsImages([]);
-      const assetSelectors = ["a-assets img", "a-assets video", "a-assets audio", "a-assets a-asset-item"];
-      const allAssets = [];
-      assetSelectors.forEach((selector) => {
-        const assets = Array.prototype.slice.call(document.querySelectorAll(selector));
-        assets.forEach((asset) => {
-          if (asset.tagName === "A-ASSET-ITEM") {
-            const itemType = asset.getAttribute("type") || "";
-            if (itemType.startsWith("image/") || !itemType) {
-              const src = asset.getAttribute("src") || asset.src;
-              if (src) {
-                allAssets.push({
-                  element: asset,
-                  src,
-                  id: asset.id,
-                  type: "asset-item",
-                  tagName: asset.tagName.toLowerCase()
-                });
-              }
-            }
-          } else {
-            allAssets.push({
-              element: asset,
-              src: asset.src || asset.getAttribute("src"),
-              id: asset.id,
-              type: "asset",
-              tagName: asset.tagName.toLowerCase()
-            });
-          }
-        });
-      });
-      allAssets.forEach((asset) => {
-        if (asset.tagName === "img" || asset.type === "asset-item") {
-          var image = new Image();
-          image.addEventListener("load", () => {
-            setAssetsImages((prev) => [...prev, {
-              id: asset.id,
-              src: image.src,
-              width: image.width,
-              height: image.height,
-              name: asset.id,
-              type: "asset",
-              value: asset.type === "asset-item" ? asset.src : "#" + asset.id,
-              assetType: asset.tagName
-            }]);
-          });
-          image.src = asset.src;
-        } else if (asset.tagName === "video") {
-          setAssetsImages((prev) => [...prev, {
-            id: asset.id,
-            src: asset.element.poster || asset.src,
-            width: asset.element.width || 320,
-            height: asset.element.height || 240,
-            name: asset.id,
-            type: "asset",
-            value: "#" + asset.id,
-            assetType: "video"
-          }]);
-        } else if (asset.tagName === "audio") {
-          setAssetsImages((prev) => [...prev, {
-            id: asset.id,
-            src: "",
-            // No thumbnail for audio
-            width: 100,
-            height: 100,
-            name: asset.id,
-            type: "asset",
-            value: "#" + asset.id,
-            assetType: "audio"
-          }]);
-        }
-      });
-    }, []);
-    const onAssetsImagesLoad = reactExports.useCallback(() => {
-      generateFromRegistry();
-    }, [generateFromRegistry]);
-    reactExports.useEffect(() => {
-      generateFromAssets();
-      if (AFRAME.INSPECTOR?.assetsLoader) {
-        if (!AFRAME.INSPECTOR.assetsLoader.hasLoaded) {
-          AFRAME.INSPECTOR.assetsLoader.load();
-        }
-        generateFromRegistry();
+    const [activeTab, setActiveTab] = reactExports.useState("assets");
+    const [assets, setAssets] = reactExports.useState([]);
+    const [assetFilter, setAssetFilter] = reactExports.useState("all");
+    const [assetTarget, setAssetTarget] = reactExports.useState(null);
+    const assetAction = reactExports.useCallback((action, payload = {}) => {
+      let assetsEl = document.querySelector("a-assets");
+      if ((action === "set" || action === "remove") && !assetsEl) {
+        assetsEl = document.createElement("a-assets");
+        const targetScene = scene || AFRAME.scenes[0];
+        targetScene?.appendChild(assetsEl);
       }
-    }, [generateFromAssets, generateFromRegistry]);
+      if (action === "get") {
+        if (!assetsEl) return [];
+        return Array.from(assetsEl.children).map(toAssetRecord);
+      }
+      if (action === "set") {
+        const id = payload.id;
+        const src = payload.src;
+        const sourcePath = payload.sourcePath;
+        const tag = payload.tag || "img";
+        if (!id || !src) return null;
+        let el = document.getElementById(id);
+        if (!el || el.tagName.toLowerCase() !== tag) {
+          if (el) el.remove();
+          el = document.createElement(tag);
+          el.setAttribute("id", id);
+          assetsEl.appendChild(el);
+        }
+        el.setAttribute("src", src);
+        if (sourcePath) {
+          el.setAttribute("data-source-path", sourcePath);
+        } else {
+          el.removeAttribute("data-source-path");
+        }
+        if (tag === "video" || tag === "audio") {
+          el.setAttribute("crossorigin", "anonymous");
+        }
+        return toAssetRecord(el);
+      }
+      if (action === "remove") {
+        if (!assetsEl) return false;
+        let el = null;
+        if (payload.el && assetsEl.contains(payload.el)) {
+          el = payload.el;
+        }
+        if (!el && payload.id) {
+          el = Array.from(assetsEl.children).find((child) => child.id === payload.id) || null;
+        }
+        if (!el && payload.src) {
+          el = Array.from(assetsEl.children).find((child) => {
+            const childSrc = child.getAttribute("src") || child.src || "";
+            return childSrc === payload.src;
+          }) || null;
+        }
+        if (!el) return false;
+        const removedRecord = toAssetRecord(el);
+        el.remove();
+        return removedRecord;
+      }
+      return null;
+    }, [scene]);
+    const refreshAssets = reactExports.useCallback(() => {
+      setAssets(assetAction("get"));
+    }, [assetAction]);
     reactExports.useEffect(() => {
-      Events.on("assetsimagesload", onAssetsImagesLoad);
-      return () => Events.off("assetsimagesload", onAssetsImagesLoad);
-    }, [onAssetsImagesLoad]);
-    reactExports.useEffect(() => {
-      const handleAssetAdded = () => {
-        generateFromAssets();
-      };
-      Events.on("assetadd", handleAssetAdded);
-      Events.on("assetremove", handleAssetAdded);
+      refreshAssets();
+      Events.on("assetadd", refreshAssets);
+      Events.on("assetremove", refreshAssets);
       return () => {
-        Events.off("assetadd", handleAssetAdded);
-        Events.off("assetremove", handleAssetAdded);
+        Events.off("assetadd", refreshAssets);
+        Events.off("assetremove", refreshAssets);
       };
-    }, [generateFromAssets]);
-    const handleDragStart = (e, asset) => {
+    }, [refreshAssets]);
+    reactExports.useEffect(() => {
+      const onSetAssetTarget = (detail) => {
+        if (!detail?.targetId) {
+          setAssetTarget(null);
+          return;
+        }
+        const kinds = Array.isArray(detail.assetKinds) ? detail.assetKinds : [];
+        setAssetTarget({
+          targetId: detail.targetId,
+          assetKinds: kinds
+        });
+        if (kinds.length === 1) {
+          setAssetFilter(kinds[0]);
+        }
+      };
+      Events.on("assettarget", onSetAssetTarget);
+      return () => {
+        Events.off("assettarget", onSetAssetTarget);
+      };
+    }, []);
+    const filteredAssets = reactExports.useMemo(() => {
+      if (assetFilter === "all") return assets;
+      return assets.filter((asset) => asset.kind === assetFilter);
+    }, [assets, assetFilter]);
+    const targetFilteredAssets = reactExports.useMemo(() => {
+      if (!assetTarget?.assetKinds || assetTarget.assetKinds.length === 0) {
+        return filteredAssets;
+      }
+      return filteredAssets.filter((asset) => assetTarget.assetKinds.includes(asset.kind));
+    }, [filteredAssets, assetTarget]);
+    const displayAssets = reactExports.useMemo(() => {
+      return targetFilteredAssets;
+    }, [targetFilteredAssets]);
+    const getUniqueAssetId = reactExports.useCallback((rawName) => {
+      const base = sanitizeId(rawName);
+      let id = base;
+      let i = 1;
+      while (document.getElementById(id)) {
+        id = `${base}-${i}`;
+        i += 1;
+      }
+      return id;
+    }, []);
+    const addFiles = reactExports.useCallback((fileList) => {
+      const entries = Array.from(fileList || []).map((item) => {
+        if (item instanceof File) {
+          return {
+            file: item,
+            relativePath: item.webkitRelativePath || item.name,
+            absolutePath: item.path || ""
+          };
+        }
+        if (item && item.file instanceof File) {
+          return {
+            file: item.file,
+            relativePath: item.relativePath || item.file.webkitRelativePath || item.file.name,
+            absolutePath: item.absolutePath || item.file.path || ""
+          };
+        }
+        return null;
+      }).filter(Boolean);
+      if (!entries.length) return;
+      entries.forEach(({
+        file,
+        relativePath,
+        absolutePath
+      }) => {
+        const idSeed = relativePath || file.name;
+        const id = getUniqueAssetId(idSeed);
+        const src = relativePath || file.name;
+        const tag = inferAssetTag(file.name, file.type);
+        const sourcePath = absolutePath || relativePath || file.name;
+        const created = assetAction("set", {
+          id,
+          src,
+          tag,
+          sourcePath
+        });
+        if (created) {
+          Events.emit("assetadd", {
+            id: created.id,
+            src: created.src,
+            sourcePath: created.sourcePath,
+            tagName: created.tag
+          });
+        }
+      });
+      refreshAssets();
+    }, [assetAction, getUniqueAssetId, refreshAssets]);
+    const collectDirectoryFiles = reactExports.useCallback(async (dirHandle, basePath = "") => {
+      const out = [];
+      for await (const [name, handle] of dirHandle.entries()) {
+        const currentPath = basePath ? `${basePath}/${name}` : name;
+        if (handle.kind === "file") {
+          const file = await handle.getFile();
+          out.push({
+            file,
+            relativePath: currentPath
+          });
+        } else if (handle.kind === "directory") {
+          const nested = await collectDirectoryFiles(handle, currentPath);
+          out.push(...nested);
+        }
+      }
+      return out;
+    }, []);
+    const onFolderPickerClick = reactExports.useCallback(async () => {
+      if (!window.showDirectoryPicker) {
+        alert("Directory picker is not supported in this browser.");
+        return;
+      }
+      try {
+        const dirHandle = await window.showDirectoryPicker();
+        const pickedFiles = await collectDirectoryFiles(dirHandle, dirHandle.name);
+        addFiles(pickedFiles);
+      } catch (err) {
+        if (err?.name !== "AbortError") {
+          console.warn("Failed to read selected folder:", err);
+        }
+      }
+    }, [addFiles, collectDirectoryFiles]);
+    const removeAsset = (asset) => {
+      if (!asset || asset.isDummy) return;
+      const removed = assetAction("remove", {
+        id: asset.id,
+        src: asset.src,
+        el: asset.el
+      });
+      if (removed) {
+        refreshAssets();
+        Events.emit("assetremove", {
+          id: removed.id,
+          src: removed.src,
+          sourcePath: removed.sourcePath,
+          tagName: removed.tag
+        });
+      }
+    };
+    const handleAssetDragStart = (e, asset) => {
+      if (asset.isDummy) {
+        e.preventDefault();
+        return;
+      }
       e.dataTransfer.setData("application/json", JSON.stringify({
         type: "asset",
-        assetType: asset.type,
+        assetType: asset.kind,
         value: asset.value,
         src: asset.src,
-        id: asset.id
+        id: asset.id,
+        name: asset.id
+      }));
+      e.dataTransfer.effectAllowed = "copy";
+    };
+    const handleAssetClick = reactExports.useCallback((asset) => {
+      if (asset.isDummy || !assetTarget?.targetId) {
+        return;
+      }
+      if (assetTarget.assetKinds?.length > 0 && !assetTarget.assetKinds.includes(asset.kind)) {
+        return;
+      }
+      Events.emit("assetselect", {
+        targetId: assetTarget.targetId,
+        value: asset.value,
+        id: asset.id,
+        src: asset.src,
+        tagName: asset.tag,
+        kind: asset.kind
+      });
+      setAssetTarget(null);
+    }, [assetTarget]);
+    const applyMaterialPreset = reactExports.useCallback((material) => {
+      const selectedEntity = AFRAME.INSPECTOR?.selectedEntity;
+      if (!selectedEntity) {
+        alert("Select an entity in the scene graph first.");
+        return;
+      }
+      const props = getMaterialProps(material);
+      selectedEntity.setAttribute("material", props);
+      Events.emit("entityupdate", {
+        entity: selectedEntity,
+        component: "material",
+        property: "",
+        value: selectedEntity.getAttribute("material")
+      });
+    }, []);
+    const handleMaterialDragStart = (e, material) => {
+      const materialProps = getMaterialProps(material);
+      e.dataTransfer.setData("application/json", JSON.stringify({
+        type: "asset",
+        assetType: "material",
+        value: "material-preset",
+        id: material.id,
+        name: material.name,
+        materialProps,
+        ...materialProps
       }));
       e.dataTransfer.effectAllowed = "copy";
     };
     return /* @__PURE__ */ React.createElement("div", {
       id: "assetPanel",
       className: "asset-panel"
-    }, assetsImages.length > 0 && /* @__PURE__ */ React.createElement("div", {
-      className: "asset-section"
-    }, /* @__PURE__ */ React.createElement("h4", {
-      className: "asset-section-title"
-    }, "Scene Assets"), /* @__PURE__ */ React.createElement("div", {
-      className: "asset-grid"
-    }, assetsImages.map((image) => /* @__PURE__ */ React.createElement("div", {
-      key: image.id,
-      className: "asset-item",
-      draggable: "true",
-      onDragStart: (e) => handleDragStart(e, image)
-    }, image.assetType === "video" ? /* @__PURE__ */ React.createElement("div", {
-      className: "asset-thumbnail video-placeholder"
-    }, /* @__PURE__ */ React.createElement("video", {
-      src: image.src,
-      style: {
-        width: "100%",
-        height: "60px",
-        objectFit: "cover"
-      },
-      muted: true
-    }), /* @__PURE__ */ React.createElement("div", {
-      className: "video-overlay"
-    }, "▶")) : image.assetType === "audio" ? /* @__PURE__ */ React.createElement("div", {
-      className: "asset-thumbnail audio-placeholder"
     }, /* @__PURE__ */ React.createElement("div", {
-      className: "audio-icon"
-    }, "♪")) : /* @__PURE__ */ React.createElement("img", {
-      src: image.src,
-      alt: image.name,
-      className: "asset-thumbnail",
-      onError: (e) => {
-        e.target.style.display = "none";
-      }
-    }), /* @__PURE__ */ React.createElement("div", {
-      className: "asset-info"
-    }, /* @__PURE__ */ React.createElement("span", {
+      className: "asset-tabs"
+    }, /* @__PURE__ */ React.createElement("button", {
+      className: `tab ${activeTab === "assets" ? "active" : ""}`,
+      onClick: () => setActiveTab("assets")
+    }, /* @__PURE__ */ React.createElement(FaDatabase, null), " Assets"), /* @__PURE__ */ React.createElement("button", {
+      className: `tab ${activeTab === "materials" ? "active" : ""}`,
+      onClick: () => setActiveTab("materials")
+    }, /* @__PURE__ */ React.createElement(FaPalette, null), " Materials")), activeTab === "assets" && /* @__PURE__ */ React.createElement("div", {
+      className: "asset-section"
+    }, /* @__PURE__ */ React.createElement("div", {
+      className: "asset-toolbar"
+    }, /* @__PURE__ */ React.createElement("div", {
+      className: "asset-filter-compact"
+    }, /* @__PURE__ */ React.createElement(FaFilter, null), /* @__PURE__ */ React.createElement("select", {
+      id: "assetFilter",
+      value: assetFilter,
+      onChange: (e) => setAssetFilter(e.target.value)
+    }, /* @__PURE__ */ React.createElement("option", {
+      value: "all"
+    }, "All"), /* @__PURE__ */ React.createElement("option", {
+      value: "image"
+    }, "Img"), /* @__PURE__ */ React.createElement("option", {
+      value: "video"
+    }, "Vid"), /* @__PURE__ */ React.createElement("option", {
+      value: "audio"
+    }, "Aud"), /* @__PURE__ */ React.createElement("option", {
+      value: "model"
+    }, "3D"), /* @__PURE__ */ React.createElement("option", {
+      value: "other"
+    }, "Other")))), /* @__PURE__ */ React.createElement("div", {
+      className: "asset-dropzone compact",
+      onClick: onFolderPickerClick,
+      role: "button",
+      tabIndex: 0
+    }, /* @__PURE__ */ React.createElement(FaFolderOpen, null), " Click to select asset folder"), /* @__PURE__ */ React.createElement("div", {
+      className: "asset-grid compact-5"
+    }, displayAssets.map((asset) => /* @__PURE__ */ React.createElement("div", {
+      key: asset.id || asset.src,
+      className: `asset-item compact ${asset.isDummy ? "dummy" : ""}`,
+      draggable: !asset.isDummy,
+      onDragStart: (e) => handleAssetDragStart(e, asset),
+      onClick: () => handleAssetClick(asset),
+      title: asset.id || asset.src || "Asset"
+    }, /* @__PURE__ */ React.createElement("div", {
+      className: "asset-icon"
+    }, getKindIcon(asset.kind)), /* @__PURE__ */ React.createElement("div", {
       className: "asset-name"
-    }, image.name), /* @__PURE__ */ React.createElement("span", {
+    }, asset.id || "(no id)"), /* @__PURE__ */ React.createElement("div", {
       className: "asset-details"
-    }, image.assetType === "video" && "Video • ", image.assetType === "audio" && "Audio • ", image.width && image.height ? `${image.width}×${image.height}` : "Asset")))))), /* @__PURE__ */ React.createElement("div", {
+    }, asset.kind), !asset.isDummy && /* @__PURE__ */ React.createElement("button", {
+      className: "asset-remove-icon",
+      onMouseDown: (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+      },
+      onClick: (e) => {
+        e.stopPropagation();
+        removeAsset(asset);
+      },
+      title: "Remove"
+    }, /* @__PURE__ */ React.createElement(FaTrash, null)))), !displayAssets.length && /* @__PURE__ */ React.createElement("div", {
+      className: "asset-empty"
+    }, "No assets found"))), activeTab === "materials" && /* @__PURE__ */ React.createElement("div", {
       className: "asset-section"
     }, /* @__PURE__ */ React.createElement("h4", {
       className: "asset-section-title"
-    }, "Registry Assets"), /* @__PURE__ */ React.createElement("div", {
+    }, "Material Presets"), /* @__PURE__ */ React.createElement("div", {
       className: "asset-grid"
-    }, registryImages.map((image) => /* @__PURE__ */ React.createElement("div", {
-      key: image.id,
-      className: "asset-item",
-      draggable: "true",
-      onDragStart: (e) => handleDragStart(e, image)
-    }, /* @__PURE__ */ React.createElement("img", {
-      src: image.thumbSrc,
-      alt: image.name,
-      className: "asset-thumbnail",
-      onError: (e) => {
-        e.target.style.display = "none";
+    }, MATERIAL_PRESETS.map((material) => /* @__PURE__ */ React.createElement("div", {
+      key: material.id,
+      className: "asset-item material-item",
+      draggable: true,
+      onDragStart: (e) => handleMaterialDragStart(e, material),
+      onClick: () => applyMaterialPreset(material),
+      title: "Click to apply to selected entity"
+    }, /* @__PURE__ */ React.createElement("div", {
+      className: "material-color-band",
+      style: {
+        backgroundColor: material.color || "#7b8796"
       }
+    }), /* @__PURE__ */ React.createElement(MaterialSphere, {
+      material,
+      isActive: activeTab === "materials"
     }), /* @__PURE__ */ React.createElement("div", {
       className: "asset-info"
     }, /* @__PURE__ */ React.createElement("span", {
       className: "asset-name"
-    }, image.name), /* @__PURE__ */ React.createElement("span", {
+    }, material.name), /* @__PURE__ */ React.createElement("span", {
       className: "asset-details"
-    }, image.width, "×", image.height)))))));
+    }, material.description || "Material preset"), /* @__PURE__ */ React.createElement("div", {
+      className: "material-tags"
+    }, materialTags(material).map((tag) => /* @__PURE__ */ React.createElement("span", {
+      key: `${material.id}-${tag}`,
+      className: "material-tag"
+    }, tag)))))))));
   }
   AssetPanel.propTypes = {
-    scene: PropTypes.object.isRequired
+    scene: PropTypes.object
   };
   const ThemeSwitcher = () => {
     const themes = [{
@@ -33511,6 +33977,216 @@ void main() {
       value: theme.id
     }, theme.name))));
   };
+  function EntityRepresentation({
+    entity,
+    onDoubleClick
+  }) {
+    if (!entity) {
+      return null;
+    }
+    const iconMap = {
+      camera: {
+        icon: FaCamera,
+        color: "#ff6b6b"
+      },
+      mesh: {
+        icon: FaCube,
+        color: "#4ecdc4"
+      },
+      light: {
+        icon: FaLightbulb,
+        color: "#ffd93d"
+      },
+      text: {
+        icon: FaFont,
+        color: "#6c5ce7"
+      },
+      group: {
+        icon: FaObjectGroup,
+        color: "#a29bfe"
+      },
+      sprite: {
+        icon: FaCircle,
+        color: "#fd79a8"
+      },
+      points: {
+        icon: FaCircle,
+        color: "#00b894"
+      },
+      line: {
+        icon: FaMinus,
+        color: "#e17055"
+      },
+      lineloop: {
+        icon: FaMinus,
+        color: "#e17055"
+      },
+      linesegments: {
+        icon: FaMinus,
+        color: "#e17055"
+      },
+      lod: {
+        icon: FaLayerGroup,
+        color: "#fdcb6e"
+      },
+      instancedmesh: {
+        icon: FaCopy,
+        color: "#00cec9"
+      },
+      skinnedmesh: {
+        icon: FaUser,
+        color: "#ff7675"
+      },
+      default: {
+        icon: FaBox,
+        color: "#95a5a6"
+      },
+      scene: {
+        icon: FaGlobe,
+        color: "#9b59b6"
+      },
+      // A-Frame primitives
+      "a-box": {
+        icon: FaCube,
+        color: "#4ecdc4"
+      },
+      "a-camera": {
+        icon: FaCamera,
+        color: "#ff6b6b"
+      },
+      "a-circle": {
+        icon: FaDotCircle,
+        color: "#fd79a8"
+      },
+      "a-cone": {
+        icon: FaCaretUp,
+        color: "#e17055"
+      },
+      "a-cursor": {
+        icon: FaDotCircle,
+        color: "#00b894"
+      },
+      "a-curvedimage": {
+        icon: FaImage,
+        color: "#6c5ce7"
+      },
+      "a-cylinder": {
+        icon: FaSquare,
+        color: "#a29bfe"
+      },
+      "a-dodecahedron": {
+        icon: FaCube,
+        color: "#fdcb6e"
+      },
+      "a-gltf-model": {
+        icon: FaCube,
+        color: "#00cec9"
+      },
+      "a-icosahedron": {
+        icon: FaCube,
+        color: "#ff7675"
+      },
+      "a-image": {
+        icon: FaImage,
+        color: "#6c5ce7"
+      },
+      "a-light": {
+        icon: FaLightbulb,
+        color: "#ffd93d"
+      },
+      "a-link": {
+        icon: FaLink,
+        color: "#9b59b6"
+      },
+      "a-obj-model": {
+        icon: FaCube,
+        color: "#95a5a6"
+      },
+      "a-octahedron": {
+        icon: FaCube,
+        color: "#4ecdc4"
+      },
+      "a-plane": {
+        icon: FaSquare,
+        color: "#a29bfe"
+      },
+      "a-ring": {
+        icon: FaRing,
+        color: "#fd79a8"
+      },
+      "a-sky": {
+        icon: FaGlobe,
+        color: "#9b59b6"
+      },
+      "a-sound": {
+        icon: FaVolumeUp,
+        color: "#e17055"
+      },
+      "a-sphere": {
+        icon: FaCircle,
+        color: "#00b894"
+      },
+      "a-tetrahedron": {
+        icon: FaCube,
+        color: "#fdcb6e"
+      },
+      "a-text": {
+        icon: FaFont,
+        color: "#6c5ce7"
+      },
+      "a-torus": {
+        icon: FaRing,
+        color: "#fd79a8"
+      },
+      "a-torus-knot": {
+        icon: FaRing,
+        color: "#e17055"
+      },
+      "a-triangle": {
+        icon: FaPlayCircle,
+        color: "#00cec9"
+      },
+      "a-video": {
+        icon: FaVideo,
+        color: "#ff7675"
+      },
+      "a-videosphere": {
+        icon: FaFileVideo,
+        color: "#95a5a6"
+      }
+    };
+    let matchedIcon = null;
+    const primitiveMatch = Object.entries(iconMap).find(([type]) => type.startsWith("a-") && entity.tagName && entity.tagName.toLowerCase() === type);
+    if (primitiveMatch) {
+      matchedIcon = primitiveMatch[1];
+    } else {
+      const objectMatch = Object.entries(iconMap).find(([type]) => {
+        if (type === "scene") {
+          return entity.tagName && entity.tagName.toLowerCase() === "a-scene";
+        }
+        if (type === "default") {
+          return entity.tagName && entity.tagName.toLowerCase() === "a-entity" && !entity.getObject3D("mesh") && !entity.getObject3D("camera") && !entity.getObject3D("light") && !entity.getObject3D("text");
+        }
+        return entity.getObject3D(type);
+      });
+      if (objectMatch) {
+        matchedIcon = objectMatch[1];
+      }
+    }
+    const icons = matchedIcon ? [/* @__PURE__ */ React.createElement(matchedIcon.icon, {
+      key: "entity-icon",
+      style: {
+        color: matchedIcon.color,
+        marginRight: "4px"
+      }
+    })] : [];
+    return /* @__PURE__ */ React.createElement("span", {
+      className: "entityPrint flex",
+      onDoubleClick
+    }, icons.length > 0 && /* @__PURE__ */ React.createElement("span", {
+      className: "entityIcons flex"
+    }, icons), /* @__PURE__ */ React.createElement("span", null, entity.id || entity.localName));
+  }
   function Entity({
     id,
     depth,
@@ -33522,6 +34198,7 @@ void main() {
     toggleExpandedCollapsed,
     collapseAll
   }) {
+    const [isDragOver, setIsDragOver] = reactExports.useState(false);
     const onClick = reactExports.useCallback(() => {
       selectEntity(entity);
       if (entity.children) toggleExpandedCollapsed(entity);
@@ -33530,15 +34207,110 @@ void main() {
       Events.emit("objectfocus", entity.object3D);
     }, [entity]);
     const toggleVisibility = reactExports.useCallback(() => {
-      const visible = entity.object3D.visible;
+      const visible = entity.getAttribute("visible") !== false;
       entity.setAttribute("visible", !visible);
+      Events.emit("entityupdate", {
+        entity,
+        component: "visible",
+        value: !visible
+      });
     }, [entity]);
+    const handleDragStart = reactExports.useCallback((e) => {
+      e.stopPropagation();
+      e.dataTransfer.effectAllowed = "move";
+      if (!entity.id) {
+        entity.id = generateEntityId(entity.tagName.toLowerCase());
+      }
+      e.dataTransfer.setData("application/json", JSON.stringify({
+        type: "entity",
+        entityId: entity.id
+      }));
+      Events.emit("entitydragstart", entity);
+    }, [entity]);
+    const handleDragOver = reactExports.useCallback((e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      e.dataTransfer.dropEffect = "move";
+      setIsDragOver(true);
+    }, []);
+    const handleDragEnter = reactExports.useCallback((e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      setIsDragOver(true);
+    }, []);
+    const handleDragLeave = reactExports.useCallback((e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (!e.currentTarget.contains(e.relatedTarget)) {
+        setIsDragOver(false);
+      }
+    }, []);
+    const handleDrop = reactExports.useCallback((e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      setIsDragOver(false);
+      try {
+        const data = JSON.parse(e.dataTransfer.getData("application/json"));
+        if (data.type === "asset" && data.assetType === "material") {
+          const legacyMaterialProps = {
+            color: data.color,
+            metalness: data.metalness,
+            roughness: data.roughness,
+            ...data.opacity !== void 0 ? {
+              opacity: data.opacity
+            } : {},
+            ...data.transparent !== void 0 ? {
+              transparent: data.transparent
+            } : {}
+          };
+          const materialProps = data.materialProps && typeof data.materialProps === "object" ? data.materialProps : Object.fromEntries(Object.entries(legacyMaterialProps).filter(([, value]) => value !== void 0 && value !== null));
+          if (Object.keys(materialProps).length) {
+            entity.setAttribute("material", materialProps);
+            Events.emit("entityupdate", {
+              entity,
+              component: "material",
+              property: "",
+              value: materialProps
+            });
+            selectEntity(entity);
+          }
+          return;
+        }
+        if (data.type === "entity") {
+          const draggedEntity = document.getElementById(data.entityId);
+          if (!draggedEntity || draggedEntity === entity) {
+            return;
+          }
+          let parent = entity;
+          while (parent) {
+            if (parent === draggedEntity) {
+              console.warn("Cannot move entity into its own descendant");
+              return;
+            }
+            parent = parent.parentElement;
+          }
+          const oldParent = draggedEntity.parentElement;
+          entity.appendChild(draggedEntity);
+          Events.emit("entityreparent", {
+            entity: draggedEntity,
+            oldParent,
+            newParent: entity
+          });
+          if (!isExpanded) {
+            toggleExpandedCollapsed(entity);
+          }
+        }
+      } catch (error) {
+        console.warn("Failed to reparent entity:", error);
+      }
+    }, [entity, isExpanded, toggleExpandedCollapsed, selectEntity]);
     const tagName = entity.tagName.toLowerCase();
     const className = clsx({
       active: isSelected,
       entity: true,
       novisible: !entity.object3D.visible,
-      option: true
+      option: true,
+      "drag-over": isDragOver
     });
     const indentStyle = {
       paddingLeft: `${depth * 20 + 8}px`
@@ -33547,7 +34319,13 @@ void main() {
     return /* @__PURE__ */ React.createElement("div", {
       className,
       onClick,
-      id
+      id,
+      draggable: tagName !== "a-scene",
+      onDragStart: handleDragStart,
+      onDragOver: handleDragOver,
+      onDragEnter: handleDragEnter,
+      onDragLeave: handleDragLeave,
+      onDrop: handleDrop
     }, /* @__PURE__ */ React.createElement("div", {
       className: "tree-indent",
       style: indentStyle
@@ -33607,34 +34385,15 @@ void main() {
     toggleExpandedCollapsed: PropTypes.func,
     collapseAll: PropTypes.func
   };
-  function filterHelpers(scene, visible) {
-    scene.traverse((o) => {
-      if (o.userData.source === "INSPECTOR") {
-        o.visible = visible;
-      }
-    });
-  }
-  function getSceneName(scene) {
-    return scene.id || slugify(window.location.host + window.location.pathname);
-  }
-  function slugify(text) {
-    return text.toString().toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]+/g, "-").replace(/--+/g, "-").replace(/^-+/, "").replace(/-+$/, "");
-  }
   function Toolbar({
     selectedEntity
   }) {
     const {
-      isPlaying,
       primitivesList,
       isDropdownOpen,
-      autosaveEnabled,
       addEntityWithPrimitive,
       toggleDropdown,
-      exportSceneToGLTF,
-      writeChanges,
-      toggleScenePlaying,
-      openHelpModal,
-      toggleAutosave
+      writeChanges
     } = useToolbar(selectedEntity);
     return /* @__PURE__ */ React.createElement("div", {
       id: "toolbar"
@@ -33642,9 +34401,9 @@ void main() {
       className: "toolbar-container"
     }, /* @__PURE__ */ React.createElement("div", {
       className: "relative"
-    }, /* @__PURE__ */ React.createElement("button", {
+    }, /* @__PURE__ */ React.createElement("a", {
       title: "Add a new primitive",
-      className: "add-button",
+      className: "toolbar-button",
       onClick: toggleDropdown
     }, /* @__PURE__ */ React.createElement(FaPlus, null)), isDropdownOpen && /* @__PURE__ */ React.createElement("div", {
       className: "dropdown"
@@ -33654,73 +34413,19 @@ void main() {
       key: prim,
       onClick: () => addEntityWithPrimitive(`${prim}`)
     }, prim)))), /* @__PURE__ */ React.createElement("a", {
-      title: isPlaying ? "Pause scene" : "Resume scene",
-      className: "toolbar-button",
-      onClick: toggleScenePlaying
-    }, isPlaying ? /* @__PURE__ */ React.createElement(FaPause, null) : /* @__PURE__ */ React.createElement(FaPlay, null)), /* @__PURE__ */ React.createElement("a", {
-      title: "Export to GLTF",
-      className: "toolbar-button",
-      onClick: exportSceneToGLTF
-    }, /* @__PURE__ */ React.createElement(FaDownload, null)), /* @__PURE__ */ React.createElement("a", {
       title: "Write changes with aframe-watcher.",
       className: "toolbar-button",
       onClick: writeChanges
-    }, /* @__PURE__ */ React.createElement(FaSave, null)), /* @__PURE__ */ React.createElement("a", {
-      title: autosaveEnabled ? "Disable autosave" : "Enable autosave (saves every 10s)",
-      className: `toolbar-button ${autosaveEnabled ? "active" : ""}`,
-      onClick: toggleAutosave
-    }, /* @__PURE__ */ React.createElement(FaClock, {
-      className: autosaveEnabled ? "text-[var(--primary)]" : ""
-    })), /* @__PURE__ */ React.createElement("a", {
-      title: "Help",
-      className: "toolbar-button",
-      onClick: openHelpModal
-    }, /* @__PURE__ */ React.createElement(FaQuestion, null))));
+    }, /* @__PURE__ */ React.createElement(FaSave, null))));
   }
   function useToolbar(selectedEntity) {
-    const [isPlaying, setIsPlaying] = reactExports.useState(false);
     const [primitivesList, setPrimitivesList] = reactExports.useState([]);
     const [isDropdownOpen, setIsDropdownOpen] = reactExports.useState(false);
-    const [autosaveEnabled, setAutosaveEnabled] = reactExports.useState(false);
-    const autosaveIntervalRef = React.useRef(null);
     React.useEffect(() => {
       if (window.AFRAME && AFRAME.primitives) {
         setPrimitivesList(Object.keys(AFRAME.primitives.primitives));
       }
     }, []);
-    React.useEffect(() => {
-      if (autosaveEnabled) {
-        autosaveIntervalRef.current = setInterval(() => {
-          writeChanges();
-        }, 1e4);
-      } else {
-        if (autosaveIntervalRef.current) {
-          clearInterval(autosaveIntervalRef.current);
-          autosaveIntervalRef.current = null;
-        }
-      }
-      return () => {
-        if (autosaveIntervalRef.current) {
-          clearInterval(autosaveIntervalRef.current);
-        }
-      };
-    }, [autosaveEnabled]);
-    const exportSceneToGLTF = () => {
-      const sceneName = getSceneName(AFRAME.scenes[0]);
-      const scene = AFRAME.scenes[0].object3D;
-      filterHelpers(scene, false);
-      AFRAME.INSPECTOR.exporters.gltf.parse(scene, function(buffer) {
-        filterHelpers(scene, true);
-        const blob = new Blob([buffer], {
-          type: "application/octet-stream"
-        });
-        saveBlob(blob, sceneName + ".glb");
-      }, function(error) {
-        console.error(error);
-      }, {
-        binary: true
-      });
-    };
     const addEntityWithPrimitive = (primitiveName) => {
       Events.emit("entitycreate", {
         element: primitiveName,
@@ -33732,48 +34437,61 @@ void main() {
     const toggleDropdown = () => {
       setIsDropdownOpen(!isDropdownOpen);
     };
-    const writeChanges = () => {
-      fetch("http://localhost:51234/save", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
+    const writeChanges = async () => {
+      const actionList = AFRAME.INSPECTOR.history.actions || [];
+      const watcherBase = `http://${window.location.hostname}:51234`;
+      const assetsSnapshot = Array.from(document.querySelectorAll("a-assets > *")).map((el) => ({
+        sourcePath: el.getAttribute("data-source-path") || null,
+        id: el.id || null,
+        tagName: el.tagName ? el.tagName.toLowerCase() : null,
+        src: el.getAttribute("data-source-path") || el.getAttribute("src") || el.src || null
+      }));
+      for (let i = actionList.length - 1; i >= 0; i--) {
+        if (actionList[i].type === "assetsync") {
+          actionList.splice(i, 1);
+        }
+      }
+      actionList.push({
+        type: "assetsync",
+        payload: {
+          assets: assetsSnapshot
         },
-        body: JSON.stringify(AFRAME.INSPECTOR.history.updates)
-      }).catch(() => {
-        alert("aframe-watcher not running. This feature requires a companion service running locally. npm install aframe-watcher to save changes back to file. Read more at https://github.com/supermedium/aframe-watcher");
-        if (autosaveEnabled) setAutosaveEnabled(false);
+        timestamp: Date.now()
       });
-    };
-    const toggleScenePlaying = () => {
-      if (isPlaying) {
-        AFRAME.scenes[0].pause();
-        setIsPlaying(false);
-        AFRAME.scenes[0].isPlaying = true;
-        document.getElementById("aframeInspectorMouseCursor").play();
+      try {
+        await fetch(`${watcherBase}/save`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(AFRAME.INSPECTOR.history.updates)
+        });
+      } catch {
+        alert("aframe-watcher not running. This feature requires a companion service running locally. npm install aframe-watcher to save changes back to file. Read more at https://github.com/supermedium/aframe-watcher");
         return;
       }
-      AFRAME.scenes[0].isPlaying = false;
-      AFRAME.scenes[0].play();
-      setIsPlaying(true);
-    };
-    const openHelpModal = () => {
-      Events.emit("openhelpmodal");
-    };
-    const toggleAutosave = () => {
-      setAutosaveEnabled(!autosaveEnabled);
+      try {
+        const response = await fetch(`${watcherBase}/actions`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            actions: actionList
+          })
+        });
+        if (response.ok) {
+          actionList.length = 0;
+        }
+      } catch {
+      }
     };
     return {
-      isPlaying,
       primitivesList,
       isDropdownOpen,
-      autosaveEnabled,
       addEntityWithPrimitive,
       toggleDropdown,
-      exportSceneToGLTF,
-      writeChanges,
-      toggleScenePlaying,
-      openHelpModal,
-      toggleAutosave
+      writeChanges
     };
   }
   function _extends() {
@@ -33988,11 +34706,13 @@ void main() {
       rebuildEntityOptions();
       Events.on("entityidchange", rebuildEntityOptions);
       Events.on("entityupdate", onEntityUpdate);
+      Events.on("entityreparent", rebuildEntityOptions);
       document.addEventListener("child-attached", onChildAttachedDetached);
       document.addEventListener("child-detached", onChildAttachedDetached);
       return () => {
         Events.off("entityidchange", rebuildEntityOptions);
         Events.off("entityupdate", onEntityUpdate);
+        Events.off("entityreparent", rebuildEntityOptions);
         document.removeEventListener("child-attached", onChildAttachedDetached);
         document.removeEventListener("child-detached", onChildAttachedDetached);
       };
@@ -34006,7 +34726,7 @@ void main() {
       className: "scenegraph relative"
     }, /* @__PURE__ */ React.createElement("div", {
       className: "flex justify-between px-2 items-center mb-8"
-    }, /* @__PURE__ */ React.createElement("button", {
+    }, /* @__PURE__ */ React.createElement("a", {
       onClick: () => AFRAME.INSPECTOR.close(),
       className: "exit"
     }, /* @__PURE__ */ React.createElement(FaTimes, {
@@ -34069,6 +34789,9 @@ void main() {
   function TbGizmo(props) {
     return GenIcon({ "attr": { "viewBox": "0 0 24 24", "fill": "none", "stroke": "currentColor", "strokeWidth": "2", "strokeLinecap": "round", "strokeLinejoin": "round" }, "child": [{ "tag": "path", "attr": { "d": "M20 19l-8 -5.5l-8 5.5" }, "child": [] }, { "tag": "path", "attr": { "d": "M12 4v9.5" }, "child": [] }, { "tag": "path", "attr": { "d": "M12 4m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" }, "child": [] }, { "tag": "path", "attr": { "d": "M4 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" }, "child": [] }, { "tag": "path", "attr": { "d": "M20 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" }, "child": [] }] })(props);
   }
+  function MdMyLocation(props) {
+    return GenIcon({ "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "fill": "none", "d": "M0 0h24v24H0z" }, "child": [] }, { "tag": "path", "attr": { "d": "M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3A8.994 8.994 0 0 0 13 3.06V1h-2v2.06A8.994 8.994 0 0 0 3.06 11H1v2h2.06A8.994 8.994 0 0 0 11 20.94V23h2v-2.06A8.994 8.994 0 0 0 20.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z" }, "child": [] }] })(props);
+  }
   function TransformToolbar() {
     const [selectedTransform, setSelectedTransform] = reactExports.useState("translate");
     const [localSpace, setLocalSpace] = reactExports.useState(false);
@@ -34084,11 +34807,11 @@ void main() {
       setSelectedTransform(mode);
       Events.emit("transformmodechange", mode);
     }, []);
-    const onLocalChange = reactExports.useCallback((e) => {
-      const local = e.target.checked;
-      setLocalSpace(local);
-      Events.emit("transformspacechanged", local ? "local" : "world");
-    }, []);
+    const onLocalChange = reactExports.useCallback(() => {
+      const newLocal = !localSpace;
+      setLocalSpace(newLocal);
+      Events.emit("transformspacechanged", newLocal ? "local" : "world");
+    }, [localSpace]);
     reactExports.useEffect(() => {
       Events.on("transformmodechange", onTransformModeChange);
       Events.on("transformspacechange", onTransformSpaceChange);
@@ -34112,23 +34835,5052 @@ void main() {
     }, /* @__PURE__ */ React.createElement(FaRedo, null)), /* @__PURE__ */ React.createElement("a", {
       onClick: () => changeTransformMode("scale"),
       className: `button ${selectedTransform === "scale" ? "active" : ""}`
-    }, /* @__PURE__ */ React.createElement(FaExpand, null)), /* @__PURE__ */ React.createElement("span", {
-      className: "local-transform"
-    }, /* @__PURE__ */ React.createElement("input", {
-      id: "local",
-      type: "checkbox",
-      title: "Toggle between local and world space transforms",
-      checked: localSpace || selectedTransform === "scale",
-      disabled: selectedTransform === "scale" || selectedTransform === "all",
-      onChange: onLocalChange
-    }), /* @__PURE__ */ React.createElement("label", {
-      htmlFor: "local",
-      title: "Toggle between local and world space transforms"
-    }, "local")));
+    }, /* @__PURE__ */ React.createElement(FaExpandArrowsAlt, null)), /* @__PURE__ */ React.createElement("a", {
+      onClick: onLocalChange,
+      className: `button ${localSpace ? "active" : ""}`,
+      title: localSpace ? "Local Space" : "World Space",
+      style: {
+        opacity: selectedTransform === "scale" || selectedTransform === "all" ? 0.3 : 1,
+        pointerEvents: selectedTransform === "scale" || selectedTransform === "all" ? "none" : "auto"
+      }
+    }, localSpace ? /* @__PURE__ */ React.createElement(MdMyLocation, null) : /* @__PURE__ */ React.createElement(FaGlobe, null)));
   }
   function BsHeadsetVr(props) {
     return GenIcon({ "attr": { "fill": "currentColor", "viewBox": "0 0 16 16" }, "child": [{ "tag": "path", "attr": { "d": "M8 1.248c1.857 0 3.526.641 4.65 1.794a5 5 0 0 1 2.518 1.09C13.907 1.482 11.295 0 8 0 4.75 0 2.12 1.48.844 4.122a5 5 0 0 1 2.289-1.047C4.236 1.872 5.974 1.248 8 1.248" }, "child": [] }, { "tag": "path", "attr": { "d": "M12 12a4 4 0 0 1-2.786-1.13l-.002-.002a1.6 1.6 0 0 0-.276-.167A2.2 2.2 0 0 0 8 10.5c-.414 0-.729.103-.935.201a1.6 1.6 0 0 0-.277.167l-.002.002A4 4 0 1 1 4 4h8a4 4 0 0 1 0 8" }, "child": [] }] })(props);
   }
+  AFRAME.registerComponent("haptics", {
+    schema: {
+      intensity: {
+        default: 0.6
+      },
+      duration: {
+        default: 30
+      }
+    },
+    init() {
+      this.el.addEventListener("haptic-pulse", (e) => this.pulse(e.detail));
+      this.el.addEventListener("haptic-burst", (e) => this.burst(e.detail));
+    },
+    getActuator() {
+      const controller = this.el.components["tracked-controls"]?.controller;
+      const gamepad = controller?.gamepad;
+      return gamepad?.hapticActuators?.[0] || gamepad?.vibrationActuator || null;
+    },
+    pulse(options = {}) {
+      const actuator = this.getActuator();
+      if (!actuator) return;
+      const intensity = options.intensity ?? this.data.intensity;
+      const duration = options.duration ?? this.data.duration;
+      if (actuator.pulse) {
+        actuator.pulse(intensity, duration);
+      } else if (actuator.playEffect) {
+        actuator.playEffect("dual-rumble", {
+          duration,
+          strongMagnitude: intensity,
+          weakMagnitude: intensity
+        });
+      }
+    },
+    burst(options = {}) {
+      const count = options.count ?? 3;
+      const gap = options.gap ?? 40;
+      const intensity = options.intensity ?? this.data.intensity;
+      const duration = options.duration ?? this.data.duration;
+      let pulseCount = 0;
+      const doPulse = () => {
+        if (pulseCount++ >= count) return;
+        this.pulse({
+          intensity,
+          duration
+        });
+        setTimeout(doPulse, gap);
+      };
+      doPulse();
+    }
+  });
+  window.AFRAME.registerComponent("paint-tool", {
+    schema: {
+      enabled: {
+        type: "boolean",
+        default: true
+      },
+      color: {
+        type: "string",
+        default: "#FF0040"
+      },
+      roughness: {
+        type: "number",
+        default: 0.6
+      },
+      metalness: {
+        type: "number",
+        default: 0
+      },
+      opacity: {
+        type: "number",
+        default: 1
+      },
+      sphereRadius: {
+        type: "number",
+        default: 0.01
+      }
+      // Made smaller
+    },
+    init: function() {
+      this.T = AFRAME.THREE;
+      this.isPainting = false;
+      this.paletteVisible = false;
+      this.wireframeStates = /* @__PURE__ */ new Map();
+      this.colorPalette = null;
+      this.colorSpheres = [];
+      this.roughnessSpheres = [];
+      this.metalnessSpheres = [];
+      this.allPaletteSpheres = [];
+      this.data.currentMaterial = `color: ${this.data.color}; roughness: ${this.data.roughness}; metalness: ${this.data.metalness};`;
+      this.disableRaycasts();
+      this.createPaintSphere();
+      this.createColorPalette();
+      this.createRingLabels();
+      this.bindEvents();
+      this.applyEnabledState();
+    },
+    update: function(oldData) {
+      if (!oldData || typeof oldData.enabled === "undefined") {
+        this.applyEnabledState();
+        return;
+      }
+      if (oldData.enabled !== this.data.enabled) {
+        this.applyEnabledState();
+      }
+    },
+    applyEnabledState: function() {
+      if (this.paintSphere) {
+        this.paintSphere.setAttribute("visible", !!this.data.enabled);
+      }
+      if (!this.data.enabled) {
+        this.isPainting = false;
+        this.hidePalette();
+      }
+    },
+    onToolActivated: function() {
+      this.applyEnabledState();
+    },
+    onToolDeactivated: function() {
+      this.applyEnabledState();
+    },
+    disableRaycasts() {
+      this.el.removeAttribute("laser-controls");
+      this.el.removeAttribute("raycaster");
+    },
+    createPaintSphere() {
+      this.paintSphere = document.createElement("a-entity");
+      this.paintSphere.setAttribute("geometry", `primitive: sphere; radius: ${this.data.sphereRadius}`);
+      this.paintSphere.setAttribute("material", this.data.currentMaterial);
+      this.paintSphere.setAttribute("position", "0 -0.03 -0.07");
+      this.paintSphere.setAttribute("animation", "property: scale; to: 1.1 1.1 1.1; dir: alternate; dur: 1000; loop: true; easing: easeInOutSine");
+      this.el.appendChild(this.paintSphere);
+    },
+    bindEvents() {
+      this.el.addEventListener("triggerdown", this.handleTriggerDown.bind(this));
+      this.el.addEventListener("gripdown", this.toggleWireframe.bind(this));
+      this.el.addEventListener("abuttondown", this.eyedropper.bind(this));
+      this.el.addEventListener("xbuttondown", this.eyedropper.bind(this));
+      this.el.addEventListener("bbuttondown", this.showPalette.bind(this));
+      this.el.addEventListener("bbuttonup", this.hidePalette.bind(this));
+      this.el.addEventListener("ybuttondown", this.showPalette.bind(this));
+      this.el.addEventListener("ybuttonup", this.hidePalette.bind(this));
+    },
+    handleTriggerDown() {
+      if (!this.data.enabled) return;
+      if (this.paletteVisible) {
+        this.selectColor();
+        return;
+      }
+      this.paintWithButton();
+    },
+    paintWithButton() {
+      if (!this.data.enabled) return;
+      this.paintTarget();
+      this.el.emit("haptic-pulse", {
+        intensity: 0.3,
+        duration: 50
+      }, false);
+    },
+    toggleWireframe() {
+      if (!this.data.enabled) return;
+      const target = this.findPaintTargetBySphere();
+      if (!target) return;
+      target.setAttribute("material", {
+        wireframe: true
+      });
+      Events.emit("entityupdate", {
+        entity: target,
+        component: "material",
+        property: "",
+        value: target.getAttribute("material")
+      });
+      this.el.emit("haptic-pulse", {
+        intensity: 0.4,
+        duration: 60
+      }, false);
+    },
+    eyedropper() {
+      if (!this.data.enabled) return;
+      const target = this.findPaintTargetBySphere();
+      if (!target) return;
+      const mat = target.getAttribute("material");
+      if (!mat) return;
+      const get = (obj, key, fallback) => {
+        if (typeof obj === "string") {
+          const m = obj.match(new RegExp(`${key}:\\s*([^;]+)`));
+          return m ? m[1].trim() : fallback;
+        }
+        return obj[key] !== void 0 ? String(obj[key]) : fallback;
+      };
+      const color = get(mat, "color", this.data.color);
+      const roughness = parseFloat(get(mat, "roughness", this.data.roughness));
+      const metalness = parseFloat(get(mat, "metalness", this.data.metalness));
+      this.data.color = color;
+      this.data.roughness = isNaN(roughness) ? this.data.roughness : roughness;
+      this.data.metalness = isNaN(metalness) ? this.data.metalness : metalness;
+      this.data.currentMaterial = this.composeMaterialString();
+      this.updatePaintSphere();
+      this.updateRingLabels();
+      this.el.emit("haptic-pulse", {
+        intensity: 0.6,
+        duration: 100
+      }, false);
+    },
+    startPainting() {
+      if (!this.data.enabled) return;
+      this.isPainting = true;
+      this.paintTarget();
+    },
+    stopPainting() {
+      if (!this.data.enabled) return;
+      this.isPainting = false;
+    },
+    paintTarget() {
+      if (!this.data.enabled) return;
+      const target = this.findPaintTargetBySphere();
+      if (target) this.applyPaintToTarget(target);
+    },
+    async applyPaintToTarget(target) {
+      target.setAttribute("material", this.data.currentMaterial);
+      Events.emit("entityupdate", {
+        entity: target,
+        component: "material",
+        property: "",
+        value: target.getAttribute("material")
+      });
+    },
+    updatePaintSphere() {
+      if (this.paintSphere) {
+        this.paintSphere.setAttribute("geometry", `primitive: sphere; radius: ${this.data.sphereRadius}`);
+        this.paintSphere.setAttribute("material", this.data.currentMaterial);
+      }
+    },
+    composeMaterialString() {
+      return `color: ${this.data.color}; roughness: ${this.data.roughness}; metalness: ${this.data.metalness};`;
+    },
+    setCurrentMaterial(color) {
+      this.data.color = color;
+      this.data.currentMaterial = this.composeMaterialString();
+      this.updatePaintSphere();
+    },
+    setRoughness(value) {
+      this.data.roughness = parseFloat(value.toFixed(2));
+      this.data.currentMaterial = this.composeMaterialString();
+      this.updatePaintSphere();
+      this.updateRingLabels();
+    },
+    setMetalness(value) {
+      this.data.metalness = parseFloat(value.toFixed(2));
+      this.data.currentMaterial = this.composeMaterialString();
+      this.updatePaintSphere();
+      this.updateRingLabels();
+    },
+    updateRingLabels() {
+      if (this.roughnessLabel) {
+        this.roughnessLabel.setAttribute("text", `value: Roughness: ${Math.round(this.data.roughness * 100)}%; color: #cccccc; align: left; width: 0.4; wrapCount: 30`);
+      }
+      if (this.metalnessLabel) {
+        this.metalnessLabel.setAttribute("text", `value: Metalness: ${Math.round(this.data.metalness * 100)}%; color: #88bbee; align: left; width: 0.4; wrapCount: 30`);
+      }
+    },
+    createRingLabels() {
+      this.labelsContainer = document.createElement("a-entity");
+      this.labelsContainer.setAttribute("visible", false);
+      this.labelsContainer.setAttribute("rotation", "0 270 0");
+      const makeLabel = (name, yOffset, textColor) => {
+        const wrapper = document.createElement("a-entity");
+        wrapper.setAttribute("position", `0 ${yOffset} 0`);
+        const bg = document.createElement("a-entity");
+        bg.setAttribute("geometry", "primitive: plane; width: 0.14; height: 0.028");
+        bg.setAttribute("material", "color: #111111; opacity: 0.8; transparent: true; side: double");
+        wrapper.appendChild(bg);
+        const textEl = document.createElement("a-entity");
+        textEl.setAttribute("text", `value: ${name}; color: ${textColor}; align: left; width: 0.4; wrapCount: 30`);
+        textEl.setAttribute("position", "-0.065 0 0.002");
+        wrapper.appendChild(textEl);
+        this.labelsContainer.appendChild(wrapper);
+        return textEl;
+      };
+      makeLabel("Color", 0, "#ffffff");
+      this.roughnessLabel = makeLabel(`Roughness: ${Math.round(this.data.roughness * 100)}%`, 0.07, "#cccccc");
+      this.metalnessLabel = makeLabel(`Metalness: ${Math.round(this.data.metalness * 100)}%`, 0.14, "#88bbee");
+      this.el.sceneEl.appendChild(this.labelsContainer);
+    },
+    valueToGrayHex(v) {
+      const lightness = Math.round(220 - v * 160);
+      const h = lightness.toString(16).padStart(2, "0");
+      return `#${h}${h}${h}`;
+    },
+    valueToMetalHex(v) {
+      const r2 = Math.round(70 + v * 130).toString(16).padStart(2, "0");
+      const g = Math.round(75 + v * 130).toString(16).padStart(2, "0");
+      const b = Math.round(80 + v * 140).toString(16).padStart(2, "0");
+      return `#${r2}${g}${b}`;
+    },
+    addPropertyRing(type, yOffset) {
+      const count = 16;
+      const ringRadius = 0.12;
+      const sphereSize = 0.013;
+      for (let i = 0; i < count; i++) {
+        const value = i / (count - 1);
+        const angle = i / count * Math.PI * 2;
+        const x = Math.cos(angle) * ringRadius;
+        const z = Math.sin(angle) * ringRadius;
+        const color = type === "roughness" ? this.valueToGrayHex(value) : this.valueToMetalHex(value);
+        const mat = type === "roughness" ? `color: ${color}; roughness: ${value.toFixed(2)}; metalness: 0;` : `color: ${color}; roughness: 0.3; metalness: ${value.toFixed(2)};`;
+        const sphere = document.createElement("a-entity");
+        sphere.setAttribute("geometry", `primitive: sphere; radius: ${sphereSize}`);
+        sphere.setAttribute("material", mat);
+        sphere.setAttribute("position", `${x.toFixed(4)} ${yOffset} ${z.toFixed(4)}`);
+        sphere.setAttribute("scale", "1 0.3 1");
+        sphere.setAttribute("class", "palette-sphere");
+        sphere.userData = {
+          type,
+          value,
+          color
+        };
+        const pct = Math.round(value * 100);
+        const label = document.createElement("a-entity");
+        label.setAttribute("text", `value: ${pct}%; color: #ffffff; align: center; width: 0.12; wrapCount: 6`);
+        label.setAttribute("position", `0 0.02 0`);
+        label.setAttribute("rotation", "0 0 90");
+        label.setAttribute("visible", false);
+        sphere.appendChild(label);
+        this.colorPalette.appendChild(sphere);
+        if (type === "roughness") this.roughnessSpheres.push(sphere);
+        else this.metalnessSpheres.push(sphere);
+        this.allPaletteSpheres.push(sphere);
+      }
+    },
+    // Color Palette System
+    generateColorRings() {
+      const rings = [];
+      const hslToHex = (h, s, l) => {
+        s /= 100;
+        l /= 100;
+        const k = (n) => (n + h / 30) % 12;
+        const a = s * Math.min(l, 1 - l);
+        const f = (n) => {
+          const color = l - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1)));
+          return Math.round(255 * color).toString(16).padStart(2, "0");
+        };
+        return `#${f(0)}${f(8)}${f(4)}`;
+      };
+      const baseCount = 6;
+      let base = [];
+      for (let i = 0; i < baseCount; i++) {
+        const hue = i / baseCount * 360;
+        base.push(hslToHex(hue, 100, 50));
+      }
+      rings.push(base);
+      const ringCount = 4;
+      let prev = base;
+      for (let r2 = 1; r2 < ringCount; r2++) {
+        const next = [];
+        const n = prev.length;
+        for (let i = 0; i < n; i++) {
+          const a = prev[i];
+          const b = prev[(i + 1) % n];
+          next.push(a);
+          next.push(this.blendColors(a, b, 0.5));
+        }
+        rings.push(next);
+        prev = next;
+      }
+      return rings;
+    },
+    getComplementaryColor(hexColor) {
+      const hex = hexColor.replace("#", "");
+      const r2 = 255 - parseInt(hex.substr(0, 2), 16);
+      const g = 255 - parseInt(hex.substr(2, 2), 16);
+      const b = 255 - parseInt(hex.substr(4, 2), 16);
+      return `#${r2.toString(16).padStart(2, "0")}${g.toString(16).padStart(2, "0")}${b.toString(16).padStart(2, "0")}`;
+    },
+    blendColors(color1, color2, ratio = 0.5) {
+      const hex1 = color1.replace("#", "");
+      const hex2 = color2.replace("#", "");
+      const r1 = parseInt(hex1.substr(0, 2), 16);
+      const g1 = parseInt(hex1.substr(2, 2), 16);
+      const b1 = parseInt(hex1.substr(4, 2), 16);
+      const r2 = parseInt(hex2.substr(0, 2), 16);
+      const g2 = parseInt(hex2.substr(2, 2), 16);
+      const b2 = parseInt(hex2.substr(4, 2), 16);
+      const r3 = Math.round(r1 * (1 - ratio) + r2 * ratio);
+      const g = Math.round(g1 * (1 - ratio) + g2 * ratio);
+      const b = Math.round(b1 * (1 - ratio) + b2 * ratio);
+      return `#${r3.toString(16).padStart(2, "0")}${g.toString(16).padStart(2, "0")}${b.toString(16).padStart(2, "0")}`;
+    },
+    createColorPalette() {
+      this.colorPalette = document.createElement("a-entity");
+      this.colorPalette.setAttribute("visible", false);
+      const rings = this.generateColorRings().slice(3);
+      this.colorSpheres = [];
+      rings.forEach((ring, ringIndex) => {
+        const radius = 0.08 + ringIndex * 0.04;
+        const sphereSize = 0.015 - ringIndex * 2e-3;
+        ring.forEach((color, colorIndex) => {
+          const angle = colorIndex / ring.length * Math.PI * 2;
+          const x = Math.cos(angle) * radius;
+          const z = Math.sin(angle) * radius;
+          const colorSphere = document.createElement("a-entity");
+          colorSphere.setAttribute("geometry", `primitive: sphere; radius: ${sphereSize}`);
+          colorSphere.setAttribute("material", `color: ${color}; roughness: 0.7;`);
+          colorSphere.setAttribute("position", `${x} 0 ${z}`);
+          colorSphere.setAttribute("scale", `1 0.3 1`);
+          colorSphere.setAttribute("class", "palette-sphere");
+          colorSphere.userData = {
+            type: "color",
+            color
+          };
+          this.colorPalette.appendChild(colorSphere);
+          this.colorSpheres.push(colorSphere);
+          this.allPaletteSpheres.push(colorSphere);
+        });
+      });
+      this.addPropertyRing("roughness", 0.07);
+      this.addPropertyRing("metalness", 0.14);
+      this.el.sceneEl.appendChild(this.colorPalette);
+    },
+    showPalette() {
+      if (!this.data.enabled) return;
+      this.paletteVisible = true;
+      if (this.colorPalette) {
+        const controllerPos = new this.T.Vector3();
+        this.el.object3D.getWorldPosition(controllerPos);
+        this.colorPalette.setAttribute("position", `${controllerPos.x} ${controllerPos.y} ${controllerPos.z}`);
+        this.colorPalette.setAttribute("visible", true);
+        this.colorPalette.setAttribute("animation", "property: rotation; to: 0 360 0; dur: 20000; loop: true; easing: linear");
+        if (this.labelsContainer) {
+          this.updateRingLabels();
+          this.labelsContainer.setAttribute("position", `${controllerPos.x + 0.22} ${controllerPos.y} ${controllerPos.z}`);
+        }
+      }
+    },
+    hidePalette() {
+      this.paletteVisible = false;
+      if (this.colorPalette) {
+        this.colorPalette.setAttribute("visible", false);
+        this.colorPalette.removeAttribute("animation");
+      }
+      if (this.labelsContainer) {
+        this.labelsContainer.setAttribute("visible", false);
+      }
+    },
+    selectColor() {
+      if (!this.data.enabled) return;
+      if (!this.paletteVisible) return;
+      const hitSphere = this.findPaletteSphereByOverlap();
+      if (hitSphere) {
+        const {
+          type,
+          color,
+          value
+        } = hitSphere.userData;
+        if (type === "color") this.setCurrentMaterial(color);
+        else if (type === "roughness") this.setRoughness(value);
+        else if (type === "metalness") this.setMetalness(value);
+        this.el.emit("haptic-pulse", {
+          intensity: 0.5,
+          duration: 80
+        }, false);
+        this.highlightSelectedColor(hitSphere);
+        this.hidePalette();
+      }
+    },
+    getPaintSphereWorldPosition() {
+      if (!this.paintSphere?.object3D) return null;
+      const pos = new this.T.Vector3();
+      this.paintSphere.object3D.getWorldPosition(pos);
+      return pos;
+    },
+    findPaintTargetBySphere(tolerance = null) {
+      const spherePos = this.getPaintSphereWorldPosition();
+      if (!spherePos) return null;
+      const threshold = tolerance !== null ? tolerance : this.data.sphereRadius * 2.5;
+      const all = Array.from(this.el.sceneEl.querySelectorAll("*"));
+      let best = null;
+      let bestDist = Infinity;
+      for (const el of all) {
+        if (!el || el === this.el || el === this.el.sceneEl || !el.object3D) continue;
+        const rig = document.getElementById("admin-camera-rig");
+        if (rig && (el === rig || rig.contains(el))) continue;
+        if (el.hasAttribute("data-vr-tool-ui") || el.closest("[controller-toolbelt]")) continue;
+        if (el.closest("[paint-tool]") || el.closest("a-assets")) continue;
+        if (String(el.getAttribute("class") || "").includes("palette-sphere")) continue;
+        const box = new this.T.Box3().setFromObject(el.object3D);
+        let dist = Infinity;
+        if (!box.isEmpty()) {
+          dist = box.distanceToPoint(spherePos);
+        } else {
+          const worldPos = new this.T.Vector3();
+          el.object3D.getWorldPosition(worldPos);
+          dist = spherePos.distanceTo(worldPos);
+        }
+        if (dist <= threshold && dist < bestDist) {
+          best = el;
+          bestDist = dist;
+        }
+      }
+      return best;
+    },
+    findPaletteSphereByOverlap() {
+      const spherePos = this.getPaintSphereWorldPosition();
+      if (!spherePos) return null;
+      for (const sphere of this.allPaletteSpheres) {
+        if (!sphere?.object3D) continue;
+        const pos = new this.T.Vector3();
+        sphere.object3D.getWorldPosition(pos);
+        if (spherePos.distanceTo(pos) < this.data.sphereRadius + 0.015) return sphere;
+      }
+      return null;
+    },
+    checkSphereColorCollision() {
+      if (!this.data.enabled) return;
+      if (!this.paletteVisible || !this.paintSphere || !this.paintSphere.object3D) return;
+      const spherePos = new this.T.Vector3();
+      this.paintSphere.object3D.getWorldPosition(spherePos);
+      this.colorSpheres.forEach((colorSphere) => {
+        if (!colorSphere.object3D) return;
+        const colorPos = new this.T.Vector3();
+        colorSphere.object3D.getWorldPosition(colorPos);
+        const distance = spherePos.distanceTo(colorPos);
+        const collisionDistance = this.data.sphereRadius + 0.015;
+        if (distance < collisionDistance) {
+          const selectedColor = colorSphere.userData.color;
+          if (selectedColor !== this.data.color) {
+            this.setCurrentMaterial(selectedColor);
+            this.el.emit("haptic-pulse", {
+              intensity: 0.5,
+              duration: 80
+            }, false);
+            this.highlightSelectedColor(colorSphere);
+          }
+        }
+      });
+    },
+    highlightSelectedColor(selected) {
+      this.allPaletteSpheres.forEach((sphere) => {
+        sphere.removeAttribute("animation__highlight");
+        const mat = sphere.getAttribute("material");
+        if (mat && typeof mat === "string") {
+          sphere.setAttribute("material", mat.replace(/;\s*emissive:[^;]+/, ""));
+        }
+      });
+      const baseColor = selected.userData.color || "#ffffff";
+      const currentMat = selected.getAttribute("material");
+      const matStr = typeof currentMat === "string" ? currentMat : "";
+      selected.setAttribute("material", `${matStr}; emissive: ${baseColor}`);
+      selected.setAttribute("animation__highlight", "property: scale; to: 1.5 1.5 1.5; dur: 200; dir: alternate; loop: 2; easing: easeOutElastic");
+    },
+    tick() {
+      if (!this.data.enabled) return;
+      if (this.isPainting) {
+        this.paintTarget();
+      }
+    }
+  });
+  if (!AFRAME.components["move-tool"]) {
+    AFRAME.registerComponent("move-tool", {
+      schema: {
+        enabled: {
+          type: "boolean",
+          default: true
+        },
+        hand: {
+          type: "string",
+          default: "right",
+          oneOf: ["left", "right"]
+        },
+        enableTranslation: {
+          type: "boolean",
+          default: true
+        },
+        enableRotation: {
+          type: "boolean",
+          default: true
+        },
+        enableScale: {
+          type: "boolean",
+          default: true
+        },
+        translationSensitivity: {
+          type: "number",
+          default: 4
+        },
+        rotationSensitivity: {
+          type: "number",
+          default: 1
+        },
+        scaleSensitivity: {
+          type: "number",
+          default: 1
+        },
+        pullPushSensitivity: {
+          type: "number",
+          default: 2
+        }
+      },
+      init() {
+        this.T = AFRAME.THREE;
+        this.selectedObjects = [];
+        this.isManipulating = false;
+        this.isGripping = false;
+        this.sphereRadius = 0.05;
+        this.startControllerPosition = new this.T.Vector3();
+        this.startControllerRotation = new this.T.Euler();
+        this.startObjectPositions = [];
+        this.startObjectRotations = [];
+        this.initialRayDistance = 0;
+        this.gripObjectInSphereSpace = /* @__PURE__ */ new Map();
+        this._rayGroupOffsets = /* @__PURE__ */ new Map();
+        this._rayPrimaryTarget = null;
+        this.isResizingSphere = false;
+        this.isTriggerDown = false;
+        this.isScaling = false;
+        this.scaleStartControllerPos = new this.T.Vector3();
+        this.scaleStartObjectScales = [];
+        this.gripStartControllerPos = new this.T.Vector3();
+        this.gripStartSphereRadius = 0.05;
+        this.qControllerWorld = new this.T.Quaternion();
+        this.qTargetWorld = new this.T.Quaternion();
+        this.qSphereLocal = new this.T.Quaternion();
+        this._lastGroupToggleTime = 0;
+        this.setupLaser();
+        this.createSelectionSphere();
+        this.bindEvents();
+        this.applyEnabledState();
+        this._sphereOverlapTarget = null;
+        this._sphereOverlapTargets = /* @__PURE__ */ new Set();
+      },
+      update(oldData) {
+        if (!oldData || typeof oldData.enabled === "undefined") {
+          this.applyEnabledState();
+          return;
+        }
+        if (oldData.enabled !== this.data.enabled) {
+          this.applyEnabledState();
+        }
+        if (oldData.hand !== this.data.hand && this.selectionSphere) {
+          this.selectionSphere.setAttribute("position", this.getSphereOffset());
+        }
+      },
+      bindEvents() {
+        const events2 = ["triggerdown", "triggerup", "gripdown", "gripup", "bbuttondown", "ybuttondown", "xbuttondown", "abuttondown"];
+        this.boundToolHandlers = this.boundToolHandlers || {};
+        events2.forEach((event) => {
+          const handlerName = `handle${event.replace("-", "").replace(/^\w/, (c) => c.toUpperCase())}`;
+          const bound = (evt) => {
+            if (!this.data.enabled) return;
+            this[handlerName](evt);
+          };
+          this.boundToolHandlers[event] = bound;
+          this.el.addEventListener(event, bound);
+        });
+        this.el.sceneEl.addEventListener("clearSelection", this.clearSelection.bind(this));
+      },
+      applyEnabledState() {
+        if (this.selectionSphere) {
+          this.selectionSphere.object3D.visible = !!this.data.enabled;
+        }
+        if (!this.data.enabled) {
+          this.isGripping = false;
+          if (this.isManipulating) {
+            this.endManipulation();
+          }
+          this.clearSelection();
+        }
+      },
+      onToolActivated() {
+        this.applyEnabledState();
+      },
+      onToolDeactivated() {
+        this.applyEnabledState();
+      },
+      setupLaser() {
+        this.el.setAttribute("laser-controls", `hand: ${this.data.hand}; lineColor: #23b391; lineOpacity: 0.8;`);
+        this.el.setAttribute("raycaster", "far: 400; showLine: true;");
+      },
+      getSphereOffset() {
+        const isLeft = this.data.hand === "left";
+        return `${isLeft ? "0.07" : "-0.07"} -0.06 0.02`;
+      },
+      createSelectionSphere() {
+        const T = this.T;
+        const container = new T.Object3D();
+        const shellGeo = new T.IcosahedronGeometry(1, 1);
+        this._shellMat = new T.MeshBasicMaterial({
+          color: 2339729,
+          wireframe: true,
+          transparent: true,
+          opacity: 0.7,
+          depthTest: false
+        });
+        this._shellMesh = new T.Mesh(shellGeo, this._shellMat);
+        const fillGeo = new T.SphereGeometry(0.82, 16, 12);
+        this._fillMat = new T.MeshBasicMaterial({
+          color: 863784,
+          transparent: true,
+          opacity: 0.22,
+          depthTest: false,
+          side: T.FrontSide
+        });
+        this._fillMesh = new T.Mesh(fillGeo, this._fillMat);
+        container.add(this._shellMesh);
+        container.add(this._fillMesh);
+        container.renderOrder = 998;
+        this.selectionSphere = document.createElement("a-entity");
+        this.selectionSphere.setAttribute("position", this.getSphereOffset());
+        this.el.appendChild(this.selectionSphere);
+        this.selectionSphere.addEventListener("loaded", () => {
+          this.selectionSphere.object3D.add(container);
+          this._sphereContainer = container;
+          this._updateSphereScale();
+        }, {
+          once: true
+        });
+      },
+      _updateSphereScale() {
+        if (!this._sphereContainer) return;
+        this._sphereContainer.scale.setScalar(this.sphereRadius);
+      },
+      // Helper functions
+      getEntityTransform(el) {
+        const pos = el.getAttribute("position") || {
+          x: 0,
+          y: 0,
+          z: 0
+        };
+        const rot = el.getAttribute("rotation") || {
+          x: 0,
+          y: 0,
+          z: 0
+        };
+        const scale = el.getAttribute("scale") || {
+          x: 1,
+          y: 1,
+          z: 1
+        };
+        return {
+          pos,
+          rot,
+          scale
+        };
+      },
+      updateTransformRealtime(el, component, value) {
+        el.setAttribute(component, value);
+        Events.emit("entityupdate", {
+          entity: el,
+          component,
+          property: "",
+          value
+        });
+      },
+      setWorldPositionRealtime(el, worldPos) {
+        if (!el || !el.object3D || !worldPos) return;
+        const parentEl = el.parentElement;
+        const parentInv = new this.T.Matrix4();
+        if (parentEl && parentEl.object3D) {
+          parentEl.object3D.updateMatrixWorld(true);
+          parentInv.copy(parentEl.object3D.matrixWorld).invert();
+        }
+        const localPos = worldPos.clone().applyMatrix4(parentInv);
+        this.updateTransformRealtime(el, "position", {
+          x: localPos.x,
+          y: localPos.y,
+          z: localPos.z
+        });
+      },
+      updateSphereSize(radius) {
+        const oldRadius = this.sphereRadius;
+        const newRadius = Math.max(0.02, Math.min(0.5, radius));
+        const delta = newRadius - oldRadius;
+        this.sphereRadius = newRadius;
+        this._updateSphereScale();
+        const sign = this.data.hand === "left" ? 1 : -1;
+        try {
+          const pos = this.selectionSphere.getAttribute("position") || {
+            x: 0,
+            y: 0,
+            z: 0
+          };
+          const newX = (parseFloat(pos.x) || 0) + sign * delta;
+          this.selectionSphere.setAttribute("position", `${newX} ${pos.y} ${pos.z}`);
+        } catch (e) {
+          const objPos = this.selectionSphere.object3D.position;
+          objPos.x += sign * delta;
+          this.selectionSphere.object3D.position.set(objPos.x, objPos.y, objPos.z);
+        }
+      },
+      // STATES: idle | hover | grip
+      updateSphereVisual(state) {
+        if (!this._shellMat || !this._fillMat) return;
+        if (state === "grip") {
+          this._shellMat.color.setHex(3604428);
+          this._shellMat.opacity = 1;
+          this._fillMat.color.setHex(674362);
+          this._fillMat.opacity = 0.45;
+          if (this._sphereContainer) this._sphereContainer.scale.setScalar(this.sphereRadius * 0.85);
+        } else if (state === "scale") {
+          this._shellMat.color.setHex(16729292);
+          this._shellMat.opacity = 1;
+          this._fillMat.color.setHex(3801136);
+          this._fillMat.opacity = 0.45;
+          if (this._sphereContainer) this._sphereContainer.scale.setScalar(this.sphereRadius * 0.85);
+        } else if (state === "hover") {
+          this._shellMat.color.setHex(16769126);
+          this._shellMat.opacity = 0.95;
+          this._fillMat.color.setHex(2760704);
+          this._fillMat.opacity = 0.3;
+          if (this._sphereContainer) this._sphereContainer.scale.setScalar(this.sphereRadius * 1.08);
+        } else {
+          this._shellMat.color.setHex(2339729);
+          this._shellMat.opacity = 0.7;
+          this._fillMat.color.setHex(863784);
+          this._fillMat.opacity = 0.22;
+          this._updateSphereScale();
+        }
+      },
+      syncGrabSphereRotation(target) {
+        if (!this.selectionSphere?.object3D || !target?.object3D) return;
+        this.el.object3D.getWorldQuaternion(this.qControllerWorld);
+        target.object3D.getWorldQuaternion(this.qTargetWorld);
+        this.qSphereLocal.copy(this.qControllerWorld).invert().multiply(this.qTargetWorld);
+        this.selectionSphere.object3D.quaternion.copy(this.qSphereLocal);
+        this.selectionSphere.object3D.updateMatrixWorld(true);
+      },
+      resetGrabSphereRotation() {
+        if (!this.selectionSphere?.object3D) return;
+        this.selectionSphere.object3D.rotation.set(0, 0, 0);
+        this.selectionSphere.object3D.updateMatrixWorld(true);
+      },
+      isSelectableEntity(el) {
+        if (!el || el === this.el || el === this.el.sceneEl) {
+          return false;
+        }
+        if (!el.object3D) {
+          return false;
+        }
+        const rig = document.getElementById("admin-camera-rig");
+        if (rig && (el === rig || rig.contains(el))) {
+          return false;
+        }
+        if (el.hasAttribute("data-vr-tool-ui") || el.closest("[controller-toolbelt]")) {
+          return false;
+        }
+        if (el.closest("[move-tool]") || el.closest("a-assets")) {
+          return false;
+        }
+        return true;
+      },
+      normalizeSelectableEntity(el) {
+        let current = el;
+        while (current && current !== this.el.sceneEl) {
+          if (this.isSelectableEntity(current)) {
+            return current;
+          }
+          current = current.parentElement;
+        }
+        return null;
+      },
+      getLaserRaycaster() {
+        return this.el.components.raycaster || null;
+      },
+      findRaycastTarget() {
+        const rc = this.getLaserRaycaster();
+        if (!rc) return null;
+        for (const hit of rc.intersections || []) {
+          const hitEl = hit?.object?.el || null;
+          const target = this.normalizeSelectableEntity(hitEl);
+          if (target) return target;
+        }
+        return null;
+      },
+      getRayDistanceForTarget(target) {
+        const rc = this.getLaserRaycaster();
+        if (!rc) return 1;
+        for (const hit of rc.intersections || []) {
+          let hitEl = hit?.object?.el || null;
+          while (hitEl && hitEl !== this.el.sceneEl) {
+            if (hitEl === target) return Math.max(0.05, hit.distance || 1);
+            hitEl = hitEl.parentElement;
+          }
+        }
+        return rc.intersections?.[0]?.distance || 1;
+      },
+      findSphereOverlapTargets() {
+        const spherePos = new this.T.Vector3();
+        this.selectionSphere.object3D.getWorldPosition(spherePos);
+        const sphere = new this.T.Sphere(spherePos, this.sphereRadius);
+        const allEls = Array.from(this.el.sceneEl.querySelectorAll("*"));
+        const uniqueTargets = /* @__PURE__ */ new Set();
+        allEls.forEach((el) => {
+          const target = this.normalizeSelectableEntity(el);
+          if (target) uniqueTargets.add(target);
+        });
+        const results = [];
+        uniqueTargets.forEach((target) => {
+          if (!target.object3D) return;
+          const box = new this.T.Box3().setFromObject(target.object3D);
+          if (box.isEmpty()) {
+            const targetPos = new this.T.Vector3();
+            target.object3D.getWorldPosition(targetPos);
+            if (spherePos.distanceTo(targetPos) <= this.sphereRadius * 3) {
+              results.push(target);
+              return;
+            }
+            let hit = false;
+            target.object3D.traverse((child) => {
+              if (hit || child === target.object3D) return;
+              const cb = new this.T.Box3().setFromObject(child);
+              if (!cb.isEmpty() && cb.intersectsSphere(sphere)) hit = true;
+            });
+            if (hit) results.push(target);
+            return;
+          }
+          if (!box.intersectsSphere(sphere)) return;
+          const inset = box.clone().expandByScalar(-this.sphereRadius);
+          if (!inset.isEmpty() && inset.containsPoint(spherePos)) return;
+          results.push(target);
+        });
+        return this.filterToTopLevel(results);
+      },
+      findSphereOverlapTarget() {
+        return this.findSphereOverlapTargets()[0] ?? null;
+      },
+      // Group helpers
+      generateGroupId() {
+        return "grp-" + Math.random().toString(36).slice(2, 8);
+      },
+      getGroupMembers(groupId) {
+        if (!groupId) return [];
+        return Array.from(this.el.sceneEl.querySelectorAll(`[data-group="${groupId}"]`)).filter((el) => this.isSelectableEntity(el));
+      },
+      assignGroup(entities) {
+        const existingIds = /* @__PURE__ */ new Set();
+        entities.forEach((el) => {
+          const gid = el.getAttribute("data-group");
+          if (gid) existingIds.add(gid);
+        });
+        const groupId = existingIds.size > 0 ? [...existingIds][0] : this.generateGroupId();
+        entities.forEach((el) => el.setAttribute("data-group", groupId));
+        if (existingIds.size > 1) {
+          existingIds.forEach((old) => {
+            if (old === groupId) return;
+            this.getGroupMembers(old).forEach((el) => el.setAttribute("data-group", groupId));
+          });
+        }
+        return groupId;
+      },
+      ungroupEntities(entities) {
+        const groupIds = new Set(entities.map((el) => el.getAttribute("data-group")).filter(Boolean));
+        groupIds.forEach((gid) => {
+          this.getGroupMembers(gid).forEach((el) => el.removeAttribute("data-group"));
+        });
+      },
+      expandByGroup(targets) {
+        const expanded = new Set(targets);
+        targets.forEach((el) => {
+          const gid = el.getAttribute("data-group");
+          if (gid) this.getGroupMembers(gid).forEach((m) => expanded.add(m));
+        });
+        return Array.from(expanded);
+      },
+      filterToTopLevel(entities) {
+        const unique = Array.from(new Set((entities || []).filter(Boolean)));
+        const all = new Set(unique);
+        return unique.filter((el) => {
+          let current = el.parentElement;
+          while (current && current !== this.el.sceneEl) {
+            if (all.has(current)) return false;
+            current = current.parentElement;
+          }
+          return true;
+        });
+      },
+      // Event handlers
+      handleTriggerdown() {
+        this.isTriggerDown = true;
+        if (this.isGripping && this.isManipulating && this.selectedObjects.length > 0) {
+          this.startScaling();
+          return;
+        }
+        const target = this.findRaycastTarget();
+        if (!target) return;
+        const distance = this.getRayDistanceForTarget(target);
+        this.initialRayDistance = distance > 0 ? distance : 1;
+        const targets = this.filterToTopLevel(this.expandByGroup([target]));
+        this.clearSelection();
+        targets.forEach((t) => this.selectObject(t));
+        this._rayPrimaryTarget = target;
+        this._rayGroupOffsets = /* @__PURE__ */ new Map();
+        const primaryPos = new this.T.Vector3();
+        target.object3D.getWorldPosition(primaryPos);
+        targets.forEach((t) => {
+          if (t === target) return;
+          const tPos = new this.T.Vector3();
+          t.object3D.getWorldPosition(tPos);
+          this._rayGroupOffsets.set(t, tPos.clone().sub(primaryPos));
+        });
+        this.startManipulation();
+      },
+      handleTriggerup() {
+        this.isTriggerDown = false;
+        if (this.isScaling) {
+          this.isScaling = false;
+          this.updateSphereVisual("grip");
+          return;
+        }
+        if (this.isManipulating) this.endManipulation();
+        this.clearSelection();
+      },
+      handleGripdown() {
+        this.isGripping = true;
+        if (this.isTriggerDown && this.isManipulating && this.selectedObjects.length > 0) {
+          this.updateSphereVisual("scale");
+          this.startScaling();
+          return;
+        }
+        this.updateSphereVisual("grip");
+        const sphereTargets = this.findSphereOverlapTargets();
+        if (sphereTargets.length > 0) {
+          if (sphereTargets.length > 1) {
+            this.assignGroup(sphereTargets);
+          }
+          const targets = this.filterToTopLevel(this.expandByGroup(sphereTargets));
+          this.selectionSphere.object3D.updateMatrixWorld(true);
+          const sphereWorldInv = new this.T.Matrix4().copy(this.selectionSphere.object3D.matrixWorld).invert();
+          this.gripObjectInSphereSpace.clear();
+          this.clearSelection();
+          targets.forEach((target) => {
+            target.object3D.updateMatrixWorld(true);
+            const weld = new this.T.Matrix4().copy(sphereWorldInv).multiply(target.object3D.matrixWorld);
+            this.gripObjectInSphereSpace.set(target, weld);
+            this.selectObject(target);
+          });
+          this.startManipulation();
+        } else {
+          this.isResizingSphere = true;
+          this.el.object3D.getWorldPosition(this.gripStartControllerPos);
+          this.gripStartSphereRadius = this.sphereRadius;
+        }
+      },
+      handleGripup() {
+        this.isGripping = false;
+        this.isResizingSphere = false;
+        this.isScaling = false;
+        this.updateSphereVisual("idle");
+        if (this.isManipulating) this.endManipulation();
+        this.clearSelection();
+      },
+      handleThumbstickmoved(e) {
+      },
+      consumeButtonEvent(evt) {
+        if (!evt) return;
+        if (typeof evt.preventDefault === "function") evt.preventDefault();
+        if (typeof evt.stopImmediatePropagation === "function") evt.stopImmediatePropagation();
+        if (typeof evt.stopPropagation === "function") evt.stopPropagation();
+      },
+      // Duplicate and Delete functions
+      handleBbuttondown(evt) {
+        const now = Date.now();
+        if (now - this._lastGroupToggleTime < 120) {
+          this.consumeButtonEvent(evt);
+          return;
+        }
+        const sphereTargets = this.findSphereOverlapTargets();
+        const source = sphereTargets.length > 0 ? sphereTargets : this.selectedObjects;
+        const targets = this.filterToTopLevel(this.expandByGroup(source));
+        if (targets.some((el) => el.hasAttribute("data-group"))) {
+          this._lastGroupToggleTime = now;
+          this.ungroupEntities(targets);
+          targets.forEach((el) => {
+            Events.emit("entityupdate", {
+              entity: el,
+              component: "data-group",
+              property: "",
+              value: null
+            });
+          });
+          this.clearSelection();
+          targets.forEach((el) => this.selectObject(el));
+          this.el.emit("haptic-pulse", {
+            intensity: 0.35,
+            duration: 60
+          }, false);
+          this.consumeButtonEvent(evt);
+          return;
+        }
+        if (targets.length > 1) {
+          this._lastGroupToggleTime = now;
+          const groupId = this.assignGroup(targets);
+          targets.forEach((el) => {
+            Events.emit("entityupdate", {
+              entity: el,
+              component: "data-group",
+              property: "",
+              value: groupId
+            });
+          });
+          this.clearSelection();
+          targets.forEach((el) => this.selectObject(el));
+          this.el.emit("haptic-pulse", {
+            intensity: 0.45,
+            duration: 70
+          }, false);
+          this.consumeButtonEvent(evt);
+          return;
+        }
+        if (targets.length === 1) {
+          this.duplicateSelected();
+          this.el.emit("haptic-pulse", {
+            intensity: 0.4,
+            duration: 60
+          }, false);
+        }
+        this.consumeButtonEvent(evt);
+      },
+      handleYbuttondown(evt) {
+        this.handleBbuttondown(evt);
+      },
+      handleXbuttondown() {
+        this.deleteSelected();
+      },
+      handleAbuttondown() {
+        this.handleXbuttondown();
+      },
+      async duplicateSelected() {
+        if (this.selectedObjects.length === 0) return;
+        this.selectedObjects.forEach((el) => {
+          el.flushToDOM(true);
+          const clone = el.cloneNode(true);
+          clone.removeAttribute("id");
+          el.parentNode.insertBefore(clone, el.nextSibling);
+          clone.addEventListener("loaded", () => {
+            const pos = clone.getAttribute("position") || {
+              x: 0,
+              y: 0,
+              z: 0
+            };
+            clone.setAttribute("position", {
+              x: +pos.x + 0.1,
+              y: +pos.y + 0.1,
+              z: +pos.z
+            });
+            Events.emit("entityclone", clone);
+          }, {
+            once: true
+          });
+        });
+      },
+      async deleteSelected() {
+        if (this.selectedObjects.length === 0) return;
+        this.selectedObjects.forEach((el) => {
+          this.setWireframeMode(el, false);
+          const oldParent = el.parentNode;
+          if (oldParent) {
+            oldParent.removeChild(el);
+            Events.emit("entityremoved", {
+              entity: el,
+              oldParent
+            });
+          }
+        });
+        this.clearSelection();
+      },
+      // Selection and manipulation
+      selectAndStartManipulation(target) {
+        this.clearSelection();
+        this.selectObject(target);
+        this.startManipulation();
+      },
+      selectObject(el) {
+        if (this.selectedObjects.includes(el)) return;
+        this.selectedObjects.push(el);
+        this.setWireframeMode(el, true);
+      },
+      clearSelection() {
+        this.selectedObjects.forEach((el) => this.setWireframeMode(el, false));
+        this.selectedObjects = [];
+        this.resetGrabSphereRotation();
+      },
+      setWireframeMode(el, wireframe) {
+        if (!el || !el.object3D) return;
+        el.object3D.traverse((child) => {
+          if (child.material) {
+            if (Array.isArray(child.material)) {
+              child.material.forEach((mat) => {
+                if (mat) mat.wireframe = wireframe;
+              });
+            } else {
+              child.material.wireframe = wireframe;
+            }
+          }
+        });
+      },
+      startManipulation() {
+        if (this.selectedObjects.length === 0) return;
+        this.isManipulating = true;
+        const {
+          pos,
+          rot
+        } = this.getEntityTransform(this.el);
+        this.startControllerPosition.set(pos.x, pos.y, pos.z);
+        this.startControllerRotation.set(rot.x * Math.PI / 180, rot.y * Math.PI / 180, rot.z * Math.PI / 180);
+        this.startObjectPositions = this.selectedObjects.map((o) => {
+          const {
+            pos: pos2
+          } = this.getEntityTransform(o);
+          return new this.T.Vector3(pos2.x, pos2.y, pos2.z);
+        });
+        this.startObjectRotations = this.selectedObjects.map((o) => {
+          const {
+            rot: rot2
+          } = this.getEntityTransform(o);
+          return new this.T.Euler(rot2.x * Math.PI / 180, rot2.y * Math.PI / 180, rot2.z * Math.PI / 180);
+        });
+      },
+      updateSingleHandedManipulation() {
+        if (this.isGripping) {
+          this.updateGripManipulation();
+        } else {
+          this.updateRayTracking();
+        }
+      },
+      updateGripManipulation() {
+        this.selectionSphere.object3D.updateMatrixWorld(true);
+        const sphereWorld = this.selectionSphere.object3D.matrixWorld;
+        this.selectedObjects.forEach((o) => {
+          if (!o.object3D) return;
+          const weld = this.gripObjectInSphereSpace.get(o);
+          if (!weld) return;
+          const newWorldMatrix = new this.T.Matrix4().copy(sphereWorld).multiply(weld);
+          const parentEl = o.parentElement;
+          const parentWorldInv = new this.T.Matrix4();
+          if (parentEl && parentEl.object3D) {
+            parentEl.object3D.updateMatrixWorld(true);
+            parentWorldInv.copy(parentEl.object3D.matrixWorld).invert();
+          }
+          const localMatrix = parentWorldInv.multiply(newWorldMatrix);
+          const pos = new this.T.Vector3();
+          const quat = new this.T.Quaternion();
+          const scale = new this.T.Vector3();
+          localMatrix.decompose(pos, quat, scale);
+          const euler = new this.T.Euler().setFromQuaternion(quat, "YXZ");
+          if (this.data.enableTranslation) {
+            this.updateTransformRealtime(o, "position", {
+              x: pos.x,
+              y: pos.y,
+              z: pos.z
+            });
+          }
+          if (this.data.enableRotation) {
+            this.updateTransformRealtime(o, "rotation", {
+              x: euler.x * 180 / Math.PI,
+              y: euler.y * 180 / Math.PI,
+              z: euler.z * 180 / Math.PI
+            });
+          }
+        });
+      },
+      updateRayTracking() {
+        const raycaster = this.el.components.raycaster.raycaster;
+        if (!raycaster) return;
+        const newPosition = raycaster.ray.origin.clone().add(raycaster.ray.direction.clone().multiplyScalar(this.initialRayDistance));
+        this.selectedObjects.forEach((o) => {
+          if (!this.data.enableTranslation) return;
+          const offset = this._rayGroupOffsets?.get(o);
+          const pos = offset ? newPosition.clone().add(offset) : newPosition.clone();
+          this.setWorldPositionRealtime(o, pos);
+        });
+      },
+      updateRayDistanceFromCurrentPosition() {
+        if (this.selectedObjects.length === 0) return;
+        const raycaster = this.el.components.raycaster.raycaster;
+        if (!raycaster) return;
+        const objectPos = new this.T.Vector3();
+        this.selectedObjects[0].object3D.getWorldPosition(objectPos);
+        this.initialRayDistance = raycaster.ray.origin.distanceTo(objectPos);
+      },
+      endManipulation() {
+        this.isManipulating = false;
+        this.saveTransforms();
+      },
+      // Joystick controls
+      handlePushPullRay(intensity) {
+        if (this.selectedObjects.length === 0) return;
+        const raycaster = this.el.components.raycaster.raycaster;
+        if (!raycaster) return;
+        const rayDirection = raycaster.ray.direction.clone();
+        this.selectedObjects.forEach((el) => {
+          const move = rayDirection.clone().multiplyScalar(-intensity * this.data.pullPushSensitivity * 0.06);
+          const worldPos = new this.T.Vector3();
+          el.object3D.getWorldPosition(worldPos);
+          worldPos.add(move);
+          this.setWorldPositionRealtime(el, worldPos);
+        });
+      },
+      handlePullPush(intensity) {
+        const camera = this.el.sceneEl.camera.el;
+        if (!camera) return;
+        const cameraPos = new this.T.Vector3();
+        camera.object3D.getWorldPosition(cameraPos);
+        this.selectedObjects.forEach((el) => {
+          const objectPos = new this.T.Vector3();
+          el.object3D.getWorldPosition(objectPos);
+          const direction = objectPos.sub(cameraPos).normalize();
+          const move = direction.multiplyScalar(intensity * this.data.pullPushSensitivity * 0.02);
+          const worldPos = new this.T.Vector3();
+          el.object3D.getWorldPosition(worldPos);
+          worldPos.add(move);
+          this.setWorldPositionRealtime(el, worldPos);
+        });
+      },
+      handleGripPull() {
+        if (this.selectedObjects.length === 0) return;
+        const controllerPos = new this.T.Vector3();
+        this.el.object3D.getWorldPosition(controllerPos);
+        this.selectedObjects.forEach((el) => {
+          const objectPos = new this.T.Vector3();
+          el.object3D.getWorldPosition(objectPos);
+          const direction = controllerPos.clone().sub(objectPos).normalize();
+          const move = direction.multiplyScalar(this.data.pullPushSensitivity * 0.02);
+          const worldPos = new this.T.Vector3();
+          el.object3D.getWorldPosition(worldPos);
+          worldPos.add(move);
+          this.setWorldPositionRealtime(el, worldPos);
+        });
+      },
+      handleSmoothScale(intensity, deltaTime) {
+        if (!this.data.enableScale || Math.abs(intensity) < 0.1) return;
+        const dt = deltaTime / 1e3;
+        const scaleRate = 1 + intensity * this.data.scaleSensitivity * dt * 2;
+        this.selectedObjects.forEach((el) => {
+          const {
+            scale
+          } = this.getEntityTransform(el);
+          const newScale = {
+            x: Math.max(0.1, Math.min(10, scale.x * scaleRate)),
+            y: Math.max(0.1, Math.min(10, scale.y * scaleRate)),
+            z: Math.max(0.1, Math.min(10, scale.z * scaleRate))
+          };
+          this.updateTransformRealtime(el, "scale", newScale);
+        });
+      },
+      handleSmoothSphereScale(intensity, deltaTime) {
+        if (Math.abs(intensity) < 0.1) return;
+        const dt = deltaTime / 1e3;
+        const scaleRate = 1 + intensity * dt * 3;
+        const newRadius = Math.max(0.02, Math.min(0.2, this.sphereRadius * scaleRate));
+        this.updateSphereSize(newRadius);
+      },
+      saveTransforms() {
+        this.selectedObjects.forEach((el) => {
+          Events.emit("entityupdate", {
+            entity: el,
+            component: "position",
+            property: "",
+            value: el.getAttribute("position") || {
+              x: 0,
+              y: 0,
+              z: 0
+            }
+          });
+          Events.emit("entityupdate", {
+            entity: el,
+            component: "rotation",
+            property: "",
+            value: el.getAttribute("rotation") || {
+              x: 0,
+              y: 0,
+              z: 0
+            }
+          });
+          Events.emit("entityupdate", {
+            entity: el,
+            component: "scale",
+            property: "",
+            value: el.getAttribute("scale") || {
+              x: 1,
+              y: 1,
+              z: 1
+            }
+          });
+        });
+      },
+      tick(time, deltaTime) {
+        if (!this.data.enabled) return;
+        if (!this.isGripping && !this.isManipulating) {
+          const hoveredArr = this.findSphereOverlapTargets();
+          const newSet = new Set(hoveredArr);
+          const changed = newSet.size !== this._sphereOverlapTargets.size || hoveredArr.some((t) => !this._sphereOverlapTargets.has(t));
+          if (changed) {
+            this._sphereOverlapTargets = newSet;
+            this._sphereOverlapTarget = hoveredArr[0] ?? null;
+            this.updateSphereVisual(newSet.size > 0 ? "hover" : "idle");
+          }
+        }
+        if (this.isResizingSphere) {
+          const currentPos = new this.T.Vector3();
+          this.el.object3D.getWorldPosition(currentPos);
+          const deltaY = currentPos.y - this.gripStartControllerPos.y;
+          const newRadius = Math.max(0.02, Math.min(0.5, this.gripStartSphereRadius + deltaY * 4));
+          this.updateSphereSize(newRadius);
+          return;
+        }
+        if (this.isScaling) {
+          this.updateScaling();
+        } else if (this.isManipulating && this.selectedObjects.length > 0) {
+          this.updateSingleHandedManipulation();
+        }
+      },
+      startScaling() {
+        this.isScaling = true;
+        this.updateSphereVisual("scale");
+        this.el.object3D.getWorldPosition(this.scaleStartControllerPos);
+        this.scaleStartObjectScales = this.selectedObjects.map((o) => {
+          const {
+            scale
+          } = this.getEntityTransform(o);
+          return {
+            x: scale.x,
+            y: scale.y,
+            z: scale.z
+          };
+        });
+      },
+      updateScaling() {
+        const currentPos = new this.T.Vector3();
+        this.el.object3D.getWorldPosition(currentPos);
+        const deltaY = currentPos.y - this.scaleStartControllerPos.y;
+        const scaleFactor = Math.max(0.05, 1 + deltaY * 3.5);
+        this.selectedObjects.forEach((o, i) => {
+          if (!this.data.enableScale) return;
+          const base = this.scaleStartObjectScales[i];
+          if (!base) return;
+          this.updateTransformRealtime(o, "scale", {
+            x: Math.max(0.05, Math.min(10, base.x * scaleFactor)),
+            y: Math.max(0.05, Math.min(10, base.y * scaleFactor)),
+            z: Math.max(0.05, Math.min(10, base.z * scaleFactor))
+          });
+        });
+      }
+    });
+  }
+  window.AFRAME.registerComponent("shapes-tool", {
+    primitiveIndex: 0,
+    availablePrimitives: [
+      // geometry
+      "box",
+      "sphere",
+      "cone",
+      "cylinder",
+      "torus",
+      "dodecahedron",
+      "icosahedron",
+      "octahedron",
+      "tetrahedron",
+      "plane",
+      "circle",
+      "ring",
+      "triangle",
+      // scene objects
+      "light-point",
+      "light-spot",
+      "light-directional",
+      "light-ambient",
+      "camera",
+      "sound",
+      "text",
+      "gltf-model",
+      "image",
+      "video"
+    ],
+    META_TYPES: /* @__PURE__ */ new Set(["light-point", "light-spot", "light-directional", "light-ambient", "camera", "sound", "text", "gltf-model", "image", "video"]),
+    brightColors: [
+      "#FF0040",
+      // Bright Red
+      "#FF8000",
+      // Bright Orange  
+      "#FFFF00",
+      // Bright Yellow
+      "#80FF00",
+      // Bright Lime
+      "#00FF40",
+      // Bright Green
+      "#00FF80",
+      // Bright Mint
+      "#00FFFF",
+      // Bright Cyan
+      "#0080FF",
+      // Bright Sky Blue
+      "#0040FF",
+      // Bright Blue
+      "#8000FF",
+      // Bright Purple
+      "#FF00FF",
+      // Bright Magenta
+      "#FF0080"
+      // Bright Pink
+    ],
+    shapePreview: null,
+    schema: {
+      enabled: {
+        type: "boolean",
+        default: true
+      },
+      primitive: {
+        type: "string",
+        default: "box"
+      },
+      showPreview: {
+        type: "boolean",
+        default: true
+      }
+    },
+    init: function() {
+      this._isDrawing = false;
+      this._ghostEntity = null;
+      this._ghostSize = 0.1;
+      this._drawStartPos = new THREE.Vector3();
+      this._drawStartRot = {
+        x: 0,
+        y: 0,
+        z: 0
+      };
+      this._drawColor = "#FFFFFF";
+      this.createShapePreview();
+      this.el.addEventListener("triggerdown", this.onTriggerDown.bind(this));
+      this.el.addEventListener("triggerup", this.onTriggerUp.bind(this));
+      this.el.addEventListener("ybuttondown", this.cycleShapeForward.bind(this));
+      this.el.addEventListener("bbuttondown", this.cycleShapeForward.bind(this));
+      this.el.addEventListener("xbuttondown", this.cycleShapeBackward.bind(this));
+      this.el.addEventListener("abuttondown", this.cycleShapeBackward.bind(this));
+      this.applyEnabledState();
+    },
+    update: function(oldData) {
+      if (!oldData || typeof oldData.enabled === "undefined") {
+        this.applyEnabledState();
+        return;
+      }
+      if (oldData.enabled !== this.data.enabled || oldData.showPreview !== this.data.showPreview) {
+        this.applyEnabledState();
+      }
+    },
+    applyEnabledState: function() {
+      const visible = !!this.data.enabled && !!this.data.showPreview;
+      if (this.shapePreview) this.shapePreview.setAttribute("visible", visible);
+      if (this._previewLabel) this._previewLabel.setAttribute("visible", visible);
+    },
+    onToolActivated: function() {
+      this.applyEnabledState();
+    },
+    onToolDeactivated: function() {
+      this.applyEnabledState();
+    },
+    createShapePreview: function() {
+      if (this.shapePreview) this.el.removeChild(this.shapePreview);
+      if (this._previewLabel) this.el.removeChild(this._previewLabel);
+      const primitive = this.availablePrimitives[this.primitiveIndex];
+      const isMeta = this.META_TYPES.has(primitive);
+      const visible = !!this.data.enabled && !!this.data.showPreview;
+      this.shapePreview = document.createElement("a-entity");
+      this.shapePreview.setAttribute("id", "shape-preview");
+      this.shapePreview.setAttribute("position", "0.007 -0.03 -0.08");
+      this.shapePreview.setAttribute("visible", visible);
+      this.shapePreview.setAttribute("geometry", `primitive: ${isMeta ? "box" : primitive};`);
+      this.shapePreview.setAttribute("scale", "0.03 0.03 0.03");
+      this.shapePreview.setAttribute("animation", "property: rotation; to: 360 360 360; loop: true; dur: 9000; easing: linear");
+      this._previewLabel = document.createElement("a-entity");
+      this._previewLabel.setAttribute("position", "0.007 -0.01 -0.11");
+      this._previewLabel.setAttribute("rotation", "-90 0 0");
+      this._previewLabel.setAttribute("visible", visible);
+      const bg = document.createElement("a-entity");
+      bg.setAttribute("geometry", "primitive: plane; width: 0.1; height: 0.018");
+      bg.setAttribute("material", "color: #111111; opacity: 0.75; transparent: true; shader: flat; side: double");
+      const txt = document.createElement("a-entity");
+      txt.setAttribute("text", `value: ${primitive}; align: center; color: #4fc3f7; width: 0.09; wrapCount: 18; baseline: center`);
+      txt.setAttribute("position", "0 0 0.001");
+      this._previewLabel.appendChild(bg);
+      this._previewLabel.appendChild(txt);
+      this.el.appendChild(this.shapePreview);
+      this.el.appendChild(this._previewLabel);
+      setTimeout(() => this.applyNormalMaterial(), 50);
+    },
+    applyNormalMaterial: function() {
+      if (!this.shapePreview?.object3D) return;
+      this.shapePreview.object3D.traverse((child) => {
+        if (child.geometry && child.material) {
+          const material = new THREE.MeshNormalMaterial();
+          const primitive = this.availablePrimitives[this.primitiveIndex];
+          if (this.is2D(primitive)) {
+            material.side = THREE.DoubleSide;
+          }
+          child.material = material;
+        }
+      });
+    },
+    cycleShapeForward: function() {
+      if (!this.data.enabled) return;
+      this.primitiveIndex = (this.primitiveIndex + 1) % this.availablePrimitives.length;
+      this.createShapePreview();
+    },
+    cycleShapeBackward: function() {
+      if (!this.data.enabled) return;
+      this.primitiveIndex = (this.primitiveIndex - 1 + this.availablePrimitives.length) % this.availablePrimitives.length;
+      this.createShapePreview();
+    },
+    onTriggerDown: function() {
+      if (!this.data.enabled || this._isDrawing) return;
+      this._isDrawing = true;
+      this._ghostSize = 0.1;
+      this._drawColor = this.brightColors[Math.floor(Math.random() * this.brightColors.length)];
+      this._drawStartPos.copy(this.getSpawnPosition());
+      this._drawStartRot = this.getSpawnRotation();
+      const primitive = this.availablePrimitives[this.primitiveIndex];
+      const isMeta = this.META_TYPES.has(primitive);
+      this._isMetaPlacement = isMeta;
+      this._ghostEntity = document.createElement("a-entity");
+      this._ghostEntity.setAttribute("geometry", `primitive: ${isMeta ? "box" : primitive};`);
+      this._ghostEntity.setAttribute("material", `color: ${this._drawColor}; opacity: 0.5; transparent: true; wireframe: true;`);
+      this._ghostEntity.setAttribute("position", `${this._drawStartPos.x} ${this._drawStartPos.y} ${this._drawStartPos.z}`);
+      this._ghostEntity.setAttribute("rotation", `${this._drawStartRot.x} ${this._drawStartRot.y} ${this._drawStartRot.z}`);
+      this._ghostEntity.setAttribute("scale", `${this._ghostSize} ${this._ghostSize} ${this._ghostSize}`);
+      this.el.sceneEl.appendChild(this._ghostEntity);
+      if (this.shapePreview) this.shapePreview.setAttribute("visible", false);
+      if (this._previewLabel) this._previewLabel.setAttribute("visible", false);
+    },
+    onTriggerUp: function() {
+      if (!this._isDrawing) return;
+      this._isDrawing = false;
+      if (this._ghostEntity) {
+        const size = this._ghostSize;
+        const primitive = this.availablePrimitives[this.primitiveIndex];
+        const pos = this._drawStartPos;
+        const rot = this.getSpawnRotation();
+        this._ghostEntity.parentNode?.removeChild(this._ghostEntity);
+        this._ghostEntity = null;
+        const entity = this.createGeometryEntity(primitive, pos, size, null, rot);
+        this.el.sceneEl.appendChild(entity);
+        entity.addEventListener("loaded", () => Events.emit("entitycreated", entity), {
+          once: true
+        });
+        this.el.emit("haptic-pulse", {
+          intensity: 1,
+          duration: 80
+        }, false);
+      }
+      if (this.data.enabled && this.data.showPreview && this.shapePreview) {
+        this.shapePreview.setAttribute("visible", true);
+        if (this._previewLabel) this._previewLabel.setAttribute("visible", true);
+      }
+    },
+    onPlaceShape: function() {
+      if (!this.data.enabled) return;
+      this.createPrimitive();
+      this.el.emit("haptic-pulse", {
+        intensity: 1,
+        duration: 100
+      }, false);
+    },
+    createPrimitive: function() {
+      const primitive = this.availablePrimitives[this.primitiveIndex];
+      const worldPos = new THREE.Vector3();
+      const rot = this.getSpawnRotation();
+      this.el.object3D.getWorldPosition(worldPos);
+      const entity = this.createGeometryEntity(primitive, worldPos, 0.1, null, rot);
+      this.el.sceneEl.appendChild(entity);
+      entity.addEventListener("loaded", () => {
+        Events.emit("entitycreated", entity);
+      }, {
+        once: true
+      });
+    },
+    createGeometryEntity: function(primitive, position, size, color, rotation) {
+      if (this.META_TYPES.has(primitive)) {
+        return this.createMetaEntity(primitive, position, rotation);
+      }
+      const entity = document.createElement("a-entity");
+      const s = size ?? 0.1;
+      const col = color ?? "#888888";
+      entity.setAttribute("id", this.genID());
+      entity.setAttribute("position", `${position.x} ${position.y} ${position.z}`);
+      if (rotation) entity.setAttribute("rotation", `${rotation.x} ${rotation.y} ${rotation.z}`);
+      entity.setAttribute("scale", `${s} ${s} ${s}`);
+      entity.setAttribute("geometry", `primitive: ${primitive};`);
+      entity.setAttribute("material", this.getMaterialString(primitive, col));
+      return entity;
+    },
+    createMetaEntity: function(type, position, rotation) {
+      const entity = document.createElement("a-entity");
+      entity.setAttribute("id", this.genID());
+      entity.setAttribute("position", `${position.x} ${position.y} ${position.z}`);
+      if (rotation) entity.setAttribute("rotation", `${rotation.x} ${rotation.y} ${rotation.z}`);
+      switch (type) {
+        case "light-point":
+          entity.setAttribute("light", "type: point; intensity: 1; distance: 5; color: #ffffff");
+          entity.setAttribute("geometry", "primitive: sphere; radius: 0.05");
+          entity.setAttribute("material", "color: #ffff88; emissive: #ffff88; emissiveIntensity: 1; shader: flat");
+          break;
+        case "light-spot":
+          entity.setAttribute("light", "type: spot; intensity: 1; distance: 8; angle: 45; color: #ffffff");
+          entity.setAttribute("geometry", "primitive: cone; height: 0.15; radiusBottom: 0.05; radiusTop: 0.01");
+          entity.setAttribute("material", "color: #ffff88; emissive: #ffff88; emissiveIntensity: 1; shader: flat");
+          break;
+        case "light-directional":
+          entity.setAttribute("light", "type: directional; intensity: 1; color: #ffffff");
+          entity.setAttribute("geometry", "primitive: box; width: 0.1; height: 0.1; depth: 0.1");
+          entity.setAttribute("material", "color: #ffffaa; emissive: #ffffaa; emissiveIntensity: 1; shader: flat");
+          break;
+        case "light-ambient":
+          entity.setAttribute("light", "type: ambient; intensity: 0.5; color: #ffffff");
+          entity.setAttribute("geometry", "primitive: sphere; radius: 0.08");
+          entity.setAttribute("material", "color: #ffffff; wireframe: true; shader: flat");
+          break;
+        case "camera":
+          entity.setAttribute("camera", "");
+          entity.setAttribute("geometry", "primitive: box; width: 0.1; height: 0.08; depth: 0.12");
+          entity.setAttribute("material", "color: #222222");
+          break;
+        case "sound":
+          entity.setAttribute("sound", "autoplay: false; loop: false");
+          entity.setAttribute("geometry", "primitive: sphere; radius: 0.06");
+          entity.setAttribute("material", "color: #4488ff; wireframe: true");
+          break;
+        case "text":
+          entity.setAttribute("text", "value: Text; align: center; color: #ffffff; width: 2");
+          entity.setAttribute("scale", "1 1 1");
+          break;
+        case "gltf-model":
+          entity.setAttribute("gltf-model", "");
+          entity.setAttribute("geometry", "primitive: box; width: 0.15; height: 0.15; depth: 0.15");
+          entity.setAttribute("material", "color: #aaaaaa; wireframe: true");
+          break;
+        case "image":
+          entity.setAttribute("geometry", "primitive: plane; width: 1; height: 0.75");
+          entity.setAttribute("material", "color: #ffffff; side: double");
+          break;
+        case "video":
+          entity.setAttribute("geometry", "primitive: plane; width: 1.78; height: 1");
+          entity.setAttribute("material", "color: #000000; side: double");
+          break;
+      }
+      return entity;
+    },
+    is2D: function(primitive) {
+      return ["plane", "circle", "ring", "triangle"].includes(primitive);
+    },
+    getMaterialString: function(primitive, color) {
+      const col = color ?? "#888888";
+      const material = `color: ${col}; roughness: 0.7; metalness: 0.1;`;
+      return this.is2D(primitive) ? `${material}; side: double` : material;
+    },
+    tick: function() {
+      if (!this._isDrawing || !this._ghostEntity) return;
+      const rot = this.getSpawnRotation();
+      this._ghostEntity.setAttribute("rotation", `${rot.x} ${rot.y} ${rot.z}`);
+      if (this._isMetaPlacement) return;
+      const currentPos = new THREE.Vector3();
+      this.el.object3D.getWorldPosition(currentPos);
+      const dist = currentPos.distanceTo(this._drawStartPos);
+      this._ghostSize = Math.max(0.05, dist * 2);
+      this._ghostEntity.setAttribute("scale", `${this._ghostSize} ${this._ghostSize} ${this._ghostSize}`);
+    },
+    getSpawnRotation: function() {
+      const quat = new THREE.Quaternion();
+      const euler = new THREE.Euler();
+      this.el.object3D.getWorldQuaternion(quat);
+      euler.setFromQuaternion(quat, "YXZ");
+      return {
+        x: euler.x * (180 / Math.PI),
+        y: euler.y * (180 / Math.PI),
+        z: euler.z * (180 / Math.PI)
+      };
+    },
+    getSpawnPosition: function() {
+      const pos = new THREE.Vector3();
+      const quat = new THREE.Quaternion();
+      this.el.object3D.getWorldPosition(pos);
+      this.el.object3D.getWorldQuaternion(quat);
+      const forward = new THREE.Vector3(0, 0, -1).applyQuaternion(quat);
+      pos.addScaledVector(forward, 0.35);
+      return pos;
+    },
+    saveEntityToProject: function() {
+    },
+    genID: function() {
+      return generateEntityId("a-entity");
+    }
+  });
+  window.AFRAME.registerComponent("vr-controller", {
+    schema: {
+      size: {
+        type: "number",
+        default: 0.01
+      },
+      offset: {
+        type: "vec3",
+        default: {
+          x: 0,
+          y: 0,
+          z: -0.05
+        }
+      }
+    },
+    init() {
+      this.T = AFRAME.THREE;
+      this.hoveredEl = null;
+      this._cursorPos = new this.T.Vector3();
+      this._elPos = new this.T.Vector3();
+      this._controls = [];
+      this._onTrigger = this._onTrigger.bind(this);
+      this.el.addEventListener("triggerdown", this._onTrigger);
+      this._buildCursor();
+      this._refreshControls();
+      this.el.sceneEl.addEventListener("child-attached", () => this._refreshControls());
+      this.el.sceneEl.addEventListener("child-detached", () => this._refreshControls());
+    },
+    remove() {
+      this.el.removeEventListener("triggerdown", this._onTrigger);
+      if (this.cursor?.parentNode) this.cursor.parentNode.removeChild(this.cursor);
+    },
+    _buildCursor() {
+      this.cursor = document.createElement("a-entity");
+      this.cursor.setAttribute("geometry", `primitive: sphere; radius: ${this.data.size}`);
+      this.cursor.setAttribute("material", "color: #444444; metalness: 1");
+      this.cursor.setAttribute("position", `${this.data.offset.x} ${this.data.offset.y} ${this.data.offset.z}`);
+      this.cursor.setAttribute("class", "control");
+      this.cursor.setAttribute("data-vr-tool-ui", "true");
+      this.el.appendChild(this.cursor);
+    },
+    _refreshControls() {
+      this._controls = Array.from(this.el.sceneEl.querySelectorAll(".control"));
+    },
+    _getCursorPos() {
+      if (!this.cursor?.object3D) return null;
+      this.cursor.object3D.getWorldPosition(this._cursorPos);
+      return this._cursorPos;
+    },
+    _findHovered() {
+      const pos = this._getCursorPos();
+      if (!pos) return null;
+      const reach = this.data.size * 0.5 + 0.025;
+      for (const el of this._controls) {
+        if (el === this.cursor || !el.object3D) continue;
+        el.object3D.getWorldPosition(this._elPos);
+        if (pos.distanceTo(this._elPos) < reach) return el;
+      }
+      return null;
+    },
+    _onTrigger() {
+      if (!this.hoveredEl) return;
+      this.hoveredEl.emit("vr-select", {
+        controller: this.el
+      }, false);
+      this.el.emit("haptic-pulse", {
+        intensity: 0.4,
+        duration: 60
+      }, false);
+    },
+    tick() {
+      const hit = this._findHovered();
+      if (hit !== this.hoveredEl) {
+        if (this.hoveredEl) this.hoveredEl.emit("vr-hover-end", {
+          controller: this.el
+        }, false);
+        if (hit) {
+          hit.emit("vr-hover", {
+            controller: this.el
+          }, false);
+          hit.emit("vr-select", {
+            controller: this.el
+          }, false);
+          this.el.emit("haptic-pulse", {
+            intensity: 0.4,
+            duration: 60
+          }, false);
+        }
+        this.hoveredEl = hit;
+      }
+      const color = hit ? "#00ffcc" : "#ffffff";
+      this.cursor.setAttribute("material", `color: ${color};`);
+    }
+  });
+  const TOOL_COLORS = {
+    "paint-tool": "#e74c3c",
+    "shapes-tool": "#3498db",
+    "move-tool": "#2ecc71",
+    "gizmo": "#9b59b6",
+    "component-tool": "#f39c12"
+  };
+  const DEFAULT_COLOR = "#95a5a6";
+  window.AFRAME.registerComponent("vr-toolbelt", {
+    schema: {
+      tools: {
+        type: "string",
+        default: "paint-tool"
+      },
+      offset: {
+        type: "vec3",
+        default: {
+          x: 0,
+          y: 0.06,
+          z: 0.04
+        }
+      }
+    },
+    init() {
+      this.toolList = [];
+      this.activeIndex = 0;
+      this.cubes = [];
+      this._build();
+    },
+    update(oldData) {
+      if (!oldData || oldData.tools !== this.data.tools) this._build();
+    },
+    remove() {
+      if (this.container?.parentNode) this.container.parentNode.removeChild(this.container);
+    },
+    _build() {
+      if (this.container?.parentNode) this.container.parentNode.removeChild(this.container);
+      this.cubes = [];
+      this.toolList = this.data.tools.split(",").map((t) => t.trim()).filter(Boolean);
+      this.container = document.createElement("a-entity");
+      this.container.setAttribute("position", `${this.data.offset.x} ${this.data.offset.y} ${this.data.offset.z}`);
+      this.container.setAttribute("rotation", "0 0 0");
+      this.container.setAttribute("data-vr-tool-ui", "true");
+      this.el.appendChild(this.container);
+      const spacing = 0.055;
+      const startX = -((this.toolList.length - 1) * spacing) / 2;
+      this.toolList.forEach((tool, i) => {
+        const color = TOOL_COLORS[tool] || DEFAULT_COLOR;
+        const cube = document.createElement("a-entity");
+        cube.setAttribute("geometry", "primitive: box; width: 0.045; height: 0.045; depth: 0.045");
+        cube.setAttribute("material", `color: ${color}; opacity: 0.9`);
+        cube.setAttribute("position", `${(startX + i * spacing).toFixed(4)} 0 0`);
+        cube.setAttribute("class", "control");
+        cube.setAttribute("data-vr-tool-ui", "true");
+        const label = document.createElement("a-entity");
+        label.setAttribute("text", `value: ${tool.replace(/-tool$/, "")}; align: center; width: 0.3; color: #ffffff; side: double`);
+        label.setAttribute("position", "0 0.042 0");
+        cube.appendChild(label);
+        cube.addEventListener("vr-select", (e) => this._selectTool(i, e.detail?.controller));
+        cube.addEventListener("vr-hover", () => this._onHover(i, true));
+        cube.addEventListener("vr-hover-end", () => this._onHover(i, false));
+        this.container.appendChild(cube);
+        this.cubes.push({
+          cube,
+          tool,
+          color
+        });
+      });
+      setTimeout(() => this._selectTool(0, null, false), 50);
+    },
+    _selectTool(index, controllerEl, haptic = true) {
+      this.activeIndex = index;
+      const selectedTool = this.toolList[index];
+      const targets = controllerEl ? [controllerEl] : Array.from(this.el.sceneEl?.querySelectorAll("[vr-controller]") || []);
+      targets.forEach((target) => {
+        this.toolList.forEach((tool, i) => {
+          if (!target.hasAttribute(tool)) return;
+          const enabled = i === index;
+          target.setAttribute(tool, {
+            enabled
+          });
+          const comp = target.components[tool];
+          if (!comp) return;
+          if (enabled && comp.onToolActivated) comp.onToolActivated();
+          if (!enabled && comp.onToolDeactivated) comp.onToolDeactivated();
+        });
+      });
+      this._updateVisuals();
+      if (haptic && controllerEl) controllerEl.emit("haptic-pulse", {
+        intensity: 0.3,
+        duration: 50
+      }, false);
+      this.el.emit("vrtoolchange", {
+        tool: selectedTool,
+        index
+      }, false);
+    },
+    _onHover(index, isHovering) {
+      const {
+        cube,
+        color
+      } = this.cubes[index];
+      const isActive = index === this.activeIndex;
+      if (isHovering) {
+        cube.setAttribute("material", "color: #ffffff; opacity: 1");
+        cube.setAttribute("scale", "1.2 1.2 1.2");
+      } else {
+        cube.setAttribute("material", `color: ${isActive ? "#ffffff" : color}; opacity: 0.9`);
+        cube.setAttribute("scale", isActive ? "1.15 1.15 1.15" : "1 1 1");
+      }
+    },
+    _updateVisuals() {
+      this.cubes.forEach(({
+        cube,
+        color
+      }, i) => {
+        const isActive = i === this.activeIndex;
+        cube.setAttribute("material", `color: ${isActive ? "#ffffff" : color}; opacity: 0.9`);
+        cube.setAttribute("scale", isActive ? "1.15 1.15 1.15" : "1 1 1");
+      });
+    }
+  });
+  window.AFRAME.registerComponent("fly", {
+    schema: {
+      enabled: {
+        type: "boolean",
+        default: true
+      },
+      flySpeed: {
+        type: "number",
+        default: 2
+      },
+      turnSpeed: {
+        type: "number",
+        default: 0.5
+      },
+      strafeTurning: {
+        type: "boolean",
+        default: false
+      },
+      accelerateEvent: {
+        type: "string",
+        default: ""
+      },
+      ascendEvent: {
+        type: "string",
+        default: ""
+      }
+    },
+    SPEED_PRESETS: [2, 8, 20],
+    init: function() {
+      this.currentSpeedIndex = this.SPEED_PRESETS.indexOf(this.data.flySpeed);
+      if (this.currentSpeedIndex < 0) this.currentSpeedIndex = 1;
+      this.movement = {
+        forward: 0,
+        backward: 0,
+        rotateLeft: 0,
+        rotateRight: 0,
+        strafeLeft: 0,
+        strafeRight: 0
+      };
+      this.triggerPressure = 0;
+      this.gripPressure = 0;
+      this.camera = null;
+      this.cameraRig = null;
+      this.vector = new THREE.Vector3();
+      this.right = new THREE.Vector3();
+      this.up = new THREE.Vector3(0, 1, 0);
+      this.verticalMove = new THREE.Vector3();
+      this._onThumbstickMoved = this.onJoystickMoved.bind(this);
+      this._onThumbstickDown = this.onJoystickClick.bind(this);
+      this._onTriggerChanged = this.onTriggerChanged.bind(this);
+      this._onGripChanged = this.onGripChanged.bind(this);
+      const onLoaded = () => this.findCamera();
+      if (this.el.sceneEl?.hasLoaded) {
+        this.findCamera();
+      } else {
+        this.el.sceneEl?.addEventListener("loaded", onLoaded, {
+          once: true
+        });
+      }
+      this._stopRigReadyListener = () => this.el.sceneEl?.removeEventListener("loaded", onLoaded);
+      this.bindEvents();
+    },
+    findCamera: function() {
+      const scene = this.el.sceneEl;
+      if (!scene) return;
+      this.camera = scene.camera && scene.camera.el ? scene.camera.el : scene.querySelector("[camera]") || scene.querySelector("a-camera");
+      if (this.camera) {
+        this.cameraRig = this.camera.parentEl;
+      } else {
+        console.warn("[fly] No active camera found");
+      }
+    },
+    bindEvents: function() {
+      this.el.addEventListener("thumbstickmoved", this._onThumbstickMoved);
+      this.el.addEventListener("thumbstickdown", this._onThumbstickDown);
+      if (this.data.accelerateEvent) this.el.addEventListener(this.data.accelerateEvent, this._onTriggerChanged);
+      if (this.data.ascendEvent) this.el.addEventListener(this.data.ascendEvent, this._onGripChanged);
+    },
+    remove: function() {
+      this.el.removeEventListener("thumbstickmoved", this._onThumbstickMoved);
+      this.el.removeEventListener("thumbstickdown", this._onThumbstickDown);
+      if (this.data.accelerateEvent) this.el.removeEventListener(this.data.accelerateEvent, this._onTriggerChanged);
+      if (this.data.ascendEvent) this.el.removeEventListener(this.data.ascendEvent, this._onGripChanged);
+      if (this._stopRigReadyListener) this._stopRigReadyListener();
+    },
+    // Controller joystick - forward/backward movement and turning/strafing
+    onJoystickMoved: function(evt) {
+      if (!this.data.enabled) return;
+      const d = evt.detail || {};
+      const ax = d.axis || d.axes || [];
+      const x = typeof d.x === "number" ? d.x : ax[0] || 0;
+      const y = typeof d.y === "number" ? d.y : ax[1] || 0;
+      const deadzone = 0.1;
+      this.resetMovement();
+      if (Math.abs(y) > deadzone) {
+        if (y > 0) {
+          this.movement.backward = Math.abs(y);
+        } else {
+          this.movement.forward = Math.abs(y);
+        }
+      }
+      if (Math.abs(x) > deadzone) {
+        if (this.data.strafeTurning) {
+          if (x > 0) {
+            this.movement.strafeRight = Math.abs(x);
+          } else {
+            this.movement.strafeLeft = Math.abs(x);
+          }
+        } else {
+          if (x > 0) {
+            this.movement.rotateRight = Math.abs(x);
+          } else {
+            this.movement.rotateLeft = Math.abs(x);
+          }
+        }
+      }
+    },
+    // Joystick click - cycle through speed presets
+    onJoystickClick: function(evt) {
+      this.currentSpeedIndex = (this.currentSpeedIndex + 1) % this.SPEED_PRESETS.length;
+      this.data.flySpeed = this.SPEED_PRESETS[this.currentSpeedIndex];
+      this.el.emit("xr:fly-speed-changed", {
+        speed: this.data.flySpeed,
+        index: this.currentSpeedIndex
+      });
+      this.el.emit("haptic-pulse", {
+        intensity: 0.3,
+        duration: 40
+      }, false);
+    },
+    // Trigger pressure control for speed
+    onTriggerChanged: function(evt) {
+      this.triggerPressure = evt.detail.value;
+    },
+    // Grip pressure control for vertical movement
+    onGripChanged: function(evt) {
+      this.gripPressure = evt.detail.value;
+    },
+    resetMovement: function() {
+      Object.keys(this.movement).forEach((key) => {
+        this.movement[key] = 0;
+      });
+    },
+    // Main update loop
+    tick: function(time, deltaTime) {
+      if (!this.data.enabled) return;
+      this.updateFlyMovement(deltaTime);
+      this.updateVerticalMovement(deltaTime);
+    },
+    // Camera-based movement system
+    updateFlyMovement: function(deltaTime) {
+      if (!this.camera || !this.cameraRig) return;
+      const dt = deltaTime / 1e3;
+      const triggerMultiplier = Math.max(0.1, Math.min(this.triggerPressure, 0.6));
+      const speed = this.data.flySpeed * dt * 60 * triggerMultiplier;
+      const rotSpeed = this.data.turnSpeed * dt * 60 * triggerMultiplier;
+      if (this.movement.forward > 0 || this.movement.backward > 0) {
+        this.camera.object3D.getWorldDirection(this.vector);
+        this.vector.multiplyScalar(-(this.movement.forward - this.movement.backward) * speed);
+        this.cameraRig.object3D.position.add(this.vector);
+        this.el.emit("xr:locomotion-step", {
+          dx: this.vector.x,
+          dy: this.vector.y,
+          dz: this.vector.z,
+          mode: "fly-forward"
+        });
+      }
+      if (this.movement.strafeLeft > 0 || this.movement.strafeRight > 0) {
+        this.camera.object3D.getWorldDirection(this.vector);
+        this.right.crossVectors(this.vector, this.up).normalize();
+        this.right.multiplyScalar((this.movement.strafeLeft - this.movement.strafeRight) * speed);
+        this.cameraRig.object3D.position.add(this.right);
+        this.el.emit("xr:locomotion-step", {
+          dx: this.right.x,
+          dy: this.right.y,
+          dz: this.right.z,
+          mode: "fly-strafe"
+        });
+      }
+      if (this.movement.rotateLeft > 0 || this.movement.rotateRight > 0) {
+        const yaw = (this.movement.rotateLeft - this.movement.rotateRight) * rotSpeed;
+        this.cameraRig.object3D.rotation.y += yaw;
+        this.cameraRig.object3D.updateMatrixWorld(true);
+        this.el.emit("xr:turn-smooth-step", {
+          yawDeg: THREE.MathUtils.radToDeg(yaw)
+        });
+      }
+    },
+    // Vertical movement using grip pressure
+    updateVerticalMovement: function(deltaTime) {
+      if (!this.camera || !this.cameraRig || this.gripPressure === 0) return;
+      const dt = deltaTime / 1e3;
+      const speed = this.data.flySpeed * dt * 60 * 0.5;
+      if (this.gripPressure > 0) {
+        this.verticalMove.set(0, speed * this.gripPressure, 0);
+        this.cameraRig.object3D.position.add(this.verticalMove);
+        this.el.emit("xr:locomotion-step", {
+          dx: this.verticalMove.x,
+          dy: this.verticalMove.y,
+          dz: this.verticalMove.z,
+          mode: "fly-vertical"
+        });
+      }
+    },
+    // Public API methods
+    enable: function() {
+      this.data.enabled = true;
+    },
+    disable: function() {
+      this.data.enabled = false;
+      this.resetMovement();
+    }
+  });
+  AFRAME.registerComponent("smooth-turn", {
+    schema: {
+      speedDeg: {
+        type: "number",
+        default: 120
+      },
+      // deg/sec at full deflection
+      deadzone: {
+        type: "number",
+        default: 0.15
+      },
+      cameraRig: {
+        type: "selector",
+        default: null
+      }
+    },
+    init() {
+      this.x = 0;
+      const getX = (e) => {
+        const d = e.detail || {};
+        const ax = d.axis || d.axes || [];
+        return typeof d.x === "number" ? d.x : ax[0] || 0;
+      };
+      this._onThumb = (e) => {
+        this.x = getX(e);
+      };
+      this._onAxis = (e) => {
+        this.x = getX(e);
+      };
+      this._resolveRig();
+      this.el.addEventListener("thumbstickmoved", this._onThumb);
+      this.el.addEventListener("axismove", this._onAxis);
+    },
+    update() {
+      this._resolveRig();
+    },
+    remove() {
+      this.el.removeEventListener("thumbstickmoved", this._onThumb);
+      this.el.removeEventListener("axismove", this._onAxis);
+    },
+    tick(t, dt) {
+      if (!this.rig) {
+        this._resolveRig();
+        return;
+      }
+      let x = this.x;
+      if (Math.abs(x) < this.data.deadzone) return;
+      x = -x;
+      const yawDeg = this.data.speedDeg * x * (dt / 1e3);
+      this.rig.object3D.rotation.y += yawDeg * Math.PI / 180;
+    },
+    _resolveRig() {
+      if (this.data.cameraRig) {
+        this.rig = this.data.cameraRig;
+        return;
+      }
+      let el = this.el.sceneEl?.camera?.el;
+      while (el?.parentElement && el.parentElement !== this.el.sceneEl) el = el.parentElement;
+      this.rig = el || null;
+    }
+  });
+  window.AFRAME.registerComponent("vertical-move", {
+    schema: {
+      enabled: {
+        type: "boolean",
+        default: true
+      },
+      speed: {
+        type: "number",
+        default: 4
+      },
+      deadzone: {
+        type: "number",
+        default: 0.15
+      },
+      cameraRig: {
+        type: "selector",
+        default: null
+      }
+    },
+    SPEED_PRESETS: [4, 12, 28],
+    init() {
+      this.y = 0;
+      this.cameraRig = null;
+      this.currentSpeedIndex = 0;
+      this.data.speed = this.SPEED_PRESETS[0];
+      const axisY = (d) => {
+        const a = d.axis || d.axes || [];
+        return typeof d.y === "number" ? d.y : a[1] || 0;
+      };
+      this._onThumb = (e) => {
+        this.y = axisY(e.detail || {});
+      };
+      this._onAxis = (e) => {
+        this.y = axisY(e.detail || {});
+      };
+      this._onThumbDown = () => {
+        this.currentSpeedIndex = (this.currentSpeedIndex + 1) % this.SPEED_PRESETS.length;
+        this.data.speed = this.SPEED_PRESETS[this.currentSpeedIndex];
+        this.el.emit("haptic-pulse", {
+          intensity: 0.3,
+          duration: 40
+        }, false);
+      };
+      this.el.addEventListener("thumbstickmoved", this._onThumb);
+      this.el.addEventListener("axismove", this._onAxis);
+      this.el.addEventListener("thumbstickdown", this._onThumbDown);
+      const onLoaded = () => this._resolveRig();
+      if (this.el.sceneEl?.hasLoaded) {
+        this._resolveRig();
+      } else {
+        this.el.sceneEl?.addEventListener("loaded", onLoaded, {
+          once: true
+        });
+      }
+      this._stopReady = () => this.el.sceneEl?.removeEventListener("loaded", onLoaded);
+    },
+    update() {
+      this._resolveRig();
+    },
+    remove() {
+      this.el.removeEventListener("thumbstickmoved", this._onThumb);
+      this.el.removeEventListener("axismove", this._onAxis);
+      this.el.removeEventListener("thumbstickdown", this._onThumbDown);
+      if (this._stopReady) this._stopReady();
+    },
+    tick(t, dt) {
+      if (!this.data.enabled || !this.cameraRig) return;
+      const raw = this.y;
+      const y = Math.abs(raw) > this.data.deadzone ? raw : 0;
+      if (!y) return;
+      const move = -y * this.data.speed * (dt / 1e3);
+      this.cameraRig.object3D.position.y += move;
+    },
+    _resolveRig() {
+      if (this.data.cameraRig) {
+        this.cameraRig = this.data.cameraRig;
+        return;
+      }
+      let el = this.el.parentElement;
+      while (el && el !== this.el.sceneEl) {
+        if ((el.id || "").includes("rig") || (el.id || "").includes("camera")) {
+          this.cameraRig = el;
+          return;
+        }
+        el = el.parentElement;
+      }
+      this.cameraRig = this.el.parentElement || null;
+    }
+  });
+  AFRAME.registerComponent("vr-save", {
+    init: function() {
+      this._onSave = this._onSave.bind(this);
+      this.el.addEventListener("thumbstickdown", this._onSave);
+    },
+    remove: function() {
+      this.el.removeEventListener("thumbstickdown", this._onSave);
+    },
+    _pulse: function(intensity, duration) {
+      this.el.emit("haptic-pulse", {
+        intensity,
+        duration
+      }, false);
+    },
+    _onSave: async function() {
+      const history2 = AFRAME.INSPECTOR && AFRAME.INSPECTOR.history;
+      if (!history2) {
+        console.warn("[vr-save] AFRAME.INSPECTOR.history not found");
+        this._pulse(1, 500);
+        return;
+      }
+      const host = window.location.hostname;
+      const watcherBase = `http://${host}:51234`;
+      const actionList = history2.actions || [];
+      const assetsSnapshot = Array.from(document.querySelectorAll("a-assets > *")).map((el) => ({
+        sourcePath: el.getAttribute("data-source-path") || null,
+        id: el.id || null,
+        tagName: el.tagName ? el.tagName.toLowerCase() : null,
+        src: el.getAttribute("data-source-path") || el.getAttribute("src") || el.src || null
+      }));
+      for (let i = actionList.length - 1; i >= 0; i--) {
+        if (actionList[i].type === "assetsync") {
+          actionList.splice(i, 1);
+        }
+      }
+      actionList.push({
+        type: "assetsync",
+        payload: {
+          assets: assetsSnapshot
+        },
+        timestamp: Date.now()
+      });
+      console.log("[vr-save] Saving to", watcherBase);
+      this._pulse(0.3, 80);
+      try {
+        const res = await fetch(`${watcherBase}/save`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(history2.updates)
+        });
+        if (!res.ok) throw new Error(`/save returned ${res.status}`);
+      } catch (err) {
+        console.warn("[vr-save] /save failed:", err);
+        this._pulse(1, 400);
+        return;
+      }
+      if (actionList.length) {
+        try {
+          const res = await fetch(`${watcherBase}/actions`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              actions: actionList
+            })
+          });
+          if (res.ok) actionList.length = 0;
+        } catch (err) {
+          console.warn("[vr-save] /actions failed:", err);
+        }
+      }
+      console.log("[vr-save] Saved successfully.");
+      this._pulse(0.6, 200);
+    }
+  });
+  AFRAME.registerSystem("ui-overlay", {
+    schema: {
+      distance: {
+        type: "number",
+        default: 1.35
+      },
+      pixelsPerUnit: {
+        type: "number",
+        default: 420
+      },
+      virtualWidth: {
+        type: "number",
+        default: 1024
+      },
+      virtualHeight: {
+        type: "number",
+        default: 576
+      }
+    },
+    init: function() {
+      this.root = document.createElement("a-entity");
+      this.root.setAttribute("id", "xr-ui-root-3d");
+      this.root.object3D.position.set(0, 0, -this.data.distance);
+      this._attachToCamera();
+      this._onLoaded = () => this._attachToCamera();
+      this._onCameraActive = () => this._attachToCamera();
+      this._onEnterVr = () => this._attachToCamera();
+      this._onExitVr = () => this._attachToCamera();
+      this.sceneEl.addEventListener("loaded", this._onLoaded);
+      this.sceneEl.addEventListener("camera-set-active", this._onCameraActive);
+      this.sceneEl.addEventListener("enter-vr", this._onEnterVr);
+      this.sceneEl.addEventListener("exit-vr", this._onExitVr);
+    },
+    remove: function() {
+      this.sceneEl.removeEventListener("loaded", this._onLoaded);
+      this.sceneEl.removeEventListener("camera-set-active", this._onCameraActive);
+      this.sceneEl.removeEventListener("enter-vr", this._onEnterVr);
+      this.sceneEl.removeEventListener("exit-vr", this._onExitVr);
+      if (this.root?.parentNode) this.root.parentNode.removeChild(this.root);
+    },
+    getRoot: function() {
+      return this.root;
+    },
+    toLocalPosition: function(x, y) {
+      const px = Number(x) || 0;
+      const py = Number(y) || 0;
+      const ppu = this.data.pixelsPerUnit;
+      const localX = (px - this.data.virtualWidth * 0.5) / ppu;
+      const localY = (this.data.virtualHeight * 0.5 - py) / ppu;
+      return {
+        x: localX,
+        y: localY
+      };
+    },
+    pxToUnits: function(value) {
+      return (Number(value) || 0) / this.data.pixelsPerUnit;
+    },
+    _attachToCamera: function() {
+      const activeCam = this.sceneEl.camera && this.sceneEl.camera.el ? this.sceneEl.camera.el : null;
+      const cam = activeCam || this.sceneEl.querySelector("[camera][active]") || this.sceneEl.querySelector("[camera]") || this.sceneEl.querySelector("a-camera");
+      if (!cam || this.root.parentNode === cam) return;
+      if (this.root.parentNode) this.root.parentNode.removeChild(this.root);
+      cam.appendChild(this.root);
+    }
+  });
+  AFRAME.registerComponent("ui-panel", {
+    schema: {
+      title: {
+        type: "string",
+        default: "Panel"
+      },
+      html: {
+        type: "string",
+        default: ""
+      },
+      x: {
+        type: "number",
+        default: 16
+      },
+      y: {
+        type: "number",
+        default: 16
+      },
+      width: {
+        type: "number",
+        default: 280
+      },
+      height: {
+        type: "number",
+        default: 160
+      },
+      padding: {
+        type: "number",
+        default: 12
+      },
+      visible: {
+        type: "boolean",
+        default: true
+      }
+    },
+    init: function() {
+      this.uiOverlaySystem = this.el.sceneEl?.systems?.["ui-overlay"];
+      this.panelEl = document.createElement("a-entity");
+      this.bgEl = document.createElement("a-plane");
+      this.titleEl = document.createElement("a-text");
+      this.bodyEl = document.createElement("a-text");
+      this.bgEl.setAttribute("material", "color: #101a2a; opacity: 0.85; transparent: true; side: double");
+      this.bgEl.setAttribute("render-order", "999");
+      this.titleEl.setAttribute("align", "left");
+      this.titleEl.setAttribute("color", "#8ecae6");
+      this.bodyEl.setAttribute("align", "left");
+      this.bodyEl.setAttribute("color", "#ecf3ff");
+      this.panelEl.appendChild(this.bgEl);
+      this.panelEl.appendChild(this.titleEl);
+      this.panelEl.appendChild(this.bodyEl);
+      this.uiOverlaySystem.getRoot().appendChild(this.panelEl);
+      this.update({});
+    },
+    update: function() {
+      const d = this.data;
+      const pos = this.uiOverlaySystem.toLocalPosition(d.x, d.y);
+      const w = this.uiOverlaySystem.pxToUnits(d.width);
+      const h = this.uiOverlaySystem.pxToUnits(d.height);
+      const pad = this.uiOverlaySystem.pxToUnits(d.padding);
+      this.panelEl.object3D.position.set(pos.x + w * 0.5, pos.y - h * 0.5, 0);
+      this.panelEl.object3D.visible = !!d.visible;
+      this.bgEl.setAttribute("width", w);
+      this.bgEl.setAttribute("height", h);
+      this.titleEl.setAttribute("value", d.title);
+      this.titleEl.setAttribute("width", Math.max(0.1, w - pad * 2));
+      this.titleEl.object3D.position.set(-w * 0.5 + pad, h * 0.5 - pad * 1.8, 3e-3);
+      this.bodyEl.setAttribute("value", stripHtml(d.html));
+      this.bodyEl.setAttribute("width", Math.max(0.1, w - pad * 2));
+      this.bodyEl.object3D.position.set(-w * 0.5 + pad, h * 0.5 - pad * 4.5, 3e-3);
+    },
+    remove: function() {
+      if (this.panelEl && this.panelEl.parentNode) {
+        this.panelEl.parentNode.removeChild(this.panelEl);
+      }
+    }
+  });
+  AFRAME.registerComponent("ui-label", {
+    schema: {
+      text: {
+        type: "string",
+        default: "Label"
+      },
+      x: {
+        type: "number",
+        default: 20
+      },
+      y: {
+        type: "number",
+        default: 20
+      },
+      size: {
+        type: "number",
+        default: 14
+      },
+      padding: {
+        type: "number",
+        default: 8
+      },
+      visible: {
+        type: "boolean",
+        default: true
+      }
+    },
+    init: function() {
+      this.uiOverlaySystem = this.el.sceneEl?.systems?.["ui-overlay"];
+      this.labelEl = document.createElement("a-entity");
+      this.bgEl = document.createElement("a-plane");
+      this.textEl = document.createElement("a-text");
+      this.bgEl.setAttribute("material", "color: #0d1524; opacity: 0.78; transparent: true; side: double");
+      this.textEl.setAttribute("align", "left");
+      this.textEl.setAttribute("color", "#f8fbff");
+      this.labelEl.appendChild(this.bgEl);
+      this.labelEl.appendChild(this.textEl);
+      this.uiOverlaySystem.getRoot().appendChild(this.labelEl);
+      this.update({});
+    },
+    update: function() {
+      const d = this.data;
+      const estimatedWidth = Math.max(130, String(d.text).length * d.size * 0.56 + d.padding * 2);
+      const estimatedHeight = d.size * 1.8 + d.padding;
+      const pos = this.uiOverlaySystem.toLocalPosition(d.x, d.y);
+      const w = this.uiOverlaySystem.pxToUnits(estimatedWidth);
+      const h = this.uiOverlaySystem.pxToUnits(estimatedHeight);
+      this.labelEl.object3D.position.set(pos.x + w * 0.5, pos.y - h * 0.5, 1e-3);
+      this.labelEl.object3D.visible = !!d.visible;
+      this.bgEl.setAttribute("width", w);
+      this.bgEl.setAttribute("height", h);
+      this.textEl.setAttribute("value", d.text);
+      this.textEl.setAttribute("width", Math.max(0.1, w - this.uiOverlaySystem.pxToUnits(d.padding * 2)));
+      this.textEl.object3D.position.set(-w * 0.5 + this.uiOverlaySystem.pxToUnits(d.padding), 0, 3e-3);
+    },
+    remove: function() {
+      if (this.labelEl && this.labelEl.parentNode) {
+        this.labelEl.parentNode.removeChild(this.labelEl);
+      }
+    }
+  });
+  AFRAME.registerComponent("ui-bar", {
+    schema: {
+      title: {
+        type: "string",
+        default: "Value"
+      },
+      value: {
+        type: "number",
+        default: 100
+      },
+      min: {
+        type: "number",
+        default: 0
+      },
+      max: {
+        type: "number",
+        default: 100
+      },
+      event: {
+        type: "string",
+        default: ""
+      },
+      field: {
+        type: "string",
+        default: "current"
+      },
+      source: {
+        type: "selector",
+        default: null
+      },
+      x: {
+        type: "number",
+        default: 20
+      },
+      y: {
+        type: "number",
+        default: 72
+      },
+      width: {
+        type: "number",
+        default: 260
+      },
+      visible: {
+        type: "boolean",
+        default: true
+      }
+    },
+    init: function() {
+      this.uiOverlaySystem = this.el.sceneEl?.systems?.["ui-overlay"];
+      this.barEl = document.createElement("a-entity");
+      this.bgEl = document.createElement("a-plane");
+      this.titleEl = document.createElement("a-text");
+      this.trackEl = document.createElement("a-plane");
+      this.fillEl = document.createElement("a-plane");
+      this.minEl = document.createElement("a-text");
+      this.maxEl = document.createElement("a-text");
+      this.bgEl.setAttribute("material", "color: #0d1524; opacity: 0.8; transparent: true; side: double");
+      this.titleEl.setAttribute("align", "left");
+      this.titleEl.setAttribute("color", "#8ecae6");
+      this.trackEl.setAttribute("material", "color: #354a61; opacity: 0.95; transparent: true; side: double");
+      this.fillEl.setAttribute("material", "color: #56cfe1; opacity: 1; transparent: true; side: double");
+      this.minEl.setAttribute("align", "left");
+      this.minEl.setAttribute("color", "#f8fbff");
+      this.maxEl.setAttribute("align", "right");
+      this.maxEl.setAttribute("color", "#f8fbff");
+      this.barEl.appendChild(this.bgEl);
+      this.barEl.appendChild(this.titleEl);
+      this.barEl.appendChild(this.trackEl);
+      this.barEl.appendChild(this.fillEl);
+      this.barEl.appendChild(this.minEl);
+      this.barEl.appendChild(this.maxEl);
+      this.uiOverlaySystem.getRoot().appendChild(this.barEl);
+      this._sourceEl = this.data.source || this.el;
+      this._onUpdate = (e) => {
+        const next = e && e.detail ? e.detail[this.data.field] : null;
+        if (typeof next !== "number") return;
+        this.el.setAttribute("ui-bar", "value", next);
+      };
+      if (this.data.event) {
+        this._sourceEl.addEventListener(this.data.event, this._onUpdate);
+      }
+      this.update({});
+    },
+    update: function(oldData) {
+      oldData = oldData || {};
+      const d = this.data;
+      if (oldData.event !== void 0 && oldData.event !== d.event) {
+        this._sourceEl.removeEventListener(oldData.event, this._onUpdate);
+        if (d.event) this._sourceEl.addEventListener(d.event, this._onUpdate);
+      }
+      if (oldData.source !== void 0 && oldData.source !== d.source) {
+        if (oldData.event) this._sourceEl.removeEventListener(oldData.event, this._onUpdate);
+        this._sourceEl = d.source || this.el;
+        if (d.event) this._sourceEl.addEventListener(d.event, this._onUpdate);
+      }
+      const clamped = Math.max(d.min, Math.min(d.max, d.value));
+      const ratio = d.max > d.min ? (clamped - d.min) / (d.max - d.min) : 0;
+      const w = this.uiOverlaySystem.pxToUnits(d.width);
+      const h = this.uiOverlaySystem.pxToUnits(72);
+      const pos = this.uiOverlaySystem.toLocalPosition(d.x, d.y);
+      this.barEl.object3D.position.set(pos.x + w * 0.5, pos.y - h * 0.5, 1e-3);
+      this.barEl.object3D.visible = !!d.visible;
+      this.bgEl.setAttribute("width", w);
+      this.bgEl.setAttribute("height", h);
+      this.titleEl.setAttribute("value", d.title);
+      this.titleEl.setAttribute("width", Math.max(0.1, w - 0.04));
+      this.titleEl.object3D.position.set(-w * 0.5 + 0.02, h * 0.26, 3e-3);
+      const trackW = w - 0.04;
+      const trackH = 0.022;
+      this.trackEl.setAttribute("width", trackW);
+      this.trackEl.setAttribute("height", trackH);
+      this.trackEl.object3D.position.set(0, 0.01, 3e-3);
+      const fillW = Math.max(1e-3, trackW * ratio);
+      this.fillEl.setAttribute("width", fillW);
+      this.fillEl.setAttribute("height", trackH * 0.88);
+      this.fillEl.object3D.position.set(-trackW * 0.5 + fillW * 0.5, 0.01, 4e-3);
+      this.minEl.setAttribute("value", `${clamped.toFixed(0)}`);
+      this.minEl.setAttribute("width", 0.22);
+      this.minEl.object3D.position.set(-w * 0.5 + 0.02, -h * 0.24, 3e-3);
+      this.maxEl.setAttribute("value", `${d.max.toFixed(0)}`);
+      this.maxEl.setAttribute("width", 0.22);
+      this.maxEl.object3D.position.set(w * 0.5 - 0.02, -h * 0.24, 3e-3);
+    },
+    remove: function() {
+      if (this.data.event && this._sourceEl) {
+        this._sourceEl.removeEventListener(this.data.event, this._onUpdate);
+      }
+      if (this.barEl && this.barEl.parentNode) {
+        this.barEl.parentNode.removeChild(this.barEl);
+      }
+    }
+  });
+  AFRAME.registerComponent("ui-menu", {
+    schema: {
+      title: {
+        type: "string",
+        default: "Menu"
+      },
+      options: {
+        type: "array",
+        default: ["Start", "Reset"]
+      },
+      x: {
+        type: "number",
+        default: 20
+      },
+      y: {
+        type: "number",
+        default: 160
+      },
+      width: {
+        type: "number",
+        default: 240
+      },
+      emitEvent: {
+        type: "string",
+        default: "xr:menu-select"
+      },
+      target: {
+        type: "selector",
+        default: null
+      },
+      visible: {
+        type: "boolean",
+        default: true
+      }
+    },
+    init: function() {
+      this.uiOverlaySystem = this.el.sceneEl?.systems?.["ui-overlay"];
+      this.menuEl = document.createElement("a-entity");
+      this.bgEl = document.createElement("a-plane");
+      this.titleEl = document.createElement("a-text");
+      this.buttonsWrap = document.createElement("a-entity");
+      this.bgEl.setAttribute("material", "color: #0d1524; opacity: 0.88; transparent: true; side: double");
+      this.titleEl.setAttribute("align", "left");
+      this.titleEl.setAttribute("color", "#8ecae6");
+      this.menuEl.appendChild(this.bgEl);
+      this.menuEl.appendChild(this.titleEl);
+      this.menuEl.appendChild(this.buttonsWrap);
+      this.uiOverlaySystem.getRoot().appendChild(this.menuEl);
+      this.update({});
+    },
+    update: function() {
+      const d = this.data;
+      const options = Array.isArray(d.options) ? d.options : [String(d.options || "")];
+      const optionCount = Math.max(1, options.length);
+      const w = this.uiOverlaySystem.pxToUnits(d.width);
+      const h = 0.13 + optionCount * 0.08;
+      const pos = this.uiOverlaySystem.toLocalPosition(d.x, d.y);
+      this.menuEl.object3D.position.set(pos.x + w * 0.5, pos.y - h * 0.5, 1e-3);
+      this.menuEl.object3D.visible = !!d.visible;
+      this.bgEl.setAttribute("width", w);
+      this.bgEl.setAttribute("height", h);
+      this.titleEl.setAttribute("value", d.title);
+      this.titleEl.setAttribute("width", Math.max(0.1, w - 0.04));
+      this.titleEl.object3D.position.set(-w * 0.5 + 0.02, h * 0.34, 3e-3);
+      this._renderButtons();
+    },
+    remove: function() {
+      if (this.menuEl && this.menuEl.parentNode) {
+        this.menuEl.parentNode.removeChild(this.menuEl);
+      }
+    },
+    _renderButtons: function() {
+      while (this.buttonsWrap.firstChild) this.buttonsWrap.removeChild(this.buttonsWrap.firstChild);
+      const options = Array.isArray(this.data.options) ? this.data.options : [String(this.data.options || "")];
+      const w = this.uiOverlaySystem.pxToUnits(this.data.width);
+      for (let i = 0; i < options.length; i++) {
+        const label = String(options[i]);
+        const btn = document.createElement("a-plane");
+        const txt = document.createElement("a-text");
+        btn.classList.add("clickable");
+        btn.setAttribute("interactable", "");
+        btn.setAttribute("material", "color: #24415f; opacity: 0.96; transparent: true; side: double");
+        btn.setAttribute("width", Math.max(0.1, w - 0.04));
+        btn.setAttribute("height", 0.06);
+        btn.object3D.position.set(0, 0.05 - i * 0.08, 3e-3);
+        txt.setAttribute("value", label);
+        txt.setAttribute("align", "left");
+        txt.setAttribute("color", "#f8fbff");
+        txt.setAttribute("width", Math.max(0.1, w - 0.08));
+        txt.object3D.position.set(-Math.max(0.1, w - 0.04) * 0.5 + 0.02, 0, 3e-3);
+        btn.appendChild(txt);
+        btn.addEventListener("click", () => this._emitSelect(i, label));
+        this.buttonsWrap.appendChild(btn);
+      }
+    },
+    _emitSelect: function(index, value) {
+      const detail = {
+        index,
+        value,
+        source: this.el
+      };
+      const target = this.data.target || this.el;
+      target.emit(this.data.emitEvent, detail);
+      this.el.emit("xr:menu-select", detail);
+    }
+  });
+  function stripHtml(value) {
+    return String(value || "").replace(/<br\s*\/?>/gi, "\n").replace(/<[^>]*>/g, "").trim();
+  }
+  const SKIP = /* @__PURE__ */ new Set(["position", "rotation", "scale", "visible", "id", "data-raycastable"]);
+  const ROW_H = 32;
+  const PAGE_SIZE = 9;
+  const SCENE_RAY_OBJECTS = "[geometry], [gltf-model], [data-raycastable], [text], a-text, .clickable, .control";
+  const UI_RAY_OBJECTS = "[data-component-tool-button]";
+  window.AFRAME.registerComponent("component-tool", {
+    schema: {
+      enabled: {
+        type: "boolean",
+        default: true
+      },
+      hand: {
+        type: "string",
+        default: "right",
+        oneOf: ["left", "right"]
+      }
+    },
+    init() {
+      this.selectedEntity = null;
+      this.addMode = false;
+      this.editMode = null;
+      this.assetMode = false;
+      this.pendingApplyVal = null;
+      this.pageOffset = 0;
+      this._btnMap = /* @__PURE__ */ new Map();
+      this.panelRoot = null;
+      this._uiSys = null;
+      this._lastScroll = 0;
+      this._hoveredBtn = null;
+      this._kbMode = null;
+      this._boundKbKey = null;
+      this._setupLaser();
+      this._initPanel();
+      this._bindEvents();
+      this._applyEnabled();
+    },
+    update(oldData) {
+      if (oldData && oldData.enabled !== this.data.enabled) this._applyEnabled();
+    },
+    remove() {
+      this._stopKeyboard();
+      this._setHoveredButton(null);
+      if (this.panelRoot?.parentNode) this.panelRoot.parentNode.removeChild(this.panelRoot);
+      (this._activationEvents || []).forEach((eventName) => {
+        this.el.removeEventListener(eventName, this._boundActivate);
+      });
+      this.el.removeEventListener("thumbstickmoved", this._boundThumb);
+      if (this._onEntityUpdate) Events.off("entityupdate", this._onEntityUpdate);
+    },
+    onToolActivated() {
+      this._applyEnabled();
+    },
+    onToolDeactivated() {
+      this._closePanel();
+    },
+    // ─── setup ────────────────────────────────────────────────────────────────
+    _applyEnabled() {
+      if (!this.data.enabled) this._closePanel();
+    },
+    _setupLaser() {
+      this.el.setAttribute("laser-controls", `hand: ${this.data.hand}; lineColor: #f39c12; lineOpacity: 0.85;`);
+      this._setRayTargets(SCENE_RAY_OBJECTS);
+    },
+    _setRayTargets(objectsSelector) {
+      this.el.setAttribute("raycaster", `far: 400; showLine: true; objects: ${objectsSelector};`);
+    },
+    _initPanel() {
+      this.panelRoot = document.createElement("a-entity");
+      this.panelRoot.setAttribute("data-vr-tool-ui", "true");
+      const attach = () => {
+        const sys = this._sys();
+        if (!sys) {
+          setTimeout(attach, 100);
+          return;
+        }
+        this.panelRoot.object3D.visible = false;
+        sys.getRoot().appendChild(this.panelRoot);
+      };
+      if (this.el.sceneEl.hasLoaded) {
+        setTimeout(attach, 50);
+      } else {
+        this.el.sceneEl.addEventListener("loaded", () => setTimeout(attach, 50), {
+          once: true
+        });
+      }
+    },
+    _bindEvents() {
+      this._boundActivate = () => {
+        if (this.data.enabled) this._onTrigger();
+      };
+      this._boundThumb = (e) => {
+        if (this.data.enabled) this._onThumb(e);
+      };
+      this._activationEvents = ["triggerdown", "abuttondown", "xbuttondown", "gripdown"];
+      this._activationEvents.forEach((eventName) => {
+        this.el.addEventListener(eventName, this._boundActivate);
+      });
+      this.el.addEventListener("thumbstickmoved", this._boundThumb);
+      this._onEntityUpdate = ({
+        entity
+      }) => {
+        if (entity === this.selectedEntity && this.panelRoot?.object3D?.visible) {
+          this._build();
+        }
+      };
+      Events.on("entityupdate", this._onEntityUpdate);
+    },
+    // ─── input ────────────────────────────────────────────────────────────────
+    _onTrigger() {
+      const uiBtn = this._getUiButtonHit();
+      if (uiBtn) {
+        const action = this._btnMap.get(uiBtn);
+        if (action) action();
+        return;
+      }
+      if (this.panelRoot?.object3D?.visible) {
+        return;
+      }
+      const rc = this.el.components.raycaster;
+      if (!rc) return;
+      for (const hit of rc.intersections || []) {
+        const el = hit?.object?.el;
+        if (!el?.isEntity || !el.object3D) continue;
+        if (el.hasAttribute("data-vr-tool-ui") || el.closest("[data-vr-tool-ui]")) continue;
+        const rig = document.getElementById("admin-camera-rig");
+        if (rig && rig.contains(el)) continue;
+        if (el.closest("a-assets")) continue;
+        this._select(el);
+        return;
+      }
+    },
+    _onThumb(e) {
+      if (!this.panelRoot?.object3D?.visible) return;
+      const y = e.detail?.y ?? 0;
+      if (Math.abs(y) < 0.5) return;
+      const now = Date.now();
+      if (now - this._lastScroll < 400) return;
+      this._lastScroll = now;
+      this.pageOffset = Math.max(0, this.pageOffset + (y > 0 ? 1 : -1));
+      this._build();
+    },
+    tick() {
+      if (!this.data.enabled || !this.panelRoot?.object3D?.visible) {
+        this._setHoveredButton(null);
+        return;
+      }
+      this._setHoveredButton(this._getUiButtonHit());
+    },
+    // ─── state ────────────────────────────────────────────────────────────────
+    _select(entity) {
+      this.selectedEntity = entity;
+      this.addMode = false;
+      this.editMode = null;
+      this.pendingApplyVal = null;
+      this.pageOffset = 0;
+      this._setRayTargets(UI_RAY_OBJECTS);
+      this._build();
+      this.panelRoot.object3D.visible = true;
+    },
+    _closePanel() {
+      this._stopKeyboard();
+      this._setHoveredButton(null);
+      this._setRayTargets(SCENE_RAY_OBJECTS);
+      if (this.panelRoot) this.panelRoot.object3D.visible = false;
+      this.selectedEntity = null;
+      this.addMode = false;
+      this.editMode = null;
+      this.assetMode = false;
+      this.pendingApplyVal = null;
+      this.pageOffset = 0;
+    },
+    _startKeyboard(label, value, applyVal) {
+      this._stopKeyboard();
+      this._kbMode = {
+        label,
+        value: String(value ?? ""),
+        applyVal,
+        shift: false
+      };
+      this._boundKbKey = (e) => this._onKbKey(e);
+      window.addEventListener("keydown", this._boundKbKey);
+      this._build();
+    },
+    _stopKeyboard() {
+      if (this._boundKbKey) {
+        window.removeEventListener("keydown", this._boundKbKey);
+        this._boundKbKey = null;
+      }
+      this._kbMode = null;
+    },
+    _onKbKey(e) {
+      if (!this._kbMode) return;
+      e.preventDefault();
+      if (e.key === "Enter") {
+        const {
+          applyVal,
+          value
+        } = this._kbMode;
+        this._stopKeyboard();
+        applyVal(value);
+      } else if (e.key === "Escape") {
+        this._stopKeyboard();
+        this._build();
+      } else if (e.key === "Backspace") {
+        this._kbMode.value = this._kbMode.value.slice(0, -1);
+        this._build();
+      } else if (e.key.length === 1) {
+        this._kbMode.value += e.key;
+        this._build();
+      }
+    },
+    _buildKeyboardPanel(sys) {
+      const kb = this._kbMode;
+      const PX = 180, PY = 28, PW = 520;
+      const KW = 37, KH = 30, GAP = 3;
+      const PAD = 18;
+      const STRIDE = KH + GAP + 2;
+      const ROWS = [["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "_"], ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", ".", "/"], ["a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'"], ["z", "x", "c", "v", "b", "n", "m", ",", "@", "#", "!"]];
+      const ROW12 = 12 * KW + 11 * GAP;
+      const PH = 66 + 30 + ROWS.length * STRIDE + STRIDE + 50;
+      this._bg(sys, PX, PY, PW, PH);
+      this._text(sys, `Edit: ${kb.label}`, "#8ecae6", PX + 12, PY + 18, 420);
+      const draft = (kb.value + "|").slice(-46) || "|";
+      this._text(sys, draft, "#ffffffcc", PX + 12, PY + 46, 620, 5e-3);
+      const baseY = PY + 96;
+      ROWS.forEach((row, ri) => {
+        const rowW = row.length * KW + (row.length - 1) * GAP;
+        const rowX = PX + PAD + Math.round((ROW12 - rowW) / 2);
+        const rowY = baseY + ri * STRIDE;
+        row.forEach((key, ki) => {
+          const display = kb.shift ? key.toUpperCase() : key;
+          this._btn(sys, display, rowX + ki * (KW + GAP), rowY, KW, KH, "#1a3a5a", () => {
+            kb.value += display;
+            if (kb.shift) kb.shift = false;
+            this._build();
+          });
+        });
+      });
+      const specY = baseY + ROWS.length * STRIDE;
+      const specX = PX + PAD;
+      const capsW = 2 * KW + GAP;
+      const delW = 2 * KW + GAP;
+      const spaceW = ROW12 - capsW - delW - 2 * GAP;
+      this._btn(sys, "Caps", specX, specY, capsW, KH, kb.shift ? "#2a9d8f" : "#1a3a5a", () => {
+        kb.shift = !kb.shift;
+        this._build();
+      });
+      this._btn(sys, " ", specX + capsW + GAP, specY, spaceW, KH, "#1a3a5a", () => {
+        kb.value += " ";
+        this._build();
+      });
+      this._btn(sys, "⌫", specX + capsW + GAP + spaceW + GAP, specY, delW, KH, "#5a2d1c", () => {
+        kb.value = kb.value.slice(0, -1);
+        this._build();
+      });
+      const footY = specY + STRIDE + 6;
+      this._btn(sys, "✕ Cancel", PX + 10, footY, 140, 32, "#553", () => {
+        this._stopKeyboard();
+        this._build();
+      });
+      this._btn(sys, "✓ Apply", PX + PW - 154, footY, 140, 32, "#2a9d8f", () => {
+        const v = kb.value;
+        const fn = kb.applyVal;
+        this._stopKeyboard();
+        fn(v);
+      });
+    },
+    // ─── panel build ──────────────────────────────────────────────────────────
+    _sys() {
+      if (!this._uiSys) this._uiSys = this.el.sceneEl.systems["ui-overlay"];
+      return this._uiSys;
+    },
+    _clear() {
+      this._setHoveredButton(null);
+      this._btnMap.clear();
+      while (this.panelRoot.firstChild) this.panelRoot.removeChild(this.panelRoot.firstChild);
+    },
+    _getUiButtonHit() {
+      if (!this.panelRoot?.object3D?.visible) return null;
+      const rc = this.el.components.raycaster;
+      if (!rc) return null;
+      for (const hit of rc.intersections || []) {
+        const el = hit?.object?.el;
+        if (!el) continue;
+        let node = el;
+        while (node && node !== this.panelRoot) {
+          if (this._btnMap.has(node)) return node;
+          node = node.parentElement;
+        }
+      }
+      return null;
+    },
+    _setHoveredButton(btn) {
+      if (this._hoveredBtn === btn) return;
+      if (this._hoveredBtn) this._paintButtonHover(this._hoveredBtn, false);
+      this._hoveredBtn = btn;
+      if (this._hoveredBtn) this._paintButtonHover(this._hoveredBtn, true);
+    },
+    _paintButtonHover(btn, active) {
+      const color = btn.dataset.baseColor || "#2f3f55";
+      const opacity = active ? 1 : 0.93;
+      const scale = active ? 1.04 : 1;
+      btn.setAttribute("material", `color: ${color}; opacity: ${opacity}; transparent: true; side: double`);
+      btn.object3D.scale.set(scale, scale, scale);
+    },
+    _build() {
+      const sys = this._sys();
+      if (!sys || !this.panelRoot || !this.selectedEntity) return;
+      this._clear();
+      if (this._kbMode) this._buildKeyboardPanel(sys);
+      else if (this.assetMode) this._buildAssetPanel(sys);
+      else if (this.editMode) this._buildPropsPanel(sys);
+      else if (this.addMode) this._buildAddPanel(sys);
+      else this._buildListPanel(sys);
+    },
+    // ─── list panel ───────────────────────────────────────────────────────────
+    _buildListPanel(sys) {
+      const entity = this.selectedEntity;
+      const comps = Object.keys(entity.components || {}).filter((c) => !SKIP.has(c));
+      const page = comps.slice(this.pageOffset * PAGE_SIZE, (this.pageOffset + 1) * PAGE_SIZE);
+      const PX = 332, PY = 28, PW = 360;
+      const PH = 100 + page.length * (ROW_H + 4) + 44;
+      this._bg(sys, PX, PY, PW, PH);
+      this._text(sys, "Component Tool", "#8ecae6", PX + 12, PY + 18, 300);
+      this._text(sys, `Entity: ${entity.id || entity.tagName.toLowerCase()}`, "#aac4de", PX + 12, PY + 40, 300);
+      this._text(sys, "Components:", "#7a9db5", PX + 12, PY + 62, 300);
+      page.forEach((name, i) => {
+        const rowY = PY + 82 + i * (ROW_H + 4);
+        this._row(sys, name, PX, rowY, PW, () => {
+          entity.removeAttribute(name);
+          Events.emit("entityupdate", {
+            entity,
+            component: name,
+            property: "",
+            value: null
+          });
+          this._build();
+        });
+      });
+      const footY = PY + PH - 40;
+      this._btn(sys, "+ Add", PX + 10, footY, 80, 30, "#2a9d8f", () => {
+        this.addMode = true;
+        this.pageOffset = 0;
+        this._build();
+      });
+      this._btn(sys, "Assets", PX + 96, footY, 80, 30, "#5a3e8a", () => {
+        this.assetMode = true;
+        this.pageOffset = 0;
+        this._build();
+      });
+      const total = Math.ceil(comps.length / PAGE_SIZE);
+      if (this.pageOffset > 0) {
+        this._btn(sys, "< Prev", PX + 184, footY, 60, 30, "#334", () => {
+          this.pageOffset--;
+          this._build();
+        });
+      }
+      if (this.pageOffset + 1 < total) {
+        this._btn(sys, "Next >", PX + 252, footY, 60, 30, "#334", () => {
+          this.pageOffset++;
+          this._build();
+        });
+      }
+      this._btn(sys, "Close", PX + PW - 82, footY, 68, 30, "#553", () => this._closePanel());
+    },
+    _row(sys, name, PX, rowY, PW, removeFn) {
+      this._btn(sys, name, PX + 8, rowY + 2, PW - 54, ROW_H - 4, "#1a3352", () => {
+        this.editMode = {
+          compName: name
+        };
+        this.pageOffset = 0;
+        this._build();
+      });
+      this._btn(sys, "X", PX + PW - 42, rowY + 2, 34, ROW_H - 4, "#c0392b", removeFn);
+    },
+    // ─── asset panel ───────────────────────────────────────────────────────────
+    _buildAssetPanel(sys) {
+      const assets = Array.from(this.el.sceneEl.querySelectorAll("a-assets > *"));
+      const page = assets.slice(this.pageOffset * PAGE_SIZE, (this.pageOffset + 1) * PAGE_SIZE);
+      const total = Math.ceil(assets.length / PAGE_SIZE);
+      const PX = 332, PY = 28, PW = 360;
+      const PH = 82 + Math.max(1, page.length) * (ROW_H + 4) + 44;
+      this._bg(sys, PX, PY, PW, PH);
+      this._text(sys, this.pendingApplyVal ? "Pick Asset" : "Assets", "#c3a6ff", PX + 12, PY + 18, 300);
+      this._text(sys, `${assets.length} asset(s)`, "#aac4de", PX + 12, PY + 40, 300);
+      if (page.length === 0) {
+        this._text(sys, "No assets found", "#778899", PX + 12, PY + 64, 300);
+      }
+      page.forEach((asset, i) => {
+        const rowY = PY + 60 + i * (ROW_H + 4);
+        const tag = asset.tagName.toLowerCase();
+        const id = asset.id ? `#${asset.id}` : "";
+        const src = asset.getAttribute("src") || asset.getAttribute("href") || "";
+        const label = `${id || tag} ${src.split("/").pop()}`.trim().slice(0, 30);
+        this._btn(sys, label, PX + 8, rowY + 2, PW - 54, ROW_H - 4, this.pendingApplyVal ? "#3a1a6a" : "#2a1a4a", () => {
+          if (this.pendingApplyVal) {
+            const val = asset.id ? `#${asset.id}` : src || "";
+            const apply = this.pendingApplyVal;
+            this.pendingApplyVal = null;
+            this.assetMode = false;
+            apply(val);
+          } else {
+            this._createEntityFromAsset(asset);
+          }
+        });
+        this._btn(sys, "X", PX + PW - 42, rowY + 2, 34, ROW_H - 4, "#c0392b", () => {
+          asset.parentNode?.removeChild(asset);
+          this._build();
+        });
+      });
+      const footY = PY + PH - 40;
+      this._btn(sys, "< Back", PX + 8, footY, 80, 30, "#555", () => {
+        this.pendingApplyVal = null;
+        this.assetMode = false;
+        this.pageOffset = 0;
+        this._build();
+      });
+      if (this.pageOffset > 0) {
+        this._btn(sys, "Prev", PX + 96, footY, 70, 30, "#334", () => {
+          this.pageOffset--;
+          this._build();
+        });
+      }
+      if (this.pageOffset + 1 < total) {
+        this._btn(sys, "Next", PX + 174, footY, 70, 30, "#334", () => {
+          this.pageOffset++;
+          this._build();
+        });
+      }
+      this._btn(sys, "Close", PX + PW - 82, footY, 68, 30, "#553", () => this._closePanel());
+    },
+    _getAssetRef(asset) {
+      if (!asset) return "";
+      const id = asset.id ? `#${asset.id}` : "";
+      const src = asset.getAttribute("src") || asset.getAttribute("href") || "";
+      return id || src || "";
+    },
+    _getSpawnPosition() {
+      const T = AFRAME?.THREE;
+      if (!T) return {
+        x: 0,
+        y: 1.6,
+        z: -2
+      };
+      if (this.selectedEntity?.object3D) {
+        const p = new T.Vector3();
+        this.selectedEntity.object3D.getWorldPosition(p);
+        return {
+          x: p.x,
+          y: p.y + 0.5,
+          z: p.z
+        };
+      }
+      const cam = document.getElementById("admin-camera") || this.el.sceneEl?.camera?.el;
+      if (cam?.object3D) {
+        const p = new T.Vector3();
+        const d = new T.Vector3();
+        cam.object3D.getWorldPosition(p);
+        cam.object3D.getWorldDirection(d);
+        p.add(d.multiplyScalar(1.5));
+        return {
+          x: p.x,
+          y: p.y,
+          z: p.z
+        };
+      }
+      return {
+        x: 0,
+        y: 1.6,
+        z: -2
+      };
+    },
+    _createEntityFromAsset(asset) {
+      const assetRef = this._getAssetRef(asset);
+      if (!assetRef) return;
+      const tag = asset.tagName.toLowerCase();
+      const rawSrc = (asset.getAttribute("src") || asset.getAttribute("href") || "").toLowerCase();
+      const isModel = /\.(gltf|glb|obj|fbx|dae)(\?|#|$)/.test(rawSrc);
+      const isVideo = tag === "video" || /\.(mp4|webm|mov|ogg)(\?|#|$)/.test(rawSrc);
+      const isAudio = tag === "audio" || /\.(mp3|wav|aac|flac|ogg)(\?|#|$)/.test(rawSrc);
+      const components = {
+        position: this._getSpawnPosition(),
+        editable: "",
+        "data-raycastable": "true"
+      };
+      if (isAudio) {
+        components.sound = `src: ${assetRef}; autoplay: false; loop: false`;
+        components.geometry = "primitive: sphere; radius: 0.12";
+        components.material = "color: #4f86ff; wireframe: true";
+      } else if (tag === "img" || isVideo) {
+        components.geometry = isVideo ? "primitive: plane; width: 1.78; height: 1" : "primitive: plane; width: 1; height: 0.75";
+        components.material = `src: ${assetRef}; side: double; shader: standard`;
+      } else if (isModel) {
+        if (/\.(gltf|glb)(\?|#|$)/.test(rawSrc)) {
+          components["gltf-model"] = assetRef;
+        } else if (/\.obj(\?|#|$)/.test(rawSrc)) {
+          components["obj-model"] = `obj: ${assetRef}`;
+        } else {
+          components["gltf-model"] = assetRef;
+        }
+        components.scale = {
+          x: 1,
+          y: 1,
+          z: 1
+        };
+      } else {
+        components.geometry = "primitive: box; width: 0.6; height: 0.6; depth: 0.6";
+        components.material = `src: ${assetRef}`;
+      }
+      createEntity({
+        element: "a-entity",
+        components
+      }, (entity) => {
+        this.selectedEntity = entity;
+        this.editMode = null;
+        this.addMode = false;
+        this.pendingApplyVal = null;
+        this.assetMode = false;
+        this.pageOffset = 0;
+        this._build();
+      });
+    },
+    // ─── add panel ────────────────────────────────────────────────────────────
+    _buildAddPanel(sys) {
+      const entity = this.selectedEntity;
+      const existing = new Set(Object.keys(entity.components || {}));
+      const avail = Object.keys(AFRAME.components || {}).filter((c) => !existing.has(c) && !SKIP.has(c)).sort();
+      const page = avail.slice(this.pageOffset * PAGE_SIZE, (this.pageOffset + 1) * PAGE_SIZE);
+      const PX = 332, PY = 28, PW = 360;
+      const PH = 72 + page.length * (ROW_H + 4) + 44;
+      this._bg(sys, PX, PY, PW, PH);
+      this._text(sys, "Add Component", "#8ecae6", PX + 12, PY + 18, 300);
+      this._text(sys, `Entity: ${entity.id || entity.tagName.toLowerCase()}`, "#aac4de", PX + 12, PY + 40, 300);
+      page.forEach((name, i) => {
+        const btnY = PY + 62 + i * (ROW_H + 4);
+        this._btn(sys, name, PX + 8, btnY, PW - 16, ROW_H, "#1a3352", () => {
+          entity.setAttribute(name, "");
+          Events.emit("entityupdate", {
+            entity,
+            component: name,
+            property: "",
+            value: ""
+          });
+          this.addMode = false;
+          this.pageOffset = 0;
+          this._build();
+        });
+      });
+      const footY = PY + PH - 40;
+      this._btn(sys, "< Back", PX + 8, footY, 80, 30, "#555", () => {
+        this.addMode = false;
+        this.pageOffset = 0;
+        this._build();
+      });
+      const total = Math.ceil(avail.length / PAGE_SIZE);
+      if (this.pageOffset > 0) {
+        this._btn(sys, "^ Prev", PX + 98, footY, 70, 30, "#333", () => {
+          this.pageOffset--;
+          this._build();
+        });
+      }
+      if (this.pageOffset + 1 < total) {
+        this._btn(sys, "v Next", PX + 180, footY, 70, 30, "#333", () => {
+          this.pageOffset++;
+          this._build();
+        });
+      }
+    },
+    // ─── helpers ──────────────────────────────────────────────────────────────
+    _bg(sys, PX, PY, PW, PH) {
+      const pos = sys.toLocalPosition(PX, PY);
+      const pw = sys.pxToUnits(PW);
+      const ph = sys.pxToUnits(PH);
+      const bg = document.createElement("a-plane");
+      bg.setAttribute("width", pw);
+      bg.setAttribute("height", ph);
+      bg.setAttribute("material", "color: #0d1624; opacity: 0.94; transparent: true; side: double");
+      bg.setAttribute("render-order", "999");
+      bg.object3D.position.set(pos.x + pw * 0.5, pos.y - ph * 0.5, 0);
+      this.panelRoot.appendChild(bg);
+    },
+    _text(sys, value, color, px, py, widthPx, z = 3e-3) {
+      const pos = sys.toLocalPosition(px, py);
+      const t = document.createElement("a-text");
+      t.setAttribute("value", value);
+      t.setAttribute("color", color);
+      t.setAttribute("width", sys.pxToUnits(widthPx));
+      t.setAttribute("wrap-count", Math.max(6, String(value).length + 2));
+      t.setAttribute("align", "left");
+      t.object3D.position.set(pos.x, pos.y, z);
+      this.panelRoot.appendChild(t);
+    },
+    _btn(sys, label, px, py, bw, bh, color, action) {
+      const pos = sys.toLocalPosition(px, py);
+      const w = sys.pxToUnits(bw);
+      const h = sys.pxToUnits(bh);
+      const btn = document.createElement("a-plane");
+      btn.setAttribute("class", "control clickable");
+      btn.setAttribute("data-raycastable", "true");
+      btn.setAttribute("data-vr-tool-ui", "true");
+      btn.setAttribute("data-component-tool-button", "true");
+      btn.dataset.baseColor = color;
+      btn.setAttribute("width", w);
+      btn.setAttribute("height", h);
+      btn.setAttribute("material", `color: ${color}; opacity: 0.93; transparent: true; side: double`);
+      btn.setAttribute("render-order", "1001");
+      btn.object3D.position.set(pos.x + w * 0.5, pos.y - h * 0.5, 4e-3);
+      const txt = document.createElement("a-text");
+      txt.setAttribute("value", label);
+      txt.setAttribute("color", "#fff");
+      txt.setAttribute("width", Math.max(0.06, w * 0.92));
+      txt.setAttribute("wrap-count", Math.max(4, label.length + 2));
+      txt.setAttribute("align", "center");
+      txt.object3D.position.set(0, 0, 2e-3);
+      btn.appendChild(txt);
+      this.panelRoot.appendChild(btn);
+      this._btnMap.set(btn, action);
+      return btn;
+    },
+    // ─── props panel ──────────────────────────────────────────────────────────
+    _buildPropsPanel(sys) {
+      const entity = this.selectedEntity;
+      const {
+        compName
+      } = this.editMode;
+      const inst = entity.components[compName];
+      if (!inst) {
+        this.editMode = null;
+        this._build();
+        return;
+      }
+      const schema = inst.schema;
+      const isSingle = typeof schema.type === "string";
+      const curVal = entity.getAttribute(compName);
+      let props;
+      if (isSingle) {
+        props = [{
+          name: compName,
+          def: schema,
+          current: curVal
+        }];
+      } else {
+        const cur = typeof curVal === "object" && curVal !== null ? curVal : {};
+        props = Object.keys(schema).map((k) => ({
+          name: k,
+          def: schema[k],
+          current: cur[k] !== void 0 ? cur[k] : schema[k].default
+        }));
+      }
+      const page = props.slice(this.pageOffset * PAGE_SIZE, (this.pageOffset + 1) * PAGE_SIZE);
+      const total = Math.ceil(props.length / PAGE_SIZE);
+      const PX = 300, PY = 28, PW = 440;
+      const PH = 86 + page.length * (ROW_H + 6) + 44;
+      this._bg(sys, PX, PY, PW, PH);
+      this._text(sys, `Edit: ${compName}`, "#8ecae6", PX + 12, PY + 18, 360);
+      this._text(sys, `Entity: ${entity.id || entity.tagName.toLowerCase()}`, "#aac4de", PX + 12, PY + 40, 360);
+      page.forEach((prop, i) => {
+        const rowY = PY + 64 + i * (ROW_H + 6);
+        this._propRow(sys, entity, compName, prop, isSingle, PX, rowY, PW);
+      });
+      const footY = PY + PH - 40;
+      this._btn(sys, "< Back", PX + 8, footY, 90, 30, "#555", () => {
+        this._stopTextInput();
+        this.editMode = null;
+        this.pageOffset = 0;
+        this._build();
+      });
+      if (this.pageOffset > 0) {
+        this._btn(sys, "Prev", PX + 106, footY, 70, 30, "#334", () => {
+          this.pageOffset--;
+          this._build();
+        });
+      }
+      if (this.pageOffset + 1 < total) {
+        this._btn(sys, "Next", PX + 184, footY, 70, 30, "#334", () => {
+          this.pageOffset++;
+          this._build();
+        });
+      }
+      this._btn(sys, "Close", PX + PW - 82, footY, 70, 30, "#553", () => this._closePanel());
+    },
+    _propRow(sys, entity, compName, prop, isSingle, PX, rowY, PW) {
+      const {
+        name,
+        def,
+        current
+      } = prop;
+      const type = def.type || "string";
+      this._text(sys, name, "#b0c4d8", PX + 10, rowY + 16, 118, 5e-3);
+      const applyVal = (v) => {
+        if (isSingle) entity.setAttribute(compName, v);
+        else entity.setAttribute(compName, {
+          [name]: v
+        });
+        Events.emit("entityupdate", {
+          entity,
+          component: compName,
+          property: name,
+          value: v
+        });
+        this._build();
+      };
+      const CX = PX + 134;
+      const RX = PX + PW - 40;
+      if (type === "boolean") {
+        const on = current === true || current === "true";
+        this._btn(sys, on ? "ON" : "OFF", CX, rowY + 2, 84, ROW_H - 4, on ? "#2a9d8f" : "#555", () => applyVal(!on));
+      } else if (type === "number" || type === "int") {
+        const step = type === "int" ? 1 : 0.1;
+        const val = parseFloat(current) || 0;
+        const disp = type === "int" ? String(Math.round(val)) : val.toFixed(2);
+        this._text(sys, disp, "#fff", CX, rowY + 16, 68, 5e-3);
+        this._btn(sys, "-", CX + 74, rowY + 3, 30, ROW_H - 6, "#2d3f55", () => applyVal(parseFloat((val - step).toFixed(4))));
+        this._btn(sys, "+", CX + 110, rowY + 3, 30, ROW_H - 6, "#2d3f55", () => applyVal(parseFloat((val + step).toFixed(4))));
+      } else if (type === "vec2") {
+        const v = {
+          x: parseFloat(current?.x) || 0,
+          y: parseFloat(current?.y) || 0
+        };
+        ["x", "y"].forEach((axis, i) => {
+          const ox = CX + i * 132;
+          this._text(sys, `${axis}:${v[axis].toFixed(2)}`, "#aad", ox, rowY + 16, 84, 5e-3);
+          this._btn(sys, "-", ox + 88, rowY + 3, 22, ROW_H - 6, "#2d3f55", () => applyVal({
+            ...v,
+            [axis]: parseFloat((v[axis] - 0.1).toFixed(3))
+          }));
+          this._btn(sys, "+", ox + 112, rowY + 3, 22, ROW_H - 6, "#2d3f55", () => applyVal({
+            ...v,
+            [axis]: parseFloat((v[axis] + 0.1).toFixed(3))
+          }));
+        });
+      } else if (type === "vec3") {
+        const v = {
+          x: parseFloat(current?.x) || 0,
+          y: parseFloat(current?.y) || 0,
+          z: parseFloat(current?.z) || 0
+        };
+        ["x", "y", "z"].forEach((axis, i) => {
+          const ox = CX + i * 88;
+          this._text(sys, `${axis}:${v[axis].toFixed(1)}`, "#aad", ox, rowY + 16, 54, 5e-3);
+          this._btn(sys, "-", ox + 56, rowY + 3, 16, ROW_H - 6, "#2d3f55", () => applyVal({
+            ...v,
+            [axis]: parseFloat((v[axis] - 0.1).toFixed(3))
+          }));
+          this._btn(sys, "+", ox + 74, rowY + 3, 16, ROW_H - 6, "#2d3f55", () => applyVal({
+            ...v,
+            [axis]: parseFloat((v[axis] + 0.1).toFixed(3))
+          }));
+        });
+      } else if (type === "vec4") {
+        const v = {
+          x: parseFloat(current?.x) || 0,
+          y: parseFloat(current?.y) || 0,
+          z: parseFloat(current?.z) || 0,
+          w: parseFloat(current?.w) || 0
+        };
+        ["x", "y", "z", "w"].forEach((axis, i) => {
+          const ox = CX + i * 64;
+          this._text(sys, `${axis}:${v[axis].toFixed(1)}`, "#aad", ox, rowY + 16, 38, 5e-3);
+          this._btn(sys, "-", ox + 40, rowY + 3, 14, ROW_H - 6, "#2d3f55", () => applyVal({
+            ...v,
+            [axis]: parseFloat((v[axis] - 0.1).toFixed(3))
+          }));
+          this._btn(sys, "+", ox + 56, rowY + 3, 14, ROW_H - 6, "#2d3f55", () => applyVal({
+            ...v,
+            [axis]: parseFloat((v[axis] + 0.1).toFixed(3))
+          }));
+        });
+      } else if (type === "color") {
+        const hex = String(current || "#808080").replace("#", "").padStart(6, "0");
+        const r2 = parseInt(hex.slice(0, 2), 16) || 0;
+        const g = parseInt(hex.slice(2, 4), 16) || 0;
+        const b = parseInt(hex.slice(4, 6), 16) || 0;
+        const toHex = (n) => Math.max(0, Math.min(255, n)).toString(16).padStart(2, "0");
+        const S = 16;
+        [["R", r2, 0], ["G", g, 1], ["B", b, 2]].forEach(([lbl, val, i]) => {
+          const ox = CX + i * 88;
+          this._text(sys, `${lbl}:${val}`, "#aad", ox, rowY + 16, 54, 5e-3);
+          this._btn(sys, "-", ox + 56, rowY + 3, 16, ROW_H - 6, "#2d3f55", () => applyVal(`#${toHex(i === 0 ? val - S : r2)}${toHex(i === 1 ? val - S : g)}${toHex(i === 2 ? val - S : b)}`));
+          this._btn(sys, "+", ox + 74, rowY + 3, 16, ROW_H - 6, "#2d3f55", () => applyVal(`#${toHex(i === 0 ? val + S : r2)}${toHex(i === 1 ? val + S : g)}${toHex(i === 2 ? val + S : b)}`));
+        });
+      } else if (def.oneOf?.length) {
+        const opts = def.oneOf.map(String);
+        const idx = opts.indexOf(String(current ?? ""));
+        const cur = idx >= 0 ? idx : 0;
+        this._btn(sys, "<", CX, rowY + 2, 26, ROW_H - 4, "#2d3f55", () => applyVal(opts[(cur - 1 + opts.length) % opts.length]));
+        this._text(sys, opts[cur] || "", "#fff", CX + 30, rowY + 16, 150, 5e-3);
+        this._btn(sys, ">", CX + 186, rowY + 2, 26, ROW_H - 4, "#2d3f55", () => applyVal(opts[(cur + 1) % opts.length]));
+      } else if (type === "selector" || name === "src") {
+        const raw = current?.id ? `#${current.id}` : String(current ?? def.default ?? "");
+        const disp = raw.slice(0, 20) || "(none)";
+        this._text(sys, disp, "#aad8ff", CX, rowY + 16, 148, 5e-3);
+        this._btn(sys, "Pick", CX + 154, rowY + 2, 54, ROW_H - 4, "#5a3e8a", () => {
+          this.pendingApplyVal = applyVal;
+          this.assetMode = true;
+          this.pageOffset = 0;
+          this._build();
+        });
+      } else {
+        const disp = String(current !== void 0 ? current : def.default ?? "").slice(0, 20) || "(empty)";
+        this._text(sys, disp, "#778899", CX, rowY + 16, 162, 5e-3);
+        this._btn(sys, "Edit", CX + 168, rowY + 2, 60, ROW_H - 4, "#1a5280", () => {
+          this._startKeyboard(name, current, applyVal);
+        });
+      }
+      this._btn(sys, "R", RX, rowY + 3, 32, ROW_H - 6, "#3a3028", () => applyVal(def.default));
+    }
+  });
+  AFRAME.registerComponent("csg-primitive", {
+    schema: {
+      shape: {
+        type: "string",
+        default: "box"
+      },
+      op: {
+        type: "string",
+        default: "add"
+      },
+      size: {
+        type: "vec3",
+        default: {
+          x: 1,
+          y: 1,
+          z: 1
+        }
+      },
+      radius: {
+        type: "number",
+        default: 0.5
+      },
+      height: {
+        type: "number",
+        default: 1
+      }
+    },
+    init: function() {
+      this.applyGeometry();
+    },
+    update: function() {
+      this.applyGeometry();
+    },
+    applyGeometry: function() {
+      const d = this.data;
+      if (d.shape === "sphere") {
+        this.el.setAttribute("geometry", {
+          primitive: "sphere",
+          radius: d.radius
+        });
+      } else if (d.shape === "cylinder") {
+        this.el.setAttribute("geometry", {
+          primitive: "cylinder",
+          radius: d.radius,
+          height: d.height
+        });
+      } else {
+        this.el.setAttribute("geometry", {
+          primitive: "box",
+          width: d.size.x,
+          height: d.size.y,
+          depth: d.size.z
+        });
+      }
+      this.el.setAttribute("data-csg-op", d.op);
+    }
+  });
+  !(function(e) {
+    function t(o) {
+      if (r2[o]) return r2[o].exports;
+      var i = r2[o] = {
+        exports: {},
+        id: o,
+        loaded: false
+      };
+      return e[o].call(i.exports, i, i.exports, t), i.loaded = true, i.exports;
+    }
+    var r2 = {};
+    return t.m = e, t.c = r2, t.p = "", t(0);
+  })([function(e, t) {
+    if ("undefined" == typeof AFRAME) throw new Error("Component attempted to register before AFRAME was available.");
+    AFRAME.registerComponent("environment", {
+      schema: {
+        active: {
+          default: false
+        },
+        preset: {
+          default: "default",
+          oneOf: ["none", "default", "contact", "egypt", "checkerboard", "forest", "goaland", "yavapai", "goldmine", "arches", "threetowers", "poison", "tron", "japan", "dream", "volcano", "starry", "osiris"]
+        },
+        seed: {
+          type: "int",
+          default: 1,
+          min: 0,
+          max: 1e3
+        },
+        skyType: {
+          default: "color",
+          oneOf: ["none", "color", "gradient", "atmosphere"]
+        },
+        skyColor: {
+          type: "color"
+        },
+        horizonColor: {
+          type: "color"
+        },
+        lighting: {
+          default: "distant",
+          oneOf: ["none", "distant", "point"]
+        },
+        shadow: {
+          default: false
+        },
+        shadowSize: {
+          default: 10
+        },
+        lightPosition: {
+          type: "vec3",
+          default: {
+            x: 0,
+            y: 1,
+            z: -0.2
+          }
+        },
+        fog: {
+          type: "float",
+          default: 0,
+          min: 0,
+          max: 1
+        },
+        flatShading: {
+          default: false
+        },
+        playArea: {
+          type: "float",
+          default: 1,
+          min: 0.5,
+          max: 10
+        },
+        stageSize: {
+          type: "number",
+          default: 200,
+          min: 1,
+          max: 2e4
+        },
+        ground: {
+          default: "hills",
+          oneOf: ["none", "flat", "hills", "canyon", "spikes", "noise"]
+        },
+        groundYScale: {
+          type: "float",
+          default: 3,
+          min: 0,
+          max: 50
+        },
+        groundTexture: {
+          default: "none",
+          oneOf: ["none", "checkerboard", "squares", "walkernoise"]
+        },
+        groundColor: {
+          type: "color",
+          default: "#553e35"
+        },
+        groundColor2: {
+          type: "color",
+          default: "#694439"
+        },
+        groundDensity: {
+          type: "number",
+          default: 64,
+          min: 8,
+          max: 1024
+        },
+        groundFrequency: {
+          type: "number",
+          default: 10,
+          min: 0.1,
+          max: 1e3
+        },
+        dressing: {
+          default: "none",
+          oneOf: ["none", "cubes", "pyramids", "cylinders", "hexagons", "stones", "trees", "mushrooms", "towers", "apparatus", "arches", "torii"]
+        },
+        dressingAmount: {
+          type: "int",
+          default: 10,
+          min: 0,
+          max: 1e3
+        },
+        dressingColor: {
+          type: "color",
+          default: "#795449"
+        },
+        dressingScale: {
+          type: "float",
+          default: 5,
+          min: 0,
+          max: 100
+        },
+        dressingVariance: {
+          type: "vec3",
+          default: {
+            x: 1,
+            y: 1,
+            z: 1
+          }
+        },
+        dressingUniformScale: {
+          default: true
+        },
+        dressingOnPlayArea: {
+          type: "float",
+          default: 0,
+          min: 0,
+          max: 1
+        },
+        grid: {
+          default: "none",
+          oneOf: ["none", "1x1", "2x2", "crosses", "dots", "xlines", "ylines"]
+        },
+        gridColor: {
+          type: "color",
+          default: "#ccc"
+        }
+      },
+      multiple: false,
+      presets: {
+        none: {},
+        default: {
+          active: true,
+          seed: 1,
+          skyType: "atmosphere",
+          skyColor: "#88c",
+          horizonColor: "#ddd",
+          lighting: "distant",
+          lightPosition: {
+            x: -0.11,
+            y: 1,
+            z: 0.33
+          },
+          fog: 0.78,
+          flatShading: false,
+          playArea: 1,
+          ground: "hills",
+          groundYScale: 3,
+          groundTexture: "checkerboard",
+          groundColor: "#454545",
+          groundColor2: "#5d5d5d",
+          dressing: "none",
+          dressingAmount: 10,
+          dressingColor: "#795449",
+          dressingScale: 1,
+          dressingVariance: {
+            x: 0,
+            y: 0,
+            z: 0
+          },
+          dressingUniformScale: true,
+          dressingOnPlayArea: 0,
+          grid: "none",
+          gridColor: "#ccc",
+          shadow: false
+        },
+        contact: {
+          active: true,
+          seed: 14,
+          skyType: "gradient",
+          skyColor: "#478d54",
+          horizonColor: "#b696cb",
+          lighting: "distant",
+          lightPosition: {
+            x: 0,
+            y: 2.01,
+            z: -1
+          },
+          fog: 0.8,
+          flatShading: false,
+          playArea: 1,
+          ground: "spikes",
+          groundYScale: 4.91,
+          groundTexture: "none",
+          groundColor: "#2e455f",
+          groundColor2: "#694439",
+          dressing: "apparatus",
+          dressingAmount: 7,
+          dressingColor: "#657067",
+          dressingScale: 20,
+          dressingVariance: {
+            x: 20,
+            y: 20,
+            z: 20
+          },
+          dressingUniformScale: true,
+          dressingOnPlayArea: 0,
+          grid: "1x1",
+          gridColor: "#478d54",
+          shadow: false
+        },
+        egypt: {
+          active: true,
+          seed: 26,
+          skyType: "gradient",
+          skyColor: "#1b7660",
+          horizonColor: "#e4b676",
+          lighting: "distant",
+          lightPosition: {
+            x: 0,
+            y: 1.65,
+            z: -1
+          },
+          fog: 0.75,
+          flatShading: false,
+          playArea: 1,
+          ground: "hills",
+          groundYScale: 5,
+          groundTexture: "walkernoise",
+          groundColor: "#664735",
+          groundColor2: "#6c4b39",
+          dressing: "pyramids",
+          dressingAmount: 10,
+          dressingColor: "#7c5c45",
+          dressingScale: 5,
+          dressingVariance: {
+            x: 20,
+            y: 20,
+            z: 20
+          },
+          dressingUniformScale: true,
+          dressingOnPlayArea: 0,
+          grid: "spots",
+          gridColor: "#e4b676",
+          shadow: false
+        },
+        checkerboard: {
+          active: true,
+          seed: 1,
+          skyType: "gradient",
+          skyColor: "#0d0d0d",
+          horizonColor: "#404040",
+          lighting: "distant",
+          lightPosition: {
+            x: 0,
+            y: 1,
+            z: -0.2
+          },
+          fog: 0.81,
+          flatShading: true,
+          playArea: 1,
+          ground: "hills",
+          groundYScale: 4.81,
+          groundTexture: "checkerboard",
+          groundColor: "#252525",
+          groundColor2: "#111111",
+          dressing: "cubes",
+          dressingAmount: 10,
+          dressingColor: "#9f9f9f",
+          dressingScale: 1.51,
+          dressingVariance: {
+            x: 5,
+            y: 20,
+            z: 5
+          },
+          dressingUniformScale: true,
+          dressingOnPlayArea: 0,
+          grid: "dots",
+          gridColor: "#ccc",
+          shadow: false
+        },
+        forest: {
+          active: true,
+          seed: 8,
+          skyType: "gradient",
+          skyColor: "#24b59f",
+          horizonColor: "#eff9b7",
+          lighting: "distant",
+          lightPosition: {
+            x: -1.2,
+            y: 0.88,
+            z: -0.55
+          },
+          fog: 0.8,
+          flatShading: false,
+          playArea: 1,
+          ground: "noise",
+          groundYScale: 4.18,
+          groundTexture: "squares",
+          groundColor: "#937a24",
+          groundColor2: "#987d2e",
+          dressing: "trees",
+          dressingAmount: 500,
+          dressingColor: "#888b1d",
+          dressingScale: 1,
+          dressingVariance: {
+            x: 10,
+            y: 10,
+            z: 10
+          },
+          dressingUniformScale: true,
+          dressingOnPlayArea: 0,
+          grid: "none",
+          gridColor: "#c5a543",
+          shadow: false
+        },
+        goaland: {
+          active: true,
+          seed: 17,
+          skyType: "gradient",
+          skyColor: "#14645f",
+          horizonColor: "#a3dab8",
+          lighting: "point",
+          lightPosition: {
+            x: 0.1,
+            y: 4,
+            z: 0.56
+          },
+          fog: 0.73,
+          flatShading: false,
+          playArea: 1,
+          ground: "noise",
+          groundYScale: 0.81,
+          groundTexture: "none",
+          groundColor: "#ae3241",
+          groundColor2: "#db4453",
+          dressing: "mushrooms",
+          dressingAmount: 150,
+          dressingColor: "#a9313d",
+          dressingScale: 5,
+          dressingVariance: {
+            x: 5,
+            y: 10,
+            z: 5
+          },
+          dressingUniformScale: true,
+          dressingOnPlayArea: 0,
+          grid: "dots",
+          gridColor: "#239893",
+          shadow: false
+        },
+        yavapai: {
+          active: true,
+          seed: 11,
+          skyType: "gradient",
+          skyColor: "#239849",
+          horizonColor: "#cfe0af",
+          lighting: "distant",
+          lightPosition: {
+            x: 0.5,
+            y: 1,
+            z: 0
+          },
+          fog: 0.8,
+          flatShading: true,
+          playArea: 1,
+          ground: "canyon",
+          groundYScale: 9.76,
+          groundTexture: "walkernoise",
+          groundColor: "#C66344",
+          groundColor2: "#c96b4b",
+          dressing: "stones",
+          dressingAmount: 500,
+          dressingColor: "#C66344",
+          dressingScale: 0.06,
+          dressingVariance: {
+            x: 0.2,
+            y: 0.1,
+            z: 0.2
+          },
+          dressingUniformScale: true,
+          dressingOnPlayArea: 1,
+          grid: "none",
+          gridColor: "#239893",
+          shadow: false
+        },
+        goldmine: {
+          active: true,
+          seed: 53,
+          skyType: "gradient",
+          skyColor: "#1e1c1a",
+          horizonColor: "#8c7964",
+          lighting: "point",
+          lightPosition: {
+            x: -0.09,
+            y: 3,
+            z: 0.33
+          },
+          fog: 0.43,
+          flatShading: true,
+          playArea: 1.08,
+          ground: "canyon",
+          groundYScale: 50,
+          groundTexture: "none",
+          groundColor: "#353535",
+          groundColor2: "#454545",
+          dressing: "hexagons",
+          dressingAmount: 300,
+          dressingColor: "#fe921b",
+          dressingScale: 0.5,
+          dressingVariance: {
+            x: 2,
+            y: 8,
+            z: 2
+          },
+          dressingUniformScale: true,
+          dressingOnPlayArea: 0.03,
+          grid: "none",
+          gridColor: "#ccc",
+          shadow: false
+        },
+        threetowers: {
+          active: true,
+          seed: 5,
+          skyType: "gradient",
+          skyColor: "#23a06b",
+          horizonColor: "#f5e170",
+          lighting: "distant",
+          lightPosition: {
+            x: 0.5,
+            y: 1,
+            z: 0
+          },
+          fog: 0.8,
+          flatShading: false,
+          playArea: 1,
+          ground: "spikes",
+          groundYScale: 4.26,
+          groundTexture: "walkernoise",
+          groundColor: "#273a49",
+          groundColor2: "#2b464f",
+          dressing: "towers",
+          dressingAmount: 3,
+          dressingColor: "#5f6d94",
+          dressingScale: 50,
+          dressingVariance: {
+            x: 10,
+            y: 100,
+            z: 10
+          },
+          dressingUniformScale: true,
+          dressingOnPlayArea: 0,
+          grid: "none",
+          gridColor: "#239893",
+          shadow: false
+        },
+        poison: {
+          active: true,
+          seed: 92,
+          skyType: "gradient",
+          skyColor: "#1ea84a",
+          horizonColor: "#177132",
+          lighting: "distant",
+          lightPosition: {
+            x: 0.5,
+            y: 1,
+            z: 0
+          },
+          fog: 0.8,
+          flatShading: false,
+          playArea: 1,
+          ground: "canyon",
+          groundYScale: 9.76,
+          groundTexture: "none",
+          groundColor: "#851f31",
+          groundColor2: "#912235",
+          dressing: "hexagons",
+          dressingAmount: 20,
+          dressingColor: "#c7415b",
+          dressingScale: 20,
+          dressingVariance: {
+            x: 20,
+            y: 200,
+            z: 20
+          },
+          dressingUniformScale: false,
+          dressingOnPlayArea: 0,
+          grid: "crosses",
+          gridColor: "#1ea84a",
+          shadow: false
+        },
+        arches: {
+          active: true,
+          seed: 19,
+          skyType: "atmosphere",
+          skyColor: "#8cbdc8",
+          horizonColor: "#ddd",
+          lighting: "distant",
+          lightPosition: {
+            x: -0.11,
+            y: 0.16,
+            z: 0.33
+          },
+          fog: 0.67,
+          flatShading: true,
+          playArea: 1,
+          ground: "canyon",
+          groundYScale: 10,
+          groundTexture: "walkernoise",
+          groundColor: "#a87d6f",
+          groundColor2: "#795449",
+          dressing: "arches",
+          dressingAmount: 6,
+          dressingColor: "#795449",
+          dressingScale: 26,
+          dressingVariance: {
+            x: 20,
+            y: 40,
+            z: 20
+          },
+          dressingUniformScale: true,
+          dressingOnPlayArea: 0.04,
+          grid: "none",
+          gridColor: "#ccc",
+          shadow: false
+        },
+        tron: {
+          active: true,
+          seed: 14,
+          skyType: "gradient",
+          skyColor: "#091b39",
+          horizonColor: "#284a9e",
+          lighting: "distant",
+          lightPosition: {
+            x: -0.72,
+            y: 0.62,
+            z: 0.4
+          },
+          fog: 0.8,
+          flatShading: false,
+          playArea: 1,
+          ground: "spikes",
+          groundYScale: 4.91,
+          groundTexture: "none",
+          groundColor: "#061123",
+          groundColor2: "#694439",
+          dressing: "towers",
+          dressingAmount: 5,
+          dressingColor: "#fb000e",
+          dressingScale: 15,
+          dressingVariance: {
+            x: 20,
+            y: 20,
+            z: 20
+          },
+          dressingUniformScale: true,
+          dressingOnPlayArea: 0,
+          grid: "1x1",
+          gridColor: "#fb000e",
+          shadow: false
+        },
+        japan: {
+          active: true,
+          seed: 14,
+          skyType: "gradient",
+          skyColor: "#7e5db5",
+          horizonColor: "#b4adda",
+          lighting: "distant",
+          lightPosition: {
+            x: 1.33,
+            y: 1,
+            z: 0.24
+          },
+          fog: 0.9,
+          flatShading: false,
+          playArea: 1,
+          ground: "hills",
+          groundYScale: 25,
+          groundTexture: "walkernoise",
+          groundColor: "#7e5db5",
+          groundColor2: "#cabdf5",
+          dressing: "torii",
+          dressingAmount: 4,
+          dressingColor: "#bc5e7c",
+          dressingScale: 15,
+          dressingVariance: {
+            x: 0,
+            y: 0,
+            z: 0
+          },
+          dressingUniformScale: true,
+          dressingOnPlayArea: 0,
+          grid: "spots",
+          gridColor: "#e4b676",
+          shadow: false
+        },
+        dream: {
+          active: true,
+          seed: 17,
+          skyType: "gradient",
+          skyColor: "#87faf4",
+          horizonColor: "#b34093",
+          lighting: "distant",
+          lightPosition: {
+            x: -0.72,
+            y: 0.53,
+            z: 0.97
+          },
+          fog: 0.8,
+          flatShading: false,
+          playArea: 1,
+          ground: "hills",
+          groundYScale: 20,
+          groundTexture: "checkerboard",
+          groundColor: "#b34093",
+          groundColor2: "#c050a2",
+          dressing: "mushrooms",
+          dressingAmount: 300,
+          dressingColor: "#3cf7ed",
+          dressingScale: 0.2,
+          dressingVariance: {
+            x: 0.2,
+            y: 0.2,
+            z: 0.2
+          },
+          dressingUniformScale: true,
+          dressingOnPlayArea: 1,
+          grid: "none",
+          gridColor: "#239893",
+          shadow: false
+        },
+        volcano: {
+          active: true,
+          seed: 92,
+          skyType: "gradient",
+          skyColor: "#4a070f",
+          horizonColor: "#f62300",
+          lighting: "point",
+          lightPosition: {
+            x: 0.5,
+            y: 2.25,
+            z: 0
+          },
+          fog: 0.87,
+          flatShading: false,
+          playArea: 1,
+          ground: "canyon",
+          groundYScale: 9.76,
+          groundTexture: "walkernoise",
+          groundColor: "#fb0803",
+          groundColor2: "#510000",
+          dressing: "arches",
+          dressingAmount: 15,
+          dressingColor: "#fb0803",
+          dressingScale: 3,
+          dressingVariance: {
+            x: 10,
+            y: 100,
+            z: 10
+          },
+          dressingUniformScale: false,
+          dressingOnPlayArea: 0.2,
+          grid: "none",
+          gridColor: "#fa0e00",
+          shadow: false
+        },
+        starry: {
+          active: true,
+          seed: 1,
+          skyType: "atmosphere",
+          skyColor: "#88c",
+          horizonColor: "#ddd",
+          lighting: "distant",
+          lightPosition: {
+            x: 0,
+            y: -0.01,
+            z: -0.46
+          },
+          fog: 0.7,
+          flatShading: false,
+          playArea: 1,
+          ground: "hills",
+          groundYScale: 3,
+          groundTexture: "none",
+          groundColor: "#553e35",
+          groundColor2: "#694439",
+          dressing: "none",
+          dressingAmount: 100,
+          dressingColor: "#795449",
+          dressingScale: 5,
+          dressingVariance: {
+            x: 1,
+            y: 1,
+            z: 1
+          },
+          dressingUniformScale: true,
+          grid: "1x1",
+          dressingOnPlayArea: 0,
+          gridColor: "#39d2f2",
+          shadow: false
+        },
+        osiris: {
+          active: true,
+          seed: 46,
+          skyType: "atmosphere",
+          skyColor: "#88c",
+          horizonColor: "#ddd",
+          lighting: "distant",
+          lightPosition: {
+            x: 0,
+            y: 0.02,
+            z: -0.46
+          },
+          fog: 0,
+          flatShading: false,
+          playArea: 1,
+          ground: "hills",
+          groundYScale: 3,
+          groundTexture: "none",
+          groundColor: "#9e7b47",
+          groundColor2: "#9e7b47",
+          dressing: "pyramids",
+          dressingAmount: 7,
+          dressingColor: "#9e7b47",
+          dressingScale: 5,
+          dressingVariance: {
+            x: 30,
+            y: 30,
+            z: 30
+          },
+          dressingUniformScale: true,
+          grid: "dots",
+          dressingOnPlayArea: 0,
+          gridColor: "#daa452",
+          shadow: false
+        },
+        moon: {
+          active: true,
+          seed: 11,
+          skyType: "gradient",
+          skyColor: "#000000",
+          horizonColor: "#000000",
+          lighting: "distant",
+          lightPosition: {
+            x: 0.5,
+            y: 1,
+            z: 0
+          },
+          fog: 0.8,
+          flatShading: true,
+          playArea: 1,
+          ground: "canyon",
+          groundYScale: 9.76,
+          groundTexture: "walkernoise",
+          groundColor: "#D1D1D1",
+          groundColor2: "#494949",
+          dressing: "stones",
+          dressingAmount: 500,
+          dressingColor: "#494949",
+          dressingScale: 0.06,
+          dressingVariance: {
+            x: 0.2,
+            y: 0.1,
+            z: 0.2
+          },
+          dressingUniformScale: true,
+          dressingOnPlayArea: 1,
+          grid: "none",
+          gridColor: "#239893",
+          shadow: false
+        }
+      },
+      init: function() {
+        this.environmentData = {}, this.rendererSystem = this.el.sceneEl.systems.renderer, this.STAGE_SIZE = this.data.stageSize, this.assets = {
+          arches: [{
+            type: "mesh",
+            vertices: [409, 268, 4, 351, 228, 36, 336, 236, -57, -152, 391, 69, -135, 358, 88, -119, 330, 43, -20, 358, -35, -153, 357, -47, 37, 413, -26, -20, 411, -14, -302, 148, 154, -339, 121, -126, -389, 200, -88, -477, 193, -76, -314, 346, -19, -314, 306, -30, -250, 296, -73, -267, 237, -82, -212, 303, -68, -245, 200, -67, -223, 304, 108, -329, 299, 107, -289, 350, 76, -320, 342, 69, 119, 373, -39, 38, 370, 8, 113, 367, 52, 492, 202, -31, 462, 83, -104, 447, 71, -80, 426, 112, 25, 482, 189, -7, 222, 372, 6, 121, 402, 41, 87, 382, 67, 221, 346, 55, 559, 93, -13, 528, 47, 39, 505, 21, -111, 528, 54, -101, 616, 31, -53, 442, 256, -15, 300, 338, 19, 257, 308, -79, 408, 256, -74, 312, 352, -26, 384, 297, -31, 437, 257, -47, -29, 415, 53, -232, 377, 59, -139, 335, 77, -132, 344, 2, -18, 377, -37, -171, 387, -28, -254, 384, 18, -651, -27, 27, -435, -28, 179, -345, 149, 165, -272, -28, 23, -215, 146, -2, -279, -29, -59, -211, 145, -55, -337, -28, -128, -413, 247, 0, -293, 363, 24, -214, 254, -36, -164, 290, 33, -284, 150, 94, -218, 362, 105, 75, 369, 29, 518, 147, -63, 447, 190, -70, 445, 56, -105, 391, 185, -60, 431, 49, -33, 459, 83, 26, 470, 162, 42, 130, 390, 53, 167, 341, -30, 125, 394, -45, 239, 368, -17, 91, 414, 10, 450, 18, 2, 449, -27, -9, 436, -28, -58, 496, -27, -110, 582, -28, -140, 647, -27, -56, 325, 325, -45, -307, 297, -56, -647, -28, -45, -188, 310, -54, -264, 197, 113, -367, 175, 139, 8, 387, 82, 426, 45, -55, 114, 359, -28, 500, 27, 44, 461, -29, 13, -512, -27, -151, -152, 376, -38, -490, -28, 148, 12, 370, -28, 442, 160, 42, 465, 194, 32, 381, 183, -33, 649, -27, -34, 444, 16, 29, 616, -28, 25, 417, 267, -66, -132, 352, -34, -322, -27, 130, -271, 86, -115, -635, -28, -121, -291, 203, -99, 176, 405, -10, 561, 52, -93, 371, 305, 9, 311, 237, -22, 377, 200, -81, -129, 406, 46, -154, 371, 99, -82, 361, 71, -21, 354, 26, -91, 363, -27, -165, 413, -12, -414, 215, 110, -238, 127, 26, -408, -28, -128, -674, -28, -94, -446, 232, -39, -311, 226, -90, -255, 210, -61, -235, 192, -11, -217, 218, 58, -269, 299, 124, -386, 276, 78, -399, 281, 42, 15, 373, 58, 16, 393, 75, 549, 107, -46, 481, 188, -68, 409, 120, -41, 541, 81, 12, 230, 368, 41, 194, 350, -50, 224, 361, -50, 604, -28, -10, 602, -27, 35, 486, 56, -121, 502, 69, -120, 457, -27, -110, 226, 317, -40, -584, -28, -124, 439, -26, -30, 467, -26, 39, 547, -27, -146, 21, 368, 14, 466, 229, -29, 578, -27, 44, 609, -27, -96, 291, 356, -15, 290, 306, 34, 255, 321, 28, 231, 311, -5, -251, 386, 50, -183, 307, 87, -152, 307, 24, -264, 373, -12, -392, -27, 190, -333, -28, 84, -281, -27, 54, -270, -28, -23, -308, -28, -101, -687, -27, -59, 39, 418, 39, 413, 163, 25, 404, 206, -90, 54, 400, -31, 121, 352, 8, -454, 41, 148, -426, 9, 182, -564, 115, 3, -427, 27, -107, -548, 118, -32, -556, 122, -53, -517, 91, -101, -475, 54, 140, -461, 52, -134, -558, 119, -71, -434, 286, 59, -687, -31, 52, -595, 146, 22, -670, -28, 164, -537, 166, 122, -575, -28, 217, -566, 159, 65, -470, 152, 136, -712, -29, 102, -639, -29, 211, -532, -30, 181, -442, -30, -100],
+            faces: [76, 104, 162, 1, 176, 103, 103, 76, 1, 2, 119, 73, 73, 105, 2, 2, 118, 152, 45, 161, 46, 46, 109, 45, 3, 120, 49, 49, 68, 3, 3, 121, 139, 139, 48, 3, 4, 122, 94, 94, 121, 4, 6, 123, 124, 9, 175, 81, 10, 169, 111, 10, 67, 92, 88, 43, 146, 11, 131, 114, 11, 128, 183, 13, 130, 15, 90, 184, 174, 90, 182, 184, 130, 184, 63, 14, 130, 63, 15, 130, 14, 16, 131, 12, 15, 168, 53, 18, 91, 17, 131, 16, 17, 65, 133, 132, 65, 132, 91, 67, 134, 166, 166, 92, 67, 20, 135, 92, 20, 166, 4, 4, 121, 20, 22, 135, 68, 25, 102, 96, 25, 157, 102, 69, 138, 157, 69, 157, 25, 39, 150, 71, 71, 141, 39, 28, 150, 149, 149, 72, 28, 142, 176, 105, 36, 140, 27, 27, 143, 36, 32, 115, 81, 32, 144, 161, 161, 80, 32, 77, 35, 144, 34, 26, 77, 78, 179, 96, 145, 152, 78, 178, 79, 145, 80, 146, 79, 147, 140, 36, 143, 108, 36, 143, 37, 148, 74, 95, 154, 154, 83, 74, 72, 149, 151, 151, 95, 72, 38, 150, 156, 40, 147, 106, 70, 140, 40, 40, 116, 70, 42, 162, 0, 35, 163, 162, 43, 145, 146, 46, 117, 41, 47, 158, 27, 48, 139, 175, 122, 138, 94, 157, 138, 123, 52, 178, 102, 52, 102, 6, 52, 124, 7, 7, 100, 52, 53, 125, 8, 57, 93, 181, 56, 169, 181, 59, 127, 58, 60, 173, 61, 62, 128, 11, 11, 112, 62, 65, 91, 167, 65, 167, 66, 126, 93, 21, 22, 68, 49, 72, 95, 29, 142, 29, 74, 74, 82, 142, 75, 107, 97, 75, 97, 103, 76, 97, 37, 104, 143, 31, 78, 152, 164, 78, 164, 179, 79, 178, 8, 97, 155, 159, 107, 98, 155, 83, 98, 82, 154, 95, 84, 39, 116, 86, 86, 156, 39, 87, 160, 116, 24, 145, 96, 162, 104, 0, 105, 118, 2, 43, 177, 119, 44, 177, 43, 91, 51, 167, 44, 88, 109, 46, 161, 117, 3, 68, 121, 3, 48, 120, 4, 166, 50, 50, 122, 4, 5, 123, 122, 123, 138, 122, 110, 124, 51, 170, 10, 111, 110, 91, 7, 7, 124, 110, 8, 125, 9, 9, 81, 8, 186, 12, 188, 92, 135, 10, 11, 114, 112, 64, 63, 137, 13, 15, 89, 89, 53, 100, 64, 168, 14, 14, 168, 15, 89, 100, 16, 16, 12, 89, 100, 18, 16, 17, 91, 132, 112, 19, 61, 18, 7, 91, 19, 17, 132, 133, 127, 59, 133, 59, 61, 136, 21, 22, 134, 127, 133, 20, 92, 166, 121, 135, 20, 158, 31, 27, 21, 135, 22, 23, 137, 136, 24, 102, 178, 178, 145, 24, 25, 179, 69, 26, 94, 138, 27, 140, 70, 27, 70, 141, 150, 177, 71, 28, 177, 150, 29, 142, 73, 73, 119, 29, 142, 82, 30, 30, 176, 142, 107, 75, 82, 31, 143, 27, 33, 81, 175, 31, 41, 104, 115, 79, 8, 32, 33, 144, 80, 115, 32, 33, 175, 139, 35, 162, 42, 77, 139, 34, 163, 26, 179, 163, 179, 164, 78, 96, 145, 177, 29, 119, 108, 143, 148, 148, 37, 159, 97, 159, 37, 74, 83, 82, 38, 149, 150, 156, 150, 39, 40, 106, 87, 87, 116, 40, 140, 147, 40, 161, 144, 42, 42, 117, 161, 41, 0, 104, 41, 117, 0, 0, 117, 42, 164, 118, 163, 1, 163, 118, 118, 176, 1, 118, 105, 176, 152, 118, 164, 43, 152, 145, 43, 119, 2, 71, 109, 141, 47, 41, 158, 44, 71, 177, 45, 109, 88, 45, 88, 146, 46, 47, 109, 141, 47, 27, 167, 50, 166, 49, 120, 165, 139, 121, 94, 5, 122, 50, 123, 51, 124, 157, 6, 102, 157, 123, 6, 100, 8, 178, 5, 167, 51, 6, 124, 52, 100, 178, 52, 53, 168, 125, 125, 165, 120, 54, 125, 168, 9, 48, 175, 120, 9, 125, 93, 10, 135, 181, 101, 56, 57, 169, 10, 59, 172, 61, 67, 170, 171, 67, 171, 127, 58, 127, 171, 129, 186, 113, 60, 61, 172, 61, 173, 112, 62, 112, 173, 174, 189, 129, 165, 64, 23, 64, 137, 23, 165, 22, 49, 64, 54, 168, 17, 114, 131, 17, 112, 114, 66, 133, 65, 19, 132, 133, 19, 133, 61, 134, 133, 66, 166, 134, 66, 166, 66, 167, 93, 135, 21, 68, 135, 121, 23, 136, 22, 94, 34, 139, 25, 96, 179, 26, 138, 69, 69, 179, 26, 30, 103, 176, 116, 141, 70, 39, 141, 116, 73, 142, 105, 143, 76, 37, 26, 35, 77, 103, 97, 76, 77, 144, 33, 33, 139, 77, 38, 151, 149, 80, 161, 45, 80, 45, 146, 81, 115, 8, 107, 155, 97, 82, 98, 107, 95, 151, 84, 38, 156, 85, 86, 116, 160, 96, 102, 24, 72, 29, 28, 29, 95, 74, 75, 30, 82, 108, 147, 36, 88, 44, 43, 91, 110, 51, 170, 67, 10, 11, 183, 131, 64, 14, 63, 89, 15, 53, 100, 7, 18, 112, 17, 19, 127, 134, 67, 136, 126, 21, 158, 41, 31, 33, 32, 81, 115, 80, 79, 177, 28, 29, 43, 2, 152, 71, 44, 109, 47, 46, 41, 141, 109, 47, 167, 5, 50, 123, 5, 51, 100, 53, 8, 125, 54, 165, 9, 120, 48, 93, 57, 10, 59, 58, 172, 174, 185, 189, 165, 54, 64, 165, 23, 22, 94, 26, 34, 30, 75, 103, 143, 104, 76, 26, 163, 35, 38, 85, 151, 192, 182, 191, 183, 128, 201, 12, 13, 89, 181, 169, 57, 186, 153, 113, 188, 183, 99, 184, 182, 63, 185, 13, 189, 180, 181, 93, 186, 99, 153, 189, 186, 129, 185, 184, 130, 186, 13, 12, 187, 93, 126, 193, 199, 194, 194, 196, 193, 200, 187, 195, 187, 197, 195, 187, 126, 197, 197, 190, 194, 190, 136, 137, 190, 196, 194, 63, 182, 192, 63, 192, 196, 192, 198, 196, 191, 182, 55, 193, 196, 198, 194, 199, 197, 195, 197, 199, 136, 197, 126, 190, 137, 63, 190, 63, 196, 197, 136, 190, 192, 191, 198, 201, 99, 183, 90, 55, 182, 181, 180, 101, 185, 130, 13, 186, 188, 99, 186, 189, 13, 187, 180, 93, 200, 101, 187, 183, 188, 131, 184, 185, 174, 180, 187, 101, 16, 18, 17, 12, 131, 188, 35, 42, 144, 163, 1, 162, 76, 162, 1, 79, 146, 145]
+          }],
+          stones: [{
+            type: "mesh",
+            vertices: [-376, 189, 42, 230, 223, -310, 353, 162, -62, 414, -23, -67, 256, 90, -475, 24, 85, -526, -418, -16, 57, -432, 66, -40, -199, 151, -376, -155, 49, 467, -91, 289, 201, 293, 197, 91, 81, -17, -480, 42, 108, 431, -359, -17, -250, 383, -19, -243, 194, -15, 270, -272, 180, 293, -86, 212, 262, 234, 54, 297, 395, 97, -302, -123, -21, -444, -416, -19, -123, -323, -18, 267, -100, -16, 429, -300, 96, -361, 163, -19, 409, 118, 201, -431, -241, -18, 391, -130, 274, -309, 306, -19, -399, -221, 96, 404],
+            faces: [31, 18, 17, 0, 17, 18, 3, 20, 2, 18, 11, 10, 29, 27, 8, 27, 29, 1, 0, 18, 10, 10, 29, 0, 16, 19, 26, 11, 2, 1, 20, 30, 4, 20, 3, 15, 30, 12, 4, 4, 12, 5, 5, 27, 4, 4, 27, 20, 21, 25, 5, 7, 8, 25, 22, 7, 14, 7, 25, 14, 23, 28, 31, 0, 7, 17, 24, 26, 9, 31, 28, 9, 8, 27, 5, 2, 20, 1, 13, 19, 18, 10, 11, 1, 19, 13, 26, 3, 11, 19, 19, 16, 3, 11, 3, 2, 11, 18, 19, 20, 15, 30, 29, 10, 1, 25, 21, 14, 8, 5, 25, 5, 12, 21, 6, 7, 22, 7, 6, 23, 8, 0, 29, 8, 7, 0, 23, 31, 7, 13, 31, 9, 18, 31, 13, 9, 28, 24, 26, 13, 9, 27, 1, 20, 7, 31, 17]
+          }, {
+            type: "mesh",
+            vertices: [-217, 34, -153, 198, 90, 20, 212, 85, 169, -131, 93, 171, 197, 113, 30, 173, 121, 164, 315, 29, -16, 219, 24, 189, 282, 50, -102, 232, 38, -181, -195, -9, -166, -156, 30, -207, -51, -9, -231, -180, 91, -173, -19, 73, -204, -280, 23, 96, -242, 100, 107, 3, 158, -82, 109, 88, 221, 275, -10, -40, 236, -10, -135, -178, 49, 184, -1, -10, -243, 265, -11, 109, -12, -9, 237, -36, 46, 251, -233, 86, -81, 93, 77, -171, -163, 133, 69, 18, 16, 263, 296, 44, 93, 131, -12, -226, -89, -10, -201, -273, -10, -51, -240, -9, 110, 190, -12, 192, -253, -11, -92, 42, 43, -258, -115, -11, 238, 168, 99, -88, -285, -10, 24, 71, 124, -158, 298, -10, 10, 116, 150, -24, -282, 44, 39],
+            faces: [44, 16, 26, 13, 26, 16, 0, 26, 13, 27, 14, 41, 4, 5, 1, 7, 30, 2, 28, 5, 43, 41, 39, 27, 17, 43, 41, 43, 4, 39, 13, 28, 17, 17, 41, 13, 28, 43, 17, 24, 29, 38, 29, 35, 7, 18, 25, 29, 5, 18, 2, 18, 5, 3, 30, 42, 6, 30, 35, 23, 19, 20, 8, 8, 20, 9, 9, 39, 8, 1, 30, 8, 31, 37, 9, 11, 14, 37, 14, 27, 37, 32, 11, 12, 11, 37, 12, 11, 0, 13, 33, 40, 44, 44, 26, 33, 33, 0, 36, 34, 38, 15, 44, 40, 15, 21, 3, 16, 27, 39, 9, 2, 30, 1, 21, 25, 3, 16, 3, 28, 28, 3, 5, 4, 43, 5, 41, 43, 39, 13, 16, 28, 25, 21, 38, 38, 29, 25, 7, 18, 29, 29, 24, 35, 18, 7, 2, 18, 3, 25, 30, 23, 42, 30, 7, 35, 8, 30, 6, 6, 19, 8, 6, 42, 19, 8, 39, 1, 37, 31, 22, 27, 9, 37, 9, 20, 31, 10, 11, 32, 11, 10, 0, 12, 37, 22, 14, 13, 41, 14, 11, 13, 33, 26, 0, 36, 0, 10, 21, 44, 15, 16, 44, 21, 15, 40, 34, 38, 21, 15, 4, 1, 39, 5, 2, 1]
+          }, {
+            type: "mesh",
+            vertices: [-101, 102, 57, 99, 35, 102, 40, 72, 80, 59, 14, -168, -186, 22, 45, -176, 25, -30, 66, -7, 146, 153, -7, 53, -110, 47, -96, -90, -8, -146, 150, -7, -12, -200, -7, 8, -173, -7, -55, 55, 46, -60, 125, -7, 110, 136, 30, -10, -149, 58, 68, -15, 82, -71, 98, -7, -86, -34, -6, -194, -33, -7, 171, -36, 65, 137, 38, -8, -192, -103, -9, 147, -12, 62, -152],
+            faces: [2, 17, 0, 17, 8, 0, 17, 24, 8, 19, 24, 22, 5, 11, 4, 2, 13, 17, 17, 13, 24, 21, 23, 20, 1, 2, 21, 7, 15, 1, 7, 10, 15, 5, 9, 12, 15, 18, 13, 0, 5, 16, 0, 8, 5, 1, 15, 2, 10, 18, 15, 3, 13, 18, 24, 3, 22, 11, 23, 4, 4, 16, 5, 16, 4, 23, 24, 13, 3, 15, 13, 2, 6, 1, 21, 6, 21, 20, 6, 14, 1, 2, 0, 21, 1, 14, 7, 3, 18, 22, 8, 24, 19, 8, 19, 9, 12, 11, 5, 5, 8, 9, 16, 23, 21, 16, 21, 0]
+          }, {
+            type: "mesh",
+            vertices: [86, 55, -18, 58, 38, 73, 97, -12, 79, 135, 7, 10, -93, -11, -72, -133, 5, 33, 13, 68, -32, 94, -11, -57, -90, 52, 53, -24, -11, -106, -13, -10, 104, -75, 49, -69, -12, 18, 114, 49, -12, -96, -46, -11, -85, -119, -11, -26, 48, 5, -111, -58, -11, 105, -117, -12, 52, -5, 35, -93, 123, -11, 7],
+            faces: [5, 8, 11, 2, 3, 1, 8, 1, 6, 11, 8, 6, 6, 19, 11, 10, 12, 17, 20, 7, 3, 3, 7, 16, 16, 0, 3, 16, 9, 19, 14, 4, 9, 15, 18, 5, 5, 11, 15, 18, 17, 5, 19, 0, 16, 1, 3, 0, 0, 6, 1, 19, 6, 0, 12, 8, 17, 2, 1, 12, 12, 10, 2, 1, 8, 12, 3, 2, 20, 16, 13, 9, 16, 7, 13, 19, 4, 11, 15, 11, 4, 17, 8, 5, 9, 4, 19]
+          }],
+          torii: [{
+            type: "mesh",
+            mirror: true,
+            flatShading: true,
+            vertices: [692, 966, -52, 661, 834, -52, 692, 966, 52, 661, 834, 52, 0, 894, -52, 0, 776, -52, 0, 894, 52, 0, 776, 52, 518, 935, 52, 345, 913, 52, 170, 899, 52, 162, 779, 52, 328, 790, 52, 494, 808, 52, 170, 899, -52, 345, 913, -52, 518, 935, -52, 494, 808, -52, 328, 790, -52, 162, 779, -52, 0, 618, 16, 0, 697, 16, 0, 618, -16, 0, 697, -16, 586, 618, 16, 586, 697, 16, 586, 618, -16, 586, 697, -16, 331, -29, -75, 331, 766, -52, 369, -29, -65, 357, 766, -45, 396, -29, -37, 377, 766, -26, 406, -29, 0, 384, 766, 0, 396, -29, 37, 377, 766, 26, 369, -29, 65, 357, 766, 45, 331, -29, 75, 331, 766, 52, 294, -29, 65, 305, 766, 45, 267, -29, 37, 286, 766, 26, 257, -29, 0, 279, 766, 0, 267, -29, -37, 286, 766, -26, 294, -29, -65, 305, 766, -45, 0, 777, 85, 0, 681, 33, 333, 762, -75, 333, 806, -75, 371, 762, -65, 371, 806, -65, 398, 762, -37, 398, 806, -37, 408, 762, 0, 408, 806, 0, 398, 762, 37, 398, 806, 37, 371, 762, 65, 371, 806, 65, 333, 762, 75, 333, 806, 75, 296, 762, 65, 296, 806, 65, 268, 762, 37, 268, 806, 37, 258, 762, 0, 258, 806, 0, 268, 762, -37, 268, 806, -37, 296, 762, -65, 296, 806, -65, 0, 681, -33, 0, 777, -85, 52, 681, 33, 52, 777, 85, 52, 681, -33, 52, 777, -85],
+            faces: [4, 10, 14, 1, 13, 17, 11, 6, 7, 0, 3, 1, 16, 1, 17, 4, 19, 5, 14, 18, 19, 15, 17, 18, 3, 8, 13, 13, 9, 12, 12, 10, 11, 19, 7, 5, 19, 12, 11, 18, 13, 12, 16, 2, 0, 15, 8, 16, 14, 9, 15, 23, 26, 22, 27, 24, 26, 25, 20, 24, 26, 20, 22, 23, 25, 27, 29, 30, 28, 31, 32, 30, 33, 34, 32, 35, 36, 34, 37, 38, 36, 39, 40, 38, 41, 42, 40, 43, 44, 42, 45, 46, 44, 47, 48, 46, 49, 50, 48, 51, 28, 50, 55, 56, 54, 57, 58, 56, 59, 60, 58, 61, 62, 60, 63, 64, 62, 79, 81, 83, 65, 66, 64, 82, 53, 78, 67, 68, 66, 81, 53, 80, 69, 70, 68, 83, 80, 82, 71, 72, 70, 79, 82, 78, 73, 74, 72, 75, 63, 59, 75, 76, 74, 77, 54, 76, 60, 68, 76, 4, 6, 10, 1, 3, 13, 11, 10, 6, 0, 2, 3, 16, 0, 1, 4, 14, 19, 14, 15, 18, 15, 16, 17, 3, 2, 8, 13, 8, 9, 12, 9, 10, 19, 11, 7, 19, 18, 12, 18, 17, 13, 16, 8, 2, 15, 9, 8, 14, 10, 9, 23, 27, 26, 27, 25, 24, 25, 21, 20, 26, 24, 20, 23, 21, 25, 29, 31, 30, 31, 33, 32, 33, 35, 34, 35, 37, 36, 37, 39, 38, 39, 41, 40, 41, 43, 42, 43, 45, 44, 45, 47, 46, 47, 49, 48, 49, 51, 50, 51, 29, 28, 55, 57, 56, 57, 59, 58, 59, 61, 60, 61, 63, 62, 63, 65, 64, 79, 52, 81, 65, 67, 66, 82, 80, 53, 67, 69, 68, 81, 52, 53, 69, 71, 70, 83, 81, 80, 71, 73, 72, 79, 83, 82, 73, 75, 74, 59, 57, 55, 55, 77, 75, 75, 73, 71, 71, 69, 75, 67, 65, 63, 63, 61, 59, 59, 55, 75, 75, 69, 67, 67, 63, 75, 75, 77, 76, 77, 55, 54, 76, 54, 56, 56, 58, 76, 60, 62, 68, 64, 66, 68, 68, 70, 72, 72, 74, 68, 76, 58, 60, 62, 64, 68, 68, 74, 76]
+          }],
+          hexagons: [{
+            type: "extrude",
+            vertices: [-0.198, -0.302, 0.197, -0.3, 0.372, 0, 0.199, 0.298, -0.202, 0.298, -0.368, 0]
+          }],
+          towers: [{
+            type: "extrude",
+            vertices: [-0.054, -0.178, -7e-3, -0.182, 0.069, -0.027, 0.189, 0.079, 0.178, 0.124, -7e-3, 0.097, -0.145, 0.182, -0.178, 0.144, -0.079, -0.021]
+          }, {
+            type: "lathe",
+            segments: 4,
+            vertices: [4e-3, 0.02, 0.012, 0.092, 0.042, 0.166, 0.067, 0.55, 0.101, 0.594, 0.105, 0.838, 0.193, 0.934, 0.18, 0.994]
+          }, {
+            type: "lathe",
+            segments: 5,
+            vertices: [0.069, 0.216, 0.067, 0.562, 0.126, 0.562, 0.128, 0.774, 0.191, 0.774, 0.193, 0.986]
+          }],
+          trees: [{
+            type: "lathe",
+            noise: 0.015,
+            segments: 6,
+            vertices: [1e-6, 0.826, 0.054, 0.832, 0.105, 0.854, 0.136, 0.9, 0.136, 0.958, 0.118, 0.994]
+          }, {
+            type: "lathe",
+            noise: 0.015,
+            segments: 14,
+            vertices: [1e-6, 0.01, 0.069, 0.022, 0.13, 0.068, 0.178, 0.18, 0.189, 0.32, 0.191, 0.59, 0.193, 0.75, 0.138, 0.79, 0.018, 0.808, 0.018, 0.996]
+          }, {
+            type: "lathe",
+            noise: 0.015,
+            segments: 14,
+            vertices: [1e-6, 0.436, 0.126, 0.46, 0.201, 0.57, 0.219, 0.72, 0.154, 0.846, 0.028, 0.884, 0.034, 0.996]
+          }],
+          apparatus: [{
+            type: "lathe",
+            segments: 10,
+            vertices: [1e-6, 0.23, 0.042, 0.23, 0.069, 0.36, 0.038, 0.362, 0.038, 0.372, 0.06, 0.372, 0.073, 0.572, 0.024, 0.572, 0.024, 0.67, 0.069, 0.67, 0.075, 0.722, 0.097, 0.724, 0.105, 0.852, 0.083, 0.902, 0.065, 0.902, 0.065, 0.924, 0.128, 0.924, 0.146, 0.996]
+          }, {
+            type: "lathe",
+            segments: 16,
+            vertices: [1e-6, 0.232, 0.229, 0.182, 0.486, 0.07, 0.356, 0.182, 0.213, 0.242, 0.154, 0.242, 0.144, 0.262, 0.178, 0.262, 0.126, 0.314, 0.04, 0.328, 0.038, 0.374, 0.058, 0.374, 0.071, 0.408, 0.026, 0.406, 0.03, 0.42, 0.091, 0.418, 0.034, 0.496, 0.01, 0.498, 0.03, 0.506, 0.014, 0.998]
+          }],
+          mushrooms: [{
+            type: "lathe",
+            noise: 0.02,
+            segments: 14,
+            vertices: [1e-6, 6e-3, 0.13, 0.018, 0.341, 0.084, 0.437, 0.144, 0.492, 0.234, 0.484, 0.246, 0.276, 0.232, 0.107, 0.284, 0.046, 0.346, 0.062, 0.852, 0.097, 0.956, 0.166, 0.998]
+          }, {
+            type: "lathe",
+            noise: 0.02,
+            segments: 10,
+            vertices: [1e-6, 0.562, 0.091, 0.572, 0.172, 0.61, 0.223, 0.666, 0.256, 0.74, 0.258, 0.806, 0.246, 0.824, 0.062, 0.826, 0.065, 0.948, 0.097, 0.998]
+          }, {
+            type: "lathe",
+            noise: 0.02,
+            segments: 10,
+            vertices: [1e-6, 0.768, 0.099, 0.772, 0.219, 0.802, 0.306, 0.844, 0.352, 0.886, 0.352, 0.908, 0.118, 0.904, 0.107, 0.93, 0.115, 0.966, 0.14, 0.996]
+          }]
+        };
+        for (var e2 in this.assets) for (var t2 = 0; t2 < this.assets[e2].length; t2++) {
+          var r3 = this.assets[e2][t2];
+          if ("mesh" == r3.type) for (var o = 0, i = r3.vertices.length; o < i; o++) r3.vertices[o] /= 1e3;
+        }
+        this.userFog = this.el.sceneEl.getAttribute("fog"), this.sky = document.createElement("a-sky"), this.sky.setAttribute("radius", this.STAGE_SIZE), this.sky.setAttribute("theta-length", 110), this.sky.classList.add("environment"), this.stars = null, this.ground = document.createElement("a-entity"), this.ground.setAttribute("rotation", "-90 0 0"), this.ground.classList.add("environmentGround"), this.ground.classList.add("environment"), this.groundCanvas = null, this.groundTexture = null, this.groundMaterial = null, this.groundGeometry = null, this.dressing = document.createElement("a-entity"), this.dressing.classList.add("environmentDressing"), this.dressing.classList.add("environment"), this.gridCanvas = null, this.gridTexture = null, this.hemilight = document.createElement("a-entity"), this.hemilight.classList.add("environment"), this.hemilight.setAttribute("position", "0 50 0"), this.hemilight.setAttribute("light", {
+          type: "hemisphere",
+          color: "#CEE4F0",
+          intensity: 1.256
+        }), this.sunlight = document.createElement("a-entity"), this.sunlight.classList.add("environment"), this.sunlight.setAttribute("position", this.data.lightPosition), this.sunlight.setAttribute("light", {
+          intensity: 1.884
+        }), this.el.appendChild(this.hemilight), this.el.appendChild(this.sunlight), this.el.appendChild(this.ground), this.el.appendChild(this.dressing), this.el.appendChild(this.sky);
+      },
+      getFogColor: function(e2, t2) {
+        var r3;
+        if ("color" == e2 || "none" == e2) r3 = new THREE.Color().setStyle(this.environmentData.skyColor, THREE.NoColorSpace);
+        else if ("gradient" == e2) r3 = new THREE.Color().setStyle(this.environmentData.horizonColor, THREE.NoColorSpace);
+        else if ("atmosphere" == e2) {
+          var o = [1, 0.5, 0.22, 0.1, 0.05, 0], i = ["#C0CDCF", "#81ADC5", "#525e62", "#2a2d2d", "#141616", "#000"];
+          if (t2 <= 0) return "#000";
+          t2 = Math.min(1, t2);
+          for (var n = 0; n < o.length; n++) if (t2 > o[n]) {
+            var s = new THREE.Color().setStyle(i[n - 1], THREE.NoColorSpace), a = new THREE.Color().setStyle(i[n], THREE.NoColorSpace), l = (t2 - o[n]) / (o[n - 1] - o[n]);
+            a.lerp(s, l), r3 = a;
+            break;
+          }
+        }
+        return r3.multiplyScalar(0.9), r3.lerp(new THREE.Color().setStyle(this.data.groundColor, THREE.NoColorSpace), 0.3), r3.setRGB(r3.r, r3.g, r3.b, THREE.SRGBColorSpace), "#" + r3.getHexString();
+      },
+      update: function(e2) {
+        var t2;
+        this.data.preset ? (t2 = AFRAME.utils.clone(this.environmentData), this.environmentData = {}, Object.assign(this.environmentData, this.data), Object.assign(this.environmentData, this.presets[this.data.preset]), Object.assign(this.environmentData, this.el.components.environment.attrValue), console.log(this.environmentData)) : (t2 = e2, this.environmentData = this.data);
+        var r3 = this.environmentData.skyType, o = new THREE.Vector3(this.environmentData.lightPosition.x, this.environmentData.lightPosition.y, this.environmentData.lightPosition.z);
+        if (o.normalize(), this.sunlight) {
+          if (this.sunlight.setAttribute("position", this.environmentData.lightPosition), "atmosphere" != r3) {
+            var i = new THREE.Color().setStyle(this.environmentData.skyColor, THREE.NoColorSpace);
+            i.setRGB((i.r + 1) / 2, (i.g + 1) / 2, (i.b + 1) / 2, THREE.SRGBColorSpace), this.hemilight.setAttribute("light", {
+              color: "#" + i.getHexString(),
+              intensity: 1.884
+            }), this.sunlight.setAttribute("light", {
+              intensity: 1.884
+            });
+          } else this.hemilight.setAttribute("light", {
+            color: "#CEE4F0",
+            intensity: 0.314 + 1.57 * o.y
+          }), this.sunlight.setAttribute("light", {
+            intensity: 0.314 + 1.57 * o.y
+          });
+          this.sunlight.setAttribute("light", {
+            castShadow: this.environmentData.shadow,
+            shadowCameraLeft: -this.environmentData.shadowSize,
+            shadowCameraBottom: -this.environmentData.shadowSize,
+            shadowCameraRight: this.environmentData.shadowSize,
+            shadowCameraTop: this.environmentData.shadowSize
+          });
+        }
+        var n = this.environmentData.stageSize !== t2.stageSize;
+        if (n && (this.STAGE_SIZE = this.data.stageSize, this.sky.setAttribute("radius", this.STAGE_SIZE)), r3 !== t2.skyType || this.environmentData.skyColor != t2.skyColor || this.environmentData.horizonColor != t2.horizonColor) {
+          var s = {};
+          s.shader = {
+            none: "flat",
+            color: "flat",
+            gradient: "gradientshader",
+            atmosphere: "skyshader"
+          }[r3], this.stars && this.stars.setAttribute("visible", "atmosphere" == r3), "color" == r3 ? (s.color = this.environmentData.skyColor, s.fog = false) : "gradient" == r3 && (s.topColor = new THREE.Color().setStyle(this.environmentData.skyColor, THREE.NoColorSpace), s.bottomColor = new THREE.Color().setStyle(this.environmentData.horizonColor, THREE.NoColorSpace)), this.sky.setAttribute("material", s);
+        }
+        "atmosphere" == r3 && (this.sky.setAttribute("material", {
+          sunPosition: o
+        }), this.setStars(2e3 * (1 - Math.max(0, 8 * (o.y + 0.08))))), this.environmentData.fog > 0 ? this.el.sceneEl.setAttribute("fog", {
+          color: this.getFogColor(r3, o.y),
+          far: (1.01 - this.environmentData.fog) * this.STAGE_SIZE * 2
+        }) : this.el.sceneEl.removeAttribute("fog"), this.sunlight.setAttribute("light", {
+          type: "point" == this.environmentData.lighting ? "point" : "directional"
+        }), this.sunlight.setAttribute("visible", "none" !== this.environmentData.lighting), this.hemilight.setAttribute("visible", "none" !== this.environmentData.lighting);
+        var a = !this.groundGeometry || this.environmentData.seed != t2.seed || this.environmentData.ground != t2.ground || this.environmentData.playArea != t2.playArea || this.environmentData.flatShading != t2.flatShading || this.environmentData.groundDensity != t2.groundDensity || this.environmentData.groundFrequency != t2.groundFrequency || n;
+        (a || this.environmentData.groundColor != t2.groundColor || this.environmentData.groundColor2 != t2.groundColor2 || this.environmentData.groundYScale != t2.groundYScale || this.environmentData.groundTexture != t2.groundTexture || this.environmentData.gridColor != t2.gridColor || this.environmentData.grid != t2.grid) && (this.updateGround(a), this.hemilight && this.hemilight.setAttribute("light", {
+          groundColor: this.environmentData.groundColor
+        })), (this.environmentData.seed != t2.seed || this.environmentData.dressingOnPlayArea != t2.dressingOnPlayArea || this.environmentData.dressing != t2.dressing || this.environmentData.flatShading != t2.flatShading || this.environmentData.dressingAmount != t2.dressingAmount || this.environmentData.dressingScale != t2.dressingScale || this.environmentData.dressingColor != t2.dressingColor || this.environmentData.dressingVariance.x != t2.dressingVariance.x || this.environmentData.dressingVariance.y != t2.dressingVariance.y || this.environmentData.dressingVariance.z != t2.dressingVariance.z || this.environmentData.dressingUniformScale != t2.dressingUniformScale || n) && this.updateDressing(), this.sky.setAttribute("visible", "none" !== r3), this.el.setAttribute("visible", this.environmentData.active), this.environmentData.active || (this.userFog ? this.el.sceneEl.setAttribute("fog", this.userFog) : this.el.sceneEl.removeAttribute("fog")), this.dumpParametersDiff();
+      },
+      remove: function() {
+        this.userFog ? this.el.sceneEl.setAttribute("fog", this.userFog) : this.el.sceneEl.removeAttribute("fog"), this.el.removeChild(this.hemilight), this.el.removeChild(this.sunlight), this.groundTexture && this.groundTexture.dispose(), this.gridTexture && this.gridTexture.dispose(), this.groundMaterial && this.groundMaterial.dispose(), this.groundGeometry && this.groundGeometry.dispose(), this.el.removeChild(this.ground);
+        var e2 = this.dressing.getObject3D("mesh");
+        e2 && e2.children.length > 0 && (e2.children[0].material.dispose(), e2.children[0].geometry.dispose()), this.el.removeChild(this.dressing), this.el.removeChild(this.sky), this.removeStars();
+      },
+      logPreset: function() {
+        var e2 = "{";
+        for (var t2 in this.schema) if ("preset" != t2) {
+          e2 += t2 + ": ";
+          var r3 = this.schema[t2].type;
+          e2 += "vec3" == r3 ? "{ x: " + this.environmentData[t2].x + ", y: " + this.environmentData[t2].y + ", z: " + this.environmentData[t2].z + "}" : "string" == r3 || "color" == r3 ? '"' + this.environmentData[t2] + '"' : this.environmentData[t2], e2 += ", ";
+        }
+        e2 += "}", console.log(e2);
+      },
+      dumpParametersDiff: function() {
+        function e2(e3) {
+          return Math.floor(1e3 * e3) / 1e3;
+        }
+        var t2 = [], r3 = "none" != this.data.preset && this.presets[this.data.preset];
+        r3 && t2.push("preset: " + this.data.preset);
+        for (var o in this.schema) if (!("preset" == o || r3 && void 0 === r3[o])) {
+          var i = r3 ? r3[o] : this.schema[o].default, n = this.environmentData[o], s = this.schema[o].type;
+          if ("vec3" == s) {
+            var a = i;
+            "string" == typeof i && (i = i.split(" "), a = {
+              x: i[0],
+              y: i[1],
+              z: i[2]
+            }), e2(a.x) == e2(n.x) && e2(a.y) == e2(n.y) && e2(a.z) == e2(n.z) || t2.push(o + ": " + e2(n.x) + " " + e2(n.y) + " " + e2(n.z));
+          } else i != n && ("number" == this.schema[o].type && (n = e2(n)), t2.push(o + ": " + n));
+        }
+        console.log("%c" + t2.join("; "), "color: #f48;font-weight:bold");
+      },
+      random: function(e2) {
+        return parseFloat("0." + Math.sin(9999 * this.environmentData.seed * e2).toString().substr(7));
+      },
+      updateGround: function(e2) {
+        var t2 = this.environmentData.groundDensity;
+        if (e2) {
+          var o = "none" != this.environmentData.ground;
+          if (this.ground.setAttribute("visible", o), !o) return;
+          this.groundGeometry || (this.groundGeometry = new THREE.PlaneGeometry(this.STAGE_SIZE + 2, this.STAGE_SIZE + 2, t2 - 1, t2 - 1));
+          for (var i = new r2(this.environmentData.seed), n = this.groundGeometry.attributes.position.array, s = n.length, a = this.environmentData.groundFrequency, l = a / t2, d = 0, h = 0, g = 2; g < s; g += 3) if ("flat" != this.environmentData.ground) {
+            var u;
+            switch (this.environmentData.ground) {
+              case "hills":
+                u = Math.max(0, i.noise(d, h, 0));
+                break;
+              case "canyon":
+                u = 0.2 + 0.8 * i.noise(d, h, 0), u = Math.min(1, 10 * Math.pow(u, 2));
+                break;
+              case "spikes":
+                u = this.random(g) < 0.02 ? this.random(g + 1) : 0;
+                break;
+              case "noise":
+                u = this.random(g) < 0.35 ? this.random(g + 1) : 0;
+            }
+            u += 0.1 * this.random(g + 2);
+            var c = 2 * d / a - 1, m = 2 * h / a - 1, f = this.environmentData.playArea;
+            c = Math.max(0, Math.min(1, (Math.abs(c) - (f - 0.9)) * (1 / f))), m = Math.max(0, Math.min(1, (Math.abs(m) - (f - 0.9)) * (1 / f))), u *= c > m ? c : m, u < 0.01 && (u = 0), n[g] = u, d += l, d >= a && (d = 0, h += l);
+          } else n[g] = 0;
+          this.groundGeometry.computeVertexNormals(), this.groundGeometry.attributes.position.needsUpdate = true, this.groundGeometry.attributes.normal.needsUpdate = true;
+        }
+        this.ground.setAttribute("scale", {
+          z: this.environmentData.groundYScale
+        });
+        var p = 2048, y = 20, v = this.STAGE_SIZE / y;
+        this.groundCanvas && this.groundCanvas.width == p || (this.gridCanvas = document.createElement("canvas"), this.gridCanvas.width = p, this.gridCanvas.height = p, this.gridTexture = new THREE.Texture(this.gridCanvas), this.gridTexture.wrapS = THREE.RepeatWrapping, this.gridTexture.wrapT = THREE.RepeatWrapping, this.gridTexture.repeat.set(v, v), this.gridTexture.anisotropy = 4, this.rendererSystem.applyColorCorrection(this.gridTexture), this.groundCanvas = document.createElement("canvas"), this.groundCanvas.width = p, this.groundCanvas.height = p, this.groundTexture = new THREE.Texture(this.groundCanvas), this.groundTexture.wrapS = THREE.RepeatWrapping, this.groundTexture.wrapT = THREE.RepeatWrapping, this.groundTexture.repeat.set(v, v), this.groundTexture.anisotropy = 4, this.rendererSystem.applyColorCorrection(this.groundTexture), this.groundMaterialProps = {
+          map: this.groundTexture,
+          emissive: new THREE.Color(16777215),
+          emissiveMap: this.gridTexture
+        }, this.groundMaterialProps.flatShading = this.environmentData.flatShading, this.groundMaterial = new THREE.MeshLambertMaterial(this.groundMaterialProps));
+        var C = this.groundCanvas.getContext("2d"), E = this.gridCanvas.getContext("2d");
+        if (this.drawTexture(C, p, y), E.fillStyle = "#000000", E.fillRect(0, 0, p, p), this.drawGrid(E, p, y), this.groundTexture.needsUpdate = true, this.gridTexture.needsUpdate = true, e2) {
+          var x = new THREE.Mesh(this.groundGeometry, this.groundMaterial);
+          this.ground.setObject3D("mesh", x);
+        } else this.ground.getObject3D("mesh").material = this.groundMaterial;
+        this.ground.setAttribute("shadow", {
+          cast: false,
+          receive: this.environmentData.shadow
+        });
+      },
+      drawGrid: function(e2, t2, r3) {
+        if ("none" != this.environmentData.grid) {
+          var o, i, n, s = Math.floor(r3 / 2), a = t2 / (r3 / 2);
+          switch (e2.fillStyle = this.environmentData.gridColor, this.environmentData.grid) {
+            case "1x1":
+            case "2x2":
+              for ("1x1" == this.environmentData.grid && (s *= 2, a = t2 / r3), o = 0; o < s; o++) n = Math.floor(o * a), e2.fillRect(0, n, t2, 1), e2.fillRect(n, 0, 1, t2);
+              break;
+            case "crosses":
+              var l = Math.floor(a / 20);
+              for (o = 0; o < s + 1; o++) for (n = Math.floor(o * a), i = 0; i < s + 1; i++) {
+                var d = Math.floor(-l + i * a);
+                e2.fillRect(d, n, 2 * l, 1), e2.fillRect(n, d, 1, 2 * l);
+              }
+              break;
+            case "dots":
+              for (o = 0; o < s + 1; o++) for (i = 0; i < s + 1; i++) e2.beginPath(), e2.arc(Math.floor(i * a), Math.floor(o * a), 4, 0, 2 * Math.PI), e2.fill();
+              break;
+            case "xlines":
+              for (o = 0; o < s; o++) e2.fillRect(Math.floor(o * a), 0, 1, t2);
+              break;
+            case "ylines":
+              for (o = 0; o < s; o++) e2.fillRect(0, Math.floor(o * a), t2, 1);
+          }
+        }
+      },
+      drawTexture: function(e2, t2, o) {
+        e2.fillStyle = this.environmentData.groundColor, e2.fillRect(0, 0, t2, t2);
+        var i, n, s, a, l, d, h;
+        if ("none" != this.environmentData.groundTexture) switch (this.environmentData.groundTexture) {
+          case "checkerboard":
+            e2.fillStyle = this.environmentData.groundColor2;
+            var g = Math.floor(o / 2), u = t2 / (o / 2);
+            for (i = 0; i < g + 1; i += 2) for (var c = 0; c < g + 1; c++) e2.fillRect(Math.floor((i + c % 2) * u), Math.floor(c * u), Math.floor(u), Math.floor(u));
+            break;
+          case "squares":
+            var m = 16, f = t2 / m;
+            for (s = new THREE.Color().setStyle(this.environmentData.groundColor, THREE.NoColorSpace), a = new THREE.Color().setStyle(this.environmentData.groundColor2, THREE.NoColorSpace), i = 0; i < m * m; i++) n = this.random(i + 3) > 0.5 ? s.clone() : a.clone(), n.addScalar(0.1 * this.random(i + 3) - 0.05), e2.fillStyle = "#" + n.getHexString(THREE.NoColorSpace), e2.fillRect(i % m * f, Math.floor(i / m) * f, f, f);
+            break;
+          case "noise":
+            d = e2.getImageData(0, 0, t2, t2), l = d.data, s = new THREE.Color().setStyle(this.environmentData.groundColor, THREE.NoColorSpace), a = new THREE.Color().setStyle(this.environmentData.groundColor2, THREE.NoColorSpace);
+            var p = new THREE.Color(a.r - s.r, a.g - s.g, a.b - s.b), y = new r2();
+            for (i = 0, c = 0, h = l.length; i < h; i += 4, c++) {
+              var v = y.noise(c % t2 / t2 * 3, c / t2 / t2 * 3, 0);
+              l[i + 0] = Math.floor(255 * (s.r + p.r * v)), l[i + 1] = Math.floor(255 * (s.g + p.g * v)), l[i + 2] = Math.floor(255 * (s.b + p.b * v));
+            }
+            e2.putImageData(d, 0, 0);
+            break;
+          case "walkernoise":
+            var C = Math.floor(t2 / 2), E = document.createElement("canvas");
+            E.width = C, E.height = C;
+            var x = E.getContext("2d");
+            x.fillStyle = this.environmentData.groundColor, x.fillRect(0, 0, C, C), d = x.getImageData(0, 0, C, C), l = d.data, s = new THREE.Color().setStyle(this.environmentData.groundColor, THREE.NoColorSpace), a = new THREE.Color().setStyle(this.environmentData.groundColor2, THREE.NoColorSpace);
+            var S = [], T = 1e3;
+            for (i = 0; i < T; i++) n = s.clone().lerp(a, Math.random()), S.push({
+              x: Math.random() * C,
+              y: Math.random() * C,
+              r: Math.floor(255 * n.r),
+              g: Math.floor(255 * n.g),
+              b: Math.floor(255 * n.b)
+            });
+            for (var b = 5e3, w = 0; w < b; w++) for (i = 0; i < T; i++) {
+              var A = S[i], D = 4 * Math.floor(A.y * C + A.x);
+              l[D + 0] = A.r, l[D + 1] = A.g, l[D + 2] = A.b, A.x += Math.floor(3 * Math.random()) - 1, A.y += Math.floor(3 * Math.random()) - 1, A.x >= C && (A.x = A.x - C), A.y >= C && (A.y = A.y - C), A.x < 0 && (A.x = C + A.x), A.y < 0 && (A.y = C + A.y);
+            }
+            x.putImageData(d, 0, 0), e2.drawImage(E, 0, 0, t2, t2);
+        }
+      },
+      getAssetGeometry: function(e2) {
+        function t2(e3, t3) {
+          for (var r4 = e3.attributes.position.array, o2 = r4.length, i2 = 0; i2 < o2; i2 += 3) r4[i2] = (s.random(i2) - 0.5) * t3, r4[i2 + 1] = (s.random(i2 + o2) - 0.5) * t3, r4[i2 + 2] = (s.random(i2 + 2 * o2) - 0.5) * t3;
+          e3.attributes.position.needsUpdate = true;
+        }
+        if (!e2) return null;
+        for (var r3, o, i, n = [], s = this, a = 0; a < e2.length; a++) if ("lathe" == e2[a].type) {
+          var l = -99999, d = [];
+          for (i = e2[a].vertices, r3 = 0; r3 < i.length; r3 += 2) d.push(new THREE.Vector2(i[r3], i[r3 + 1])), i[r3 + 1] > l && (l = i[r3 + 1]);
+          o = new THREE.LatheGeometry(d, e2[a].segments || 8), o.applyMatrix4(new THREE.Matrix4().makeRotationFromEuler(new THREE.Euler(-Math.PI, 0, 0))), o.applyMatrix4(new THREE.Matrix4().makeTranslation(0, l, 0)), o = o.toNonIndexed(), n.push(o);
+        } else if ("extrude" == e2[a].type) {
+          var h = new THREE.Shape();
+          for (i = e2[a].vertices, r3 = 0; r3 < i.length; r3 += 2) 0 == r3 ? h.moveTo(i[r3], i[r3 + 1]) : h.lineTo(i[r3], i[r3 + 1]);
+          o = new THREE.ExtrudeGeometry(h, {
+            amount: 1,
+            bevelEnabled: false
+          }), o.applyMatrix4(new THREE.Matrix4().makeRotationFromEuler(new THREE.Euler(-Math.PI / 2, 0, 0))), e2[a].noise && t2(o, e2[a].noise), n.push(o);
+        } else if ("mesh" == e2[a].type) {
+          o = new THREE.BufferGeometry(), i = e2[a].vertices;
+          var g = e2[a].faces, u = new Float32Array(i);
+          if (o.setIndex(g), o.setAttribute("position", new THREE.BufferAttribute(u, 3)), e2[a].mirror) {
+            var c = o.clone();
+            c.applyMatrix4(new THREE.Matrix4().makeRotationFromEuler(new THREE.Euler(0, Math.PI, 0)));
+            var m = THREE.BufferGeometryUtils.mergeGeometries || THREE.BufferGeometryUtils.mergeBufferGeometries;
+            o = m([o, c]);
+          }
+          e2[a].noise && t2(o, e2[a].noise), o = o.toNonIndexed(), o.computeVertexNormals(), n.push(o);
+        }
+        return n;
+      },
+      updateDressing: function() {
+        var e2 = new THREE.Object3D(), t2 = [];
+        if (this.dressing.setAttribute("visible", "none" != this.environmentData.dressing), "none" != this.environmentData.dressing) {
+          var r3;
+          switch (this.environmentData.dressing) {
+            case "cubes":
+              r3 = [new THREE.BoxGeometry(1, 1, 1)], r3[0].applyMatrix4(new THREE.Matrix4().makeTranslation(0, 0.5, 0));
+              break;
+            case "pyramids":
+              r3 = [new THREE.ConeGeometry(1, 1, 4, 1, true)], r3[0].applyMatrix4(new THREE.Matrix4().makeTranslation(0, 0.5, 0));
+              break;
+            case "cylinders":
+              r3 = [new THREE.CylinderGeometry(0.5, 0.5, 1, 8, 1, true)], r3[0].applyMatrix4(new THREE.Matrix4().makeTranslation(0, 0.5, 0));
+              break;
+            default:
+              if (r3 = this.getAssetGeometry(this.assets[this.environmentData.dressing]), !r3) return;
+          }
+          for (var o = 0, i = 88343; o < this.environmentData.dressingAmount; o++, i++) {
+            var n, s = r3[Math.floor(this.random(33 + o) * r3.length)].clone(), a = this.environmentData.dressingScale, l = new THREE.Vector3(this.environmentData.dressingVariance.x, this.environmentData.dressingVariance.y, this.environmentData.dressingVariance.z), d = this.random(i) < this.environmentData.dressingOnPlayArea;
+            n = d ? 15 * this.random(i + 1) : 10 + Math.max(l.x, l.z) + 10 * this.random(i + 1) + this.random(i + 2) * this.STAGE_SIZE / 3;
+            var h = this.random(i + 3) * Math.PI * 2, g = new THREE.Matrix4(), u = this.random(i + 4), c = this.environmentData.dressingUniformScale;
+            g.compose(new THREE.Vector3(Math.cos(h) * n, 0, Math.sin(h) * n), new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), (this.random(i + 5) - 0.5) * l.length() * Math.PI * 2), new THREE.Vector3(a + (c ? u : this.random(i + 6)) * l.x, a + (c ? u : this.random(i + 7)) * l.y, a + (c ? u : this.random(i + 8)) * l.z)), s.applyMatrix4(g), t2.push(s);
+          }
+          var m = THREE.BufferGeometryUtils.mergeGeometries || THREE.BufferGeometryUtils.mergeBufferGeometries, f = m(t2);
+          f.attributes.position.needsUpdate = true;
+          var p = new THREE.MeshLambertMaterial({
+            color: new THREE.Color(this.environmentData.dressingColor)
+          });
+          this.rendererSystem.applyColorCorrection(p.color);
+          var y = new THREE.Mesh(f, p);
+          e2.add(y), this.dressing.setObject3D("mesh", e2);
+        }
+      },
+      createStars: function() {
+        for (var e2 = 2e3, t2 = new THREE.BufferGeometry(), r3 = new Float32Array(3 * e2), o = this.STAGE_SIZE - 1, i = new THREE.Vector3(), n = 0; n < r3.length; n += 3) i.set(this.random(n + 23) - 0.5, this.random(n + 24), this.random(n + 25) - 0.5), i.normalize(), i.multiplyScalar(o), r3[n] = i.x, r3[n + 1] = i.y, r3[n + 2] = i.z;
+        t2.setAttribute("position", new THREE.BufferAttribute(r3, 3)), t2.setDrawRange(0, 0);
+        var s = new THREE.PointsMaterial({
+          size: 0.01,
+          color: 13421772,
+          fog: false
+        });
+        this.rendererSystem.applyColorCorrection(s.color), this.stars.setObject3D("mesh", new THREE.Points(t2, s));
+      },
+      removeStars: function() {
+        if (this.stars) {
+          var e2 = this.stars.getObject3D("mesh");
+          e2.material.dispose(), e2.geometry.dispose(), this.el.removeChild(this.stars), this.stars = null;
+        }
+      },
+      setStars: function(e2) {
+        e2 = Math.floor(Math.min(2e3, Math.max(0, e2))), 0 === e2 ? this.removeStars() : (this.stars || (this.stars = document.createElement("a-entity"), this.stars.id = "stars", this.createStars(), this.el.appendChild(this.stars)), this.stars.getObject3D("mesh").geometry.setDrawRange(0, e2));
+      }
+    }), AFRAME.registerShader("skyshader", {
+      schema: {
+        exposureBias: {
+          type: "number",
+          default: 1,
+          min: 0,
+          max: 10,
+          is: "uniform"
+        },
+        turbidity: {
+          type: "number",
+          default: 2,
+          min: 0,
+          max: 20,
+          is: "uniform"
+        },
+        reileigh: {
+          type: "number",
+          default: 1,
+          min: 0,
+          max: 4,
+          is: "uniform"
+        },
+        mieCoefficient: {
+          type: "number",
+          default: 5e-3,
+          min: 0,
+          max: 0.1,
+          is: "uniform"
+        },
+        mieDirectionalG: {
+          type: "number",
+          default: 0.8,
+          min: 0,
+          max: 1,
+          is: "uniform"
+        },
+        sunPosition: {
+          type: "vec3",
+          default: {
+            x: 0,
+            y: 0,
+            z: -1
+          },
+          is: "uniform"
+        },
+        color: {
+          type: "color",
+          default: "#fff"
+        }
+      },
+      vertexShader: ["varying vec3 vWorldPosition;", "void main() {", "vec4 worldPosition = modelMatrix * vec4( position, 1.0 );", "vWorldPosition = worldPosition.xyz;", "gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );", "}"].join("\n"),
+      fragmentShader: ["#include <common>", "#include <dithering_pars_fragment>", "uniform sampler2D skySampler;", "uniform vec3 sunPosition;", "varying vec3 vWorldPosition;", "vec3 cameraPos = vec3(0., 0., 0.);", "uniform float exposureBias;", "uniform float turbidity;", "uniform float reileigh;", "uniform float mieCoefficient;", "uniform float mieDirectionalG;", "const float e = 2.71828182845904523536028747135266249775724709369995957;", "const float pi = 3.141592653589793238462643383279502884197169;", "const float n = 1.0003;", "const float N = 2.545E25;", "const float pn = 0.035;", "const vec3 lambda = vec3(680E-9, 550E-9, 450E-9);", "const vec3 K = vec3(0.686, 0.678, 0.666);", "const float v = 4.0;", "const float rayleighZenithLength = 8.4E3;", "const float mieZenithLength = 1.25E3;", "const vec3 up = vec3(0.0, 1.0, 0.0);", "const float EE = 1000.0;", "const float sunAngularDiameterCos = 0.999956676946448443553574619906976478926848692873900859324;", "const float cutoffAngle = pi/1.95;", "const float steepness = 1.5;", "vec3 totalRayleigh(vec3 lambda)", "{", "return (8.0 * pow(pi, 3.0) * pow(pow(n, 2.0) - 1.0, 2.0) * (6.0 + 3.0 * pn)) / (3.0 * N * pow(lambda, vec3(4.0)) * (6.0 - 7.0 * pn));", "}", "vec3 simplifiedRayleigh()", "{", "return 0.0005 / vec3(94, 40, 18);", "}", "float rayleighPhase(float cosTheta)", "{   ", "return (3.0 / (16.0*pi)) * (1.0 + pow(cosTheta, 2.0));", "}", "vec3 totalMie(vec3 lambda, vec3 K, float T)", "{", "float c = (0.2 * T ) * 10E-18;", "return 0.434 * c * pi * pow((2.0 * pi) / lambda, vec3(v - 2.0)) * K;", "}", "float hgPhase(float cosTheta, float g)", "{", "return (1.0 / (4.0*pi)) * ((1.0 - pow(g, 2.0)) / pow(1.0 - 2.0*g*cosTheta + pow(g, 2.0), 1.5));", "}", "float sunIntensity(float zenithAngleCos)", "{", "return EE * max(0.0, 1.0 - exp(-((cutoffAngle - acos(zenithAngleCos))/steepness)));", "}", "// Filmic ToneMapping http://filmicgames.com/archives/75", "float A = 0.15;", "float B = 0.50;", "float C = 0.10;", "float D = 0.20;", "float E = 0.02;", "float F = 0.30;", "float W = 1000.0;", "vec3 Uncharted2Tonemap(vec3 x)", "{", "return ((x*(A*x+C*B)+D*E)/(x*(A*x+B)+D*F))-E/F;", "}", "void main() ", "{", "float sunfade = 1.0-clamp(1.0-exp((sunPosition.y/450000.0)),0.0,1.0);", "float reileighCoefficient = reileigh - (1.0* (1.0-sunfade));", "vec3 sunDirection = normalize(sunPosition);", "float sunE = sunIntensity(dot(sunDirection, up));", "vec3 betaR = simplifiedRayleigh() * reileighCoefficient;", "vec3 betaM = totalMie(lambda, K, turbidity) * mieCoefficient;", "float zenithAngle = acos(max(0.0, dot(up, normalize(vWorldPosition - cameraPos))));", "float sR = rayleighZenithLength / (cos(zenithAngle) + 0.15 * pow(93.885 - ((zenithAngle * 180.0) / pi), -1.253));", "float sM = mieZenithLength / (cos(zenithAngle) + 0.15 * pow(93.885 - ((zenithAngle * 180.0) / pi), -1.253));", "vec3 Fex = exp(-(betaR * sR + betaM * sM));", "float cosTheta = dot(normalize(vWorldPosition - cameraPos), sunDirection);", "float rPhase = rayleighPhase(cosTheta*0.5+0.5);", "vec3 betaRTheta = betaR * rPhase;", "float mPhase = hgPhase(cosTheta, mieDirectionalG);", "vec3 betaMTheta = betaM * mPhase;", "vec3 Lin = pow(sunE * ((betaRTheta + betaMTheta) / (betaR + betaM)) * (1.0 - Fex),vec3(1.5));", "Lin *= mix(vec3(1.0),pow(sunE * ((betaRTheta + betaMTheta) / (betaR + betaM)) * Fex,vec3(1.0/2.0)),clamp(pow(1.0-dot(up, sunDirection),5.0),0.0,1.0));", "vec3 direction = normalize(vWorldPosition - cameraPos);", "float theta = acos(direction.y); // elevation --> y-axis, [-pi/2, pi/2]", "float phi = atan(direction.z, direction.x); // azimuth --> x-axis [-pi/2, pi/2]", "vec2 uv = vec2(phi, theta) / vec2(2.0*pi, pi) + vec2(0.5, 0.0);", "vec3 L0 = vec3(0.1) * Fex;", "float sundisk = smoothstep(sunAngularDiameterCos,sunAngularDiameterCos+0.00002,cosTheta);", "L0 += (sunE * 19000.0 * Fex)*sundisk;", "vec3 whiteScale = 1.0/Uncharted2Tonemap(vec3(W));", "vec3 texColor = (Lin+L0);", "texColor *= 0.04;", "texColor += vec3(0.0,0.001,0.0025)*0.3;", "vec3 curr = Uncharted2Tonemap(exposureBias*texColor);", "vec3 color = curr*whiteScale;", "vec3 retColor = pow(color,vec3(1.0/(1.2+(1.2*sunfade))));", "gl_FragColor.rgb = retColor;", "gl_FragColor.a = 1.0;", "#include <dithering_fragment>", "}"].join("\n")
+    }), AFRAME.registerShader("gradientshader", {
+      schema: {
+        topColor: {
+          type: "color",
+          default: "1 0 0",
+          is: "uniform"
+        },
+        bottomColor: {
+          type: "color",
+          default: "0 0 1",
+          is: "uniform"
+        }
+      },
+      vertexShader: ["varying vec3 vWorldPosition;", "void main() {", " vec4 worldPosition = modelMatrix * vec4( position, 1.0 );", " vWorldPosition = worldPosition.xyz;", " gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0 );", "}"].join("\n"),
+      fragmentShader: ["#include <common>", "#include <dithering_pars_fragment>", "uniform vec3 bottomColor;", "uniform vec3 topColor;", "uniform float offset;", "varying vec3 vWorldPosition;", "void main() {", " float h = normalize( vWorldPosition ).y;", " gl_FragColor = vec4( mix( bottomColor, topColor, max( pow( max(h, 0.0 ), 0.8 ), 0.0 ) ), 1.0 );", " #include <dithering_fragment>", "}"].join("\n")
+    });
+    var r2 = function(e2) {
+      var t2;
+      this.grad3 = [[1, 1, 0], [-1, 1, 0], [1, -1, 0], [-1, -1, 0], [1, 0, 1], [-1, 0, 1], [1, 0, -1], [-1, 0, -1], [0, 1, 1], [0, -1, 1], [0, 1, -1], [0, -1, -1]], this.p = [];
+      var r3;
+      for (r3 = 0; r3 < 256; r3++) t2 = parseFloat("0." + Math.sin(9999 * e2 * r3).toString().substr(7)), this.p[r3] = Math.floor(256 * t2);
+      for (this.perm = [], r3 = 0; r3 < 512; r3++) this.perm[r3] = this.p[255 & r3];
+    };
+    r2.prototype.dot = function(e2, t2, r3, o) {
+      return e2[0] * t2 + e2[1] * r3 + e2[2] * o;
+    }, r2.prototype.mix = function(e2, t2, r3) {
+      return (1 - r3) * e2 + r3 * t2;
+    }, r2.prototype.fade = function(e2) {
+      return e2 * e2 * e2 * (e2 * (6 * e2 - 15) + 10);
+    }, r2.prototype.noise = function(e2, t2, r3) {
+      var o = Math.floor(e2), i = Math.floor(t2), n = Math.floor(r3);
+      e2 -= o, t2 -= i, r3 -= n, o &= 255, i &= 255, n &= 255;
+      var s = this.perm[o + this.perm[i + this.perm[n]]] % 12, a = this.perm[o + this.perm[i + this.perm[n + 1]]] % 12, l = this.perm[o + this.perm[i + 1 + this.perm[n]]] % 12, d = this.perm[o + this.perm[i + 1 + this.perm[n + 1]]] % 12, h = this.perm[o + 1 + this.perm[i + this.perm[n]]] % 12, g = this.perm[o + 1 + this.perm[i + this.perm[n + 1]]] % 12, u = this.perm[o + 1 + this.perm[i + 1 + this.perm[n]]] % 12, c = this.perm[o + 1 + this.perm[i + 1 + this.perm[n + 1]]] % 12, m = this.dot(this.grad3[s], e2, t2, r3), f = this.dot(this.grad3[h], e2 - 1, t2, r3), p = this.dot(this.grad3[l], e2, t2 - 1, r3), y = this.dot(this.grad3[u], e2 - 1, t2 - 1, r3), v = this.dot(this.grad3[a], e2, t2, r3 - 1), C = this.dot(this.grad3[g], e2 - 1, t2, r3 - 1), E = this.dot(this.grad3[d], e2, t2 - 1, r3 - 1), x = this.dot(this.grad3[c], e2 - 1, t2 - 1, r3 - 1), S = this.fade(e2), T = this.fade(t2), b = this.fade(r3), w = this.mix(m, f, S), A = this.mix(v, C, S), D = this.mix(p, y, S), R = this.mix(E, x, S), M = this.mix(w, D, T), z = this.mix(A, R, T), k = this.mix(M, z, b);
+      return k;
+    };
+  }]);
   window.AFRAME.registerComponent("gizmo", {
     schema: {
       size: {
@@ -34295,1207 +40047,1016 @@ void main() {
       }
     }
   });
-  AFRAME.registerComponent("haptics", {
-    schema: {
-      intensity: {
-        default: 0.6
-      },
-      duration: {
-        default: 30
-      }
-    },
-    init() {
-      this.el.addEventListener("haptic-pulse", (e) => this.pulse(e.detail));
-      this.el.addEventListener("haptic-burst", (e) => this.burst(e.detail));
-    },
-    getActuator() {
-      const controller = this.el.components["tracked-controls"]?.controller;
-      const gamepad = controller?.gamepad;
-      return gamepad?.hapticActuators?.[0] || gamepad?.vibrationActuator || null;
-    },
-    pulse(options = {}) {
-      const actuator = this.getActuator();
-      if (!actuator) return;
-      const intensity = options.intensity ?? this.data.intensity;
-      const duration = options.duration ?? this.data.duration;
-      if (actuator.pulse) {
-        actuator.pulse(intensity, duration);
-      } else if (actuator.playEffect) {
-        actuator.playEffect("dual-rumble", {
-          duration,
-          strongMagnitude: intensity,
-          weakMagnitude: intensity
-        });
-      }
-    },
-    burst(options = {}) {
-      const count = options.count ?? 3;
-      const gap = options.gap ?? 40;
-      const intensity = options.intensity ?? this.data.intensity;
-      const duration = options.duration ?? this.data.duration;
-      let pulseCount = 0;
-      const doPulse = () => {
-        if (pulseCount++ >= count) return;
-        this.pulse({
-          intensity,
-          duration
-        });
-        setTimeout(doPulse, gap);
-      };
-      doPulse();
-    }
-  });
-  AFRAME.registerComponent("killswitch", {
-    schema: {
-      controller: {
-        type: "string",
-        default: ""
-      }
-    },
-    init: function() {
-      this.controller = document.querySelector(`#${this.data.controller}`);
-      this.controller.addEventListener("bbuttondown", this.killToggle.bind(this));
-      this.controller.addEventListener("ybuttondown", this.killToggle.bind(this));
-    },
-    killToggle: function() {
-      console.log("killswitch");
-    }
-  });
-  AFRAME.registerComponent("move-tool", {
-    schema: {
-      enableTranslation: {
-        type: "boolean",
-        default: true
-      },
-      enableRotation: {
-        type: "boolean",
-        default: true
-      },
-      enableScale: {
-        type: "boolean",
-        default: true
-      },
-      translationSensitivity: {
-        type: "number",
-        default: 4
-      },
-      rotationSensitivity: {
-        type: "number",
-        default: 1
-      },
-      scaleSensitivity: {
-        type: "number",
-        default: 1
-      },
-      pullPushSensitivity: {
-        type: "number",
-        default: 2
-      }
-    },
-    init() {
-      this.T = AFRAME.THREE;
-      this.selectedObjects = [];
-      this.isManipulating = false;
-      this.isGripping = false;
-      this.sphereRadius = 0.05;
-      this.currentJoystick = {
-        x: 0,
-        y: 0
-      };
-      this.startControllerPosition = new this.T.Vector3();
-      this.startControllerRotation = new this.T.Euler();
-      this.startObjectPositions = [];
-      this.startObjectRotations = [];
-      this.initialRayDistance = 0;
-      this.gripOffset = new this.T.Vector3();
-      this.gripRotationOffset = new this.T.Euler();
-      this.setupRaycaster();
-      this.createSelectionSphere();
-      this.bindEvents();
-    },
-    bindEvents() {
-      const events2 = ["triggerdown", "triggerup", "gripdown", "gripup", "thumbstickmoved", "bbuttondown", "ybuttondown", "xbuttondown", "abuttondown"];
-      events2.forEach((event) => this.el.addEventListener(event, this[`handle${event.replace("-", "").replace(/^\w/, (c) => c.toUpperCase())}`].bind(this)));
-      this.el.sceneEl.addEventListener("clearSelection", this.clearSelection.bind(this));
-    },
-    setupRaycaster() {
-      this.el.setAttribute("raycaster", {
-        objects: "[editable]",
-        far: 1e3,
-        showLine: true,
-        lineColor: "rgba(255,255,255,0.31)",
-        lineOpacity: 0.5
-      });
-    },
-    createSelectionSphere() {
-      this.selectionSphere = document.createElement("a-entity");
-      this.selectionSphere.setAttribute("geometry", `primitive: sphere; radius: ${this.sphereRadius}`);
-      this.selectionSphere.setAttribute("position", "-0.07 -0.06 0.02");
-      this.el.appendChild(this.selectionSphere);
-      this.updateSphereVisual();
-    },
-    // Helper functions
-    getEntityTransform(el) {
-      const pos = el.getAttribute("position") || {
-        x: 0,
-        y: 0,
-        z: 0
-      };
-      const rot = el.getAttribute("rotation") || {
-        x: 0,
-        y: 0,
-        z: 0
-      };
-      const scale = el.getAttribute("scale") || {
-        x: 1,
-        y: 1,
-        z: 1
-      };
-      return {
-        pos,
-        rot,
-        scale
-      };
-    },
-    updateSphereSize(radius) {
-      const oldRadius = this.sphereRadius;
-      const newRadius = Math.max(0.02, Math.min(0.2, radius));
-      const delta = newRadius - oldRadius;
-      this.sphereRadius = newRadius;
-      if (this.selectionSphere) {
-        this.selectionSphere.setAttribute("geometry", `primitive: sphere; radius: ${this.sphereRadius}`);
-        try {
-          const pos = this.selectionSphere.getAttribute("position") || {
-            x: 0,
-            y: 0,
-            z: 0
-          };
-          const newX = (parseFloat(pos.x) || 0) - delta;
-          this.selectionSphere.setAttribute("position", `${newX} ${pos.y} ${pos.z}`);
-        } catch (e) {
-          const objPos = this.selectionSphere.object3D.position;
-          objPos.x = objPos.x - delta;
-          this.selectionSphere.object3D.position.set(objPos.x, objPos.y, objPos.z);
-        }
-      }
-    },
-    updateSphereVisual(isGripping) {
-      if (!this.selectionSphere) return;
-      const color = isGripping ? "#23b391" : "#000000";
-      const opacity = isGripping ? 1 : 0.3;
-      const scale = isGripping ? "0.8 0.8 0.8" : "1 1 1";
-      this.selectionSphere.setAttribute("material", `color: ${color}; opacity: ${opacity}; transparent: true;`);
-      this.selectionSphere.setAttribute("animation", `
-      property: scale; 
-      to: ${scale}; 
-      dur: 150; 
-      easing: easeOutQuad
-    `);
-    },
-    // Event handlers
-    handleTriggerdown() {
-      const rc = this.el.components.raycaster;
-      if (rc?.intersectedEls.length > 0) {
-        const target = rc.intersectedEls[0];
-        if (target?.hasAttribute("editable")) {
-          const intersection = rc.intersections[0];
-          if (intersection) {
-            this.initialRayDistance = intersection.distance;
-          }
-          this.selectAndStartManipulation(target);
-        }
-      }
-    },
-    handleTriggerup() {
-      if (this.isManipulating) this.endManipulation();
-      this.clearSelection();
-    },
-    handleGripdown() {
-      this.isGripping = true;
-      this.updateSphereVisual(true);
-      const spherePos = new this.T.Vector3();
-      this.selectionSphere.object3D.getWorldPosition(spherePos);
-      const target = Array.from(document.querySelectorAll("[editable]")).find((el) => {
-        if (!el.object3D) return false;
-        const objectPos = new this.T.Vector3();
-        el.object3D.getWorldPosition(objectPos);
-        return spherePos.distanceTo(objectPos) < this.sphereRadius + 0.1;
-      });
-      if (target) {
-        const objectPos = new this.T.Vector3();
-        target.object3D.getWorldPosition(objectPos);
-        this.gripOffset.copy(objectPos).sub(spherePos);
-        const {
-          rot: controllerRot
-        } = this.getEntityTransform(this.el);
-        const {
-          rot: objectRot
-        } = this.getEntityTransform(target);
-        this.gripRotationOffset.set((objectRot.x - controllerRot.x) * Math.PI / 180, (objectRot.y - controllerRot.y) * Math.PI / 180, (objectRot.z - controllerRot.z) * Math.PI / 180);
-        this.selectAndStartManipulation(target);
-      }
-    },
-    handleGripup() {
-      this.isGripping = false;
-      this.updateSphereVisual(false);
-      if (this.isManipulating) this.endManipulation();
-      this.clearSelection();
-    },
-    handleThumbstickmoved(e) {
-      this.currentJoystick.x = e.detail?.x || 0;
-      this.currentJoystick.y = e.detail?.y || 0;
-    },
-    // Duplicate and Delete functions
-    handleBbuttondown() {
-      this.duplicateSelected();
-    },
-    handleYbuttondown() {
-      this.duplicateSelected();
-    },
-    handleXbuttondown() {
-      this.deleteSelected();
-    },
-    handleAbuttondown() {
-      this.deleteSelected();
-    },
-    async duplicateSelected() {
-      if (this.selectedObjects.length === 0) return;
-      this.selectedObjects.forEach(async (el) => {
-        const clone = document.createElement("a-entity");
-        const newId = `entity_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-        clone.id = newId;
-        Array.from(el.attributes).forEach((attr) => {
-          if (attr.name !== "id") {
-            clone.setAttribute(attr.name, attr.value);
-          }
-        });
-        const {
-          pos,
-          rot,
-          scale
-        } = this.getEntityTransform(el);
-        clone.setAttribute("position", {
-          x: pos.x,
-          y: pos.y,
-          z: pos.z
-        });
-        clone.setAttribute("rotation", {
-          x: rot.x,
-          y: rot.y,
-          z: rot.z
-        });
-        clone.setAttribute("scale", {
-          x: scale.x,
-          y: scale.y,
-          z: scale.z
-        });
-        if (el.hasAttribute("material")) {
-          clone.setAttribute("material", el.getAttribute("material"));
-        }
-        if (el.hasAttribute("geometry")) {
-          clone.setAttribute("geometry", el.getAttribute("geometry"));
-        }
-        if (el.hasAttribute("editable")) {
-          clone.setAttribute("editable", "");
-        }
-        el.parentNode.appendChild(clone);
-        try {
-          const sceneEntity = {
-            id: newId,
-            tagName: el.tagName.toLowerCase(),
-            properties: {
-              position: `${pos.x} ${pos.y} ${pos.z}`,
-              rotation: `${rot.x} ${rot.y} ${rot.z}`,
-              scale: `${scale.x} ${scale.y} ${scale.z}`,
-              material: el.hasAttribute("material") ? el.getAttribute("material") : void 0,
-              geometry: el.hasAttribute("geometry") ? el.getAttribute("geometry") : void 0,
-              editable: el.hasAttribute("editable")
-            }
-          };
-          await fetch(`/api/projects/${encodeURIComponent(window.PROJECT_DATA.path)}/scenes/${encodeURIComponent(window.PROJECT_DATA.activeScene)}`, {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              operation: {
-                action: "add",
-                entity: sceneEntity
-              }
-            })
-          });
-        } catch (err) {
-          console.error("Error saving duplicated entity:", err);
-        }
-      });
-    },
-    async deleteSelected() {
-      if (this.selectedObjects.length === 0) return;
-      this.selectedObjects.forEach(async (el) => {
-        this.setWireframeMode(el, false);
-        if (el.id) {
-          try {
-            const response = await fetch(`/api/projects/${encodeURIComponent(window.PROJECT_DATA.path)}/scenes/${encodeURIComponent(window.PROJECT_DATA.activeScene)}`, {
-              method: "PUT",
-              headers: {
-                "Content-Type": "application/json"
-              },
-              body: JSON.stringify({
-                operation: {
-                  action: "remove",
-                  id: el.id
-                }
-              })
-            });
-            if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-            }
-          } catch (err) {
-            console.error("Error removing entity from scene:", err);
-          }
-        }
-        if (el.parentNode) {
-          el.parentNode.removeChild(el);
-        }
-      });
-      this.clearSelection();
-    },
-    // Selection and manipulation
-    selectAndStartManipulation(target) {
-      this.clearSelection();
-      this.selectObject(target);
-      this.startManipulation();
-    },
-    selectObject(el) {
-      if (this.selectedObjects.includes(el)) return;
-      this.selectedObjects.push(el);
-      this.setWireframeMode(el, true);
-    },
-    clearSelection() {
-      this.selectedObjects.forEach((el) => this.setWireframeMode(el, false));
-      this.selectedObjects = [];
-    },
-    setWireframeMode(el, wireframe) {
-      if (!el || !el.object3D) return;
-      el.object3D.traverse((child) => {
-        if (child.material) {
-          if (Array.isArray(child.material)) {
-            child.material.forEach((mat) => {
-              if (mat) mat.wireframe = wireframe;
-            });
-          } else {
-            child.material.wireframe = wireframe;
-          }
-        }
-      });
-    },
-    startManipulation() {
-      if (this.selectedObjects.length === 0) return;
-      this.isManipulating = true;
-      const {
-        pos,
-        rot
-      } = this.getEntityTransform(this.el);
-      this.startControllerPosition.set(pos.x, pos.y, pos.z);
-      this.startControllerRotation.set(rot.x * Math.PI / 180, rot.y * Math.PI / 180, rot.z * Math.PI / 180);
-      this.startObjectPositions = this.selectedObjects.map((o) => {
-        const {
-          pos: pos2
-        } = this.getEntityTransform(o);
-        return new this.T.Vector3(pos2.x, pos2.y, pos2.z);
-      });
-      this.startObjectRotations = this.selectedObjects.map((o) => {
-        const {
-          rot: rot2
-        } = this.getEntityTransform(o);
-        return new this.T.Euler(rot2.x * Math.PI / 180, rot2.y * Math.PI / 180, rot2.z * Math.PI / 180);
-      });
-    },
-    updateSingleHandedManipulation() {
-      if (this.isGripping) {
-        this.updateGripManipulation();
-      } else {
-        this.updateRayTracking();
-      }
-    },
-    updateGripManipulation() {
-      const spherePos = new this.T.Vector3();
-      this.selectionSphere.object3D.getWorldPosition(spherePos);
-      const {
-        rot: currentControllerRot
-      } = this.getEntityTransform(this.el);
-      this.selectedObjects.forEach((o, i) => {
-        if (this.data.enableTranslation) {
-          const newPos = spherePos.clone().add(this.gripOffset);
-          o.setAttribute("position", {
-            x: newPos.x,
-            y: newPos.y,
-            z: newPos.z
-          });
-        }
-        if (this.data.enableRotation) {
-          const newRotation = {
-            x: currentControllerRot.x - this.gripRotationOffset.x * 180 / Math.PI,
-            y: currentControllerRot.y - this.gripRotationOffset.y * 180 / Math.PI,
-            z: currentControllerRot.z - this.gripRotationOffset.z * 180 / Math.PI
-          };
-          o.setAttribute("rotation", newRotation);
-        }
-      });
-    },
-    updateRayTracking() {
-      const raycaster = this.el.components.raycaster.raycaster;
-      if (!raycaster) return;
-      const newPosition = raycaster.ray.origin.clone().add(raycaster.ray.direction.clone().multiplyScalar(this.initialRayDistance));
-      this.selectedObjects.forEach((o, i) => {
-        if (this.data.enableTranslation) {
-          o.setAttribute("position", {
-            x: newPosition.x,
-            y: newPosition.y,
-            z: newPosition.z
-          });
-        }
-      });
-    },
-    updateRayDistanceFromCurrentPosition() {
-      if (this.selectedObjects.length === 0) return;
-      const raycaster = this.el.components.raycaster.raycaster;
-      if (!raycaster) return;
-      const objectPos = new this.T.Vector3();
-      this.selectedObjects[0].object3D.getWorldPosition(objectPos);
-      this.initialRayDistance = raycaster.ray.origin.distanceTo(objectPos);
-    },
-    endManipulation() {
-      this.isManipulating = false;
-      this.saveTransforms();
-    },
-    // Joystick controls
-    handlePushPullRay(intensity) {
-      if (this.selectedObjects.length === 0) return;
-      const raycaster = this.el.components.raycaster.raycaster;
-      if (!raycaster) return;
-      const rayDirection = raycaster.ray.direction.clone();
-      this.selectedObjects.forEach((el) => {
-        const move = rayDirection.multiplyScalar(-intensity * this.data.pullPushSensitivity * 0.06);
-        const {
-          pos
-        } = this.getEntityTransform(el);
-        el.setAttribute("position", {
-          x: pos.x + move.x,
-          y: pos.y + move.y,
-          z: pos.z + move.z
-        });
-      });
-    },
-    handlePullPush(intensity) {
-      const camera = this.el.sceneEl.camera.el;
-      if (!camera) return;
-      const cameraPos = new this.T.Vector3();
-      camera.object3D.getWorldPosition(cameraPos);
-      this.selectedObjects.forEach((el) => {
-        const objectPos = new this.T.Vector3();
-        el.object3D.getWorldPosition(objectPos);
-        const direction = objectPos.sub(cameraPos).normalize();
-        const move = direction.multiplyScalar(intensity * this.data.pullPushSensitivity * 0.02);
-        const {
-          pos
-        } = this.getEntityTransform(el);
-        el.setAttribute("position", {
-          x: pos.x + move.x,
-          y: pos.y + move.y,
-          z: pos.z + move.z
-        });
-      });
-    },
-    handleGripPull() {
-      if (this.selectedObjects.length === 0) return;
-      const controllerPos = new this.T.Vector3();
-      this.el.object3D.getWorldPosition(controllerPos);
-      this.selectedObjects.forEach((el) => {
-        const objectPos = new this.T.Vector3();
-        el.object3D.getWorldPosition(objectPos);
-        const direction = controllerPos.clone().sub(objectPos).normalize();
-        const move = direction.multiplyScalar(this.data.pullPushSensitivity * 0.02);
-        const {
-          pos
-        } = this.getEntityTransform(el);
-        el.setAttribute("position", {
-          x: pos.x + move.x,
-          y: pos.y + move.y,
-          z: pos.z + move.z
-        });
-      });
-    },
-    handleSmoothScale(intensity, deltaTime) {
-      if (!this.data.enableScale || Math.abs(intensity) < 0.1) return;
-      const dt = deltaTime / 1e3;
-      const scaleRate = 1 + intensity * this.data.scaleSensitivity * dt * 2;
-      this.selectedObjects.forEach((el) => {
-        const {
-          scale
-        } = this.getEntityTransform(el);
-        const newScale = {
-          x: Math.max(0.1, Math.min(10, scale.x * scaleRate)),
-          y: Math.max(0.1, Math.min(10, scale.y * scaleRate)),
-          z: Math.max(0.1, Math.min(10, scale.z * scaleRate))
-        };
-        el.setAttribute("scale", newScale);
-      });
-    },
-    handleSmoothSphereScale(intensity, deltaTime) {
-      if (Math.abs(intensity) < 0.1) return;
-      const dt = deltaTime / 1e3;
-      const scaleRate = 1 + intensity * dt * 3;
-      const newRadius = Math.max(0.02, Math.min(0.2, this.sphereRadius * scaleRate));
-      this.updateSphereSize(newRadius);
-    },
-    saveTransforms() {
-      this.selectedObjects.forEach(async (el) => {
-        const {
-          pos,
-          rot,
-          scale
-        } = this.getEntityTransform(el);
-        try {
-          const response = await fetch(`/api/projects/${encodeURIComponent(window.PROJECT_DATA.path)}/scenes/${encodeURIComponent(window.PROJECT_DATA.activeScene)}`, {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              operation: {
-                action: "update",
-                id: el.id,
-                properties: {
-                  position: `${pos.x} ${pos.y} ${pos.z}`,
-                  rotation: `${rot.x} ${rot.y} ${rot.z}`,
-                  scale: `${scale.x} ${scale.y} ${scale.z}`
-                }
-              }
-            })
-          });
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-        } catch (err) {
-          console.error("Scene save error:", err);
-        }
-      });
-    },
-    tick(time, deltaTime) {
-      const isPushPulling = this.selectedObjects.length > 0 && Math.abs(this.currentJoystick.y) > 0.1;
-      const wasPushPulling = this.wasPushPulling || false;
-      if (wasPushPulling && !isPushPulling && this.isManipulating && this.selectedObjects.length > 0) {
-        this.updateRayDistanceFromCurrentPosition();
-      }
-      if (this.isManipulating && this.selectedObjects.length > 0 && !isPushPulling) {
-        this.updateSingleHandedManipulation();
-      }
-      if (this.isGripping && this.selectedObjects.length > 0) {
-        this.handleGripPull();
-      }
-      if (this.selectedObjects.length > 0 && Math.abs(this.currentJoystick.x) > 0.1 && !isPushPulling) {
-        this.handleSmoothScale(this.currentJoystick.x, deltaTime);
-      }
-      if (isPushPulling) {
-        this.handlePushPullRay(this.currentJoystick.y);
-      }
-      this.wasPushPulling = isPushPulling;
-      if (!this.isManipulating && this.selectedObjects.length === 0 && Math.abs(this.currentJoystick.x) > 0.1) {
-        this.handleSmoothSphereScale(this.currentJoystick.x, deltaTime);
-      }
-    }
-  });
-  window.AFRAME.registerComponent("paint-tool", {
+  AFRAME.registerComponent("highlight", {
     schema: {
       color: {
+        type: "color",
+        default: "#90e0ef"
+      },
+      emissiveIntensity: {
+        type: "number",
+        default: 0.65
+      },
+      eventOn: {
         type: "string",
-        default: "#FF0040"
+        default: "raycaster-intersected"
       },
-      roughness: {
-        type: "number",
-        default: 0.6
-      },
-      metalness: {
-        type: "number",
-        default: 0
-      },
-      opacity: {
-        type: "number",
-        default: 1
-      },
-      sphereRadius: {
-        type: "number",
-        default: 0.01
+      eventOff: {
+        type: "string",
+        default: "raycaster-intersected-cleared"
       }
-      // Made smaller
     },
     init: function() {
-      this.T = AFRAME.THREE;
-      this.isPainting = false;
-      this.paletteVisible = false;
-      this.colorPalette = null;
-      this.colorSpheres = [];
-      this.data.currentMaterial = `color: ${this.data.color}; roughness: ${this.data.roughness}; metalness: ${this.data.metalness};`;
-      this.setupRaycaster();
-      this.createPaintSphere();
-      this.createColorPalette();
-      this.bindEvents();
+      this._prev = null;
+      this._on = () => this.setHighlighted(true);
+      this._off = () => this.setHighlighted(false);
+      this.el.addEventListener(this.data.eventOn, this._on);
+      this.el.addEventListener(this.data.eventOff, this._off);
     },
-    setupRaycaster() {
-      this.el.setAttribute("raycaster", {
-        objects: "[editable]",
-        far: 1e3,
-        showLine: true,
-        lineColor: "rgb(255,100,255)",
-        lineOpacity: 0.8
-      });
+    remove: function() {
+      this.el.removeEventListener(this.data.eventOn, this._on);
+      this.el.removeEventListener(this.data.eventOff, this._off);
+      this.setHighlighted(false);
     },
-    createPaintSphere() {
-      this.paintSphere = document.createElement("a-entity");
-      this.paintSphere.setAttribute("geometry", `primitive: sphere; radius: ${this.data.sphereRadius}`);
-      this.paintSphere.setAttribute("material", this.data.currentMaterial);
-      this.paintSphere.setAttribute("position", "0 -0.03 -0.07");
-      this.paintSphere.setAttribute("animation", "property: scale; to: 1.1 1.1 1.1; dir: alternate; dur: 1000; loop: true; easing: easeInOutSine");
-      this.el.appendChild(this.paintSphere);
-    },
-    bindEvents() {
-      this.el.addEventListener("abuttondown", this.paintWithButton.bind(this));
-      this.el.addEventListener("xbuttondown", this.paintWithButton.bind(this));
-      this.el.addEventListener("bbuttondown", this.showPalette.bind(this));
-      this.el.addEventListener("bbuttonup", this.hidePalette.bind(this));
-      this.el.addEventListener("ybuttondown", this.showPalette.bind(this));
-      this.el.addEventListener("ybuttonup", this.hidePalette.bind(this));
-    },
-    paintWithButton() {
-      this.paintTarget();
-      this.el.emit("haptic-pulse", {
-        intensity: 0.3,
-        duration: 50
-      }, false);
-    },
-    startPainting() {
-      this.isPainting = true;
-      this.paintTarget();
-    },
-    stopPainting() {
-      this.isPainting = false;
-    },
-    paintTarget() {
-      const rc = this.el.components.raycaster;
-      if (rc?.intersectedEls.length > 0) {
-        const target = rc.intersectedEls[0];
-        if (target?.hasAttribute("editable")) {
-          this.applyPaintToTarget(target);
-        }
-      }
-    },
-    async applyPaintToTarget(target) {
-      target.setAttribute("material", this.data.currentMaterial);
-      if (target.id) {
-        try {
-          const response = await fetch(`/api/projects/${encodeURIComponent(window.PROJECT_DATA.path)}/scenes/${encodeURIComponent(window.PROJECT_DATA.activeScene)}`, {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              operation: {
-                action: "update",
-                id: target.id,
-                properties: {
-                  material: this.data.currentMaterial
-                }
-              }
-            })
-          });
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-        } catch (err) {
-          console.error("Paint save error:", err);
-        }
-      }
-    },
-    updatePaintSphere() {
-      if (this.paintSphere) {
-        this.paintSphere.setAttribute("geometry", `primitive: sphere; radius: ${this.data.sphereRadius}`);
-        this.paintSphere.setAttribute("material", this.data.currentMaterial);
-      }
-    },
-    setCurrentMaterial(color) {
-      this.data.color = color;
-      this.data.currentMaterial = `color: ${this.data.color}; roughness: ${this.data.roughness}; metalness: ${this.data.metalness};`;
-      this.updatePaintSphere();
-    },
-    // Color Palette System
-    generateColorRings() {
-      const rings = [];
-      const hslToHex = (h, s, l) => {
-        s /= 100;
-        l /= 100;
-        const k = (n) => (n + h / 30) % 12;
-        const a = s * Math.min(l, 1 - l);
-        const f = (n) => {
-          const color = l - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1)));
-          return Math.round(255 * color).toString(16).padStart(2, "0");
-        };
-        return `#${f(0)}${f(8)}${f(4)}`;
-      };
-      const baseCount = 6;
-      let base = [];
-      for (let i = 0; i < baseCount; i++) {
-        const hue = i / baseCount * 360;
-        base.push(hslToHex(hue, 100, 50));
-      }
-      rings.push(base);
-      const ringCount = 4;
-      let prev = base;
-      for (let r2 = 1; r2 < ringCount; r2++) {
-        const next = [];
-        const n = prev.length;
-        for (let i = 0; i < n; i++) {
-          const a = prev[i];
-          const b = prev[(i + 1) % n];
-          next.push(a);
-          next.push(this.blendColors(a, b, 0.5));
-        }
-        rings.push(next);
-        prev = next;
-      }
-      return rings;
-    },
-    getComplementaryColor(hexColor) {
-      const hex = hexColor.replace("#", "");
-      const r2 = 255 - parseInt(hex.substr(0, 2), 16);
-      const g = 255 - parseInt(hex.substr(2, 2), 16);
-      const b = 255 - parseInt(hex.substr(4, 2), 16);
-      return `#${r2.toString(16).padStart(2, "0")}${g.toString(16).padStart(2, "0")}${b.toString(16).padStart(2, "0")}`;
-    },
-    blendColors(color1, color2, ratio = 0.5) {
-      const hex1 = color1.replace("#", "");
-      const hex2 = color2.replace("#", "");
-      const r1 = parseInt(hex1.substr(0, 2), 16);
-      const g1 = parseInt(hex1.substr(2, 2), 16);
-      const b1 = parseInt(hex1.substr(4, 2), 16);
-      const r2 = parseInt(hex2.substr(0, 2), 16);
-      const g2 = parseInt(hex2.substr(2, 2), 16);
-      const b2 = parseInt(hex2.substr(4, 2), 16);
-      const r3 = Math.round(r1 * (1 - ratio) + r2 * ratio);
-      const g = Math.round(g1 * (1 - ratio) + g2 * ratio);
-      const b = Math.round(b1 * (1 - ratio) + b2 * ratio);
-      return `#${r3.toString(16).padStart(2, "0")}${g.toString(16).padStart(2, "0")}${b.toString(16).padStart(2, "0")}`;
-    },
-    createColorPalette() {
-      this.colorPalette = document.createElement("a-entity");
-      this.colorPalette.setAttribute("visible", false);
-      const rings = this.generateColorRings().slice(3);
-      this.colorSpheres = [];
-      rings.forEach((ring, ringIndex) => {
-        const radius = 0.08 + ringIndex * 0.04;
-        const sphereSize = 0.015 - ringIndex * 2e-3;
-        ring.forEach((color, colorIndex) => {
-          const angle = colorIndex / ring.length * Math.PI * 2;
-          const x = Math.cos(angle) * radius;
-          const z = Math.sin(angle) * radius;
-          const colorSphere = document.createElement("a-entity");
-          colorSphere.setAttribute("geometry", `primitive: sphere; radius: ${sphereSize}`);
-          colorSphere.setAttribute("material", `color: ${color}; roughness: 0.7;`);
-          colorSphere.setAttribute("position", `${x} 0 ${z}`);
-          colorSphere.setAttribute("scale", `1 0.3 1`);
-          colorSphere.setAttribute("class", "color-option");
-          colorSphere.userData = {
-            color
+    setHighlighted: function(on) {
+      const mat = this.el.getAttribute("material") || {};
+      if (on) {
+        if (this._prev === null) {
+          this._prev = {
+            emissive: mat.emissive || "#000000",
+            emissiveIntensity: typeof mat.emissiveIntensity === "number" ? mat.emissiveIntensity : 0
           };
-          this.colorPalette.appendChild(colorSphere);
-          this.colorSpheres.push(colorSphere);
+        }
+        this.el.setAttribute("material", {
+          emissive: this.data.color,
+          emissiveIntensity: this.data.emissiveIntensity
         });
-      });
-      this.el.sceneEl.appendChild(this.colorPalette);
-    },
-    showPalette() {
-      this.paletteVisible = true;
-      if (this.colorPalette) {
-        const controllerPos = new this.T.Vector3();
-        this.el.object3D.getWorldPosition(controllerPos);
-        this.colorPalette.setAttribute("position", `${controllerPos.x} ${controllerPos.y} ${controllerPos.z}`);
-        this.colorPalette.setAttribute("visible", true);
-        this.colorPalette.setAttribute("animation", "property: rotation; to: 0 360 0; dur: 20000; loop: true; easing: linear");
+        return;
       }
-    },
-    hidePalette() {
-      this.paletteVisible = false;
-      if (this.colorPalette) {
-        this.colorPalette.setAttribute("visible", false);
-        this.colorPalette.removeAttribute("animation");
+      if (this._prev) {
+        this.el.setAttribute("material", {
+          emissive: this._prev.emissive,
+          emissiveIntensity: this._prev.emissiveIntensity
+        });
       }
-    },
-    selectColor() {
-      if (!this.paletteVisible) return;
-      const rc = this.el.components.raycaster;
-      if (rc?.intersectedEls.length > 0) {
-        const target = rc.intersectedEls[0];
-        if (target?.hasAttribute("class") && target.getAttribute("class").includes("color-option")) {
-          const selectedColor = target.userData.color;
-          this.setCurrentMaterial(selectedColor);
-          this.el.emit("haptic-pulse", {
-            intensity: 0.5,
-            duration: 80
-          }, false);
-          this.hidePalette();
-        }
-      }
-    },
-    checkSphereColorCollision() {
-      if (!this.paletteVisible || !this.paintSphere || !this.paintSphere.object3D) return;
-      const spherePos = new this.T.Vector3();
-      this.paintSphere.object3D.getWorldPosition(spherePos);
-      this.colorSpheres.forEach((colorSphere) => {
-        if (!colorSphere.object3D) return;
-        const colorPos = new this.T.Vector3();
-        colorSphere.object3D.getWorldPosition(colorPos);
-        const distance = spherePos.distanceTo(colorPos);
-        const collisionDistance = this.data.sphereRadius + 0.015;
-        if (distance < collisionDistance) {
-          const selectedColor = colorSphere.userData.color;
-          if (selectedColor !== this.data.color) {
-            this.setCurrentMaterial(selectedColor);
-            this.el.emit("haptic-pulse", {
-              intensity: 0.5,
-              duration: 80
-            }, false);
-            this.highlightSelectedColor(colorSphere);
-          }
-        }
-      });
-    },
-    highlightSelectedColor(colorSphere) {
-      this.colorSpheres.forEach((sphere) => {
-        sphere.removeAttribute("animation__highlight");
-        const material = sphere.getAttribute("material");
-        if (material && typeof material === "string") {
-          sphere.setAttribute("material", material.replace(/; emissive: #[0-9A-Fa-f]{6}/, ""));
-        }
-      });
-      const baseColor = colorSphere.userData.color;
-      const currentMaterial = colorSphere.getAttribute("material");
-      const materialString = typeof currentMaterial === "string" ? currentMaterial : "";
-      colorSphere.setAttribute("material", `${materialString}; emissive: ${baseColor}`);
-      colorSphere.setAttribute("animation__highlight", "property: scale; to: 1.3 1.3 1.3; dur: 200; dir: alternate; loop: 2; easing: easeOutElastic");
-    },
-    tick() {
-      if (this.isPainting) {
-        this.paintTarget();
-      }
-      this.checkSphereColorCollision();
     }
   });
-  window.AFRAME.registerComponent("shapes-tool", {
-    primitiveIndex: 0,
-    availablePrimitives: ["box", "sphere", "cone", "cylinder", "torus", "dodecahedron", "icosahedron", "octahedron", "tetrahedron", "plane", "circle", "ring", "triangle"],
-    brightColors: [
-      "#FF0040",
-      // Bright Red
-      "#FF8000",
-      // Bright Orange  
-      "#FFFF00",
-      // Bright Yellow
-      "#80FF00",
-      // Bright Lime
-      "#00FF40",
-      // Bright Green
-      "#00FF80",
-      // Bright Mint
-      "#00FFFF",
-      // Bright Cyan
-      "#0080FF",
-      // Bright Sky Blue
-      "#0040FF",
-      // Bright Blue
-      "#8000FF",
-      // Bright Purple
-      "#FF00FF",
-      // Bright Magenta
-      "#FF0080"
-      // Bright Pink
-    ],
-    shapePreview: null,
-    schema: {
-      primitive: {
-        type: "string",
-        default: "box"
-      },
-      showPreview: {
-        type: "boolean",
-        default: true
-      }
-    },
-    init: function() {
-      this.createShapePreview();
-      this.el.addEventListener("xbuttondown", this.onPlaceShape.bind(this));
-      this.el.addEventListener("abuttondown", this.onPlaceShape.bind(this));
-      this.el.addEventListener("ybuttondown", this.cycleShapeForward.bind(this));
-      this.el.addEventListener("bbuttondown", this.cycleShapeBackward.bind(this));
-    },
-    createShapePreview: function() {
-      if (this.shapePreview) {
-        this.el.removeChild(this.shapePreview);
-      }
-      const primitive = this.availablePrimitives[this.primitiveIndex];
-      this.shapePreview = document.createElement("a-entity");
-      this.shapePreview.setAttribute("id", "shape-preview");
-      this.shapePreview.setAttribute("position", "0.007 -0.03 -0.08");
-      this.shapePreview.setAttribute("visible", this.data.showPreview);
-      this.shapePreview.setAttribute("geometry", `primitive: ${primitive};`);
-      this.shapePreview.setAttribute("scale", "0.03 0.03 0.03");
-      this.shapePreview.setAttribute("animation", "property: rotation; to: 360 360 360; loop: true; dur: 9000; easing: linear");
-      this.el.appendChild(this.shapePreview);
-      setTimeout(() => this.applyNormalMaterial(), 50);
-    },
-    applyNormalMaterial: function() {
-      if (!this.shapePreview?.object3D) return;
-      this.shapePreview.object3D.traverse((child) => {
-        if (child.geometry && child.material) {
-          const material = new THREE.MeshNormalMaterial();
-          const primitive = this.availablePrimitives[this.primitiveIndex];
-          if (this.is2D(primitive)) {
-            material.side = THREE.DoubleSide;
-          }
-          child.material = material;
-        }
-      });
-    },
-    cycleShapeForward: function() {
-      this.primitiveIndex = (this.primitiveIndex + 1) % this.availablePrimitives.length;
-      this.createShapePreview();
-    },
-    cycleShapeBackward: function() {
-      this.primitiveIndex = (this.primitiveIndex - 1 + this.availablePrimitives.length) % this.availablePrimitives.length;
-      this.createShapePreview();
-    },
-    onPlaceShape: function() {
-      this.createPrimitive();
-      this.el.emit("haptic-pulse", {
-        intensity: 1,
-        duration: 100
-      }, false);
-    },
-    createPrimitive: function() {
-      const primitive = this.availablePrimitives[this.primitiveIndex];
-      const worldPos = new THREE.Vector3();
-      this.el.object3D.getWorldPosition(worldPos);
-      const entity = this.createGeometryEntity(primitive, worldPos);
-      this.el.sceneEl.appendChild(entity);
-      this.saveEntityToProject(entity, primitive, worldPos);
-    },
-    createGeometryEntity: function(primitive, position) {
-      const entity = document.createElement("a-entity");
-      entity.setAttribute("id", this.genID());
-      entity.setAttribute("position", `${position.x} ${position.y} ${position.z}`);
-      entity.setAttribute("scale", "0.1 0.1 0.1");
-      entity.setAttribute("geometry", `primitive: ${primitive};`);
-      entity.setAttribute("material", this.getMaterialString(primitive));
-      entity.setAttribute("grabbable", "");
-      entity.setAttribute("collision", "");
-      entity.setAttribute("editable", "");
-      return entity;
-    },
-    is2D: function(primitive) {
-      return ["plane", "circle", "ring", "triangle"].includes(primitive);
-    },
-    getMaterialString: function(primitive) {
-      const randomColor = this.brightColors[Math.floor(Math.random() * this.brightColors.length)];
-      const material = `color: ${randomColor}; roughness:.6; metalness:1;`;
-      return this.is2D(primitive) ? `${material}; side: double` : material;
-    },
-    saveEntityToProject: async function(entity) {
-      const sceneEntity = {
-        id: entity.id,
-        tagName: "a-entity",
-        properties: {
-          position: entity.getAttribute("position"),
-          scale: entity.getAttribute("scale"),
-          geometry: entity.getAttribute("geometry"),
-          material: entity.getAttribute("material"),
-          editable: true
-        }
-      };
-      try {
-        const response = await fetch(`/api/projects/${encodeURIComponent(window.PROJECT_DATA.path)}/scenes/${encodeURIComponent(window.PROJECT_DATA.activeScene)}`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            operation: {
-              action: "add",
-              entity: sceneEntity
-            }
-          })
-        });
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-      } catch (err) {
-        console.error("Error adding shape to scene:", err);
-      }
-    },
-    genID: function() {
-      return `${Date.now().toString(36)}-${Math.random().toString(36).substr(2, 5)}`;
-    }
-  });
-  window.AFRAME.registerComponent("smart-move", {
+  AFRAME.registerComponent("keyboard", {
     schema: {
       enabled: {
         type: "boolean",
         default: true
       },
-      flySpeed: {
-        type: "number",
-        default: 1
-      },
-      turnSpeed: {
-        type: "number",
-        default: 0.25
-      },
-      strafeTurning: {
-        type: "boolean",
-        default: false
+      target: {
+        type: "selector",
+        default: null
       }
     },
     init: function() {
-      this.movement = {
-        forward: 0,
-        backward: 0,
-        rotateLeft: 0,
-        rotateRight: 0,
-        strafeLeft: 0,
-        strafeRight: 0
+      this._down = (e) => {
+        if (!this.data.enabled) return;
+        const target = this.data.target || this.el;
+        target.emit("xr:key-down", {
+          key: e.key,
+          code: e.code,
+          source: this.el
+        });
+        this.el.emit("xr:key-down", {
+          key: e.key,
+          code: e.code
+        });
       };
-      this.triggerPressure = 0;
-      this.gripPressure = 0;
-      this.camera = null;
-      this.cameraRig = null;
-      this.vector = new THREE.Vector3();
-      setTimeout(() => {
-        this.findCamera();
-        this.bindEvents();
-      }, 1e3);
-      console.log("[SMART-MOVE] Camera rig movement component initialized");
+      this._up = (e) => {
+        if (!this.data.enabled) return;
+        const target = this.data.target || this.el;
+        target.emit("xr:key-up", {
+          key: e.key,
+          code: e.code,
+          source: this.el
+        });
+        this.el.emit("xr:key-up", {
+          key: e.key,
+          code: e.code
+        });
+      };
+      window.addEventListener("keydown", this._down);
+      window.addEventListener("keyup", this._up);
     },
-    findCamera: function() {
-      this.camera = this.el.sceneEl.camera.el;
-      if (this.camera) {
-        this.cameraRig = this.camera.parentEl;
-      } else {
-        console.warn("[SMART-MOVE] No active camera found");
-      }
-    },
-    bindEvents: function() {
-      console.log("[SMART-MOVE] Binding controller events...");
-      this.el.addEventListener("thumbstickmoved", this.onJoystickMoved.bind(this));
-      this.el.addEventListener("triggerchanged", this.onTriggerChanged.bind(this));
-      this.el.addEventListener("thumbstickdown", this.onJoystickClick.bind(this));
-      this.el.addEventListener("gripchanged", this.onGripChanged.bind(this));
-    },
-    // Controller joystick - forward/backward movement and turning/strafing
-    onJoystickMoved: function(evt) {
-      if (!this.data.enabled) return;
-      const x = evt.detail.x;
-      const y = evt.detail.y;
-      const deadzone = 0.1;
-      this.resetMovement();
-      if (Math.abs(y) > deadzone) {
-        if (y > 0) {
-          this.movement.backward = Math.abs(y);
-        } else {
-          this.movement.forward = Math.abs(y);
-        }
-      }
-      if (Math.abs(x) > deadzone) {
-        if (this.data.strafeTurning) {
-          if (x > 0) {
-            this.movement.strafeRight = Math.abs(x);
-          } else {
-            this.movement.strafeLeft = Math.abs(x);
-          }
-        } else {
-          if (x > 0) {
-            this.movement.rotateRight = Math.abs(x);
-          } else {
-            this.movement.rotateLeft = Math.abs(x);
-          }
-        }
-      }
-    },
-    // Joystick click - toggle strafe turning
-    onJoystickClick: function(evt) {
-      this.data.strafeTurning = !this.data.strafeTurning;
-      console.log("[SMART-MOVE] Strafe turning:", this.data.strafeTurning ? "ON" : "OFF");
-    },
-    // Trigger pressure control for speed
-    onTriggerChanged: function(evt) {
-      this.triggerPressure = evt.detail.value;
-    },
-    // Grip pressure control for vertical movement
-    onGripChanged: function(evt) {
-      this.gripPressure = evt.detail.value;
-    },
-    resetMovement: function() {
-      Object.keys(this.movement).forEach((key) => {
-        this.movement[key] = 0;
-      });
-    },
-    // Main update loop
-    tick: function(time, deltaTime) {
-      if (!this.data.enabled) return;
-      this.updateFlyMovement(deltaTime);
-      this.updateVerticalMovement(deltaTime);
-    },
-    // Camera-based movement system
-    updateFlyMovement: function(deltaTime) {
-      if (!this.camera || !this.cameraRig) return;
-      const dt = deltaTime / 1e3;
-      const triggerMultiplier = Math.max(0.1, Math.min(this.triggerPressure, 0.6));
-      const speed = this.data.flySpeed * dt * 60 * triggerMultiplier;
-      const rotSpeed = this.data.turnSpeed * dt * 60 * triggerMultiplier;
-      if (this.movement.forward > 0 || this.movement.backward > 0) {
-        this.camera.object3D.getWorldDirection(this.vector);
-        this.vector.multiplyScalar(-(this.movement.forward - this.movement.backward) * speed);
-        this.cameraRig.object3D.position.add(this.vector);
-      }
-      if (this.movement.strafeLeft > 0 || this.movement.strafeRight > 0) {
-        this.camera.object3D.getWorldDirection(this.vector);
-        const right = new THREE.Vector3().crossVectors(this.vector, new THREE.Vector3(0, 1, 0)).normalize();
-        right.multiplyScalar((this.movement.strafeLeft - this.movement.strafeRight) * speed);
-        this.cameraRig.object3D.position.add(right);
-      }
-      if (this.movement.rotateLeft > 0 || this.movement.rotateRight > 0) {
-        this.cameraRig.object3D.rotateY((this.movement.rotateLeft - this.movement.rotateRight) * rotSpeed);
-      }
-    },
-    // Vertical movement using grip pressure
-    updateVerticalMovement: function(deltaTime) {
-      if (!this.camera || !this.cameraRig || this.gripPressure === 0) return;
-      const dt = deltaTime / 1e3;
-      const speed = this.data.flySpeed * dt * 60 * 0.5;
-      if (this.gripPressure > 0.8) {
-        const verticalMove = new THREE.Vector3(0, speed * this.gripPressure, 0);
-        this.cameraRig.object3D.position.add(verticalMove);
-      } else if (this.gripPressure > 0.3) {
-        const verticalMove = new THREE.Vector3(0, -speed * this.gripPressure, 0);
-        this.cameraRig.object3D.position.add(verticalMove);
-      }
-    },
-    // Public API methods
-    enable: function() {
-      this.data.enabled = true;
-    },
-    disable: function() {
-      this.data.enabled = false;
-      this.resetMovement();
+    remove: function() {
+      window.removeEventListener("keydown", this._down);
+      window.removeEventListener("keyup", this._up);
     }
   });
+  !(function(e) {
+    function t(i) {
+      if (r2[i]) return r2[i].exports;
+      var a = r2[i] = {
+        i,
+        l: false,
+        exports: {}
+      };
+      return e[i].call(a.exports, a, a.exports, t), a.l = true, a.exports;
+    }
+    var r2 = {};
+    t.m = e, t.c = r2, t.d = function(e2, r3, i) {
+      t.o(e2, r3) || Object.defineProperty(e2, r3, {
+        configurable: false,
+        enumerable: true,
+        get: i
+      });
+    }, t.n = function(e2) {
+      var r3 = e2 && e2.__esModule ? function() {
+        return e2.default;
+      } : function() {
+        return e2;
+      };
+      return t.d(r3, "a", r3), r3;
+    }, t.o = function(e2, t2) {
+      return Object.prototype.hasOwnProperty.call(e2, t2);
+    }, t.p = "", t(t.s = 0);
+  })([function(e, t, r2) {
+    var i = r2(1);
+    if ("undefined" == typeof AFRAME) throw new Error("Component attempted to register before AFRAME was available.");
+    AFRAME.components["particle-system"] || AFRAME.registerComponent("particle-system", {
+      schema: {
+        preset: {
+          type: "string",
+          default: "",
+          oneOf: ["default", "dust", "snow", "rain"]
+        },
+        maxAge: {
+          type: "number",
+          default: 6
+        },
+        positionSpread: {
+          type: "vec3",
+          default: {
+            x: 0,
+            y: 0,
+            z: 0
+          }
+        },
+        type: {
+          type: "number",
+          default: i.distributions.BOX
+        },
+        rotationAxis: {
+          type: "string",
+          default: "x"
+        },
+        rotationAngle: {
+          type: "number",
+          default: 0
+        },
+        rotationAngleSpread: {
+          type: "number",
+          default: 0
+        },
+        accelerationValue: {
+          type: "vec3",
+          default: {
+            x: 0,
+            y: -10,
+            z: 0
+          }
+        },
+        accelerationSpread: {
+          type: "vec3",
+          default: {
+            x: 10,
+            y: 0,
+            z: 10
+          }
+        },
+        velocityValue: {
+          type: "vec3",
+          default: {
+            x: 0,
+            y: 25,
+            z: 0
+          }
+        },
+        velocitySpread: {
+          type: "vec3",
+          default: {
+            x: 10,
+            y: 7.5,
+            z: 10
+          }
+        },
+        dragValue: {
+          type: "number",
+          default: 0
+        },
+        dragSpread: {
+          type: "number",
+          default: 0
+        },
+        dragRandomise: {
+          type: "boolean",
+          default: false
+        },
+        color: {
+          type: "array",
+          default: ["#0000FF", "#FF0000"]
+        },
+        size: {
+          type: "number",
+          default: 1
+        },
+        direction: {
+          type: "number",
+          default: 1
+        },
+        duration: {
+          type: "number",
+          default: null
+        },
+        particleCount: {
+          type: "number",
+          default: 1e3
+        },
+        texture: {
+          type: "asset",
+          default: "https://cdn.rawgit.com/IdeaSpaceVR/aframe-particle-system-component/master/dist/images/star2.png"
+        },
+        randomise: {
+          type: "boolean",
+          default: false
+        },
+        opacity: {
+          type: "array",
+          default: ["1"]
+        },
+        maxParticleCount: {
+          type: "number",
+          default: 25e4
+        },
+        blending: {
+          type: "number",
+          default: THREE.AdditiveBlending,
+          oneOf: [THREE.NoBlending, THREE.NormalBlending, THREE.AdditiveBlending, THREE.SubtractiveBlending, THREE.MultiplyBlending]
+        },
+        enabled: {
+          type: "boolean",
+          default: true
+        }
+      },
+      init: function() {
+        this.presets = {}, this.presets.dust = {
+          maxAge: 20,
+          positionSpread: {
+            x: 100,
+            y: 100,
+            z: 100
+          },
+          rotationAngle: 3.14,
+          accelerationValue: {
+            x: 0,
+            y: 0,
+            z: 0
+          },
+          accelerationSpread: {
+            x: 0,
+            y: 0,
+            z: 0
+          },
+          velocityValue: {
+            x: 1,
+            y: 0.3,
+            z: 1
+          },
+          velocitySpread: {
+            x: 0.5,
+            y: 1,
+            z: 0.5
+          },
+          color: ["#FFFFFF"],
+          particleCount: 100,
+          texture: "https://cdn.rawgit.com/IdeaSpaceVR/aframe-particle-system-component/master/dist/images/smokeparticle.png"
+        }, this.presets.snow = {
+          maxAge: 20,
+          positionSpread: {
+            x: 100,
+            y: 100,
+            z: 100
+          },
+          rotationAngle: 3.14,
+          accelerationValue: {
+            x: 0,
+            y: 0,
+            z: 0
+          },
+          accelerationSpread: {
+            x: 0.2,
+            y: 0,
+            z: 0.2
+          },
+          velocityValue: {
+            x: 0,
+            y: 8,
+            z: 0
+          },
+          velocitySpread: {
+            x: 2,
+            y: 0,
+            z: 2
+          },
+          color: ["#FFFFFF"],
+          particleCount: 200,
+          texture: "https://cdn.rawgit.com/IdeaSpaceVR/aframe-particle-system-component/master/dist/images/smokeparticle.png"
+        }, this.presets.rain = {
+          maxAge: 1,
+          positionSpread: {
+            x: 100,
+            y: 100,
+            z: 100
+          },
+          rotationAngle: 3.14,
+          accelerationValue: {
+            x: 0,
+            y: 3,
+            z: 0
+          },
+          accelerationSpread: {
+            x: 2,
+            y: 1,
+            z: 2
+          },
+          velocityValue: {
+            x: 0,
+            y: 75,
+            z: 0
+          },
+          velocitySpread: {
+            x: 10,
+            y: 50,
+            z: 10
+          },
+          color: ["#FFFFFF"],
+          size: 0.4,
+          texture: "https://cdn.rawgit.com/IdeaSpaceVR/aframe-particle-system-component/master/dist/images/raindrop.png"
+        };
+      },
+      update: function(e2) {
+        this.particleGroup && this.el.removeObject3D("particle-system"), this.preset = this.presets[this.data.preset] || {};
+        for (var t2 in this.data) this.data[t2] = this.applyPreset(t2);
+        this.initParticleSystem(this.data), true === this.data.enabled ? this.startParticles() : this.stopParticles();
+      },
+      applyPreset: function(e2) {
+        var t2 = this.attrValue || {};
+        return !t2[e2] && this.preset[e2] ? this.preset[e2] : this.data[e2];
+      },
+      tick: function(e2, t2) {
+        this.particleGroup.tick(t2 / 1e3);
+      },
+      remove: function() {
+        this.particleGroup && this.el.removeObject3D("particle-system");
+      },
+      startParticles: function() {
+        this.particleGroup.emitters.forEach(function(e2) {
+          e2.enable();
+        });
+      },
+      stopParticles: function() {
+        this.particleGroup.emitters.forEach(function(e2) {
+          e2.disable();
+        });
+      },
+      initParticleSystem: function(e2) {
+        var t2 = new THREE.TextureLoader(), r3 = t2.load(e2.texture, function(e3) {
+          return e3;
+        }, function(e3) {
+          console.log(e3.loaded / e3.total * 100 + "% loaded");
+        }, function(e3) {
+          console.log("An error occurred");
+        });
+        this.particleGroup = new i.Group({
+          texture: {
+            value: r3
+          },
+          maxParticleCount: e2.maxParticleCount,
+          blending: e2.blending
+        });
+        var a = new i.Emitter({
+          maxAge: {
+            value: e2.maxAge
+          },
+          type: {
+            value: e2.type
+          },
+          position: {
+            spread: new THREE.Vector3(e2.positionSpread.x, e2.positionSpread.y, e2.positionSpread.z),
+            randomise: e2.randomise
+          },
+          rotation: {
+            axis: "x" == e2.rotationAxis ? new THREE.Vector3(1, 0, 0) : "y" == e2.rotationAxis ? new THREE.Vector3(0, 1, 0) : "z" == e2.rotationAxis ? new THREE.Vector3(0, 0, 1) : new THREE.Vector3(0, 1, 0),
+            angle: e2.rotationAngle,
+            angleSpread: e2.rotationAngleSpread,
+            static: true
+          },
+          acceleration: {
+            value: new THREE.Vector3(e2.accelerationValue.x, e2.accelerationValue.y, e2.accelerationValue.z),
+            spread: new THREE.Vector3(e2.accelerationSpread.x, e2.accelerationSpread.y, e2.accelerationSpread.z)
+          },
+          velocity: {
+            value: new THREE.Vector3(e2.velocityValue.x, e2.velocityValue.y, e2.velocityValue.z),
+            spread: new THREE.Vector3(e2.velocitySpread.x, e2.velocitySpread.y, e2.velocitySpread.z)
+          },
+          drag: {
+            value: new THREE.Vector3(e2.dragValue.x, e2.dragValue.y, e2.dragValue.z),
+            spread: new THREE.Vector3(e2.dragSpread.x, e2.dragSpread.y, e2.dragSpread.z),
+            randomise: e2.dragRandomise
+          },
+          color: {
+            value: e2.color.map(function(e3) {
+              return new THREE.Color(e3);
+            })
+          },
+          size: {
+            value: e2.size
+          },
+          direction: {
+            value: e2.direction
+          },
+          duration: e2.duration,
+          opacity: {
+            value: e2.opacity.map(function(e3) {
+              return parseFloat(e3);
+            })
+          },
+          particleCount: e2.particleCount
+        });
+        this.particleGroup.addEmitter(a), this.particleGroup.mesh.frustumCulled = false, this.el.setObject3D("particle-system", this.particleGroup.mesh);
+      }
+    });
+  }, function(e, t, r2) {
+    var i, a, o = {
+      distributions: {
+        BOX: 1,
+        SPHERE: 2,
+        DISC: 3
+      },
+      valueOverLifetimeLength: 4
+    };
+    i = o, void 0 !== (a = "function" == typeof i ? i.call(t, r2, t, e) : i) && (e.exports = a), o.TypedArrayHelper = function(e2, t2, r3, i2) {
+      this.componentSize = r3 || 1, this.size = t2 || 1, this.TypedArrayConstructor = e2 || Float32Array, this.array = new e2(t2 * this.componentSize), this.indexOffset = i2 || 0;
+    }, o.TypedArrayHelper.constructor = o.TypedArrayHelper, o.TypedArrayHelper.prototype.setSize = function(e2, t2) {
+      var r3 = this.array.length;
+      return t2 || (e2 *= this.componentSize), e2 < r3 ? this.shrink(e2) : e2 > r3 ? this.grow(e2) : void console.info("TypedArray is already of size:", e2 + ".", "Will not resize.");
+    }, o.TypedArrayHelper.prototype.shrink = function(e2) {
+      return this.array = this.array.subarray(0, e2), this.size = e2, this;
+    }, o.TypedArrayHelper.prototype.grow = function(e2) {
+      var t2 = this.array, r3 = new this.TypedArrayConstructor(e2);
+      return r3.set(t2), this.array = r3, this.size = e2, this;
+    }, o.TypedArrayHelper.prototype.splice = function(e2, t2) {
+      e2 *= this.componentSize, t2 *= this.componentSize;
+      for (var r3 = [], i2 = this.array, a2 = i2.length, o2 = 0; o2 < a2; ++o2) (o2 < e2 || o2 >= t2) && r3.push(i2[o2]);
+      return this.setFromArray(0, r3), this;
+    }, o.TypedArrayHelper.prototype.setFromArray = function(e2, t2) {
+      var r3 = t2.length, i2 = e2 + r3;
+      return i2 > this.array.length ? this.grow(i2) : i2 < this.array.length && this.shrink(i2), this.array.set(t2, this.indexOffset + e2), this;
+    }, o.TypedArrayHelper.prototype.setVec2 = function(e2, t2) {
+      return this.setVec2Components(e2, t2.x, t2.y);
+    }, o.TypedArrayHelper.prototype.setVec2Components = function(e2, t2, r3) {
+      var i2 = this.array, a2 = this.indexOffset + e2 * this.componentSize;
+      return i2[a2] = t2, i2[a2 + 1] = r3, this;
+    }, o.TypedArrayHelper.prototype.setVec3 = function(e2, t2) {
+      return this.setVec3Components(e2, t2.x, t2.y, t2.z);
+    }, o.TypedArrayHelper.prototype.setVec3Components = function(e2, t2, r3, i2) {
+      var a2 = this.array, o2 = this.indexOffset + e2 * this.componentSize;
+      return a2[o2] = t2, a2[o2 + 1] = r3, a2[o2 + 2] = i2, this;
+    }, o.TypedArrayHelper.prototype.setVec4 = function(e2, t2) {
+      return this.setVec4Components(e2, t2.x, t2.y, t2.z, t2.w);
+    }, o.TypedArrayHelper.prototype.setVec4Components = function(e2, t2, r3, i2, a2) {
+      var o2 = this.array, s = this.indexOffset + e2 * this.componentSize;
+      return o2[s] = t2, o2[s + 1] = r3, o2[s + 2] = i2, o2[s + 3] = a2, this;
+    }, o.TypedArrayHelper.prototype.setMat3 = function(e2, t2) {
+      return this.setFromArray(this.indexOffset + e2 * this.componentSize, t2.elements);
+    }, o.TypedArrayHelper.prototype.setMat4 = function(e2, t2) {
+      return this.setFromArray(this.indexOffset + e2 * this.componentSize, t2.elements);
+    }, o.TypedArrayHelper.prototype.setColor = function(e2, t2) {
+      return this.setVec3Components(e2, t2.r, t2.g, t2.b);
+    }, o.TypedArrayHelper.prototype.setNumber = function(e2, t2) {
+      return this.array[this.indexOffset + e2 * this.componentSize] = t2, this;
+    }, o.TypedArrayHelper.prototype.getValueAtIndex = function(e2) {
+      return this.array[this.indexOffset + e2];
+    }, o.TypedArrayHelper.prototype.getComponentValueAtIndex = function(e2) {
+      return this.array.subarray(this.indexOffset + e2 * this.componentSize);
+    }, o.ShaderAttribute = function(e2, t2, r3) {
+      var i2 = o.ShaderAttribute.typeSizeMap;
+      this.type = "string" == typeof e2 && i2.hasOwnProperty(e2) ? e2 : "f", this.componentSize = i2[this.type], this.arrayType = r3 || Float32Array, this.typedArray = null, this.bufferAttribute = null, this.dynamicBuffer = !!t2, this.updateMin = 0, this.updateMax = 0;
+    }, o.ShaderAttribute.constructor = o.ShaderAttribute, o.ShaderAttribute.typeSizeMap = {
+      f: 1,
+      v2: 2,
+      v3: 3,
+      v4: 4,
+      c: 3,
+      m3: 9,
+      m4: 16
+    }, o.ShaderAttribute.prototype.setUpdateRange = function(e2, t2) {
+      this.updateMin = Math.min(e2 * this.componentSize, this.updateMin * this.componentSize), this.updateMax = Math.max(t2 * this.componentSize, this.updateMax * this.componentSize);
+    }, o.ShaderAttribute.prototype.flagUpdate = function() {
+      var e2 = this.bufferAttribute, t2 = e2.updateRange;
+      t2.offset = this.updateMin, t2.count = Math.min(this.updateMax - this.updateMin + this.componentSize, this.typedArray.array.length), e2.needsUpdate = true;
+    }, o.ShaderAttribute.prototype.resetUpdateRange = function() {
+      this.updateMin = 0, this.updateMax = 0;
+    }, o.ShaderAttribute.prototype.resetDynamic = function() {
+      this.bufferAttribute.dynamic = this.dynamicBuffer;
+    }, o.ShaderAttribute.prototype.splice = function(e2, t2) {
+      this.typedArray.splice(e2, t2), this.forceUpdateAll();
+    }, o.ShaderAttribute.prototype.forceUpdateAll = function() {
+      this.bufferAttribute.array = this.typedArray.array, this.bufferAttribute.updateRange.offset = 0, this.bufferAttribute.updateRange.count = -1, this.bufferAttribute.dynamic = false, this.bufferAttribute.needsUpdate = true;
+    }, o.ShaderAttribute.prototype._ensureTypedArray = function(e2) {
+      null !== this.typedArray && this.typedArray.size === e2 * this.componentSize || (null !== this.typedArray && this.typedArray.size !== e2 ? this.typedArray.setSize(e2) : null === this.typedArray && (this.typedArray = new o.TypedArrayHelper(this.arrayType, e2, this.componentSize)));
+    }, o.ShaderAttribute.prototype._createBufferAttribute = function(e2) {
+      if (this._ensureTypedArray(e2), null !== this.bufferAttribute) return this.bufferAttribute.array = this.typedArray.array, void (this.bufferAttribute.needsUpdate = true);
+      this.bufferAttribute = new THREE.BufferAttribute(this.typedArray.array, this.componentSize), this.bufferAttribute.dynamic = this.dynamicBuffer;
+    }, o.ShaderAttribute.prototype.getLength = function() {
+      return null === this.typedArray ? 0 : this.typedArray.array.length;
+    }, o.shaderChunks = {
+      defines: ["#define PACKED_COLOR_SIZE 256.0", "#define PACKED_COLOR_DIVISOR 255.0"].join("\n"),
+      uniforms: ["uniform float deltaTime;", "uniform float runTime;", "uniform sampler2D texture;", "uniform vec4 textureAnimation;", "uniform float scale;"].join("\n"),
+      attributes: ["attribute vec4 acceleration;", "attribute vec3 velocity;", "attribute vec4 rotation;", "attribute vec3 rotationCenter;", "attribute vec4 params;", "attribute vec4 size;", "attribute vec4 angle;", "attribute vec4 color;", "attribute vec4 opacity;"].join("\n"),
+      varyings: ["varying vec4 vColor;", "#ifdef SHOULD_ROTATE_TEXTURE", "    varying float vAngle;", "#endif", "#ifdef SHOULD_CALCULATE_SPRITE", "    varying vec4 vSpriteSheet;", "#endif"].join("\n"),
+      branchAvoidanceFunctions: ["float when_gt(float x, float y) {", "    return max(sign(x - y), 0.0);", "}", "float when_lt(float x, float y) {", "    return min( max(1.0 - sign(x - y), 0.0), 1.0 );", "}", "float when_eq( float x, float y ) {", "    return 1.0 - abs( sign( x - y ) );", "}", "float when_ge(float x, float y) {", "  return 1.0 - when_lt(x, y);", "}", "float when_le(float x, float y) {", "  return 1.0 - when_gt(x, y);", "}", "float and(float a, float b) {", "    return a * b;", "}", "float or(float a, float b) {", "    return min(a + b, 1.0);", "}"].join("\n"),
+      unpackColor: ["vec3 unpackColor( in float hex ) {", "   vec3 c = vec3( 0.0 );", "   float r = mod( (hex / PACKED_COLOR_SIZE / PACKED_COLOR_SIZE), PACKED_COLOR_SIZE );", "   float g = mod( (hex / PACKED_COLOR_SIZE), PACKED_COLOR_SIZE );", "   float b = mod( hex, PACKED_COLOR_SIZE );", "   c.r = r / PACKED_COLOR_DIVISOR;", "   c.g = g / PACKED_COLOR_DIVISOR;", "   c.b = b / PACKED_COLOR_DIVISOR;", "   return c;", "}"].join("\n"),
+      unpackRotationAxis: ["vec3 unpackRotationAxis( in float hex ) {", "   vec3 c = vec3( 0.0 );", "   float r = mod( (hex / PACKED_COLOR_SIZE / PACKED_COLOR_SIZE), PACKED_COLOR_SIZE );", "   float g = mod( (hex / PACKED_COLOR_SIZE), PACKED_COLOR_SIZE );", "   float b = mod( hex, PACKED_COLOR_SIZE );", "   c.r = r / PACKED_COLOR_DIVISOR;", "   c.g = g / PACKED_COLOR_DIVISOR;", "   c.b = b / PACKED_COLOR_DIVISOR;", "   c *= vec3( 2.0 );", "   c -= vec3( 1.0 );", "   return c;", "}"].join("\n"),
+      floatOverLifetime: ["float getFloatOverLifetime( in float positionInTime, in vec4 attr ) {", "    highp float value = 0.0;", "    float deltaAge = positionInTime * float( VALUE_OVER_LIFETIME_LENGTH - 1 );", "    float fIndex = 0.0;", "    float shouldApplyValue = 0.0;", "    value += attr[ 0 ] * when_eq( deltaAge, 0.0 );", "", "    for( int i = 0; i < VALUE_OVER_LIFETIME_LENGTH - 1; ++i ) {", "       fIndex = float( i );", "       shouldApplyValue = and( when_gt( deltaAge, fIndex ), when_le( deltaAge, fIndex + 1.0 ) );", "       value += shouldApplyValue * mix( attr[ i ], attr[ i + 1 ], deltaAge - fIndex );", "    }", "", "    return value;", "}"].join("\n"),
+      colorOverLifetime: ["vec3 getColorOverLifetime( in float positionInTime, in vec3 color1, in vec3 color2, in vec3 color3, in vec3 color4 ) {", "    vec3 value = vec3( 0.0 );", "    value.x = getFloatOverLifetime( positionInTime, vec4( color1.x, color2.x, color3.x, color4.x ) );", "    value.y = getFloatOverLifetime( positionInTime, vec4( color1.y, color2.y, color3.y, color4.y ) );", "    value.z = getFloatOverLifetime( positionInTime, vec4( color1.z, color2.z, color3.z, color4.z ) );", "    return value;", "}"].join("\n"),
+      paramFetchingFunctions: ["float getAlive() {", "   return params.x;", "}", "float getAge() {", "   return params.y;", "}", "float getMaxAge() {", "   return params.z;", "}", "float getWiggle() {", "   return params.w;", "}"].join("\n"),
+      forceFetchingFunctions: ["vec4 getPosition( in float age ) {", "   return modelViewMatrix * vec4( position, 1.0 );", "}", "vec3 getVelocity( in float age ) {", "   return velocity * age;", "}", "vec3 getAcceleration( in float age ) {", "   return acceleration.xyz * age;", "}"].join("\n"),
+      rotationFunctions: ["#ifdef SHOULD_ROTATE_PARTICLES", "   mat4 getRotationMatrix( in vec3 axis, in float angle) {", "       axis = normalize(axis);", "       float s = sin(angle);", "       float c = cos(angle);", "       float oc = 1.0 - c;", "", "       return mat4(oc * axis.x * axis.x + c,           oc * axis.x * axis.y - axis.z * s,  oc * axis.z * axis.x + axis.y * s,  0.0,", "                   oc * axis.x * axis.y + axis.z * s,  oc * axis.y * axis.y + c,           oc * axis.y * axis.z - axis.x * s,  0.0,", "                   oc * axis.z * axis.x - axis.y * s,  oc * axis.y * axis.z + axis.x * s,  oc * axis.z * axis.z + c,           0.0,", "                   0.0,                                0.0,                                0.0,                                1.0);", "   }", "", "   vec3 getRotation( in vec3 pos, in float positionInTime ) {", "      if( rotation.y == 0.0 ) {", "           return pos;", "      }", "", "      vec3 axis = unpackRotationAxis( rotation.x );", "      vec3 center = rotationCenter;", "      vec3 translated;", "      mat4 rotationMatrix;", "      float angle = 0.0;", "      angle += when_eq( rotation.z, 0.0 ) * rotation.y;", "      angle += when_gt( rotation.z, 0.0 ) * mix( 0.0, rotation.y, positionInTime );", "      translated = rotationCenter - pos;", "      rotationMatrix = getRotationMatrix( axis, angle );", "      return center - vec3( rotationMatrix * vec4( translated, 0.0 ) );", "   }", "#endif"].join("\n"),
+      rotateTexture: ["    vec2 vUv = vec2( gl_PointCoord.x, 1.0 - gl_PointCoord.y );", "", "    #ifdef SHOULD_ROTATE_TEXTURE", "       float x = gl_PointCoord.x - 0.5;", "       float y = 1.0 - gl_PointCoord.y - 0.5;", "       float c = cos( -vAngle );", "       float s = sin( -vAngle );", "       vUv = vec2( c * x + s * y + 0.5, c * y - s * x + 0.5 );", "    #endif", "", "    #ifdef SHOULD_CALCULATE_SPRITE", "        float framesX = vSpriteSheet.x;", "        float framesY = vSpriteSheet.y;", "        float columnNorm = vSpriteSheet.z;", "        float rowNorm = vSpriteSheet.w;", "        vUv.x = gl_PointCoord.x * framesX + columnNorm;", "        vUv.y = 1.0 - (gl_PointCoord.y * framesY + rowNorm);", "    #endif", "", "    vec4 rotatedTexture = texture2D( texture, vUv );"].join("\n")
+    }, o.shaders = {
+      vertex: [o.shaderChunks.defines, o.shaderChunks.uniforms, o.shaderChunks.attributes, o.shaderChunks.varyings, THREE.ShaderChunk.common, THREE.ShaderChunk.logdepthbuf_pars_vertex, THREE.ShaderChunk.fog_pars_vertex, o.shaderChunks.branchAvoidanceFunctions, o.shaderChunks.unpackColor, o.shaderChunks.unpackRotationAxis, o.shaderChunks.floatOverLifetime, o.shaderChunks.colorOverLifetime, o.shaderChunks.paramFetchingFunctions, o.shaderChunks.forceFetchingFunctions, o.shaderChunks.rotationFunctions, "vec4 mvPosition;", "void main() {", "    highp float age = getAge();", "    highp float alive = getAlive();", "    highp float maxAge = getMaxAge();", "    highp float positionInTime = (age / maxAge);", "    highp float isAlive = when_gt( alive, 0.0 );", "    #ifdef SHOULD_WIGGLE_PARTICLES", "        float wiggleAmount = positionInTime * getWiggle();", "        float wiggleSin = isAlive * sin( wiggleAmount );", "        float wiggleCos = isAlive * cos( wiggleAmount );", "    #endif", "    vec3 vel = getVelocity( age );", "    vec3 accel = getAcceleration( age );", "    vec3 force = vec3( 0.0 );", "    vec3 pos = vec3( position );", "    float drag = 1.0 - (positionInTime * 0.5) * acceleration.w;", "    force += vel;", "    force *= drag;", "    force += accel * age;", "    pos += force;", "    #ifdef SHOULD_WIGGLE_PARTICLES", "        pos.x += wiggleSin;", "        pos.y += wiggleCos;", "        pos.z += wiggleSin;", "    #endif", "    #ifdef SHOULD_ROTATE_PARTICLES", "        pos = getRotation( pos, positionInTime );", "    #endif", "    vec4 mvPos = mvPosition = modelViewMatrix * vec4( pos, 1.0 );", "    highp float pointSize = getFloatOverLifetime( positionInTime, size ) * isAlive;", "    #ifdef HAS_PERSPECTIVE", "        float perspective = scale / length( mvPos.xyz );", "    #else", "        float perspective = 1.0;", "    #endif", "    float pointSizePerspective = pointSize * perspective;", "    #ifdef COLORIZE", "       vec3 c = isAlive * getColorOverLifetime(", "           positionInTime,", "           unpackColor( color.x ),", "           unpackColor( color.y ),", "           unpackColor( color.z ),", "           unpackColor( color.w )", "       );", "    #else", "       vec3 c = vec3(1.0);", "    #endif", "    float o = isAlive * getFloatOverLifetime( positionInTime, opacity );", "    vColor = vec4( c, o );", "    #ifdef SHOULD_ROTATE_TEXTURE", "        vAngle = isAlive * getFloatOverLifetime( positionInTime, angle );", "    #endif", "    #ifdef SHOULD_CALCULATE_SPRITE", "        float framesX = textureAnimation.x;", "        float framesY = textureAnimation.y;", "        float loopCount = textureAnimation.w;", "        float totalFrames = textureAnimation.z;", "        float frameNumber = mod( (positionInTime * loopCount) * totalFrames, totalFrames );", "        float column = floor(mod( frameNumber, framesX ));", "        float row = floor( (frameNumber - column) / framesX );", "        float columnNorm = column / framesX;", "        float rowNorm = row / framesY;", "        vSpriteSheet.x = 1.0 / framesX;", "        vSpriteSheet.y = 1.0 / framesY;", "        vSpriteSheet.z = columnNorm;", "        vSpriteSheet.w = rowNorm;", "    #endif", "    gl_PointSize = pointSizePerspective;", "    gl_Position = projectionMatrix * mvPos;", THREE.ShaderChunk.logdepthbuf_vertex, THREE.ShaderChunk.fog_vertex, "}"].join("\n"),
+      fragment: [o.shaderChunks.uniforms, THREE.ShaderChunk.common, THREE.ShaderChunk.fog_pars_fragment, THREE.ShaderChunk.logdepthbuf_pars_fragment, o.shaderChunks.varyings, o.shaderChunks.branchAvoidanceFunctions, "void main() {", "    vec3 outgoingLight = vColor.xyz;", "    ", "    #ifdef ALPHATEST", "       if ( vColor.w < float(ALPHATEST) ) discard;", "    #endif", o.shaderChunks.rotateTexture, THREE.ShaderChunk.logdepthbuf_fragment, "    outgoingLight = vColor.xyz * rotatedTexture.xyz;", "    gl_FragColor = vec4( outgoingLight.xyz, rotatedTexture.w * vColor.w );", THREE.ShaderChunk.fog_fragment, "}"].join("\n")
+    }, o.utils = {
+      types: {
+        BOOLEAN: "boolean",
+        STRING: "string",
+        NUMBER: "number",
+        OBJECT: "object"
+      },
+      ensureTypedArg: function(e2, t2, r3) {
+        return typeof e2 === t2 ? e2 : r3;
+      },
+      ensureArrayTypedArg: function(e2, t2, r3) {
+        if (Array.isArray(e2)) {
+          for (var i2 = e2.length - 1; i2 >= 0; --i2) if (typeof e2[i2] !== t2) return r3;
+          return e2;
+        }
+        return this.ensureTypedArg(e2, t2, r3);
+      },
+      ensureInstanceOf: function(e2, t2, r3) {
+        return void 0 !== t2 && e2 instanceof t2 ? e2 : r3;
+      },
+      ensureArrayInstanceOf: function(e2, t2, r3) {
+        if (Array.isArray(e2)) {
+          for (var i2 = e2.length - 1; i2 >= 0; --i2) if (void 0 !== t2 && e2[i2] instanceof t2 == false) return r3;
+          return e2;
+        }
+        return this.ensureInstanceOf(e2, t2, r3);
+      },
+      ensureValueOverLifetimeCompliance: function(e2, t2, r3) {
+        t2 = t2 || 3, r3 = r3 || 3, false === Array.isArray(e2._value) && (e2._value = [e2._value]), false === Array.isArray(e2._spread) && (e2._spread = [e2._spread]);
+        var i2 = this.clamp(e2._value.length, t2, r3), a2 = this.clamp(e2._spread.length, t2, r3), o2 = Math.max(i2, a2);
+        e2._value.length !== o2 && (e2._value = this.interpolateArray(e2._value, o2)), e2._spread.length !== o2 && (e2._spread = this.interpolateArray(e2._spread, o2));
+      },
+      interpolateArray: function(e2, t2) {
+        for (var r3 = e2.length, i2 = ["function" == typeof e2[0].clone ? e2[0].clone() : e2[0]], a2 = (r3 - 1) / (t2 - 1), o2 = 1; o2 < t2 - 1; ++o2) {
+          var s = o2 * a2, n = Math.floor(s), u = Math.ceil(s), l = s - n;
+          i2[o2] = this.lerpTypeAgnostic(e2[n], e2[u], l);
+        }
+        return i2.push("function" == typeof e2[r3 - 1].clone ? e2[r3 - 1].clone() : e2[r3 - 1]), i2;
+      },
+      clamp: function(e2, t2, r3) {
+        return Math.max(t2, Math.min(e2, r3));
+      },
+      zeroToEpsilon: function(e2, t2) {
+        var r3 = e2;
+        return r3 = t2 ? 1e-5 * Math.random() * 10 : 1e-5, e2 < 0 && e2 > -1e-5 && (r3 = -r3), r3;
+      },
+      lerpTypeAgnostic: function(e2, t2, r3) {
+        var i2, a2 = this.types;
+        return typeof e2 === a2.NUMBER && typeof t2 === a2.NUMBER ? e2 + (t2 - e2) * r3 : e2 instanceof THREE.Vector2 && t2 instanceof THREE.Vector2 ? (i2 = e2.clone(), i2.x = this.lerp(e2.x, t2.x, r3), i2.y = this.lerp(e2.y, t2.y, r3), i2) : e2 instanceof THREE.Vector3 && t2 instanceof THREE.Vector3 ? (i2 = e2.clone(), i2.x = this.lerp(e2.x, t2.x, r3), i2.y = this.lerp(e2.y, t2.y, r3), i2.z = this.lerp(e2.z, t2.z, r3), i2) : e2 instanceof THREE.Vector4 && t2 instanceof THREE.Vector4 ? (i2 = e2.clone(), i2.x = this.lerp(e2.x, t2.x, r3), i2.y = this.lerp(e2.y, t2.y, r3), i2.z = this.lerp(e2.z, t2.z, r3), i2.w = this.lerp(e2.w, t2.w, r3), i2) : e2 instanceof THREE.Color && t2 instanceof THREE.Color ? (i2 = e2.clone(), i2.r = this.lerp(e2.r, t2.r, r3), i2.g = this.lerp(e2.g, t2.g, r3), i2.b = this.lerp(e2.b, t2.b, r3), i2) : void console.warn("Invalid argument types, or argument types do not match:", e2, t2);
+      },
+      lerp: function(e2, t2, r3) {
+        return e2 + (t2 - e2) * r3;
+      },
+      roundToNearestMultiple: function(e2, t2) {
+        var r3 = 0;
+        return 0 === t2 ? e2 : (r3 = Math.abs(e2) % t2, 0 === r3 ? e2 : e2 < 0 ? -(Math.abs(e2) - r3) : e2 + t2 - r3);
+      },
+      arrayValuesAreEqual: function(e2) {
+        for (var t2 = 0; t2 < e2.length - 1; ++t2) if (e2[t2] !== e2[t2 + 1]) return false;
+        return true;
+      },
+      randomFloat: function(e2, t2) {
+        return e2 + t2 * (Math.random() - 0.5);
+      },
+      randomVector3: function(e2, t2, r3, i2, a2) {
+        var o2 = r3.x + (Math.random() * i2.x - 0.5 * i2.x), s = r3.y + (Math.random() * i2.y - 0.5 * i2.y), n = r3.z + (Math.random() * i2.z - 0.5 * i2.z);
+        a2 && (o2 = 0.5 * -a2.x + this.roundToNearestMultiple(o2, a2.x), s = 0.5 * -a2.y + this.roundToNearestMultiple(s, a2.y), n = 0.5 * -a2.z + this.roundToNearestMultiple(n, a2.z)), e2.typedArray.setVec3Components(t2, o2, s, n);
+      },
+      randomColor: function(e2, t2, r3, i2) {
+        var a2 = r3.r + Math.random() * i2.x, o2 = r3.g + Math.random() * i2.y, s = r3.b + Math.random() * i2.z;
+        a2 = this.clamp(a2, 0, 1), o2 = this.clamp(o2, 0, 1), s = this.clamp(s, 0, 1), e2.typedArray.setVec3Components(t2, a2, o2, s);
+      },
+      randomColorAsHex: (function() {
+        var e2 = new THREE.Color();
+        return function(t2, r3, i2, a2) {
+          for (var o2 = i2.length, s = [], n = 0; n < o2; ++n) {
+            var u = a2[n];
+            e2.copy(i2[n]), e2.r += Math.random() * u.x - 0.5 * u.x, e2.g += Math.random() * u.y - 0.5 * u.y, e2.b += Math.random() * u.z - 0.5 * u.z, e2.r = this.clamp(e2.r, 0, 1), e2.g = this.clamp(e2.g, 0, 1), e2.b = this.clamp(e2.b, 0, 1), s.push(e2.getHex());
+          }
+          t2.typedArray.setVec4Components(r3, s[0], s[1], s[2], s[3]);
+        };
+      })(),
+      randomVector3OnSphere: function(e2, t2, r3, i2, a2, o2, s, n) {
+        var u = 2 * Math.random() - 1, l = 6.2832 * Math.random(), p = Math.sqrt(1 - u * u), c = this.randomFloat(i2, a2), d = 0, h = 0, y = 0;
+        s && (c = Math.round(c / s) * s), d = p * Math.cos(l) * c, h = p * Math.sin(l) * c, y = u * c, d *= o2.x, h *= o2.y, y *= o2.z, d += r3.x, h += r3.y, y += r3.z, e2.typedArray.setVec3Components(t2, d, h, y);
+      },
+      seededRandom: function(e2) {
+        var t2 = 1e4 * Math.sin(e2);
+        return t2 - (0 | t2);
+      },
+      randomVector3OnDisc: function(e2, t2, r3, i2, a2, o2, s) {
+        var n = 6.2832 * Math.random(), u = Math.abs(this.randomFloat(i2, a2)), l = 0, p = 0, c = 0;
+        s && (u = Math.round(u / s) * s), l = Math.cos(n) * u, p = Math.sin(n) * u, l *= o2.x, p *= o2.y, l += r3.x, p += r3.y, c += r3.z, e2.typedArray.setVec3Components(t2, l, p, c);
+      },
+      randomDirectionVector3OnSphere: (function() {
+        var e2 = new THREE.Vector3();
+        return function(t2, r3, i2, a2, o2, s, n, u) {
+          e2.copy(s), e2.x -= i2, e2.y -= a2, e2.z -= o2, e2.normalize().multiplyScalar(-this.randomFloat(n, u)), t2.typedArray.setVec3Components(r3, e2.x, e2.y, e2.z);
+        };
+      })(),
+      randomDirectionVector3OnDisc: (function() {
+        var e2 = new THREE.Vector3();
+        return function(t2, r3, i2, a2, o2, s, n, u) {
+          e2.copy(s), e2.x -= i2, e2.y -= a2, e2.z -= o2, e2.normalize().multiplyScalar(-this.randomFloat(n, u)), t2.typedArray.setVec3Components(r3, e2.x, e2.y, 0);
+        };
+      })(),
+      getPackedRotationAxis: (function() {
+        var e2 = new THREE.Vector3(), t2 = new THREE.Vector3(), r3 = new THREE.Color(), i2 = new THREE.Vector3(1, 1, 1);
+        return function(a2, o2) {
+          return e2.copy(a2).normalize(), t2.copy(o2).normalize(), e2.x += 0.5 * -o2.x + Math.random() * o2.x, e2.y += 0.5 * -o2.y + Math.random() * o2.y, e2.z += 0.5 * -o2.z + Math.random() * o2.z, e2.normalize().add(i2).multiplyScalar(0.5), r3.setRGB(e2.x, e2.y, e2.z), r3.getHex();
+        };
+      })()
+    }, o.Group = function(e2) {
+      var t2 = o.utils, r3 = t2.types;
+      e2 = t2.ensureTypedArg(e2, r3.OBJECT, {}), e2.texture = t2.ensureTypedArg(e2.texture, r3.OBJECT, {}), this.uuid = THREE.Math.generateUUID(), this.fixedTimeStep = t2.ensureTypedArg(e2.fixedTimeStep, r3.NUMBER, 0.016), this.texture = t2.ensureInstanceOf(e2.texture.value, THREE.Texture, null), this.textureFrames = t2.ensureInstanceOf(e2.texture.frames, THREE.Vector2, new THREE.Vector2(1, 1)), this.textureFrameCount = t2.ensureTypedArg(e2.texture.frameCount, r3.NUMBER, this.textureFrames.x * this.textureFrames.y), this.textureLoop = t2.ensureTypedArg(e2.texture.loop, r3.NUMBER, 1), this.textureFrames.max(new THREE.Vector2(1, 1)), this.hasPerspective = t2.ensureTypedArg(e2.hasPerspective, r3.BOOLEAN, true), this.colorize = t2.ensureTypedArg(e2.colorize, r3.BOOLEAN, true), this.maxParticleCount = t2.ensureTypedArg(e2.maxParticleCount, r3.NUMBER, null), this.blending = t2.ensureTypedArg(e2.blending, r3.NUMBER, THREE.AdditiveBlending), this.transparent = t2.ensureTypedArg(e2.transparent, r3.BOOLEAN, true), this.alphaTest = parseFloat(t2.ensureTypedArg(e2.alphaTest, r3.NUMBER, 0)), this.depthWrite = t2.ensureTypedArg(e2.depthWrite, r3.BOOLEAN, false), this.depthTest = t2.ensureTypedArg(e2.depthTest, r3.BOOLEAN, true), this.fog = t2.ensureTypedArg(e2.fog, r3.BOOLEAN, true), this.scale = t2.ensureTypedArg(e2.scale, r3.NUMBER, 300), this.emitters = [], this.emitterIDs = [], this._pool = [], this._poolCreationSettings = null, this._createNewWhenPoolEmpty = 0, this._attributesNeedRefresh = false, this._attributesNeedDynamicReset = false, this.particleCount = 0, this.uniforms = {
+        texture: {
+          type: "t",
+          value: this.texture
+        },
+        textureAnimation: {
+          type: "v4",
+          value: new THREE.Vector4(this.textureFrames.x, this.textureFrames.y, this.textureFrameCount, Math.max(Math.abs(this.textureLoop), 1))
+        },
+        fogColor: {
+          type: "c",
+          value: null
+        },
+        fogNear: {
+          type: "f",
+          value: 10
+        },
+        fogFar: {
+          type: "f",
+          value: 200
+        },
+        fogDensity: {
+          type: "f",
+          value: 0.5
+        },
+        deltaTime: {
+          type: "f",
+          value: 0
+        },
+        runTime: {
+          type: "f",
+          value: 0
+        },
+        scale: {
+          type: "f",
+          value: this.scale
+        }
+      }, this.defines = {
+        HAS_PERSPECTIVE: this.hasPerspective,
+        COLORIZE: this.colorize,
+        VALUE_OVER_LIFETIME_LENGTH: o.valueOverLifetimeLength,
+        SHOULD_ROTATE_TEXTURE: false,
+        SHOULD_ROTATE_PARTICLES: false,
+        SHOULD_WIGGLE_PARTICLES: false,
+        SHOULD_CALCULATE_SPRITE: this.textureFrames.x > 1 || this.textureFrames.y > 1
+      }, this.attributes = {
+        position: new o.ShaderAttribute("v3", true),
+        acceleration: new o.ShaderAttribute("v4", true),
+        velocity: new o.ShaderAttribute("v3", true),
+        rotation: new o.ShaderAttribute("v4", true),
+        rotationCenter: new o.ShaderAttribute("v3", true),
+        params: new o.ShaderAttribute("v4", true),
+        size: new o.ShaderAttribute("v4", true),
+        angle: new o.ShaderAttribute("v4", true),
+        color: new o.ShaderAttribute("v4", true),
+        opacity: new o.ShaderAttribute("v4", true)
+      }, this.attributeKeys = Object.keys(this.attributes), this.attributeCount = this.attributeKeys.length, this.material = new THREE.ShaderMaterial({
+        uniforms: this.uniforms,
+        vertexShader: o.shaders.vertex,
+        fragmentShader: o.shaders.fragment,
+        blending: this.blending,
+        transparent: this.transparent,
+        alphaTest: this.alphaTest,
+        depthWrite: this.depthWrite,
+        depthTest: this.depthTest,
+        defines: this.defines,
+        fog: this.fog
+      }), this.geometry = new THREE.BufferGeometry(), this.mesh = new THREE.Points(this.geometry, this.material), null === this.maxParticleCount && console.warn("SPE.Group: No maxParticleCount specified. Adding emitters after rendering will probably cause errors.");
+    }, o.Group.constructor = o.Group, o.Group.prototype._updateDefines = function() {
+      var e2, t2 = this.emitters, r3 = t2.length - 1, i2 = this.defines;
+      for (r3; r3 >= 0; --r3) e2 = t2[r3], i2.SHOULD_CALCULATE_SPRITE || (i2.SHOULD_ROTATE_TEXTURE = i2.SHOULD_ROTATE_TEXTURE || !!Math.max(Math.max.apply(null, e2.angle.value), Math.max.apply(null, e2.angle.spread))), i2.SHOULD_ROTATE_PARTICLES = i2.SHOULD_ROTATE_PARTICLES || !!Math.max(e2.rotation.angle, e2.rotation.angleSpread), i2.SHOULD_WIGGLE_PARTICLES = i2.SHOULD_WIGGLE_PARTICLES || !!Math.max(e2.wiggle.value, e2.wiggle.spread);
+      this.material.needsUpdate = true;
+    }, o.Group.prototype._applyAttributesToGeometry = function() {
+      var e2, t2, r3 = this.attributes, i2 = this.geometry, a2 = i2.attributes;
+      for (var o2 in r3) r3.hasOwnProperty(o2) && (e2 = r3[o2], t2 = a2[o2], t2 ? t2.array = e2.typedArray.array : i2.addAttribute(o2, e2.bufferAttribute), e2.bufferAttribute.needsUpdate = true);
+      this.geometry.setDrawRange(0, this.particleCount);
+    }, o.Group.prototype.addEmitter = function(e2) {
+      if (e2 instanceof o.Emitter == false) return void console.error("`emitter` argument must be instance of SPE.Emitter. Was provided with:", e2);
+      if (this.emitterIDs.indexOf(e2.uuid) > -1) return void console.error("Emitter already exists in this group. Will not add again.");
+      if (null !== e2.group) return void console.error("Emitter already belongs to another group. Will not add to requested group.");
+      var t2 = this.attributes, r3 = this.particleCount, i2 = r3 + e2.particleCount;
+      this.particleCount = i2, null !== this.maxParticleCount && this.particleCount > this.maxParticleCount && console.warn("SPE.Group: maxParticleCount exceeded. Requesting", this.particleCount, "particles, can support only", this.maxParticleCount), e2._calculatePPSValue(e2.maxAge._value + e2.maxAge._spread), e2._setBufferUpdateRanges(this.attributeKeys), e2._setAttributeOffset(r3), e2.group = this, e2.attributes = this.attributes;
+      for (var a2 in t2) t2.hasOwnProperty(a2) && t2[a2]._createBufferAttribute(null !== this.maxParticleCount ? this.maxParticleCount : this.particleCount);
+      for (var s = r3; s < i2; ++s) e2._assignPositionValue(s), e2._assignForceValue(s, "velocity"), e2._assignForceValue(s, "acceleration"), e2._assignAbsLifetimeValue(s, "opacity"), e2._assignAbsLifetimeValue(s, "size"), e2._assignAngleValue(s), e2._assignRotationValue(s), e2._assignParamsValue(s), e2._assignColorValue(s);
+      return this._applyAttributesToGeometry(), this.emitters.push(e2), this.emitterIDs.push(e2.uuid), this._updateDefines(e2), this.material.needsUpdate = true, this.geometry.needsUpdate = true, this._attributesNeedRefresh = true, this;
+    }, o.Group.prototype.removeEmitter = function(e2) {
+      var t2 = this.emitterIDs.indexOf(e2.uuid);
+      if (e2 instanceof o.Emitter == false) return void console.error("`emitter` argument must be instance of SPE.Emitter. Was provided with:", e2);
+      if (-1 === t2) return void console.error("Emitter does not exist in this group. Will not remove.");
+      for (var r3 = e2.attributeOffset, i2 = r3 + e2.particleCount, a2 = this.attributes.params.typedArray, s = r3; s < i2; ++s) a2.array[4 * s] = 0, a2.array[4 * s + 1] = 0;
+      this.emitters.splice(t2, 1), this.emitterIDs.splice(t2, 1);
+      for (var n in this.attributes) this.attributes.hasOwnProperty(n) && this.attributes[n].splice(r3, i2);
+      this.particleCount -= e2.particleCount, e2._onRemove(), this._attributesNeedRefresh = true;
+    }, o.Group.prototype.getFromPool = function() {
+      var e2 = this._pool, t2 = this._createNewWhenPoolEmpty;
+      return e2.length ? e2.pop() : t2 ? new o.Emitter(this._poolCreationSettings) : null;
+    }, o.Group.prototype.releaseIntoPool = function(e2) {
+      return e2 instanceof o.Emitter == false ? void console.error("Argument is not instanceof SPE.Emitter:", e2) : (e2.reset(), this._pool.unshift(e2), this);
+    }, o.Group.prototype.getPool = function() {
+      return this._pool;
+    }, o.Group.prototype.addPool = function(e2, t2, r3) {
+      var i2;
+      this._poolCreationSettings = t2, this._createNewWhenPoolEmpty = !!r3;
+      for (var a2 = 0; a2 < e2; ++a2) i2 = Array.isArray(t2) ? new o.Emitter(t2[a2]) : new o.Emitter(t2), this.addEmitter(i2), this.releaseIntoPool(i2);
+      return this;
+    }, o.Group.prototype._triggerSingleEmitter = function(e2) {
+      var t2 = this.getFromPool(), r3 = this;
+      return null === t2 ? void console.log("SPE.Group pool ran out.") : (e2 instanceof THREE.Vector3 && (t2.position.value.copy(e2), t2.position.value = t2.position.value), t2.enable(), setTimeout(function() {
+        t2.disable(), r3.releaseIntoPool(t2);
+      }, 1e3 * Math.max(t2.duration, t2.maxAge.value + t2.maxAge.spread)), this);
+    }, o.Group.prototype.triggerPoolEmitter = function(e2, t2) {
+      if ("number" == typeof e2 && e2 > 1) for (var r3 = 0; r3 < e2; ++r3) this._triggerSingleEmitter(t2);
+      else this._triggerSingleEmitter(t2);
+      return this;
+    }, o.Group.prototype._updateUniforms = function(e2) {
+      this.uniforms.runTime.value += e2, this.uniforms.deltaTime.value = e2;
+    }, o.Group.prototype._resetBufferRanges = function() {
+      var e2 = this.attributeKeys, t2 = this.attributeCount - 1, r3 = this.attributes;
+      for (t2; t2 >= 0; --t2) r3[e2[t2]].resetUpdateRange();
+    }, o.Group.prototype._updateBuffers = function(e2) {
+      var t2, r3, i2, a2 = this.attributeKeys, o2 = this.attributeCount - 1, s = this.attributes, n = e2.bufferUpdateRanges;
+      for (o2; o2 >= 0; --o2) t2 = a2[o2], r3 = n[t2], i2 = s[t2], i2.setUpdateRange(r3.min, r3.max), i2.flagUpdate();
+    }, o.Group.prototype.tick = function(e2) {
+      var t2, r3 = this.emitters, i2 = r3.length, a2 = e2 || this.fixedTimeStep, o2 = this.attributeKeys, s = this.attributes;
+      if (this._updateUniforms(a2), this._resetBufferRanges(), 0 !== i2 || false !== this._attributesNeedRefresh || false !== this._attributesNeedDynamicReset) {
+        for (var n, t2 = 0; t2 < i2; ++t2) n = r3[t2], n.tick(a2), this._updateBuffers(n);
+        if (true === this._attributesNeedDynamicReset) {
+          for (t2 = this.attributeCount - 1; t2 >= 0; --t2) s[o2[t2]].resetDynamic();
+          this._attributesNeedDynamicReset = false;
+        }
+        if (true === this._attributesNeedRefresh) {
+          for (t2 = this.attributeCount - 1; t2 >= 0; --t2) s[o2[t2]].forceUpdateAll();
+          this._attributesNeedRefresh = false, this._attributesNeedDynamicReset = true;
+        }
+      }
+    }, o.Group.prototype.dispose = function() {
+      return this.geometry.dispose(), this.material.dispose(), this;
+    }, o.Emitter = function(e2) {
+      var t2 = o.utils, r3 = t2.types, i2 = o.valueOverLifetimeLength;
+      e2 = t2.ensureTypedArg(e2, r3.OBJECT, {}), e2.position = t2.ensureTypedArg(e2.position, r3.OBJECT, {}), e2.velocity = t2.ensureTypedArg(e2.velocity, r3.OBJECT, {}), e2.acceleration = t2.ensureTypedArg(e2.acceleration, r3.OBJECT, {}), e2.radius = t2.ensureTypedArg(e2.radius, r3.OBJECT, {}), e2.drag = t2.ensureTypedArg(e2.drag, r3.OBJECT, {}), e2.rotation = t2.ensureTypedArg(e2.rotation, r3.OBJECT, {}), e2.color = t2.ensureTypedArg(e2.color, r3.OBJECT, {}), e2.opacity = t2.ensureTypedArg(e2.opacity, r3.OBJECT, {}), e2.size = t2.ensureTypedArg(e2.size, r3.OBJECT, {}), e2.angle = t2.ensureTypedArg(e2.angle, r3.OBJECT, {}), e2.wiggle = t2.ensureTypedArg(e2.wiggle, r3.OBJECT, {}), e2.maxAge = t2.ensureTypedArg(e2.maxAge, r3.OBJECT, {}), e2.onParticleSpawn && console.warn("onParticleSpawn has been removed. Please set properties directly to alter values at runtime."), this.uuid = THREE.Math.generateUUID(), this.type = t2.ensureTypedArg(e2.type, r3.NUMBER, o.distributions.BOX), this.position = {
+        _value: t2.ensureInstanceOf(e2.position.value, THREE.Vector3, new THREE.Vector3()),
+        _spread: t2.ensureInstanceOf(e2.position.spread, THREE.Vector3, new THREE.Vector3()),
+        _spreadClamp: t2.ensureInstanceOf(e2.position.spreadClamp, THREE.Vector3, new THREE.Vector3()),
+        _distribution: t2.ensureTypedArg(e2.position.distribution, r3.NUMBER, this.type),
+        _randomise: t2.ensureTypedArg(e2.position.randomise, r3.BOOLEAN, false),
+        _radius: t2.ensureTypedArg(e2.position.radius, r3.NUMBER, 10),
+        _radiusScale: t2.ensureInstanceOf(e2.position.radiusScale, THREE.Vector3, new THREE.Vector3(1, 1, 1)),
+        _distributionClamp: t2.ensureTypedArg(e2.position.distributionClamp, r3.NUMBER, 0)
+      }, this.velocity = {
+        _value: t2.ensureInstanceOf(e2.velocity.value, THREE.Vector3, new THREE.Vector3()),
+        _spread: t2.ensureInstanceOf(e2.velocity.spread, THREE.Vector3, new THREE.Vector3()),
+        _distribution: t2.ensureTypedArg(e2.velocity.distribution, r3.NUMBER, this.type),
+        _randomise: t2.ensureTypedArg(e2.position.randomise, r3.BOOLEAN, false)
+      }, this.acceleration = {
+        _value: t2.ensureInstanceOf(e2.acceleration.value, THREE.Vector3, new THREE.Vector3()),
+        _spread: t2.ensureInstanceOf(e2.acceleration.spread, THREE.Vector3, new THREE.Vector3()),
+        _distribution: t2.ensureTypedArg(e2.acceleration.distribution, r3.NUMBER, this.type),
+        _randomise: t2.ensureTypedArg(e2.position.randomise, r3.BOOLEAN, false)
+      }, this.drag = {
+        _value: t2.ensureTypedArg(e2.drag.value, r3.NUMBER, 0),
+        _spread: t2.ensureTypedArg(e2.drag.spread, r3.NUMBER, 0),
+        _randomise: t2.ensureTypedArg(e2.position.randomise, r3.BOOLEAN, false)
+      }, this.wiggle = {
+        _value: t2.ensureTypedArg(e2.wiggle.value, r3.NUMBER, 0),
+        _spread: t2.ensureTypedArg(e2.wiggle.spread, r3.NUMBER, 0)
+      }, this.rotation = {
+        _axis: t2.ensureInstanceOf(e2.rotation.axis, THREE.Vector3, new THREE.Vector3(0, 1, 0)),
+        _axisSpread: t2.ensureInstanceOf(e2.rotation.axisSpread, THREE.Vector3, new THREE.Vector3()),
+        _angle: t2.ensureTypedArg(e2.rotation.angle, r3.NUMBER, 0),
+        _angleSpread: t2.ensureTypedArg(e2.rotation.angleSpread, r3.NUMBER, 0),
+        _static: t2.ensureTypedArg(e2.rotation.static, r3.BOOLEAN, false),
+        _center: t2.ensureInstanceOf(e2.rotation.center, THREE.Vector3, this.position._value.clone()),
+        _randomise: t2.ensureTypedArg(e2.position.randomise, r3.BOOLEAN, false)
+      }, this.maxAge = {
+        _value: t2.ensureTypedArg(e2.maxAge.value, r3.NUMBER, 2),
+        _spread: t2.ensureTypedArg(e2.maxAge.spread, r3.NUMBER, 0)
+      }, this.color = {
+        _value: t2.ensureArrayInstanceOf(e2.color.value, THREE.Color, new THREE.Color()),
+        _spread: t2.ensureArrayInstanceOf(e2.color.spread, THREE.Vector3, new THREE.Vector3()),
+        _randomise: t2.ensureTypedArg(e2.position.randomise, r3.BOOLEAN, false)
+      }, this.opacity = {
+        _value: t2.ensureArrayTypedArg(e2.opacity.value, r3.NUMBER, 1),
+        _spread: t2.ensureArrayTypedArg(e2.opacity.spread, r3.NUMBER, 0),
+        _randomise: t2.ensureTypedArg(e2.position.randomise, r3.BOOLEAN, false)
+      }, this.size = {
+        _value: t2.ensureArrayTypedArg(e2.size.value, r3.NUMBER, 1),
+        _spread: t2.ensureArrayTypedArg(e2.size.spread, r3.NUMBER, 0),
+        _randomise: t2.ensureTypedArg(e2.position.randomise, r3.BOOLEAN, false)
+      }, this.angle = {
+        _value: t2.ensureArrayTypedArg(e2.angle.value, r3.NUMBER, 0),
+        _spread: t2.ensureArrayTypedArg(e2.angle.spread, r3.NUMBER, 0),
+        _randomise: t2.ensureTypedArg(e2.position.randomise, r3.BOOLEAN, false)
+      }, this.particleCount = t2.ensureTypedArg(e2.particleCount, r3.NUMBER, 100), this.duration = t2.ensureTypedArg(e2.duration, r3.NUMBER, null), this.isStatic = t2.ensureTypedArg(e2.isStatic, r3.BOOLEAN, false), this.activeMultiplier = t2.ensureTypedArg(e2.activeMultiplier, r3.NUMBER, 1), this.direction = t2.ensureTypedArg(e2.direction, r3.NUMBER, 1), this.alive = t2.ensureTypedArg(e2.alive, r3.BOOLEAN, true), this.particlesPerSecond = 0, this.activationIndex = 0, this.attributeOffset = 0, this.attributeEnd = 0, this.age = 0, this.activeParticleCount = 0, this.group = null, this.attributes = null, this.paramsArray = null, this.resetFlags = {
+        position: t2.ensureTypedArg(e2.position.randomise, r3.BOOLEAN, false) || t2.ensureTypedArg(e2.radius.randomise, r3.BOOLEAN, false),
+        velocity: t2.ensureTypedArg(e2.velocity.randomise, r3.BOOLEAN, false),
+        acceleration: t2.ensureTypedArg(e2.acceleration.randomise, r3.BOOLEAN, false) || t2.ensureTypedArg(e2.drag.randomise, r3.BOOLEAN, false),
+        rotation: t2.ensureTypedArg(e2.rotation.randomise, r3.BOOLEAN, false),
+        rotationCenter: t2.ensureTypedArg(e2.rotation.randomise, r3.BOOLEAN, false),
+        size: t2.ensureTypedArg(e2.size.randomise, r3.BOOLEAN, false),
+        color: t2.ensureTypedArg(e2.color.randomise, r3.BOOLEAN, false),
+        opacity: t2.ensureTypedArg(e2.opacity.randomise, r3.BOOLEAN, false),
+        angle: t2.ensureTypedArg(e2.angle.randomise, r3.BOOLEAN, false)
+      }, this.updateFlags = {}, this.updateCounts = {}, this.updateMap = {
+        maxAge: "params",
+        position: "position",
+        velocity: "velocity",
+        acceleration: "acceleration",
+        drag: "acceleration",
+        wiggle: "params",
+        rotation: "rotation",
+        size: "size",
+        color: "color",
+        opacity: "opacity",
+        angle: "angle"
+      };
+      for (var a2 in this.updateMap) this.updateMap.hasOwnProperty(a2) && (this.updateCounts[this.updateMap[a2]] = 0, this.updateFlags[this.updateMap[a2]] = false, this._createGetterSetters(this[a2], a2));
+      this.bufferUpdateRanges = {}, this.attributeKeys = null, this.attributeCount = 0, t2.ensureValueOverLifetimeCompliance(this.color, i2, i2), t2.ensureValueOverLifetimeCompliance(this.opacity, i2, i2), t2.ensureValueOverLifetimeCompliance(this.size, i2, i2), t2.ensureValueOverLifetimeCompliance(this.angle, i2, i2);
+    }, o.Emitter.constructor = o.Emitter, o.Emitter.prototype._createGetterSetters = function(e2, t2) {
+      var r3 = this;
+      for (var i2 in e2) if (e2.hasOwnProperty(i2)) {
+        var a2 = i2.replace("_", "");
+        Object.defineProperty(e2, a2, {
+          get: /* @__PURE__ */ (function(e3) {
+            return function() {
+              return this[e3];
+            };
+          })(i2),
+          set: /* @__PURE__ */ (function(e3) {
+            return function(i3) {
+              var a3 = r3.updateMap[t2], s = this[e3], n = o.valueOverLifetimeLength;
+              "_rotationCenter" === e3 ? (r3.updateFlags.rotationCenter = true, r3.updateCounts.rotationCenter = 0) : "_randomise" === e3 ? r3.resetFlags[a3] = i3 : (r3.updateFlags[a3] = true, r3.updateCounts[a3] = 0), r3.group._updateDefines(), this[e3] = i3, Array.isArray(s) && o.utils.ensureValueOverLifetimeCompliance(r3[t2], n, n);
+            };
+          })(i2)
+        });
+      }
+    }, o.Emitter.prototype._setBufferUpdateRanges = function(e2) {
+      this.attributeKeys = e2, this.attributeCount = e2.length;
+      for (var t2 = this.attributeCount - 1; t2 >= 0; --t2) this.bufferUpdateRanges[e2[t2]] = {
+        min: Number.POSITIVE_INFINITY,
+        max: Number.NEGATIVE_INFINITY
+      };
+    }, o.Emitter.prototype._calculatePPSValue = function(e2) {
+      var t2 = this.particleCount;
+      this.duration ? this.particlesPerSecond = t2 / (e2 < this.duration ? e2 : this.duration) : this.particlesPerSecond = t2 / e2;
+    }, o.Emitter.prototype._setAttributeOffset = function(e2) {
+      this.attributeOffset = e2, this.activationIndex = e2, this.activationEnd = e2 + this.particleCount;
+    }, o.Emitter.prototype._assignValue = function(e2, t2) {
+      switch (e2) {
+        case "position":
+          this._assignPositionValue(t2);
+          break;
+        case "velocity":
+        case "acceleration":
+          this._assignForceValue(t2, e2);
+          break;
+        case "size":
+        case "opacity":
+          this._assignAbsLifetimeValue(t2, e2);
+          break;
+        case "angle":
+          this._assignAngleValue(t2);
+          break;
+        case "params":
+          this._assignParamsValue(t2);
+          break;
+        case "rotation":
+          this._assignRotationValue(t2);
+          break;
+        case "color":
+          this._assignColorValue(t2);
+      }
+    }, o.Emitter.prototype._assignPositionValue = function(e2) {
+      var t2 = o.distributions, r3 = o.utils, i2 = this.position, a2 = this.attributes.position, s = i2._value, n = i2._spread;
+      switch (i2._distribution) {
+        case t2.BOX:
+          r3.randomVector3(a2, e2, s, n, i2._spreadClamp);
+          break;
+        case t2.SPHERE:
+          r3.randomVector3OnSphere(a2, e2, s, i2._radius, i2._spread.x, i2._radiusScale, i2._spreadClamp.x, i2._distributionClamp || this.particleCount);
+          break;
+        case t2.DISC:
+          r3.randomVector3OnDisc(a2, e2, s, i2._radius, i2._spread.x, i2._radiusScale, i2._spreadClamp.x);
+      }
+    }, o.Emitter.prototype._assignForceValue = function(e2, t2) {
+      var r3, i2, a2, s, n, u = o.distributions, l = o.utils, p = this[t2], c = p._value, d = p._spread, h = p._distribution;
+      switch (h) {
+        case u.BOX:
+          l.randomVector3(this.attributes[t2], e2, c, d);
+          break;
+        case u.SPHERE:
+          r3 = this.attributes.position.typedArray.array, n = 3 * e2, i2 = r3[n], a2 = r3[n + 1], s = r3[n + 2], l.randomDirectionVector3OnSphere(this.attributes[t2], e2, i2, a2, s, this.position._value, p._value.x, p._spread.x);
+          break;
+        case u.DISC:
+          r3 = this.attributes.position.typedArray.array, n = 3 * e2, i2 = r3[n], a2 = r3[n + 1], s = r3[n + 2], l.randomDirectionVector3OnDisc(this.attributes[t2], e2, i2, a2, s, this.position._value, p._value.x, p._spread.x);
+      }
+      if ("acceleration" === t2) {
+        var y = l.clamp(l.randomFloat(this.drag._value, this.drag._spread), 0, 1);
+        this.attributes.acceleration.typedArray.array[4 * e2 + 3] = y;
+      }
+    }, o.Emitter.prototype._assignAbsLifetimeValue = function(e2, t2) {
+      var r3, i2 = this.attributes[t2].typedArray, a2 = this[t2], s = o.utils;
+      s.arrayValuesAreEqual(a2._value) && s.arrayValuesAreEqual(a2._spread) ? (r3 = Math.abs(s.randomFloat(a2._value[0], a2._spread[0])), i2.setVec4Components(e2, r3, r3, r3, r3)) : i2.setVec4Components(e2, Math.abs(s.randomFloat(a2._value[0], a2._spread[0])), Math.abs(s.randomFloat(a2._value[1], a2._spread[1])), Math.abs(s.randomFloat(a2._value[2], a2._spread[2])), Math.abs(s.randomFloat(a2._value[3], a2._spread[3])));
+    }, o.Emitter.prototype._assignAngleValue = function(e2) {
+      var t2, r3 = this.attributes.angle.typedArray, i2 = this.angle, a2 = o.utils;
+      a2.arrayValuesAreEqual(i2._value) && a2.arrayValuesAreEqual(i2._spread) ? (t2 = a2.randomFloat(i2._value[0], i2._spread[0]), r3.setVec4Components(e2, t2, t2, t2, t2)) : r3.setVec4Components(e2, a2.randomFloat(i2._value[0], i2._spread[0]), a2.randomFloat(i2._value[1], i2._spread[1]), a2.randomFloat(i2._value[2], i2._spread[2]), a2.randomFloat(i2._value[3], i2._spread[3]));
+    }, o.Emitter.prototype._assignParamsValue = function(e2) {
+      this.attributes.params.typedArray.setVec4Components(e2, this.isStatic ? 1 : 0, 0, Math.abs(o.utils.randomFloat(this.maxAge._value, this.maxAge._spread)), o.utils.randomFloat(this.wiggle._value, this.wiggle._spread));
+    }, o.Emitter.prototype._assignRotationValue = function(e2) {
+      this.attributes.rotation.typedArray.setVec3Components(e2, o.utils.getPackedRotationAxis(this.rotation._axis, this.rotation._axisSpread), o.utils.randomFloat(this.rotation._angle, this.rotation._angleSpread), this.rotation._static ? 0 : 1), this.attributes.rotationCenter.typedArray.setVec3(e2, this.rotation._center);
+    }, o.Emitter.prototype._assignColorValue = function(e2) {
+      o.utils.randomColorAsHex(this.attributes.color, e2, this.color._value, this.color._spread);
+    }, o.Emitter.prototype._resetParticle = function(e2) {
+      for (var t2, r3, i2 = this.resetFlags, a2 = this.updateFlags, o2 = this.updateCounts, s = this.attributeKeys, n = this.attributeCount - 1; n >= 0; --n) t2 = s[n], r3 = a2[t2], true !== i2[t2] && true !== r3 || (this._assignValue(t2, e2), this._updateAttributeUpdateRange(t2, e2), true === r3 && o2[t2] === this.particleCount ? (a2[t2] = false, o2[t2] = 0) : 1 == r3 && ++o2[t2]);
+    }, o.Emitter.prototype._updateAttributeUpdateRange = function(e2, t2) {
+      var r3 = this.bufferUpdateRanges[e2];
+      r3.min = Math.min(t2, r3.min), r3.max = Math.max(t2, r3.max);
+    }, o.Emitter.prototype._resetBufferRanges = function() {
+      var e2, t2 = this.bufferUpdateRanges, r3 = this.bufferUpdateKeys, i2 = this.bufferUpdateCount - 1;
+      for (i2; i2 >= 0; --i2) e2 = r3[i2], t2[e2].min = Number.POSITIVE_INFINITY, t2[e2].max = Number.NEGATIVE_INFINITY;
+    }, o.Emitter.prototype._onRemove = function() {
+      this.particlesPerSecond = 0, this.attributeOffset = 0, this.activationIndex = 0, this.activeParticleCount = 0, this.group = null, this.attributes = null, this.paramsArray = null, this.age = 0;
+    }, o.Emitter.prototype._decrementParticleCount = function() {
+      --this.activeParticleCount;
+    }, o.Emitter.prototype._incrementParticleCount = function() {
+      ++this.activeParticleCount;
+    }, o.Emitter.prototype._checkParticleAges = function(e2, t2, r3, i2) {
+      for (var a2, o2, s, n, u = t2 - 1; u >= e2; --u) a2 = 4 * u, 0 !== (n = r3[a2]) && (s = r3[a2 + 1], o2 = r3[a2 + 2], 1 === this.direction ? (s += i2) >= o2 && (s = 0, n = 0, this._decrementParticleCount()) : (s -= i2) <= 0 && (s = o2, n = 0, this._decrementParticleCount()), r3[a2] = n, r3[a2 + 1] = s, this._updateAttributeUpdateRange("params", u));
+    }, o.Emitter.prototype._activateParticles = function(e2, t2, r3, i2) {
+      for (var a2, o2, s = this.direction, n = e2; n < t2; ++n) a2 = 4 * n, 0 != r3[a2] && 1 !== this.particleCount || (this._incrementParticleCount(), r3[a2] = 1, this._resetParticle(n), o2 = i2 * (n - e2), r3[a2 + 1] = -1 === s ? r3[a2 + 2] - o2 : o2, this._updateAttributeUpdateRange("params", n));
+    }, o.Emitter.prototype.tick = function(e2) {
+      if (!this.isStatic) {
+        null === this.paramsArray && (this.paramsArray = this.attributes.params.typedArray.array);
+        var t2 = this.attributeOffset, r3 = t2 + this.particleCount, i2 = this.paramsArray, a2 = this.particlesPerSecond * this.activeMultiplier * e2, o2 = this.activationIndex;
+        if (this._resetBufferRanges(), this._checkParticleAges(t2, r3, i2, e2), false === this.alive) return void (this.age = 0);
+        if (null !== this.duration && this.age > this.duration) return this.alive = false, void (this.age = 0);
+        var s = 1 === this.particleCount ? o2 : 0 | o2, n = Math.min(s + a2, this.activationEnd), u = n - this.activationIndex | 0, l = u > 0 ? e2 / u : 0;
+        this._activateParticles(s, n, i2, l), this.activationIndex += a2, this.activationIndex > r3 && (this.activationIndex = t2), this.age += e2;
+      }
+    }, o.Emitter.prototype.reset = function(e2) {
+      if (this.age = 0, this.alive = false, true === e2) {
+        for (var t2, r3 = this.attributeOffset, i2 = r3 + this.particleCount, a2 = this.paramsArray, o2 = this.attributes.params.bufferAttribute, s = i2 - 1; s >= r3; --s) t2 = 4 * s, a2[t2] = 0, a2[t2 + 1] = 0;
+        o2.updateRange.offset = 0, o2.updateRange.count = -1, o2.needsUpdate = true;
+      }
+      return this;
+    }, o.Emitter.prototype.enable = function() {
+      return this.alive = true, this;
+    }, o.Emitter.prototype.disable = function() {
+      return this.alive = false, this;
+    }, o.Emitter.prototype.remove = function() {
+      return null !== this.group ? this.group.removeEmitter(this) : console.error("Emitter does not belong to a group, cannot remove."), this;
+    };
+  }]);
   window.AFRAME.registerComponent("time-widget", {
     schema: {
       hand: {
@@ -35669,23 +41230,320 @@ void main() {
       }
     }
   });
+  const VISOR_MODES = ["normal", "wireframe", "xray", "depth"];
+  const DEPTH_NEAR_COL = new THREE.Color("#ff4444");
+  const DEPTH_FAR_COL = new THREE.Color("#4488ff");
+  const DEPTH_MAX = 30;
+  window.AFRAME.registerComponent("visor", {
+    schema: {
+      offset: {
+        type: "vec3",
+        default: {
+          x: 0,
+          y: 0.15,
+          z: -0.18
+        }
+      },
+      size: {
+        type: "number",
+        default: 0.22
+      }
+    },
+    init() {
+      this._modeIdx = 0;
+      this._cooldown = 0;
+      this._saved = /* @__PURE__ */ new Map();
+      this._mesh = null;
+      this._mat = null;
+      this._buildMesh();
+    },
+    remove() {
+      this._restore();
+      if (this._mesh) {
+        this.el.object3D.remove(this._mesh);
+        this._mesh.geometry.dispose();
+        this._mat.dispose();
+        this._mesh = this._mat = null;
+      }
+    },
+    tick(t) {
+      if (t - this._cooldown < 700) return;
+      const halfSize = this.data.size * 0.5;
+      const worldPos = new THREE.Vector3();
+      this._mesh.getWorldPosition(worldPos);
+      const controllers = this.el.sceneEl.querySelectorAll("[oculus-touch-controls], [laser-controls], [hand-controls]");
+      let hit = false;
+      controllers.forEach((ctrl) => {
+        if (!ctrl.object3D) return;
+        const cp = new THREE.Vector3();
+        ctrl.object3D.getWorldPosition(cp);
+        if (Math.abs(cp.x - worldPos.x) < halfSize && Math.abs(cp.y - worldPos.y) < halfSize && Math.abs(cp.z - worldPos.z) < halfSize) {
+          hit = true;
+        }
+      });
+      if (!hit) return;
+      this._cooldown = t;
+      this._restore();
+      this._modeIdx = (this._modeIdx + 1) % VISOR_MODES.length;
+      const mode = VISOR_MODES[this._modeIdx];
+      if (mode !== "normal") this._applyMode(mode);
+    },
+    // ── apply ──────────────────────────────────────────────────────────────────
+    _applyMode(mode) {
+      const camPos = new THREE.Vector3();
+      const cam = this.el.sceneEl.camera;
+      if (cam) cam.getWorldPosition(camPos);
+      this._eachMesh((mesh) => {
+        const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
+        mats.forEach((m) => {
+          if (!this._saved.has(m)) {
+            this._saved.set(m, {
+              wireframe: m.wireframe,
+              transparent: m.transparent,
+              opacity: m.opacity,
+              depthWrite: m.depthWrite,
+              color: m.color ? m.color.clone() : null
+            });
+          }
+          if (mode === "wireframe") {
+            m.wireframe = true;
+          } else if (mode === "xray") {
+            m.transparent = true;
+            m.opacity = 0.15;
+            m.depthWrite = false;
+          } else if (mode === "depth") {
+            if (!m.color) return;
+            const wp = new THREE.Vector3();
+            mesh.getWorldPosition(wp);
+            const dist = wp.distanceTo(camPos);
+            const t = Math.min(dist / DEPTH_MAX, 1);
+            m.color.lerpColors(DEPTH_NEAR_COL, DEPTH_FAR_COL, t);
+          }
+          m.needsUpdate = true;
+        });
+      });
+    },
+    _restore() {
+      this._saved.forEach((orig, m) => {
+        m.wireframe = orig.wireframe;
+        m.transparent = orig.transparent;
+        m.opacity = orig.opacity;
+        m.depthWrite = orig.depthWrite;
+        if (orig.color && m.color) m.color.copy(orig.color);
+        m.needsUpdate = true;
+      });
+      this._saved.clear();
+    },
+    _eachMesh(fn) {
+      this.el.sceneEl.object3D.traverse((obj) => {
+        if (!obj.isMesh || obj === this._mesh) return;
+        const el = obj.el;
+        if (el && (el.closest("[data-vr-tool-ui]") || el.closest("a-assets"))) return;
+        fn(obj);
+      });
+    },
+    // ── build invisible trigger volume ────────────────────────────────────────
+    _buildMesh() {
+      const {
+        x,
+        y,
+        z
+      } = this.data.offset;
+      const s = this.data.size;
+      const geo = new THREE.BoxGeometry(s, s * 0.35, s * 1.4);
+      const mat = new THREE.MeshBasicMaterial({
+        visible: false
+      });
+      const mesh = new THREE.Mesh(geo, mat);
+      mesh.position.set(x, y, z);
+      mesh.visible = false;
+      this._mesh = mesh;
+      this._mat = mat;
+      this.el.object3D.add(mesh);
+    }
+  });
+  const LOG_PANEL_STATE_KEY = "__AFRAME_LOG_PANEL_STATE__";
+  function getPanelState() {
+    if (!window[LOG_PANEL_STATE_KEY]) {
+      window[LOG_PANEL_STATE_KEY] = {
+        buffer: [],
+        listeners: /* @__PURE__ */ new Set(),
+        patched: false,
+        original: {}
+      };
+    }
+    return window[LOG_PANEL_STATE_KEY];
+  }
+  function safeStringify(value) {
+    if (value instanceof Error) {
+      return value.stack || value.message || String(value);
+    }
+    if (typeof value === "string") return value;
+    if (typeof value === "number" || typeof value === "boolean" || value == null) {
+      return String(value);
+    }
+    try {
+      return JSON.stringify(value);
+    } catch (e) {
+      return Object.prototype.toString.call(value);
+    }
+  }
+  function formatEntry(level, args) {
+    const text = Array.from(args).map(safeStringify).join(" ");
+    const tag = level.toUpperCase();
+    return `${tag}: ${text}`;
+  }
+  function patchConsoleIfNeeded(maxBuffer) {
+    const state = getPanelState();
+    if (state.patched) return;
+    ["log", "warn", "error"].forEach((level) => {
+      const original = console[level];
+      state.original[level] = original.bind(console);
+      console[level] = (...args) => {
+        try {
+          const line = formatEntry(level, args);
+          state.buffer.push(line);
+          if (state.buffer.length > maxBuffer) {
+            state.buffer.splice(0, state.buffer.length - maxBuffer);
+          }
+          state.listeners.forEach((fn) => fn(line));
+        } catch (e) {
+        }
+        state.original[level](...args);
+      };
+    });
+    state.patched = true;
+  }
+  function unpatchConsoleIfUnused() {
+    const state = getPanelState();
+    if (!state.patched || state.listeners.size > 0) return;
+    ["log", "warn", "error"].forEach((level) => {
+      if (state.original[level]) {
+        console[level] = state.original[level];
+      }
+    });
+    state.patched = false;
+  }
+  if (!AFRAME.components["log-panel"]) {
+    AFRAME.registerComponent("log-panel", {
+      schema: {
+        enabled: {
+          type: "boolean",
+          default: true
+        },
+        maxLines: {
+          type: "int",
+          default: 12
+        },
+        maxBuffer: {
+          type: "int",
+          default: 400
+        },
+        width: {
+          type: "number",
+          default: 0.62
+        },
+        height: {
+          type: "number",
+          default: 0.34
+        },
+        fadeDelayMs: {
+          type: "int",
+          default: 3500
+        },
+        fadeDurationMs: {
+          type: "int",
+          default: 5e3
+        },
+        offset: {
+          type: "vec3",
+          default: {
+            x: 0.34,
+            y: -0.14,
+            z: -0.68
+          }
+        }
+      },
+      init() {
+        this.lines = [];
+        this.lastLogAt = 0;
+        this.state = getPanelState();
+        patchConsoleIfNeeded(this.data.maxBuffer);
+        this.panel = document.createElement("a-entity");
+        this.panel.setAttribute("position", `${this.data.offset.x} ${this.data.offset.y} ${this.data.offset.z}`);
+        this.panel.setAttribute("data-vr-tool-ui", "true");
+        this.bg = document.createElement("a-plane");
+        this.bg.setAttribute("width", this.data.width);
+        this.bg.setAttribute("height", this.data.height);
+        this.bg.setAttribute("material", "color: #0a1020; opacity: 0; transparent: true; side: double");
+        this.bg.object3D.position.set(0, 0, 0);
+        this.title = document.createElement("a-text");
+        this.title.setAttribute("value", "Console Log");
+        this.title.setAttribute("color", "#8ecae6");
+        this.title.setAttribute("align", "left");
+        this.title.setAttribute("width", (this.data.width - 0.05) * 1.35);
+        this.title.object3D.position.set(-this.data.width * 0.48, this.data.height * 0.42, 3e-3);
+        this.body = document.createElement("a-text");
+        this.body.setAttribute("value", "");
+        this.body.setAttribute("color", "#f7fbff");
+        this.body.setAttribute("align", "left");
+        this.body.setAttribute("width", (this.data.width - 0.05) * 1.7);
+        this.body.setAttribute("wrap-count", 72);
+        this.body.setAttribute("baseline", "top");
+        this.body.setAttribute("opacity", 1);
+        this.body.object3D.position.set(-this.data.width * 0.48, this.data.height * 0.3, 3e-3);
+        this.panel.appendChild(this.bg);
+        this.panel.appendChild(this.title);
+        this.panel.appendChild(this.body);
+        this.el.appendChild(this.panel);
+        this._onLogEntry = (line) => {
+          this.pushLine(line);
+        };
+        this.state.listeners.add(this._onLogEntry);
+        const recent = this.state.buffer.slice(-this.data.maxLines);
+        recent.forEach((line) => this.pushLine(line));
+      },
+      update() {
+        if (!this.panel) return;
+        this.panel.object3D.visible = !!this.data.enabled;
+      },
+      tick(time) {
+        if (!this.data.enabled || !this.body || !this.lastLogAt) return;
+        const ageMs = Math.max(0, time - this.lastLogAt);
+        if (ageMs <= this.data.fadeDelayMs) {
+          this.body.setAttribute("opacity", 1);
+          return;
+        }
+        const fadeProgress = Math.min(1, (ageMs - this.data.fadeDelayMs) / Math.max(1, this.data.fadeDurationMs));
+        const opacity = Math.max(0, 1 - fadeProgress);
+        this.body.setAttribute("opacity", opacity);
+      },
+      remove() {
+        if (this.panel?.parentNode) {
+          this.panel.parentNode.removeChild(this.panel);
+        }
+        if (this.state && this._onLogEntry) {
+          this.state.listeners.delete(this._onLogEntry);
+        }
+        unpatchConsoleIfUnused();
+      },
+      pushLine(line) {
+        this.lines.push(line);
+        if (this.lines.length > this.data.maxLines) {
+          this.lines.splice(0, this.lines.length - this.data.maxLines);
+        }
+        this.lastLogAt = performance.now();
+        this.body.setAttribute("opacity", 1);
+        this.body.setAttribute("value", this.lines.join("\n"));
+      }
+    });
+  }
   const XRMode = () => {
     const [isVRSupported, setIsVRSupported] = reactExports.useState(false);
-    const [hasXRDevice, setHasXRDevice] = reactExports.useState(false);
     const [vrRig, setVrRig] = reactExports.useState(null);
     reactExports.useEffect(() => {
       if (navigator.xr) {
         navigator.xr.isSessionSupported("immersive-vr").then(setIsVRSupported);
-        navigator.xr.enumerateDevices?.().then((devices) => {
-          setHasXRDevice(devices.length > 0);
-        }).catch(() => {
-          navigator.xr.requestSession?.("immersive-vr", {
-            optionalFeatures: []
-          }).then((session) => {
-            session.end();
-            setHasXRDevice(true);
-          }).catch(() => setHasXRDevice(false));
-        });
       }
     }, []);
     const createVRRig = () => {
@@ -35694,27 +41552,44 @@ void main() {
       const rig = document.createElement("a-entity");
       rig.id = "admin-camera-rig";
       rig.setAttribute("position", "0 1.6 0");
-      const camera = document.createElement("a-entity");
+      const camera = document.createElement("a-camera");
       camera.id = "admin-camera";
-      camera.setAttribute("camera", "");
       camera.setAttribute("look-controls", "");
       camera.setAttribute("active", "");
+      camera.setAttribute("visor", "");
+      camera.setAttribute("log-panel", "");
       const leftController = document.createElement("a-entity");
       leftController.id = "admin-left-controller";
       leftController.setAttribute("oculus-touch-controls", "hand: left");
-      leftController.setAttribute("shapes-tool", "");
-      leftController.setAttribute("smart-move", "");
+      leftController.setAttribute("vr-controller", "");
+      leftController.setAttribute("move-tool", "hand: left; enabled: false");
+      leftController.setAttribute("paint-tool", "enabled: false");
+      leftController.setAttribute("shapes-tool", "enabled: true");
+      leftController.setAttribute("component-tool", "hand: left; enabled: false");
+      leftController.setAttribute("fly", "");
       leftController.setAttribute("haptics", "");
       const rightController = document.createElement("a-entity");
       rightController.id = "admin-right-controller";
       rightController.setAttribute("oculus-touch-controls", "hand: right");
-      rightController.setAttribute("laser-controls", "");
-      rightController.setAttribute("move-tool", "");
-      rightController.setAttribute("paint-tool", "");
+      rightController.setAttribute("vr-controller", "");
+      rightController.setAttribute("move-tool", "hand: right; enabled: true");
+      rightController.setAttribute("paint-tool", "enabled: false");
+      rightController.setAttribute("shapes-tool", "enabled: false");
+      rightController.setAttribute("smooth-turn", "");
+      rightController.setAttribute("vertical-move", "");
       rightController.setAttribute("haptics", "");
+      rightController.setAttribute("vr-save", "");
+      rightController.setAttribute("component-tool", "hand: right; enabled: false");
+      const body = document.createElement("a-entity");
+      body.id = "admin-body";
+      body.setAttribute("position", "0 .4 -0.3");
+      body.setAttribute("rotation", "0 0 0");
+      body.setAttribute("data-vr-tool-ui", "true");
+      body.setAttribute("vr-toolbelt", "tools: paint-tool,move-tool,shapes-tool,component-tool; offset: 0 0.28 0.08");
       rig.appendChild(camera);
       rig.appendChild(leftController);
       rig.appendChild(rightController);
+      rig.appendChild(body);
       sceneEl.appendChild(rig);
       return rig;
     };
@@ -35723,10 +41598,6 @@ void main() {
       setVrRig(null);
     };
     const toggleVR = () => {
-      if (!hasXRDevice) {
-        alert("No XR device detected.");
-        return;
-      }
       const sceneEl = AFRAME.scenes[0];
       if (!sceneEl) return;
       if (sceneEl.is("vr-mode")) {
@@ -35754,12 +41625,87 @@ void main() {
   };
   function ViewportOverlay() {
     const [hoveredEntity, setHoveredEntity] = reactExports.useState(null);
+    const [wireframeEnabled, setWireframeEnabled] = reactExports.useState(false);
+    const [snappingEnabled, setSnappingEnabled] = reactExports.useState(false);
+    const [translationSnap, setTranslationSnap] = reactExports.useState(1);
+    const [rotationSnapDeg, setRotationSnapDeg] = reactExports.useState(15);
+    const [scaleSnap, setScaleSnap] = reactExports.useState(0.5);
+    const emitSnapValues = reactExports.useCallback((enabled, nextValues = {}) => {
+      const translate = nextValues.translationSnap ?? translationSnap;
+      const rotationDeg = nextValues.rotationSnapDeg ?? rotationSnapDeg;
+      const scale = nextValues.scaleSnap ?? scaleSnap;
+      if (!enabled) {
+        Events.emit("translationsnapchanged", null);
+        Events.emit("rotationsnapchanged", null);
+        Events.emit("scalesnapchanged", null);
+        return;
+      }
+      Events.emit("translationsnapchanged", translate);
+      Events.emit("rotationsnapchanged", rotationDeg * Math.PI / 180);
+      Events.emit("scalesnapchanged", scale);
+    }, [translationSnap, rotationSnapDeg, scaleSnap]);
     const onRaycasterMouseEnter = reactExports.useCallback((el) => {
       setHoveredEntity(el);
     }, []);
     const onRaycasterMouseLeave = reactExports.useCallback(() => {
       setHoveredEntity(null);
     }, []);
+    const toggleWireframe = reactExports.useCallback(() => {
+      const newWireframeState = !wireframeEnabled;
+      setWireframeEnabled(newWireframeState);
+      const scene = AFRAME.scenes[0];
+      if (scene) {
+        scene.object3D.traverse((object) => {
+          if (object.isMesh && object.material) {
+            if (Array.isArray(object.material)) {
+              object.material.forEach((mat) => {
+                if (mat) mat.wireframe = newWireframeState;
+              });
+            } else {
+              object.material.wireframe = newWireframeState;
+            }
+          }
+        });
+      }
+      Events.emit("wireframetoggle", newWireframeState);
+    }, [wireframeEnabled]);
+    const toggleSnapping = reactExports.useCallback(() => {
+      const newSnappingState = !snappingEnabled;
+      setSnappingEnabled(newSnappingState);
+      emitSnapValues(newSnappingState);
+    }, [snappingEnabled, emitSnapValues]);
+    const updateSnapAmount = reactExports.useCallback((field, rawValue) => {
+      const parsed = parseFloat(rawValue);
+      if (!Number.isFinite(parsed) || parsed <= 0) {
+        return;
+      }
+      if (field === "translate") {
+        setTranslationSnap(parsed);
+        if (snappingEnabled) {
+          emitSnapValues(true, {
+            translationSnap: parsed
+          });
+        }
+        return;
+      }
+      if (field === "rotate") {
+        setRotationSnapDeg(parsed);
+        if (snappingEnabled) {
+          emitSnapValues(true, {
+            rotationSnapDeg: parsed
+          });
+        }
+        return;
+      }
+      if (field === "scale") {
+        setScaleSnap(parsed);
+        if (snappingEnabled) {
+          emitSnapValues(true, {
+            scaleSnap: parsed
+          });
+        }
+      }
+    }, [snappingEnabled, emitSnapValues]);
     reactExports.useEffect(() => {
       Events.on("raycastermouseenter", onRaycasterMouseEnter);
       Events.on("raycastermouseleave", onRaycasterMouseLeave);
@@ -35769,9 +41715,39 @@ void main() {
       };
     }, [onRaycasterMouseEnter, onRaycasterMouseLeave]);
     return /* @__PURE__ */ React.createElement("div", {
-      id: "viewportOverlay",
       className: "viewport-overlay"
     }, /* @__PURE__ */ React.createElement("div", {
+      className: "overlay-top"
+    }, /* @__PURE__ */ React.createElement("button", {
+      className: `wireframe-toggle ${wireframeEnabled ? "active" : ""}`,
+      onClick: toggleWireframe,
+      title: "Toggle Wireframe Mode"
+    }, /* @__PURE__ */ React.createElement(FaCube, null)), /* @__PURE__ */ React.createElement("button", {
+      className: `snap-toggle ${snappingEnabled ? "active" : ""}`,
+      onClick: toggleSnapping,
+      title: "Toggle Transform Snapping"
+    }, /* @__PURE__ */ React.createElement(FaMagnet, null)), /* @__PURE__ */ React.createElement("div", {
+      className: "snap-controls",
+      title: "Adjust snap amount"
+    }, /* @__PURE__ */ React.createElement("label", null, "Move", /* @__PURE__ */ React.createElement("input", {
+      type: "number",
+      min: "0.001",
+      step: "0.1",
+      value: translationSnap,
+      onChange: (e) => updateSnapAmount("translate", e.target.value)
+    })), /* @__PURE__ */ React.createElement("label", null, "Rotate", /* @__PURE__ */ React.createElement("input", {
+      type: "number",
+      min: "0.1",
+      step: "1",
+      value: rotationSnapDeg,
+      onChange: (e) => updateSnapAmount("rotate", e.target.value)
+    })), /* @__PURE__ */ React.createElement("label", null, "Scale", /* @__PURE__ */ React.createElement("input", {
+      type: "number",
+      min: "0.001",
+      step: "0.1",
+      value: scaleSnap,
+      onChange: (e) => updateSnapAmount("scale", e.target.value)
+    })))), /* @__PURE__ */ React.createElement("div", {
       className: "overlay-bottom",
       hidden: !hoveredEntity
     }, /* @__PURE__ */ React.createElement("p", {
@@ -35780,12 +41756,49 @@ void main() {
       entity: hoveredEntity
     }))));
   }
+  function insertNewAsset(type, id, src, anonymousCrossOrigin, onLoadedCallback) {
+    var element = null;
+    switch (type) {
+      case "img":
+        {
+          element = document.createElement("img");
+          element.id = id;
+          element.src = src;
+        }
+        break;
+    }
+    if (element) {
+      element.onload = function() {
+        if (onLoadedCallback) {
+          onLoadedCallback();
+        }
+      };
+      var assetsElement = document.getElementsByTagName("a-assets")[0];
+      if (!assetsElement) {
+        assetsElement = document.createElement("a-assets");
+        var sceneElement = document.getElementsByTagName("a-scene")[0];
+        if (sceneElement) {
+          sceneElement.appendChild(assetsElement);
+        } else {
+          console.error("No a-scene element found to append a-assets to");
+          return;
+        }
+      }
+      assetsElement.appendChild(element);
+    }
+  }
+  function isInspectorOpen() {
+    if (typeof document !== "undefined" && document.body.classList.contains("aframe-inspector-opened")) {
+      return true;
+    }
+    return Boolean(window.AFRAME?.INSPECTOR?.opened);
+  }
   function Main() {
+    const hoveredEntityRef = reactExports.useRef(null);
     const [state, setState] = reactExports.useState({
       entity: null,
-      inspectorEnabled: true,
+      inspectorEnabled: isInspectorOpen(),
       isHelpOpen: false,
-      isModalTexturesOpen: false,
       sceneEl: AFRAME.scenes[0],
       visible: {
         scenegraph: true,
@@ -35836,14 +41849,10 @@ void main() {
       };
     }, [state.visible.scenegraph, state.visible.attributes]);
     reactExports.useEffect(() => {
-      const handleOpenTexturesModal = function(selectedTexture, textureOnClose) {
-        setState((prev) => ({
-          ...prev,
-          selectedTexture,
-          isModalTexturesOpen: true,
-          textureOnClose
-        }));
-      };
+      setState((prev) => ({
+        ...prev,
+        inspectorEnabled: isInspectorOpen()
+      }));
       const handleEntitySelect = (entity) => {
         setState((prev) => ({
           ...prev,
@@ -35862,15 +41871,23 @@ void main() {
           isHelpOpen: true
         }));
       };
-      Events.on("opentexturesmodal", handleOpenTexturesModal);
+      const handleRaycasterMouseEnter = (entity) => {
+        hoveredEntityRef.current = entity || null;
+      };
+      const handleRaycasterMouseLeave = () => {
+        hoveredEntityRef.current = null;
+      };
       Events.on("entityselect", handleEntitySelect);
       Events.on("inspectortoggle", handleInspectorToggle);
       Events.on("openhelpmodal", handleOpenHelpModal);
+      Events.on("raycastermouseenter", handleRaycasterMouseEnter);
+      Events.on("raycastermouseleave", handleRaycasterMouseLeave);
       return () => {
-        Events.off("opentexturesmodal", handleOpenTexturesModal);
         Events.off("entityselect", handleEntitySelect);
         Events.off("inspectortoggle", handleInspectorToggle);
         Events.off("openhelpmodal", handleOpenHelpModal);
+        Events.off("raycastermouseenter", handleRaycasterMouseEnter);
+        Events.off("raycastermouseleave", handleRaycasterMouseLeave);
       };
     }, []);
     const onCloseHelpModal = () => {
@@ -35878,15 +41895,6 @@ void main() {
         ...prev,
         isHelpOpen: false
       }));
-    };
-    const onModalTextureOnClose = (value) => {
-      setState((prev) => ({
-        ...prev,
-        isModalTexturesOpen: false
-      }));
-      if (state.textureOnClose) {
-        state.textureOnClose(value);
-      }
     };
     const handleDragOver = (e) => {
       e.preventDefault();
@@ -35907,25 +41915,123 @@ void main() {
       document.body.classList.remove("dragging-asset");
       try {
         const assetData = JSON.parse(e.dataTransfer.getData("application/json"));
-        if (assetData.type === "asset" && state.entity) {
-          if (state.entity.hasAttribute("material")) {
-            state.entity.setAttribute("material", "src", assetData.value);
-          } else {
-            state.entity.setAttribute("material", {
-              src: assetData.value
+        if (assetData.type === "asset") {
+          if (assetData.assetType === "sketchfab") {
+            const sceneEl = AFRAME.scenes[0];
+            const newEntity = document.createElement("a-gltf-model");
+            let counter = 1;
+            let entityName = assetData.name?.replace(/[^a-zA-Z0-9-_]/g, "") || "sketchfab-model";
+            let finalName = entityName;
+            while (document.getElementById(finalName)) {
+              finalName = `${entityName}-${counter}`;
+              counter++;
+            }
+            newEntity.setAttribute("id", finalName);
+            newEntity.setAttribute("position", "0 1.6 -2");
+            newEntity.setAttribute("rotation", "0 0 0");
+            newEntity.setAttribute("scale", "1 1 1");
+            if (assetData.glbUrl) {
+              newEntity.setAttribute("src", assetData.glbUrl);
+              sceneEl.appendChild(newEntity);
+              Events.emit("entityselect", newEntity);
+            } else {
+              const useModel = confirm(`This Sketchfab model requires manual download.
+
+Click OK to create the entity, then:
+1. Visit: ${assetData.value}
+2. Download the model (GLB format)
+3. Host it on your server
+4. Update the 'src' property with your URL
+
+Click Cancel to skip.`);
+              if (useModel) {
+                newEntity.setAttribute("src", "");
+                sceneEl.appendChild(newEntity);
+                Events.emit("entityselect", newEntity);
+              }
+            }
+            return;
+          }
+          if (assetData.assetType === "material") {
+            const dropTarget = hoveredEntityRef.current?.isEntity ? hoveredEntityRef.current : state.entity;
+            if (!dropTarget) {
+              return;
+            }
+            const legacyMaterialProps = {
+              color: assetData.color,
+              metalness: assetData.metalness,
+              roughness: assetData.roughness,
+              ...assetData.opacity !== void 0 ? {
+                opacity: assetData.opacity
+              } : {},
+              ...assetData.transparent !== void 0 ? {
+                transparent: assetData.transparent
+              } : {}
+            };
+            const materialProps = assetData.materialProps && typeof assetData.materialProps === "object" ? assetData.materialProps : Object.fromEntries(Object.entries(legacyMaterialProps).filter(([, value]) => value !== void 0 && value !== null));
+            if (!Object.keys(materialProps).length) {
+              return;
+            }
+            dropTarget.setAttribute("material", materialProps);
+            Events.emit("entityupdate", {
+              entity: dropTarget,
+              component: "material",
+              property: "",
+              value: materialProps
+            });
+            return;
+          }
+          if (state.entity) {
+            let valueToSet = assetData.value;
+            if (assetData.assetType === "registry" && assetData.value.startsWith("url(")) {
+              const urlMatch = assetData.value.match(/url\((.+)\)/);
+              if (urlMatch && urlMatch[1]) {
+                const url = urlMatch[1];
+                let assetId = assetData.id;
+                if (!assetId || assetId.includes("/") || assetId.includes(".") || document.getElementById(assetId)) {
+                  const urlParts = url.split("/");
+                  const filename = urlParts[urlParts.length - 1].split(".")[0];
+                  assetId = filename.replace(/[^a-zA-Z0-9-_]/g, "") || "asset";
+                  let counter = 1;
+                  let finalId = assetId;
+                  while (document.getElementById(finalId)) {
+                    finalId = `${assetId}-${counter}`;
+                    counter++;
+                  }
+                  assetId = finalId;
+                }
+                insertNewAsset("img", assetId, url, false, () => {
+                  Events.emit("assetadd", {
+                    id: assetId,
+                    src: url,
+                    tagName: "img"
+                  });
+                });
+                valueToSet = "#" + assetId;
+              }
+            }
+            if (state.entity.hasAttribute("material")) {
+              state.entity.setAttribute("material", "src", valueToSet);
+            } else {
+              state.entity.setAttribute("material", {
+                src: valueToSet
+              });
+            }
+            Events.emit("entityupdate", {
+              entity: state.entity,
+              component: "material",
+              property: "src",
+              value: valueToSet
             });
           }
-          Events.emit("componentchanged", {
-            entity: state.entity,
-            component: "material",
-            property: "src",
-            value: assetData.value
-          });
         }
       } catch (error) {
         console.warn("Failed to parse dropped asset data:", error);
       }
     };
+    function toggleEdit() {
+      AFRAME.INSPECTOR.toggle();
+    }
     return /* @__PURE__ */ React.createElement("div", {
       onDragOver: handleDragOver,
       onDragEnter: handleDragEnter,
@@ -35960,19 +42066,20 @@ void main() {
       selectedEntity: state.entity,
       visible: state.visible.scenegraph
     }), /* @__PURE__ */ React.createElement("div", {
+      style: {
+        position: "relative",
+        flex: "1"
+      }
+    }, /* @__PURE__ */ React.createElement("div", {
       id: "viewportBar"
-    }, /* @__PURE__ */ React.createElement(XRMode, null), /* @__PURE__ */ React.createElement(TransformToolbar, null)), /* @__PURE__ */ React.createElement("div", {
+    }, /* @__PURE__ */ React.createElement(XRMode, null), /* @__PURE__ */ React.createElement(TransformToolbar, null)), /* @__PURE__ */ React.createElement(ViewportOverlay, null)), /* @__PURE__ */ React.createElement("div", {
       id: "rightPanel"
     }, /* @__PURE__ */ React.createElement(Sidebar, {
       entity: state.entity,
       visible: state.visible.attributes
-    }))), state.inspectorEnabled && /* @__PURE__ */ React.createElement(ViewportOverlay, null), /* @__PURE__ */ React.createElement(ModalHelp, {
+    }))), /* @__PURE__ */ React.createElement(ModalHelp, {
       isOpen: state.isHelpOpen,
       onClose: onCloseHelpModal
-    }), /* @__PURE__ */ React.createElement(ModalTextures, {
-      isOpen: state.isModalTexturesOpen,
-      selectedTexture: state.selectedTexture,
-      onClose: onModalTextureOnClose
     }));
   }
   class Inspector {

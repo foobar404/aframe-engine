@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import Events from './Events';
+import {Events} from './Events';
 
 // Save ortho camera FOV / position before switching to restore later.
 let currentOrthoDir = '';

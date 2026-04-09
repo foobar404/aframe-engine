@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Events from '../../lib/Events';
+import { Events } from '../../lib/Events';
 
 function getUrlFromId(assetId) {
   return (
@@ -62,11 +62,12 @@ function insertOrGetImageAsset(src) {
   return id;
 }
 
-export default function TextureWidget({ id, name, onChange, value = '' }) {
+export function TextureWidget({ id, name, onChange, value = '', allowAssetSelection = true }) {
   const [currentValue, setCurrentValue] = React.useState(value || '');
   const [valueType, setValueType] = React.useState(null);
   const [url, setUrl] = React.useState(null);
   const canvasRef = React.useRef();
+  const assetTargetId = React.useRef(id ? `${id}-${Math.random().toString(36).slice(2, 10)}` : null);
 
   const setValue = React.useCallback((newValue) => {
     const canvas = canvasRef.current;
@@ -167,11 +168,73 @@ export default function TextureWidget({ id, name, onChange, value = '' }) {
     setCurrentValue(newValue);
   }, [onChange, name]);
 
+  React.useEffect(() => {
+    if (!allowAssetSelection || !assetTargetId.current) {
+      return;
+    }
+
+    const onAssetSelect = (detail) => {
+      if (!detail || detail.targetId !== assetTargetId.current) {
+        return;
+      }
+
+      const nextValue = detail.value || '';
+      notifyChanged(nextValue);
+      setValue(nextValue);
+    };
+
+    Events.on('assetselect', onAssetSelect);
+    return () => {
+      Events.off('assetselect', onAssetSelect);
+    };
+  }, [allowAssetSelection, notifyChanged, setValue]);
+
   const handleChange = React.useCallback((e) => {
     const newValue = e.target.value;
     setCurrentValue(newValue);
     notifyChanged(newValue);
   }, [notifyChanged]);
+
+  const setAssetTarget = React.useCallback(() => {
+    if (!allowAssetSelection || !assetTargetId.current) {
+      return;
+    }
+    Events.emit('assettarget', {
+      targetId: assetTargetId.current,
+      assetKinds: ['image', 'video']
+    });
+  }, [allowAssetSelection]);
+
+  const handleDragOver = React.useCallback((e) => {
+    if (!allowAssetSelection) {
+      return;
+    }
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'copy';
+  }, [allowAssetSelection]);
+
+  const handleDrop = React.useCallback((e) => {
+    if (!allowAssetSelection) {
+      return;
+    }
+
+    e.preventDefault();
+    try {
+      const assetData = JSON.parse(e.dataTransfer.getData('application/json'));
+      if (assetData?.type !== 'asset') {
+        return;
+      }
+      if (assetData.assetType !== 'image' && assetData.assetType !== 'video') {
+        return;
+      }
+
+      const nextValue = assetData.value || '';
+      notifyChanged(nextValue);
+      setValue(nextValue);
+    } catch (error) {
+      // Ignore non-asset drops.
+    }
+  }, [allowAssetSelection, notifyChanged, setValue]);
 
   const removeMap = React.useCallback(() => {
     setValue('');
@@ -179,22 +242,35 @@ export default function TextureWidget({ id, name, onChange, value = '' }) {
   }, [setValue, notifyChanged]);
 
   const openDialog = React.useCallback(() => {
-    Events.emit('opentexturesmodal', currentValue, (image) => {
-      if (!image) {
-        return;
-      }
-      var newValue = image.value;
-      if (image.type !== 'asset') {
-        var assetId = insertOrGetImageAsset(image.src);
-        newValue = '#' + assetId;
-      }
+    const input = prompt(
+      'Enter texture asset ID (e.g. #brick) or image URL',
+      currentValue || ''
+    );
 
+    if (input === null) {
+      return;
+    }
+
+    const nextValue = input.trim();
+    if (!nextValue) {
       if (onChange) {
-        onChange(name, newValue);
+        onChange(name, '');
       }
+      setValue('');
+      return;
+    }
 
-      setValue(newValue);
-    });
+    let resolvedValue = nextValue;
+    if (!nextValue.startsWith('#')) {
+      const assetId = insertOrGetImageAsset(nextValue);
+      resolvedValue = '#' + assetId;
+    }
+
+    if (onChange) {
+      onChange(name, resolvedValue);
+    }
+
+    setValue(resolvedValue);
   }, [currentValue, onChange, name, setValue]);
 
   let hint = '';
@@ -218,6 +294,9 @@ export default function TextureWidget({ id, name, onChange, value = '' }) {
         title={hint}
         value={currentValue}
         onChange={handleChange}
+        onFocus={setAssetTarget}
+        onDragOver={handleDragOver}
+        onDrop={handleDrop}
       />
       <canvas
         ref={canvasRef}
@@ -229,3 +308,12 @@ export default function TextureWidget({ id, name, onChange, value = '' }) {
     </span>
   );
 }
+
+TextureWidget.propTypes = {
+  id: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
+  value: PropTypes.any,
+  allowAssetSelection: PropTypes.bool
+};
+

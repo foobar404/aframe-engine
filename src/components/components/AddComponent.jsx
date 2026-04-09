@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
-import Events from '../../lib/Events';
+import { Events } from '../../lib/Events';
 
-function AddComponent({ entity }) {
+export function AddComponent({ entity }) {
   /**
    * Add blank component.
    * If component is instanced, generate an ID.
@@ -95,4 +95,3 @@ AddComponent.propTypes = {
   entity: PropTypes.object
 };
 
-export default AddComponent;

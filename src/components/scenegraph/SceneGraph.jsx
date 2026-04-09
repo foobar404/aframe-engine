@@ -3,14 +3,14 @@ import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import PropTypes from 'prop-types';
 import { FaSearch, FaTimes } from 'react-icons/fa';
 import debounce from 'lodash.debounce';
-import AssetPanel from './AssetPanel';
+import { AssetPanel } from './AssetPanel';
 import { ThemeSwitcher } from "../ThemeSwitcher";
 
-import Entity from './Entity';
-import Toolbar from './Toolbar';
-import Events from '../../lib/Events';
+import { Entity } from './Entity';
+import { Toolbar } from './Toolbar';
+import { Events } from '../../lib/Events';
 
-function SceneGraph({ scene, selectedEntity, visible }) {
+export function SceneGraph({ scene, selectedEntity, visible }) {
   const [entities, setEntities] = useState([]);
   const [filter, setFilter] = useState('');
   const [filteredEntities, setFilteredEntities] = useState([]);
@@ -237,11 +237,13 @@ function SceneGraph({ scene, selectedEntity, visible }) {
     rebuildEntityOptions();
     Events.on('entityidchange', rebuildEntityOptions);
     Events.on('entityupdate', onEntityUpdate);
+    Events.on('entityreparent', rebuildEntityOptions);
     document.addEventListener('child-attached', onChildAttachedDetached);
     document.addEventListener('child-detached', onChildAttachedDetached);
     return () => {
       Events.off('entityidchange', rebuildEntityOptions);
       Events.off('entityupdate', onEntityUpdate);
+      Events.off('entityreparent', rebuildEntityOptions);
       document.removeEventListener('child-attached', onChildAttachedDetached);
       document.removeEventListener('child-detached', onChildAttachedDetached);
     };
@@ -256,11 +258,10 @@ function SceneGraph({ scene, selectedEntity, visible }) {
   return (
     <div id="scenegraph" className="scenegraph relative" >
       <div className="flex justify-between px-2 items-center mb-8">
-        <button
-          onClick={() => AFRAME.INSPECTOR.close()}
+        <a onClick={() => AFRAME.INSPECTOR.close()}
           className="exit">
           <FaTimes className="w-4 h-4 m-auto" />
-        </button>
+        </a>
 
         <ThemeSwitcher />
       </div>
@@ -323,7 +324,6 @@ SceneGraph.defaultProps = {
   selectedEntity: ''
 };
 
-export default SceneGraph;
 
 function filterEntity(entity, filter) {
   if (!filter) {

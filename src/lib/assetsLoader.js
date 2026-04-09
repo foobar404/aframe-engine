@@ -1,4 +1,4 @@
-import Events from './Events';
+import {Events} from './Events';
 
 const assetsBaseUrl =
   window.AFRAME_SAMPLE_ASSETS_ROOT || 'https://aframe.io/sample-assets/';

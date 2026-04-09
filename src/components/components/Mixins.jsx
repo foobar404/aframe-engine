@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import Events from '../../lib/Events';
+import { Events } from '../../lib/Events';
 
-function Mixin({ entity }) {
+export function Mixin({ entity }) {
   const getMixinValue = () => {
     return (entity.getAttribute('mixin') || '')
       .split(/\s+/g)
@@ -71,4 +71,4 @@ Mixin.propTypes = {
   entity: PropTypes.object.isRequired
 };
 
-export default Mixin;
+

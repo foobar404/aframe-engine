@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import * as THREE from 'three';
 
-function ColorWidget({ id, name, onChange, value = '#ffffff' }) {
+export function ColorWidget({ id, name, onChange, value = '#ffffff' }) {
   const color = new THREE.Color();
   const [currentValue, setCurrentValue] = useState(value);
   const [pickerValue, setPickerValue] = useState(() => '#' + color.set(value).getHexString());
@@ -75,4 +75,3 @@ ColorWidget.defaultProps = {
   value: '#ffffff'
 };
 
-export default ColorWidget;

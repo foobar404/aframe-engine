@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import NumberWidget from './NumberWidget';
+import { NumberWidget } from './NumberWidget';
 import { areVectorsEqual } from '../../lib/utils';
 
-function Vec3Widget({ onChange, value }) {
+export function Vec3Widget({ id, name, onChange, value = [0, 0, 0], precision = 2 }) {
   const [currentValue, setCurrentValue] = useState({
     x: value.x,
     y: value.y,
@@ -19,10 +19,10 @@ function Vec3Widget({ onChange, value }) {
         z: value.z
       });
     }
-  }, [value, currentValue]);
+  }, [value]);
 
-  const handleChange = (name, newValue) => {
-    const updatedValue = { ...currentValue, [name]: parseFloat(newValue.toFixed(5)) };
+  const handleChange = (axisName, newValue) => {
+    const updatedValue = { ...currentValue, [axisName]: parseFloat(newValue.toFixed(2)) };
     setCurrentValue(updatedValue);
     if (onChange) {
       onChange(name, updatedValue);
@@ -32,13 +32,13 @@ function Vec3Widget({ onChange, value }) {
   return (
     <div className="vec3">
       <div className="vec-input-wrapper">
-        <NumberWidget name="x" value={currentValue.x} onChange={handleChange} />
+        <NumberWidget name="x" value={currentValue.x} onChange={handleChange} precision={2} />
       </div>
       <div className="vec-input-wrapper">
-        <NumberWidget name="y" value={currentValue.y} onChange={handleChange} />
+        <NumberWidget name="y" value={currentValue.y} onChange={handleChange} precision={2} />
       </div>
       <div className="vec-input-wrapper">
-        <NumberWidget name="z" value={currentValue.z} onChange={handleChange} />
+        <NumberWidget name="z" value={currentValue.z} onChange={handleChange} precision={2} />
       </div>
     </div>
   );
@@ -49,4 +49,3 @@ Vec3Widget.propTypes = {
   value: PropTypes.object.isRequired
 };
 
-export default Vec3Widget;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function SelectWidget({ id, isMulti = false, name, onChange, options, value }) {
+export function SelectWidget({ id, isMulti = false, name, onChange, options, value }) {
   // Sort options alphabetically for better organization
   const sortedOptions = [...options].sort((a, b) => {
     // Handle different types of values
@@ -81,4 +81,3 @@ SelectWidget.defaultProps = {
   isMulti: false
 };
 
-export default SelectWidget;

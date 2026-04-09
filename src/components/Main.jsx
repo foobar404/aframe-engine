@@ -1,20 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaPlus, FaTimes } from 'react-icons/fa';
-import Events from '../lib/Events';
-import ComponentsSidebar from './components/Sidebar';
-import ModalTextures from './modals/ModalTextures';
-import ModalHelp from './modals/ModalHelp';
-import SceneGraph from './scenegraph/SceneGraph';
-import TransformToolbar from './viewport/TransformToolbar';
-import XRMode from './viewport/XRMode';
+import { Events } from '../lib/Events';
+import { Sidebar as ComponentsSidebar } from './components/Sidebar';
+import { ModalHelp } from './modals/ModalHelp';
+import { SceneGraph } from './scenegraph/SceneGraph';
+import { TransformToolbar } from './viewport/TransformToolbar';
+import { XRMode } from './viewport/XRMode';
 import { ViewportOverlay } from './viewport/ViewportOverlay';
+import { insertNewAsset } from '../lib/assetsUtils';
 
-export default function Main() {
+function isInspectorOpen() {
+  if (typeof document !== 'undefined' && document.body.classList.contains('aframe-inspector-opened')) {
+    return true;
+  }
+
+  return Boolean(window.AFRAME?.INSPECTOR?.opened);
+}
+
+export function Main() {
+  const hoveredEntityRef = useRef(null);
   const [state, setState] = useState({
     entity: null,
-    inspectorEnabled: true,
+    inspectorEnabled: isInspectorOpen(),
     isHelpOpen: false,
-    isModalTexturesOpen: false,
     sceneEl: AFRAME.scenes[0],
     visible: {
       scenegraph: true,
@@ -69,14 +77,8 @@ export default function Main() {
   }, [state.visible.scenegraph, state.visible.attributes]);
 
   useEffect(() => {
-    const handleOpenTexturesModal = function (selectedTexture, textureOnClose) {
-      setState(prev => ({
-        ...prev,
-        selectedTexture: selectedTexture,
-        isModalTexturesOpen: true,
-        textureOnClose: textureOnClose
-      }));
-    };
+    // Sync once on mount in case inspectortoggle event fired before listener registration.
+    setState(prev => ({ ...prev, inspectorEnabled: isInspectorOpen() }));
 
     const handleEntitySelect = (entity) => {
       setState(prev => ({ ...prev, entity: entity }));
@@ -90,28 +92,31 @@ export default function Main() {
       setState(prev => ({ ...prev, isHelpOpen: true }));
     };
 
-    Events.on('opentexturesmodal', handleOpenTexturesModal);
+    const handleRaycasterMouseEnter = (entity) => {
+      hoveredEntityRef.current = entity || null;
+    };
+
+    const handleRaycasterMouseLeave = () => {
+      hoveredEntityRef.current = null;
+    };
+
     Events.on('entityselect', handleEntitySelect);
     Events.on('inspectortoggle', handleInspectorToggle);
     Events.on('openhelpmodal', handleOpenHelpModal);
+    Events.on('raycastermouseenter', handleRaycasterMouseEnter);
+    Events.on('raycastermouseleave', handleRaycasterMouseLeave);
 
     return () => {
-      Events.off('opentexturesmodal', handleOpenTexturesModal);
       Events.off('entityselect', handleEntitySelect);
       Events.off('inspectortoggle', handleInspectorToggle);
       Events.off('openhelpmodal', handleOpenHelpModal);
+      Events.off('raycastermouseenter', handleRaycasterMouseEnter);
+      Events.off('raycastermouseleave', handleRaycasterMouseLeave);
     };
   }, []);
 
   const onCloseHelpModal = () => {
     setState(prev => ({ ...prev, isHelpOpen: false }));
-  };
-
-  const onModalTextureOnClose = (value) => {
-    setState(prev => ({ ...prev, isModalTexturesOpen: false }));
-    if (state.textureOnClose) {
-      state.textureOnClose(value);
-    }
   };
 
   const handleDragOver = (e) => {
@@ -135,34 +140,168 @@ export default function Main() {
   const handleDrop = (e) => {
     e.preventDefault();
     document.body.classList.remove('dragging-asset');
-    
+
     try {
       const assetData = JSON.parse(e.dataTransfer.getData('application/json'));
-      
-      if (assetData.type === 'asset' && state.entity) {
+
+      if (assetData.type === 'asset') {
+        // Handle Sketchfab models
+        if (assetData.assetType === 'sketchfab') {
+          // Create a new entity with gltf-model component
+          const sceneEl = AFRAME.scenes[0];
+          const newEntity = document.createElement('a-gltf-model');
+          
+          // Generate unique name
+          let counter = 1;
+          let entityName = assetData.name?.replace(/[^a-zA-Z0-9-_]/g, '') || 'sketchfab-model';
+          let finalName = entityName;
+          while (document.getElementById(finalName)) {
+            finalName = `${entityName}-${counter}`;
+            counter++;
+          }
+          
+          newEntity.setAttribute('id', finalName);
+          newEntity.setAttribute('position', '0 1.6 -2');
+          newEntity.setAttribute('rotation', '0 0 0');
+          newEntity.setAttribute('scale', '1 1 1');
+          
+          // Use the GLB URL if available, otherwise show instructions
+          if (assetData.glbUrl) {
+            newEntity.setAttribute('src', assetData.glbUrl);
+            sceneEl.appendChild(newEntity);
+            
+            // Select the newly created entity
+            Events.emit('entityselect', newEntity);
+          } else {
+            // Show instructions for downloading from Sketchfab
+            const useModel = confirm(
+              `This Sketchfab model requires manual download.\n\n` +
+              `Click OK to create the entity, then:\n` +
+              `1. Visit: ${assetData.value}\n` +
+              `2. Download the model (GLB format)\n` +
+              `3. Host it on your server\n` +
+              `4. Update the 'src' property with your URL\n\n` +
+              `Click Cancel to skip.`
+            );
+            
+            if (useModel) {
+              newEntity.setAttribute('src', '');
+              sceneEl.appendChild(newEntity);
+              Events.emit('entityselect', newEntity);
+            }
+          }
+          
+          return;
+        }
+
+        // Handle material presets
+        if (assetData.assetType === 'material') {
+          const dropTarget = hoveredEntityRef.current?.isEntity ? hoveredEntityRef.current : state.entity;
+          if (!dropTarget) {
+            return;
+          }
+
+          const legacyMaterialProps = {
+            color: assetData.color,
+            metalness: assetData.metalness,
+            roughness: assetData.roughness,
+            ...(assetData.opacity !== undefined ? { opacity: assetData.opacity } : {}),
+            ...(assetData.transparent !== undefined ? { transparent: assetData.transparent } : {})
+          };
+
+          const materialProps =
+            assetData.materialProps && typeof assetData.materialProps === 'object'
+              ? assetData.materialProps
+              : Object.fromEntries(
+                  Object.entries(legacyMaterialProps).filter(([, value]) => value !== undefined && value !== null)
+                );
+
+          if (!Object.keys(materialProps).length) {
+            return;
+          }
+          
+          // Apply to material component
+          dropTarget.setAttribute('material', materialProps);
+          
+          // Emit event to update history/UI state
+          Events.emit('entityupdate', {
+            entity: dropTarget,
+            component: 'material',
+            property: '',
+            value: materialProps
+          });
+          
+          return;
+        }
+
+        if (state.entity) {
+          let valueToSet = assetData.value;
+
+          // If it's a registry asset with a URL, create an asset and reference it
+          if (assetData.assetType === 'registry' && assetData.value.startsWith('url(')) {
+          // Extract URL from url(...)
+          const urlMatch = assetData.value.match(/url\((.+)\)/);
+          if (urlMatch && urlMatch[1]) {
+            const url = urlMatch[1];
+
+            // Generate a unique asset ID (check if assetData.id is valid)
+            let assetId = assetData.id;
+
+            // Check if the ID is valid and doesn't already exist
+            if (!assetId || assetId.includes('/') || assetId.includes('.') || document.getElementById(assetId)) {
+              // Generate a new ID from the filename or a generic name
+              const urlParts = url.split('/');
+              const filename = urlParts[urlParts.length - 1].split('.')[0];
+              assetId = filename.replace(/[^a-zA-Z0-9-_]/g, '') || 'asset';
+
+              // Make sure the ID is unique
+              let counter = 1;
+              let finalId = assetId;
+              while (document.getElementById(finalId)) {
+                finalId = `${assetId}-${counter}`;
+                counter++;
+              }
+              assetId = finalId;
+            }
+
+            // Insert the new asset into the scene
+            insertNewAsset('img', assetId, url, false, () => {
+              Events.emit('assetadd', { id: assetId, src: url, tagName: 'img' });
+            });
+
+            // Use the asset reference instead of the URL
+            valueToSet = '#' + assetId;
+          }
+        }
+
         // Apply the asset to the selected entity's material component
         if (state.entity.hasAttribute('material')) {
-          state.entity.setAttribute('material', 'src', assetData.value);
+          state.entity.setAttribute('material', 'src', valueToSet);
         } else {
-          state.entity.setAttribute('material', { src: assetData.value });
+          state.entity.setAttribute('material', { src: valueToSet });
         }
-        
-        // Emit event to update the UI
-        Events.emit('componentchanged', {
+
+        // Emit event to update history/UI state
+        Events.emit('entityupdate', {
           entity: state.entity,
           component: 'material',
           property: 'src',
-          value: assetData.value
+          value: valueToSet
         });
+        }
       }
     } catch (error) {
       console.warn('Failed to parse dropped asset data:', error);
     }
   };
 
+  function toggleEdit() {
+    AFRAME.INSPECTOR.toggle();
+  }
+
   return (
-    <div 
-      onDragOver={handleDragOver} 
+    <div
+      onDragOver={handleDragOver}
       onDragEnter={handleDragEnter}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
@@ -207,9 +346,12 @@ export default function Main() {
           selectedEntity={state.entity}
           visible={state.visible.scenegraph} />
 
-        <div id="viewportBar">
-          <XRMode />
-          <TransformToolbar />
+        <div style={{ position: 'relative', flex: "1" }}>
+          <div id="viewportBar">
+            <XRMode />
+            <TransformToolbar />
+          </div>
+          <ViewportOverlay />
         </div>
 
         <div id="rightPanel">
@@ -220,16 +362,9 @@ export default function Main() {
         </div>
       </div>
 
-      {state.inspectorEnabled && <ViewportOverlay />}
-
       <ModalHelp
         isOpen={state.isHelpOpen}
         onClose={onCloseHelpModal}
-      />
-      <ModalTextures
-        isOpen={state.isModalTexturesOpen}
-        selectedTexture={state.selectedTexture}
-        onClose={onModalTextureOnClose}
       />
     </div>
   );

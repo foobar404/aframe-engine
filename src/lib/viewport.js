@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
 import * as THREE from 'three';
-import TransformControls from './TransformControls.js';
-import EditorControls from './EditorControls.js';
+import { TransformControlsExport as TransformControls } from './TransformControls.js';
+import { EditorControls } from './EditorControls.js';
 
 import { copyCameraPosition } from './cameras';
 import { initRaycaster } from './raycaster';
-import Events from './Events';
+import { Events } from './Events';
 
 /**
  * Transform controls stuff mostly.
@@ -24,8 +24,6 @@ export function Viewport(inspector) {
 
   // Helpers.
   const sceneHelpers = inspector.sceneHelpers;
-  const grid = new THREE.GridHelper(30, 60, 0xaaaaaa, 0x262626);
-  sceneHelpers.add(grid);
 
   const selectionBox = new THREE.BoxHelper();
   selectionBox.material.depthTest = false;
@@ -48,6 +46,51 @@ export function Viewport(inspector) {
     inspector.container
   );
   transformControls.size = 0.75;
+  const transformSnapshot = {
+    position: null,
+    rotation: null,
+    scale: null
+  };
+
+  function emitTransformUpdate(component, value) {
+    const object = transformControls.object;
+    if (!object || !object.el) {
+      return;
+    }
+
+    // Keep A-Frame component attrValue in sync while dragging.
+    object.el.setAttribute(component, value);
+
+    Events.emit('entityupdate', {
+      component,
+      entity: object.el,
+      property: '',
+      value
+    });
+  }
+
+  function updateTransformSnapshotFromObject(object) {
+    const d = THREE.MathUtils.radToDeg;
+    const nextPosition = `${object.position.x} ${object.position.y} ${object.position.z}`;
+    const nextRotation = `${d(object.rotation.x)} ${d(object.rotation.y)} ${d(object.rotation.z)}`;
+    const nextScale = `${object.scale.x} ${object.scale.y} ${object.scale.z}`;
+
+    if (transformSnapshot.position !== nextPosition) {
+      emitTransformUpdate('position', nextPosition);
+      transformSnapshot.position = nextPosition;
+    }
+
+    if (transformSnapshot.rotation !== nextRotation) {
+      emitTransformUpdate('rotation', nextRotation);
+      transformSnapshot.rotation = nextRotation;
+    }
+
+    if (transformSnapshot.scale !== nextScale) {
+      emitTransformUpdate('scale', nextScale);
+      transformSnapshot.scale = nextScale;
+    }
+  }
+
   transformControls.addEventListener('objectChange', (evt) => {
     const object = transformControls.object;
     if (object === undefined) {
@@ -58,33 +101,8 @@ export function Viewport(inspector) {
 
     updateHelpers(object);
 
-    // Emit update event for watcher.
-    let component;
-    let value;
-    if (evt.mode === 'translate') {
-      component = 'position';
-      value = `${object.position.x} ${object.position.y} ${object.position.z}`;
-    } else if (evt.mode === 'rotate') {
-      component = 'rotation';
-      const d = THREE.MathUtils.radToDeg;
-      value = `${d(object.rotation.x)} ${d(object.rotation.y)} ${d(
-        object.rotation.z
-      )}`;
-    } else if (evt.mode === 'scale') {
-      component = 'scale';
-      value = `${object.scale.x} ${object.scale.y} ${object.scale.z}`;
-    }
-
-    // We need to call setAttribute for component attrValue to be up to date,
-    // so that entity.flushToDOM() works correctly when duplicating an entity.
-    transformControls.object.el.setAttribute(component, value);
-
-    Events.emit('entityupdate', {
-      component: component,
-      entity: transformControls.object.el,
-      property: '',
-      value: value
-    });
+    // Emit updates continuously while dragging so UI values stay realtime.
+    updateTransformSnapshotFromObject(object);
   });
 
   transformControls.addEventListener('mouseDown', () => {
@@ -161,6 +179,10 @@ export function Viewport(inspector) {
     transformControls.setRotationSnap(dist);
   });
 
+  Events.on('scalesnapchanged', (dist) => {
+    transformControls.setScaleSnap(dist);
+  });
+
   Events.on('transformspacechanged', (space) => {
     transformControls.setSpace(space);
   });
@@ -168,6 +190,9 @@ export function Viewport(inspector) {
   Events.on('objectselect', (object) => {
     selectionBox.visible = false;
     transformControls.detach();
+    transformSnapshot.position = null;
+    transformSnapshot.rotation = null;
+    transformSnapshot.scale = null;
     if (object && object.el) {
       if (object.el.getObject3D('mesh')) {
         selectionBox.setFromObject(object);
@@ -183,6 +208,7 @@ export function Viewport(inspector) {
       }
 
       transformControls.attach(object);
+      updateTransformSnapshotFromObject(object);
     }
   });
 
@@ -245,14 +271,6 @@ export function Viewport(inspector) {
   }
 
   inspector.sceneEl.addEventListener('rendererresize', updateAspectRatio);
-
-  Events.on('gridvisibilitychanged', (showGrid) => {
-    grid.visible = showGrid;
-  });
-
-  Events.on('togglegrid', () => {
-    grid.visible = !grid.visible;
-  });
 
   Events.on('inspectortoggle', (active) => {
     if (active) {

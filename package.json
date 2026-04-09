@@ -1,16 +1,11 @@
 {
   "name": "aframe-engine",
   "version": "1.8.0",
-  "description": "A visual inspector tool for A-Frame.",
-  "main": "dist/aframe-inspector.min.js",
+  "description": "Full 2D engine for the a-frame vr library.",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "test": "BABEL_ENV=testing jest --watch",
-    "test:ci": "BABEL_ENV=testing jest"
+    "build": "vite build"
   },
-  "repository": "aframevr/aframe-inspector",
   "license": "MIT",
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
@@ -18,6 +13,7 @@
     "@tailwindcss/vite": "^4.1.16",
     "aframe": "^1.7.1",
     "axios": "^1.13.2",
+    "chokidar": "^5.0.0",
     "clipboard-copy": "^4.0.1",
     "clsx": "^2.1.0",
     "events": "^3.3.0",

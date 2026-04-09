@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FaCamera, FaCube, FaFont, FaLightbulb, FaObjectGroup, FaCircle, FaMinus, FaLayerGroup, FaCopy, FaUser, FaGlobe, FaBox, FaSquare, FaCaretUp, FaDotCircle, FaRing, FaPlayCircle, FaVideo, FaVolumeUp, FaLink, FaImage, FaFileVideo } from 'react-icons/fa';
 
-function EntityRepresentation({ entity, onDoubleClick }) {
+export function EntityRepresentation({ entity, onDoubleClick }) {
   if (!entity) {
     return null;
   }
@@ -92,4 +92,3 @@ function EntityRepresentation({ entity, onDoubleClick }) {
   );
 }
 
-export default EntityRepresentation;

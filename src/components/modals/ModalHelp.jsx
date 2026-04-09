@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import Modal from './Modal';
+import { Modal } from './Modal';
 
 let shortcuts = [
   [
@@ -30,7 +30,7 @@ let shortcuts = [
   ]
 ];
 
-function ModalHelp({ isOpen: initialIsOpen, onClose }) {
+export function ModalHelp({ isOpen: initialIsOpen, onClose }) {
   const [isOpen, setIsOpen] = useState(initialIsOpen);
 
   useEffect(() => {
@@ -83,4 +83,3 @@ ModalHelp.propTypes = {
   onClose: PropTypes.func
 };
 
-export default ModalHelp;

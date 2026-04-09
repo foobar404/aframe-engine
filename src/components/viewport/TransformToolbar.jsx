@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { FaArrowsAlt, FaRedo, FaExpand } from 'react-icons/fa';
+import { FaArrowsAlt, FaRedo, FaExpandArrowsAlt, FaGlobe } from 'react-icons/fa';
 import { TbGizmo } from "react-icons/tb";
-import Events from '../../lib/Events';
+import { MdMyLocation } from "react-icons/md";
+import { Events } from '../../lib/Events';
 
-function TransformToolbar() {
+export function TransformToolbar() {
   const [selectedTransform, setSelectedTransform] = useState('translate');
   const [localSpace, setLocalSpace] = useState(false);
 
@@ -22,11 +23,11 @@ function TransformToolbar() {
     Events.emit('transformmodechange', mode);
   }, []);
 
-  const onLocalChange = useCallback((e) => {
-    const local = e.target.checked;
-    setLocalSpace(local);
-    Events.emit('transformspacechanged', local ? 'local' : 'world');
-  }, []);
+  const onLocalChange = useCallback(() => {
+    const newLocal = !localSpace;
+    setLocalSpace(newLocal);
+    Events.emit('transformspacechanged', newLocal ? 'local' : 'world');
+  }, [localSpace]);
 
   useEffect(() => {
     Events.on('transformmodechange', onTransformModeChange);
@@ -53,27 +54,21 @@ function TransformToolbar() {
       </a>
       <a onClick={() => changeTransformMode("scale")}
         className={`button ${selectedTransform === 'scale' ? 'active' : ''}`}>
-        <FaExpand />
+        <FaExpandArrowsAlt />
       </a>
 
-      <span className="local-transform">
-        <input
-          id="local"
-          type="checkbox"
-          title="Toggle between local and world space transforms"
-          checked={localSpace || selectedTransform === 'scale'}
-          disabled={selectedTransform === 'scale' || selectedTransform === 'all'}
-          onChange={onLocalChange}
-        />
-        <label
-          htmlFor="local"
-          title="Toggle between local and world space transforms"
-        >
-          local
-        </label>
-      </span>
+      <a 
+        onClick={onLocalChange}
+        className={`button ${localSpace ? 'active' : ''}`}
+        title={localSpace ? "Local Space" : "World Space"}
+        style={{ 
+          opacity: selectedTransform === 'scale' || selectedTransform === 'all' ? 0.3 : 1,
+          pointerEvents: selectedTransform === 'scale' || selectedTransform === 'all' ? 'none' : 'auto'
+        }}
+      >
+        {localSpace ? <MdMyLocation /> : <FaGlobe />}
+      </a>
     </div>
   );
 }
 
-export default TransformToolbar;

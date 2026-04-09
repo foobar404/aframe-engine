@@ -1,10 +1,4 @@
-/* Modern Widget Container Styles */
-.widget-container {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  width: 100%;
-}
+/* Modern Widget Styles */
 
 /* Number Widget - Webflow/Figma Style */
 input.number {

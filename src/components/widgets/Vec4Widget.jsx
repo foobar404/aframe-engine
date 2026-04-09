@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
-import NumberWidget from './NumberWidget';
+import { NumberWidget } from './NumberWidget';
 import { areVectorsEqual } from '../../lib/utils';
 
-function Vec4Widget({ onChange, value }) {
+export function Vec4Widget({ id, name, onChange, value = [0, 0, 0, 0], precision = 2 }) {
   const [state, setState] = useState({
     x: value.x,
     y: value.y,
@@ -13,7 +13,7 @@ function Vec4Widget({ onChange, value }) {
   });
 
   const handleChange = useCallback((name, val) => {
-    const newValue = parseFloat(val.toFixed(5));
+    const newValue = parseFloat(val.toFixed(2));
     setState(prevState => {
       const newState = { ...prevState, [name]: newValue };
       if (onChange) {
@@ -32,21 +32,21 @@ function Vec4Widget({ onChange, value }) {
         w: value.w
       });
     }
-  }, [value, state]);
+  }, [value]);
 
   return (
     <div className="vec4">
       <div className="vec-input-wrapper">
-        <NumberWidget name="x" value={state.x} onChange={handleChange} />
+        <NumberWidget name="x" value={state.x} onChange={handleChange} precision={2} />
       </div>
       <div className="vec-input-wrapper">
-        <NumberWidget name="y" value={state.y} onChange={handleChange} />
+        <NumberWidget name="y" value={state.y} onChange={handleChange} precision={2} />
       </div>
       <div className="vec-input-wrapper">
-        <NumberWidget name="z" value={state.z} onChange={handleChange} />
+        <NumberWidget name="z" value={state.z} onChange={handleChange} precision={2} />
       </div>
       <div className="vec-input-wrapper">
-        <NumberWidget name="w" value={state.w} onChange={handleChange} />
+        <NumberWidget name="w" value={state.w} onChange={handleChange} precision={2} />
       </div>
     </div>
   );
@@ -57,4 +57,3 @@ Vec4Widget.propTypes = {
   value: PropTypes.object.isRequired
 };
 
-export default Vec4Widget;

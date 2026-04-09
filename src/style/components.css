@@ -123,6 +123,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     vertical-align: middle;
+    white-space: nowrap;
+    flex-shrink: 0;
     width: 90px;
     min-width: 90px;
     font-size: 11px;
@@ -130,6 +132,14 @@
     color: var(--text-dark);
     text-transform: capitalize;
     letter-spacing: 0.2px;
+
+    &.copied {
+      color: var(--success);
+      background-color: rgba(16, 185, 129, 0.1);
+      border-radius: 3px;
+      padding: 2px 4px;
+      animation: copyFeedback 1s ease-out;
+    }
   }
 
   input.number {
@@ -195,6 +205,49 @@
 
   .color-widget {
     flex: 1;
+  }
+
+  .widget-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+
+    > *:not(.reset-btn) {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+
+  .reset-btn {
+    background: none;
+    border: none;
+    color: var(--text-dark);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+    opacity: 0.6;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+
+    &:hover {
+      background: var(--bg-light);
+      color: var(--primary);
+      opacity: 1;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
   }
 
   .texture {
@@ -306,4 +359,9 @@ span.subcomponent {
 
 #mixinSelect {
   width: 160px;
+}
+
+.copied {
+  background-color: #4CAF50;
+  color: white;
 }

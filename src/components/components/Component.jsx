@@ -1,31 +1,27 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { FaClipboard, FaTrash } from 'react-icons/fa';
-import PropertyRow from './PropertyRow';
-import Collapsible from '../Collapsible';
+import { PropertyRow } from './PropertyRow';
+import { Collapsible } from '../Collapsible';
 import copy from 'clipboard-copy';
 import { getComponentClipboardRepresentation } from '../../lib/entity';
 import { shouldShowProperty } from '../../lib/utils';
-import Events from '../../lib/Events';
+import { Events } from '../../lib/Events';
 
 const isSingleProperty = AFRAME.schema.isSingleProperty;
 
-function Component({ component, entity, isCollapsed, name }) {
+export function Component({ component, entity, isCollapsed, name }) {
   const [updateKey, setUpdateKey] = useState(0);
 
-  const onEntityUpdate = useCallback((detail) => {
-    if (detail.entity !== entity) {
-      return;
-    }
-    if (detail.component === name) {
-      setUpdateKey(prev => prev + 1);
-    }
-  }, [entity, name]);
-
   useEffect(() => {
-    Events.on('entityupdate', onEntityUpdate);
-    return () => Events.off('entityupdate', onEntityUpdate);
-  }, [onEntityUpdate]);
+    Events.on('entityupdate', () => {
+      setUpdateKey(prev => prev + 1);
+    });
+  }, []);
+
+  // Get fresh component data to ensure updates are reflected
+  const currentComponent = entity.components[name];
+  const componentData = currentComponent ? currentComponent.data : component.data;
 
   const removeComponent = useCallback((event) => {
     var componentName = name;
@@ -70,27 +66,25 @@ function Component({ component, entity, isCollapsed, name }) {
         </div>
       </div>
       <div className="collapsible-content">
-        {isSingleProperty(component.schema) ? (
+        {isSingleProperty(currentComponent.schema) ? (
           <PropertyRow
             key={name}
             name={name}
             schema={AFRAME.components[name.split('__')[0]].schema}
-            data={component.data}
-            componentname={name}
+            data={componentData}
             isSingle={true}
             entity={entity}
           />
         ) : (
-          Object.keys(component.schema)
+          Object.keys(currentComponent.schema)
             .sort()
-            .filter((propertyName) => shouldShowProperty(propertyName, component))
+            .filter((propertyName) => shouldShowProperty(propertyName, currentComponent))
             .map((propertyName) => (
               <PropertyRow
                 key={propertyName}
-                name={propertyName}
-                schema={component.schema[propertyName]}
-                data={component.data[propertyName]}
-                componentname={name}
+                name={`${name}.${propertyName}`}
+                schema={currentComponent.schema[propertyName]}
+                data={componentData[propertyName]}
                 isSingle={false}
                 entity={entity}
               />
@@ -108,4 +102,4 @@ Component.propTypes = {
   name: PropTypes.string
 };
 
-export default Component;
+

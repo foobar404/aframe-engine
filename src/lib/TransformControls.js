@@ -769,6 +769,7 @@ let TransformControlsExport;
       this.visible = false;
       this.translationSnap = null;
       this.rotationSnap = null;
+      this.scaleSnap = null;
       this.space = 'world';
       this.size = 1;
       this.axis = null;
@@ -915,6 +916,10 @@ let TransformControlsExport;
 
       this.setRotationSnap = function(rotationSnap) {
         scope.rotationSnap = rotationSnap;
+      };
+
+      this.setScaleSnap = function(scaleSnap) {
+        scope.scaleSnap = scaleSnap;
       };
 
       this.setSize = function(size) {
@@ -1199,6 +1204,21 @@ let TransformControlsExport;
                 scope.object.scale.z = oldScale.z * (1 + point.z / oldScale.z);
             }
           }
+
+          if (scope.scaleSnap !== null) {
+            if (scope.axis.search('X') !== -1)
+              scope.object.scale.x =
+                Math.round(scope.object.scale.x / scope.scaleSnap) *
+                scope.scaleSnap;
+            if (scope.axis.search('Y') !== -1)
+              scope.object.scale.y =
+                Math.round(scope.object.scale.y / scope.scaleSnap) *
+                scope.scaleSnap;
+            if (scope.axis.search('Z') !== -1)
+              scope.object.scale.z =
+                Math.round(scope.object.scale.z / scope.scaleSnap) *
+                scope.scaleSnap;
+          }
         } else if (_currentMode === 'rotate') {
           point.sub(worldPosition);
           point.multiply(parentScale);
@@ -1437,4 +1457,4 @@ let TransformControlsExport;
   TransformControlsExport = TransformControls;
 })();
 
-export default TransformControlsExport;
+export { TransformControlsExport };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { GLTFExporter } from 'three/addons/exporters/GLTFExporter';
-import Events from './lib/Events';
+import { Events } from './lib/Events';
 import { Viewport } from './lib/viewport';
 import { AssetsLoader } from './lib/assetsLoader';
 import { Shortcuts } from './lib/shortcuts';
@@ -9,8 +9,9 @@ import { initCameras } from './lib/cameras';
 import { createEntity } from './lib/entity';
 import { Config } from './lib/config';
 import * as history from './lib/history';
+import { History } from "./lib/historyWatcher.js"
 
-import Main from './components/Main.jsx';
+import { Main } from './components/Main.jsx';
 import './index.css';
 
 class Inspector {

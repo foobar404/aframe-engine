@@ -5,3 +5,5 @@ node_modules
 npm-debug.log*
 build/
 *.sw[pomn]
+
+asset/

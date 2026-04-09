@@ -7,7 +7,7 @@
 
 import * as THREE from 'three';
 
-const EditorControls = function (_object, domElement) {
+export function EditorControls(_object, domElement) {
   domElement = domElement !== undefined ? domElement : document;
 
   // API
@@ -40,45 +40,60 @@ const EditorControls = function (_object, domElement) {
   var keys = {};
 
   function onKeyDown(event) {
+    // Don't handle key events when typing in inputs, textareas, or contenteditable elements
+    if (event.target.tagName === 'INPUT' || 
+        event.target.tagName === 'TEXTAREA' || 
+        event.target.isContentEditable) {
+      return;
+    }
     keys[event.code] = true;
   }
 
   function onKeyUp(event) {
+    // Don't handle key events when typing in inputs, textareas, or contenteditable elements
+    if (event.target.tagName === 'INPUT' || 
+        event.target.tagName === 'TEXTAREA' || 
+        event.target.isContentEditable) {
+      return;
+    }
     keys[event.code] = false;
   }
 
   this.update = function() {
     const speed = 0.1;
     var moved = false;
+    var positionDelta = new THREE.Vector3();
 
     if (keys['KeyW']) {
-      object.position.add(object.getWorldDirection(new THREE.Vector3()).multiplyScalar(speed));
+      positionDelta.add(object.getWorldDirection(new THREE.Vector3()).multiplyScalar(speed));
       moved = true;
     }
     if (keys['KeyS']) {
-      object.position.add(object.getWorldDirection(new THREE.Vector3()).multiplyScalar(-speed));
+      positionDelta.add(object.getWorldDirection(new THREE.Vector3()).multiplyScalar(-speed));
       moved = true;
     }
     if (keys['KeyA']) {
       const right = new THREE.Vector3().crossVectors(object.up, object.getWorldDirection(new THREE.Vector3()));
-      object.position.add(right.multiplyScalar(speed));
+      positionDelta.add(right.multiplyScalar(speed));
       moved = true;
     }
     if (keys['KeyD']) {
       const right = new THREE.Vector3().crossVectors(object.up, object.getWorldDirection(new THREE.Vector3()));
-      object.position.add(right.multiplyScalar(-speed));
+      positionDelta.add(right.multiplyScalar(-speed));
       moved = true;
     }
     if (keys['KeyQ']) {
-      object.position.add(object.up.clone().multiplyScalar(-speed));
+      positionDelta.add(object.up.clone().multiplyScalar(-speed));
       moved = true;
     }
     if (keys['KeyE']) {
-      object.position.add(object.up.clone().multiplyScalar(speed));
+      positionDelta.add(object.up.clone().multiplyScalar(speed));
       moved = true;
     }
 
     if (moved) {
+      object.position.add(positionDelta);
+      center.add(positionDelta);
       scope.dispatchEvent(changeEvent);
     }
   };
@@ -393,4 +408,3 @@ try {
   // THREE is not extensible in some environments
 }
 
-export default EditorControls;

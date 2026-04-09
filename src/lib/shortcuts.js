@@ -1,4 +1,4 @@
-import Events from './Events';
+import {Events} from './Events';
 import {
   removeSelectedEntity,
   cloneSelectedEntity,
@@ -20,6 +20,14 @@ export const Shortcuts = {
   shortcuts: {
     default: {},
     modules: {}
+  },
+  // Camera bookmarking for f key
+  cameraBookmark: null,
+  isFocusedOnEntity: false,
+
+  clearCameraBookmark: function() {
+    this.cameraBookmark = null;
+    this.isFocusedOnEntity = false;
   },
   onKeyUp: function (event) {
     if (!shouldCaptureKeyEvent(event) || !AFRAME.INSPECTOR.opened) {
@@ -75,11 +83,45 @@ export const Shortcuts = {
       removeSelectedEntity();
     }
 
-    // f: Focus on selected entity.
+    // f: Toggle between focus on selected entity and previous position.
     if (keyCode === 70) {
       const selectedEntity = AFRAME.INSPECTOR.selectedEntity;
       if (selectedEntity !== undefined && selectedEntity !== null) {
-        Events.emit('objectfocus', selectedEntity.object3D);
+        const camera = AFRAME.INSPECTOR.camera;
+        const controls = AFRAME.INSPECTOR.controls;
+        
+        if (this.isFocusedOnEntity && this.cameraBookmark) {
+          // Toggle back to previous camera position
+          camera.position.copy(this.cameraBookmark.position);
+          
+          if (controls) {
+            controls.center.copy(this.cameraBookmark.target);
+            // Make camera look at the center
+            camera.lookAt(controls.center);
+          }
+          
+          camera.updateMatrixWorld();
+          camera.updateProjectionMatrix();
+          
+          // Force controls to update
+          if (controls) {
+            controls.dispatchEvent({ type: 'change' });
+          }
+          
+          this.isFocusedOnEntity = false;
+        } else {
+          // Focus on entity and save current position BEFORE focusing
+          if (controls) {
+            this.cameraBookmark = {
+              position: camera.position.clone(),
+              target: controls.center.clone()
+            };
+          }
+          
+          // Always emit focus event regardless of controls state
+          Events.emit('objectfocus', selectedEntity.object3D);
+          this.isFocusedOnEntity = true;
+        }
       }
     }
 
@@ -114,6 +156,12 @@ export const Shortcuts = {
   onKeyDown: function (event) {
     if (!shouldCaptureKeyEvent(event) || !AFRAME.INSPECTOR.opened) {
       return;
+    }
+
+    // Clear camera bookmark when manually moving camera
+    const cameraKeys = ['KeyW', 'KeyA', 'KeyS', 'KeyD', 'KeyQ', 'KeyE'];
+    if (cameraKeys.includes(event.code)) {
+      this.clearCameraBookmark();
     }
 
     if (
@@ -202,5 +250,11 @@ export const Shortcuts = {
     this.inspector = inspector;
     this.onKeyDown = this.onKeyDown.bind(this);
     this.onKeyUp = this.onKeyUp.bind(this);
+    
+    // Clear camera bookmark when entity selection changes
+    Events.on('entityselect', (entity) => {
+      // Clear focused state when selecting different entities
+      this.isFocusedOnEntity = false;
+    });
   }
 };

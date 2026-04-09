@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import Events from './Events';
+import {Events} from './Events';
 
 export function initRaycaster(inspector) {
   // Use cursor="rayOrigin: mouse".

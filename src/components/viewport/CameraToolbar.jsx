@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Select from 'react-select';
-import Events from '../../lib/Events';
+import { Events } from '../../lib/Events';
 
 const options = [
   {
@@ -51,7 +51,7 @@ function getOption(value) {
   return options.filter((opt) => opt.value === value)[0];
 }
 
-function CameraToolbar() {
+export function CameraToolbar() {
   const [selectedCamera, setSelectedCamera] = useState('perspective');
   const justChangedCamera = useRef(false);
 
@@ -89,4 +89,3 @@ function CameraToolbar() {
   );
 }
 
-export default CameraToolbar;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-function Modal({
+export function Modal({
   id,
   children,
   isOpen: initialIsOpen,
@@ -100,4 +100,3 @@ Modal.defaultProps = {
   closeOnClickOutside: true
 };
 
-export default Modal;

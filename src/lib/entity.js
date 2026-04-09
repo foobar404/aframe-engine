@@ -1,4 +1,4 @@
-import Events from './Events';
+import {Events} from './Events';
 import { equal } from './utils';
 
 /**
@@ -48,7 +48,9 @@ export function removeEntity(entity, force = false) {
       )
     ) {
       var closest = findClosestEntity(entity);
+      const oldParent = entity.parentElement;
       entity.parentNode.removeChild(entity);
+      Events.emit('entityremoved', { entity, oldParent });
       AFRAME.INSPECTOR.selectEntity(closest);
     }
   }
@@ -485,20 +487,9 @@ function getUniqueId(baseId) {
   if (!document.getElementById(baseId)) {
     return baseId;
   }
-
-  var i = 2;
-  // If the baseId ends with _#, it extracts the baseId removing the suffix
-  var groups = baseId.match(/(\w+)-(\d+)/);
-  if (groups) {
-    baseId = groups[1];
-    i = groups[2];
-  }
-
-  while (document.getElementById(baseId + '-' + i)) {
-    i++;
-  }
-
-  return baseId + '-' + i;
+  // Append a new hash suffix to make it unique
+  const base = baseId.replace(/-[a-z0-9]{5}$/, '');
+  return generateEntityId(base);
 }
 
 export function getComponentClipboardRepresentation(entity, componentName) {
@@ -532,11 +523,20 @@ export function getComponentClipboardRepresentation(entity, componentName) {
  *   {element: 'a-entity', id: "hbiuSdYL2", class: "box", components: {geometry: 'primitive:box'}}
  * @return {Element} Entity created
  */
+export function generateEntityId(tagName) {
+  const base = (tagName || 'entity').replace(/^a-/, '') || 'entity';
+  const hash = () => Math.random().toString(36).slice(2, 7);
+  let id = `${base}-${hash()}`;
+  while (document.getElementById(id)) {
+    id = `${base}-${hash()}`;
+  }
+  return id;
+}
+
 export function createEntity(definition, cb) {
   const entity = document.createElement(definition.element || 'a-entity');
-  if (definition.id) {
-    entity.id = definition.id;
-  }
+  const tagName = (definition.element || 'a-entity').toLowerCase();
+  entity.id = definition.id || generateEntityId(tagName);
 
   if (definition.class) {
     entity.setAttribute('class', definition.class);
@@ -548,18 +548,26 @@ export function createEntity(definition, cb) {
   }
 
   // Ensure the components are loaded before update the UI
-  entity.addEventListener(
-    'loaded',
-    () => {
-      Events.emit('entitycreated', entity);
-      cb(entity);
-    },
-    { once: true }
-  );
+  const onLoaded = () => {
+    Events.emit('entitycreated', entity);
+    cb(entity);
+  };
 
   // Append to parent if specified, otherwise to scene root
   const parent = definition.parent || AFRAME.scenes[0];
   parent.appendChild(entity);
+
+  if (entity.hasLoaded) {
+    onLoaded();
+  } else {
+    entity.addEventListener('loaded', onLoaded, { once: true });
+    // Fallback: some primitives may not fire 'loaded' reliably
+    setTimeout(() => {
+      if (!entity.hasLoaded) {
+        onLoaded();
+      }
+    }, 500);
+  }
 
   return entity;
 }

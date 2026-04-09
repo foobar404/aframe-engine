@@ -1,9 +1,9 @@
 import React, { useEffect, useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
-import ComponentsContainer from './ComponentsContainer';
-import Events from '../../lib/Events';
+import { ComponentsContainer } from './ComponentsContainer';
+import { Events } from '../../lib/Events';
 
-function Sidebar({ entity, visible }) {
+export function Sidebar({ entity, visible }) {
   const [updateKey, setUpdateKey] = useState(0);
 
   const onComponentRemove = useCallback((detail) => {
@@ -45,4 +45,3 @@ Sidebar.propTypes = {
   visible: PropTypes.bool
 };
 
-export default Sidebar;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-function Collapsible({ className, collapsed = false, children, id }) {
+export function Collapsible({ className, collapsed = false, children, id }) {
   const [isCollapsed, setIsCollapsed] = useState(collapsed);
 
   const toggleVisibility = (event) => {
@@ -49,4 +49,3 @@ Collapsible.defaultProps = {
   collapsed: false
 };
 
-export default Collapsible;

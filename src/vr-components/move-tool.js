@@ -1,5 +1,11 @@
+import { Events } from '../lib/Events';
+import { cloneEntity } from '../lib/entity';
+
+if (!AFRAME.components['move-tool']) {
 AFRAME.registerComponent('move-tool', {
   schema: {
+    enabled: { type: 'boolean', default: true },
+    hand: { type: 'string', default: 'right', oneOf: ['left', 'right'] },
     enableTranslation: { type: 'boolean', default: true },
     enableRotation: { type: 'boolean', default: true },
     enableScale: { type: 'boolean', default: true },
@@ -15,43 +21,142 @@ AFRAME.registerComponent('move-tool', {
     this.isManipulating = false;
     this.isGripping = false;
     this.sphereRadius = 0.05;
-    this.currentJoystick = { x: 0, y: 0 };
     this.startControllerPosition = new this.T.Vector3();
     this.startControllerRotation = new this.T.Euler();
     this.startObjectPositions = [];
     this.startObjectRotations = [];
     this.initialRayDistance = 0;
-    this.gripOffset = new this.T.Vector3(); // Offset from sphere to object when gripped
-    this.gripRotationOffset = new this.T.Euler(); // Rotation offset when gripped
+    this.gripObjectInSphereSpace = new Map(); // entity → Matrix4 weld offset
+    this._rayGroupOffsets = new Map(); // entity → Vector3 offset from primary ray target
+    this._rayPrimaryTarget = null;
+    this.isResizingSphere = false;
+    this.isTriggerDown = false;
+    this.isScaling = false;
+    this.scaleStartControllerPos = new this.T.Vector3();
+    this.scaleStartObjectScales = [];
+    this.gripStartControllerPos = new this.T.Vector3();
+    this.gripStartSphereRadius = 0.05;
+    this.qControllerWorld = new this.T.Quaternion();
+    this.qTargetWorld = new this.T.Quaternion();
+    this.qSphereLocal = new this.T.Quaternion();
+    this._lastGroupToggleTime = 0;
 
-    this.setupRaycaster();
+    this.setupLaser();
     this.createSelectionSphere();
     this.bindEvents();
+    this.applyEnabledState();
+    this._sphereOverlapTarget = null;
+    this._sphereOverlapTargets = new Set();
+  },
+
+  update(oldData) {
+    if (!oldData || typeof oldData.enabled === 'undefined') {
+      this.applyEnabledState();
+      return;
+    }
+
+    if (oldData.enabled !== this.data.enabled) {
+      this.applyEnabledState();
+    }
+
+    if (oldData.hand !== this.data.hand && this.selectionSphere) {
+      this.selectionSphere.setAttribute('position', this.getSphereOffset());
+    }
   },
 
   bindEvents() {
-    const events = ['triggerdown', 'triggerup', 'gripdown', 'gripup', 'thumbstickmoved', 'bbuttondown', 'ybuttondown', 'xbuttondown', 'abuttondown'];
-    events.forEach(event => this.el.addEventListener(event, this[`handle${event.replace('-', '').replace(/^\w/, c => c.toUpperCase())}`].bind(this)));
+    const events = ['triggerdown', 'triggerup', 'gripdown', 'gripup', 'bbuttondown', 'ybuttondown', 'xbuttondown', 'abuttondown'];
+    this.boundToolHandlers = this.boundToolHandlers || {};
+    events.forEach((event) => {
+      const handlerName = `handle${event.replace('-', '').replace(/^\w/, c => c.toUpperCase())}`;
+      const bound = (evt) => {
+        if (!this.data.enabled) return;
+        this[handlerName](evt);
+      };
+      this.boundToolHandlers[event] = bound;
+      this.el.addEventListener(event, bound);
+    });
     this.el.sceneEl.addEventListener('clearSelection', this.clearSelection.bind(this));
   },
 
-  setupRaycaster() {
-    this.el.setAttribute('raycaster', {
-      objects: '[editable]',
-      far: 1000,
-      showLine: true,
-      lineColor: 'rgba(255,255,255,0.31)',
-      lineOpacity: 0.5
-    });
+  applyEnabledState() {
+    if (this.selectionSphere) {
+      this.selectionSphere.object3D.visible = !!this.data.enabled;
+    }
+
+    if (!this.data.enabled) {
+      this.isGripping = false;
+      if (this.isManipulating) {
+        this.endManipulation();
+      }
+      this.clearSelection();
+    }
+  },
+
+  onToolActivated() {
+    this.applyEnabledState();
+  },
+
+  onToolDeactivated() {
+    this.applyEnabledState();
+  },
+
+  setupLaser() {
+    // laser-controls provides both the visible beam and raycaster in one component.
+    // We configure only raycaster params; laser-controls owns the visual line.
+    this.el.setAttribute('laser-controls', `hand: ${this.data.hand}; lineColor: #23b391; lineOpacity: 0.8;`);
+    this.el.setAttribute('raycaster', 'far: 400; showLine: true;');
+  },
+
+  getSphereOffset() {
+    const isLeft = this.data.hand === 'left';
+    return `${isLeft ? '0.07' : '-0.07'} -0.06 0.02`;
   },
 
   createSelectionSphere() {
+    const T = this.T;
+    const container = new T.Object3D();
+
+    // Wireframe shell
+    const shellGeo = new T.IcosahedronGeometry(1, 1);
+    this._shellMat = new T.MeshBasicMaterial({
+      color: 0x23b391,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.7,
+      depthTest: false
+    });
+    this._shellMesh = new T.Mesh(shellGeo, this._shellMat);
+
+    // Inner translucent fill
+    const fillGeo = new T.SphereGeometry(0.82, 16, 12);
+    this._fillMat = new T.MeshBasicMaterial({
+      color: 0x0d2e28,
+      transparent: true,
+      opacity: 0.22,
+      depthTest: false,
+      side: T.FrontSide
+    });
+    this._fillMesh = new T.Mesh(fillGeo, this._fillMat);
+
+    container.add(this._shellMesh);
+    container.add(this._fillMesh);
+    container.renderOrder = 998;
+
     this.selectionSphere = document.createElement('a-entity');
-    this.selectionSphere.setAttribute('geometry', `primitive: sphere; radius: ${this.sphereRadius}`);
-    this.selectionSphere.setAttribute('position', '-0.07 -0.06 0.02');
+    this.selectionSphere.setAttribute('position', this.getSphereOffset());
     this.el.appendChild(this.selectionSphere);
 
-    this.updateSphereVisual();
+    this.selectionSphere.addEventListener('loaded', () => {
+      this.selectionSphere.object3D.add(container);
+      this._sphereContainer = container;
+      this._updateSphereScale();
+    }, { once: true });
+  },
+
+  _updateSphereScale() {
+    if (!this._sphereContainer) return;
+    this._sphereContainer.scale.setScalar(this.sphereRadius);
   },
 
   // Helper functions
@@ -62,124 +167,436 @@ AFRAME.registerComponent('move-tool', {
     return { pos, rot, scale };
   },
 
+  updateTransformRealtime(el, component, value) {
+    el.setAttribute(component, value);
+    Events.emit('entityupdate', {
+      entity: el,
+      component,
+      property: '',
+      value
+    });
+  },
+
+  setWorldPositionRealtime(el, worldPos) {
+    if (!el || !el.object3D || !worldPos) return;
+
+    const parentEl = el.parentElement;
+    const parentInv = new this.T.Matrix4();
+    if (parentEl && parentEl.object3D) {
+      parentEl.object3D.updateMatrixWorld(true);
+      parentInv.copy(parentEl.object3D.matrixWorld).invert();
+    }
+
+    const localPos = worldPos.clone().applyMatrix4(parentInv);
+    this.updateTransformRealtime(el, 'position', {
+      x: localPos.x,
+      y: localPos.y,
+      z: localPos.z
+    });
+  },
+
   updateSphereSize(radius) {
     const oldRadius = this.sphereRadius;
-    const newRadius = Math.max(0.02, Math.min(0.2, radius));
-
-    // When scaling the selection/grab sphere, treat the right side as the origin.
-    // That means we shift the sphere center left by the delta radius so the right-most
-    // point remains fixed relative to the controller.
+    const newRadius = Math.max(0.02, Math.min(0.5, radius));
     const delta = newRadius - oldRadius;
     this.sphereRadius = newRadius;
 
-    if (this.selectionSphere) {
-      // Update geometry radius
-      this.selectionSphere.setAttribute('geometry', `primitive: sphere; radius: ${this.sphereRadius}`);
+    this._updateSphereScale();
 
-      // Adjust the local X position of the sphere so the right side stays in place
-      try {
-        const pos = this.selectionSphere.getAttribute('position') || { x: 0, y: 0, z: 0 };
-        const newX = (parseFloat(pos.x) || 0) - delta;
-        this.selectionSphere.setAttribute('position', `${newX} ${pos.y} ${pos.z}`);
-      } catch (e) {
-        // Fallback: use object3D if attribute parsing fails
-        const objPos = this.selectionSphere.object3D.position;
-        objPos.x = objPos.x - delta;
-        this.selectionSphere.object3D.position.set(objPos.x, objPos.y, objPos.z);
-      }
+    const sign = this.data.hand === 'left' ? 1 : -1;
+    try {
+      const pos = this.selectionSphere.getAttribute('position') || { x: 0, y: 0, z: 0 };
+      const newX = (parseFloat(pos.x) || 0) + sign * delta;
+      this.selectionSphere.setAttribute('position', `${newX} ${pos.y} ${pos.z}`);
+    } catch (e) {
+      const objPos = this.selectionSphere.object3D.position;
+      objPos.x += sign * delta;
+      this.selectionSphere.object3D.position.set(objPos.x, objPos.y, objPos.z);
     }
   },
 
-  updateSphereVisual(isGripping) {
-    if (!this.selectionSphere) return;
-    const color = isGripping ? '#23b391' : '#000000';
-    const opacity = isGripping ? 1.0 : 0.3;
-    const scale = isGripping ? '0.8 0.8 0.8' : '1 1 1'; // Shrink when gripping
+  // STATES: idle | hover | grip
+  updateSphereVisual(state) {
+    if (!this._shellMat || !this._fillMat) return;
 
-    this.selectionSphere.setAttribute('material', `color: ${color}; opacity: ${opacity}; transparent: true;`);
+    if (state === 'grip') {
+      this._shellMat.color.setHex(0x36ffcc);
+      this._shellMat.opacity = 1.0;
+      this._fillMat.color.setHex(0x0a4a3a);
+      this._fillMat.opacity = 0.45;
+      if (this._sphereContainer) this._sphereContainer.scale.setScalar(this.sphereRadius * 0.85);
+    } else if (state === 'scale') {
+      this._shellMat.color.setHex(0xff44cc);
+      this._shellMat.opacity = 1.0;
+      this._fillMat.color.setHex(0x3a0030);
+      this._fillMat.opacity = 0.45;
+      if (this._sphereContainer) this._sphereContainer.scale.setScalar(this.sphereRadius * 0.85);
+    } else if (state === 'hover') {
+      this._shellMat.color.setHex(0xffe066);
+      this._shellMat.opacity = 0.95;
+      this._fillMat.color.setHex(0x2a2000);
+      this._fillMat.opacity = 0.3;
+      if (this._sphereContainer) this._sphereContainer.scale.setScalar(this.sphereRadius * 1.08);
+    } else {
+      this._shellMat.color.setHex(0x23b391);
+      this._shellMat.opacity = 0.7;
+      this._fillMat.color.setHex(0x0d2e28);
+      this._fillMat.opacity = 0.22;
+      this._updateSphereScale();
+    }
+  },
 
-    // Use animation for smooth scale transition
-    this.selectionSphere.setAttribute('animation', `
-      property: scale; 
-      to: ${scale}; 
-      dur: 150; 
-      easing: easeOutQuad
-    `);
+  syncGrabSphereRotation(target) {
+    if (!this.selectionSphere?.object3D || !target?.object3D) return;
+
+    this.el.object3D.getWorldQuaternion(this.qControllerWorld);
+    target.object3D.getWorldQuaternion(this.qTargetWorld);
+
+    this.qSphereLocal.copy(this.qControllerWorld).invert().multiply(this.qTargetWorld);
+    this.selectionSphere.object3D.quaternion.copy(this.qSphereLocal);
+    this.selectionSphere.object3D.updateMatrixWorld(true);
+  },
+
+  resetGrabSphereRotation() {
+    if (!this.selectionSphere?.object3D) return;
+    this.selectionSphere.object3D.rotation.set(0, 0, 0);
+    this.selectionSphere.object3D.updateMatrixWorld(true);
+  },
+
+  isSelectableEntity(el) {
+    if (!el || el === this.el || el === this.el.sceneEl) {
+      return false;
+    }
+
+    if (!el.object3D) {
+      return false;
+    }
+
+    const rig = document.getElementById('admin-camera-rig');
+    if (rig && (el === rig || rig.contains(el))) {
+      return false;
+    }
+
+    if (el.hasAttribute('data-vr-tool-ui') || el.closest('[controller-toolbelt]')) {
+      return false;
+    }
+
+    if (el.closest('[move-tool]') || el.closest('a-assets')) {
+      return false;
+    }
+
+    return true;
+  },
+
+  normalizeSelectableEntity(el) {
+    let current = el;
+
+    while (current && current !== this.el.sceneEl) {
+      if (this.isSelectableEntity(current)) {
+        return current;
+      }
+      current = current.parentElement;
+    }
+
+    return null;
+  },
+
+  getLaserRaycaster() {
+    // laser-controls creates a child raycaster; also check component on this.el directly.
+    return this.el.components.raycaster || null;
+  },
+
+  findRaycastTarget() {
+    const rc = this.getLaserRaycaster();
+    if (!rc) return null;
+
+    for (const hit of rc.intersections || []) {
+      const hitEl = hit?.object?.el || null;
+      const target = this.normalizeSelectableEntity(hitEl);
+      if (target) return target;
+    }
+
+    return null;
+  },
+
+  getRayDistanceForTarget(target) {
+    const rc = this.getLaserRaycaster();
+    if (!rc) return 1;
+
+    for (const hit of rc.intersections || []) {
+      let hitEl = hit?.object?.el || null;
+      while (hitEl && hitEl !== this.el.sceneEl) {
+        if (hitEl === target) return Math.max(0.05, hit.distance || 1);
+        hitEl = hitEl.parentElement;
+      }
+    }
+
+    return rc.intersections?.[0]?.distance || 1;
+  },
+
+  findSphereOverlapTargets() {
+    const spherePos = new this.T.Vector3();
+    this.selectionSphere.object3D.getWorldPosition(spherePos);
+    const sphere = new this.T.Sphere(spherePos, this.sphereRadius);
+
+    const allEls = Array.from(this.el.sceneEl.querySelectorAll('*'));
+    const uniqueTargets = new Set();
+    allEls.forEach((el) => {
+      const target = this.normalizeSelectableEntity(el);
+      if (target) uniqueTargets.add(target);
+    });
+
+    const results = [];
+
+    uniqueTargets.forEach((target) => {
+      if (!target.object3D) return;
+
+      const box = new this.T.Box3().setFromObject(target.object3D);
+
+      if (box.isEmpty()) {
+        // For entities like a-text whose mesh children build async,
+        // check origin and walk direct children for any non-empty bounds.
+        const targetPos = new this.T.Vector3();
+        target.object3D.getWorldPosition(targetPos);
+        if (spherePos.distanceTo(targetPos) <= this.sphereRadius * 3) {
+          results.push(target);
+          return;
+        }
+        let hit = false;
+        target.object3D.traverse((child) => {
+          if (hit || child === target.object3D) return;
+          const cb = new this.T.Box3().setFromObject(child);
+          if (!cb.isEmpty() && cb.intersectsSphere(sphere)) hit = true;
+        });
+        if (hit) results.push(target);
+        return;
+      }
+
+      if (!box.intersectsSphere(sphere)) return;
+
+      const inset = box.clone().expandByScalar(-this.sphereRadius);
+      if (!inset.isEmpty() && inset.containsPoint(spherePos)) return;
+
+      results.push(target);
+    });
+
+    return this.filterToTopLevel(results);
+  },
+
+  findSphereOverlapTarget() {
+    return this.findSphereOverlapTargets()[0] ?? null;
+  },
+
+  // Group helpers
+  generateGroupId() {
+    return 'grp-' + Math.random().toString(36).slice(2, 8);
+  },
+
+  getGroupMembers(groupId) {
+    if (!groupId) return [];
+    return Array.from(this.el.sceneEl.querySelectorAll(`[data-group="${groupId}"]`))
+      .filter(el => this.isSelectableEntity(el));
+  },
+
+  assignGroup(entities) {
+    const existingIds = new Set();
+    entities.forEach(el => {
+      const gid = el.getAttribute('data-group');
+      if (gid) existingIds.add(gid);
+    });
+    const groupId = existingIds.size > 0 ? [...existingIds][0] : this.generateGroupId();
+    entities.forEach(el => el.setAttribute('data-group', groupId));
+    if (existingIds.size > 1) {
+      existingIds.forEach(old => {
+        if (old === groupId) return;
+        this.getGroupMembers(old).forEach(el => el.setAttribute('data-group', groupId));
+      });
+    }
+    return groupId;
+  },
+
+  ungroupEntities(entities) {
+    const groupIds = new Set(entities.map(el => el.getAttribute('data-group')).filter(Boolean));
+    groupIds.forEach(gid => {
+      this.getGroupMembers(gid).forEach(el => el.removeAttribute('data-group'));
+    });
+  },
+
+  expandByGroup(targets) {
+    const expanded = new Set(targets);
+    targets.forEach(el => {
+      const gid = el.getAttribute('data-group');
+      if (gid) this.getGroupMembers(gid).forEach(m => expanded.add(m));
+    });
+    return Array.from(expanded);
+  },
+
+  filterToTopLevel(entities) {
+    const unique = Array.from(new Set((entities || []).filter(Boolean)));
+    const all = new Set(unique);
+    return unique.filter((el) => {
+      let current = el.parentElement;
+      while (current && current !== this.el.sceneEl) {
+        if (all.has(current)) return false;
+        current = current.parentElement;
+      }
+      return true;
+    });
   },
 
   // Event handlers
   handleTriggerdown() {
-    const rc = this.el.components.raycaster;
-    if (rc?.intersectedEls.length > 0) {
-      const target = rc.intersectedEls[0];
-      if (target?.hasAttribute('editable')) {
-        // Store initial ray distance for trigger-based ray tracking
-        const intersection = rc.intersections[0];
-        if (intersection) {
-          this.initialRayDistance = intersection.distance;
-        }
-        this.selectAndStartManipulation(target);
-      }
+    this.isTriggerDown = true;
+    if (this.isGripping && this.isManipulating && this.selectedObjects.length > 0) {
+      this.startScaling();
+      return;
     }
+    const target = this.findRaycastTarget();
+    if (!target) return;
+
+    const distance = this.getRayDistanceForTarget(target);
+    this.initialRayDistance = distance > 0 ? distance : 1;
+
+    const targets = this.filterToTopLevel(this.expandByGroup([target]));
+    this.clearSelection();
+    targets.forEach(t => this.selectObject(t));
+
+    // Store offsets of group members relative to the primary raycasted entity
+    this._rayPrimaryTarget = target;
+    this._rayGroupOffsets = new Map();
+    const primaryPos = new this.T.Vector3();
+    target.object3D.getWorldPosition(primaryPos);
+    targets.forEach(t => {
+      if (t === target) return;
+      const tPos = new this.T.Vector3();
+      t.object3D.getWorldPosition(tPos);
+      this._rayGroupOffsets.set(t, tPos.clone().sub(primaryPos));
+    });
+
+    this.startManipulation();
   },
 
   handleTriggerup() {
+    this.isTriggerDown = false;
+    if (this.isScaling) {
+      this.isScaling = false;
+      this.updateSphereVisual('grip');
+      return;
+    }
     if (this.isManipulating) this.endManipulation();
     this.clearSelection();
   },
 
   handleGripdown() {
     this.isGripping = true;
-    this.updateSphereVisual(true);
+    if (this.isTriggerDown && this.isManipulating && this.selectedObjects.length > 0) {
+      this.updateSphereVisual('scale');
+      this.startScaling();
+      return;
+    }
+    this.updateSphereVisual('grip');
 
-    const spherePos = new this.T.Vector3();
-    this.selectionSphere.object3D.getWorldPosition(spherePos);
+    const sphereTargets = this.findSphereOverlapTargets();
 
-    const target = Array.from(document.querySelectorAll('[editable]')).find(el => {
-      if (!el.object3D) return false;
-      const objectPos = new this.T.Vector3();
-      el.object3D.getWorldPosition(objectPos);
-      return spherePos.distanceTo(objectPos) < this.sphereRadius + 0.1;
-    });
+    if (sphereTargets.length > 0) {
+      // Auto-group when more than one entity is grabbed simultaneously
+      if (sphereTargets.length > 1) {
+        this.assignGroup(sphereTargets);
+      }
+      // Expand to all group members
+      const targets = this.filterToTopLevel(this.expandByGroup(sphereTargets));
 
-    if (target) {
-      // Calculate offset from sphere to object when gripping starts
-      const objectPos = new this.T.Vector3();
-      target.object3D.getWorldPosition(objectPos);
-      this.gripOffset.copy(objectPos).sub(spherePos);
+      this.selectionSphere.object3D.updateMatrixWorld(true);
+      const sphereWorldInv = new this.T.Matrix4().copy(this.selectionSphere.object3D.matrixWorld).invert();
 
-      // Store initial rotation offset between controller and object
-      const { rot: controllerRot } = this.getEntityTransform(this.el);
-      const { rot: objectRot } = this.getEntityTransform(target);
-      this.gripRotationOffset.set(
-        (objectRot.x - controllerRot.x) * Math.PI / 180,
-        (objectRot.y - controllerRot.y) * Math.PI / 180,
-        (objectRot.z - controllerRot.z) * Math.PI / 180
-      );
+      this.gripObjectInSphereSpace.clear();
+      this.clearSelection();
 
-      this.selectAndStartManipulation(target);
+      targets.forEach((target) => {
+        target.object3D.updateMatrixWorld(true);
+        const weld = new this.T.Matrix4().copy(sphereWorldInv).multiply(target.object3D.matrixWorld);
+        this.gripObjectInSphereSpace.set(target, weld);
+        this.selectObject(target);
+      });
+
+      this.startManipulation();
+    } else {
+      // Gripping empty air — entering sphere-resize mode
+      this.isResizingSphere = true;
+      this.el.object3D.getWorldPosition(this.gripStartControllerPos);
+      this.gripStartSphereRadius = this.sphereRadius;
     }
   },
 
   handleGripup() {
     this.isGripping = false;
-    this.updateSphereVisual(false);
+    this.isResizingSphere = false;
+    this.isScaling = false;
+    this.updateSphereVisual('idle');
     if (this.isManipulating) this.endManipulation();
     this.clearSelection();
   },
 
   handleThumbstickmoved(e) {
-    this.currentJoystick.x = e.detail?.x || 0;
-    this.currentJoystick.y = e.detail?.y || 0;
+    // Joystick input is intentionally reserved for movement.
+  },
+
+  consumeButtonEvent(evt) {
+    if (!evt) return;
+    if (typeof evt.preventDefault === 'function') evt.preventDefault();
+    if (typeof evt.stopImmediatePropagation === 'function') evt.stopImmediatePropagation();
+    if (typeof evt.stopPropagation === 'function') evt.stopPropagation();
   },
 
   // Duplicate and Delete functions
-  handleBbuttondown() {
-    this.duplicateSelected();
+  handleBbuttondown(evt) {
+    const now = Date.now();
+    if (now - this._lastGroupToggleTime < 120) {
+      this.consumeButtonEvent(evt);
+      return;
+    }
+
+    const sphereTargets = this.findSphereOverlapTargets();
+    const source = sphereTargets.length > 0 ? sphereTargets : this.selectedObjects;
+    const targets = this.filterToTopLevel(this.expandByGroup(source));
+
+    if (targets.some((el) => el.hasAttribute('data-group'))) {
+      this._lastGroupToggleTime = now;
+      this.ungroupEntities(targets);
+      targets.forEach((el) => {
+        Events.emit('entityupdate', { entity: el, component: 'data-group', property: '', value: null });
+      });
+      this.clearSelection();
+      targets.forEach((el) => this.selectObject(el));
+      this.el.emit('haptic-pulse', { intensity: 0.35, duration: 60 }, false);
+      this.consumeButtonEvent(evt);
+      return;
+    }
+
+    if (targets.length > 1) {
+      this._lastGroupToggleTime = now;
+      const groupId = this.assignGroup(targets);
+      targets.forEach((el) => {
+        Events.emit('entityupdate', { entity: el, component: 'data-group', property: '', value: groupId });
+      });
+      this.clearSelection();
+      targets.forEach((el) => this.selectObject(el));
+      this.el.emit('haptic-pulse', { intensity: 0.45, duration: 70 }, false);
+      this.consumeButtonEvent(evt);
+      return;
+    }
+
+    // Single ungrouped target — duplicate it.
+    if (targets.length === 1) {
+      this.duplicateSelected();
+      this.el.emit('haptic-pulse', { intensity: 0.4, duration: 60 }, false);
+    }
+
+    this.consumeButtonEvent(evt);
   },
 
-  handleYbuttondown() {
-    this.duplicateSelected();
+  handleYbuttondown(evt) {
+    this.handleBbuttondown(evt);
   },
 
   handleXbuttondown() {
@@ -187,121 +604,44 @@ AFRAME.registerComponent('move-tool', {
   },
 
   handleAbuttondown() {
-    this.deleteSelected();
+    this.handleXbuttondown();
   },
 
   async duplicateSelected() {
     if (this.selectedObjects.length === 0) return;
 
-    this.selectedObjects.forEach(async (el) => {
-      // Create new entity instead of cloning to avoid issues
-      const clone = document.createElement('a-entity');
+    this.selectedObjects.forEach((el) => {
+      // flushToDOM ensures live component state (geometry, material, etc.)
+      // is written back to DOM attributes before cloning.
+      el.flushToDOM(true);
 
-      // Generate new unique ID
-      const newId = `entity_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-      clone.id = newId;
+      const clone = el.cloneNode(true);
+      // Strip id so A-Frame assigns a fresh one.
+      clone.removeAttribute('id');
 
-      // Copy all attributes except id
-      Array.from(el.attributes).forEach(attr => {
-        if (attr.name !== 'id') {
-          clone.setAttribute(attr.name, attr.value);
-        }
-      });
+      el.parentNode.insertBefore(clone, el.nextSibling);
 
-      // Get current exact transform (position, rotation, scale) from the element
-      const { pos, rot, scale } = this.getEntityTransform(el);
-
-      // Set duplicated object to exact same position and orientation
-      clone.setAttribute('position', { x: pos.x, y: pos.y, z: pos.z });
-      clone.setAttribute('rotation', { x: rot.x, y: rot.y, z: rot.z });
-      clone.setAttribute('scale', { x: scale.x, y: scale.y, z: scale.z });
-
-      // Ensure material and geometry are properly set
-      if (el.hasAttribute('material')) {
-        clone.setAttribute('material', el.getAttribute('material'));
-      }
-      if (el.hasAttribute('geometry')) {
-        clone.setAttribute('geometry', el.getAttribute('geometry'));
-      }
-
-      // Add editable attribute if original had it
-      if (el.hasAttribute('editable')) {
-        clone.setAttribute('editable', '');
-      }
-
-      // Add to scene
-      el.parentNode.appendChild(clone);
-
-      // Save to scene via API
-      try {
-        const sceneEntity = {
-          id: newId,
-          tagName: el.tagName.toLowerCase(),
-          properties: {
-            position: `${pos.x} ${pos.y} ${pos.z}`,
-            rotation: `${rot.x} ${rot.y} ${rot.z}`,
-            scale: `${scale.x} ${scale.y} ${scale.z}`,
-            material: el.hasAttribute('material') ? el.getAttribute('material') : undefined,
-            geometry: el.hasAttribute('geometry') ? el.getAttribute('geometry') : undefined,
-            editable: el.hasAttribute('editable')
-          }
-        };
-
-        await fetch(`/api/projects/${encodeURIComponent(window.PROJECT_DATA.path)}/scenes/${encodeURIComponent(window.PROJECT_DATA.activeScene)}`, {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            operation: {
-              action: 'add',
-              entity: sceneEntity
-            }
-          })
-        });
-      } catch (err) {
-        console.error('Error saving duplicated entity:', err);
-      }
+      clone.addEventListener('loaded', () => {
+        // Offset clone slightly so it's not hidden behind the original.
+        const pos = clone.getAttribute('position') || { x: 0, y: 0, z: 0 };
+        clone.setAttribute('position', { x: +pos.x + 0.1, y: +pos.y + 0.1, z: +pos.z });
+        Events.emit('entityclone', clone);
+      }, { once: true });
     });
   },
 
   async deleteSelected() {
     if (this.selectedObjects.length === 0) return;
 
-    this.selectedObjects.forEach(async (el) => {
-      // Remove wireframe mode before deletion
+    this.selectedObjects.forEach((el) => {
       this.setWireframeMode(el, false);
-
-      // Remove from API first
-      if (el.id) {
-        try {
-          const response = await fetch(`/api/projects/${encodeURIComponent(window.PROJECT_DATA.path)}/scenes/${encodeURIComponent(window.PROJECT_DATA.activeScene)}`, {
-            method: 'PUT',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              operation: {
-                action: 'remove',
-                id: el.id
-              }
-            })
-          });
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-        } catch (err) {
-          console.error('Error removing entity from scene:', err);
-        }
-      }
-
-      // Remove from DOM
-      if (el.parentNode) {
-        el.parentNode.removeChild(el);
+      const oldParent = el.parentNode;
+      if (oldParent) {
+        oldParent.removeChild(el);
+        Events.emit('entityremoved', { entity: el, oldParent });
       }
     });
 
-    // Clear selection after deletion
     this.clearSelection();
   },
 
@@ -321,6 +661,7 @@ AFRAME.registerComponent('move-tool', {
   clearSelection() {
     this.selectedObjects.forEach(el => this.setWireframeMode(el, false));
     this.selectedObjects = [];
+    this.resetGrabSphereRotation();
   },
 
   setWireframeMode(el, wireframe) {
@@ -367,30 +708,41 @@ AFRAME.registerComponent('move-tool', {
   },
 
   updateGripManipulation() {
-    // Get current sphere position in world space
-    const spherePos = new this.T.Vector3();
-    this.selectionSphere.object3D.getWorldPosition(spherePos);
+    this.selectionSphere.object3D.updateMatrixWorld(true);
+    const sphereWorld = this.selectionSphere.object3D.matrixWorld;
 
-    // Get current controller rotation
-    const { rot: currentControllerRot } = this.getEntityTransform(this.el);
+    this.selectedObjects.forEach((o) => {
+      if (!o.object3D) return;
 
-    // Move objects to follow the sphere position maintaining their grip offset
-    this.selectedObjects.forEach((o, i) => {
-      if (this.data.enableTranslation) {
-        // Calculate new position: sphere position + original offset
-        const newPos = spherePos.clone().add(this.gripOffset);
-        o.setAttribute('position', { x: newPos.x, y: newPos.y, z: newPos.z });
+      const weld = this.gripObjectInSphereSpace.get(o);
+      if (!weld) return;
+
+      const newWorldMatrix = new this.T.Matrix4().copy(sphereWorld).multiply(weld);
+
+      const parentEl = o.parentElement;
+      const parentWorldInv = new this.T.Matrix4();
+      if (parentEl && parentEl.object3D) {
+        parentEl.object3D.updateMatrixWorld(true);
+        parentWorldInv.copy(parentEl.object3D.matrixWorld).invert();
       }
 
-      // Apply rotation: current controller rotation + original offset
+      const localMatrix = parentWorldInv.multiply(newWorldMatrix);
+      const pos = new this.T.Vector3();
+      const quat = new this.T.Quaternion();
+      const scale = new this.T.Vector3();
+      localMatrix.decompose(pos, quat, scale);
+
+      const euler = new this.T.Euler().setFromQuaternion(quat, 'YXZ');
+
+      if (this.data.enableTranslation) {
+        this.updateTransformRealtime(o, 'position', { x: pos.x, y: pos.y, z: pos.z });
+      }
       if (this.data.enableRotation) {
-        // Invert the applied rotation offset so the grab-sphere rotates opposite to the controller
-        const newRotation = {
-          x: currentControllerRot.x - (this.gripRotationOffset.x * 180 / Math.PI),
-          y: currentControllerRot.y - (this.gripRotationOffset.y * 180 / Math.PI),
-          z: currentControllerRot.z - (this.gripRotationOffset.z * 180 / Math.PI)
-        };
-        o.setAttribute('rotation', newRotation);
+        this.updateTransformRealtime(o, 'rotation', {
+          x: euler.x * 180 / Math.PI,
+          y: euler.y * 180 / Math.PI,
+          z: euler.z * 180 / Math.PI
+        });
       }
     });
   },
@@ -405,12 +757,12 @@ AFRAME.registerComponent('move-tool', {
       raycaster.ray.direction.clone().multiplyScalar(this.initialRayDistance)
     );
 
-    // Move all selected objects to the current ray intersection point
-    this.selectedObjects.forEach((o, i) => {
-      if (this.data.enableTranslation) {
-        // Simply place the object at the current ray intersection point
-        o.setAttribute('position', { x: newPosition.x, y: newPosition.y, z: newPosition.z });
-      }
+    // Move primary target to ray point; offset group members to maintain relative positions
+    this.selectedObjects.forEach((o) => {
+      if (!this.data.enableTranslation) return;
+      const offset = this._rayGroupOffsets?.get(o);
+      const pos = offset ? newPosition.clone().add(offset) : newPosition.clone();
+      this.setWorldPositionRealtime(o, pos);
     });
   },
 
@@ -448,9 +800,11 @@ AFRAME.registerComponent('move-tool', {
     this.selectedObjects.forEach(el => {
       // Move object along ray direction (negative intensity = away, positive = towards)
       // Inverted and increased speed by 3x
-      const move = rayDirection.multiplyScalar(-intensity * this.data.pullPushSensitivity * 0.06);
-      const { pos } = this.getEntityTransform(el);
-      el.setAttribute('position', { x: pos.x + move.x, y: pos.y + move.y, z: pos.z + move.z });
+      const move = rayDirection.clone().multiplyScalar(-intensity * this.data.pullPushSensitivity * 0.06);
+      const worldPos = new this.T.Vector3();
+      el.object3D.getWorldPosition(worldPos);
+      worldPos.add(move);
+      this.setWorldPositionRealtime(el, worldPos);
     });
   },
 
@@ -466,8 +820,10 @@ AFRAME.registerComponent('move-tool', {
       el.object3D.getWorldPosition(objectPos);
       const direction = objectPos.sub(cameraPos).normalize();
       const move = direction.multiplyScalar(intensity * this.data.pullPushSensitivity * 0.02);
-      const { pos } = this.getEntityTransform(el);
-      el.setAttribute('position', { x: pos.x + move.x, y: pos.y + move.y, z: pos.z + move.z });
+      const worldPos = new this.T.Vector3();
+      el.object3D.getWorldPosition(worldPos);
+      worldPos.add(move);
+      this.setWorldPositionRealtime(el, worldPos);
     });
   },
 
@@ -481,8 +837,10 @@ AFRAME.registerComponent('move-tool', {
       el.object3D.getWorldPosition(objectPos);
       const direction = controllerPos.clone().sub(objectPos).normalize();
       const move = direction.multiplyScalar(this.data.pullPushSensitivity * 0.02);
-      const { pos } = this.getEntityTransform(el);
-      el.setAttribute('position', { x: pos.x + move.x, y: pos.y + move.y, z: pos.z + move.z });
+      const worldPos = new this.T.Vector3();
+      el.object3D.getWorldPosition(worldPos);
+      worldPos.add(move);
+      this.setWorldPositionRealtime(el, worldPos);
     });
   },
 
@@ -498,7 +856,7 @@ AFRAME.registerComponent('move-tool', {
         y: Math.max(0.1, Math.min(10, scale.y * scaleRate)),
         z: Math.max(0.1, Math.min(10, scale.z * scaleRate))
       };
-      el.setAttribute('scale', newScale);
+      this.updateTransformRealtime(el, 'scale', newScale);
     });
   },
 
@@ -511,72 +869,73 @@ AFRAME.registerComponent('move-tool', {
   },
 
   saveTransforms() {
-    this.selectedObjects.forEach(async (el) => {
-      const { pos, rot, scale } = this.getEntityTransform(el);
-
-      try {
-        const response = await fetch(`/api/projects/${encodeURIComponent(window.PROJECT_DATA.path)}/scenes/${encodeURIComponent(window.PROJECT_DATA.activeScene)}`, {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            operation: {
-              action: 'update',
-              id: el.id,
-              properties: {
-                position: `${pos.x} ${pos.y} ${pos.z}`,
-                rotation: `${rot.x} ${rot.y} ${rot.z}`,
-                scale: `${scale.x} ${scale.y} ${scale.z}`
-              }
-            }
-          })
-        });
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-      } catch (err) {
-        console.error('Scene save error:', err);
-      }
+    this.selectedObjects.forEach((el) => {
+      Events.emit('entityupdate', { entity: el, component: 'position', property: '', value: el.getAttribute('position') || { x: 0, y: 0, z: 0 } });
+      Events.emit('entityupdate', { entity: el, component: 'rotation', property: '', value: el.getAttribute('rotation') || { x: 0, y: 0, z: 0 } });
+      Events.emit('entityupdate', { entity: el, component: 'scale', property: '', value: el.getAttribute('scale') || { x: 1, y: 1, z: 1 } });
     });
   },
 
   tick(time, deltaTime) {
-    // Check if push/pull is being used (takes priority over ray tracking)
-    const isPushPulling = this.selectedObjects.length > 0 && Math.abs(this.currentJoystick.y) > 0.1;
-    const wasPushPulling = this.wasPushPulling || false;
+    if (!this.data.enabled) return;
 
-    // Update ray distance after push/pull ends to prevent snapping back
-    if (wasPushPulling && !isPushPulling && this.isManipulating && this.selectedObjects.length > 0) {
-      this.updateRayDistanceFromCurrentPosition();
+    // Hover state: check if sphere overlaps anything while not gripping
+    if (!this.isGripping && !this.isManipulating) {
+      const hoveredArr = this.findSphereOverlapTargets();
+      const newSet = new Set(hoveredArr);
+      const changed = newSet.size !== this._sphereOverlapTargets.size ||
+        hoveredArr.some(t => !this._sphereOverlapTargets.has(t));
+      if (changed) {
+        this._sphereOverlapTargets = newSet;
+        this._sphereOverlapTarget = hoveredArr[0] ?? null;
+        this.updateSphereVisual(newSet.size > 0 ? 'hover' : 'idle');
+      }
     }
 
-    // Only do ray tracking if not push/pulling
-    if (this.isManipulating && this.selectedObjects.length > 0 && !isPushPulling) {
+    if (this.isResizingSphere) {
+      const currentPos = new this.T.Vector3();
+      this.el.object3D.getWorldPosition(currentPos);
+      // Vertical hand movement drives radius: up = bigger, down = smaller
+      const deltaY = currentPos.y - this.gripStartControllerPos.y;
+      const newRadius = Math.max(0.02, Math.min(0.5, this.gripStartSphereRadius + deltaY * 4));
+      this.updateSphereSize(newRadius);
+      return;
+    }
+
+    if (this.isScaling) {
+      this.updateScaling();
+    } else if (this.isManipulating && this.selectedObjects.length > 0) {
       this.updateSingleHandedManipulation();
     }
+  },
 
-    if (this.isGripping && this.selectedObjects.length > 0) {
-      this.handleGripPull();
-    }
+  startScaling() {
+    this.isScaling = true;
+    this.updateSphereVisual('scale');
+    this.el.object3D.getWorldPosition(this.scaleStartControllerPos);
+    this.scaleStartObjectScales = this.selectedObjects.map(o => {
+      const { scale } = this.getEntityTransform(o);
+      return { x: scale.x, y: scale.y, z: scale.z };
+    });
+  },
 
-    // Handle smooth scaling with left/right joystick (but not during push/pull)
-    if (this.selectedObjects.length > 0 && Math.abs(this.currentJoystick.x) > 0.1 && !isPushPulling) {
-      this.handleSmoothScale(this.currentJoystick.x, deltaTime);
-    }
-
-    // Handle push/pull along raycast with up/down joystick when objects are selected (takes priority)
-    if (isPushPulling) {
-      this.handlePushPullRay(this.currentJoystick.y);
-    }
-
-    // Store previous push/pull state for next frame
-    this.wasPushPulling = isPushPulling;
-
-    // Handle smooth sphere scaling with left/right joystick when not manipulating and no objects selected
-    if (!this.isManipulating && this.selectedObjects.length === 0 && Math.abs(this.currentJoystick.x) > 0.1) {
-      this.handleSmoothSphereScale(this.currentJoystick.x, deltaTime);
-    }
+  updateScaling() {
+    const currentPos = new this.T.Vector3();
+    this.el.object3D.getWorldPosition(currentPos);
+    const deltaY = currentPos.y - this.scaleStartControllerPos.y;
+    // ~0.3m up = 2x, ~0.3m down = 0.5x
+    const scaleFactor = Math.max(0.05, 1 + deltaY * 3.5);
+    this.selectedObjects.forEach((o, i) => {
+      if (!this.data.enableScale) return;
+      const base = this.scaleStartObjectScales[i];
+      if (!base) return;
+      this.updateTransformRealtime(o, 'scale', {
+        x: Math.max(0.05, Math.min(10, base.x * scaleFactor)),
+        y: Math.max(0.05, Math.min(10, base.y * scaleFactor)),
+        z: Math.max(0.05, Math.min(10, base.z * scaleFactor))
+      });
+    });
   }
 });
+}
 
